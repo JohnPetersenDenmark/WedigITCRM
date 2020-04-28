@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
+using WedigITCRM.Maintenance;
 
 namespace WedigITCRM
 {
@@ -33,7 +34,15 @@ namespace WedigITCRM
                    // Enable NLog as one of the Logging Provider
                    logging.AddNLog();
                })
+              .ConfigureServices(services =>
+              {
+                  services.AddHostedService<SynchronizeDineroContactsService>();
+                  services.AddHostedService<SynchronizeDineroStockItems>();
+                  services.AddHostedService<SendActivitiesNotificationsservice>();
+                  services.AddHostedService<SetSuperAdministrator>();
+              })
                 .UseStartup<Startup>();
+
         
         
 

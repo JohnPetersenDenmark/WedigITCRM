@@ -10,3 +10,27 @@
 2020-04-28 22:56:40.6995|ERROR|WedigITCRM.Startup|end of ConfigureServices
 2020-04-28 22:58:39.0500|ERROR|WedigITCRM.Startup|start of ConfigureServices
 2020-04-28 22:58:39.2842|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-28 23:20:05.9906|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-28 23:20:07.1172|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-28 23:20:07.4756|ERROR|WedigITCRM.Startup|start of Configure method
+2020-04-28 23:20:07.7486|ERROR|WedigITCRM.Startup|end of Configure method
+2020-04-28 23:20:35.2322|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-28 23:20:35.2322|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-04-28 23:24:38.3956|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-28 23:24:38.6150|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-28 23:27:11.9608|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-28 23:27:12.2400|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-28 23:29:02.5394|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-28 23:29:02.7904|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-28 23:39:31.0093|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-28 23:39:31.2397|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-28 23:41:08.9337|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-28 23:41:09.1482|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-28 23:43:14.4002|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-28 23:43:14.6137|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-28 23:45:00.4421|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-28 23:45:00.6530|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-28 23:46:58.4465|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-28 23:46:58.6664|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-28 23:49:32.4104|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-28 23:49:32.6450|ERROR|WedigITCRM.Startup|end of ConfigureServices

@@ -55,10 +55,7 @@ namespace WedigITCRM
                     .AddDefaultTokenProviders()
                     .AddErrorDescriber<LocalizedIdentityErrorDescriber>();
 
-                services.AddHostedService<SynchronizeDineroContactsService>();
-                services.AddHostedService<SynchronizeDineroStockItems>();
-                services.AddHostedService<SendActivitiesNotificationsservice>();
-                services.AddHostedService<SetSuperAdministrator>();
+            
 
 
                 services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
