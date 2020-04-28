@@ -1,0 +1,131 @@
+﻿@model ContactPersonEditViewModel
+
+
+<div class="formcontainer">
+
+    <form asp-controller="contactperson" asp-action=@Model.ContactPersonEditViewFormAction method="post" class="mt-3">
+        <div class="form-group row">
+            <div class="form-group col-md-8">
+                @if (@Model.company != null)
+                {
+                    @Html.TextArea("textAreaCompany", @Model.company.Name + "\n" + @Model.company.Street + "\n" + @Model.company.Zip + " " + @Model.company.City + "\n" + @Model.company.HomePage, new { @class = "form-control", rows = 5, columns = 40, @readonly = true });
+                    <div class="dropdown">
+                        <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                        <div class="dropdown-content">
+                            <a asp-controller="home" asp-action="Details" asp-route-id="@Model.company.Id" class="dropdown-item">Vis</a>
+                            <a href="tel:@Model.company.PhoneNumber" class="dropdown-item">Ring op</a>
+                            <a href="@Model.company.HomePage" class="dropdown-item" target="_blank">Besøg</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <label asp-for=@Model.company.Name class="col-form-label">@Model.company.Name</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <input hidden asp-for=@Model.contactPerson.Id />
+                <input hidden asp-for=@Model.contactPerson.CompanyId />
+                <label asp-for="@Model.contactPerson.FirstName" class="col-form-label">Fornavn</label>
+                <input asp-for="@Model.contactPerson.FirstName" class="form-control" placeholder="Fornavn">
+                <span asp-validation-for="@Model.contactPerson.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.contactPerson.LastName" class="col-form-label">Efternavn</label>
+                <input asp-for="@Model.contactPerson.LastName" class="form-control" placeholder="Efternavn">
+                <span asp-validation-for="@Model.contactPerson.LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label asp-for=@Model.contactPerson.Title class="col-form-label">Titel</label>
+                <input asp-for=@Model.contactPerson.Title class="form-control" placeholder="Titel">
+            </div>
+            <div class="col-sm-4">
+                <label asp-for=@Model.contactPerson.Department class="col-form-label">Afdeling</label>
+                <input asp-for=@Model.contactPerson.Department class="form-control" placeholder="Afdeling">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label asp-for=@Model.contactPerson.PhoneNumber class="col-form-label">Telefonnummer</label>
+                <input asp-for=@Model.contactPerson.PhoneNumber class="form-control" placeholder="Telefonnummer">
+            </div>
+            <div class="col-sm-4">
+                <label asp-for=@Model.contactPerson.CellPhone class="col-form-label">Mobil</label>
+                <input asp-for=@Model.contactPerson.CellPhone class="form-control" placeholder="Mobil">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label asp-for=@Model.contactPerson.Email class="col-form-label">Mail</label>
+                <input asp-for=@Model.contactPerson.Email class="form-control" placeholder="Mail">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-outline-secondary btn-sm">Gem</button>
+                @if (Model.ContactPersonEditViewFormAction == "edit")
+                {
+                    <a class="btn btn-outline-secondary btn-sm" asp-controller="activity" asp-action="create" asp-route-contactPersonId=@Model.contactPerson.Id>Opret aktivitet</a>
+                }
+                <a class="btn btn-outline-secondary btn-sm" href="@Context.Request.Headers["Referer"].ToString()">Tilbage</a>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+    @if (Model.Activities != null)
+    {
+        @foreach (var activity in Model.Activities)
+        {
+            <div class="rowcontainer">
+                <div class="row" id="@activity.Id">
+                    <div class="col-3 readDetailsActivity">@activity.Date</div>
+                    <div class="col-3 readDetailsActivity">@activity.Subject</div>
+                    <div class="col-4 readDetailsActivity">@activity.Description </div>
+                    <div class="col-1">
+                        <div class="dropdown">
+                            <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                            <div class="dropdown-content">
+                                <a asp-controller="activity" asp-action="edit" asp-route-id="@activity.Id">Rediger</a>
+                                <a asp-controller="activity" asp-action="Delete" asp-route-id="@activity.Id">Slet</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+        }
+    }
+</div>
+
+<form id="ActivityForm" asp-controller="activity" asp-action="Details" method="get">
+    <input id="ActivityId" type="hidden" name="Id">
+</form>
+
+
+@section Scripts {
+    <script>
+
+
+        $(".readDetailsActivity").click(function () {
+            var activityId = this.closest('.row').getAttribute("id");
+            $("#ActivityId").val(activityId);
+            $("#ActivityForm").submit();
+        });
+
+
+
+    </script>
+}
+
+
+
+
+

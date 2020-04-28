@@ -1,0 +1,27 @@
+﻿@model UserRoleViewModel
+
+
+<form method="post">
+    <div class="card">
+        <div class="card-header">
+            <h2>Tilføj/Fjern bruger fra denne rolle</h2>
+        </div>
+        <div class="card-body">
+            @for (int i = 0; i < Model.users.Count; i++)
+            {
+                <div class="form-check m-1">
+                    <input type="hidden" asp-for="@Model.role.Id" />
+                    <input type="hidden" asp-for="@Model.users[i].Id" />
+                    <input asp-for="@Model.IsSelected[i]" class="form-check-input" />
+                    <label class="form-check-label" asp-for="@Model.IsSelected[i]">
+                        @Model.users[i].UserName
+                    </label>
+                </div>
+            }
+        </div>
+        <div class="card-footer">
+            <input type="submit" value="Gem" class="btn btn-outline-secondary btn-sm" style="width:auto" />
+            <a asp-action="EditRole" asp-route-id="@Model.role.Id" class="btn btn-outline-secondary btn-sm" style="width:auto">Annuller</a>
+        </div>
+    </div>
+</form>

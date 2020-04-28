@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+l54ayQ3v0SiF8y2Yg/xQwAAAAACAAAAAAAQZgAAAAEAACAAAABuXWIZ3FUCHF0EMqicfcem0y2UtiyEC2IKfCBryO2hOQAAAAAOgAAAAAIAACAAAAAkPfuPtYSwKmo5Vvx8U79SD/m8QrMN2V+IGb0pOdG6VoAAAACTmGc8XIrejxCDkORcoxqViRKlosIgQVQEbjr3U7MlPGOjdQlSq3J2mrjwAbk+ZBifcMkt+o5WKlnqbrNavQigX54IgIEZGzlIDhUH0eFVj9P1BzKnWkvhDRDoVGG1BGp9utwDul9v4d8tiEq/i44afbO9GQWM8pP7+VDjpyIPGUAAAAB/7YU3+uYyrhJw4LIROoCi5VvWBZp1o8hQtVfqu3iYMbyrGHoQzxX28IMFkUUENJBVQgWWFhOxOTP4T05BzDfd</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:wedigitcrmdb.database.windows.net,1433%3bInitial Catalog=WedigITCRM20191208020047_db%3bUser Id=AdminCRMdb%40wedigitcrmdb%3bPassword=w3dig!T!</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="WedigITCRM.AppDbContext">
+      <Value>Data Source=tcp:wedigitcrmdb.database.windows.net,1433%3bInitial Catalog=WedigITCRM20191208020047_db%3bUser Id=AdminCRMdb%40wedigitcrmdb%3bPassword=w3dig!T!</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

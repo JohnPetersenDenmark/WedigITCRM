@@ -1,0 +1,26 @@
+﻿@model createCompanyAccountViewModel
+
+    <div class="formcontainer">
+
+        <div class="form-group row">
+            <div class="col-sm-8">
+               <span> @Model.message</span>
+            </div>
+        </div>
+        @if (@Model.errorNumber == 1)
+        {
+            <div class="form-group row">
+                <div class="col-sm-8">
+                    <a asp-controller="Account" asp-action="Login">Log ind</a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="form-group row">
+                <div class="col-sm-8">
+                    <a asp-controller="Account" asp-action="login">Log ind</a>
+                </div>
+            </div>
+        }
+    </div>

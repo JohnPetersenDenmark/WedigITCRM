@@ -1,0 +1,45 @@
+﻿@model IEnumerable<IdentityRole>
+
+
+    <div class="formcontainer">
+        @foreach (var role in Model)
+        {
+            <div class="rowcontainer">
+                <div class="row" id="@role.Id">
+                    <div class="col-6 readDetails">@role.Id</div>
+                    <div class="col-5 readDetails">@role.Name</div>
+                    <div class="col-1">
+                        <div class="dropdown">
+                            <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                            <div class="dropdown-content">
+                                <a asp-controller="Administration" asp-action="EditRole" asp-route-id="@role.Id">Rediger</a>
+                                <a asp-controller="Administration" asp-action="DeleteRole" asp-route-id="@role.Id">Slet</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        }
+        </div>
+<br />
+
+        <form id="RoleDetails" asp-controller="Administration" asp-action="RoleDetails" method="get">
+            <input id="Id" type="hidden" name="Id">
+        </form>
+
+        @section Scripts {
+
+            <script>
+
+
+                $(".readDetails").click(function () {
+                    var roleId = this.closest('.row').getAttribute("id");
+                    $("#Id").val(roleId);
+                    $("#RoleDetails").submit();
+                });
+
+
+            </script>
+        }

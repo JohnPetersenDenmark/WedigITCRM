@@ -1,0 +1,153 @@
+﻿@model HomeDetailsViewModel
+
+
+<div class="formcontainer">
+    <div class="form-group row">
+        <div class="form-group col-md-8">
+            <input type="hidden" name="companyId" asp-for="@Model.Company.Id">
+            <label asp-for="@Model.Company.Name" class="col-form-label">Navn</label>
+            <input asp-for="@Model.Company.Name" disabled class="form-control" placeholder="Navn">
+        </div>
+        <div class="form-group col-md-4">
+            <label asp-for="@Model.Company.CVRNumber" class="col-form-label">CVR-nummer</label>
+            <input asp-for="@Model.Company.CVRNumber" disabled class="form-control" placeholder="CVR-nummer">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label asp-for=@Model.Company.Street class="col-form-label">Gade</label>
+            <input asp-for=@Model.Company.Street disabled class="form-control" placeholder="Gade">
+        </div>
+        <div class="col-sm-4">
+            <label asp-for=@Model.Company.Zip class="col-form-label">Postnummer</label>
+            <input asp-for=@Model.Company.Zip disabled class="form-control" placeholder="Postnummer">
+        </div>
+        <div class="col-sm-4">
+            <label asp-for=@Model.Company.City class="col-form-label">By</label>
+            <input asp-for=@Model.Company.City disabled class="form-control" placeholder="By">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label asp-for=@Model.Company.PhoneNumber class="col-form-label">Telefonnummer</label>
+            <input asp-for=@Model.Company.PhoneNumber disabled class="form-control" placeholder="Telefonnummer">
+        </div>
+        <div class="col-sm-4">
+            <label asp-for=@Model.Company.HomePage class="col-form-label">Hjemmeside</label>
+            <input asp-for=@Model.Company.HomePage disabled class="form-control" placeholder="Hjemmeside">
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+
+            <a class="btn btn-outline-secondary btn-sm" asp-controller="contactperson" asp-action="create" asp-route-companyId=@Model.Company.Id>Opret kontaktperson</a>
+            <a class="btn btn-outline-secondary btn-sm" asp-controller="activity" asp-action="create" asp-route-companyId=@Model.Company.Id>Opret aktivitet</a>
+            <a class="btn btn-outline-secondary btn-sm" asp-controller="home" asp-action="Edit" asp-route-Id=@Model.Company.Id>Rediger</a>
+            <a class="btn btn-outline-secondary btn-sm" href="@Context.Request.Headers["Referer"].ToString()">Tilbage</a>
+
+            <br />
+        </div>
+    </div>
+
+    @if (Model.ContactPersons != null)
+    {
+
+        <div class="rowcontainer">
+            <div class="row">
+                <br />
+                <div class="col-10">Kontaktpersoner:</div>
+            </div>
+        </div>
+
+        @foreach (var contactPerson in Model.ContactPersons)
+        {
+            <div class="rowcontainer">
+                <div class="row" id="@contactPerson.Id">
+                    <div class="col-3 readContactPersonActivity">@contactPerson.FirstName @contactPerson.LastName</div>
+                    <div class="col-3 readContactPersonActivity">@contactPerson.CellPhone</div>
+                    <div class="col-3 readContactPersonActivity">@contactPerson.Email</div>
+
+                    <div class="col-1">
+                        <div class="dropdown">
+                            <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                            <div class="dropdown-content">
+                                <a asp-controller="contactperson" asp-action="edit" asp-route-id="@contactPerson.Id">Rediger</a>
+                                <a asp-controller="contactperson" asp-action="Delete" asp-route-id="@contactPerson.Id" class="dropdown-item">Slet</a>
+                                <a href="tel:@contactPerson.CellPhone">Ring op</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+
+    @if (Model.Activities != null)
+    {
+        <div class="rowcontainer">
+            <div class="row">
+                <div class="col-10">Aktivteter:</div>
+            </div>
+        </div>
+        @foreach (var activity in Model.Activities)
+        {
+            <div class="rowcontainer">
+                <div class="row" id="@activity.Id">
+                    <div class="col-3 readDetailsActivity">@activity.Date</div>
+                    <div class="col-3 readDetailsActivity">@activity.Subject</div>
+                    <div class="col-4 readDetailsActivity">@activity.Description </div>
+                    <div class="col-1">
+                        <div class="dropdown">
+                            <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                            <div class="dropdown-content">
+                                <a asp-controller="activity" asp-action="edit" asp-route-id="@activity.Id">Rediger</a>
+                                <a asp-controller="activity" asp-action="Delete" asp-route-id="@activity.Id">Slet</a>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+
+</div>
+
+<br />
+
+<form id="ActivityForm" asp-controller="activity" asp-action="Details" method="get">
+    <input id="ActivityId" type="hidden" name="Id">
+</form>
+
+<form id="ContactPersonForm" asp-controller="ContactPerson" asp-action="Details" method="get">
+    <input id="ContactPersonId" type="hidden" name="Id">
+</form>
+
+
+@section Scripts {
+    <script>
+
+
+        $(".readDetailsActivity").click(function () {
+            var activityId = this.closest('.row').getAttribute("id");
+            $("#ActivityId").val(activityId);
+            $("#ActivityForm").submit();
+        });
+
+        
+        $(".readContactPersonActivity").click(function () {
+            var activityId = this.closest('.row').getAttribute("id");
+            $("#ContactPersonId").val(activityId);
+            $("#ContactPersonForm").submit();
+        });
+
+
+
+    </script>
+}

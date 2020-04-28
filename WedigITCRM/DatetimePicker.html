@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
+
+
+
+</head>
+<body>
+
+    <div class="container">
+       
+            <div class="col-sm-6" style="width:400px;">
+                <input type="text" class="form-control" id="mydatetimepicker" />              
+            </div>
+       
+        </div>
+
+
+    <script>
+
+        $(document).ready(function () {
+          
+
+             
+            $("#mydatetimepicker").datetimepicker({
+                timepicker: true,
+                datepicker: true,
+                hours12 : false,
+                format : 'd-m-y H:i'
+            });
+
+            $.datetimepicker.setLocale('da');
+        });
+    </script>
+</body>
+</html>

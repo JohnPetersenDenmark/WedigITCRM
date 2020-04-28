@@ -1,0 +1,147 @@
+﻿@model ListUsersViewModel
+
+<div class="mysearchbar">
+    <br />
+    <form id="searchForm" asp-controller="Administration" asp-action="ListUsers" method="get">
+
+        <div class="form-row">
+            <div class="col-2">
+                <span class="viewHeadLine">Brugere</span>
+            </div>
+            <div class="col-2">
+                <input asp-for=@Model.searchString type="text" class="form-control" name="searchString" placeholder="Søgetekst">
+            </div>
+            <div class="col-2">
+                @if (true)
+                {
+                    var types = new List<SelectListItem>();
+                      types.Add(new SelectListItem() { Text = "Navn", Value = "Name" });
+                    types.Add(new SelectListItem() { Text = "Brugernavn", Value = "UserName" });
+                    types.Add(new SelectListItem() { Text = "Mail", Value = "Email" });
+                    types.Add(new SelectListItem() { Text = "BrugerId", Value = "UserId" });                  
+                    @Html.DropDownList("searchBy", new SelectList(@types, "Value", "Text"), new { @class = "custom-select mr-sm-2" });
+                }
+            </div>
+            <div class="col-1">
+                <button type="submit" style="height:36px;" class="btn icon-menu-background-color"><i class="fa fa-search icon-menu-background-color" aria-hidden="true"></i></button>
+            </div>
+            <div class="col-4">
+                @Html.PagedListPager(Model.users, page => Url.Action("Index", new { page, searchBy = Model.searchBy, searchString = Model.searchString, sortColumn = Model.sortColumn, sortDirection = Model.sortDirection }), new PagedListRenderOptions
+                {
+                    LiElementClasses = new string[] { "page-item" },
+                    PageClasses = new string[] { "page-link" },
+                    LinkToFirstPageFormat = "<< Første",
+                    LinkToPreviousPageFormat = "< Forrige",
+                    LinkToNextPageFormat = "Næste >",
+                    LinkToLastPageFormat = "sidste >>"
+    })
+            </div>
+        </div>
+        <input id="sortColumn" type="hidden" name="sortColumn" value="@Model.sortColumn">
+        <input id="sortDirection" type="hidden" name="sortDirection" value="@Model.sortDirection">
+    </form>
+</div>
+
+<br />
+
+
+<div class="sortcontainer">
+    <div class="row">
+        <div class="col-3 columnheader">
+            Navn
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Name" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Name" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-3 columnheader">
+            Brugernavn
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="UserName" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="UserName" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-3 columnheader">
+            Email
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Email" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Email" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-3 columnheader">
+            Bruger Id.
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="UserId" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="UserId" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+    </div>
+    <br />
+</div>
+
+
+
+@foreach (var user in Model.users)
+{
+    <div class="rowcontainer">
+        <div class="row" id="@user.User.Id">
+            <div class="col-3 readDetails">@user.userName</div>
+            <div class="col-3 readDetails">@user.User.UserName</div>
+            <div class="col-3 readDetails">@user.User.Email</div>
+            <div class="col-3 readDetails">@user.User.Id</div>
+            <div class="col-1">
+                <div class="dropdown">
+                    <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                    <div class="dropdown-content">
+                        <a asp-action="ManageUserRoles" asp-controller="Administration" asp-route-userId="@user.User.Id" class="btn btn-outline-secondary btn-sm">Administrer brugerrolller</a>
+                        <a asp-action="EditUser" asp-controller="Administration" asp-route-id="@user.User.Id" class="btn btn-outline-secondary btn-sm">Rediger</a>
+                        <a asp-action="DeleteUser" asp-controller="Administration" asp-route-id="@user.User.Id" class="btn btn-outline-secondary btn-sm">Slet</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<br />
+
+<form id="UseridForm" asp-controller="Administration" asp-action="UserDetails" method="get">
+    <input id="Id" type="hidden" name="Id">
+</form>
+
+
+
+@section Scripts
+{
+    <script>
+          $(document).ready(function () {
+            $(".sortcolumn").each(function () {
+                $(this).show();
+                  $(this).hover(function() {
+                        $(this).css('cursor','pointer');
+                    });
+                var sortAttribute = this.getAttribute("sortcolumnname");
+                var selectedSortColumn = $("#sortColumn").val();
+                if (sortAttribute == selectedSortColumn) {
+                    var selectedSortDirection = $("#sortDirection").val();
+                    var sortDirection = this.getAttribute("sortdirection");
+                    if (selectedSortDirection == sortDirection) {
+                        $(this).hide();
+                    }
+                }
+
+            });
+          
+          });
+
+          $(".sortcolumn").click(function (event) {
+
+            var sortDirection = this.getAttribute("sortdirection");
+            var sortColumnName = this.getAttribute("sortcolumnname");
+
+            $("#sortColumn").val(sortColumnName);
+            $("#sortDirection").val(sortDirection);
+            $(this).hide();
+
+            $("#searchForm").submit();
+        });
+
+        $(".readDetails").click(function () {
+            var userId = this.closest('.row').getAttribute("id");
+            $("#Id").val(userId);
+            $("#UseridForm").submit();
+        });
+    </script>
+}

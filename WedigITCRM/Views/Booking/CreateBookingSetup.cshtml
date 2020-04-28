@@ -1,0 +1,291 @@
+﻿@model BookingSetupViewModel
+
+<div class="formcontainer">
+    <form method="post">
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                Åbningstid
+            </div>
+
+
+
+            <div class="form-group col-md-4">
+                Lukketid
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.MondayOfficeStartTime"></label>
+                <input id="mondaystarttime" asp-for="@Model.MondayOfficeStartTime" class="form-control" />
+                <span asp-validation-for="@Model.MondayOfficeStartTime" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.MondayOfficeEndTime"></label>
+                <input id="mondayendtime" asp-for="@Model.MondayOfficeEndTime" class="form-control" />
+                <span asp-validation-for="@Model.MondayOfficeEndTime" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.TuesdayOfficeStartTime"></label>
+                <input id="tuesdaystarttime" asp-for="@Model.TuesdayOfficeStartTime" class="form-control" />
+                <span asp-validation-for="@Model.TuesdayOfficeStartTime" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.TuesdayOfficeEndTime"></label>
+                <input id="tuesdayendtime" asp-for="@Model.TuesdayOfficeEndTime" class="form-control" />
+                <span asp-validation-for="@Model.TuesdayOfficeEndTime" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.WednesdayOfficeStartTime"></label>
+                <input id="wednesdaystarttime" asp-for="@Model.WednesdayOfficeStartTime" class="form-control" />
+                <span asp-validation-for="@Model.WednesdayOfficeStartTime" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.WednesdayOfficeEndTime"></label>
+                <input id="wednesdayendtime" asp-for="@Model.WednesdayOfficeEndTime" class="form-control" />
+                <span asp-validation-for="@Model.WednesdayOfficeEndTime" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.ThursdayOfficeStartTime"></label>
+                <input id="thursdaystarttime" asp-for="@Model.ThursdayOfficeStartTime" class="form-control" />
+                <span asp-validation-for="@Model.ThursdayOfficeStartTime" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.ThursdayOfficeEndTime"></label>
+                <input id="thursdayendtime" asp-for="@Model.ThursdayOfficeEndTime" class="form-control" />
+                <span asp-validation-for="@Model.ThursdayOfficeEndTime" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.FridayOfficeStartTime"></label>
+                <input id="fridaystarttime" asp-for="@Model.FridayOfficeStartTime" class="form-control" />
+                <span asp-validation-for="@Model.FridayOfficeStartTime" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.FridayOfficeEndTime"></label>
+                <input id="fridayendtime" asp-for="@Model.FridayOfficeEndTime" class="form-control" />
+                <span asp-validation-for="@Model.FridayOfficeEndTime" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.SaturdayOfficeStartTime"></label>
+                <input id="saturdaystarttime" asp-for="@Model.SaturdayOfficeStartTime" class="form-control" />
+                <span asp-validation-for="@Model.SaturdayOfficeStartTime" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.SaturdayOfficeEndTime"></label>
+                <input id="saturdayendtime" asp-for="@Model.SaturdayOfficeEndTime" class="form-control" />
+                <span asp-validation-for="@Model.SaturdayOfficeEndTime" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.SundayOfficeStartTime"></label>
+                <input id="sundaystarttime" asp-for="@Model.SundayOfficeStartTime" class="form-control" />
+                <span asp-validation-for="@Model.SundayOfficeStartTime" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.SundayOfficeEndTime"></label>
+                <input id="sundayendtime" asp-for="@Model.SundayOfficeEndTime" class="form-control" />
+                <span asp-validation-for="@Model.SundayOfficeEndTime" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.BookingFreeTimeInterval"></label>
+                <input asp-for="@Model.BookingFreeTimeInterval" class="form-control" />
+                <span asp-validation-for="@Model.BookingFreeTimeInterval" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.BookingAPIkey"></label>
+                <input asp-for="@Model.BookingAPIkey" class="form-control" />
+                <span asp-validation-for="@Model.BookingAPIkey" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <button type="submit" class="btn btn-outline-secondary btn-sm">Gem</button>
+                <a asp-controller="booking" asp-action="ShowBookingResources" class="btn btn-outline-secondary btn-sm">Annuller</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+
+      
+
+        $(function () {
+            $("#suntime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+
+                locale: 'da'
+            });
+        });
+
+  
+       
+
+        $(function () {
+            $("#mondaystarttime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+
+
+        $(function () {
+            $("#mondayendtime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+        $(function () {
+            $("#tuesdaystarttime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+        $(function () {
+            $("#tuesdayendtime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+        $(function () {
+            $("#wednesdaystarttime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+        $(function () {
+            $("#wednesdayendtime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+        $(function () {
+            $("#thursdaystarttime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+        $(function () {
+            $("#thursdayendtime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+        $(function () {
+            $("#fridaystarttime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+        $(function () {
+            $("#fridayendtime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+        $(function () {
+            $("#saturdaystarttime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+        $(function () {
+            $("#saturdayendtime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+        $(function () {
+            $("#sundaystarttime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+        $(function () {
+            $("#sundayendtime").datetimepicker({
+                format: 'HH:mm',
+                stepping: 15,
+                locale: 'da'
+            });
+        });
+
+
+    });
+
+</script>

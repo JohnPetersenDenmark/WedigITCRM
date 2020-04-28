@@ -1,0 +1,96 @@
+﻿@model ActivityEditViewModel
+
+
+<div class="formcontainer">
+
+    <form asp-controller="activity" asp-action=@Model.ActivityEditViewFormAction method="post" class="mt-3">
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                @if (@Model.company != null)
+                {
+                    @Html.TextArea("textAreaCompany", @Model.company.Name + "\n" + @Model.company.Street + "\n" + @Model.company.Zip + " " + @Model.company.City + "\n" + @Model.company.HomePage, new { @class = "form-control", rows = 5, columns = 40, @readonly = true });
+                    <div class="dropdown">
+                        <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                        <div class="dropdown-content">
+                            <a asp-controller="home" asp-action="Details" asp-route-id="@Model.company.Id" class="dropdown-item">Vis</a>
+                            <a href="tel:@Model.company.PhoneNumber" class="dropdown-item">Ring op</a>
+                            <a href="@Model.company.HomePage" class="dropdown-item" target="_blank">Besøg</a>
+                        </div>
+                    </div>
+                }
+                @if (@Model.contactPersonAttachedTocompany != null)
+                {
+                    @Html.TextArea("textAreaCompany", @Model.contactPersonAttachedTocompany.Name + "\n" + @Model.contactPersonAttachedTocompany.Street + "\n" + @Model.contactPersonAttachedTocompany.Zip + " " + @Model.contactPersonAttachedTocompany.City + "\n" + @Model.contactPersonAttachedTocompany.HomePage, new { @class = "form-control", rows = 5, columns = 40, @readonly = true });
+                    <div class="dropdown">
+                        <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                        <div class="dropdown-content">
+                            <a asp-controller="home" asp-action="Details" asp-route-id="@Model.contactPersonAttachedTocompany.Id" class="dropdown-item">Vis</a>
+                            <a href="tel:@Model.contactPersonAttachedTocompany.PhoneNumber" class="dropdown-item">Ring op</a>
+                            <a href="@Model.contactPersonAttachedTocompany.HomePage" class="dropdown-item" target="_blank">Besøg</a>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="form-group col-md-4">
+                @if (@Model.contactPerson != null)
+                {
+                    @Html.TextArea("textAreaContactPerson", @Model.contactPerson.FirstName + " " + @Model.contactPerson.LastName + "\n" + @Model.contactPerson.CellPhone + "\n" + @Model.contactPerson.Email  + "\n" + @Model.contactPerson.Department, new { @class = "form-control", rows = 5, columns = 40, @readonly = true });
+                    <div class="dropdown">
+                        <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                        <div class="dropdown-content">
+                            <a asp-controller="ContactPerson" asp-action="Details" asp-route-id="@Model.contactPerson.Id" class="dropdown-item">Vis</a>
+                            <a href="tel:@Model.contactPerson.CellPhone" class="dropdown-item">Ring op</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <input asp-for=@Model.activity.Date readonly class="form-control" id="datetimepicker">
+                <span asp-validation-for="@Model.activity.Date" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <input hidden asp-for=@Model.activity.Id />
+                <input hidden asp-for=@Model.activity.CompanyId />
+                <input hidden asp-for=@Model.activity.contactPersonId />
+                <label asp-for=@Model.activity.NotifyOffset class="col-form-label">Adviser</label>
+                <input asp-for=@Model.activity.NotifyOffset class="form-control" placeholder="Minutter før">
+                <span asp-validation-for="@Model.activity.NotifyOffset" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <label asp-for="@Model.activity.Subject" class="col-form-label">Emne</label>
+                <input asp-for="@Model.activity.Subject" class="form-control" placeholder="Emne">
+                <span asp-validation-for="@Model.activity.Subject" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <label asp-for=@Model.activity.Description class="col-form-label">Beskrivelse</label>
+                <input asp-for=@Model.activity.Description class="form-control" placeholder="Beskrivelse">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-outline-secondary btn-sm">Gem</button>
+                <a class="btn btn-outline-secondary btn-sm" href="@Context.Request.Headers["Referer"].ToString()">Tilbage</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function(){
+            $(function () {
+                $("#datetimepicker").datetimepicker({ format: 'd-m-Y H:i',    step: 15 });
+            });
+        });
+        
+    </script>
+}

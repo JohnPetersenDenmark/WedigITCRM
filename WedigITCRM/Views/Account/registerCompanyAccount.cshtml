@@ -1,0 +1,204 @@
+﻿@model RegisterCompanyAccountModel
+
+<div class="formcontainer">
+
+
+
+    <div class="form-group row">
+        <div class="col-md-5">
+            <div class="form-group row">
+                <div class="col-md-10">
+                    <div class="form-group row">
+                        <div class="col-md-10 homepageHeading">
+                            Opret konto
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            <label for="companyNameSuggest" class="col-form-label">Firmanavn</label>
+                            <input id="companyNameSuggest" class="form-control" placeholder="Firmanavn">
+                            <span asp-validation-for="CompanyName" class="validation-style"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            <label for="companyCVRSuggest" class="col-form-label">CVR</label>
+                            <input id="companyCVRSuggest" class="form-control" placeholder="CVR">
+                            <span asp-validation-for="CVRNumber" class="validation-style"></span>
+                        </div>
+                    </div>
+
+                    <form id="createCompanyAccountForm" asp-controller="account" asp-action="registerCompanyAccount" method="post">
+                        <div class="form-group row">
+                            <div class="form-group col-md-10">
+                                <label class="col-form-label" asp-for="Email"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="validation-style"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="form-group col-md-10">
+                                <i id="togglepasswordhelp" class="fa fa-info"></i>
+                                <div id="passwordhelp">
+
+                                </div>
+                                <label class="col-form-label" asp-for="Password"></label>
+                                <input asp-for="Password" class="form-control" />
+                                <span asp-validation-for="Password" class="validation-style"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="form-group col-md-10">
+                                <label class="col-form-label" asp-for="ConfirmPassword"></label>
+                                <input asp-for="ConfirmPassword" class="form-control" />
+                                <span asp-validation-for="ConfirmPassword" class="validation-style"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="form-group col-md-10">
+                                <label class="col-form-label" asp-for="UserName"></label>
+                                <input asp-for="UserName" class="form-control" />
+                                <span asp-validation-for="UserName" class="validation-style"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="form-group col-md-10">
+                                <button style="padding-bottom :0; padding-top:0; height: 20px;  font-size: 12px;vertical-align:middle;margin-top : 10px" type="submit" class="btn btn-outline-secondary">Opret</button>
+                            </div>
+                        </div>
+
+                        @if (@Model != null)
+                        {
+                            @if (@Model.companyAccountEmailSent)
+                            {
+                                <div class="form-group row">
+                                    <div class="form-group col-md-8 mailsentmessage">
+                                        @Model.companyAccountEmailSentMessage
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        <input hidden id="companyName" asp-for="@Model.CompanyName">
+                        <input hidden id="CVRNumber" asp-for="@Model.CVRNumber">
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-5">
+
+            <article class="price">
+                <div class="price-box">
+                    <p class="type purple">Business</p>
+                    <p class="pprice">99 DKK</p>
+                    <p class="pprice">excl. moms pr. md.</p>
+                    <p class="description">Perfekt til den lidt større forretning</p>
+                    <p class="features"><img src="/frontpage/img/jpgs/price-circle-purple.jpg">Alle applikationer</p>
+
+                    <p class="features"><input type="checkbox" id="licenseCRM" class="business" checked disabled> CRM/Kundestyring</p>
+                    <p class="features"><input type="checkbox" id="licenseInventory" class="business" checked disabled> Lagerstyring</p>
+                    <p class="features"><input type="checkbox" id="licenseBooking" class="business" checked disabled> Booking</p>
+                    <p class="features"><input type="checkbox" id="licenseVendors" class="business" checked disabled> Leverandører</p>
+                    <p class="features"><input type="checkbox" id="licenseStatistic" class="business" checked disabled> Salgsstatistik</p>
+
+                    <p class="features"><img src="/frontpage/img/jpgs/price-circle-purple.jpg">Ubegrænset antal brugere</p>
+                    <p class="features"><img src="/frontpage/img/jpgs/price-circle-purple.jpg">Gratis oprettelse</p>
+                </div>
+            </article>
+
+        </div>
+
+
+
+    </div>
+
+
+    <br />
+
+</div>
+
+<form id="formchangepassword" asp-controller="Administration" asp-action="ChangePassword" method="get">
+    <input id="changepasswordemail" type="hidden" name="changepasswordemail">
+</form>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            $("#forgottenPassword").click(function () {
+                var userEmail = $("#userEmail").val();
+                $("#changepasswordemail").val(userEmail);
+                $("#formchangepassword").submit();
+            });
+
+            $("#companyNameSuggest").val($("#companyName").val());
+            $("#companyCVRSuggest").val($("#CVRNumber").val());
+
+            $("#createCompanyAccountForm").submit(function (event) {
+                $("#companyName").val($("#companyNameSuggest").val());
+                $("#CVRNumber").val($("#companyCVRSuggest").val());
+                //event.preventDefault();
+            });
+
+
+            var htmlStr = 'Kodeord skal bestå af mindst 6 tegn';
+            var htmlStr = htmlStr + "<br />";
+            var htmlStr = htmlStr + 'Kodeord skal indeholde mindst 1 stort bogstav';
+            var htmlStr = htmlStr + "<br />";
+            var htmlStr = htmlStr + 'Kodeord skal indeholde mindst 1 ciffer';
+            var htmlStr = htmlStr + "<br />";
+            var htmlStr = htmlStr + 'Kodeord skal indeholde mindst 1 specialtegn. Specialtegn er: ! " # & ';
+
+            $("#passwordhelp").append(htmlStr);
+            $("#passwordhelp").hide();
+
+
+            $("#togglepasswordhelp").click(function () {
+
+                if ($("#passwordhelp").is(":visible")) {
+                    $('#passwordhelp').hide();
+                }
+                else {
+                    $('#passwordhelp').show();
+                }
+            });
+
+
+        });
+
+
+
+        $("#companyNameSuggest").autocomplete({
+            source: '/home/searchInVirkByCompanyName',
+            select: function (event, ui) {
+                $("#companyNameSuggest").val(ui.item.label);
+                $("#companyCVRSuggest").val(ui.item.cvrNumber);
+            },
+            minLength: 1
+        });
+
+
+
+        $("#companyCVRSuggest").autocomplete({
+            source: '/home/searchInVirkByCVR',
+            select: function (event, ui) {
+                $("#companyNameSuggest").val(ui.item.label);
+                $("#companyCVRSuggest").val(ui.item.cvrNumber);
+                event.preventDefault();
+            },
+            minLength: 1
+        });
+
+
+
+
+
+
+    </script>
+}

@@ -1,0 +1,80 @@
+﻿@model DetailsUserViewModel
+
+    <div class="formcontainer">
+
+        <div class="form-group row">
+            <div class="col-sm-8">
+                <label asp-for="@Model.user.Id" class="col-sm-8 col-form-label">Bruger Id.</label>
+                <input asp-for="@Model.user.Id" disabled class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-8">
+                <label asp-for="@Model.user.UserName" class="col-sm-8 col-form-label">Brugernavn</label>
+                <input asp-for="@Model.user.UserName" disabled class="form-control">
+                <span asp-validation-for="@Model.user.UserName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-8">
+                <label asp-for="@Model.user.Email" class="col-sm-8 col-form-label">Email</label>
+                <input asp-for="@Model.user.Email" disabled class="form-control">
+                <span asp-validation-for="@Model.user.Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-8">
+                <label asp-for="@Model.userName" class="col-sm-8 col-form-label">Navn</label>
+                <input asp-for="@Model.userName" disabled class="form-control">
+                <span asp-validation-for="@Model.userName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-8">
+                <a class="btn btn-outline-secondary btn-sm" href="@Context.Request.Headers["Referer"].ToString()">Tilbage</a>
+                <a asp-controller="Administration" asp-action="EditUser" asp-route-id="@Model.user.Id" class="btn btn-outline-secondary btn-sm">Rediger</a>
+            </div>
+        </div>
+    </div>
+
+    @if (Model != null)
+    {
+        @foreach (var role in Model.Roles)
+        {
+            <div class="rowcontainer">
+                <div class="row" id="@role.Id">
+                    <div class="col-5 readDetails">@role.Name</div>
+                    <div class="col-6 readDetails">@role.Name</div>
+                    <div class="col-1">
+                        <div class="dropdown">
+                            <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                            <div class="dropdown-content">
+                                <a asp-controller="Administration" asp-action="EditRole" asp-route-id="@role.Id" class="dropdown-item">Rediger</a>
+                                <a asp-controller="Administration" asp-action="DeleteRole" asp-route-id="@role.Id" class="dropdown-item">Slet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    <br />
+
+<form id="UserDetailsForm" asp-controller="Administration" asp-action="RoleDetails" method="get">
+    <input id="Id" type="hidden" name="Id">
+</form>
+
+
+
+@section Scripts {
+    <script>
+
+        $(".readDetails").click(function () {
+            var companyId = this.closest('.row').getAttribute("id");
+            $("#Id").val(companyId);
+            $("#UserDetailsForm").submit();
+        });
+
+    </script>
+}
+

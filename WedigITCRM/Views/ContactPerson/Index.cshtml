@@ -1,0 +1,152 @@
+﻿@model ContactPersonIndexViewModel
+
+
+<div class="mysearchbar">
+    <br />
+    <form id="searchForm" asp-controller="contactperson" asp-action="Index" method="get">
+
+        <div class="form-row">
+            <div class="col-3">
+                <span class="viewHeadLine">Kontaktpersoner</span>
+            </div>
+            <div class="col-2">
+                <input asp-for=@Model.searchString type="text" class="form-control" name="searchString" placeholder="Søgetekst">
+            </div>
+            <div class="col-2">
+                @if (true)
+                {
+                    var types = new List<SelectListItem>();
+                    types.Add(new SelectListItem() { Text = "Fornavn", Value = "FirstName" });
+                    types.Add(new SelectListItem() { Text = "Efternavn", Value = "LastName" });
+                     types.Add(new SelectListItem() { Text = "Mobil", Value = "Mobile" });
+                     types.Add(new SelectListItem() { Text = "Mail", Value = "Email" });
+                    types.Add(new SelectListItem() { Text = "Firmanavn", Value = "CompanyName" });
+
+                    @Html.DropDownList("searchBy", new SelectList(@types, "Value", "Text"), new { @class = "custom-select mr-sm-2" });
+                }
+            </div>
+            <div class="col-1">
+                <button type="submit" style="height:36px;" class="btn icon-menu-background-color"><i class="fa fa-search icon-menu-background-color" aria-hidden="true"></i></button>
+            </div>
+            <div class="col-4">
+                @Html.PagedListPager(Model.contactPersons, page => Url.Action("Index", new { page, searchBy = Model.searchBy, searchString = Model.searchString, sortColumn = Model.sortColumn, sortDirection = Model.sortDirection }), new PagedListRenderOptions
+                {
+                    LiElementClasses = new string[] { "page-item" },
+                    PageClasses = new string[] { "page-link" },
+                    LinkToFirstPageFormat = "<< Første",
+                    LinkToPreviousPageFormat = "< Forrige",
+                    LinkToNextPageFormat = "Næste >",
+                    LinkToLastPageFormat = "sidste >>"
+    })
+            </div>
+        </div>
+        <input id="sortColumn" type="hidden" name="sortColumn" value="@Model.sortColumn">
+        <input id="sortDirection" type="hidden" name="sortDirection" value="@Model.sortDirection">
+    </form>
+</div>
+
+<div class="sortcontainer">
+    <div class="row">
+        <div class="col-2 columnheader">
+            Fornavn
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="FirstName" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="FirstName" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-3 columnheader">
+            Efternavn
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="LastName" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="LastName" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-2 columnheader">
+            Mobil
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Mobile" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Mobile" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-2 columnheader">
+            Mail
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Email" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Email" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-2 columnheader">
+            Firmanavn
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="CompanyName" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="CompanyName" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>        
+    </div>
+    <br />
+</div>
+
+
+@foreach (var contactPerson in Model.contactPersons)
+{
+<div class="rowcontainer">
+    <div class="row" id="@contactPerson.contactPerson.Id">
+        <div class="col-2 readDetails">@contactPerson.contactPerson.FirstName</div>
+        <div class="col-3 readDetails">@contactPerson.contactPerson.LastName</div>
+        <div class="col-2 readDetails">@contactPerson.contactPerson.CellPhone</div>
+        <div class="col-2 readDetails">@contactPerson.contactPerson.Email</div>
+        <div class="col-2 readDetails">@contactPerson.CompanyName</div>
+
+        <div class="col-1">
+            <div class="dropdown">
+                <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                <div class="dropdown-content">
+                    <a asp-controller="contactperson" asp-action="edit" asp-route-id="@contactPerson.contactPerson.Id">Rediger</a>
+                    <a asp-controller="contactperson" asp-action="Delete" asp-route-id="@contactPerson.contactPerson.Id" class="dropdown-item">Slet</a>
+                    <a href="tel:@contactPerson.contactPerson.CellPhone">Ring op</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        }
+<br />
+
+<form id="contactsDetails" asp-controller="ContactPerson" asp-action="Details" method="get">
+    <input id="Id" type="hidden" name="Id">
+</form>
+
+        @section Scripts {
+            <script>
+                $(document).ready(function () {
+                    $(".sortcolumn").each(function () {
+                        $(this).show();
+                        $(this).hover(function () {
+                            $(this).css('cursor', 'pointer');
+                        });
+                        var sortAttribute = this.getAttribute("sortcolumnname");
+                        var selectedSortColumn = $("#sortColumn").val();
+                        if (sortAttribute == selectedSortColumn) {
+                            var selectedSortDirection = $("#sortDirection").val();
+                            var sortDirection = this.getAttribute("sortdirection");
+                            if (selectedSortDirection == sortDirection) {
+                                $(this).hide();
+                            }
+                        }
+
+                    });
+
+                });
+
+                $(".readDetails").click(function () {
+                    var companyId = this.closest('.row').getAttribute("id");
+                    $("#Id").val(companyId);
+                    $("#contactsDetails").submit();
+                });
+
+                $(".sortcolumn").click(function (event) {
+
+                    var sortDirection = this.getAttribute("sortdirection");
+                    var sortColumnName = this.getAttribute("sortcolumnname");
+
+                    $("#sortColumn").val(sortColumnName);
+                    $("#sortDirection").val(sortDirection);
+                    $(this).hide();
+
+                    $("#searchForm").submit();
+                });
+
+
+
+            </script>
+        }

@@ -1,0 +1,90 @@
+﻿
+<div style="width:90%; margin:0 auto;">
+    <table id="notetable" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Dato</th>
+                <th>Emne</th>
+                <th>Kommentarer</th>
+                <th>Dokumenter</th>
+                <th>companyId</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+            <tr>
+                <th>Id</th>
+                <th>Dato</th>
+                <th>Emne</th>
+                <th>Kommentarer</th>
+                <th>Dokumenter</th>
+                <th>companyId</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<script>
+
+    var notetable;
+    var noteEditor; // use a global for the submit and return data rendering in the examples
+    var getNotesUrl = "/Note/GetNotes?searchAll=1";
+
+     var noteParentTableName = "";
+
+    window.moment = moment;
+
+    $(document).ready(function () {
+
+
+        initializenoteEditor();
+        initializenotetable();
+
+        initializenotetableFooter();
+        initializeSearchnotetableFooter();
+       
+
+        setPresubmitEventHandlerOnnoteEditor();
+
+
+        var newItem = document.createElement("div");       // Create a <div> node
+        var textnode = document.createTextNode("Notater");  // Create a text node
+        newItem.appendChild(textnode);
+        newItem.classList.add("tableheadline");
+        newItem.classList.add("col-sm-2");
+
+
+        var Mydiv = document.getElementById('notetable_wrapper');
+        var mychildren = Mydiv.getElementsByTagName('div');
+        for (var i = 0; i < mychildren.length; ++i) {
+            e = mychildren[i];
+            var myclass = e.getAttribute("class");
+            if (myclass == "row") {
+                var mychildren1 = e.getElementsByTagName('div');
+                e1 = mychildren1[0];
+                e.insertBefore(newItem, e1);
+                break;
+            }
+        }
+
+
+
+        noteEditor.on('opened', function (e, json, data) {
+            $("#DTE_Field_date").datetimepicker({
+                timepicker: false,
+                datepicker: true,
+                hours12: false,
+                format: 'd-m-yy'
+            });
+
+              $.datetimepicker.setLocale('da');
+        });
+
+
+
+
+
+    });
+
+</script> 

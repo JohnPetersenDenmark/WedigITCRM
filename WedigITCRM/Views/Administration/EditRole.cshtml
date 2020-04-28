@@ -1,0 +1,55 @@
+﻿@model EditRoleViewModel
+
+
+<div class="formcontainer">
+
+    <form asp-controller="Administration" asp-action="EditRole" method="post" class="mt-3">
+        <div class="form-group row">
+            <div class="form-group col-md-8">
+               
+                <label asp-for="@Model.role.Id" class="col-form-label">Rolleid.</label>
+                <input asp-for="@Model.role.Id" class="form-control" placeholder="Rolleid.">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                
+                <label asp-for="@Model.role.Name" class="col-form-label">Rollenavn</label>
+                <input asp-for="@Model.role.Name" class="form-control" placeholder="Rollenavn">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-outline-secondary btn-sm">Gem</button>
+                <a asp-controller="Administration" asp-action="EditUsersInRole" asp-route-roleId="@Model.role.Id" class="btn btn-outline-secondary btn-sm">Tilføj/Fjern bruger fra rolle</a>
+                <a class="btn btn-outline-secondary btn-sm" href="@Context.Request.Headers["Referer"].ToString()">Tilbage</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@if (Model.userswithTheRole != null)
+{
+    @foreach (var user in Model.userswithTheRole)
+    {
+        <div class="rowcontainer">
+            <div class="row" id="@user.Id">
+                <div class="col-5 readDetails">@user.Id</div>
+                <div class="col-6 readDetails">@user.UserName</div>
+                <div class="col-1">
+                    <div class="dropdown">
+                        <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                        <div class="dropdown-content">
+                            <a asp-controller="Administration" asp-action="EditUser" asp-route-id="@user." class="dropdown-item">Rediger</a>
+                            <a asp-controller="Administration" asp-action="DeleteUser" asp-route-id="@user.Id" class="dropdown-item">Slet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+<br />
+

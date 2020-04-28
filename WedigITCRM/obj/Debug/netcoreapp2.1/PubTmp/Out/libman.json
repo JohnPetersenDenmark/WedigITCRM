@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "twitter-bootstrap@4.3.1",
+      "destination": "wwwroot/lib/bootstrap/"
+    },
+
+    {
+      "library": "jquery@3.4.1",
+      "destination": "wwwroot/lib/jquery/"
+    },
+
+    {
+      "library": "jqueryui@1.12.1",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "library": "font-awesome@4.6.3",
+      "destination": "wwwroot/lib/font-awesome/"
+    },
+    {
+      "library": "jquery-datetimepicker@2.2.5",
+      "destination": "wwwroot/lib/jquery-datetimepicker/"
+    }
+  ]
+}
+

@@ -1,0 +1,59 @@
+﻿@model SupportTicket
+
+
+<div class="border container" style="padding:30px;">
+    <h3>Support Ticket</h3>
+    <p>Stil dit spørgsmål til nyxium supporten herunder og vi vender snarest tilbage, på din email.</p>
+</div>
+<br />
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-1">
+                <label asp-for="@Model.Navn"></label>
+            </div>
+            <div class="col-11">
+                <input asp-for="@Model.Navn" class="form-control" placeholder="Dit Navn" />
+                <span asp-validation-for="@Model.Navn" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-1">
+                <label asp-for="@Model.Email"></label>
+            </div>
+            <div class="col-11">
+                <input asp-for="@Model.Email" class="form-control" placeholder="Din emailadresse" />
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-1">
+                <label asp-for="@Model.Beskrivelse"></label>
+            </div>
+            <div class="col-11">
+                <input asp-for="@Model.Beskrivelse" class="form-control" placeholder="Hvad drejer din henvendelse sig om?" />
+                <span asp-validation-for="@Model.Beskrivelse" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-3 offset-6">
+                <button type="submit" class="btn btn-outline-secondary btn-sm">
+                    Send
+                </button>
+            </div>
+ 
+        </div>
+    </form>
+</div>
+
+</div>
+
+@section Scripts{
+
+}
+

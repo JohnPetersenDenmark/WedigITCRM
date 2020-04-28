@@ -1,0 +1,221 @@
+﻿@model CompanyEditViewModel
+
+
+<div class="formcontainer">
+    <div class="form-group row">
+        <div class="col-md-4">
+            <label for="companySuggest" class="col-form-label">Firmanavn</label>
+            <input id="companySuggest" type="text" class="form-control" placeholder="Firmanavn">
+            <span asp-validation-for="@Model.company.Name" class="text-danger"></span>
+        </div>
+    </div>
+
+
+
+
+    <form id="createCompanyForm" asp-controller="home" asp-action=@Model.CompanyEditViewFormAction method="post" class="mt-3">
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.company.CVRNumber" class="col-form-label">CVR-nummer</label>
+                <input asp-for="@Model.company.CVRNumber" id="cvrnumber" class="form-control" placeholder="CVR-nummer">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label asp-for=@Model.company.Street class="col-form-label">Gade</label>
+                <input asp-for=@Model.company.Street id="street" class="form-control" placeholder="Gade">
+            </div>
+            <div class="col-sm-4">
+                <label asp-for=@Model.company.Zip id="zip" class="col-form-label">Postnummer</label>
+                @Html.DropDownListFor(m => @Model.selectedZipId, new SelectList(@Model.getSelectableZips, "Id", "Zip", @Model.selectedZipId), "Vælg postnummer", new { @class = "form-control", id = "zipselector" })
+            </div>
+            <div class="col-sm-4">
+                <label asp-for=@Model.company.City class="col-form-label">By</label>
+                <input asp-for=@Model.company.City id="city" disabled class="form-control" placeholder="By">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label asp-for=@Model.company.PhoneNumber class="col-form-label">Telefonnummer</label>
+                <input asp-for=@Model.company.PhoneNumber id="phoneNumber" class="form-control" placeholder="Telefonnummer">
+            </div>
+            <div class="col-sm-4">
+                <label asp-for=@Model.company.HomePage class="col-form-label">Hjemmeside</label>
+                <input asp-for=@Model.company.HomePage id="homePage" class="form-control" placeholder="Hjemmeside">
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-outline-secondary btn-sm">Gem</button>
+                @if (Model.CompanyEditViewFormAction == "edit")
+                {
+                    <a class="btn btn-outline-secondary btn-sm" asp-controller="contactperson" asp-action="create" asp-route-companyId=@Model.company.Id>Opret kontaktperson</a>
+                    <a class="btn btn-outline-secondary btn-sm" asp-controller="activity" asp-action="create" asp-route-companyId=@Model.company.Id>Opret aktivitet</a>
+                    <a class="btn btn-outline-secondary btn-sm" href="@Context.Request.Headers["Referer"].ToString()">Tilbage</a>
+                    <br />
+                }
+            </div>
+        </div>
+        <input hidden asp-for=@Model.company.Id />
+        <input hidden id="companyName" asp-for="@Model.company.Name">
+    </form>
+
+    @if (Model.ContactPersons != null)
+    {
+
+        <div class="rowcontainer">
+            <div class="row">
+                <br />
+                <div class="col-10">Kontaktpersoner:</div>
+            </div>
+        </div>
+
+        @foreach (var contactPerson in Model.ContactPersons)
+        {
+            <div class="rowcontainer">
+                <div class="row" id="@contactPerson.Id">
+                    <div class="col-3 readContactPersonActivity">@contactPerson.FirstName @contactPerson.LastName</div>
+                    <div class="col-3 readContactPersonActivity">@contactPerson.CellPhone</div>
+                    <div class="col-3 readContactPersonActivity">@contactPerson.Email</div>
+                    <div class="col-1">
+                        <div class="dropdown">
+                            <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                            <div class="dropdown-content">
+                                <a asp-controller="contactperson" asp-action="edit" asp-route-id="@contactPerson.Id">Rediger</a>
+                                <a asp-controller="contactperson" asp-action="Delete" asp-route-id="@contactPerson.Id" class="dropdown-item">Slet</a>
+                                <a href="tel:@contactPerson.CellPhone">Ring op</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+
+    @if (Model.Activities != null)
+    {
+        <div class="rowcontainer">
+            <div class="row">
+                <div class="col-10">Aktivteter:</div>
+            </div>
+        </div>
+        @foreach (var activity in Model.Activities)
+        {
+            <div class="rowcontainer">
+                <div class="row" id="@activity.Id">
+                    <div class="col-3 readDetailsActivity">@activity.Date</div>
+                    <div class="col-3 readDetailsActivity">@activity.Subject</div>
+                    <div class="col-4 readDetailsActivity">@activity.Description </div>
+                    <div class="col-1">
+                        <div class="dropdown">
+                            <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                            <div class="dropdown-content">
+                                <a asp-controller="activity" asp-action="edit" asp-route-id="@activity.Id">Rediger</a>
+                                <a asp-controller="activity" asp-action="Delete" asp-route-id="@activity.Id">Slet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+</div>
+<br />
+
+<form id="ActivityForm" asp-controller="activity" asp-action="Details" method="get">
+    <input id="ActivityId" type="hidden" name="Id">
+</form>
+
+<form id="ContactPersonForm" asp-controller="ContactPerson" asp-action="Details" method="get">
+    <input id="ContactPersonId" type="hidden" name="Id">
+</form>
+
+@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+            $("#companySuggest").val($("#companyName").val());
+           
+        });
+
+        
+            $("#companySuggest").autocomplete({
+                source: '/home/searchInVirkByCompanyName',
+                select: function (event, ui) {
+                    $("#companyName").val(ui.item.label);
+                    $("#cvrnumber").val(ui.item.cvrNumber);
+                    $("#street").val(ui.item.street + " " + ui.item.houseNumber);
+
+                    $("#zipselector option:selected").val(ui.item.zipId);
+                    $("#zipselector option:selected").text(ui.item.zip);
+                    $("#city").val(ui.item.city);
+                    $("#phoneNumber").val(ui.item.phoneNumber);
+                    $("#homePage").val(ui.item.homePage);
+                },
+                minLength: 1
+            });
+        
+
+
+
+
+        $(".readDetailsActivity").click(function () {
+            var activityId = this.closest('.row').getAttribute("id");
+            $("#ActivityId").val(activityId);
+            $("#ActivityForm").submit();
+        });
+
+
+        $(".readContactPersonActivity").click(function () {
+            var activityId = this.closest('.row').getAttribute("id");
+            $("#ContactPersonId").val(activityId);
+            $("#ContactPersonForm").submit();
+        });
+
+        $("#zipselector").change(function () {
+            var selectedVal = $("#zipselector option:selected").val();
+            $.ajax({
+                type: 'POST',
+                url: '/home/getCity',
+                data: { zipCodeId: + selectedVal },
+                beforeSend: function (xhr) {
+                    // setting a timeout
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (data) {
+                    $("#city").val(data);
+                },
+                error: function (xhr) { // if error occured
+                    //alert("Error in ajax");
+                },
+                complete: function () {
+                    //alert("complete in ajax");
+                },
+                dataType: 'json'
+            });
+        });
+
+       
+
+
+
+
+
+      
+
+        $("#createCompanyForm").submit(function (event) {
+            $("#companyName").val($("#companySuggest").val());
+            //event.preventDefault();
+        });
+
+
+    </script>
+}

@@ -1,0 +1,357 @@
+﻿@model WedigITCRM.Controllers.StatisticsTurnOverViewModel
+
+<div class="formcontainer">
+
+    <div class="row">
+        <div class="col-3">
+            <form asp-controller="sales" asp-action="StatisticsTurnOver" method="post">
+                <div class="form-group form-group-sm">
+                    <label asp-for="@Model.StartDate" class="control-label col-sm-1"></label>
+                    <div class="col-xs-2">
+                        <input asp-for="@Model.StartDate" id="startdatepicker" class="form-group input-sm" />
+                        <span asp-validation-for="@Model.StartDate" class="text-danger"></span>
+                    </div>
+
+                   
+                </div>
+                <div class="form-group form-group-sm">
+                    <label asp-for="@Model.EndDate" class="control-label col-sm-1"></label>
+                    <div class="col-xs-2">
+                        <input asp-for="@Model.EndDate" id="enddatepicker" class="form-group input-sm" />
+                        <span asp-validation-for="@Model.EndDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group form-group-sm">
+                    <label asp-for="@Model.Category1" class="control-label col-sm-1"></label>
+                    <div class="col-xs-2">
+                        <select name="selectcategory1" id="selectcategory1" class="form-group select">
+                        </select>
+                        <span asp-validation-for="@Model.Category1" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group form-group-sm">
+                    <label asp-for="@Model.Category2" class="control-label col-sm-1"></label>
+                    <div class="col-xs-2">
+                        <select name="selectcategory2" id="selectcategory2" class="form-group input-sm">
+                        </select>
+                        <span asp-validation-for="@Model.Category2" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group form-group-sm">
+                    <label asp-for="@Model.Category3" class="control-label col-sm-1"></label>
+                    <div class="col-xs-2">
+                        <select name="selectcategory3" id="selectcategory3" class="form-group select">
+                        </select>
+                        <span asp-validation-for="@Model.Category3" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group form-group-sm">
+                    <label for="itemNameSuggest" class="col-form-label">Vare</label>
+                    <input id="itemNameSuggest" class="form-control" placeholder="Vare">
+                    <span asp-validation-for="@Model.StockItemName" class="validation-style"></span>
+                </div>
+
+                <div class="form-group form-group-sm">
+                    <button type="submit" class="btn btn-outline-secondary btn-sm">Udfør</button>
+                </div>
+
+                <input asp-for="@Model.Category1" id="Category1" type="hidden" />
+                <input asp-for="@Model.Category2" id="Category2" type="hidden" />
+                <input asp-for="@Model.Category3" id="Category3" type="hidden" />
+                <input asp-for="@Model.category1Id" id="Category1Id" type="hidden" />
+                <input asp-for="@Model.category2Id" id="Category2Id" type="hidden" />
+                <input asp-for="@Model.category3Id" id="Category3Id" type="hidden" />
+                <input asp-for="@Model.StockItemId" id="stockitemid" type="hidden" />
+                <input asp-for="@Model.StockItemName" id="stockitemname" type="hidden" />
+            </form>
+        </div>
+        <div class="col-6">
+            <div class="rowcontainer">
+                <div class="row">
+                    <div class="col-12">
+                        <canvas id="turnoverStatisticsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        @*@if (@Model != null)
+            {
+
+                @foreach (var stockItemTurnOverAccumulation in @Model.stockItemTurnOverAccumulations)
+                {
+                    <div class="rowcontainer">
+                        <div class="row">
+                            <div class="col-3"><b>Varenavn</b></div>
+                            <div class="col-3"><b>Varenummer</b></div>
+                            <div class="col-3"><b>Antal solgte</b></div>
+                            <div class="col-3"><b>Omsætning på varen</b></div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-3">@stockItemTurnOverAccumulation.ItemName</div>
+                            <div class="col-3">@stockItemTurnOverAccumulation.ItemNumber</div>
+                            <div class="col-3">@stockItemTurnOverAccumulation.AccumulatedQuantity</div>
+                            <div class="col-3">@stockItemTurnOverAccumulation.AccumulatedTurnOver</div>
+                        </div>
+                    </div>
+                }
+            }*@
+
+
+
+
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+          
+
+              $("#startdatepicker").datetimepicker({
+                timepicker: false,
+                datepicker: true,
+                hours12 : false,
+                format : 'd-m-y'
+              });
+
+                $("#enddatepicker").datetimepicker({
+                timepicker: false,
+                datepicker: true,
+                hours12 : false,
+                format : 'd-m-y'
+            });
+
+            $.datetimepicker.setLocale('da');
+
+         
+
+
+             $("#itemNameSuggest").val($("#stockitemname").val());
+
+            $("#itemNameSuggest").autocomplete({
+                source: '/stockitem/searchstockItemByName',
+
+
+                response: function (event, ui) {
+                    if (ui.content.length === 0) {
+                        var y = 1;
+                    }
+                    else {
+                        var x = 1;
+                    }
+                },
+                select: function (event, ui) {
+                    var x = 1;
+                    $("#stockitemid").val(ui.item.stockItemId);
+                    $("#itemNameSuggest").val(ui.item.label);
+                    $("#stockitemname").val(ui.item.label);
+
+                },
+                minLength: 1
+
+
+            });
+
+
+
+            var jsonDataSet = @Html.Raw(Json.Serialize(Model));
+
+            var itemNames = [];
+            var itemTurnovers = [];
+            var itemGrossProfits = [];
+            var itemGrossProfitsInPercentage = [];
+
+            if (jsonDataSet != null)
+            {
+                if (jsonDataSet.stockItemTurnOverAccumulations != null) {
+                    for (var i = 0; i < jsonDataSet.stockItemTurnOverAccumulations.length; i++) {
+                        itemNames.push(jsonDataSet.stockItemTurnOverAccumulations[i].itemName);
+                        itemTurnovers.push(jsonDataSet.stockItemTurnOverAccumulations[i].accumulatedTurnOver);
+                        itemGrossProfits.push(jsonDataSet.stockItemTurnOverAccumulations[i].accumulatedGrossProfit);
+                        itemGrossProfitsInPercentage.push(jsonDataSet.stockItemTurnOverAccumulations[i].accumulatedGrossProfitInPercentage);
+                    }
+                }
+            }
+
+
+            var ctx = document.getElementById('turnoverStatisticsChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                     labels: itemNames,
+                    datasets: [
+                        {
+                         label: 'Omsætning',
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: itemTurnovers
+                    },
+                        {
+                         label: 'Bruttofortjeneste',
+                        backgroundColor: 'rgb(0, 153, 0)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: itemGrossProfits
+                        },
+                         {
+                         label: 'Bruttofortjeneste i %',
+                        backgroundColor: 'rgb(255, 229, 204)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: itemGrossProfitsInPercentage
+                    }
+                    ]
+                },
+
+                // Configuration options go here
+                options: {}
+                });
+
+
+
+
+
+
+
+            if (jsonDataSet != null)
+            {
+                getCategory1s();
+                if (jsonDataSet.category1Id != null) {
+                    $('#selectcategory1').val(jsonDataSet.category1Id);
+                }
+                else {
+                     $('#selectcategory1').val("0");
+                }
+
+                getCategory2s();
+                if (jsonDataSet.category2Id != null) {
+                    $('#selectcategory2').val(jsonDataSet.category2Id);
+                }
+                else {
+                     $('#selectcategory2').val("0");
+                }
+
+                getCategory3s();
+                if (jsonDataSet.category3Id != null) {
+                    $('#selectcategory3').val(jsonDataSet.category3Id);
+                }
+                else {
+                     $('#selectcategory3').val("0");
+                }
+            }
+
+
+            $("#selectcategory1").on("change", function () {
+                $('#selectcategory2').empty();
+                $("#Category2Id").val("");
+                $('#selectcategory2').append('<option value="' + '0' + '">' + '<Vælg kategori>' + '</option>');
+
+                $('#selectcategory3').empty();
+                $("#Category3Id").val("");
+                $('#selectcategory2').append('<option value="' + '0' + '">' + '<Vælg kategori>' + '</option>');
+
+                 var Category1 = document.getElementById("selectcategory1");
+                 var Category1Id = Category1.options[Category1.selectedIndex].value;
+                $("#Category1Id").val(Category1Id);
+                 getCategory2s();
+                 getCategory3s();
+             });
+
+            $("#selectcategory2").on("change", function () {
+                $('#selectcategory3').empty();
+                $("#Category3Id").val("");
+                 var Category2 = document.getElementById("selectcategory2");
+                 var Category2Id = Category2.options[Category2.selectedIndex].value;
+                $("#Category2Id").val(Category2Id);
+                 getCategory3s();
+             });
+
+            $("#selectcategory3").on("change", function () {
+                 var Category3 = document.getElementById("selectcategory3");
+                 var Category3Id = Category3.options[Category3.selectedIndex].value;
+                $("#Category3Id").val(Category3Id);
+             });
+
+            });
+
+
+
+
+        function getCategory1s() {
+
+            $('#selectcategory1').empty();
+            $.ajax({
+                type: "GET",
+                url: "/StockItemCategories/getAllCategory1s",
+                async: false,
+                success: function (data) {
+                    $('#selectcategory1').append('<option value=0>' + 'Vælg' + '</option>');
+
+                    $.each(data, function (i, d) {
+                        $('#selectcategory1').append('<option value="' + d.id + '">' + d.name + '</option>');
+                    });
+
+                    $("#selectcategory1").prop('selectedIndex', 0);
+                }
+            });
+        }
+
+        function getCategory2s() {
+
+            if ($('#selectcategory1 option:selected').get().length == 0) {
+                return;
+            }
+
+            $('#selectcategory2').empty();
+            var Category1 = document.getElementById("selectcategory1");
+            var Category1Id = Category1.options[Category1.selectedIndex].value;
+            $.ajax({
+                type: "GET",
+                url: "/StockItemCategories/getAllCategory2ByCategory1s",
+                async: false,
+                data: { 'Category1Id': Category1Id },
+                success: function (data) {
+                    $('#selectcategory2').append('<option value=0>' + 'Vælg' + '</option>');
+                    $.each(data, function (i, d) {
+                        $('#selectcategory2').append('<option value="' + d.id + '">' + d.name + '</option>');
+                    });
+
+                    $("#selectcategory2 option:first").attr('selected', 'selected');
+
+                }
+            });
+        }
+
+        function getCategory3s() {
+            if ($('#selectcategory2 option:selected').get().length == 0) {
+                return;
+            }
+
+            $('#selectcategory3').empty();
+            var Category2 = document.getElementById("selectcategory2");
+            var Category2Id = Category2.options[Category2.selectedIndex].value;
+            $.ajax({
+                type: "GET",
+                url: "/StockItemCategories/getAllCategory3s",
+                async: false,
+                data: { 'Category2Id': Category2Id },
+                success: function (data) {
+                    $('#selectcategory3').append('<option value=0>' + 'Vælg' + '</option>');
+                    $.each(data, function (i, d) {
+                        $('#selectcategory3').append('<option value="' + d.id + '">' + d.name + '</option>');
+                    });
+                    $('#selectcategory3 option')[0].selected = true;
+
+                }
+            });
+        }
+    </script>
+}

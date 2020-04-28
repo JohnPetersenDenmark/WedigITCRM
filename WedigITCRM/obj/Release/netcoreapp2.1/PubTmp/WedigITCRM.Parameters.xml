@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="WedigITCRM20191208020047" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\obj\\Release\\netcoreapp2\.1\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="WedigITCRM.AppDbContext" description="" value="Data Source=tcp:wedigitcrmdb.database.windows.net,1433;Initial Catalog=WedigITCRM20191208020047_db;User Id=AdminCRMdb@wedigitcrmdb;Password=w3dig!T!" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\obj\\Release\\netcoreapp2\.1\\PubTmp\\EFSQLScripts\\WedigITCRM\.AppDbContext\.sql$" />
+  </parameter>
+</parameters>

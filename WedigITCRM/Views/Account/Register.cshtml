@@ -1,0 +1,50 @@
+﻿@model RegisterUserViewModel
+
+
+<h1>Opret bruger</h1>
+
+
+<div class="formcontainer">
+    <form method="post">
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <button type="submit" class="btn btn-outline-secondary btn-sm">Gem</button>
+                <a class="btn btn-outline-secondary btn-sm" href="@Context.Request.Headers["Referer"].ToString()">Tilbage</a>
+            </div>
+        </div>
+    </form>
+</div>
+<br />
+
+
+

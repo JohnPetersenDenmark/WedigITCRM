@@ -1,0 +1,160 @@
+﻿
+@model HomeIndexViewModel
+
+
+
+
+<div class="mysearchbar">
+    <br />
+    <form id="searchForm" asp-controller="home" asp-action="Index" method="get">
+
+        <div class="form-row">
+            <div class="col-2">
+                <span class="viewHeadLine">Virksomheder</span>
+            </div>
+            <div class="col-2">
+                <input asp-for=@Model.searchString type="text" class="form-control" name="searchString" placeholder="Søgetekst">
+            </div>
+            <div class="col-2">
+                @if (true)
+                {
+                    var types = new List<SelectListItem>();
+                    types.Add(new SelectListItem() { Text = "Firmanavn", Value = "Name" });
+                    types.Add(new SelectListItem() { Text = "Gade", Value = "Street" });
+                    types.Add(new SelectListItem() { Text = "By", Value = "City" });
+                    types.Add(new SelectListItem() { Text = "Postnummer", Value = "Zip" });
+
+                    @Html.DropDownList("searchBy", new SelectList(@types, "Value", "Text"), new { @class = "custom-select mr-sm-2" });
+                }
+            </div>
+            <div class="col-1">
+                <button type="submit" style="height:36px;" class="btn icon-menu-background-color"><i class="fa fa-search icon-menu-background-color" aria-hidden="true"></i></button>
+            </div>
+            <div class="col-4">
+                @Html.PagedListPager(Model.companies, page => Url.Action("Index", new { page, searchBy = Model.searchBy, searchString = Model.searchString, sortColumn = Model.sortColumn, sortDirection = Model.sortDirection }), new PagedListRenderOptions
+                {
+                    LiElementClasses = new string[] { "page-item" },
+                    PageClasses = new string[] { "page-link" },
+                    LinkToFirstPageFormat = "<< Første",
+                    LinkToPreviousPageFormat = "< Forrige",
+                    LinkToNextPageFormat = "Næste >",
+                    LinkToLastPageFormat = "sidste >>"
+    })
+            </div>
+        </div>
+        <input id="sortColumn" type="hidden" name="sortColumn" value="@Model.sortColumn">
+        <input id="sortDirection" type="hidden" name="sortDirection" value="@Model.sortDirection">
+    </form>
+</div>
+
+<div class="sortcontainer">
+    <div class="row">
+        <div class="col-3 columnheader">
+            Virksomhed
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Name" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Name" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-2 columnheader">
+            Gade
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Street" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Street" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-2 columnheader">
+            Postnr.
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Zip" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Zip" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-2 columnheader">
+            By
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="City" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="City" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-2 columnheader">
+            Telefon
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Phone" sortdirection="Ascending"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+            <span class="sortcolumn icon-menu-background-color" sortcolumnname="Phone" sortdirection="Descending"><i class="fa fa-arrow-circle-o-up sortcolumn" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-1 columnheader">
+        </div>
+    </div>
+</div>
+
+@if (Model != null)
+{
+    @foreach (var company in Model.companies)
+    {
+        <div class="rowcontainer">
+            <div class="row" id="@company.Id">
+                <div class="col-3 readDetails">@company.Name</div>
+                <div class="col-2 readDetails">@company.Street</div>
+                <div class="col-2 readDetails">@company.Zip</div>
+                <div class="col-2 readDetails">@company.City</div>
+                <div class="col-2 readDetails">@company.PhoneNumber</div>
+                <div class="col-1">
+                    <div class="dropdown">
+                        <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                        <div class="dropdown-content">
+                            <a asp-controller="home" asp-action="Edit" asp-route-id="@company.Id" class="dropdown-item">Rediger</a>
+                            <a href="@company.HomePage" class="dropdown-item" target="_blank">Besøg</a>
+                            <a asp-controller="home" asp-action="Delete" asp-route-id="@company.Id" class="dropdown-item">Slet</a>
+                            <a href="tel:@company.PhoneNumber" class="dropdown-item">Ring op</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+<br />
+
+<form id="companyDetails" asp-controller="home" asp-action="Details" method="get">
+    <input id="Id" type="hidden" name="Id">
+</form>
+
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $(".sortcolumn").each(function () {
+                $(this).show();
+                $(this).hover(function () {
+                    $(this).css('cursor', 'pointer');
+                });
+                var sortAttribute = this.getAttribute("sortcolumnname");
+                var selectedSortColumn = $("#sortColumn").val();
+                if (sortAttribute == selectedSortColumn) {
+                    var selectedSortDirection = $("#sortDirection").val();
+                    var sortDirection = this.getAttribute("sortdirection");
+                    if (selectedSortDirection == sortDirection) {
+                        $(this).hide();
+                    }
+                }
+
+            });
+
+        });
+
+        $(".readDetails").click(function () {
+            var companyId = this.closest('.row').getAttribute("id");
+            $("#Id").val(companyId);
+            $("#companyDetails").submit();
+        });
+
+        $(".sortcolumn").click(function (event) {
+
+            var sortDirection = this.getAttribute("sortdirection");
+            var sortColumnName = this.getAttribute("sortcolumnname");
+
+            $("#sortColumn").val(sortColumnName);
+            $("#sortDirection").val(sortDirection);
+            $(this).hide();
+
+            $("#searchForm").submit();
+        });
+
+
+
+    </script>
+}

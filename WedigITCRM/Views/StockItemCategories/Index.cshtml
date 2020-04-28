@@ -1,0 +1,213 @@
+﻿@model WedigITCRM.Controllers.CategoriesViewModel
+
+<br />
+<div class="border container" style="padding:30px;">
+    <div class="form-group row">
+        <div class="form-group col-md-3 tableheadline">
+            Varekategorier
+        </div>
+    </div>
+</div>
+<br />
+<div class="border container" style="padding:30px;">
+    <div class="form-group row">
+        <div class="form-group col-md-3">
+            <label>Hovedkategori</label>
+            <select name="selectcategory1" id="selectcategory1" class="form-control"></select>
+
+            <br /> <br />
+            <form asp-controller="StockItemCategories" asp-action="CreateCategory1" id="Category1Form" method="post">
+                <input asp-for="@Model.Category1" id="Category1" class="form-control" />
+                <span asp-validation-for="@Model.Category1" class="text-danger"></span>
+                <input asp-for="@Model.Category1DeleteId" id="Category1DeleteId" type="hidden" class="form-control" />
+                <button type="submit" id="Category1CreateButton" class="btn btn-outline-secondary btn-sm">Opret</button>
+                <button type="submit" id="Category1DeleteButton" class="btn btn-outline-secondary btn-sm">Slet</button>
+            </form>
+
+        </div>
+
+        <div class="form-group col-md-3">
+            <label>Underkategori 1</label>
+            <select name="selectcategory2" id="selectcategory2" class="form-control"></select>
+            <br /> <br />
+            <form asp-controller="StockItemCategories" asp-action="CreateCategory2" id="Category2Form" method="post">
+                <input asp-for="@Model.Category2" id="Category2" class="form-control" />
+                <span asp-validation-for="@Model.Category2" class="text-danger"></span>
+                <input asp-for="@Model.Category1Id" id="Category1Id" type="hidden" class="form-control" />
+                <input asp-for="@Model.Category2DeleteId" id="Category2DeleteId" type="hidden" class="form-control" />
+                <button type="submit" id="Category2CreateButton" class="btn btn-outline-secondary btn-sm">Opret</button>
+                <button type="submit" id="Category2DeleteButton" class="btn btn-outline-secondary btn-sm">Slet</button>
+            </form>
+        </div>
+
+        <div class="form-group col-md-3">
+            <label>Underkategori 2</label>
+            <select name="selectcategory3" id="selectcategory3" class="form-control"></select>
+            <br /> <br />
+            <form asp-controller="StockItemCategories" asp-action="CreateCategory3" id="Category3Form" method="post">
+                <input asp-for="@Model.Category3" id="Category3" class="form-control" />
+                <span asp-validation-for="@Model.Category3" class="text-danger"></span>
+                <input asp-for="@Model.Category2Id" id="Category2Id" type="hidden" class="form-control" />
+                <input asp-for="@Model.Category3DeleteId" id="Category3DeleteId" type="hidden" class="form-control" />
+                <button type="submit" id="Category3CreateButton" class="btn btn-outline-secondary btn-sm">Opret</button>
+                <button type="submit" id="Category3DeleteButton" class="btn btn-outline-secondary btn-sm">Slet</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            getCategory1s();
+            getCategory2s();
+            getCategory3s();
+
+            $("#Category1CreateButton").on("click", function () {
+                $('#Category1Form').attr('action', '/StockItemCategories/CreateCategory1');
+                $("#Category1DeleteId").val(0);
+            });
+
+            $("#Category2CreateButton").on("click", function () {
+                $('#Category2Form').attr('action', '/StockItemCategories/CreateCategory2');
+                $("#Category2DeleteId").val(0);
+            });
+
+            $("#Category3CreateButton").on("click", function () {
+                $('#Category3Form').attr('action', '/StockItemCategories/CreateCategory3');
+                $("#Category3DeleteId").val(0);
+            });
+
+            $("#Category1DeleteButton").on("click", function () {
+                $('#Category1Form').attr('action', '/StockItemCategories/DeleteCategory1');
+                var Category1 = document.getElementById("selectcategory1");
+                var Category1Id = Category1.options[Category1.selectedIndex].value;
+                $("#Category1DeleteId").val(Category1Id);
+
+            });
+
+            $("#Category2DeleteButton").on("click", function () {
+                $('#Category2Form').attr('action', '/StockItemCategories/DeleteCategory2');
+                var Category2 = document.getElementById("selectcategory2");
+                var Category2Id = Category2.options[Category2.selectedIndex].value;
+                $("#Category2DeleteId").val(Category2Id);
+            });
+
+            $("#Category3DeleteButton").on("click", function () {
+                $('#Category3Form').attr('action', '/StockItemCategories/DeleteCategory3');
+                var Category3 = document.getElementById("selectcategory3");
+                var Category3Id = Category3.options[Category3.selectedIndex].value;
+                $("#Category3DeleteId").val(Category3Id);
+            });
+
+
+
+            $("#Category2Form").on("submit", function () {
+                var Category1 = document.getElementById("selectcategory1");
+                var Category1Id = Category1.options[Category1.selectedIndex].value;
+                $("#Category1Id").val(Category1Id);
+
+            });
+
+            $("#Category3Form").on("submit", function () {
+                var Category2 = document.getElementById("selectcategory2");
+                var Category2Id = Category2.options[Category2.selectedIndex].value;
+                $("#Category2Id").val(Category2Id);
+
+            });
+
+            $("#selectcategory1").on("change", function () {
+                $('#selectcategory2').empty();
+                $("#Category2Id").val("");
+                $('#selectcategory3').empty();
+                $("#Category3Id").val("");
+                var Category1 = document.getElementById("selectcategory1");
+                var Category1Id = Category1.options[Category1.selectedIndex].value;
+                $("#Category1Id").val(Category1Id);
+                getCategory2s();
+                getCategory3s();
+            });
+
+            $("#selectcategory2").on("change", function () {
+                $('#selectcategory3').empty();
+                $("#Category3Id").val("");
+                var Category2 = document.getElementById("selectcategory2");
+                var Category2Id = Category2.options[Category2.selectedIndex].value;
+                $("#Category2Id").val(Category2Id);
+                getCategory3s();
+            });
+
+
+        });
+
+        function getCategory1s() {
+
+            $('#selectcategory1').empty();
+            $.ajax({
+                type: "GET",
+                url: "/StockItemCategories/getAllCategory1s",
+                async: false,
+                success: function (data) {
+                    $.each(data, function (i, d) {
+                        $('#selectcategory1').append('<option value="' + d.id + '">' + d.name + '</option>');
+                    });
+
+                    $("#selectcategory1").prop('selectedIndex', 0);
+                    $("#Category1Id").val(data[0].id);
+                }
+            });
+        }
+
+        function getCategory2s() {
+
+            if ($('#selectcategory1 option:selected').get().length == 0) {
+                return;
+            }
+
+            $('#selectcategory2').empty();
+            var Category1 = document.getElementById("selectcategory1");
+            var Category1Id = Category1.options[Category1.selectedIndex].value;
+            $.ajax({
+                type: "GET",
+                url: "/StockItemCategories/getAllCategory2ByCategory1s",
+                async: false,
+                data: { 'Category1Id': Category1Id },
+                success: function (data) {
+
+                    $.each(data, function (i, d) {
+                        $('#selectcategory2').append('<option value="' + d.id + '">' + d.name + '</option>');
+                    });
+
+                    $("#selectcategory2 option:first").attr('selected', 'selected');
+                    $("#Category2Id").val(data[0].id);
+                }
+            });
+        }
+
+        function getCategory3s() {
+            if ($('#selectcategory2 option:selected').get().length == 0) {
+                return;
+            }
+
+            $('#selectcategory3').empty();
+            var Category2 = document.getElementById("selectcategory2");
+            var Category2Id = Category2.options[Category2.selectedIndex].value;
+            $.ajax({
+                type: "GET",
+                url: "/StockItemCategories/getAllCategory3s",
+                async: false,
+                data: { 'Category2Id': Category2Id },
+                success: function (data) {
+
+                    $.each(data, function (i, d) {
+                        $('#selectcategory3').append('<option value="' + d.id + '">' + d.name + '</option>');
+                    });
+                    $('#selectcategory3 option')[0].selected = true;
+                    $("#Category3Id").val(data[0].id);
+                }
+            });
+        }
+
+    </script>
+}

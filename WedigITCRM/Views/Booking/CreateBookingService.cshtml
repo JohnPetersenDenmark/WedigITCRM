@@ -1,0 +1,81 @@
+﻿@model BookingServiceViewModel
+
+<div class="formcontainer">
+    <form method="post">
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.Name"></label>
+                <input asp-for="@Model.Name" class="form-control" />
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.Description"></label>
+                <input asp-for="@Model.Description" class="form-control" />
+                <span asp-validation-for="@Model.Description" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.ProductNumber"></label>
+                <input asp-for="@Model.ProductNumber" class="form-control" />
+                <span asp-validation-for="@Model.ProductNumber" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.SalesPrice"></label>
+                <input asp-for="@Model.SalesPrice" class="form-control" />
+                <span asp-validation-for="@Model.SalesPrice" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.IsBookable"></label>
+                <input asp-for="@Model.IsBookable" class="form-control" />
+                <span asp-validation-for="@Model.IsBookable" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.durationInMinutes"></label>
+                <input asp-for="@Model.durationInMinutes" class="form-control" />
+                <span asp-validation-for="@Model.durationInMinutes" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.GapTimeBeforeInMinutes"></label>
+                <input asp-for="@Model.GapTimeBeforeInMinutes" class="form-control" />
+                <span asp-validation-for="@Model.GapTimeBeforeInMinutes" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.GapTimeAfterInMinutes"></label>
+                <input asp-for="@Model.GapTimeAfterInMinutes" class="form-control" />
+                <span asp-validation-for="@Model.GapTimeAfterInMinutes" class="text-danger"></span>
+            </div>
+        </div>
+
+
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <button type="submit" class="btn btn-outline-secondary btn-sm">Gem</button>
+                <a asp-controller="booking" asp-action="ShowBookingServices" class="btn btn-outline-secondary btn-sm">Annuller</a>
+            </div>
+        </div>
+        
+    </form>
+</div>

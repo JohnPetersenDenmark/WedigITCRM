@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8NAXciNYEkG5sDUoqXLevQAAAAACAAAAAAAQZgAAAAEAACAAAAD3medJ4RCNudzzvRJBxYzpRELcZIWOUpH2/sC2p8OCRQAAAAAOgAAAAAIAACAAAACJtWYjwzXoRBOxR4XOGhyJuXnWef4KmHPKmjiC8p+teCAAAAC7GP8LbltgTrovlB4B5eiNvMtxaXGo6MjI6iSzSYIgTUAAAAC6JRdCZDJjTFi5MiBlzvvwgSaqpOlUW3l/0blzRc4AttpEozud7V9mjh1qnrk6ol20yS3ntHi/zU5cuv6Mznvn</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=mssql15.unoeuro.com%3bdatabase=nyxium_dk_db_nyxium%3bUser ID=nyxium_dk%3bPassword=Keiler1234%3bConnect Timeout=30%3bEncrypt=False%3bTrustServerCertificate=False%3bApplicationIntent=ReadWrite%3bMultiSubnetFailover=False</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="WedigITCRM.AppDbContext">
+      <Value>Data Source=mssql15.unoeuro.com%3bdatabase=nyxium_dk_db_nyxium%3bUser ID=nyxium_dk%3bPassword=Keiler1234%3bConnect Timeout=30%3bEncrypt=False%3bTrustServerCertificate=False%3bApplicationIntent=ReadWrite%3bMultiSubnetFailover=False</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

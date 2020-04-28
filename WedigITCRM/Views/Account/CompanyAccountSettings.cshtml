@@ -1,0 +1,359 @@
+﻿@model CompanyAccountSettingsViewModel
+
+
+<div class="formcontainer">
+    <form enctype="multipart/form-data" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        @if (Model.ExistingLogoAttachedmentIds != null)
+        {
+            List<string> ExistingAttachedmentList = Model.ExistingLogoAttachedmentIds.Split(",").ToList();
+            List<string> ExistingAttachedFilesNameAndPathList = Model.ExistingAttachedLogoFilesNameAndPath.Split(",").ToList();
+            List<string> ExistingFileNamesOnlyList = Model.ExistinglogoFileNameOnly.Split(",").ToList();
+            List<string> ExistingAttachedFilesTypeIconPathList = Model.ExistingAttachedLogoTypeIconPath.Split(",").ToList();
+            var index = 0;
+            foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+            {
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        @ExistingFileNamesOnlyList[index];
+                        <img src="@ExistingAttachedFilesTypeIconPathList[index]" height="42" width="42" />
+                    </div>
+                    <div class="col-sm-10">
+                        <a asp-controller="Account" asp-action="openLogo" asp-route-id="@ExistingAttachedmentId">Se logo</a>
+                    </div>
+                    <div class="col-sm-10">
+                        <a asp-controller="Account" asp-action="downloadLogo" asp-route-id="@ExistingAttachedmentId">Gem logo på disk</a>
+                    </div>
+                    <div class="col-sm-10">
+                        <a asp-controller="Account" asp-action="deleteLogo" asp-route-id="@ExistingAttachedmentId">Slet logo</a>
+                    </div>
+                </div>
+                index++;
+            }
+        }
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.CompanyName">Firmanavn</label>
+                <input asp-for="@Model.CompanyName" class="form-control" />
+                <span asp-validation-for="@Model.CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <div class="custom-file">
+                    <input asp-for=@Model.AttachedLogo class="form-control custom-file-input" multiple>
+                    <label class="custom-file-label">Vælg fil</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label class="form-check-label" asp-for="@Model.SubscriptionCRM">
+                    <input asp-for="@Model.SubscriptionCRM" class="form-check-input" id="SubscriptionCRM" disabled />
+                    Abonner på CRM
+                </label>
+            </div>
+            <div class="form-group col-md-4">
+                <div id="CustomerFromNyxiumToDinero">
+                    <label class="form-check-label" asp-for="@Model.synchronizeCustomerFromNyxiumToDinero">
+                        <input asp-for="@Model.synchronizeCustomerFromNyxiumToDinero" class="form-check-input" />
+                        Rettelser i dine kunder i nyxium bliver overført til dine kunder i Dinero (Med det samme.)
+                    </label>
+                    <button type="button" id="ButtonCustomerFromNyxiumToDinero" class="btn btn-primary" style="width:auto">
+                        Kopier dine kunder fra nyxium til Dinero
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+
+            <div class="form-group col-md-4">
+                <label class="form-check-label" asp-for="@Model.SubscriptionInventory">
+                    <input asp-for="@Model.SubscriptionInventory" class="form-check-input" id="SubscriptionInventory" disabled />
+                    Abonner på Lager
+                </label>
+            </div>
+            <div class="form-group col-md-4">
+                <div id="CustomerFromDineroToNyxium">
+                    <label class="form-check-label" asp-for="@Model.synchronizeCustomerFromDineroToNyxium">
+                        <input asp-for="@Model.synchronizeCustomerFromDineroToNyxium" class="form-check-input" />
+                        Rettelser i dine kunder i Dinero bliver overført til dine kunder i nyxium. ( 1. gang i timen)
+                    </label>
+                    <button type="button" id="ButtonCustomerFromDineroToNyxium" class="btn btn-primary" style="width:auto">
+                        Kopier dine kunder fra Dinero til nyxium
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label class="form-check-label" asp-for="@Model.SalesStatistic">
+                    <input asp-for="@Model.SalesStatistic" class="form-check-input" disabled />
+                    Abonner på Salgsstatistik
+                </label>
+            </div>
+            <div class="form-group col-md-4">
+                <div id="StockItemFromNyxiumToDinero">
+                    <label class="form-check-label" asp-for="@Model.synchronizeStockItemFromNyxiumToDinero">
+                        <input asp-for="@Model.synchronizeStockItemFromNyxiumToDinero" class="form-check-input" />
+                        Rettelser i dine varer i nyxium bliver overført til dine varer i Dinero. (Med det samme.)
+                    </label>
+                    <button type="submit" id="ButtonStockItemFromNyxiumToDinero" class="btn btn-primary" style="width:auto">
+                        Kopier dine varer fra nyxium til Dinero
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label class="form-check-label" asp-for="@Model.SubscriptionVendor">
+                    <input asp-for="@Model.SubscriptionVendor" class="form-check-input" disabled />
+                    Abonner på leverandør
+                </label>
+            </div>
+            <div class="form-group col-md-4">
+                <div id="StockItemFromDineroToNyxium">
+                    <label class="form-check-label" asp-for="@Model.synchronizeStockItemFromDineroToNyxium">
+                        <input asp-for="@Model.synchronizeStockItemFromDineroToNyxium" class="form-check-input" />
+                        Rettelser i dine varer i Dinero bliver overført til dine varer i nyxium. ( 1. gang i timen)
+                    </label>
+                    <button type="submit" id="ButtonStockItemFromDineroToNyxiam" class="btn btn-primary" style="width:auto">
+                        Kopier dine varer fra Dinero til nyxium
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label class="form-check-label" asp-for="@Model.Booking">
+                    <input asp-for="@Model.Booking" class="form-check-input" disabled />
+                    Abonner på booking
+                </label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label class="form-check-label" asp-for="@Model.IntegrationDinero">
+                    <input asp-for="@Model.IntegrationDinero" class="form-check-input" id="integrationwitdinero" />
+                    Abonner på integration med Dinero regnskab
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <div id="DineroAPIOrganizationKeydiv">
+                    <label asp-for="@Model.DineroAPIOrganizationKey">
+                        <input asp-for="@Model.DineroAPIOrganizationKey" class="form-control" />
+                        <span asp-validation-for="@Model.DineroAPIOrganizationKey" class="text-danger"></span>
+                        API-nøgle for integration med Dinero.
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <div id="DineroAPIOrganizationdiv">
+                    <label asp-for="@Model.DineroAPIOrganization">
+                        <input asp-for="@Model.DineroAPIOrganization" class="form-control" />
+                        <span asp-validation-for="@Model.DineroAPIOrganization" class="text-danger"></span>
+                        Dit virksomhedsnummer i Dinero
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <button type="submit" class="btn btn-primary" style="width:auto">
+                    Opdater
+                </button>
+            </div>
+        </div>
+        <input asp-for="@Model.companyAccountId" class="form-control" hidden />
+        <input asp-for=@Model.logoFileNameOnly />
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            if ($("#integrationwitdinero").prop("checked")) {
+
+                 $('#DineroAPIOrganizationKeydiv').show();
+                $('#DineroAPIOrganizationdiv').show();
+
+                if ($("#SubscriptionCRM").prop("checked")) {
+                    $('#CustomerFromNyxiumToDinero').show();
+                    $('#CustomerFromDineroToNyxium').show();
+                }
+                else {
+                    $('#CustomerFromNyxiumToDinero').hide();
+                    $('#CustomerFromDineroToNyxium').hide();
+                }
+
+                if ($("#SubscriptionInventory").prop("checked")) {
+                    $('#StockItemFromDineroToNyxium').show();
+                    $('#StockItemFromNyxiumToDinero').show();
+
+                }
+
+                else {
+                    $('#StockItemFromDineroToNyxium').hide();
+                    $('#StockItemFromNyxiumToDinero').hide();
+                }
+            }
+            else {
+                $('#DineroAPIOrganizationKeydiv').hide();
+                $('#DineroAPIOrganizationdiv').hide();
+
+                $('#CustomerFromNyxiumToDinero').hide();
+                $('#CustomerFromDineroToNyxium').hide();
+
+                $('#StockItemFromDineroToNyxium').hide();
+                $('#StockItemFromNyxiumToDinero').hide();
+            }
+
+
+            $('#integrationwitdinero').bind('change', function () {
+
+                if (this.checked) {
+
+                    $('#DineroAPIOrganizationKeydiv').show();
+                    $('#DineroAPIOrganizationdiv').show();
+
+
+
+                    if ($("#SubscriptionCRM").prop("checked")) {
+                        $('#CustomerFromNyxiumToDinero').show();
+                        $('#CustomerFromDineroToNyxium').show();
+                    }
+
+                    if ($("#SubscriptionInventory").prop("checked")) {
+                        $('#StockItemFromDineroToNyxium').show();
+                        $('#StockItemFromNyxiumToDinero').show();
+                    }
+
+                }
+
+                else {
+                    $('#DineroAPIOrganizationKeydiv').hide();
+                    $('#DineroAPIOrganizationdiv').hide();
+
+                    $('#CustomerFromNyxiumToDinero').hide();
+                    $('#CustomerFromDineroToNyxium').hide();
+
+                    $('#StockItemFromDineroToNyxium').hide();
+                    $('#StockItemFromNyxiumToDinero').hide();
+
+
+
+                }
+            });
+
+            $('#SubscriptionCRM').bind('change', function () {
+
+                if (this.checked) {
+                    if ($("#integrationwitdinero").prop("checked")) {
+                        $('#CustomerFromNyxiumToDinero').show();
+                        $('#CustomerFromDineroToNyxium').show();
+                    }
+                }
+
+                else {
+                    $('#CustomerFromNyxiumToDinero').hide();
+                    $('#CustomerFromDineroToNyxium').hide();
+                }
+            });
+
+            $('#SubscriptionInventory').bind('change', function () {
+
+                if (this.checked) {
+                    if ($("#integrationwitdinero").prop("checked")) {
+                        $('#StockItemFromDineroToNyxium').show();
+                        $('#StockItemFromNyxiumToDinero').show();
+                    }
+                }
+
+                else {
+                    $('#StockItemFromDineroToNyxium').hide();
+                    $('#StockItemFromNyxiumToDinero').hide();
+                }
+            });
+
+
+
+            $('#ButtonCustomerFromDineroToNyxium').bind('click', function () {              
+                $.ajax({
+                    type: "POST",
+                    url: "/account/CopyCustomerFromDineroToNyxium",
+                    data : "dummy=1",                  
+                    success: function (data) {
+
+
+                    }
+                });
+            });
+
+             $('#ButtonCustomerFromNyxiumToDinero').bind('click', function () {              
+                $.ajax({
+                    type: "POST",
+                    url: "/account/CopyCustomerFromNyxiumToDinero",
+                    data : "dummy=1",                  
+                    success: function (data) {
+
+
+                    }
+                });
+             });
+
+               $('#ButtonStockItemFromNyxiumToDinero').bind('click', function () {              
+                $.ajax({
+                    type: "POST",
+                    url: "/account/CopyStockItemFromNyxiumToDinero",
+                    data : "dummy=1",                  
+                    success: function (data) {
+
+
+                    }
+                });
+               });
+
+             $('#ButtonStockItemFromDineroToNyxiam').bind('click', function () {              
+                $.ajax({
+                    type: "POST",
+                    url: "/account/CopyStockItemFromDineroToNyxium",
+                    data : "dummy=1",                  
+                    success: function (data) {
+
+
+                    }
+                });
+            });
+
+
+             $('.custom-file-input').on("change", function () {
+                var fileLabel = $(this).next('.custom-file-label');
+                var files = $(this)[0].files;
+                if (files.length > 1) {
+                    var filenamesArray = [];
+                    for (var i = 0; i < files.length; i++) {
+                        filenamesArray.push(files[i].name);
+                    }
+
+                    $("#logoFileNameOnly").val(filenamesArray);
+                    fileLabel.html(files.length + ' filer valgt');
+                }
+                else if (files.length == 1) {
+                    fileLabel.html(files[0].name);
+                    $("#logoFileNameOnly").val(files[0].name);
+                }
+            });
+
+
+        });
+
+
+    </script>
+}

@@ -1,0 +1,35 @@
+﻿@model List<BookingService>
+
+<div class="formcontainer">
+    @if (Model != null)
+    {
+        @foreach (var bookingService in Model)
+        {
+            <div class="rowcontainer">
+                <div class="row">
+                    <div class="col-2">@bookingService.Name</div>
+                    <div class="col-3">@bookingService.Description</div>
+                    <div class="col-3">@bookingService.ProductNumber</div>
+                    <div class="col-2">@bookingService.SalesPrice</div>
+                    <div class="col-1">
+                        <div class="dropdown">
+                            <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                            <div class="dropdown-content">
+                                <a asp-controller="booking" asp-action="EditBookingService" asp-route-id="@bookingService.id" class="btn btn-outline-secondary btn-sm">Rediger</a>
+                                <a asp-controller="booking" asp-action="DeleteBookingService" asp-route-id="@bookingService.id" class="btn btn-outline-secondary btn-sm">Slet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+    <div class="rowcontainer">
+        <div class="row">
+            <div class="col-2">
+                <a asp-controller="booking" asp-action="CreateBookingService" class="btn btn-outline-secondary btn-sm">Opret</a>
+            </div>
+        </div>
+    </div>
+</div>

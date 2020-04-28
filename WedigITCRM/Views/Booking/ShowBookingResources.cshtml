@@ -1,0 +1,34 @@
+﻿
+@model List<BookingResource>
+
+<div class="formcontainer">
+    @if (Model != null)
+    {
+        @foreach (var bookingResource in Model)
+        {
+            <div class="rowcontainer">
+                <div class="row">
+                    <div class="col-2">@bookingResource.JobDescription</div>
+                    <div class="col-3">@bookingResource.EmailForCalendar</div>
+                    <div class="col-1">
+                        <div class="dropdown">
+                            <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                            <div class="dropdown-content">
+                                <a asp-controller="booking" asp-action="EditBookingResource" asp-route-id="@bookingResource.Id" class="btn btn-outline-secondary btn-sm">Rediger</a>
+                                <a asp-controller="booking" asp-action="DeleteBookingResource" asp-route-id="@bookingResource.Id" class="btn btn-outline-secondary btn-sm">Slet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+    <div class="rowcontainer">
+        <div class="row">
+            <div class="col-2">
+                <a asp-controller="booking" asp-action="CreateBookingResource" class="btn btn-outline-secondary btn-sm">Opret</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿@model List<NoteViewModel>
+
+<div class="formcontainer">
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <a asp-controller="note" asp-action="NoteCreate" class="btn btn-outline-secondary btn-sm">Opret notat</a>
+        </div>
+    </div>
+
+    @foreach (var note in Model)
+    {
+<form>    
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <label asp-for="@note.Date" class="col-form-label">Emne</label>
+            <input asp-for=@note.Date readonly class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <label asp-for="@note.Subject" class="col-form-label">Emne</label>
+            <input asp-for=@note.Subject readonly class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <label asp-for=@note.Comment class="col-form-label">Beskrivelse</label>
+            @Html.TextArea("Comment", note.Comment, new { @class = "form-control", @readonly = "readonly", rows = 3, columns = 40 })
+        </div>
+    </div>
+    @if (!string.IsNullOrEmpty(note.AttachedmentIds))
+    {
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <img src="~/Images/Icons-filtypes/attach-document.svg" height="42" width="42" />
+            </div>
+        </div>
+    }
+    <div class="form-group row">
+        <div class="col-sm-1">
+            <a asp-controller="note" asp-action="NoteShow" asp-route-id="@note.Id" class="btn btn-outline-secondary btn-sm">Vis</a>
+        </div>
+        <div class="col-sm-1">
+            <a asp-controller="note" asp-action="NoteEdit" asp-route-id="@note.Id" class="btn btn-outline-secondary btn-sm">Rediger</a>
+        </div>
+        <div class="col-sm-1">
+            <a asp-controller="note" asp-action="NoteDelete" asp-route-id="@note.Id" class="btn btn-outline-secondary btn-sm">Slet</a>
+        </div>
+    </div>
+
+</form>
+    }
+</div>

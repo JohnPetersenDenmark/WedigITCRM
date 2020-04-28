@@ -1,0 +1,120 @@
+﻿@model ContactPersonDetailsViewModel
+
+
+<div class="formcontainer">
+    <div class="form-group row">
+        <div class="form-group col-md-8">
+            @if (@Model.company != null)
+            {
+
+                @Html.TextArea("textAreaCompany", @Model.company.Name + "\n" + @Model.company.Street + "\n" + @Model.company.Zip + " " + @Model.company.City + "\n" + @Model.company.HomePage, new { @class = "form-control", rows = 5, columns = 40, @readonly = true });
+                <div class="dropdown">
+                    <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                    <div class="dropdown-content">
+                        <a asp-controller="home" asp-action="Details" asp-route-id="@Model.company.Id" class="dropdown-item">Vis</a>
+                        <a href="tel:@Model.company.PhoneNumber" class="dropdown-item">Ring op</a>
+                        <a href="@Model.company.HomePage" class="dropdown-item" target="_blank">Besøg</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="form-group col-md-8">
+            <input type="hidden" name="contactPersonId" asp-for="@Model.contactPerson.Id">
+            <label asp-for="@Model.contactPerson.FirstName" class="col-form-label">Fornavn</label>
+            <input asp-for="@Model.contactPerson.FirstName" disabled class="form-control" placeholder="Fornavn">
+        </div>
+        <div class="form-group col-md-4">
+            <label asp-for="@Model.contactPerson.LastName" class="col-form-label">Efternavn</label>
+            <input asp-for="@Model.contactPerson.LastName" disabled class="form-control" placeholder="Efternavn">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label asp-for=@Model.contactPerson.Title class="col-form-label">Titel</label>
+            <input asp-for=@Model.contactPerson.Title disabled class="form-control" placeholder="Titel">
+        </div>
+        <div class="col-sm-4">
+            <label asp-for=@Model.contactPerson.Department class="col-form-label">Afdeling</label>
+            <input asp-for=@Model.contactPerson.Department disabled class="form-control" placeholder="Afdeling">
+        </div>
+        <div class="col-sm-4">
+            <label asp-for=@Model.contactPerson.PhoneNumber class="col-form-label">Telefon</label>
+            <input asp-for=@Model.contactPerson.PhoneNumber disabled class="form-control" placeholder="Telefon">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label asp-for=@Model.contactPerson.CellPhone class="col-form-label">Mobil</label>
+            <input asp-for=@Model.contactPerson.CellPhone disabled class="form-control" placeholder="Mobil">
+        </div>
+        <div class="col-sm-4">
+            <label asp-for=@Model.contactPerson.Email class="col-form-label">Mail</label>
+            <input asp-for=@Model.contactPerson.Email disabled class="form-control" placeholder="Mail">
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <a class="btn btn-outline-secondary btn-sm" asp-controller="activity" asp-action="create" asp-route-contactPersonId=@Model.contactPerson.Id>Opret aktivitet</a>
+            <a class="btn btn-outline-secondary btn-sm" asp-controller="ContactPerson" asp-action="Edit" asp-route-Id=@Model.contactPerson.Id>Rediger</a>
+            <a class="btn btn-outline-secondary btn-sm" href="@Context.Request.Headers["Referer"].ToString()">Tilbage</a>
+            <br />
+        </div>
+    </div>
+
+
+    @if (Model.Activities != null)
+    {
+        <div class="rowcontainer">
+            <div class="row">
+                <div class="col-10">Aktivteter:</div>
+            </div>
+        </div>
+        @foreach (var activity in Model.Activities)
+        {
+            <div class="rowcontainer">
+                <div class="row" id="@activity.Id">
+                    <div class="col-3 readDetailsActivity">@activity.Date</div>
+                    <div class="col-3 readDetailsActivity">@activity.Subject</div>
+                    <div class="col-4 readDetailsActivity">@activity.Description </div>
+                    <div class="col-1">
+                        <div class="dropdown">
+                            <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                            <div class="dropdown-content">
+                                <a asp-controller="activity" asp-action="edit" asp-route-id="@activity.Id">Rediger</a>
+                                <a asp-controller="activity" asp-action="Delete" asp-route-id="@activity.Id">Slet</a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        }
+    }
+</div>
+
+<form id="ActivityForm" asp-controller="activity" asp-action="Details" method="get">
+    <input id="ActivityId" type="hidden" name="Id">
+</form>
+
+
+@section Scripts {
+    <script>
+
+
+        $(".readDetailsActivity").click(function () {
+            var activityId = this.closest('.row').getAttribute("id");
+            $("#ActivityId").val(activityId);
+            $("#ActivityForm").submit();
+        });
+
+
+
+    </script>
+}
+
