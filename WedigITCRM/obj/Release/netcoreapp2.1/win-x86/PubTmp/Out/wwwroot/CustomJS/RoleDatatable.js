@@ -143,7 +143,7 @@ function initializeRoleTable() {
                     editor: roleEditor,
                     formButtons: [
                         'Gem',
-                        { text: 'Annuler', action: function () { this.close(); } }
+                        { text: 'Annuller', action: function () { this.close(); } }
                     ]
                 },
                 {
@@ -151,7 +151,7 @@ function initializeRoleTable() {
                     editor: roleEditor,
                     formButtons: [
                         'Gem',
-                        { text: 'Annuler', action: function () { this.close(); } }
+                        { text: 'Annuller', action: function () { this.close(); } }
                     ]
                 },
                 {
@@ -159,7 +159,7 @@ function initializeRoleTable() {
                     editor: roleEditor,
                     formButtons: [
                         'Udfør',
-                        { text: 'Annuler', action: function () { this.close(); } }
+                        { text: 'Annuller', action: function () { this.close(); } }
                     ]
                 }
             ],

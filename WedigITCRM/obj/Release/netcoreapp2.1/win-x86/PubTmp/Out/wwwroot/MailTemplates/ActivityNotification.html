@@ -14,7 +14,9 @@
     </div>
     <span style="font-family: Arial; font-size: 10pt">
         <br />
-        Hej {username}. Du har en aktivitet d. {activitydate} kl. {activitytime}
+        Hej {username}.
+        <br />
+        Du har en aktivitet d. {activitydate} kl. {activitytime}
         <br />
         Emnet er: {activitysubject}
         <br />
@@ -22,8 +24,8 @@
         <br />
         <table>
             <tr>
-                <td><b>Kontaktperson</b></td>
-                <td><b>Firma</b></td>
+                <td><b>{typeContactPerson}</b></td>
+                <td><b>{typeCompany}</b></td>
             </tr>
             <tr>
                 <td>{contacttitle}</td>
@@ -38,18 +40,18 @@
                 <td>{companyzip}</td>
             </tr>
             <tr>
-                <td></td>
+                <td>{contactPhone}</td>
                 <td>{companycity}</td>
             </tr>
             <tr>
-                <td></td>
+                <td>{contactEmail}</td>
                 <td>{companyphone}</td>
             </tr>
             <tr>
                 <td></td>
                 <td><a href="companyhomepageurl">{companyname}</a></td>
             </tr>
-        </table>      
+        </table>
         <br />
         <br />
         <br />

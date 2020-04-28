@@ -15,9 +15,11 @@ function initializeActivityEditor() {
                     }
                 }
                 else {
+                    if (activityParentTableName.localeCompare("companytable") == 0) {
                     var selected = companytable.row({ selected: true });
                     if (selected.any()) {
                         d.companyId = selected.data().id;
+                        }
                     }
                 }
              
@@ -96,9 +98,8 @@ function initializeActivityEditor() {
                 },
                 {
                     label: "Dato",
-                    name: "date",
-                    type: "datetime",
-                    format: 'DD-MM-YYYY HH:mm',
+                    name: "date"
+                   
                 },
                 {
                     label: "Emne",
@@ -106,23 +107,12 @@ function initializeActivityEditor() {
                 },
                 {
                     label: "Beskrivelse:",
-                    name: "description",
+                    name: "description"
                 },
                 {
-                    label: "Adviser",
-                    name: "notifyOffset",
-                },              
-                {
-                    label: "Ændret",
-                    name: "lastEditedDate",
-                    type: "readonly"
-                },
-                {
-                    label: "Oprettet",
-                    name: "createdDate",
-                    type: "readonly"
-                }
-                ,
+                    label: "Adviser minutter. før",
+                    name: "notifyOffset"
+                },                             
                 {
                     label: "companyId",
                     name: "companyId",
@@ -153,7 +143,7 @@ function initializeActivityTable() {
 
             "ajax": {
                 type: "GET",
-                url: "/Customer/getActivities",
+                url: getActivitiesUrl,
                 dataType: 'json',
                 "data": function (d) {
                     if (activityParentTableName.localeCompare("contactpersontable") == 0) {
@@ -163,9 +153,11 @@ function initializeActivityTable() {
                         }
                     }
                     else {
-                        var selected = companytable.row({ selected: true });
-                        if (selected.any()) {
-                            d.companyId = selected.data().id;
+                        if (activityParentTableName.localeCompare("companytable") == 0) {
+                            var selected = companytable.row({ selected: true });
+                            if (selected.any()) {
+                                d.companyId = selected.data().id;
+                            }
                         }
                     }
                 }
@@ -209,7 +201,7 @@ function initializeActivityTable() {
                     formButtons: [
                         'Opret',
                         {
-                            text: 'Annuler',
+                            text: 'Annuller',
                             action: function () { this.close(); },
                             className: 'primary'
                         }
@@ -220,7 +212,7 @@ function initializeActivityTable() {
                     editor: activityEditor,
                     formButtons: [
                         'Gem',
-                        { text: 'Annuler', action: function () { this.close(); } }
+                        { text: 'Annuller', action: function () { this.close(); } }
                     ]
                 },
                 {
@@ -228,7 +220,7 @@ function initializeActivityTable() {
                     editor: activityEditor,
                     formButtons: [
                         'Udfør',
-                        { text: 'Annuler', action: function () { this.close(); } }
+                        { text: 'Annuller', action: function () { this.close(); } }
                     ]
                 }
             ],
@@ -239,11 +231,12 @@ function initializeActivityTable() {
                 { "data": "date" },
                 { "data": "subject" },
                 { "data": "description" },
+                { "data": "nameOfContactOrCompany" },
                 { "data": "notifyOffset" },
                 { "data": "lastEditedDate" },
                 { "data": "createdDate" },
                 { "data": "companyId" },
-                { "data": "contactPersonId" }   
+                { "data": "contactPersonId" }                                
             ],
 
             columnDefs: [
@@ -284,15 +277,22 @@ function initializeActivityTable() {
                 },
                 {
                     "targets": 7,
-                    "visible": false,
-                    "searchable": false
+                    "visible": true,
+                    "searchable": true
                 }
                 ,
                 {
                     "targets": 8,
                     "visible": false,
                     "searchable": false
+                },
+                {
+                    "targets": 9,
+                    "visible": false,
+                    "searchable": false
                 }
+
+                
             ],
 
 
@@ -372,7 +372,8 @@ function setListenOnDeSelectContactPerson()
 
 
 
-function setListenOnSelectCompany() {
+
+function setListenOnSelectCompany1() {
     var companytable = $('#companytable').DataTable();
     companytable.on('select', function () {
         SetStatusCreateButtonOnActivityTable(companytable);
@@ -399,8 +400,24 @@ function setPresubmitEventHandlerOnActivityEditor() {
                 subject.error('Emne skal angives');
             }
 
-          
+            var notifyOffset = this.field('notifyOffset');
+            if (!notifyOffset.val()) {
+                notifyOffset.error('Adviser skal angives');
+            }
 
+            var notifyOffset = this.field('notifyOffset');
+            if (isNaN(notifyOffset.val()))
+            {
+                
+                    notifyOffset.error('Adviser skal være numerisk');               
+
+            }
+            else {
+                if (notifyOffset.val() < 0) {
+                    notifyOffset.error('Adviser skal være numerisk og må ikke være negativ');
+                }
+            }
+           
             // If any error was reported, cancel the submission so it can be corrected
             if (this.inError()) {
                 return false;

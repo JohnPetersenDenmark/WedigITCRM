@@ -96,6 +96,11 @@ function initializeVendorEditor() {
                     name: "city"
                 },
                 {
+                    label: "Land",
+                    name: "countryCode",
+                    type: "select"
+                },
+                {
                     label: "Telefonnummer",
                     name: "phoneNumber"
                 },
@@ -183,7 +188,7 @@ function initializeVendorTable() {
                     editor: vendorEditor,
                     formButtons: [
                         'Gem',
-                        { text: 'Annuler', action: function () { this.close(); } }
+                        { text: 'Annuller', action: function () { this.close(); } }
                     ]
                 },
                 {
@@ -191,7 +196,7 @@ function initializeVendorTable() {
                     editor: vendorEditor,
                     formButtons: [
                         'Gem',
-                        { text: 'Annuler', action: function () { this.close(); } }
+                        { text: 'Annuller', action: function () { this.close(); } }
                     ]
                 },
                 {
@@ -199,7 +204,7 @@ function initializeVendorTable() {
                     editor: vendorEditor,
                     formButtons: [
                         'Udfør',
-                        { text: 'Annuler', action: function () { this.close(); } }
+                        { text: 'Annuller', action: function () { this.close(); } }
                     ]
                 }
             ],
@@ -213,6 +218,7 @@ function initializeVendorTable() {
                 { "data": "street" },
                 { "data": "zip" },
                 { "data": "city" },
+                { "data": "countryCode" },
                 { "data": "phoneNumber" },
                 { "data": "homePage" },
                 { "data": "lastEditedDate" },
@@ -270,6 +276,11 @@ function initializeVendorTable() {
                     "targets": 9,
                     "visible": true,
                     "searchable": true
+                },
+                {
+                    "targets": 10,
+                    "visible": true,
+                    "searchable": true
                 }
             ],
 
@@ -292,6 +303,26 @@ function initializeVendorTable() {
                 ).done(function () {
                     var i = 1;
                     vendorEditor.field('zip').update(optionsA);
+                });
+
+                $.getJSON("/Customer/getCountries", {
+                    term: "-1"
+                },
+                    function (data) {
+
+                        var option = {};
+                        for (var prop in data) {
+                            if (data.hasOwnProperty(prop)) {
+                                option.value = prop;
+                                option.label = data[prop];
+                                optionsCountries.push(option);
+                                option = {};
+                            }
+                        }
+                    }
+                ).done(function () {
+                    vendorEditor.field('countryCode').update(optionsCountries);
+
                 });
             }
         });
@@ -366,10 +397,10 @@ function setPresubmitEventHandlerOnVendorEditor() {
 }
 
 var allowInput = true;
-var intervalId = setTimeout(function () { getSuggestions(); }, 2000);
-var KeyUpValue = "";
+var vendorNameIntervalId = setTimeout(function () { getVendorNameSuggestions(); }, 2000);
+var vendorNameKeyUpValue = "";
 
-function initializeVendorTypeAheadInput() {
+function initializeVendorNameTypeAheadInput() {
 
 
 
@@ -383,12 +414,13 @@ function initializeVendorTypeAheadInput() {
     });
 
     $(document).on('keyup', '#DTE_Field_name', function () {
-        KeyUpValue = $("#DTE_Field_name").val();
-        if (KeyUpValue != KeyDownValue) {
-            var localKeyUpValue = KeyUpValue;
-            if (KeyUpValue != "") {
-                clearTimeout(intervalId);
-                intervalId = setTimeout(function () { getVendorSuggestions(); }, 500);
+        vendorNameKeyUpValue = $("#DTE_Field_name").val();
+        if (vendorNameKeyUpValue != KeyDownValue) {
+            var localvendorNameKeyUpValue = vendorNameKeyUpValue;
+            if (vendorNameKeyUpValue != "") {
+                clearTimeout(vendorNameIntervalId);
+                vendorNameIntervalId = setTimeout(function () { getVendorNameSuggestions(); }, 500);
+              
             }
         }
     });
@@ -397,12 +429,12 @@ function initializeVendorTypeAheadInput() {
 }
 
 
-function getVendorSuggestions() {
-    if (KeyUpValue == "") {
+function getVendorNameSuggestions() {
+    if (vendorNameKeyUpValue == "") {
         return;
     }
     document.getElementById("DTE_Field_name").disabled = true;
-    var myUrl = "/home/searchInVirkByCompanyName?Term=" + KeyUpValue;
+    var myUrl = "/home/searchInVirkByCompanyName?Term=" + vendorNameKeyUpValue;
 
     var jqxhr = $.get(myUrl, function (data) {
         if ($('#popUpDiv').length) {
@@ -415,6 +447,10 @@ function getVendorSuggestions() {
             $("#DTE_Field_name").parent().append(txt1);   // Append new elements
         }
 
+
+        var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
+        $('#popUpDiv').append(htmlStr);
+
         suggestData = data;
 
         jQuery.each(data, function (i, val) {
@@ -422,9 +458,19 @@ function getVendorSuggestions() {
             $('#popUpDiv').append(suggestElement);
         });
 
+
+        var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
+        $('#popUpDiv').append(htmlStr);
+
         $('.suggestion').bind("click", function () {
             var selectedSuggestId = $(this).attr('id');
-            initializePopUpNew(selectedSuggestId);
+            writeSelectedVendorToForm(selectedSuggestId);
+            $("#popUpDiv").hide();
+        });
+
+     
+
+        $('.closepopup').bind("click", function () {
             $("#popUpDiv").hide();
         });
 
@@ -452,4 +498,94 @@ function writeSelectedVendorToForm(selectedSuggestId) {
     $("#DTE_Field_city").val(suggestData[selectedSuggestId].city);
     $("#DTE_Field_phoneNumber").val(suggestData[selectedSuggestId].phoneNumber);
     $("#DTE_Field_homePage").val(suggestData[selectedSuggestId].homePage);
+}
+
+
+var vendorCVRIntervalId = setTimeout(function () { getSuggestionsCVR(); }, 2000);
+var vendorCVRKeyUpValue = "";
+
+
+function initializeTypeAheadInputVendorCVR() {
+
+
+
+    $(function () {
+        $("#DTE_Field_cvrNumber").prop("disabled", false);
+    });
+
+
+    $(document).on('keydown', '#DTE_Field_cvrNumber', function () {
+        KeyDownValue = $("#DTE_Field_cvrNumber").val();
+    });
+
+    $(document).on('keyup', '#DTE_Field_cvrNumber', function () {
+        vendorCVRKeyUpValue = $("#DTE_Field_cvrNumber").val();
+        if (vendorCVRKeyUpValue != KeyDownValue) {
+            var localvendorCVRKeyUpValue = KeyUpValue;
+            if (vendorCVRKeyUpValue != "") {
+                clearTimeout(vendorCVRIntervalId);
+                vendorCVRIntervalId = setTimeout(function () { getSuggestionsCVR(); }, 500);
+            }
+        }
+    });
+
+
+}
+
+function getSuggestionsCVR() {
+    if (vendorCVRKeyUpValue == "") {
+        return;
+    }
+    document.getElementById("DTE_Field_cvrNumber").disabled = true;
+    var myUrl = "/home/searchInVirkByCVR?Term=" + vendorCVRKeyUpValue;
+
+    var jqxhr = $.get(myUrl, function (data) {
+        if ($('#popUpDiv').length) {
+            $('#popUpDiv').html("");
+        }
+        else {
+            var txt1 = '<div id="popUpDiv"></div>';        // Create text with HTML
+
+
+            $("#DTE_Field_cvrNumber").parent().append(txt1);   // Append new elements
+        }
+
+        var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
+        $('#popUpDiv').append(htmlStr);
+
+
+        suggestData = data;
+
+        jQuery.each(data, function (i, val) {
+            var suggestElement = '<div id="' + i + '"' + ' class="suggestion">' + val.label + '</div>';
+            $('#popUpDiv').append(suggestElement);
+        });
+
+
+        var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
+        $('#popUpDiv').append(htmlStr);
+
+        $('.closepopup').bind("click", function () {
+            $("#popUpDiv").hide();
+        });
+
+        $('.suggestion').bind("click", function () {
+            var selectedSuggestId = $(this).attr('id');
+            writeSelectedVendorToForm(selectedSuggestId);
+            $("#popUpDiv").hide();
+        });
+
+        $("#popUpDiv").show();
+        $("#DTE_Field_cvrNumber").prop("disabled", false);
+        document.getElementById("DTE_Field_cvrNumber").focus();
+
+    })
+
+        .fail(function () {
+            $("#DTE_Field_cvrNumber").prop("disabled", false);
+            if ($('#popUpDiv').length) {
+                $('#popUpDiv').html("");
+                $("#popUpDiv").hide();
+            }
+        });
 }

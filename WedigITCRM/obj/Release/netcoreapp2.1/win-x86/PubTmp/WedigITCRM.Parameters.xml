@@ -3,7 +3,7 @@
   <parameter name="IIS Web Application Name" description="" value="nyxium.dk" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\obj\\Release\\netcoreapp2\.1\\win-x86\\PubTmp\\Out\\$" />
   </parameter>
-  <parameter name="WedigITCRM.AppDbContext" description="" value="" tags="dbfullsql">
+  <parameter name="WedigITCRM.AppDbContext" description="" value="Data Source=mssql15.unoeuro.com;database=nyxium_dk_db_nyxium;User ID=nyxium_dk;Password=Keiler1234;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="dbfullsql">
     <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\obj\\Release\\netcoreapp2\.1\\win-x86\\PubTmp\\EFSQLScripts\\WedigITCRM\.AppDbContext\.sql$" />
   </parameter>
 </parameters>

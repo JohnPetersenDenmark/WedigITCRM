@@ -1,7 +1,38 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+div.homepageHeading {
+    color: #37474F !important;
+    font-weight: 700;
+}
+
+.form-group a {
+    color: #6C63FF;
+}
+
+.btn-outline-secondary {
+    background-color: #1BDDAC !important;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 30px;
+    min-height: 30px;
+}
+
+.btn-primary {
+    background-color: #1BDDAC;
+    border: 0px;
+}
+
+    .btn-primary:hover {
+        background-color: #1BDDAC;
+    }
+
 li.nav-item.username {
     font-size: 1rem;
     color: #FFFFFF;
-    margin-right : 20px;
+    margin-right: 20px;
 }
 
     li.nav-item.username span {
@@ -12,54 +43,136 @@ li.nav-item.username {
 li.nav-item.companyname {
     font-size: 1rem;
     color: #FFFFFF;
-    margin-right: 5px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
-li.nav-item.companyname span {
+    li.nav-item.companyname span {
         font-size: 1rem;
-        margin-right: 20px;
+        margin-right: 5px;
     }
 
 .side-navbar {
-    background-color: #0C78DA;
+    background-image: linear-gradient(to right, #311B92, #673AB7)
 }
 
 nav.navbar {
-    background: #0C78DA;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 5px rgba(0,0,0,0.1);
 }
 
+    nav.navbar a, nav.navbar i, nav.navbar span {
+        color: #37474F !important;
+    }
+
 .side-navbar .sidenav-header {
-    background: #0C78DA;
+    background-image: linear-gradient(to right, #311B92, #673AB7)
+}
+
+    .side-navbar .sidenav-header img {
+        width: 100%;
+        height: auto;
+        padding: 5px 10px 10px 10px;
+    }
+
+.icon-bars {
+    font-weight: 700;
+}
+
+.imgicon {
+    max-height: 14px !important;
+    margin-top: -5px;
+}
+
+.dataTables_wrapper {
+    margin-left: 24px;
+    margin-top: 24px;
+}
+
+    .dataTables_wrapper .row {
+        align-items: center;
+    }
+
+.side-navbar.shrink {
+    width: 120px !important;
+}
+
+.page.active {
+    width: calc(100% - 120px)
+}
+
+.navbar-header .navbar-brand {
+    color: #37474F;
+}
+
+.sorting {
+    color: #37474F !important;
+}
+
+.dt-buttons button {
+    background-color: #33475B !important;
+}
+
+.sorting_asc, .sorting_desc {
+    color: #1BDDAC !important;
+}
+
+
+.page-item.active .page-link {
+    background-color: #1BDDAC !important;
+    border: 0px !important;
+}
+
+.pagination .active {
+    background-color: #1BDDAC;
+}
+
+.page-link {
+    margin-left: 0px;
+}
+
+.side-navbar li a:focus, .side-navbar li a:hover, .side-navbar li a[aria-expanded="true"], .side-navbar li ul, .side-navbar li ul {
+    background-image: linear-gradient(to right, #311B92, #673AB7) !important;
+}
+
+.nav-item a span {
+    color: #37474F;
 }
 
 nav.navbar a.menu-btn {
-    background: #0C78DA;
+    background: #f9f9f9;
+    color: #37474F
 }
 
+    nav.navbar a.menu-btn:hover {
+        background-color: #f9f9f9;
+    }
+
 .side-navbar li ul.collapse a:hover {
-    background: #f4f7fa;
+    background: #2b90d9;
 }
 
 .side-navbar li ul {
     background: #0C78DA;
 }
 
+
+
+
 footer.main-footer {
-    background: #0C78DA;
+    background: #33475B;
 }
 
-    footer.main-footer p {   
+    footer.main-footer p {
         color: #FFFFFF;
     }
 
 nav.navbar a {
     font-size: 1rem;
- 
 }
 
 .formcontainer {
-
-    margin : 50;
+    margin: 50;
 }
 
 
@@ -68,64 +181,12 @@ nav.navbar a {
 }
 
 
-.ui-autocomplete {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    float: left;
-    display: none;
-    min-width: 160px;
-    padding: 4px 0;
-    margin: 0 0 10px 25px;
-    list-style: none;
-    background-color: #ffffff;
-    border-color: #ccc;
-    border-color: rgba(0, 0, 0, 0.2);
-    border-style: solid;
-    border-width: 1px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-    *border-right-width: 2px;
-    *border-bottom-width: 2px;
-}
-
-.ui-menu-item > a.ui-corner-all {
-    display: block;
-    padding: 3px 15px;
-    clear: both;
-    font-weight: normal;
-    line-height: 18px;
-    color: #555555;
-    white-space: nowrap;
-    text-decoration: none;
-}
-
-.ui-state-hover, .ui-state-active {
-    color: #ffffff;
-    text-decoration: none;
-    background-color: #0088cc;
-    border-radius: 0px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    background-image: none;
-}
-
-
 
 div.dataTables_wrapper div.dataTables_paginate ul.pagination {
-    font-size : 11px;
-
+    font-size: 11px;
 }
 
-div.dataTables_wrapper div.dataTables_info  {
+div.dataTables_wrapper div.dataTables_info {
     font-size: 13px;
 }
 
@@ -142,14 +203,13 @@ div.dataTables_wrapper div.dataTables_info  {
 
 div.DTE_Form_Buttons button.btn {
     background: lightblue;
-    
 }
 
 
 
 
 table.table tbody tr {
-    font-weight : 800;
+    font-weight: 800;
 }
 
 table.table th {
@@ -157,15 +217,36 @@ table.table th {
     color: #007bff;
 }
 
+.table.table tbody tr {
+    font-weight: 400 !important;
+}
 
+div.dataTables_wrapper div.dataTables_length label {
+    margin-bottom: 0px !important;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0px !important;
+}
 
 table .dataTable tfoot tr th input {
     width: 100%;
 }
 
+div.dataTables_wrapper div.dataTables_paginate {
+    padding-top: 0px !important;
+}
+
+table.dataTable tbody > tr.selected, table.dataTable tbody > tr > .selected {
+    background-color: #37474F;
+}
+
+.side-navbar li ul.collapse a {
+    border-left: 0px;
+}
+
 div.DTE_Field_InputControl .form-control {
     font-size: 15px;
-
 }
 
 div.DTE_Field_InputControl input.form-control[type=text]:focus {
@@ -173,27 +254,223 @@ div.DTE_Field_InputControl input.form-control[type=text]:focus {
 }
 
 #popUpDiv {
-    z-index: 100;   
+    z-index: 100;
     border-radius: 10px;
     display: none;
     top: 200px;
     left: 10px;
     width: 100%;
     height: 400px;
-   
     overflow-y: scroll;
     background-color: lightblue;
 }
 
 
-div.DTE_Body div.DTE_Body_Content div.DTE_Field {
-    width: 50%;
-    padding: 5px 20px;
-    box-sizing: border-box;
+div .mailsentmessage {
+    color: blue;
 }
 
-div.DTE_Body div.DTE_Form_Content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+div.homepageHeading {
+    font-size: 20px;
+    color: blue;
 }
+
+
+
+
+
+
+
+.rowcontainer .row {
+    line-height: 20px;
+    font-size: 15px;
+    font-weight: 200;
+    align-items: center;
+}
+
+i.fa-phone {
+    vertical-align: middle;
+    line-height: 30px;
+    font-weight: 100;
+}
+
+
+.rowcontainer .row:hover {
+    background-color: #c7f2ff;
+}
+
+.rowcontainer {
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    border-top: 1px solid #dedede;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+/* FONT */
+
+/* latin-ext */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+.cover_content-nogrid {
+    text-align: center;
+}
+
+    .cover_content-nogrid p {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .cover_content-nogrid h1 {
+        max-width: 700px;
+        margin: 0 auto 30px auto;
+    }
+
+.cover_content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 75px;
+}
+
+    .cover_content p {
+        color: white;
+    }
+
+    .cover_content h1 {
+        color: white;
+        margin-bottom: 30px;
+    }
+
+.subheading {
+    font-size: 2rem;
+    text-align: left;
+}
+
+.price {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;   
+    max-width: 1300px;
+    margin: 0 auto 0 auto;
+}
+
+.price .price-box {
+        background-color: white;
+        padding: 50px;
+         width: 500px;
+        border-radius: 25px;
+        -webkit-box-shadow: 0 3px 5px 0px rgba(255, 255, 255, 0.055), 0 3px 5px 0 rgba(14, 30, 37, 0.178);
+        box-shadow: 0 3px 5px 0px rgba(255, 255, 255, 0.055), 0 3px 5px 0 rgba(14, 30, 37, 0.178);
+       text-align :left;
+     
+        margin-bottom: 100px;
+    }
+
+.price .price-box .type {
+            color: #1BDDAC;
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 1em;
+        }
+
+.price .price-box .pprice {
+            color: #33475B;
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 1em;
+            -ms-grid-columns: 1fr;
+            grid-template-columns: 1fr;
+        }
+
+.price .price-box .description {
+            color: #C4C4C4;
+            margin-bottom: 1em;
+        }
+
+.price .price-box .features {
+            color: #33475B;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-bottom: 1em;
+        }
+
+.price .price-box .features img {
+                margin-right: 10px;
+            }
+
+.price .price-box .blue {
+            color: #00B0FF;
+        }
+
+.price .price-box .blue-bg {
+            background-color: #00B0FF;
+        }
+
+.price .price-box .blue-bg:hover {
+                background-color: #0678ad;
+            }
+
+.price .price-box .purple {
+            color: #B216E9;
+        }
+
+.price .price-box .purple-bg {
+            background-color: #B216E9;
+        }
+
+.price .price-box .purple-bg:hover {
+                background-color: #9213c0;
+            }
+
+.fc button {
+    /* force height to include the border and padding */
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /* dimensions */
+    margin: 0;
+   
+    height: 2em;
+    padding: 0 .6em;
+    /* text & cursor */
+    font-size: 0.7em; /* normalize */
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.tableheadline {
+    color: green;
+    font-size: 2.0em; /* normalize */
+}
+
+
+
+
+
+

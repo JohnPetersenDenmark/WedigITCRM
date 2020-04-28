@@ -92,6 +92,10 @@ function initializeContactPersonEditor() {
                     name: "lastName",
                 },
                 {
+                    label: "Mobil",
+                    name: "cellPhone",
+                },
+                {
                     label: "Telefon",
                     name: "phoneNumber",
                 },
@@ -129,7 +133,7 @@ function initializeContactPersonTable() {
             // "processing": true,
 
             // dom: "Brtip",
-            dom: "<'row'<'col-sm-3'B><'col-sm-3'l><'col-sm-3'i><'col-sm-3'p>>" + "<'row'<'col-sm-12't>>",
+            dom: "<'row'<'col-sm-2'B><'col-sm-2'l><'col-sm-2'i><'col-sm-3'p>>" + "<'row'<'col-sm-12't>>",
             paging: true,
             sort: true,
              searching: true,
@@ -190,7 +194,7 @@ function initializeContactPersonTable() {
                     formButtons: [
                         'Gem',
                         {
-                            text: 'Annuler',
+                            text: 'Annuller',
                             action: function () { this.close(); },
                              className: 'primary'
                         }
@@ -201,7 +205,7 @@ function initializeContactPersonTable() {
                     editor: contactPersonEditor,
                     formButtons: [
                         'Gem',
-                        { text: 'Annuler', action: function () { this.close(); } }
+                        { text: 'Annuller', action: function () { this.close(); } }
                     ]
                 },
                 {
@@ -209,7 +213,7 @@ function initializeContactPersonTable() {
                     editor: contactPersonEditor,
                     formButtons: [
                         'Udfør',
-                        { text: 'Annuler', action: function () { this.close(); } }
+                        { text: 'Annuller', action: function () { this.close(); } }
                     ]
                 }
             ],
@@ -220,6 +224,7 @@ function initializeContactPersonTable() {
                 { "data": "title" },
                 { "data": "firstName" },
                 { "data": "lastName" },
+                { "data": "cellPhone" },
                 { "data": "phoneNumber" },
                 { "data": "department" },
                 { "data": "email" },
@@ -276,6 +281,11 @@ function initializeContactPersonTable() {
                 },
                 {
                     "targets": 9,
+                    "visible": true,
+                    "searchable": true
+                },
+                {
+                    "targets": 10,
                     "visible": true,
                     "searchable": true
                 }

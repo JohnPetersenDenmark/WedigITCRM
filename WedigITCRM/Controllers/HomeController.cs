@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using WedigITCRM.VirkAPI;
 
 namespace WedigITCRM.Controllers
@@ -16,29 +17,32 @@ namespace WedigITCRM.Controllers
         private SignInManager<IdentityUser> _signInManager;
         private UserManager<IdentityUser> _userManager;
         private IPostalCodeRepository _postalCodeRepository;
+        private ILogger<HomeController> _logger;
 
-
-        public HomeController(IPostalCodeRepository postalCodeRepository, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        public HomeController(ILogger<HomeController> logger, IPostalCodeRepository postalCodeRepository, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
         {
 
             _signInManager = signInManager;
             _userManager = userManager;
             _postalCodeRepository = postalCodeRepository;
-
+            _logger = logger;
         }
 
 
         [AllowAnonymous]
         public IActionResult Index(CompanyAccount companyAccount)
         {
+            _logger.LogError("Entering index action in home controller");
+
             if (!_signInManager.IsSignedIn(User))
             {
-
+                _logger.LogError("index action in home controller redirecting to frontpage controller index action");
                 return RedirectToAction("index", "FrontPage");
             }
 
             if (companyAccount.SubscriptionCRM)
             {
+                _logger.LogError("index action in home controller redirecting to Customer controller AllCustomers action");
                 return RedirectToAction("AllCustomers", "Customer");
             }
 
