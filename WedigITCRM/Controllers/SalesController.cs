@@ -42,7 +42,7 @@ namespace WedigITCRM.Controllers
         {
 
 
-            throw new Exception("My error throwned");
+           
 
 
             DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;

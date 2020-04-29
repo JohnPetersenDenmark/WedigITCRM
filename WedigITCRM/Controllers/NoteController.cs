@@ -466,8 +466,7 @@ namespace WedigITCRM.Controllers
                 Attachment attachment = _attachmentRepository.GetAttachment(Int32.Parse(Id));
                 if (attachment != null)
                 {                                        
-                    try
-                    {                       
+                                     
                         if (! string.IsNullOrEmpty(attachment.OriginalFileName))
                         {
                             string content = null;
@@ -517,14 +516,7 @@ namespace WedigITCRM.Controllers
                             }                           
                             searchResultViewModel.result = content;
                             return View(searchResultViewModel);
-                        }
-                    
-                    }
-                    catch (Exception e)
-                    {
-                        searchResultViewModel.result = e.Message;
-                        return View(searchResultViewModel);
-                    }
+                        }                                       
                 }
             }
 

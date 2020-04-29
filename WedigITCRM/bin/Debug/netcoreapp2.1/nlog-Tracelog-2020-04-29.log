@@ -4176,3 +4176,195 @@ WHERE [r].[NormalizedName] = @__normalizedName_0
 SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
 FROM [AspNetUsers] AS [u]
 WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-29 23:33:19.9874|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-29 23:33:22.2980|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-29 23:33:22.6123|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\John\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-29 23:33:23.3113|ERROR|WedigITCRM.Startup|start of Configure method
+2020-04-29 23:33:23.6552|ERROR|WedigITCRM.Startup|end of Configure method
+2020-04-29 23:33:24.8871|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-29 23:33:24.8604|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-29 23:33:24.8871|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-29 23:33:24.8957|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-29 23:33:28.1243|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (69ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyName], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-04-29 23:33:28.1299|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (82ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-29 23:33:28.1299|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (81ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyName], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-04-29 23:33:28.1299|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/  
+2020-04-29 23:33:28.3549|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:44395/  0
+2020-04-29 23:33:28.4690|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 113.1914ms 200 
+2020-04-29 23:33:28.5107|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-29 23:33:28.7458|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (245ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-29 23:33:28.7458|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (184ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2020-04-29 23:33:28.8194|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-29 23:33:28.8547|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-29 23:33:28.9062|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2020-04-29 23:33:28.9875|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2020-04-29 23:33:29.0063|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-29 23:33:29.0394|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2020-04-29 23:33:29.5159|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.HomeController (WedigITCRM).
+2020-04-29 23:33:29.6032|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-04-29 23:33:29.6379|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[companyAccountId], [e].[AmountToPayForLicense], [e].[Booking], [e].[CompanyName], [e].[Companyidentifier], [e].[ContactsToDineroLastSynchronizationDate], [e].[ContactsToNyxiumLastSynchronizationDate], [e].[DineroAPIOrganization], [e].[DineroAPIOrganizationKey], [e].[IntegrationDinero], [e].[LogoAttachmentIds], [e].[NyxiumLicenseTypeId], [e].[NyxiumLicenseTypeName], [e].[SalesStatistic], [e].[StockItemsToDineroLastSynchronizationDate], [e].[StockItemsToNyxiumSynchronizationDate], [e].[SubscriptionCRM], [e].[SubscriptionInventory], [e].[SubscriptionProcurement], [e].[SubscriptionVendor], [e].[VendorsItemsToDineroLastSynchronizationDate], [e].[activationDate], [e].[activationKey], [e].[registrationDate], [e].[synchronizeCustomerFromDineroToNyxium], [e].[synchronizeCustomerFromNyxiumToDinero], [e].[synchronizeStockItemFromDineroToNyxium], [e].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [e]
+WHERE [e].[companyAccountId] = @__get_Item_0
+2020-04-29 23:33:29.6658|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.HomeController.Index (WedigITCRM) - Validation state: Valid
+2020-04-29 23:33:29.6835|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-29 23:33:29.7216|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-04-29 23:33:29.7598|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.HomeController.Index (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 62.3814ms.
+2020-04-29 23:33:29.7925|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /Customer/AllCustomers.
+2020-04-29 23:33:29.8051|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.HomeController.Index (WedigITCRM) in 278.1932ms
+2020-04-29 23:33:29.8397|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1705.2126ms 302 
+2020-04-29 23:33:29.8497|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Customer/AllCustomers  
+2020-04-29 23:33:29.8497|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "AllCustomers", controller = "Customer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AllCustomers() on controller WedigITCRM.Controllers.CustomerController (WedigITCRM).
+2020-04-29 23:33:29.8840|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful.
+2020-04-29 23:33:29.8966|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-04-29 23:33:29.8966|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[companyAccountId], [e].[AmountToPayForLicense], [e].[Booking], [e].[CompanyName], [e].[Companyidentifier], [e].[ContactsToDineroLastSynchronizationDate], [e].[ContactsToNyxiumLastSynchronizationDate], [e].[DineroAPIOrganization], [e].[DineroAPIOrganizationKey], [e].[IntegrationDinero], [e].[LogoAttachmentIds], [e].[NyxiumLicenseTypeId], [e].[NyxiumLicenseTypeName], [e].[SalesStatistic], [e].[StockItemsToDineroLastSynchronizationDate], [e].[StockItemsToNyxiumSynchronizationDate], [e].[SubscriptionCRM], [e].[SubscriptionInventory], [e].[SubscriptionProcurement], [e].[SubscriptionVendor], [e].[VendorsItemsToDineroLastSynchronizationDate], [e].[activationDate], [e].[activationKey], [e].[registrationDate], [e].[synchronizeCustomerFromDineroToNyxium], [e].[synchronizeCustomerFromNyxiumToDinero], [e].[synchronizeStockItemFromDineroToNyxium], [e].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [e]
+WHERE [e].[companyAccountId] = @__get_Item_0
+2020-04-29 23:33:29.9110|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.CustomerController.AllCustomers (WedigITCRM) - Validation state: Valid
+2020-04-29 23:33:29.9110|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.CustomerController.AllCustomers (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.9386ms.
+2020-04-29 23:33:29.9536|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view AllCustomers.
+2020-04-29 23:33:30.0879|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (34ms) [Parameters=[@p27='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTime2), @p14='?' (DbType = DateTime2), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Guid), @p22='?' (DbType = DateTime2), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyName] = @p2, [Companyidentifier] = @p3, [ContactsToDineroLastSynchronizationDate] = @p4, [ContactsToNyxiumLastSynchronizationDate] = @p5, [DineroAPIOrganization] = @p6, [DineroAPIOrganizationKey] = @p7, [IntegrationDinero] = @p8, [LogoAttachmentIds] = @p9, [NyxiumLicenseTypeId] = @p10, [NyxiumLicenseTypeName] = @p11, [SalesStatistic] = @p12, [StockItemsToDineroLastSynchronizationDate] = @p13, [StockItemsToNyxiumSynchronizationDate] = @p14, [SubscriptionCRM] = @p15, [SubscriptionInventory] = @p16, [SubscriptionProcurement] = @p17, [SubscriptionVendor] = @p18, [VendorsItemsToDineroLastSynchronizationDate] = @p19, [activationDate] = @p20, [activationKey] = @p21, [registrationDate] = @p22, [synchronizeCustomerFromDineroToNyxium] = @p23, [synchronizeCustomerFromNyxiumToDinero] = @p24, [synchronizeStockItemFromDineroToNyxium] = @p25, [synchronizeStockItemFromNyxiumToDinero] = @p26
+WHERE [companyAccountId] = @p27;
+SELECT @@ROWCOUNT;
+2020-04-29 23:33:30.0879|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (43ms) [Parameters=[@p27='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTime2), @p14='?' (DbType = DateTime2), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Guid), @p22='?' (DbType = DateTime2), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyName] = @p2, [Companyidentifier] = @p3, [ContactsToDineroLastSynchronizationDate] = @p4, [ContactsToNyxiumLastSynchronizationDate] = @p5, [DineroAPIOrganization] = @p6, [DineroAPIOrganizationKey] = @p7, [IntegrationDinero] = @p8, [LogoAttachmentIds] = @p9, [NyxiumLicenseTypeId] = @p10, [NyxiumLicenseTypeName] = @p11, [SalesStatistic] = @p12, [StockItemsToDineroLastSynchronizationDate] = @p13, [StockItemsToNyxiumSynchronizationDate] = @p14, [SubscriptionCRM] = @p15, [SubscriptionInventory] = @p16, [SubscriptionProcurement] = @p17, [SubscriptionVendor] = @p18, [VendorsItemsToDineroLastSynchronizationDate] = @p19, [activationDate] = @p20, [activationKey] = @p21, [registrationDate] = @p22, [synchronizeCustomerFromDineroToNyxium] = @p23, [synchronizeCustomerFromNyxiumToDinero] = @p24, [synchronizeStockItemFromDineroToNyxium] = @p25, [synchronizeStockItemFromNyxiumToDinero] = @p26
+WHERE [companyAccountId] = @p27;
+SELECT @@ROWCOUNT;
+2020-04-29 23:33:30.1092|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@p27='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTime2), @p14='?' (DbType = DateTime2), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Guid), @p22='?' (DbType = DateTime2), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyName] = @p2, [Companyidentifier] = @p3, [ContactsToDineroLastSynchronizationDate] = @p4, [ContactsToNyxiumLastSynchronizationDate] = @p5, [DineroAPIOrganization] = @p6, [DineroAPIOrganizationKey] = @p7, [IntegrationDinero] = @p8, [LogoAttachmentIds] = @p9, [NyxiumLicenseTypeId] = @p10, [NyxiumLicenseTypeName] = @p11, [SalesStatistic] = @p12, [StockItemsToDineroLastSynchronizationDate] = @p13, [StockItemsToNyxiumSynchronizationDate] = @p14, [SubscriptionCRM] = @p15, [SubscriptionInventory] = @p16, [SubscriptionProcurement] = @p17, [SubscriptionVendor] = @p18, [VendorsItemsToDineroLastSynchronizationDate] = @p19, [activationDate] = @p20, [activationKey] = @p21, [registrationDate] = @p22, [synchronizeCustomerFromDineroToNyxium] = @p23, [synchronizeCustomerFromNyxiumToDinero] = @p24, [synchronizeStockItemFromDineroToNyxium] = @p25, [synchronizeStockItemFromNyxiumToDinero] = @p26
+WHERE [companyAccountId] = @p27;
+SELECT @@ROWCOUNT;
+2020-04-29 23:33:30.1318|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-04-29 23:33:30.3998|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view AllCustomers executed in 448.3977ms.
+2020-04-29 23:33:30.4245|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.CustomerController.AllCustomers (WedigITCRM) in 539.4671ms
+2020-04-29 23:33:30.5439|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 589.2455ms 200 text/html; charset=utf-8
+2020-04-29 23:33:31.3664|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Customer/getCompanies?_=1588196010715  
+2020-04-29 23:33:31.3794|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "getCompanies", controller = "Customer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult getCompanies(System.String, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.CustomerController (WedigITCRM).
+2020-04-29 23:33:31.3794|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful.
+2020-04-29 23:33:31.3944|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-04-29 23:33:31.3944|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[companyAccountId], [e].[AmountToPayForLicense], [e].[Booking], [e].[CompanyName], [e].[Companyidentifier], [e].[ContactsToDineroLastSynchronizationDate], [e].[ContactsToNyxiumLastSynchronizationDate], [e].[DineroAPIOrganization], [e].[DineroAPIOrganizationKey], [e].[IntegrationDinero], [e].[LogoAttachmentIds], [e].[NyxiumLicenseTypeId], [e].[NyxiumLicenseTypeName], [e].[SalesStatistic], [e].[StockItemsToDineroLastSynchronizationDate], [e].[StockItemsToNyxiumSynchronizationDate], [e].[SubscriptionCRM], [e].[SubscriptionInventory], [e].[SubscriptionProcurement], [e].[SubscriptionVendor], [e].[VendorsItemsToDineroLastSynchronizationDate], [e].[activationDate], [e].[activationKey], [e].[registrationDate], [e].[synchronizeCustomerFromDineroToNyxium], [e].[synchronizeCustomerFromNyxiumToDinero], [e].[synchronizeStockItemFromDineroToNyxium], [e].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [e]
+WHERE [e].[companyAccountId] = @__get_Item_0
+2020-04-29 23:33:31.3944|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.CustomerController.getCompanies (WedigITCRM) - Validation state: Valid
+2020-04-29 23:33:31.4335|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[DineroGuiD], [c].[Email], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-04-29 23:33:31.4707|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.CustomerController.getCompanies (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.JsonResult in 55.9199ms.
+2020-04-29 23:33:31.4838|INFO|Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor|Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[WedigITCRM.Controllers.reducedCustomer, WedigITCRM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-29 23:33:31.5876|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.CustomerController.getCompanies (WedigITCRM) in 204.0631ms
+2020-04-29 23:33:31.5876|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 227.1406ms 200 application/json; charset=utf-8
+2020-04-29 23:33:31.6768|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Customer/getZipCodes?term=-1  
+2020-04-29 23:33:31.6768|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Customer/getCountries?term=-1  
+2020-04-29 23:33:31.6975|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "getZipCodes", controller = "Customer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult getZipCodes() on controller WedigITCRM.Controllers.CustomerController (WedigITCRM).
+2020-04-29 23:33:31.6975|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "getCountries", controller = "Customer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult getCountries() on controller WedigITCRM.Controllers.CustomerController (WedigITCRM).
+2020-04-29 23:33:31.7106|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful.
+2020-04-29 23:33:31.7106|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful.
+2020-04-29 23:33:31.7106|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-04-29 23:33:31.7106|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-29 23:33:31.7255|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-04-29 23:33:31.7255|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[companyAccountId], [e].[AmountToPayForLicense], [e].[Booking], [e].[CompanyName], [e].[Companyidentifier], [e].[ContactsToDineroLastSynchronizationDate], [e].[ContactsToNyxiumLastSynchronizationDate], [e].[DineroAPIOrganization], [e].[DineroAPIOrganizationKey], [e].[IntegrationDinero], [e].[LogoAttachmentIds], [e].[NyxiumLicenseTypeId], [e].[NyxiumLicenseTypeName], [e].[SalesStatistic], [e].[StockItemsToDineroLastSynchronizationDate], [e].[StockItemsToNyxiumSynchronizationDate], [e].[SubscriptionCRM], [e].[SubscriptionInventory], [e].[SubscriptionProcurement], [e].[SubscriptionVendor], [e].[VendorsItemsToDineroLastSynchronizationDate], [e].[activationDate], [e].[activationKey], [e].[registrationDate], [e].[synchronizeCustomerFromDineroToNyxium], [e].[synchronizeCustomerFromNyxiumToDinero], [e].[synchronizeStockItemFromDineroToNyxium], [e].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [e]
+WHERE [e].[companyAccountId] = @__get_Item_0
+2020-04-29 23:33:31.7255|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.CustomerController.getZipCodes (WedigITCRM) - Validation state: Valid
+2020-04-29 23:33:31.7381|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[companyAccountId], [e].[AmountToPayForLicense], [e].[Booking], [e].[CompanyName], [e].[Companyidentifier], [e].[ContactsToDineroLastSynchronizationDate], [e].[ContactsToNyxiumLastSynchronizationDate], [e].[DineroAPIOrganization], [e].[DineroAPIOrganizationKey], [e].[IntegrationDinero], [e].[LogoAttachmentIds], [e].[NyxiumLicenseTypeId], [e].[NyxiumLicenseTypeName], [e].[SalesStatistic], [e].[StockItemsToDineroLastSynchronizationDate], [e].[StockItemsToNyxiumSynchronizationDate], [e].[SubscriptionCRM], [e].[SubscriptionInventory], [e].[SubscriptionProcurement], [e].[SubscriptionVendor], [e].[VendorsItemsToDineroLastSynchronizationDate], [e].[activationDate], [e].[activationKey], [e].[registrationDate], [e].[synchronizeCustomerFromDineroToNyxium], [e].[synchronizeCustomerFromNyxiumToDinero], [e].[synchronizeStockItemFromDineroToNyxium], [e].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [e]
+WHERE [e].[companyAccountId] = @__get_Item_0
+2020-04-29 23:33:31.7381|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.CustomerController.getCountries (WedigITCRM) - Validation state: Valid
+2020-04-29 23:33:31.7591|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-04-29 23:33:31.7807|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.CustomerController.getZipCodes (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.JsonResult in 39.3956ms.
+2020-04-29 23:33:31.7864|INFO|Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor|Executing JsonResult, writing value of type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-29 23:33:31.8082|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.CustomerController.getZipCodes (WedigITCRM) in 100.9889ms
+2020-04-29 23:33:31.8082|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 140.2318ms 200 application/json; charset=utf-8
+2020-04-29 23:33:31.8512|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CountryCode], [c].[CountryName]
+FROM [Countries] AS [c]
+2020-04-29 23:33:31.8661|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.CustomerController.getCountries (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.JsonResult in 118.7108ms.
+2020-04-29 23:33:31.8661|INFO|Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor|Executing JsonResult, writing value of type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-29 23:33:31.8661|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.CustomerController.getCountries (WedigITCRM) in 168.0543ms
+2020-04-29 23:33:31.8827|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 205.6384ms 200 application/json; charset=utf-8
+2020-04-29 23:33:32.0286|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:44395/Customer/getCityByZipCode application/json 200
+2020-04-29 23:33:32.0406|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "getCityByZipCode", controller = "Customer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult getCityByZipCode(WedigITCRM.Controllers.CompanyInputPostModel) on controller WedigITCRM.Controllers.CustomerController (WedigITCRM).
+2020-04-29 23:33:32.0406|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful.
+2020-04-29 23:33:32.1078|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-04-29 23:33:32.1151|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[companyAccountId], [e].[AmountToPayForLicense], [e].[Booking], [e].[CompanyName], [e].[Companyidentifier], [e].[ContactsToDineroLastSynchronizationDate], [e].[ContactsToNyxiumLastSynchronizationDate], [e].[DineroAPIOrganization], [e].[DineroAPIOrganizationKey], [e].[IntegrationDinero], [e].[LogoAttachmentIds], [e].[NyxiumLicenseTypeId], [e].[NyxiumLicenseTypeName], [e].[SalesStatistic], [e].[StockItemsToDineroLastSynchronizationDate], [e].[StockItemsToNyxiumSynchronizationDate], [e].[SubscriptionCRM], [e].[SubscriptionInventory], [e].[SubscriptionProcurement], [e].[SubscriptionVendor], [e].[VendorsItemsToDineroLastSynchronizationDate], [e].[activationDate], [e].[activationKey], [e].[registrationDate], [e].[synchronizeCustomerFromDineroToNyxium], [e].[synchronizeCustomerFromNyxiumToDinero], [e].[synchronizeStockItemFromDineroToNyxium], [e].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [e]
+WHERE [e].[companyAccountId] = @__get_Item_0
+2020-04-29 23:33:32.1151|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.CustomerController.getCityByZipCode (WedigITCRM) - Validation state: Valid
+2020-04-29 23:33:32.1151|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-04-29 23:33:32.1427|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.CustomerController.getCityByZipCode (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.JsonResult in 17.0389ms.
+2020-04-29 23:33:32.1489|INFO|Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.CompanyInputPostModel'.
+2020-04-29 23:33:32.1604|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.CustomerController.getCityByZipCode (WedigITCRM) in 113.0636ms
+2020-04-29 23:33:32.1604|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 136.2995ms 200 application/json; charset=utf-8
+2020-04-29 23:34:23.7831|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-29 23:34:23.8057|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (14ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-29 23:34:23.8226|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-29 23:34:23.8329|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0

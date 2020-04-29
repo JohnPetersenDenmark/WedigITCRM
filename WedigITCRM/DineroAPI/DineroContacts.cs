@@ -47,15 +47,9 @@ namespace WedigITCRM.DineroAPI
             string dineroIdStr = dineroId.ToString();
             WebClient client = new WebClient();
             client.Headers.Add("Authorization", "Bearer " + _dineroAPIConnect._APItoken);
-            try
-            {
-                String JsonString = client.DownloadString(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "contacts" + "/" + dineroIdStr);
-                return (JsonConvert.DeserializeObject<READDineroAPIcontact>(JsonString));
-            }
-            catch (Exception ex)
-            {
-                return (null);
-            }
+
+            String JsonString = client.DownloadString(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "contacts" + "/" + dineroIdStr);
+            return (JsonConvert.DeserializeObject<READDineroAPIcontact>(JsonString));
         }
 
 
@@ -162,7 +156,7 @@ namespace WedigITCRM.DineroAPI
             dineroContact.City = contactCompanyOrPerson.City;
             dineroContact.ZipCode = contactCompanyOrPerson.Zip;
             dineroContact.VatNumber = contactCompanyOrPerson.CVRNumber.ToString();
-            
+
             dineroContact.CountryKey = contactCompanyOrPerson.CountryCode;
             dineroContact.CountryKey = contactCompanyOrPerson.CountryCode;
             dineroContact.Phone = contactCompanyOrPerson.PhoneNumber;
@@ -222,7 +216,7 @@ namespace WedigITCRM.DineroAPI
             wedigitCompany.City = contactToAdd.City;
             wedigitCompany.Zip = contactToAdd.ZipCode;
             wedigitCompany.CountryCode = contactToAdd.CountryKey;
-          
+
             wedigitCompany.PhoneNumber = contactToAdd.Phone;
             wedigitCompany.HomePage = contactToAdd.Webpage;
             wedigitCompany.DineroGuiD = new Guid(contactToAdd.ContactGuid);
@@ -254,7 +248,7 @@ namespace WedigITCRM.DineroAPI
             wedigitCompany.CountryCode = contactToAdd.CountryKey;
             wedigitCompany.PhoneNumber = contactToAdd.Phone;
             wedigitCompany.HomePage = contactToAdd.Webpage;
-            if (! string.IsNullOrEmpty(contactToAdd.VatNumber))
+            if (!string.IsNullOrEmpty(contactToAdd.VatNumber))
             {
                 wedigitCompany.CVRNumber = Int32.Parse(contactToAdd.VatNumber);
             }
@@ -262,7 +256,7 @@ namespace WedigITCRM.DineroAPI
             {
                 wedigitCompany.CVRNumber = 0;
             }
-           
+
             wedigitCompany.DineroGuiD = new Guid(contactToAdd.ContactGuid);
             wedigitCompany.LastEditedDate = DateTime.Now;
 
@@ -276,9 +270,9 @@ namespace WedigITCRM.DineroAPI
             DateTimeFormatInfo SweedishTimeformat = CultureInfo.GetCultureInfo("sv-SE").DateTimeFormat;
             int testInteger;
             Int32 page;
-            Int32 pageSize;    
-            
-           
+            Int32 pageSize;
+
+
             DateTime LastupdatedDateTime = new DateTime(1980, 01, 01);
 
             string dateStr = LastupdatedDateTime.ToUniversalTime().ToString(SweedishTimeformat.ShortDatePattern);
@@ -308,7 +302,7 @@ namespace WedigITCRM.DineroAPI
             }
         }
 
-     
+
 
         public void CopyCustomersToDinero(CompanyAccount companyAccount, ICompanyRepository _companyRepository)
         {

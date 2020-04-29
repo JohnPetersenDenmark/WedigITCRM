@@ -13,7 +13,7 @@ namespace WedigITCRM.inMobile_SMS_API
         {
             // Instantiate the client to use
             // NOTE: The api key can be found on top of the documentation page
-            var smsClient = new FacadeSmsClient( hostRootUrl: "https://mm.inmobile.dk", apiKey: "db37ac2e-eb77-47ac-b0b4-d6eb49b31697");
+            var smsClient = new FacadeSmsClient(hostRootUrl: "https://mm.inmobile.dk", apiKey: "db37ac2e-eb77-47ac-b0b4-d6eb49b31697");
 
             // Create a list of messages to be sent
             var messagesToSend = new List<ISmsMessage>();
@@ -31,17 +31,10 @@ namespace WedigITCRM.inMobile_SMS_API
             messagesToSend.Add(message);
 
             // Send the messages and evaluate the response
-            try
-            {
-                var response = smsClient.SendMessages(
-                    messages: messagesToSend,
-                    messageStatusCallbackUrl: "http://mywebsite.com/example/messagestatus");
-            }
-            catch (SendMessageException smex)
-            {
-                // Catch exception to see error
-                Console.WriteLine(smex.Message);
-            }
+
+            var response = smsClient.SendMessages(
+                messages: messagesToSend,
+                messageStatusCallbackUrl: "http://mywebsite.com/example/messagestatus");
         }
 
     }

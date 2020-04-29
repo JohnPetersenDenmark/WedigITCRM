@@ -54,8 +54,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getStockItems(CompanyAccount companyAccount)
         {
-            try
-            {
+           
                 NumberFormatInfo danishNumberAndCurrencyFormatInfo = CultureInfo.GetCultureInfo("da-DK").NumberFormat;
 
                 var stockItemData = _stockItemRepository.GetAllstockItems().Where(company => company.companyAccountId == companyAccount.companyAccountId).ToList();
@@ -155,13 +154,7 @@ namespace WedigITCRM.Controllers
 
                 return Json(data1);
 
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-
+           
         }
 
 
@@ -529,8 +522,7 @@ namespace WedigITCRM.Controllers
        
         public IActionResult searchstockItemByName(string term, CompanyAccount companyAccount)
         {
-            try
-            {
+           
                 var stockItemData = _stockItemRepository.GetAllstockItems().Where(stockitem => stockitem.companyAccountId == companyAccount.companyAccountId && stockitem.ItemName.ToLower().Contains(term.ToLower())).ToList();
 
                 List<StockItemSearckResultViewModel> data = new List<StockItemSearckResultViewModel>();
@@ -546,11 +538,6 @@ namespace WedigITCRM.Controllers
 
                 return Json(data);
 
-            }
-            catch (Exception)
-            {
-                throw;
-            }
         }
 
         public class StockItemSearckResultViewModel
