@@ -12,6 +12,7 @@ using WedigITCRM.Utilities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Hosting;
 using System.Net.Mail;
+using Microsoft.Extensions.Logging;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,6 +21,8 @@ namespace WedigITCRM.Controllers
     [Authorize]
     public class AdministrationController : Controller
     {
+        private ILogger<AdministrationController> _logger;
+        private ILogger<EmailUtility> _emailUtilitylogger;
         private readonly UserManager<IdentityUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
         IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;      
@@ -27,13 +30,15 @@ namespace WedigITCRM.Controllers
         Microsoft.AspNetCore.Hosting.IHostingEnvironment _env;
         int ElementsPerPage = 5;
 
-        public AdministrationController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository,  ICompanyAccountRepository CompanyAccountRepository, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
+        public AdministrationController(ILogger<EmailUtility> emailUtilitylogger, ILogger<AdministrationController> logger, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository,  ICompanyAccountRepository CompanyAccountRepository, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
             _relateCompanyAccountWithUserRepository = relateCompanyAccountWithUserRepository;
             _env = env;            
-            _CompanyAccountRepository = CompanyAccountRepository;          
+            _CompanyAccountRepository = CompanyAccountRepository;
+            _logger = logger;
+            _emailUtilitylogger = emailUtilitylogger;
         }
 
         [HttpGet]
@@ -663,11 +668,12 @@ namespace WedigITCRM.Controllers
                 var changePasswordUrl = Url.Action("EnterNewPassword", "Administration", new { email = model.Email, token = token }, Request.Scheme);
                 Dictionary<string, string> tokens = new Dictionary<string, string>();
                 tokens.Add("changePasswordUrl", changePasswordUrl);
-               
-               
 
-                AlternateView htmlView = EmailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.Resetpassword, _env, tokens);
-                EmailUtility.send(model.Email, "support@nyxium.dk",  "Ændring af kodeord.", htmlView, true);
+
+                EmailUtility emailUtility = new EmailUtility(_emailUtilitylogger);
+
+                AlternateView htmlView = emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.Resetpassword, _env, tokens);
+                emailUtility.send(model.Email, "support@nyxium.dk",  "Ændring af kodeord.", htmlView, true);
                 // }
             }
 

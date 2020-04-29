@@ -21,11 +21,13 @@ namespace WedigITCRM.Maintenance
         private Timer _timer;
         private readonly IServiceScopeFactory scopeFactory;
         private ILogger<SendActivitiesNotificationsservice> _logger;
+        private ILogger<EmailUtility> _emailUtilitylogger;
 
-        public SendActivitiesNotificationsservice(IServiceScopeFactory scopeFactory, ILogger<SendActivitiesNotificationsservice> logger)
+        public SendActivitiesNotificationsservice(ILogger<EmailUtility> emailUtilitylogger, IServiceScopeFactory scopeFactory, ILogger<SendActivitiesNotificationsservice> logger)
         {
             this.scopeFactory = scopeFactory;
             this._logger = logger;
+            _emailUtilitylogger = emailUtilitylogger;
         }
         public Task StartAsync(CancellationToken cancellationToken)
         {
@@ -158,8 +160,13 @@ namespace WedigITCRM.Maintenance
 
                         CompanyAccount companyAccount = companyAccountRepository.GetCompanyAccount(activity.companyAccountId);
 
-                        AlternateView htmlView = EmailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.ActivityNotification, env, tokens, companyAccount, attachmentRepository);
-                        EmailUtility.send(user.Email, "support@nyxium.dk", "Aktivitet", htmlView, true);
+                       
+
+
+                      EmailUtility emailUtility = new EmailUtility(_emailUtilitylogger);
+
+                        AlternateView htmlView = emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.ActivityNotification, env, tokens, companyAccount, attachmentRepository);
+                        emailUtility.send(user.Email, "support@nyxium.dk", "Aktivitet", htmlView, true);
 
 
 
