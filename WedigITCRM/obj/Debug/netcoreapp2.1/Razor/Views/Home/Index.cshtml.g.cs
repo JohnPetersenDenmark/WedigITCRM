@@ -106,12 +106,12 @@ using X.PagedList;
             WriteLiteral("\r\n\r\n\r\n\r\n<div class=\"mysearchbar\">\r\n    <br />\r\n    ");
             EndContext();
             BeginContext(80, 2246, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "26d370e5c14845aaac45a1ccbe82bd9b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6b95fcb176164f179e7bfa59277157e3", async() => {
                 BeginContext(156, 202, true);
                 WriteLiteral("\r\n\r\n        <div class=\"form-row\">\r\n            <div class=\"col-2\">\r\n                <span class=\"viewHeadLine\">Virksomheder</span>\r\n            </div>\r\n            <div class=\"col-2\">\r\n                ");
                 EndContext();
                 BeginContext(358, 112, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "bf889c41d2f44402a9fa08950f9c535a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "20cff288c7a1452d8a4ac51bdcd5502c", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -354,7 +354,7 @@ WriteAttributeValue("", 4871, company.Id, 4871, 11, false);
                             ");
             EndContext();
             BeginContext(5505, 103, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c6b91f28ac640ac90fb853c24925665", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e045b4c4ebba489696f85667761486ba", async() => {
                 BeginContext(5597, 7, true);
                 WriteLiteral("Rediger");
                 EndContext();
@@ -402,7 +402,7 @@ WriteAttributeValue("", 5647, company.HomePage, 5647, 17, false);
             WriteLiteral(" class=\"dropdown-item\" target=\"_blank\">Besøg</a>\r\n                            ");
             EndContext();
             BeginContext(5743, 102, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3943b9f527fb42f6a0ea3394b61a86bf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a2c1d886ba0412cbd4ca50585b9a0d5", async() => {
                 BeginContext(5837, 4, true);
                 WriteLiteral("Slet");
                 EndContext();
@@ -465,7 +465,7 @@ WriteAttributeValue("", 5888, company.PhoneNumber, 5888, 20, false);
             WriteLiteral("\r\n<br />\r\n\r\n");
             EndContext();
             BeginContext(6087, 136, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4104c16a0daa49c0ba259ae6e85faf23", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9a746debd6433bb0956d32ea9060e4", async() => {
                 BeginContext(6169, 47, true);
                 WriteLiteral("\r\n    <input id=\"Id\" type=\"hidden\" name=\"Id\">\r\n");
                 EndContext();

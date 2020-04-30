@@ -104,12 +104,12 @@ using X.PagedList;
             WriteLiteral("\r\n\r\n<div class=\"mysearchbar\">\r\n    <br />\r\n    ");
             EndContext();
             BeginContext(83, 2376, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d9d0c28ec024d3bbade3dc2e57b0ed3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59384b34626e49e2bf3ffc44591a6f22", async() => {
                 BeginContext(168, 205, true);
                 WriteLiteral("\r\n\r\n        <div class=\"form-row\">\r\n            <div class=\"col-3\">\r\n                <span class=\"viewHeadLine\">Kontaktpersoner</span>\r\n            </div>\r\n            <div class=\"col-2\">\r\n                ");
                 EndContext();
                 BeginContext(373, 112, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "76bee646efa6477e93d56bc9b60a79f2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b63ba006c0484c5798eb186e5e81c995", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -341,7 +341,7 @@ WriteAttributeValue("", 4969, contactPerson.contactPerson.Id, 4969, 31, false);
             WriteLiteral("</div>\r\n\r\n        <div class=\"col-1\">\r\n            <div class=\"dropdown\">\r\n                <div class=\"dropbtn\"><i class=\"fa fa-bars icon-menu-background-color\"></i></div>\r\n                <div class=\"dropdown-content\">\r\n                    ");
             EndContext();
             BeginContext(5645, 110, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "699e074221c0414e9828aafe7b5a1368", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2976b7b2a8ed40d28416ccb10798ce64", async() => {
                 BeginContext(5744, 7, true);
                 WriteLiteral("Rediger");
                 EndContext();
@@ -378,7 +378,7 @@ WriteAttributeValue("", 4969, contactPerson.contactPerson.Id, 4969, 31, false);
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(5777, 131, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5594892724ae477ebe097521b5c2b511", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a68400ad50f64d2d8ea24fa92a2dc6a6", async() => {
                 BeginContext(5900, 4, true);
                 WriteLiteral("Slet");
                 EndContext();
@@ -435,7 +435,7 @@ WriteAttributeValue("", 5943, contactPerson.contactPerson.CellPhone, 5943, 38, f
             WriteLiteral("<br />\r\n\r\n");
             EndContext();
             BeginContext(6097, 146, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b293064c30a48f2870762f4c643ceb2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c50ec87021c244a99658db345f666dc3", async() => {
                 BeginContext(6189, 47, true);
                 WriteLiteral("\r\n    <input id=\"Id\" type=\"hidden\" name=\"Id\">\r\n");
                 EndContext();
