@@ -241,5 +241,17 @@ namespace WedigITCRM.Controllers
         }
 
 
+        
+        public IActionResult ShowErrorForJSON(string errorinstance)
+
+        {
+            ErrorViewModel errorViewModel = new ErrorViewModel();
+
+            errorViewModel.RequestId = errorinstance;
+
+            return View(errorViewModel);
+
+        }
+
     }
 }

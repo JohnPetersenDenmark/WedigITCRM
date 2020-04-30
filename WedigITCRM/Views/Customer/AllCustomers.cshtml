@@ -71,6 +71,7 @@
 
         setPresubmitEventHandlerOnCompanyEditor();
 
+        setPostsubmitEventHandlerOnCompanyEditor();
 
         setZipDependency();
 
@@ -92,6 +93,11 @@
         });
 
     
+          $('#companytable')
+            .on('xhr.dt', function (e, settings, json, xhr) {
+               
+            })
+
 
         var newItem = document.createElement("div");       // Create a <div> node
         var textnode = document.createTextNode("Kunder");  // Create a text node
