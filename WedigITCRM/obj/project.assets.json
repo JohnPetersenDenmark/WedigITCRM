@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "DocumentFormat.OpenXml/2.10.1": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
+        }
+      },
       "Google.Apis/1.43.0": {
         "type": "package",
         "dependencies": {
@@ -4897,6 +4909,29 @@
     }
   },
   "libraries": {
+    "DocumentFormat.OpenXml/2.10.1": {
+      "sha512": "OJqoZ/qTgegiKQG0JANqXJWXOpyNj6cE1SyGqRyeT8B9OmUayT76YfwDzZfzgUczj9kaPhUrtgkuz5sCUqIxBg==",
+      "type": "package",
+      "path": "documentformat.openxml/2.10.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CodeSignSummary-e5c439c6-ea87-4566-a291-c8cbbcc4ef09.md",
+        "documentformat.openxml.2.10.1.nupkg.sha512",
+        "documentformat.openxml.nuspec",
+        "icon.png",
+        "lib/net35/DocumentFormat.OpenXml.dll",
+        "lib/net35/DocumentFormat.OpenXml.xml",
+        "lib/net40/DocumentFormat.OpenXml.dll",
+        "lib/net40/DocumentFormat.OpenXml.xml",
+        "lib/net46/DocumentFormat.OpenXml.dll",
+        "lib/net46/DocumentFormat.OpenXml.xml",
+        "lib/netstandard1.3/DocumentFormat.OpenXml.dll",
+        "lib/netstandard1.3/DocumentFormat.OpenXml.xml",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.dll",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.xml"
+      ]
+    },
     "Google.Apis/1.43.0": {
       "sha512": "obrhmOs3G1NdKb6vJukj5nls3FJ8qcheSugvUDA5fHA+4sb9hOvSgtR4rzSiBFTSn30d8C9aJAUFlBtcFi4ltA==",
       "type": "package",
@@ -13335,6 +13370,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "DocumentFormat.OpenXml >= 2.10.1",
       "Google.Apis.Calendar.v3 >= 1.43.0.1858",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
@@ -13354,11 +13390,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kv\\projects\\Nyxium\\WedigITCRM\\WedigITCRM.csproj",
+      "projectUniqueName": "C:\\Users\\kv\\projects\\WedigITCRM\\WedigITCRM\\WedigITCRM.csproj",
       "projectName": "WedigITCRM",
-      "projectPath": "C:\\Users\\kv\\projects\\Nyxium\\WedigITCRM\\WedigITCRM.csproj",
+      "projectPath": "C:\\Users\\kv\\projects\\WedigITCRM\\WedigITCRM\\WedigITCRM.csproj",
       "packagesPath": "C:\\Users\\kv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kv\\projects\\Nyxium\\WedigITCRM\\obj\\",
+      "outputPath": "C:\\Users\\kv\\projects\\WedigITCRM\\WedigITCRM\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kv\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -13385,6 +13421,10 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "DocumentFormat.OpenXml": {
+            "target": "Package",
+            "version": "[2.10.1, )"
+          },
           "Google.Apis.Calendar.v3": {
             "target": "Package",
             "version": "[1.43.0.1858, )"

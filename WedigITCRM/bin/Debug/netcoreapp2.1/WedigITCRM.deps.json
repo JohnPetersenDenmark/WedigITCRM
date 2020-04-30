@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.1": {
       "WedigITCRM/1.0.0": {
         "dependencies": {
+          "DocumentFormat.OpenXml": "2.10.1",
           "Google.Apis.Calendar.v3": "1.43.0.1858",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
@@ -34,14 +35,27 @@
           "Newtonsoft.Json": "12.0.2",
           "System.IO.Packaging": "4.7.0",
           "X.PagedList.Mvc.Core": "7.2.4",
-          "inMobile.NET.API.Client": "2.3.6",
-          "DocumentFormat.OpenXml": "2.5.5631.0"
+          "inMobile.NET.API.Client": "2.3.6"
         },
         "runtime": {
           "WedigITCRM.dll": {}
         },
         "compile": {
           "WedigITCRM.dll": {}
+        }
+      },
+      "DocumentFormat.OpenXml/2.10.1": {
+        "dependencies": {
+          "System.IO.Packaging": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {
+            "assemblyVersion": "2.10.1.0",
+            "fileVersion": "2.10.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
         }
       },
       "Google.Apis/1.43.0": {
@@ -686,17 +700,6 @@
         },
         "compile": {
           "lib/netstandard2.0/X.PagedList.Mvc.Core.dll": {}
-        }
-      },
-      "DocumentFormat.OpenXml/2.5.5631.0": {
-        "runtime": {
-          "DocumentFormat.OpenXml.dll": {
-            "assemblyVersion": "2.5.5631.0",
-            "fileVersion": "2.5.5631.0"
-          }
-        },
-        "compile": {
-          "DocumentFormat.OpenXml.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3724,6 +3727,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "DocumentFormat.OpenXml/2.10.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OJqoZ/qTgegiKQG0JANqXJWXOpyNj6cE1SyGqRyeT8B9OmUayT76YfwDzZfzgUczj9kaPhUrtgkuz5sCUqIxBg==",
+      "path": "documentformat.openxml/2.10.1",
+      "hashPath": "documentformat.openxml.2.10.1.nupkg.sha512"
+    },
     "Google.Apis/1.43.0": {
       "type": "package",
       "serviceable": true,
@@ -4094,11 +4104,6 @@
       "sha512": "sha512-tAJXVDudC/InnDKuPvaC8iGzLXtxqX2dalls5kwGegyPjghjrm+Q1VIgpeIfUAQnpMiz9/z2e0/MmH4Kx6raYw==",
       "path": "x.pagedlist.mvc.core/7.2.4",
       "hashPath": "x.pagedlist.mvc.core.7.2.4.nupkg.sha512"
-    },
-    "DocumentFormat.OpenXml/2.5.5631.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",

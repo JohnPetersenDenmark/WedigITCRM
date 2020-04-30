@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kv\\projects\\Nyxium\\WedigITCRM\\WedigITCRM.csproj": {}
+    "C:\\Users\\kv\\projects\\WedigITCRM\\WedigITCRM\\WedigITCRM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kv\\projects\\Nyxium\\WedigITCRM\\WedigITCRM.csproj": {
+    "C:\\Users\\kv\\projects\\WedigITCRM\\WedigITCRM\\WedigITCRM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kv\\projects\\Nyxium\\WedigITCRM\\WedigITCRM.csproj",
+        "projectUniqueName": "C:\\Users\\kv\\projects\\WedigITCRM\\WedigITCRM\\WedigITCRM.csproj",
         "projectName": "WedigITCRM",
-        "projectPath": "C:\\Users\\kv\\projects\\Nyxium\\WedigITCRM\\WedigITCRM.csproj",
+        "projectPath": "C:\\Users\\kv\\projects\\WedigITCRM\\WedigITCRM\\WedigITCRM.csproj",
         "packagesPath": "C:\\Users\\kv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kv\\projects\\Nyxium\\WedigITCRM\\obj\\",
+        "outputPath": "C:\\Users\\kv\\projects\\WedigITCRM\\WedigITCRM\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kv\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,6 +38,10 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.10.1, )"
+            },
             "Google.Apis.Calendar.v3": {
               "target": "Package",
               "version": "[1.43.0.1858, )"
