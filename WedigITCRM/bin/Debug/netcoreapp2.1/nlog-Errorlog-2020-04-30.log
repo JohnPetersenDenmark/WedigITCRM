@@ -428,3 +428,5 @@ Error Number:-1983577849,State:0,Class:20
 2020-04-30 11:44:12.7998|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
 2020-04-30 11:44:19.4578|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
 2020-04-30 11:44:19.4578|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-04-30 12:15:50.7701|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 12:15:50.7701|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
