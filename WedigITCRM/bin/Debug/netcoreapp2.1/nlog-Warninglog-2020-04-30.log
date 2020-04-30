@@ -460,3 +460,19 @@ Error Number:-1983577849,State:0,Class:20
 2020-04-30 17:12:45.3074|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
 2020-04-30 17:14:49.4015|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
 2020-04-30 17:14:49.4170|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-04-30 19:28:27.2493|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-30 19:28:28.4366|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-30 19:28:28.9285|ERROR|WedigITCRM.Startup|start of Configure method
+2020-04-30 19:28:29.0957|ERROR|WedigITCRM.Startup|end of Configure method
+2020-04-30 19:28:31.3999|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 19:28:31.4179|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-04-30 19:28:37.4674|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 19:28:37.4832|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-04-30 19:41:51.4722|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 19:41:51.4848|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-04-30 19:50:32.3360|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 19:50:32.3557|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-04-30 19:51:27.7579|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 19:51:27.7579|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-04-30 19:52:07.9977|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 19:52:08.0128|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action

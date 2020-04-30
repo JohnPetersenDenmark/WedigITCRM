@@ -5,16 +5,16 @@
 
 
     <div class="form-group row">
-        <div class="col-md-5">
+        <div class="col-md-5 offset-sm-1">
             <div class="form-group row">
                 <div class="col-md-10">
                     <div class="form-group row">
-                        <div class="col-md-10 homepageHeading">
+                        <div class="col-md-10 offset-sm-1 homepageHeading">
                             Opret konto
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-10">
+                        <div class="col-md-10 offset-sm-1">
                             <label for="companyNameSuggest" class="col-form-label">Firmanavn</label>
                             <input id="companyNameSuggest" class="form-control" placeholder="Firmanavn">
                             <span asp-validation-for="CompanyName" class="validation-style"></span>
@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-10">
+                        <div class="col-md-10 offset-sm-1">
                             <label for="companyCVRSuggest" class="col-form-label">CVR</label>
                             <input id="companyCVRSuggest" class="form-control" placeholder="CVR">
                             <span asp-validation-for="CVRNumber" class="validation-style"></span>
@@ -31,14 +31,14 @@
 
                     <form id="createCompanyAccountForm" asp-controller="account" asp-action="registerCompanyAccount" method="post">
                         <div class="form-group row">
-                            <div class="form-group col-md-10">
+                            <div class="form-group col-md-10 offset-sm-1">
                                 <label class="col-form-label" asp-for="Email"></label>
                                 <input asp-for="Email" class="form-control" />
                                 <span asp-validation-for="Email" class="validation-style"></span>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="form-group col-md-10">
+                            <div class="form-group col-md-10 offset-sm-1">
                                 <i id="togglepasswordhelp" class="fa fa-info"></i>
                                 <div id="passwordhelp">
 
@@ -49,21 +49,21 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="form-group col-md-10">
+                            <div class="form-group col-md-10 offset-sm-1">
                                 <label class="col-form-label" asp-for="ConfirmPassword"></label>
                                 <input asp-for="ConfirmPassword" class="form-control" />
                                 <span asp-validation-for="ConfirmPassword" class="validation-style"></span>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="form-group col-md-10">
+                            <div class="form-group col-md-10 offset-sm-1">
                                 <label class="col-form-label" asp-for="UserName"></label>
                                 <input asp-for="UserName" class="form-control" />
                                 <span asp-validation-for="UserName" class="validation-style"></span>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="form-group col-md-10">
+                            <div class="form-group col-md-10 offset-sm-1">
                                 <button style="padding-bottom :0; padding-top:0; height: 20px;  font-size: 12px;vertical-align:middle;margin-top : 10px" type="submit" class="btn btn-outline-secondary">Opret</button>
                             </div>
                         </div>
@@ -99,16 +99,15 @@
                     <p class="pprice">99 DKK</p>
                     <p class="pprice">excl. moms pr. md.</p>
                     <p class="description">Perfekt til den lidt større forretning</p>
+                    <p class="features"><img src="/frontpage/img/jpgs/price-circle-purple.jpg">Gratis oprettelse</p>
+                    <p class="features"><img src="/frontpage/img/jpgs/price-circle-purple.jpg">Ubegrænset antal brugere</p>
                     <p class="features"><img src="/frontpage/img/jpgs/price-circle-purple.jpg">Alle applikationer</p>
 
                     <p class="features"><input type="checkbox" id="licenseCRM" class="business" checked disabled> CRM/Kundestyring</p>
-                    <p class="features"><input type="checkbox" id="licenseInventory" class="business" checked disabled> Lagerstyring</p>
-                    <p class="features"><input type="checkbox" id="licenseBooking" class="business" checked disabled> Booking</p>
                     <p class="features"><input type="checkbox" id="licenseVendors" class="business" checked disabled> Leverandører</p>
+                    <p class="features"><input type="checkbox" id="licenseInventory" class="business" checked disabled> Lagerstyring</p>
                     <p class="features"><input type="checkbox" id="licenseStatistic" class="business" checked disabled> Salgsstatistik</p>
-
-                    <p class="features"><img src="/frontpage/img/jpgs/price-circle-purple.jpg">Ubegrænset antal brugere</p>
-                    <p class="features"><img src="/frontpage/img/jpgs/price-circle-purple.jpg">Gratis oprettelse</p>
+                    <p class="features"><input type="checkbox" id="licenseBooking" class="business" checked disabled> Booking</p>
                 </div>
             </article>
 
