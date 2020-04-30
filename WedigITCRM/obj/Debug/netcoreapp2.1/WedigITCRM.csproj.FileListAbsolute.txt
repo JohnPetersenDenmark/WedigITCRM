@@ -109,7 +109,6 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigIT
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.pdb
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csprojAssemblyReference.cache
-C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csprojAssemblyReference.cache
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.Properties.Resources.resources
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csproj.GenerateResource.cache
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.RazorAssemblyInfo.cache
@@ -220,3 +219,4 @@ C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.Vi
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.genruntimeconfig.cache
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csproj.CopyComplete
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csproj.CoreCompileInputs.cache
+C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csprojAssemblyReference.cache
