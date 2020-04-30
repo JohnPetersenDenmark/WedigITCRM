@@ -69,7 +69,9 @@ namespace WedigITCRM.Controllers
                     data.Add(reducedVendor);
                 }
 
-                return Json(data);
+            throw new Exception("Forced error in Vendor controller");
+
+            return Json(data);
 
         }
 
