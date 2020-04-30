@@ -3,83 +3,92 @@
 
 
 
-    <div class="formcontainer">
-        <h1>Log ind</h1>
-        </br>
-        <form asp-controller="Account" asp-action="Login" method="post">
-           
-            <div class="form-group row">
-                <div class="form-group col-md-4">
-                    <label asp-for="@Model.Email"></label>
-                    <input asp-for="@Model.Email" id="userEmail" class="form-control" />
-                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="form-group col-md-4">
-                    <label asp-for="@Model.Password"></label>
-                    <input asp-for="@Model.Password" class="form-control" />
-                    <span asp-validation-for="@Model.Password" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="form-group col-md-4">
-                    <div class="checkbox">
-                        <label asp-for="@Model.LoginRememberMe">
-                            <input asp-for="@Model.LoginRememberMe" />
-                            @Html.DisplayNameFor(m => m.LoginRememberMe)
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="form-group col-md-4">
-                    <button type="submit" class="btn btn-outline-secondary btn-sm">Login</button>
-                </div>
-            </div>
-
-
-
-            <div class="form-group row">
-                <div id="forgottenPassword" class="form-group col-md-4">
-                    <a href="#">Glemt kodeord?</a>
-                </div>
-            </div>
-        </form>
-
-
-
-
-        <div class="form-group row">
-            <div class="form-group col-md-4">
-
-                @if (@Model.ExternalLogins != null)
-                {
-                    @if (Model.ExternalLogins.Count == 0)
-                    {
-                        <div>No external logins configured</div>
-                    }
-                    else
-                    {
-                        <form method="post" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl">
-                            <div>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary"
-                                            name="provider" value="@provider.Name"
-                                            title="Log in using your @provider.DisplayName account">
-                                        @provider.DisplayName
-                                    </button>
-                                }
-                            </div>
-                        </form>
-                    }
-                }
-
-            </div>
-
+<div class="border container" style="padding:30px;">
+    <div class="row">
+        <div class=" col-12 offset-sm-4">
+            <h3>Login</h3>
         </div>
     </div>
+</div>
+<br />
+<div class="container" style="padding:30px;">
+    <div class="row">
+        <div class=" col-12">
+            </br>
+            <form asp-controller="Account" asp-action="Login" method="post">
+
+                <div class="form-group row">
+                    <div class="form-group col-md-4 offset-sm-4">
+                        <label asp-for="@Model.Email"></label>
+                        <input asp-for="@Model.Email" id="userEmail" class="form-control" />
+                        <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="form-group col-md-4 offset-sm-4">
+                        <label asp-for="@Model.Password"></label>
+                        <input asp-for="@Model.Password" class="form-control" />
+                        <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="form-group col-md-4 offset-sm-4">
+                        <div class="checkbox">
+                            <label asp-for="@Model.LoginRememberMe">
+                                <input asp-for="@Model.LoginRememberMe" />
+                                @Html.DisplayNameFor(m => m.LoginRememberMe)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="form-group col-md-4 offset-sm-4 text-center">
+                        <button type="submit" class="btn btn-outline-secondary btn-sm">Login</button>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group row">
+                    <div id="forgottenPassword" class="form-group col-md-4 offset-sm-4 text-center">
+                        <a href="#">Glemt kodeord?</a>
+                    </div>
+                </div>
+            </form>
+
+
+
+
+            <div class="form-group row">
+                <div class="form-group col-md-4 offset-sm-4 text-center">
+
+                    @if (@Model.ExternalLogins != null)
+                    {
+                        @if (Model.ExternalLogins.Count == 0)
+                        {
+                            <div>No external logins configured</div>
+                        }
+                        else
+                        {
+                            <form method="post" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl">
+                                <div>
+                                    @foreach (var provider in Model.ExternalLogins)
+                                    {
+                                        <button type="submit" class="btn btn-secondary" 
+                                                name="provider" value="@provider.Name"
+                                                title="Log in using your @provider.DisplayName account">
+                                            @provider.DisplayName
+                                        </button>
+                                    }
+                                </div>
+                            </form>
+                        }
+                    }
+
+                </div>
+
+            </div>
+        </div>
 
         <form id="formchangepassword" asp-controller="Administration" asp-action="ChangePassword" method="get">
             <input id="changepasswordemail" type="hidden" name="changepasswordemail">
@@ -98,3 +107,5 @@
 
             </script>
         }
+    </div>
+</div>
