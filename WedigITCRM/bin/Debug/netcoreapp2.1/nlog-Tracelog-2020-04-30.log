@@ -9699,3 +9699,543 @@ WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
 2020-04-30 14:38:57.2455|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyName], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
 FROM [companyAccounts] AS [c]
+2020-04-30 14:39:53.7285|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:39:53.7285|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:39:53.7285|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:39:53.8053|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (28ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:39:53.9397|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (100ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:39:53.9550|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:40:05.6537|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:40:05.6944|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:40:05.7079|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:40:05.7233|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 9.4401ms.
+2020-04-30 14:40:05.7349|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:40:05.9486|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 221.8999ms.
+2020-04-30 14:40:05.9486|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 253.6766ms
+2020-04-30 14:40:05.9651|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 334.2088ms 200 text/html; charset=utf-8
+2020-04-30 14:40:06.1026|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/lib/css/bootstrap-social.css  
+2020-04-30 14:40:06.1237|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /lib/css/bootstrap-social.css was not modified
+2020-04-30 14:40:06.1348|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 58.7904ms 304 text/css
+2020-04-30 14:40:53.7119|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:40:53.7119|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:40:53.7604|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (21ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:40:53.7970|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:40:53.8523|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (72ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:40:53.8523|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:41:53.7261|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:41:53.7282|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:41:53.7447|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:41:53.7447|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:41:53.7738|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:41:53.7897|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:42:53.7307|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:42:53.7680|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:42:53.7788|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:42:53.7788|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:42:53.7997|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:42:53.8075|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:43:07.2805|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-30 14:43:07.9661|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-30 14:43:08.0883|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\kv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-30 14:43:08.2275|ERROR|WedigITCRM.Startup|start of Configure method
+2020-04-30 14:43:08.4215|ERROR|WedigITCRM.Startup|end of Configure method
+2020-04-30 14:43:09.5342|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:43:09.5342|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:43:09.5342|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:43:09.5342|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:43:09.8824|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/  
+2020-04-30 14:43:10.3909|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.HomeController (WedigITCRM).
+2020-04-30 14:43:10.4601|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.HomeController.Index (WedigITCRM) - Validation state: Valid
+2020-04-30 14:43:10.4655|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 14:43:10.4655|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-04-30 14:43:10.4877|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.HomeController.Index (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 13.934ms.
+2020-04-30 14:43:10.5053|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /FrontPage.
+2020-04-30 14:43:10.5136|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.HomeController.Index (WedigITCRM) in 116.3188ms
+2020-04-30 14:43:10.5255|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 645.6509ms 302 
+2020-04-30 14:43:10.5544|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:44395/  0
+2020-04-30 14:43:10.5575|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 2.9862ms 200 
+2020-04-30 14:43:10.5575|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/FrontPage  
+2020-04-30 14:43:10.5753|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Index", controller = "FrontPage"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WedigITCRM.Controllers.FrontPageController (WedigITCRM).
+2020-04-30 14:43:10.5753|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.FrontPageController.Index (WedigITCRM) - Validation state: Valid
+2020-04-30 14:43:10.5753|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.FrontPageController.Index (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.1873ms.
+2020-04-30 14:43:10.6065|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Index.
+2020-04-30 14:43:10.6688|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Index executed in 79.3751ms.
+2020-04-30 14:43:10.6688|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.FrontPageController.Index (WedigITCRM) in 94.0362ms
+2020-04-30 14:43:10.6802|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 108.1961ms 200 text/html; charset=utf-8
+2020-04-30 14:43:10.8695|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyName], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-04-30 14:43:11.1253|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:43:11.2152|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (43ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:43:11.3066|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (21ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:43:11.3511|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:43:11.8323|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyName], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-04-30 14:43:11.9042|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@p27='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTime2), @p14='?' (DbType = DateTime2), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Guid), @p22='?' (DbType = DateTime2), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyName] = @p2, [Companyidentifier] = @p3, [ContactsToDineroLastSynchronizationDate] = @p4, [ContactsToNyxiumLastSynchronizationDate] = @p5, [DineroAPIOrganization] = @p6, [DineroAPIOrganizationKey] = @p7, [IntegrationDinero] = @p8, [LogoAttachmentIds] = @p9, [NyxiumLicenseTypeId] = @p10, [NyxiumLicenseTypeName] = @p11, [SalesStatistic] = @p12, [StockItemsToDineroLastSynchronizationDate] = @p13, [StockItemsToNyxiumSynchronizationDate] = @p14, [SubscriptionCRM] = @p15, [SubscriptionInventory] = @p16, [SubscriptionProcurement] = @p17, [SubscriptionVendor] = @p18, [VendorsItemsToDineroLastSynchronizationDate] = @p19, [activationDate] = @p20, [activationKey] = @p21, [registrationDate] = @p22, [synchronizeCustomerFromDineroToNyxium] = @p23, [synchronizeCustomerFromNyxiumToDinero] = @p24, [synchronizeStockItemFromDineroToNyxium] = @p25, [synchronizeStockItemFromNyxiumToDinero] = @p26
+WHERE [companyAccountId] = @p27;
+SELECT @@ROWCOUNT;
+2020-04-30 14:43:11.9042|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p27='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTime2), @p14='?' (DbType = DateTime2), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Guid), @p22='?' (DbType = DateTime2), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyName] = @p2, [Companyidentifier] = @p3, [ContactsToDineroLastSynchronizationDate] = @p4, [ContactsToNyxiumLastSynchronizationDate] = @p5, [DineroAPIOrganization] = @p6, [DineroAPIOrganizationKey] = @p7, [IntegrationDinero] = @p8, [LogoAttachmentIds] = @p9, [NyxiumLicenseTypeId] = @p10, [NyxiumLicenseTypeName] = @p11, [SalesStatistic] = @p12, [StockItemsToDineroLastSynchronizationDate] = @p13, [StockItemsToNyxiumSynchronizationDate] = @p14, [SubscriptionCRM] = @p15, [SubscriptionInventory] = @p16, [SubscriptionProcurement] = @p17, [SubscriptionVendor] = @p18, [VendorsItemsToDineroLastSynchronizationDate] = @p19, [activationDate] = @p20, [activationKey] = @p21, [registrationDate] = @p22, [synchronizeCustomerFromDineroToNyxium] = @p23, [synchronizeCustomerFromNyxiumToDinero] = @p24, [synchronizeStockItemFromDineroToNyxium] = @p25, [synchronizeStockItemFromNyxiumToDinero] = @p26
+WHERE [companyAccountId] = @p27;
+SELECT @@ROWCOUNT;
+2020-04-30 14:43:18.0008|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:43:18.0260|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:43:18.0415|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:43:18.0415|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 10.1681ms.
+2020-04-30 14:43:18.0690|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:43:18.3165|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 254.3322ms.
+2020-04-30 14:43:18.3267|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 290.9099ms
+2020-04-30 14:43:18.3361|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 333.0079ms 200 text/html; charset=utf-8
+2020-04-30 14:43:56.2800|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:43:56.2974|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:43:56.3506|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:43:56.3546|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1807ms.
+2020-04-30 14:43:59.4971|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:43:59.5481|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 3188.2973ms.
+2020-04-30 14:43:59.5983|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 3224.6758ms
+2020-04-30 14:43:59.6665|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3323.6562ms 200 text/html; charset=utf-8
+2020-04-30 14:44:08.8245|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:44:08.8245|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:44:08.8398|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:44:08.8398|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:44:08.8574|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:44:08.8574|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:44:25.0446|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:44:25.0446|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:44:25.0598|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:44:25.0745|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0443ms.
+2020-04-30 14:44:25.5608|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:44:25.5921|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 514.0944ms.
+2020-04-30 14:44:25.5921|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 540.7367ms
+2020-04-30 14:44:25.6063|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 558.0749ms 200 text/html; charset=utf-8
+2020-04-30 14:44:35.4919|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:44:35.4985|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:44:35.5139|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:44:35.5296|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0421ms.
+2020-04-30 14:44:35.5390|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:44:35.5390|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 12.2591ms.
+2020-04-30 14:44:35.5640|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 47.4815ms
+2020-04-30 14:44:35.6879|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 99.3841ms 200 text/html; charset=utf-8
+2020-04-30 14:44:56.1573|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:44:56.1573|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:44:56.1729|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:44:56.1729|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0469ms.
+2020-04-30 14:44:56.5019|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:44:56.5329|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 353.506ms.
+2020-04-30 14:44:56.5329|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 368.1073ms
+2020-04-30 14:44:56.5469|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 384.4023ms 200 text/html; charset=utf-8
+2020-04-30 14:45:08.8137|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:45:08.8137|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:45:08.8380|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:45:08.8380|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (17ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:45:08.8581|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:45:08.8806|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:45:18.7001|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:45:18.7001|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:45:18.7179|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:45:18.7324|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0428ms.
+2020-04-30 14:45:19.2334|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:45:19.2814|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 540.8075ms.
+2020-04-30 14:45:19.2814|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 576.1807ms
+2020-04-30 14:45:19.2906|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 592.4381ms 200 text/html; charset=utf-8
+2020-04-30 14:45:23.2558|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:45:23.2653|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:45:23.5380|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:45:23.6404|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0374ms.
+2020-04-30 14:45:23.6404|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:45:23.6604|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 8.0314ms.
+2020-04-30 14:45:23.6706|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 394.9946ms
+2020-04-30 14:45:23.6880|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 418.298ms 200 text/html; charset=utf-8
+2020-04-30 14:45:26.0559|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:45:26.0559|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:45:26.0736|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:45:26.0736|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0453ms.
+2020-04-30 14:45:26.0736|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:45:26.0978|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 8.5849ms.
+2020-04-30 14:45:26.1060|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 29.5046ms
+2020-04-30 14:45:26.2864|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 56.0604ms 200 text/html; charset=utf-8
+2020-04-30 14:45:26.2936|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/lib/css/style.blue.premium.css  
+2020-04-30 14:45:26.2936|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/lib/css/editor.dataTables.min.css  
+2020-04-30 14:45:26.3063|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/lib/vendor/font-awesome/css/font-awesome.min.css  
+2020-04-30 14:45:26.3063|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/lib/css/bootstrap-social.css  
+2020-04-30 14:45:26.3063|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/lib/css/custom.css  
+2020-04-30 14:45:26.3312|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/moment.js  
+2020-04-30 14:45:26.3368|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/locales-all.js  
+2020-04-30 14:45:26.3368|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js  
+2020-04-30 14:45:26.3368|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/lib/vendor/database.net-editor/dataTables.editor.js  
+2020-04-30 14:45:26.3721|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/editor.bootstrap4.min.js  
+2020-04-30 14:45:26.3838|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/lib/vendor/chart.js/Chart.min.js  
+2020-04-30 14:45:26.4310|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/ActivityDatatable.js  
+2020-04-30 14:45:26.4462|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/CompanyDatatable.js  
+2020-04-30 14:45:26.4462|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/ABCStockAnalasysDatatable.js  
+2020-04-30 14:45:26.4630|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/ContactPersonDatatable.js  
+2020-04-30 14:45:26.4630|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/CompanyDatatable.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\CompanyDatatable.js'
+2020-04-30 14:45:26.4789|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/lib/vendor/jquery-validation/jquery.validate.min.js  
+2020-04-30 14:45:26.4789|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/UserDataTable.js  
+2020-04-30 14:45:26.5325|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 70.6439ms 200 application/javascript
+2020-04-30 14:45:26.5696|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/font-awesome/css/font-awesome.min.css'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\font-awesome\css\font-awesome.min.css'
+2020-04-30 14:45:26.5879|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/style.blue.premium.css'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\lib\css\style.blue.premium.css'
+2020-04-30 14:45:26.6056|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/editor.dataTables.min.css'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\lib\css\editor.dataTables.min.css'
+2020-04-30 14:45:26.6056|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 298.6644ms 200 text/css
+2020-04-30 14:45:26.6199|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 321.5885ms 200 text/css
+2020-04-30 14:45:26.6056|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 319.2552ms 200 text/css
+2020-04-30 14:45:26.6199|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/database.net-editor/dataTables.editor.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\database.net-editor\dataTables.editor.js'
+2020-04-30 14:45:26.6457|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/custom.css'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\lib\css\custom.css'
+2020-04-30 14:45:26.6650|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/locales-all.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\locales-all.js'
+2020-04-30 14:45:26.6650|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 318.9777ms 200 application/javascript
+2020-04-30 14:45:26.6650|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 344.0786ms 200 text/css
+2020-04-30 14:45:26.6891|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 341.782ms 200 application/javascript
+2020-04-30 14:45:26.6959|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/bootstrap-social.css'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\lib\css\bootstrap-social.css'
+2020-04-30 14:45:26.6959|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/moment.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\moment.js'
+2020-04-30 14:45:26.6959|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/editor.bootstrap4.min.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\editor.bootstrap4.min.js'
+2020-04-30 14:45:26.7107|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 407.4506ms 200 text/css
+2020-04-30 14:45:26.7107|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 385.5593ms 200 application/javascript
+2020-04-30 14:45:26.7107|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 353.9719ms 200 application/javascript
+2020-04-30 14:45:26.7107|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.concat.min.js'
+2020-04-30 14:45:26.7107|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/StockItemDatatable.js  
+2020-04-30 14:45:26.7297|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/ActivityDatatable.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\ActivityDatatable.js'
+2020-04-30 14:45:26.7297|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/VendorDatatable.js  
+2020-04-30 14:45:26.7607|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 398.7424ms 200 application/javascript
+2020-04-30 14:45:26.7738|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/StockItemDatatable.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\StockItemDatatable.js'
+2020-04-30 14:45:26.7738|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 334.0788ms 200 application/javascript
+2020-04-30 14:45:26.7738|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 213.9824ms 200 application/javascript
+2020-04-30 14:45:26.7738|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/VendorDatatable.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\VendorDatatable.js'
+2020-04-30 14:45:26.7912|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/ContactPersonDatatable.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\ContactPersonDatatable.js'
+2020-04-30 14:45:26.7912|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/jquery-validation/jquery.validate.min.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\jquery-validation\jquery.validate.min.js'
+2020-04-30 14:45:26.7912|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 229.6545ms 200 application/javascript
+2020-04-30 14:45:26.7912|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 357.7849ms 200 application/javascript
+2020-04-30 14:45:26.8053|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 388.3115ms 200 application/javascript
+2020-04-30 14:45:26.8053|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/UserDataTable.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\UserDataTable.js'
+2020-04-30 14:45:26.8053|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/RoleDatatable.js  
+2020-04-30 14:45:26.8053|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/NoteDatatable.js  
+2020-04-30 14:45:26.8227|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 417.1438ms 200 application/javascript
+2020-04-30 14:45:26.8362|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/ABCStockAnalasysDatatable.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\ABCStockAnalasysDatatable.js'
+2020-04-30 14:45:26.8362|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/RoleDatatable.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\RoleDatatable.js'
+2020-04-30 14:45:26.8362|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/NoteDatatable.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\NoteDatatable.js'
+2020-04-30 14:45:26.8362|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 404.4922ms 200 application/javascript
+2020-04-30 14:45:26.8362|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 402.8568ms 200 application/javascript
+2020-04-30 14:45:26.8517|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 402.199ms 200 application/javascript
+2020-04-30 14:45:26.8517|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/DummyDatatable.js  
+2020-04-30 14:45:26.8517|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/RolesOnUserDatatable.js  
+2020-04-30 14:45:26.8517|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/chart.js/Chart.min.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\chart.js\Chart.min.js'
+2020-04-30 14:45:26.8798|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/DummyDatatable.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\DummyDatatable.js'
+2020-04-30 14:45:26.8847|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 497.6409ms 200 application/javascript
+2020-04-30 14:45:26.8847|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/RolesOnUserDatatable.js'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\CustomJS\RolesOnUserDatatable.js'
+2020-04-30 14:45:26.8986|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Images/connect_logo.png  
+2020-04-30 14:45:26.8986|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 429.8068ms 200 application/javascript
+2020-04-30 14:45:26.8986|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 351.4757ms 200 application/javascript
+2020-04-30 14:45:26.9153|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/lib/vendor/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0  
+2020-04-30 14:45:26.9153|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/Images/connect_logo.png'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\Images\connect_logo.png'
+2020-04-30 14:45:26.9447|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 37.7485ms 200 image/png
+2020-04-30 14:45:26.9599|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/font-awesome/fonts/fontawesome-webfont.woff2'. Physical path: 'C:\Users\kv\projects\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\font-awesome\fonts\fontawesome-webfont.woff2'
+2020-04-30 14:45:26.9678|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 55.6419ms 200 font/woff2
+2020-04-30 14:45:27.0562|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/favicon.ico  
+2020-04-30 14:45:27.0723|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 8.6268ms 404 
+2020-04-30 14:45:38.4079|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:45:38.4177|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:45:38.4177|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:45:38.4355|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.051ms.
+2020-04-30 14:45:38.4512|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:45:38.4512|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 20.1094ms.
+2020-04-30 14:45:38.4706|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 42.3738ms
+2020-04-30 14:45:38.5012|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 66.9664ms 200 text/html; charset=utf-8
+2020-04-30 14:45:59.4917|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:45:59.4986|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:45:59.4986|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:45:59.5105|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0426ms.
+2020-04-30 14:45:59.8308|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:45:59.8651|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 350.4844ms.
+2020-04-30 14:45:59.8760|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 366.2837ms
+2020-04-30 14:45:59.8760|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 389.5519ms 200 text/html; charset=utf-8
+2020-04-30 14:46:08.8233|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:46:08.8233|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:46:08.8548|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:46:08.8695|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (25ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:46:08.8854|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:46:08.8992|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:46:33.9061|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:46:33.9759|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:46:33.9826|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:46:33.9826|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0409ms.
+2020-04-30 14:46:34.4959|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:46:34.5267|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 534.0641ms.
+2020-04-30 14:46:34.5267|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 551.2225ms
+2020-04-30 14:46:34.5267|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 632.6601ms 200 text/html; charset=utf-8
+2020-04-30 14:46:57.2247|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:46:57.2404|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:46:57.2666|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:46:57.2786|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0337ms.
+2020-04-30 14:46:57.7087|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:46:57.7564|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 472.3185ms.
+2020-04-30 14:46:57.7636|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 517.4302ms
+2020-04-30 14:46:57.7636|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 543.7888ms 200 text/html; charset=utf-8
+2020-04-30 14:47:08.8236|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:47:08.8236|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:47:08.8524|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:47:08.8524|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (20ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:47:08.8979|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (27ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:47:08.9173|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:47:16.3523|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-04-30 14:47:16.3523|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-04-30 14:47:16.3523|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-04-30 14:47:16.3759|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0367ms.
+2020-04-30 14:47:16.7581|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-04-30 14:47:16.7881|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 407.9779ms.
+2020-04-30 14:47:16.8022|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 430.9013ms
+2020-04-30 14:47:16.8163|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 453.6228ms 200 text/html; charset=utf-8
+2020-04-30 14:48:08.8234|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:48:08.8234|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:48:08.8649|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:48:08.8801|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (42ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:48:08.8959|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:48:08.9092|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:49:08.8270|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:49:08.8270|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:49:08.8521|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:49:08.8521|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (19ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:49:08.8792|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:49:08.8893|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:50:08.8117|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:50:08.8117|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:50:08.8521|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (20ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:50:08.8521|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:50:08.8731|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:50:08.8888|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:51:08.8164|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:51:08.8164|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:51:08.8320|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:51:08.8456|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:51:08.8638|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:51:08.8862|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:52:08.8239|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:52:08.8239|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:52:08.8407|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:52:08.8575|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (18ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:52:08.8814|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (14ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:52:08.9035|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:53:08.8134|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:53:08.8134|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:53:08.8349|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:53:08.8505|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (18ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:53:08.8638|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:53:08.8731|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:54:08.8149|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:54:08.8149|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:54:08.8299|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:54:08.8444|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (14ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:54:08.8657|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:54:08.8861|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:55:08.8214|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:55:08.8214|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:55:08.8527|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:55:08.8527|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (20ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:55:08.8904|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (14ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:55:08.8988|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-04-30 14:56:08.8090|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:56:08.8090|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-04-30 14:56:08.8256|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-04-30 14:56:08.8256|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:56:08.8529|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (16ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-04-30 14:56:08.8732|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
