@@ -433,3 +433,9 @@ Error Number:-1983577849,State:0,Class:20
 2020-04-30 14:43:08.4215|ERROR|WedigITCRM.Startup|end of Configure method
 2020-04-30 14:43:10.4655|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
 2020-04-30 14:43:10.4655|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-04-30 15:32:36.7563|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-30 15:32:37.4077|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-30 15:32:37.6703|ERROR|WedigITCRM.Startup|start of Configure method
+2020-04-30 15:32:37.7960|ERROR|WedigITCRM.Startup|end of Configure method
+2020-04-30 15:32:39.2516|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 15:32:39.2617|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
