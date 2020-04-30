@@ -72,14 +72,40 @@
                         {
                             <form method="post" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl">
                                 <div>
-                                    @foreach (var provider in Model.ExternalLogins)
+                                    @*@foreach (var provider in Model.ExternalLogins)
                                     {
-                                        <button type="submit" class="btn btn-secondary" 
+                                        <button type="submit" class="btn btn-block btn-social btn-google"
                                                 name="provider" value="@provider.Name"
                                                 title="Log in using your @provider.DisplayName account">
                                             @provider.DisplayName
+                                            <span class="fa fa-google"></span>
                                         </button>
-                                    }
+                                    }*@
+
+                                    <button type="submit" class="btn btn-block btn-social btn-google"
+                                            name="provider" value="@Model.ExternalLogins[0].Name"
+                                            title="Log in using your @Model.ExternalLogins[0].DisplayName account">
+                                        Login med @Model.ExternalLogins[0].DisplayName
+                                        <span class="fa fa-google"></span>
+                                    </button>
+                                    <button type="submit" class="btn btn-block btn-social btn-microsoft"
+                                            name="provider" value="@Model.ExternalLogins[1].Name"
+                                            title="Log in using your @Model.ExternalLogins[1].DisplayName account">
+                                        Login med @Model.ExternalLogins[1].DisplayName
+                                        <span class="fa fa-windows"></span>
+                                    </button>
+                                    <button type="submit" class="btn btn-block btn-social btn-facebook"
+                                            name="provider" value="@Model.ExternalLogins[2].Name"
+                                            title="Log in using your @Model.ExternalLogins[2].DisplayName account">
+                                        Login med @Model.ExternalLogins[2].DisplayName
+                                        <span class="fa fa-facebook"></span>
+                                    </button>
+                                    <button type="submit" class="btn btn-block btn-social btn-twitter"
+                                            name="provider" value="@Model.ExternalLogins[3].Name"
+                                            title="Log in using your @Model.ExternalLogins[3].DisplayName account">
+                                        Login med @Model.ExternalLogins[3].DisplayName
+                                        <span class="fa fa-twitter"></span>
+                                    </button>
                                 </div>
                             </form>
                         }

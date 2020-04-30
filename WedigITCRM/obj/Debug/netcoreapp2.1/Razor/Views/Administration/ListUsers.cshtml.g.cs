@@ -104,12 +104,12 @@ using X.PagedList;
             WriteLiteral("\r\n<div class=\"mysearchbar\">\r\n    <br />\r\n    ");
             EndContext();
             BeginContext(72, 2276, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4bc93d7345f840018eb64ff80d008354", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e53c17ba2f364b3692d5ea19976428a6", async() => {
                 BeginContext(162, 197, true);
                 WriteLiteral("\r\n\r\n        <div class=\"form-row\">\r\n            <div class=\"col-2\">\r\n                <span class=\"viewHeadLine\">Brugere</span>\r\n            </div>\r\n            <div class=\"col-2\">\r\n                ");
                 EndContext();
                 BeginContext(359, 112, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "97f319722cde4de9b04ef9f1524efe17", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ab3d24505e23468a8d4494d988befec5", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -332,7 +332,7 @@ WriteAttributeValue("", 4381, user.User.Id, 4381, 13, false);
                         ");
             EndContext();
             BeginContext(4915, 167, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab544f573cc949ea9507ce6321b71ec6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "692b825cc9ca44c9b1d0891ac569a544", async() => {
                 BeginContext(5053, 25, true);
                 WriteLiteral("Administrer brugerrolller");
                 EndContext();
@@ -370,7 +370,7 @@ WriteAttributeValue("", 4381, user.User.Id, 4381, 13, false);
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(5108, 138, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "852c2172527d428ba33dcbdc8c831d4d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "52d6dcef654e4bdd849b7e3e9958cab1", async() => {
                 BeginContext(5235, 7, true);
                 WriteLiteral("Rediger");
                 EndContext();
@@ -408,7 +408,7 @@ WriteAttributeValue("", 4381, user.User.Id, 4381, 13, false);
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(5272, 137, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "609c762407094da29a38e2ea0078c588", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab618475e53d400b959155bda37dcb46", async() => {
                 BeginContext(5401, 4, true);
                 WriteLiteral("Slet");
                 EndContext();
@@ -454,7 +454,7 @@ WriteAttributeValue("", 4381, user.User.Id, 4381, 13, false);
             WriteLiteral("\r\n<br />\r\n\r\n");
             EndContext();
             BeginContext(5526, 146, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6cde86e646264d2f984a789b7d2c62f4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb5f5eb09e4d411ebdcf88d1b3a82939", async() => {
                 BeginContext(5618, 47, true);
                 WriteLiteral("\r\n    <input id=\"Id\" type=\"hidden\" name=\"Id\">\r\n");
                 EndContext();

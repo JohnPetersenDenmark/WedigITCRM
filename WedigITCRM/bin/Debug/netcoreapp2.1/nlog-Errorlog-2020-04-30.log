@@ -430,3 +430,24 @@ Error Number:-1983577849,State:0,Class:20
 2020-04-30 11:44:19.4578|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
 2020-04-30 12:15:50.7701|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
 2020-04-30 12:15:50.7701|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-04-30 13:43:22.7675|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-30 13:43:23.5663|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-30 13:43:23.8695|ERROR|WedigITCRM.Startup|start of Configure method
+2020-04-30 13:43:24.1488|ERROR|WedigITCRM.Startup|end of Configure method
+2020-04-30 13:43:27.1461|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 13:43:27.1461|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-04-30 13:43:34.3154|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 13:43:34.3154|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-04-30 13:49:27.8823|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-04-30 14:03:06.8318|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-04-30 14:03:23.9727|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-04-30 14:29:48.6764|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 14:29:48.6764|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-04-30 14:30:16.0199|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 14:30:16.0199|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-04-30 14:38:52.4135|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-04-30 14:38:53.3062|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-04-30 14:38:53.4917|ERROR|WedigITCRM.Startup|start of Configure method
+2020-04-30 14:38:53.6402|ERROR|WedigITCRM.Startup|end of Configure method
+2020-04-30 14:38:55.5104|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-04-30 14:38:55.5104|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
