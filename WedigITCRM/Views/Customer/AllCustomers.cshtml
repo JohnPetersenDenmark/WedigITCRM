@@ -91,10 +91,10 @@
             companytable.ajax.reload();
         });
 
-    
-          $('#companytable')
+
+        $('#companytable')
             .on('xhr.dt', function (e, settings, json, xhr) {
-               
+
             })
 
 
@@ -102,8 +102,8 @@
         var textnode = document.createTextNode("Kunder");  // Create a text node
         newItem.appendChild(textnode);
         newItem.classList.add("tableheadline");
-         newItem.classList.add("col-sm-2");
-        
+        newItem.classList.add("col-sm-2");
+
 
         var Mydiv = document.getElementById('companytable_wrapper');
         var mychildren = Mydiv.getElementsByTagName('div');
@@ -118,3 +118,4 @@
             }
         }
     });
+</script>

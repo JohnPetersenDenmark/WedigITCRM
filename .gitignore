@@ -77,3 +77,14 @@ WedigITCRM/Properties/launchSettings.json
 .vs/WedigITCRM/v16/.suo
 .vs/WedigITCRM/v16/.suo
 .vs/WedigITCRM/v16/Server/sqlite3/storage.ide
+.vs/WedigITCRM/config/applicationhost.config
+.vs/WedigITCRM/DesignTimeBuild/.dtbcache
+.vs/WedigITCRM/v16/.suo
+WedigITCRM/bin/Debug/netcoreapp2.1/DocumentFormat.OpenXml.dll
+WedigITCRM/bin/Debug/netcoreapp2.1/nlog-Errorlog-2020-05-01.log
+WedigITCRM/bin/Debug/netcoreapp2.1/nlog-Tracelog-2020-05-01.log
+WedigITCRM/bin/Debug/netcoreapp2.1/nlog-Warninglog-2020-05-01.log
+WedigITCRM/bin/Debug/netcoreapp2.1/nlog-Tracelog-2020-05-01.log
+*.json
+WedigITCRM/bin/Debug/netcoreapp2.1/nlog-Errorlog-2020-05-01.log
+WedigITCRM/obj/WedigITCRM.csproj.nuget.cache

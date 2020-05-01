@@ -13373,6 +13373,7 @@
       "DocumentFormat.OpenXml >= 2.10.1",
       "Google.Apis.Calendar.v3 >= 1.43.0.1858",
       "Microsoft.AspNetCore.App >= 2.1.1",
+      "Microsoft.AspNetCore.Mvc.Analyzers >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.IdentityModel.Clients.ActiveDirectory >= 5.2.6",
       "Microsoft.NETCore.App >= 2.1.0",
@@ -13385,19 +13386,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kv\\.nuget\\packages\\": {}
+    "C:\\Users\\John\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kv\\projects\\WedigITCRM\\WedigITCRM\\WedigITCRM.csproj",
+      "projectUniqueName": "C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\WedigITCRM.csproj",
       "projectName": "WedigITCRM",
-      "projectPath": "C:\\Users\\kv\\projects\\WedigITCRM\\WedigITCRM\\WedigITCRM.csproj",
-      "packagesPath": "C:\\Users\\kv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kv\\projects\\WedigITCRM\\WedigITCRM\\obj\\",
+      "projectPath": "C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\WedigITCRM.csproj",
+      "packagesPath": "C:\\Users\\John\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\kv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\John\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13434,6 +13439,10 @@
             "target": "Package",
             "version": "[2.1.1, )",
             "autoReferenced": true
+          },
+          "Microsoft.AspNetCore.Mvc.Analyzers": {
+            "target": "Package",
+            "version": "[2.1.1, )"
           },
           "Microsoft.AspNetCore.Razor.Design": {
             "suppressParent": "All",
@@ -13485,7 +13494,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

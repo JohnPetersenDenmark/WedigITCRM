@@ -12,8 +12,6 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp2.1\WedigIT
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp2.1\WedigITCRM.pdb
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp2.1\WedigITCRM.Views.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp2.1\WedigITCRM.Views.pdb
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp2.1\DocumentFormat.OpenXml.dll
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp2.1\DocumentFormat.OpenXml.xml
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.Properties.Resources.resources
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csproj.GenerateResource.cache
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.RazorAssemblyInfo.cache
@@ -108,7 +106,6 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigIT
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csproj.CopyComplete
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.pdb
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csprojAssemblyReference.cache
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.Properties.Resources.resources
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csproj.GenerateResource.cache
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.RazorAssemblyInfo.cache
@@ -220,3 +217,5 @@ C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.ge
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csproj.CopyComplete
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csproj.CoreCompileInputs.cache
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csprojAssemblyReference.cache
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\Razor\Views\Home\Error.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowErrorForJSON.cshtml.g.cs
