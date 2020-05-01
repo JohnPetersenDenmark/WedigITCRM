@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using WedigITCRM.ViewModels;
 using WedigITCRM.VirkAPI;
 
 namespace WedigITCRM.Controllers
@@ -229,10 +230,28 @@ namespace WedigITCRM.Controllers
             return zipCode;
         }
 
+        
+        [AllowAnonymous]
+        public IActionResult Error()
+
+        {
+
+            return View(new ErrorViewModel { RequestId = System.Diagnostics.Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+
+        }
 
 
+        
+        public IActionResult ShowErrorForJSON(string errorinstance)
 
+        {
+            ErrorViewModel errorViewModel = new ErrorViewModel();
 
+            errorViewModel.RequestId = errorinstance;
+
+            return View(errorViewModel);
+
+        }
 
     }
 }

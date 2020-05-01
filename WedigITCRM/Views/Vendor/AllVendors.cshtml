@@ -50,24 +50,26 @@
     var suggestData;
     var myAjax;
     var optionsA = [];
-     var optionsCountries = [];
+    var optionsCountries = [];
     companyOptions = [];
-   
+
 
 
     $(document).ready(function () {
 
         initializeVendorEditor();
 
-      initializeVendorTable();
+        initializeVendorTable();
 
         initializeVendorTableFooter();
         initializeSearchVendorTableFooter();
 
         setPresubmitEventHandlerOnVendorEditor();
 
+        setPostSubmitEventHandlerOnVendorEditor();
+
         setVendorZipDependency();
-       
+
         initializeVendorNameTypeAheadInput();
         initializeTypeAheadInputVendorCVR();
 
@@ -77,8 +79,8 @@
         var textnode = document.createTextNode("Leverandører");  // Create a text node
         newItem.appendChild(textnode);
         newItem.classList.add("tableheadline");
-         newItem.classList.add("col-sm-2");
-        
+        newItem.classList.add("col-sm-2");
+
 
         var Mydiv = document.getElementById('vendortable_wrapper');
         var mychildren = Mydiv.getElementsByTagName('div');
@@ -93,6 +95,18 @@
             }
         }
 
+       
+
+        vendortable.on('xhr.dt', function (e, settings, json, xhr) {
+            if (xhr.status != 200) {
+                 $.fn.dataTable.ext.errMode = 'throw';  // this disables the datatables error handling
+                var errorJson = xhr.responseJSON;
+                var errorText = errorJson.Detail;
+                var errorTitle = errorJson.Title;
+                var errorInstance = errorJson.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+            }
+        })
 
 
     });

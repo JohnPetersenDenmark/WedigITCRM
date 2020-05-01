@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -20,11 +21,13 @@ namespace WedigITCRM.Maintenance
         IStockItemRepository _stockItemRepository;
         DineroAPIConnect _dineroAPI;
         ICompanyAccountRepository _companyAccountRepository;
+        private ILogger<SynchronizeDineroStockItems> _logger;
 
 
-        public SynchronizeDineroStockItems(IServiceScopeFactory scopeFactory)
+        public SynchronizeDineroStockItems(IServiceScopeFactory scopeFactory, ILogger<SynchronizeDineroStockItems> logger)
         {
             this.scopeFactory = scopeFactory;
+            this._logger = logger;
         }
 
 
@@ -43,6 +46,8 @@ namespace WedigITCRM.Maintenance
 
         public void SynchronizeStockItems(object state)
         {
+            try
+            { 
             DateTimeFormatInfo SweedishTimeformat = CultureInfo.GetCultureInfo("sv-SE").DateTimeFormat;
 
 
@@ -98,6 +103,11 @@ namespace WedigITCRM.Maintenance
                 _companyAccountRepository.Update(companyAccount);
             }
         }
+            catch (Exception e)
+            {
+                _logger.LogError(e.Message);
+            }
+}
 
 
     }

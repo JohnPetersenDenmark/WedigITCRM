@@ -133,14 +133,21 @@ namespace WedigITCRM
             try
             {
                 _logger.LogError("start of Configure method");
+
                 if (env.IsDevelopment())
                 {
                     app.UseDeveloperExceptionPage();
                 }
                 else
                 {
-                    app.UseDeveloperExceptionPage();
+                    app.UseGlobalExceptionHandler(_logger
+                                   , errorPagePath: "/Home/Error"
+                                   , respondWithJsonErrorDetails: true);
+
+                    // app.UseHsts(); dette skal prøves af.
                 }
+
+                // app.UseHttpsRedirection();    dette skal prøves af.
 
                 app.UseStaticFiles();
                 app.UseAuthentication();

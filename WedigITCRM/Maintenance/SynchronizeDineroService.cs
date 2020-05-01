@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,16 +17,17 @@ namespace WedigITCRM.Maintenance
     {
         private Timer _timer;
         private readonly IServiceScopeFactory scopeFactory;
-
+        private ILogger<SynchronizeDineroContactsService> _logger;
 
         ICompanyRepository _companyRepository;
         DineroAPIConnect _dineroAPI;
         ICompanyAccountRepository _companyAccountRepository;
 
 
-        public SynchronizeDineroContactsService(IServiceScopeFactory scopeFactory)
+        public SynchronizeDineroContactsService(IServiceScopeFactory scopeFactory, ILogger<SynchronizeDineroContactsService> logger)
         {
             this.scopeFactory = scopeFactory;
+            this._logger = logger;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -48,6 +50,8 @@ namespace WedigITCRM.Maintenance
 
         public void SynchronizeDineroContacts(object state)
         {
+            try
+            { 
             DateTimeFormatInfo SweedishTimeformat = CultureInfo.GetCultureInfo("sv-SE").DateTimeFormat;
 
             var scope = scopeFactory.CreateScope();
@@ -94,11 +98,18 @@ namespace WedigITCRM.Maintenance
 
                     }
 
+                        throw new Exception("Forced error in SynchronizeDineroContactsService");
+
                     companyAccount.ContactsToNyxiumLastSynchronizationDate = DateTime.Now;
                     _companyAccountRepository.Update(companyAccount);
                 }
             }
         }
+            catch (Exception e)
+            {
+                _logger.LogError(e.Message);
+            }
+}
 
 
        

@@ -44,8 +44,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getVendors(CompanyAccount companyAccount)
         {
-            try
-            {
+            
                 var vendorData = _vendorRepository.GetAllVendors().Where(company => company.companyAccountId == companyAccount.companyAccountId).ToList();
 
                 List<ReducedVendor> data = new List<ReducedVendor>();
@@ -70,14 +69,10 @@ namespace WedigITCRM.Controllers
                     data.Add(reducedVendor);
                 }
 
-                return Json(data);
+            // throw new Exception("Forced error in Vendor controller");
 
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e.Message);
-                return Json(e.Message);
-            }
+            return Json(data);
+
         }
 
         public IActionResult EditVendor([FromBody] VendorInputModel datamodelInput, CompanyAccount companyAccount)
@@ -87,6 +82,9 @@ namespace WedigITCRM.Controllers
             {
                 if (datamodelInput.action.Equals("edit"))
                 {
+
+                    throw new Exception("Forced error in Vendor controller");
+
                     Vendor vendor = _vendorRepository.GetVendor(int.Parse(datamodelInput.id));
                     if (vendor != null)
                     {
@@ -181,8 +179,7 @@ namespace WedigITCRM.Controllers
 
         public async Task<IActionResult> searchVendorByName(string term, CompanyAccount companyAccount)
         {
-            try
-            {
+           
                 var vendorData = _vendorRepository.GetAllVendors().Where(company => company.companyAccountId == companyAccount.companyAccountId && company.Name.ToLower().Contains(term.ToLower())).ToList();
 
                 List<ReducedVendor> data = new List<ReducedVendor>();
@@ -198,11 +195,6 @@ namespace WedigITCRM.Controllers
 
                 return Json(data);
 
-            }
-            catch (Exception)
-            {
-                throw;
-            }
         }
 
         public class ReducedVendor

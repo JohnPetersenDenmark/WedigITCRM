@@ -36,17 +36,8 @@ namespace WedigITCRM.VirkAPI
             if (response.Result.IsSuccessStatusCode)
             {
                 string responseContent = await response.Result.Content.ReadAsStringAsync();
-                try
-                {
-                    virkResponse = JsonConvert.DeserializeObject<VirkResponse>(responseContent);
-                }
-                catch (Exception exp)
-                {
-                    string noget = exp.ToString();
-                    return null;
-                }
 
-
+                virkResponse = JsonConvert.DeserializeObject<VirkResponse>(responseContent);
             }
 
             client.Dispose();

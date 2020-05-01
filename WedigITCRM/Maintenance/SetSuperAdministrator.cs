@@ -39,6 +39,8 @@ namespace WedigITCRM.Maintenance
 
         public void CreateSuperAdministrator(object state)
         {
+            try
+            { 
             var scope = scopeFactory.CreateScope();
 
             var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
@@ -141,5 +143,10 @@ namespace WedigITCRM.Maintenance
                 }
             }
         }
+            catch (Exception e)
+            {
+                _logger.LogError(e.Message);
+            }
+}
     }
 }

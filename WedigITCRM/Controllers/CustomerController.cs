@@ -511,8 +511,7 @@ namespace WedigITCRM.Controllers
         
         public IActionResult getCompanies(string customerCategory, CompanyAccount companyAccount)
         {
-            try
-            {
+            
                 List<Company> companies = new List<Company>();
 
                 if (!string.IsNullOrEmpty(customerCategory))
@@ -574,11 +573,6 @@ namespace WedigITCRM.Controllers
 
                 return Json(data1);
 
-            }
-            catch (Exception)
-            {
-                throw;
-            }
         }
 
         public class GetCustomerByCategory
@@ -588,8 +582,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getContactPersons(string companyId, string selectAll, CompanyAccount companyAccount)
         {
-            try
-            {
+           
                 DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
                 ContactPersonOutputDataModel1 contactPersonOutputDataModel1 = new ContactPersonOutputDataModel1();
 
@@ -637,11 +630,7 @@ namespace WedigITCRM.Controllers
 
                 return Json(contactPersonOutputDataModel1);
 
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+           
         }
 
         public IActionResult getActivities(string contactPersonId, string companyId, string searchAll, CompanyAccount companyAccount)
@@ -650,8 +639,7 @@ namespace WedigITCRM.Controllers
             ActivityOutputDataModel activityOutputDataModel = new ActivityOutputDataModel();
 
             List<Activity> activityData = null;
-            try
-            {
+          
                 if (!string.IsNullOrEmpty(contactPersonId))
                 {
 
@@ -729,11 +717,6 @@ namespace WedigITCRM.Controllers
 
                 return Json(activityOutputDataModel);
 
-            }
-            catch (Exception)
-            {
-                throw;
-            }
         }
 
     }

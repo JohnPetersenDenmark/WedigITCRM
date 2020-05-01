@@ -81,19 +81,12 @@ namespace WedigITCRM.DineroAPI
             string dineroIdStr = dineroProductId.ToString();
             WebClient client = new WebClient();
             client.Headers.Add("Authorization", "Bearer " + _dineroAPIConnect._APItoken);
-            try
-            {
-                String JsonString = client.DownloadString(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "products" + "/" + dineroIdStr);
-                DineroAPIStockItem dineroAPIStockItem = (JsonConvert.DeserializeObject<DineroAPIStockItem>(JsonString));
+
+            String JsonString = client.DownloadString(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "products" + "/" + dineroIdStr);
+            DineroAPIStockItem dineroAPIStockItem = (JsonConvert.DeserializeObject<DineroAPIStockItem>(JsonString));
 
 
-                return dineroAPIStockItem;
-
-            }
-            catch (Exception ex)
-            {
-                return (null);
-            }
+            return dineroAPIStockItem;
         }
 
 
@@ -140,7 +133,7 @@ namespace WedigITCRM.DineroAPI
                 {
                     Guid DineroGuidId = Guid.Parse(status);
                     stockItem.DineroGuiD = DineroGuidId;
-                     _stockItemRepository.Update(stockItem);     
+                    _stockItemRepository.Update(stockItem);
                 }
             }
         }
@@ -157,7 +150,7 @@ namespace WedigITCRM.DineroAPI
                 Int32 pageSize;
 
                 DateTime LastupdatedDateTime = new DateTime(1980, 01, 01);
-              
+
 
                 string dateStr = LastupdatedDateTime.ToUniversalTime().ToString(SweedishTimeformat.ShortDatePattern);
                 string timeStr = LastupdatedDateTime.ToUniversalTime().ToLongTimeString();
@@ -232,7 +225,7 @@ namespace WedigITCRM.DineroAPI
 
 
             DateTime LastupdatedDateTime = new DateTime();
-           // DateTime LastupdatedDateTime = companyAccount.StockItemsToNyxiumSynchronizationDate;
+            // DateTime LastupdatedDateTime = companyAccount.StockItemsToNyxiumSynchronizationDate;
             string dateStr = LastupdatedDateTime.ToUniversalTime().ToString(SweedishTimeformat.ShortDatePattern);
             string timeStr = LastupdatedDateTime.ToUniversalTime().ToLongTimeString();
             string LastupdatedToDineroAPIDateTime = dateStr + "T" + timeStr + "Z";
@@ -240,7 +233,7 @@ namespace WedigITCRM.DineroAPI
             page = -1;
             pageSize = 1000;
 
-            DineroAPIStockItemCollection dineroAPIStockItemCollection = getStockItemsFromDinero(LastupdatedToDineroAPIDateTime,  page, pageSize);
+            DineroAPIStockItemCollection dineroAPIStockItemCollection = getStockItemsFromDinero(LastupdatedToDineroAPIDateTime, page, pageSize);
             foreach (var dineroStockItem in dineroAPIStockItemCollection.Collection)
             {
                 StockItem stockItem = new StockItem();
@@ -257,7 +250,7 @@ namespace WedigITCRM.DineroAPI
                 stockItem.LastEditedDate = DateTime.Now;
                 stockItem.CreatedDate = DateTime.Now;
                 stockItem.companyAccountId = companyAccount.companyAccountId;
-                 _stockItemRepository.Add(stockItem);                                
+                _stockItemRepository.Add(stockItem);
             }
         }
 

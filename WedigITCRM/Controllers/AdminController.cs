@@ -42,8 +42,7 @@ namespace WedigITCRM.Controllers
 
         public async Task<IActionResult> GetUsers(CompanyAccount companyAccount)
         {
-            try
-            {
+           
                 List<RelateCompanyAccountWithUser> userWithCompanyAccountRelations = new List<RelateCompanyAccountWithUser>();
 
                 if(User.IsInRole("SystemAdministrator"))
@@ -90,11 +89,7 @@ namespace WedigITCRM.Controllers
 
                 return Json(userModel);
 
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+           
         }
 
         //This action at EditCompany can bind JSON 

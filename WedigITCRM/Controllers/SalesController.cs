@@ -40,6 +40,11 @@ namespace WedigITCRM.Controllers
         [HttpGet]
         public IActionResult StatisticsTurnOver( CompanyAccount companyAccount)
         {
+
+
+           
+
+
             DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
 
             StatisticsTurnOverViewModel model = new StatisticsTurnOverViewModel();
