@@ -31,6 +31,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/1.2.1/typeaheadjs.css">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
         <link rel="stylesheet" href="~/lib/css/custom.css">
+        <link rel="stylesheet" href="~/lib/css/bootstrap-social.css">
 
         <!-- General JavaScript files-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -272,9 +273,9 @@
                             <a href="#resourcetypes" aria-expanded="false" data-toggle="collapse"><img src="~/Images/booking-icon.png" class="imgicon" /> Booking</a>
                             <ul id="resourcetypes" class="collapse list-unstyled ">
                                 <li><a asp-controller="booking" asp-action="ShowBookingSetup">Åbningstider</a></li>
+                                <li><a asp-controller="booking" asp-action="ShowBookingServices">Ydelser</a></li>
                                 <li><a asp-controller="booking" asp-action="ShowJobServiceTypes">Resursetyper</a></li>
                                 <li><a asp-controller="booking" asp-action="ShowBookingResources">Resurser</a></li>
-                                <li><a asp-controller="booking" asp-action="ShowBookingServices">Ydelser</a></li>
                                 <li><a asp-controller="booking" asp-action="AdminAnnualCycle">Aftalekalender</a></li>
                                 <li><a asp-controller="booking" asp-action="index">Online tider</a></li>
                             </ul>
