@@ -15901,3 +15901,168 @@ WHERE [r].[NormalizedName] = @__normalizedName_0
 SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
 FROM [AspNetUsers] AS [u]
 WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-01 12:28:55.1321|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-01 12:28:56.6899|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-01 12:28:56.9384|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\John\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-05-01 12:28:57.3799|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-01 12:28:57.9686|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-01 12:29:00.5760|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-01 12:29:00.5913|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-01 12:29:00.6092|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-01 12:29:00.6171|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-01 12:29:02.5464|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/  
+2020-05-01 12:29:03.2689|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.HomeController (WedigITCRM).
+2020-05-01 12:29:03.5069|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.HomeController.Index (WedigITCRM) - Validation state: Valid
+2020-05-01 12:29:03.5183|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-01 12:29:03.5350|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-05-01 12:29:03.5776|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.HomeController.Index (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 32.1232ms.
+2020-05-01 12:29:03.6276|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /FrontPage.
+2020-05-01 12:29:03.6693|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.HomeController.Index (WedigITCRM) in 360.6962ms
+2020-05-01 12:29:03.7033|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1282.5247ms 302 
+2020-05-01 12:29:03.7471|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:44395/  0
+2020-05-01 12:29:03.7519|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 5.4504ms 200 
+2020-05-01 12:29:03.7875|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/FrontPage  
+2020-05-01 12:29:03.8101|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Index", controller = "FrontPage"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WedigITCRM.Controllers.FrontPageController (WedigITCRM).
+2020-05-01 12:29:03.8221|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.FrontPageController.Index (WedigITCRM) - Validation state: Valid
+2020-05-01 12:29:03.8328|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.FrontPageController.Index (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.9641ms.
+2020-05-01 12:29:03.8839|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Index.
+2020-05-01 12:29:04.0214|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Index executed in 176.9252ms.
+2020-05-01 12:29:04.0214|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.FrontPageController.Index (WedigITCRM) in 211.658ms
+2020-05-01 12:29:04.0383|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 250.6245ms 200 text/html; charset=utf-8
+2020-05-01 12:29:04.2855|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/img/svgs/illustrations/tabs.svg  
+2020-05-01 12:29:04.3262|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/img/nyxium-logo.png  
+2020-05-01 12:29:04.3988|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /frontpage/img/svgs/illustrations/tabs.svg was not modified
+2020-05-01 12:29:04.6961|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/nyxium-logo.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\nyxium-logo.png'
+2020-05-01 12:29:04.7466|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 272.2384ms 304 image/svg+xml
+2020-05-01 12:29:04.8025|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 427.2647ms 200 image/png
+2020-05-01 12:29:04.8177|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/img/svgs/illustrations/responsive.svg  
+2020-05-01 12:29:04.8367|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/img/svgs/illustrations/connected.svg  
+2020-05-01 12:29:04.8869|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /frontpage/img/svgs/illustrations/responsive.svg was not modified
+2020-05-01 12:29:04.9412|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /frontpage/img/svgs/illustrations/connected.svg was not modified
+2020-05-01 12:29:04.9543|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 106.4363ms 304 image/svg+xml
+2020-05-01 12:29:04.9861|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 133.0822ms 304 image/svg+xml
+2020-05-01 12:29:04.9861|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/img/svgs/tasks.svg  
+2020-05-01 12:29:05.0219|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/img/pngs/icons/smile.png  
+2020-05-01 12:29:05.0803|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /frontpage/img/svgs/tasks.svg was not modified
+2020-05-01 12:29:05.0803|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /frontpage/img/pngs/icons/smile.png was not modified
+2020-05-01 12:29:05.1026|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 100.1355ms 304 image/svg+xml
+2020-05-01 12:29:05.1209|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 104.7532ms 304 image/png
+2020-05-01 12:29:05.2728|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/js/front.js  
+2020-05-01 12:29:05.3362|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/img/svgs/illustrations/real-time-sync.svg  
+2020-05-01 12:29:05.3658|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /frontpage/js/front.js was not modified
+2020-05-01 12:29:05.4025|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /frontpage/img/svgs/illustrations/real-time-sync.svg was not modified
+2020-05-01 12:29:05.4509|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 277.4014ms 304 application/javascript
+2020-05-01 12:29:05.4827|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 264.9345ms 304 image/svg+xml
+2020-05-01 12:29:05.6683|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/img/pngs/icons/bg-rocket.png  
+2020-05-01 12:29:05.7840|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/styles/scss/styles.css  
+2020-05-01 12:29:05.7840|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /frontpage/img/pngs/icons/bg-rocket.png was not modified
+2020-05-01 12:29:05.8010|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /frontpage/styles/scss/styles.css was not modified
+2020-05-01 12:29:05.8010|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 312.184ms 304 image/png
+2020-05-01 12:29:05.8153|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 252.5654ms 304 text/css
+2020-05-01 12:29:05.8153|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/img/svgs/illustrations/online-transactions.svg  
+2020-05-01 12:29:06.0201|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/img/svgs/covers/front-page-cover.svg  
+2020-05-01 12:29:06.0902|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /frontpage/img/svgs/illustrations/online-transactions.svg was not modified
+2020-05-01 12:29:06.1026|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /frontpage/img/svgs/covers/front-page-cover.svg was not modified
+2020-05-01 12:29:06.1168|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 281.3232ms 304 image/svg+xml
+2020-05-01 12:29:06.1279|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 286.8259ms 304 image/svg+xml
+2020-05-01 12:29:11.1381|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (148ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyName], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-05-01 12:29:11.1538|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (154ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-01 12:29:11.9619|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (152ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyName], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-05-01 12:29:13.8498|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2,413ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-01 12:29:15.0571|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (902ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-01 12:29:16.1191|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (160ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-01 12:30:11.1072|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-01 12:30:11.8254|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-01 12:30:11.9623|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\John\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-05-01 12:30:12.1243|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-01 12:30:12.3419|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-01 12:30:13.0098|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-01 12:30:13.0098|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-01 12:30:13.0098|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-01 12:30:13.0154|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-01 12:30:13.9558|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:44395/  0
+2020-05-01 12:30:14.0878|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 130.0462ms 200 
+2020-05-01 12:30:14.0957|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/  
+2020-05-01 12:30:14.6748|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.HomeController (WedigITCRM).
+2020-05-01 12:30:14.7519|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.HomeController.Index (WedigITCRM) - Validation state: Valid
+2020-05-01 12:30:14.7519|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-01 12:30:14.7519|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-05-01 12:30:14.7769|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.HomeController.Index (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 13.8578ms.
+2020-05-01 12:30:14.8037|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /FrontPage.
+2020-05-01 12:30:14.8126|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.HomeController.Index (WedigITCRM) in 129.8643ms
+2020-05-01 12:30:14.8126|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 730.7598ms 302 
+2020-05-01 12:30:14.8900|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/FrontPage  
+2020-05-01 12:30:14.8986|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Index", controller = "FrontPage"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WedigITCRM.Controllers.FrontPageController (WedigITCRM).
+2020-05-01 12:30:14.9067|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.FrontPageController.Index (WedigITCRM) - Validation state: Valid
+2020-05-01 12:30:14.9067|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.FrontPageController.Index (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.3348ms.
+2020-05-01 12:30:14.9549|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Index.
+2020-05-01 12:30:15.0779|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Index executed in 156.8852ms.
+2020-05-01 12:30:15.0830|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.FrontPageController.Index (WedigITCRM) in 178.9383ms
+2020-05-01 12:30:15.0830|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 204.02ms 200 text/html; charset=utf-8
+2020-05-01 12:30:15.1446|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/frontpage/img/nyxium-logo.png  
+2020-05-01 12:30:15.1752|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The file /frontpage/img/nyxium-logo.png was not modified
+2020-05-01 12:30:15.2409|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 45.7517ms 304 image/png
+2020-05-01 12:30:18.9962|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Account/login  
+2020-05-01 12:30:19.4135|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-05-01 12:30:19.5050|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM) - Validation state: Valid
+2020-05-01 12:30:19.9992|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WedigITCRM.Controllers.AccountController.Login (WedigITCRM), returned result Microsoft.AspNetCore.Mvc.ViewResult in 68.2457ms.
+2020-05-01 12:30:20.3045|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (621ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-01 12:30:20.4981|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1,034ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyName], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-05-01 12:30:20.7128|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1,028ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyName], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-05-01 12:30:21.1638|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-05-01 12:30:21.7315|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1,461ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-01 12:30:23.0974|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (230ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-01 12:30:23.7960|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (299ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-01 12:30:28.3467|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 7775.0291ms.
+2020-05-01 12:30:28.4820|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 8929.732ms
+2020-05-01 12:30:28.5111|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/CompanyDatatable.js  
+2020-05-01 12:30:28.5111|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 9539.3915ms 200 text/html; charset=utf-8
+2020-05-01 12:30:28.5435|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/CustomJS/VendorDatatable.js  
+2020-05-01 12:30:28.5592|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44395/Images/connect_logo.png  
+2020-05-01 12:30:28.6765|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/Images/connect_logo.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\Images\connect_logo.png'
+2020-05-01 12:30:28.6950|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/VendorDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\VendorDatatable.js'
+2020-05-01 12:30:28.7081|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 156.2752ms 200 image/png
+2020-05-01 12:30:28.7437|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 179.3435ms 200 application/javascript
+2020-05-01 12:30:28.7437|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/CompanyDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\CompanyDatatable.js'
+2020-05-01 12:30:28.7597|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 348.2689ms 200 application/javascript
+2020-05-01 12:30:31.4147|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-01 12:30:31.7492|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (109ms) [Parameters=[@p27='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTime2), @p14='?' (DbType = DateTime2), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Guid), @p22='?' (DbType = DateTime2), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyName] = @p2, [Companyidentifier] = @p3, [ContactsToDineroLastSynchronizationDate] = @p4, [ContactsToNyxiumLastSynchronizationDate] = @p5, [DineroAPIOrganization] = @p6, [DineroAPIOrganizationKey] = @p7, [IntegrationDinero] = @p8, [LogoAttachmentIds] = @p9, [NyxiumLicenseTypeId] = @p10, [NyxiumLicenseTypeName] = @p11, [SalesStatistic] = @p12, [StockItemsToDineroLastSynchronizationDate] = @p13, [StockItemsToNyxiumSynchronizationDate] = @p14, [SubscriptionCRM] = @p15, [SubscriptionInventory] = @p16, [SubscriptionProcurement] = @p17, [SubscriptionVendor] = @p18, [VendorsItemsToDineroLastSynchronizationDate] = @p19, [activationDate] = @p20, [activationKey] = @p21, [registrationDate] = @p22, [synchronizeCustomerFromDineroToNyxium] = @p23, [synchronizeCustomerFromNyxiumToDinero] = @p24, [synchronizeStockItemFromDineroToNyxium] = @p25, [synchronizeStockItemFromNyxiumToDinero] = @p26
+WHERE [companyAccountId] = @p27;
+SELECT @@ROWCOUNT;
+2020-05-01 12:30:31.7814|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@p27='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTime2), @p14='?' (DbType = DateTime2), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Guid), @p22='?' (DbType = DateTime2), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyName] = @p2, [Companyidentifier] = @p3, [ContactsToDineroLastSynchronizationDate] = @p4, [ContactsToNyxiumLastSynchronizationDate] = @p5, [DineroAPIOrganization] = @p6, [DineroAPIOrganizationKey] = @p7, [IntegrationDinero] = @p8, [LogoAttachmentIds] = @p9, [NyxiumLicenseTypeId] = @p10, [NyxiumLicenseTypeName] = @p11, [SalesStatistic] = @p12, [StockItemsToDineroLastSynchronizationDate] = @p13, [StockItemsToNyxiumSynchronizationDate] = @p14, [SubscriptionCRM] = @p15, [SubscriptionInventory] = @p16, [SubscriptionProcurement] = @p17, [SubscriptionVendor] = @p18, [VendorsItemsToDineroLastSynchronizationDate] = @p19, [activationDate] = @p20, [activationKey] = @p21, [registrationDate] = @p22, [synchronizeCustomerFromDineroToNyxium] = @p23, [synchronizeCustomerFromNyxiumToDinero] = @p24, [synchronizeStockItemFromDineroToNyxium] = @p25, [synchronizeStockItemFromNyxiumToDinero] = @p26
+WHERE [companyAccountId] = @p27;
+SELECT @@ROWCOUNT;
