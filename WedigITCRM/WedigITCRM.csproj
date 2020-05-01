@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\CustomerAttachments\Logos\**" />
+    <Content Remove="wwwroot\CustomerAttachments\Logos\**" />
+    <EmbeddedResource Remove="wwwroot\CustomerAttachments\Logos\**" />
+    <None Remove="wwwroot\CustomerAttachments\Logos\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Migrations\20191020151255_Added Zip id to Company table.cs" />
     <Compile Remove="Migrations\20191020151255_Added Zip id to Company table.Designer.cs" />
     <Compile Remove="Migrations\20200121193704_StockItems.cs" />
@@ -908,7 +915,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\CustomerAttachments\Logos\" />
+    <Folder Include="wwwroot\CustomerAttachments\NewFolder1\" />
+    <Folder Include="wwwroot\CustomerAttachments\NewFolder\NewFolder\" />
     <Folder Include="wwwroot\CustomJS\FullCalendar\" />
     <Folder Include="wwwroot\Images\Icons-filtypes\" />
     <Folder Include="wwwroot\lib\docs\images\upload\" />
