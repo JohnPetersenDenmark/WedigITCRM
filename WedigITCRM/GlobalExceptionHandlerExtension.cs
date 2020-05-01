@@ -28,6 +28,9 @@ namespace WedigITCRM
                     //============================================================
                     //Log Exception
                     //============================================================
+
+                   
+
                     var exception = context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>().Error;
 
                     string errorDetails = $@"{exception.Message}

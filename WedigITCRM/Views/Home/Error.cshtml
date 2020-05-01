@@ -1,19 +1,35 @@
 ﻿@model ErrorViewModel
+<div class="formcontainer">
 
-@{
-    ViewData["Title"] = "Error";
-}
+    <h2 class="text-danger">Ups! nyxium er løbet ind i en fejl.</h2>
+    <br />
+    <br />
+    <br />
+    <div class="form-group row">
+        <div class="form-group col-md-8">
+            Der er sendt en email til nyxium-support vedrørende problemet.
+            <br />
+            <br />
+            Er du gået i stå så kontakt nyxium-support på:
+            <br />
+            <br />
+            <br />
+            Email <a href="mailto:support@nyxium.dk?subject=Supportkode: @Model.RequestId">Send</a>
+            <br />
+            Telefon : 7190 7153
+            <br />
+            <br />
+            <br />
+            @if (Model.ShowRequestId)
 
-
-
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
-
-@if (Model.ShowRequestId)
-
-{
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
-    </p>
-}
-
+            {
+                <p>
+                    Ved telefonisk kontakt skal du opgive support-koden vist nedenfor:
+                </p>
+                <p class="text-danger">
+                    @Model.RequestId
+                </p>
+            }
+        </div>
+    </div>
+</div>
