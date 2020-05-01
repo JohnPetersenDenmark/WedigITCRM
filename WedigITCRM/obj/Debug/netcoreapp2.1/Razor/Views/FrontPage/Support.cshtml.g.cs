@@ -96,7 +96,7 @@ using X.PagedList;
             WriteLiteral("\r\n\r\n<html lang=\"en\">\r\n\r\n");
             EndContext();
             BeginContext(51, 768, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "696748e211f246b9854dc760a6021163", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1456ebcb9c0403d94288176a332c2e8", async() => {
                 BeginContext(57, 755, true);
                 WriteLiteral(@"
     <meta charset=""UTF-8"">
@@ -155,7 +155,7 @@ using X.PagedList;
     ");
             EndContext();
             BeginContext(1719, 3113, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e76910bbb59d4bb48f49ca7fcafc739b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea75b8ee856e4f26a1ea776b61e165e3", async() => {
                 BeginContext(1725, 2645, true);
                 WriteLiteral(@"
 
@@ -232,7 +232,7 @@ using X.PagedList;
 ");
                 EndContext();
                 BeginContext(4370, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6229133a8ba14f168d5e1e6b77d1427d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0afbd72c75d14624802d38a8644fd93e", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

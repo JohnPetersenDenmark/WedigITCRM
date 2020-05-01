@@ -114,7 +114,7 @@ using X.PagedList;
 ");
             EndContext();
             BeginContext(458, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "24a3f239772a4e93af1687ffef40d546", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f903884bbc594c65b3ab668c0272b65a", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -175,7 +175,7 @@ using X.PagedList;
                 ");
             EndContext();
             BeginContext(2125, 1705, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c759868401644af0927bcf3eb36f7b10", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59971415c69e46f9810049b73e69ce79", async() => {
                 BeginContext(2131, 1157, true);
                 WriteLiteral(@"
                     <div class=""form-group"">
@@ -195,7 +195,7 @@ using X.PagedList;
                 WriteLiteral("error\" class=\"text-danger\"></div>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        ");
                 EndContext();
                 BeginContext(3288, 66, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5ca4eacc0aeb4b099ae0560a1f9c07ce", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6b742c6b97ff43e6b1dc45bcc8fe03b3", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -248,7 +248,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
             WriteLiteral("\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-8\">\r\n            <div id=\"dialogserviceandresource\">\r\n                ");
             EndContext();
             BeginContext(3965, 2285, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "27fe9ed9b67e4d5b8f734c6372034a34", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9032256570494333ad0addae3e5d4d86", async() => {
                 BeginContext(3971, 2272, true);
                 WriteLiteral(@"
                     <div class=""form-group"">
