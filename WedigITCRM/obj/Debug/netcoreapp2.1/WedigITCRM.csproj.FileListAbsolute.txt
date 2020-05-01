@@ -219,4 +219,3 @@ C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.cs
 C:\Users\kv\projects\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csprojAssemblyReference.cache
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\Razor\Views\Home\Error.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowErrorForJSON.cshtml.g.cs
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csprojAssemblyReference.cache
