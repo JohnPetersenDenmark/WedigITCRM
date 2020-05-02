@@ -109,6 +109,6 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\win-x86
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\win-x86\Razor\Views\Note\ShowAllNotes.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\win-x86\Razor\Views\Note\ShowDummy.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\win-x86\Razor\Views\Customer\NotesOnCompany.cshtml.g.cs
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp2.1\win-x86\DocumentFormat.OpenXml.dll
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp2.1\win-x86\DocumentFormat.OpenXml.xml
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\win-x86\Razor\Views\Note\searchInAttachment.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\win-x86\Razor\Views\Home\Error.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\win-x86\Razor\Views\Home\ShowErrorForJSON.cshtml.g.cs

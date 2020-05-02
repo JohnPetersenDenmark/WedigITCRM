@@ -13,20 +13,20 @@ namespace WedigITCRM.Controllers
 {
     [Authorize]
     public class HomeController : Controller
-    {
-
+    {       
         private SignInManager<IdentityUser> _signInManager;
         private UserManager<IdentityUser> _userManager;
         private IPostalCodeRepository _postalCodeRepository;
         private ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, IPostalCodeRepository postalCodeRepository, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        public HomeController( ILogger<HomeController> logger, IPostalCodeRepository postalCodeRepository, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
         {
 
             _signInManager = signInManager;
             _userManager = userManager;
             _postalCodeRepository = postalCodeRepository;
             _logger = logger;
+      
         }
 
 
@@ -252,6 +252,6 @@ namespace WedigITCRM.Controllers
             return View(errorViewModel);
 
         }
-
+       
     }
 }

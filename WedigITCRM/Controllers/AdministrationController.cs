@@ -21,8 +21,9 @@ namespace WedigITCRM.Controllers
     [Authorize]
     public class AdministrationController : Controller
     {
-        private ILogger<AdministrationController> _logger;
-        private ILogger<EmailUtility> _emailUtilitylogger;
+        private EmailUtility _emailUtility;
+
+        private ILogger<AdministrationController> _logger;    
         private readonly UserManager<IdentityUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
         IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;      
@@ -30,7 +31,7 @@ namespace WedigITCRM.Controllers
         Microsoft.AspNetCore.Hosting.IHostingEnvironment _env;
         int ElementsPerPage = 5;
 
-        public AdministrationController(ILogger<EmailUtility> emailUtilitylogger, ILogger<AdministrationController> logger, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository,  ICompanyAccountRepository CompanyAccountRepository, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
+        public AdministrationController(EmailUtility emailUtility, ILogger<AdministrationController> logger, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository,  ICompanyAccountRepository CompanyAccountRepository, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
@@ -38,7 +39,7 @@ namespace WedigITCRM.Controllers
             _env = env;            
             _CompanyAccountRepository = CompanyAccountRepository;
             _logger = logger;
-            _emailUtilitylogger = emailUtilitylogger;
+            _emailUtility = emailUtility;
         }
 
         [HttpGet]
@@ -670,10 +671,10 @@ namespace WedigITCRM.Controllers
                 tokens.Add("changePasswordUrl", changePasswordUrl);
 
 
-                EmailUtility emailUtility = new EmailUtility(_emailUtilitylogger);
+               // EmailUtility emailUtility = new EmailUtility();
 
-                AlternateView htmlView = emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.Resetpassword, _env, tokens);
-                emailUtility.send(model.Email, "support@nyxium.dk",  "Ændring af kodeord.", htmlView, true);
+                AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.Resetpassword,  tokens);
+                _emailUtility.send(model.Email, "support@nyxium.dk",  "Ændring af kodeord.", htmlView, true);
                 // }
             }
 

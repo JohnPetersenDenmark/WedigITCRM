@@ -25,7 +25,8 @@ namespace WedigITCRM.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private ILogger<EmailUtility> _emailUtilitylogger;
+        private EmailUtility _emailUtility;
+
         private UserManager<IdentityUser> userManager;
         private SignInManager<IdentityUser> signInManager;
         private ILogger<AccountController> _logger;
@@ -40,7 +41,7 @@ namespace WedigITCRM.Controllers
         IHostingEnvironment _env;
         MiscUtility miscUtility;
 
-        public AccountController(ILogger<EmailUtility> emailUtilitylogger, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IHostingEnvironment env)
+        public AccountController(EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IHostingEnvironment env)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -54,7 +55,7 @@ namespace WedigITCRM.Controllers
             this._contentTypeRepository = contentTypeRepository;
             _attachmentRepository = attachmentRepository;
             _env = env;
-            _emailUtilitylogger = emailUtilitylogger;
+            _emailUtility = emailUtility;
 
             miscUtility = new MiscUtility();
 
@@ -376,10 +377,11 @@ namespace WedigITCRM.Controllers
                     tokens.Add("userName", model.UserName);
                     tokens.Add("companyName", model.CompanyName);
 
-                    EmailUtility emailUtility = new EmailUtility(_emailUtilitylogger);
+                    //EmailUtility emailUtility = new EmailUtility();
 
-                    AlternateView htmlView = emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmation, _env, tokens);
-                    emailUtility.send(model.Email, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true);
+                    // AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmation, _env, tokens);
+                    AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmation,  tokens);
+                    _emailUtility.send(model.Email, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true);
 
                     model.companyAccountEmailSent = true;
                     model.companyAccountEmailSentMessage = "Email er sendt til: " + model.Email;
@@ -422,12 +424,14 @@ namespace WedigITCRM.Controllers
                         tokens.Add("companyName", companyAccount.CompanyName);
                         tokens.Add("companyAccountId", updatedCompanyAccount.companyAccountId.ToString());
 
-                        EmailUtility emailUtility = new EmailUtility(_emailUtilitylogger);
+                       // EmailUtility emailUtility = new EmailUtility();
 
-                        AlternateView htmlView = emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmationToWedigit, _env, tokens);
+                      //  AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmationToWedigit, _env, tokens);
+
+                        AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmationToWedigit,  tokens);
 
                         string fixedsendToList = "johnpetersen1959@gmail.com,jp@wedigit.dk,kv@wedigit.dk,tj@wedigit.dk,ad@wedigit.dk";
-                        emailUtility.send(fixedsendToList, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true);
+                        _emailUtility.send(fixedsendToList, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true);
                         // DONE send email to wedigit employees
 
                         model.message = "Din konto er nu aktiveret. Du kan logge ind via knappen ovenfor";

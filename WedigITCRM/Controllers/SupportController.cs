@@ -18,14 +18,14 @@ namespace WedigITCRM.Controllers
     {
         private IHostingEnvironment _env;
         private ILogger<SupportController> _logger;
-        private ILogger<EmailUtility> _emailUtilitylogger;
+        private EmailUtility _emailUtility;
 
 
-        public SupportController(ILogger<EmailUtility> emailUtilitylogger, ILogger<SupportController> logger, IHostingEnvironment env)
+        public SupportController(EmailUtility emailUtility, ILogger<SupportController> logger, IHostingEnvironment env)
         {
             _env = env;
             _logger = logger;
-            _emailUtilitylogger = emailUtilitylogger;
+            _emailUtility = emailUtility;
         }
 
 
@@ -65,11 +65,11 @@ namespace WedigITCRM.Controllers
                 tokens.Add("problemdescription", model.Beskrivelse);
                 tokens.Add("useremail", model.Email);
 
-                EmailUtility emailUtility = new EmailUtility(_emailUtilitylogger);
+               // EmailUtility emailUtility = new EmailUtility();
 
-                AlternateView htmlView = emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.SupportTicket, _env, tokens);
+                AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.SupportTicket,  tokens);
 
-                emailUtility.send("support@nyxium.dk", "support@nyxium.dk", "Support", htmlView, true);
+                _emailUtility.send("support@nyxium.dk", "support@nyxium.dk", "Support", htmlView, true);
 
             }
             return View(supportTicket);

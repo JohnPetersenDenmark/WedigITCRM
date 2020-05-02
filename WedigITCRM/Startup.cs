@@ -18,6 +18,7 @@ using WedigITCRM.StorageInterfaces;
 using WedigITCRM.SQLImplmementationModels;
 using Microsoft.Extensions.Logging;
 
+
 namespace WedigITCRM
 {
     public class Startup
@@ -27,12 +28,12 @@ namespace WedigITCRM
 
         private IConfiguration _config;
         private ILogger<Startup> _logger;
+        
 
         public Startup(IConfiguration config, ILogger<Startup> logger)
         {
             _config = config;
-
-            _logger = logger;
+            _logger = logger;          
         }
  
         public void ConfigureServices(IServiceCollection services)
@@ -82,9 +83,11 @@ namespace WedigITCRM
                 services.AddScoped<IBookingSetupRepository, SQLBookingSetupRepository>();
                 services.AddScoped<ILicenseType, SQLLicenseTypeRepository>();
                 services.AddScoped<ICountryRepository, SQLCountryRepository>();
-                services.AddScoped<IAttachmentRepository, SQLAttachmentRepository>();
-
+                services.AddScoped<IAttachmentRepository, SQLAttachmentRepository>();               
                 services.AddScoped<DineroAPIConnect>();
+
+
+                services.AddScoped<EmailUtility>();
 
 
                 services.AddMvc(options =>
@@ -140,9 +143,13 @@ namespace WedigITCRM
                 }
                 else
                 {
-                    app.UseGlobalExceptionHandler(_logger
+                   
+
+                    app.UseGlobalExceptionHandler(env
+                                   , _logger
                                    , errorPagePath: "/Home/Error"
                                    , respondWithJsonErrorDetails: true);
+                                 
 
                     // app.UseHsts(); dette skal prøves af.
                 }

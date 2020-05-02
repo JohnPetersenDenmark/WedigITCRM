@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,12 @@ namespace WedigITCRM.Utilities
 {
     public class EmailUtility
     {
-        private ILogger<EmailUtility> _logger;
-        public EmailUtility(ILogger<EmailUtility> logger)
+        private IHostingEnvironment _env;
+      
+        public EmailUtility(IHostingEnvironment env)
         {
-            _logger = logger;
+            _env = env;
+  
         }
 
 
@@ -59,7 +62,7 @@ namespace WedigITCRM.Utilities
       
 
 
-        public AlternateView getFormattedBodyByMailtemplate(MailTemplateType mailTemplateType, Microsoft.AspNetCore.Hosting.IHostingEnvironment env, Dictionary<string, string> tokens, CompanyAccount companyAccount, IAttachmentRepository attachmentRepository)
+        public AlternateView getFormattedBodyByMailtemplate(MailTemplateType mailTemplateType,  Dictionary<string, string> tokens, CompanyAccount companyAccount, IAttachmentRepository _attachmentRepository)
         {
           
                 string body = string.Empty;
@@ -90,7 +93,7 @@ namespace WedigITCRM.Utilities
 
                 }
 
-                StreamReader reader = new StreamReader(env.WebRootPath + "/" + "MailTemplates" + "/" + mailtemplateFileName);
+                StreamReader reader = new StreamReader(_env.WebRootPath + "/" + "MailTemplates" + "/" + mailtemplateFileName);
                 {
                     body = reader.ReadToEnd();
                 }
@@ -120,18 +123,18 @@ namespace WedigITCRM.Utilities
                 {
                     if (!string.IsNullOrEmpty(companyAccount.LogoAttachmentIds))
                     {
-                        WedigITCRM.EntitityModels.Attachment attachment = attachmentRepository.GetAttachment(Int32.Parse(companyAccount.LogoAttachmentIds));
+                        WedigITCRM.EntitityModels.Attachment attachment = _attachmentRepository.GetAttachment(Int32.Parse(companyAccount.LogoAttachmentIds));
                         if (attachment != null)
                         {
 
-                            LinkedImage = new LinkedResource(env.WebRootPath + "/" + "CustomerAttachments" + "/" + "Logos" + "/" + attachment.uniqueInternalFileName, attachment.ContentType);
+                            LinkedImage = new LinkedResource(_env.WebRootPath + "/" + "CustomerAttachments" + "/" + "Logos" + "/" + attachment.uniqueInternalFileName, attachment.ContentType);
                         }
                     }
 
                 }
                 else
                 {
-                    LinkedImage = new LinkedResource(env.WebRootPath + "/" + "frontpage" + "/" + "img" + "/" + "nyxium-logo.png", "image/png");
+                    LinkedImage = new LinkedResource(_env.WebRootPath + "/" + "frontpage" + "/" + "img" + "/" + "nyxium-logo.png", "image/png");
                 }
 
                 AlternateView htmlView = null;
@@ -153,7 +156,7 @@ namespace WedigITCRM.Utilities
             
         }
 
-        public AlternateView getFormattedBodyByMailtemplate(MailTemplateType mailTemplateType, Microsoft.AspNetCore.Hosting.IHostingEnvironment env, Dictionary<string, string> tokens)
+        public AlternateView getFormattedBodyByMailtemplate(MailTemplateType mailTemplateType,  Dictionary<string, string> tokens)
         {
          
                 string body = string.Empty;
@@ -181,10 +184,14 @@ namespace WedigITCRM.Utilities
                         mailtemplateFileName = "ActivityNotification.html";
                         break;
 
+                case MailTemplateType.SupportTicketSystemError:
+                    mailtemplateFileName = "SupportTicketsystemError.html";
+                    break;
 
-                }
 
-                StreamReader reader = new StreamReader(env.WebRootPath + "/" + "MailTemplates" + "/" + mailtemplateFileName);
+            }
+
+                StreamReader reader = new StreamReader(_env.WebRootPath + "/" + "MailTemplates" + "/" + mailtemplateFileName);
                 {
                     body = reader.ReadToEnd();
                 }
@@ -208,7 +215,7 @@ namespace WedigITCRM.Utilities
 
                 }
 
-                LinkedResource LinkedImage = new LinkedResource(env.WebRootPath + "/" + "frontpage" + "/" + "img" + "/" + "nyxium-logo.png", "image/png");
+                LinkedResource LinkedImage = new LinkedResource(_env.WebRootPath + "/" + "frontpage" + "/" + "img" + "/" + "nyxium-logo.png", "image/png");
 
                 LinkedImage.ContentId = "logoInEmail";
                 body = body.Replace("{logocid}", LinkedImage.ContentId);
@@ -226,7 +233,8 @@ namespace WedigITCRM.Utilities
             AccountConfirmation,
             Resetpassword,
             SupportTicket,
-            ActivityNotification
+            ActivityNotification,
+            SupportTicketSystemError
         }
     }
 }
