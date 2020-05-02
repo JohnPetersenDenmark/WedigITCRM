@@ -97,10 +97,13 @@
 
         initializeContactPersonTableFooter();
         initializeSearchContactPersonTableFooter();
+
         setPresubmitEventHandlerOnContactPersonEditor();
+        setPostSubmitEventHandlerOnContactPersonEditor();
 
         initializeActivityEditor();
         initializeActivityTable();
+
         initializeActivityTableFooter();
         initializeSearchActivityTableFooter();
 
@@ -114,7 +117,7 @@
         contactpersontable.button([0]).remove();
 
         setPresubmitEventHandlerOnActivityEditor();
-
+        setPostSubmitEventHandlerOnActivityEditor();
 
         
         var newItem = document.createElement("div");       // Create a <div> node
@@ -169,6 +172,29 @@
               $.datetimepicker.setLocale('da');
         });
 
+
+           contactpersontable.on('xhr.dt', function (e, settings, json, xhr) {
+            if (xhr.status != 200) {
+                 $.fn.dataTable.ext.errMode = 'throw';  // this disables the datatables error handling
+                var errorJson = xhr.responseJSON;
+                var errorText = errorJson.Detail;
+                var errorTitle = errorJson.Title;
+                var errorInstance = errorJson.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+            }
+        })
+
+
+          activitytable.on('xhr.dt', function (e, settings, json, xhr) {
+            if (xhr.status != 200) {
+                 $.fn.dataTable.ext.errMode = 'throw';  // this disables the datatables error handling
+                var errorJson = xhr.responseJSON;
+                var errorText = errorJson.Detail;
+                var errorTitle = errorJson.Title;
+                var errorInstance = errorJson.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+            }
+        })
 
     });
 

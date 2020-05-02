@@ -514,7 +514,9 @@ namespace WedigITCRM.Controllers
             
                 List<Company> companies = new List<Company>();
 
-                if (!string.IsNullOrEmpty(customerCategory))
+           
+
+            if (!string.IsNullOrEmpty(customerCategory))
                 {
                     if (customerCategory.Equals("1"))
                     {
@@ -586,7 +588,9 @@ namespace WedigITCRM.Controllers
                 DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
                 ContactPersonOutputDataModel1 contactPersonOutputDataModel1 = new ContactPersonOutputDataModel1();
 
-                List<ContactPerson> contactPersonData = null;
+          
+
+            List<ContactPerson> contactPersonData = null;
                 if (!string.IsNullOrEmpty(companyId))
                 {
 
@@ -639,8 +643,11 @@ namespace WedigITCRM.Controllers
             ActivityOutputDataModel activityOutputDataModel = new ActivityOutputDataModel();
 
             List<Activity> activityData = null;
-          
-                if (!string.IsNullOrEmpty(contactPersonId))
+
+           
+
+
+            if (!string.IsNullOrEmpty(contactPersonId))
                 {
 
                     activityData = _activityRepository.GetAllActivities().Where(activity => activity.contactPersonId.ToString().Equals(contactPersonId) && activity.companyAccountId == companyAccount.companyAccountId).ToList();

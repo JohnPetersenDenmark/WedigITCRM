@@ -122,7 +122,7 @@
         setContactPersonListenOnDeSelectCompany();
 
         setPresubmitEventHandlerOnContactPersonEditor();
-
+        setPostSubmitEventHandlerOnCompanyEditor();
         
         var getThediv = $('#companytable_length').parent();
         var htmlStr = '<div class="col-sm-1"><select class="custom-select custom-select-sm form-control form-control-sm" id="customershowselection"><option value="1">Alle</option><option value="2">Private</option><option value="3">CVR-registrerede</option> </select></div>';
@@ -173,6 +173,30 @@
                 break;
             }
         }
+
+
+       companytable.on('xhr.dt', function (e, settings, json, xhr) {
+            if (xhr.status != 200) {
+                 $.fn.dataTable.ext.errMode = 'throw';  // this disables the datatables error handling
+                var errorJson = xhr.responseJSON;
+                var errorText = errorJson.Detail;
+                var errorTitle = errorJson.Title;
+                var errorInstance = errorJson.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+            }
+        })
+
+         contactpersontable.on('xhr.dt', function (e, settings, json, xhr) {
+            if (xhr.status != 200) {
+                 $.fn.dataTable.ext.errMode = 'throw';  // this disables the datatables error handling
+                var errorJson = xhr.responseJSON;
+                var errorText = errorJson.Detail;
+                var errorTitle = errorJson.Title;
+                var errorInstance = errorJson.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+            }
+        })
+
 
     });
 

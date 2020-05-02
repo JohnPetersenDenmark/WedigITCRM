@@ -620,6 +620,9 @@ namespace WedigITCRM.Controllers
 
             NoteOutputDataModel noteOutputDataModel = new NoteOutputDataModel();
 
+
+           
+
             if (!string.IsNullOrEmpty(companyId))
             {
 
