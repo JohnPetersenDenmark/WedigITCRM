@@ -552,8 +552,8 @@ function initializeCategoryFieldsChangeEvents() {
         setCategory1Dependency();
         setCategory2Dependency();
         setCategory3Dependency();
-        $('#DTE_Field_felt').prop("disabled", true);
-        $('#DTE_Field_felt').hide();
+        //$('#DTE_Field_felt').prop("disabled", true);
+        //$('#DTE_Field_felt').hide();
     });
 }
 
@@ -578,6 +578,13 @@ function setCategory1Dependency() {
                 getCategory2ByCategory1(val);
                 $("#DTE_Field_category1").val(val);
                 callback(true);
+            },
+            error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
             }
         });
 
@@ -606,6 +613,13 @@ function setCategory2Dependency() {
                 getCategory3ByCategory2(val);
                 $("#DTE_Field_category2").val(val);
                 callback(true);
+            },
+            error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
             }
         });
 
@@ -630,6 +644,13 @@ function setCategory3Dependency() {
                 stockItemCategoryEditor.field('category3Id').set(json.category3Id);
                 $("#DTE_Field_category3").val(val);
                 callback(true);
+            },
+            error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
             }
         });
 
@@ -657,6 +678,13 @@ function getCategory2ByCategory1(category1Id) {
                 option = {};
             }
             stockItemCategoryEditor.field('category2').update(optionsCategory2);
+        },
+        error: function (request, status, error) {           
+            var jsonErrorObj = request.responseJSON
+            var errorText = jsonErrorObj.Detail;
+            var errorTitle = jsonErrorObj.Title;
+            var errorInstance = jsonErrorObj.Instance;
+            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
         }
     });
 }
@@ -682,29 +710,16 @@ function getCategory3ByCategory2(category2Id) {
                 option = {};
             }
             stockItemCategoryEditor.field('category3').update(optionsCategory3);
+        },
+        error: function (request, status, error) {
+            var jsonErrorObj = request.responseJSON
+            var errorText = jsonErrorObj.Detail;
+            var errorTitle = jsonErrorObj.Title;
+            var errorInstance = jsonErrorObj.Instance;
+            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
         }
     });
 }
-
-
-
-
-
-
-
-function setCategory3Dependency() {
-    stockItemCategoryEditor.dependent('category3', function (val, data, callback) {
-        if (val == null) {
-            optionsCategory3 = [];
-            stockItemCategoryEditor.field('category3').update(optionsCategory3);
-            stockItemCategoryEditor.field('category3Id').set("");           
-            return (true);
-        }
-        stockItemCategoryEditor.field('category3Id').set(val);      
-        callback(true);
-    });
-}
-
 
 
 function activateInLineEdit() {
@@ -725,6 +740,24 @@ function activateInLineEdit() {
 
 function setPostSubmitEventHandlerOnStockItemEditor() {
     stockItemEditor.on('postSubmit', function (e, json, data, action) {
+
+        for (var prop in json) {
+            if (prop == "Status") {
+                if (json.Status == 500) {
+                    var errorText = json.Detail;
+                    var errorTitle = json.Title;
+                    var errorInstance = json.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            }
+        }
+
+
+    });
+}
+
+function setPostSubmitEventHandlerOnStockItemCategoryEditor() {
+    stockItemCategoryEditor.on('postSubmit', function (e, json, data, action) {
 
         for (var prop in json) {
             if (prop == "Status") {

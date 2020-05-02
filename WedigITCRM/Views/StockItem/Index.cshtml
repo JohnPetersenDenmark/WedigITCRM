@@ -71,6 +71,7 @@
     var initializingCategory2Field;
     var stockitemtable;
     var stockItemEditor; // use a global for the submit and return data rendering in the examples
+     var stockItemCategoryEditor; // use a global for the submit and return data rendering in the examples
     var optionsCategory1 = [];
     var optionsCategory2 = [];
     var optionsCategory3 = [];
@@ -101,7 +102,7 @@
         activateSelectOnStockItemTable();
         initializeTypeAheadInputStockItemVendorName();
 
-        //stockitemtable.columns.adjust();
+        setPostSubmitEventHandlerOnStockItemCategoryEditor();
 
 
         var newItem = document.createElement("div");       // Create a <div> node
