@@ -123,6 +123,8 @@
 }
 
 
+
+
 function initializeABCAnalasysTableFooter() {
 
     $('#abcanalasystable tfoot th').each(function () {

@@ -42,9 +42,6 @@ namespace WedigITCRM.Controllers
         {
 
 
-           
-
-
             DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
 
             StatisticsTurnOverViewModel model = new StatisticsTurnOverViewModel();

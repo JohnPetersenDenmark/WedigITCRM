@@ -60,7 +60,10 @@ namespace WedigITCRM.Controllers
                 var stockItemData = _stockItemRepository.GetAllstockItems().Where(company => company.companyAccountId == companyAccount.companyAccountId).ToList();
 
                 List<ReducedStockItem> data1 = new List<ReducedStockItem>();
-                foreach (var stockItem in stockItemData)
+
+           
+
+            foreach (var stockItem in stockItemData)
                 {
                     DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
 
@@ -557,6 +560,8 @@ namespace WedigITCRM.Controllers
                 return Json(emptyList);
             }
 
+           
+
             Decimal TotalTurnOver = 0;
             Decimal TotalPicks = 0;
             Dictionary<string, StockItemAccumulation> stockItemAccumulationList = new Dictionary<string, StockItemAccumulation>();
@@ -573,8 +578,9 @@ namespace WedigITCRM.Controllers
                 return Json(rEADDineroAPIInvoicecollection);
             }
 
-            
 
+
+          
             foreach (var invoice in rEADDineroAPIInvoicecollection.Collection)
             {
                 DineroInvoice dineroInvoice = new DineroInvoice(dineroAPIConnect);
