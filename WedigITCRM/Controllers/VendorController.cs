@@ -83,7 +83,7 @@ namespace WedigITCRM.Controllers
                 if (datamodelInput.action.Equals("edit"))
                 {
 
-                    throw new Exception("Forced error in Vendor controller");
+                     throw new Exception("Forced error in Vendor controller");
 
                     Vendor vendor = _vendorRepository.GetVendor(int.Parse(datamodelInput.id));
                     if (vendor != null)

@@ -433,6 +433,14 @@ function setPresubmitEventHandlerOnCompanyEditor() {
     });
 }
 
+
+function setPostsubmitEventHandlerOnCompanyEditor() {
+    companyEditor.on('postSubmit', function (e, json, data, action) {
+        var x = 1;
+    })
+}
+
+
 var allowInput = true;
 var intervalId = setTimeout(function () { getCompanySuggestions(); }, 2000);
 var KeyUpValue = "";

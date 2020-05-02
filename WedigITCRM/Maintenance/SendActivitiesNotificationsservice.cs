@@ -21,13 +21,15 @@ namespace WedigITCRM.Maintenance
         private Timer _timer;
         private readonly IServiceScopeFactory scopeFactory;
         private ILogger<SendActivitiesNotificationsservice> _logger;
-        private ILogger<EmailUtility> _emailUtilitylogger;
+    
 
-        public SendActivitiesNotificationsservice(ILogger<EmailUtility> emailUtilitylogger, IServiceScopeFactory scopeFactory, ILogger<SendActivitiesNotificationsservice> logger)
+
+
+        public SendActivitiesNotificationsservice( IServiceScopeFactory scopeFactory, ILogger<SendActivitiesNotificationsservice> logger)
         {
             this.scopeFactory = scopeFactory;
             this._logger = logger;
-            _emailUtilitylogger = emailUtilitylogger;
+            
         }
         public Task StartAsync(CancellationToken cancellationToken)
         {
@@ -48,6 +50,10 @@ namespace WedigITCRM.Maintenance
             {
                 var scope = scopeFactory.CreateScope();
 
+                var emailUtility = scope.ServiceProvider.GetRequiredService<EmailUtility>();
+
+                var _attachmentRepository  = scope.ServiceProvider.GetRequiredService<IAttachmentRepository>();
+                
                 var activityRepository = scope.ServiceProvider.GetRequiredService<IActivityRepository>();
                 var contactPersonRepository = scope.ServiceProvider.GetRequiredService<IContactPersonRepository>();
                 var companyRepository = scope.ServiceProvider.GetRequiredService<ICompanyRepository>();
@@ -163,11 +169,7 @@ namespace WedigITCRM.Maintenance
                             CompanyAccount companyAccount = companyAccountRepository.GetCompanyAccount(activity.companyAccountId);
 
 
-
-
-                            EmailUtility emailUtility = new EmailUtility(_emailUtilitylogger);
-
-                            AlternateView htmlView = emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.ActivityNotification, env, tokens, companyAccount, attachmentRepository);
+                            AlternateView htmlView = emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.ActivityNotification,  tokens, companyAccount, _attachmentRepository);
                             emailUtility.send(user.Email, "support@nyxium.dk", "Aktivitet", htmlView, true);
 
 
