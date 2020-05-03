@@ -223,7 +223,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getCategory3Ajax([FromBody] Category3ViewModelAjax model, CompanyAccount companyAccount)
         {
-            throw new Exception("StockItemCategoryController. Method Category3ViewModelAjax");
+           // throw new Exception("StockItemCategoryController. Method Category3ViewModelAjax");
             StockItemCategory3 Cat3 = null;
             if (ModelState.IsValid)
             {

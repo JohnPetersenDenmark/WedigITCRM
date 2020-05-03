@@ -1,4 +1,4 @@
-﻿function initializeStockItemCategoryEditor1() {
+﻿function initializeStockItemCategoryEditor() {
     stockItemCategoryEditor = new $.fn.dataTable.Editor({
         idSrc: 'id',
         "ajax": {
@@ -29,24 +29,23 @@
         },
 
         i18n: {
-            //create: {
-            //    button: "Ny",
-            //    title: "Opret vare",
-            //},
+            create: {
+                button: "Ny",
+                title: "Opret vare",
+            },
             edit: {
                 button: "Rediger kategorier",
-                title: "Rediger"              
+                title: "Rediger",
+            },
+            remove: {
+                button: "Slet",
+                title: "Slet",
+                confirm: {
+                    _: "Sikker på at du vil slette?",
+                    1: "Sikker på at du vil slette?"
+                }
             }
-            //,
-            //remove: {
-            //    button: "Slet",
-            //    title: "Slet",
-            //    confirm: {
-            //        _: "Sikker på at du vil slette?",
-            //        1: "Sikker på at du vil slette?"
-            //    }
-            //}
-       },
+        },
 
         table: "#stockitemtable",
 
@@ -143,7 +142,7 @@ function initializeStockItemEditor() {
                 submit: "createCompany"
             },
             edit: {
-                button: "Rediger vare",
+                button: "Rediger",
                 title: "Rediger",
                 submit: "Actualiser"
             },
@@ -283,6 +282,7 @@ function initializeStockitemtable() {
             },
 
             buttons: [
+
                 {
                     extend: "create",
                     editor: stockItemEditor,
@@ -296,45 +296,45 @@ function initializeStockitemtable() {
                     editor: stockItemEditor,
                     formButtons: [
                         'Gem',
-                        {
-                            text: 'Annuller', action: function ()
-                            {
-                                this.close();
-                            }
-                        }
+                        { text: 'Annuller', action: function () { this.close(); } }
                     ]
                 },
                 {
                     extend: "edit",
-                    editor: stockItemCategoryEditor
-                    //,   
-                    //formButtons: [    
-                    //    'Edit',
-                    //    {
-                    //        text: 'Cancel', action: function ()
-                    //        {
-                    //            this.close();
-                    //        }
-                    //    }
-                        //{
-                        //    editor: stockItemCategoryEditor,   
-                        //    text: 'Annuller', fn: function ()
-                        //    {
-                        //        //this.close();
-                        //        //stockitemtable
-                        //        var noget = stockItemCategoryEditor.title();
-                        //        var noget1 = stockItemCategoryEditor.close();
-                        //        //editor.destroy();
-                        //    }
-                        //},
-                        //{
-                        //    text: 'Gem noget', fn: function ()
-                        //    {
-                        //        stockItemCategoryEditor.submit();
-                        //    }
-                        //}
-                    // ]
-                },                            
+                    editor: stockItemCategoryEditor,
+                    action: function (e, dt, node, config) {
+                        // Do custom processing
+                        // ...
+
+                        stockItemCategoryEditor.edit(stockitemtable.rows({ selected: true }));
+                        var selectedDatatableRowData = stockitemtable.row({ selected: true }).data();
+                        if (selectedDatatableRowData.category1Id != null) {
+                            $("#DTE_Field_category1").val(selectedDatatableRowData.category1Id);
+                            getCategory2ByCategory1(selectedDatatableRowData.category1Id);
+                        }
+                        else {
+                            $("#DTE_Field_category1").val(0);
+                        }
+                        if (selectedDatatableRowData.category2Id != null) {
+                            $("#DTE_Field_category2").val(selectedDatatableRowData.category2Id);
+                            getCategory3ByCategory2(selectedDatatableRowData.category2Id);
+                        }
+                        else {
+                            $("#DTE_Field_category2").val(0);
+                        }
+                        if (selectedDatatableRowData.category3Id != null) {
+                            $("#DTE_Field_category3").val(selectedDatatableRowData.category3Id);
+                        }
+                        else {
+                            $("#DTE_Field_category3").val(0);
+                        }
+                        initializeCategoryFieldsChangeEvents();
+                    },
+                    formButtons: [
+                        'Gem 1',
+                        { text: 'Annuller', action: function () { this.close(); } }
+                    ]
+                },
                 {
                     extend: "remove",
                     editor: stockItemEditor,
@@ -492,12 +492,6 @@ function initializeStockitemtable() {
                     function (data) {
                         optionsCategory1 = [];
                         var option = {};
-
-                        option.label = "Vælg";
-                        option.value = "0";
-                        optionsCategory1.push(option);
-                        option = {};
-
                         for (var i = 0; i < data.length; i++) {
                             option.label = data[i].name;
                             option.value = data[i].id;
@@ -507,6 +501,23 @@ function initializeStockitemtable() {
                     },
                 ).done(function () {
                     stockItemCategoryEditor.field('category1').update(optionsCategory1);
+                });
+
+                $.getJSON("/StockItemCategories/getAllCategory2Raw", {
+                    term: "-1"
+                },
+                    function (data) {
+                        optionsCategory2 = [];
+                        var option = {};
+                        for (var i = 0; i < data.length; i++) {
+                            option.label = data[i].name;
+                            option.value = data[i].id;
+                            optionsCategory2.push(option);
+                            option = {};
+                        }
+                    }
+                ).done(function () {
+                    // stockItemCategoryEditor.field('category2').update(optionsCategory2);
                 });
             }
         });
@@ -536,22 +547,20 @@ function initializeSearchStockitemtableFooter() {
     });
 }
 
-function initializeCategoryFieldsChangeEvents1() {
-    //$(document).on('focus', '#DTE_Field_felt', function () {
+function initializeCategoryFieldsChangeEvents() {
+    $(document).on('focus', '#DTE_Field_felt', function () {
         setCategory1Dependency();
         setCategory2Dependency();
         setCategory3Dependency();
         //$('#DTE_Field_felt').prop("disabled", true);
         //$('#DTE_Field_felt').hide();
-   // });
+    });
 }
 
 function setCategory1Dependency() {
     stockItemCategoryEditor.dependent('category1', function (val, data, callback) {
 
         if (val == null) {
-            $("#DTE_Field_category2").val("0");
-            $("#DTE_Field_category3").val("0");
             callback(true);
             return;
         }
@@ -589,7 +598,6 @@ function setCategory2Dependency() {
     stockItemCategoryEditor.dependent('category2', function (val, data, callback) {
 
         if (val == null) {
-            $("#DTE_Field_category3").val("0");
             return (true);
         }
         var DataToPost = JSON.stringify({ Category2Id: val.toString(), Category2: "noget" });
@@ -663,10 +671,6 @@ function getCategory2ByCategory1(category1Id) {
         success: function (data) {
             optionsCategory2 = [];
             var option = {};
-            option.label = "Vælg";
-            option.value = "0";
-            optionsCategory2.push(option);
-            option = {};
             for (var i = 0; i < data.length; i++) {
                 option.label = data[i].name;
                 option.value = data[i].id;
@@ -699,10 +703,6 @@ function getCategory3ByCategory2(category2Id) {
         success: function (data) {
             optionsCategory3 = [];
             var option = {};
-            option.label = "Vælg";
-            option.value = "0";
-            optionsCategory3.push(option);
-            option = {};
             for (var i = 0; i < data.length; i++) {
                 option.label = data[i].name;
                 option.value = data[i].id;
