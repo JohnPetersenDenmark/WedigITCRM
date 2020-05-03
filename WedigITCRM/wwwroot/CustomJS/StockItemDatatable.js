@@ -1,4 +1,4 @@
-﻿function initializeStockItemCategoryEditor() {
+﻿function initializeStockItemCategoryEditor1() {
     stockItemCategoryEditor = new $.fn.dataTable.Editor({
         idSrc: 'id',
         "ajax": {
@@ -6,7 +6,7 @@
             "url": "/StockItem/EditStockItem",
             dataType: 'json',
             data: function (d) {
-               
+
                 if (d.action == "edit") {
                     var mineData = selectedStockItemRowData;
                     for (var prop in d.data) {
@@ -22,30 +22,31 @@
                         }
                     }
                     return ({});
-                }               
+                }
             },
 
             contentType: "application/json",
         },
 
         i18n: {
-            create: {
-                button: "Ny",
-                title: "Opret vare",
-            },
+            //create: {
+            //    button: "Ny",
+            //    title: "Opret vare",
+            //},
             edit: {
                 button: "Rediger kategorier",
-                title: "Rediger",
-            },
-            remove: {
-                button: "Slet",
-                title: "Slet",
-                confirm: {
-                    _: "Sikker på at du vil slette?",
-                    1: "Sikker på at du vil slette?"
-                }
+                title: "Rediger"              
             }
-        },
+            //,
+            //remove: {
+            //    button: "Slet",
+            //    title: "Slet",
+            //    confirm: {
+            //        _: "Sikker på at du vil slette?",
+            //        1: "Sikker på at du vil slette?"
+            //    }
+            //}
+       },
 
         table: "#stockitemtable",
 
@@ -76,7 +77,7 @@
                     label: "category1Id",
                     name: "category1Id",
                     type: "hidden"
-                    
+
                 },
                 {
                     label: "category2Id",
@@ -142,7 +143,7 @@ function initializeStockItemEditor() {
                 submit: "createCompany"
             },
             edit: {
-                button: "Rediger",
+                button: "Rediger vare",
                 title: "Rediger",
                 submit: "Actualiser"
             },
@@ -185,14 +186,14 @@ function initializeStockItemEditor() {
                 {
                     label: "Lokation",
                     name: "location"
-                },               
+                },
                 {
                     label: "Leverandør",
                     name: "vendorName"
                 },
                 {
                     label: "Leverandørkode",
-                    name: "vendorId",   
+                    name: "vendorId",
                     type: "readonly"
                 },
                 {
@@ -282,7 +283,6 @@ function initializeStockitemtable() {
             },
 
             buttons: [
-
                 {
                     extend: "create",
                     editor: stockItemEditor,
@@ -296,45 +296,45 @@ function initializeStockitemtable() {
                     editor: stockItemEditor,
                     formButtons: [
                         'Gem',
-                        { text: 'Annuller', action: function () { this.close(); } }
+                        {
+                            text: 'Annuller', action: function ()
+                            {
+                                this.close();
+                            }
+                        }
                     ]
                 },
                 {
                     extend: "edit",
-                    editor: stockItemCategoryEditor,
-                    action: function (e, dt, node, config) {
-                        // Do custom processing
-                        // ...
-
-                       stockItemCategoryEditor.edit(stockitemtable.rows({ selected: true }));
-                        var selectedDatatableRowData = stockitemtable.row({ selected: true }).data();  
-                        if (selectedDatatableRowData.category1Id != null) {
-                            $("#DTE_Field_category1").val(selectedDatatableRowData.category1Id);
-                            getCategory2ByCategory1(selectedDatatableRowData.category1Id);
-                        }
-                        else {
-                            $("#DTE_Field_category1").val(0);
-                        }
-                        if (selectedDatatableRowData.category2Id != null) {
-                            $("#DTE_Field_category2").val(selectedDatatableRowData.category2Id);
-                            getCategory3ByCategory2(selectedDatatableRowData.category2Id);
-                        }
-                        else {
-                            $("#DTE_Field_category2").val(0);
-                        }
-                        if (selectedDatatableRowData.category3Id != null) {
-                            $("#DTE_Field_category3").val(selectedDatatableRowData.category3Id);
-                        }
-                        else {
-                            $("#DTE_Field_category3").val(0);
-                        }
-                        initializeCategoryFieldsChangeEvents();
-                    },
-                    formButtons: [
-                        'Gem 1',
-                        { text: 'Annuller', action: function () { this.close(); } }
-                    ]
-                },
+                    editor: stockItemCategoryEditor
+                    //,   
+                    //formButtons: [    
+                    //    'Edit',
+                    //    {
+                    //        text: 'Cancel', action: function ()
+                    //        {
+                    //            this.close();
+                    //        }
+                    //    }
+                        //{
+                        //    editor: stockItemCategoryEditor,   
+                        //    text: 'Annuller', fn: function ()
+                        //    {
+                        //        //this.close();
+                        //        //stockitemtable
+                        //        var noget = stockItemCategoryEditor.title();
+                        //        var noget1 = stockItemCategoryEditor.close();
+                        //        //editor.destroy();
+                        //    }
+                        //},
+                        //{
+                        //    text: 'Gem noget', fn: function ()
+                        //    {
+                        //        stockItemCategoryEditor.submit();
+                        //    }
+                        //}
+                    // ]
+                },                            
                 {
                     extend: "remove",
                     editor: stockItemEditor,
@@ -356,7 +356,7 @@ function initializeStockitemtable() {
                 { "data": "category3" },
                 { "data": "numberInStock" },
                 { "data": "reorderNumberInStock" },
-                { "data": "location" },                         
+                { "data": "location" },
                 { "data": "vendorName" },
                 { "data": "vendorId" },
                 { "data": "vendorItemNumber" },
@@ -364,12 +364,12 @@ function initializeStockitemtable() {
                 { "data": "stockValue" },
                 { "data": "salesPrice" },
                 { "data": "inStockAgainDate" },
-                { "data": "expirationdate" },                              
+                { "data": "expirationdate" },
                 { "data": "lastEditedDate" },
-                { "data": "createdDate" },               
+                { "data": "createdDate" },
                 { "data": "category1Id" },
                 { "data": "category2Id" },
-                { "data": "category3Id" }                
+                { "data": "category3Id" }
             ],
 
             columnDefs: [
@@ -402,7 +402,7 @@ function initializeStockitemtable() {
                     "targets": 5,
                     "visible": true,
                     "searchable": true
-                },                
+                },
                 {
                     "targets": 6,
                     "visible": true,
@@ -422,7 +422,7 @@ function initializeStockitemtable() {
                     "targets": 9,
                     "visible": true,
                     "searchable": true
-                },                
+                },
                 {
                     "targets": 10,
                     "visible": true,
@@ -492,35 +492,24 @@ function initializeStockitemtable() {
                     function (data) {
                         optionsCategory1 = [];
                         var option = {};
+
+                        option.label = "Vælg";
+                        option.value = "0";
+                        optionsCategory1.push(option);
+                        option = {};
+
                         for (var i = 0; i < data.length; i++) {
                             option.label = data[i].name;
                             option.value = data[i].id;
                             optionsCategory1.push(option);
                             option = {};
                         }
-                    },                  
+                    },
                 ).done(function () {
                     stockItemCategoryEditor.field('category1').update(optionsCategory1);
                 });
-
-                $.getJSON("/StockItemCategories/getAllCategory2Raw", {
-                    term: "-1"
-                },
-                      function (data) {
-                        optionsCategory2 = [];
-                        var option = {};
-                        for (var i = 0; i < data.length; i++) {
-                            option.label = data[i].name;
-                            option.value = data[i].id;
-                            optionsCategory2.push(option);
-                            option = {};
-                        }
-                    }
-                ).done(function () {
-                   // stockItemCategoryEditor.field('category2').update(optionsCategory2);
-                });               
             }
-        });  
+        });
 }
 
 
@@ -547,24 +536,26 @@ function initializeSearchStockitemtableFooter() {
     });
 }
 
-function initializeCategoryFieldsChangeEvents() {
-    $(document).on('focus', '#DTE_Field_felt', function () {
+function initializeCategoryFieldsChangeEvents1() {
+    //$(document).on('focus', '#DTE_Field_felt', function () {
         setCategory1Dependency();
         setCategory2Dependency();
         setCategory3Dependency();
-        $('#DTE_Field_felt').prop("disabled", true);
-        $('#DTE_Field_felt').hide();
-    });
+        //$('#DTE_Field_felt').prop("disabled", true);
+        //$('#DTE_Field_felt').hide();
+   // });
 }
 
 function setCategory1Dependency() {
     stockItemCategoryEditor.dependent('category1', function (val, data, callback) {
 
         if (val == null) {
+            $("#DTE_Field_category2").val("0");
+            $("#DTE_Field_category3").val("0");
             callback(true);
             return;
         }
-        
+
         var DataToPost = JSON.stringify({ Category1Id: val.toString(), Category1: "noget" });
         $.ajax({
             type: "POST",
@@ -578,6 +569,13 @@ function setCategory1Dependency() {
                 getCategory2ByCategory1(val);
                 $("#DTE_Field_category1").val(val);
                 callback(true);
+            },
+            error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
             }
         });
 
@@ -589,8 +587,9 @@ function setCategory1Dependency() {
 
 function setCategory2Dependency() {
     stockItemCategoryEditor.dependent('category2', function (val, data, callback) {
-         
+
         if (val == null) {
+            $("#DTE_Field_category3").val("0");
             return (true);
         }
         var DataToPost = JSON.stringify({ Category2Id: val.toString(), Category2: "noget" });
@@ -606,6 +605,13 @@ function setCategory2Dependency() {
                 getCategory3ByCategory2(val);
                 $("#DTE_Field_category2").val(val);
                 callback(true);
+            },
+            error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
             }
         });
 
@@ -630,6 +636,13 @@ function setCategory3Dependency() {
                 stockItemCategoryEditor.field('category3Id').set(json.category3Id);
                 $("#DTE_Field_category3").val(val);
                 callback(true);
+            },
+            error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
             }
         });
 
@@ -650,6 +663,10 @@ function getCategory2ByCategory1(category1Id) {
         success: function (data) {
             optionsCategory2 = [];
             var option = {};
+            option.label = "Vælg";
+            option.value = "0";
+            optionsCategory2.push(option);
+            option = {};
             for (var i = 0; i < data.length; i++) {
                 option.label = data[i].name;
                 option.value = data[i].id;
@@ -657,6 +674,13 @@ function getCategory2ByCategory1(category1Id) {
                 option = {};
             }
             stockItemCategoryEditor.field('category2').update(optionsCategory2);
+        },
+        error: function (request, status, error) {
+            var jsonErrorObj = request.responseJSON
+            var errorText = jsonErrorObj.Detail;
+            var errorTitle = jsonErrorObj.Title;
+            var errorInstance = jsonErrorObj.Instance;
+            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
         }
     });
 }
@@ -675,6 +699,10 @@ function getCategory3ByCategory2(category2Id) {
         success: function (data) {
             optionsCategory3 = [];
             var option = {};
+            option.label = "Vælg";
+            option.value = "0";
+            optionsCategory3.push(option);
+            option = {};
             for (var i = 0; i < data.length; i++) {
                 option.label = data[i].name;
                 option.value = data[i].id;
@@ -682,42 +710,29 @@ function getCategory3ByCategory2(category2Id) {
                 option = {};
             }
             stockItemCategoryEditor.field('category3').update(optionsCategory3);
+        },
+        error: function (request, status, error) {
+            var jsonErrorObj = request.responseJSON
+            var errorText = jsonErrorObj.Detail;
+            var errorTitle = jsonErrorObj.Title;
+            var errorInstance = jsonErrorObj.Instance;
+            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
         }
     });
 }
-
-
-
-
-
-
-
-function setCategory3Dependency() {
-    stockItemCategoryEditor.dependent('category3', function (val, data, callback) {
-        if (val == null) {
-            optionsCategory3 = [];
-            stockItemCategoryEditor.field('category3').update(optionsCategory3);
-            stockItemCategoryEditor.field('category3Id').set("");           
-            return (true);
-        }
-        stockItemCategoryEditor.field('category3Id').set(val);      
-        callback(true);
-    });
-}
-
 
 
 function activateInLineEdit() {
-  
-    $('#stockitemtable').on('click', 'tbody td', function (e) {  
+
+    $('#stockitemtable').on('click', 'tbody td', function (e) {
 
         var selectedColumn = this._DT_CellIndex.column;
         // No edit on: stockValue, lastEditedDate, and createdDate
-        if (selectedColumn != 11 && selectedColumn != 15 && selectedColumn != 16) {       
+        if (selectedColumn != 11 && selectedColumn != 15 && selectedColumn != 16) {
             stockItemEditor.inline(this, {
                 submitOnBlur: true,
                 submit: 'allIfChanged'
-            }); 
+            });
         }
     });
 }
@@ -725,6 +740,24 @@ function activateInLineEdit() {
 
 function setPostSubmitEventHandlerOnStockItemEditor() {
     stockItemEditor.on('postSubmit', function (e, json, data, action) {
+
+        for (var prop in json) {
+            if (prop == "Status") {
+                if (json.Status == 500) {
+                    var errorText = json.Detail;
+                    var errorTitle = json.Title;
+                    var errorInstance = json.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            }
+        }
+
+
+    });
+}
+
+function setPostSubmitEventHandlerOnStockItemCategoryEditor() {
+    stockItemCategoryEditor.on('postSubmit', function (e, json, data, action) {
 
         for (var prop in json) {
             if (prop == "Status") {
@@ -768,7 +801,7 @@ var selectedStockItemRowData;
 
 function activateSelectOnStockItemTable() {
     stockitemtable.on('select', function (e, d) {
-        selectedStockItemRowData = stockitemtable.row({ selected: true }).data();      
+        selectedStockItemRowData = stockitemtable.row({ selected: true }).data();
     });
 }
 
@@ -792,7 +825,7 @@ function initializeTypeAheadInputStockItemVendorName() {
     });
 
     $(document).on('keyup', '#DTE_Field_vendorName', function (event) {
-       
+
         VendorNameKeyUpValue = $("#DTE_Field_vendorName").val();
         if (VendorNameKeyUpValue != KeyDownValue) {
             var localKeyUpValue = VendorNameKeyUpValue;
@@ -845,7 +878,7 @@ function getVendorSuggestions() {
         });
 
         $('.suggestion').bind("click", function (event) {
-           
+
             var selectedSuggestId = $(this).attr('id');
             initializeVendorPopUp(selectedSuggestId);
             $("#popUpDiv").hide();
@@ -872,20 +905,20 @@ function initializeVendorPopUp(selectedSuggestId) {
     $("#DTE_Field_vendorName").val(vendorSuggestData[selectedSuggestId].name);
 
 
-  //  if (!InlineEditing) {
+    //  if (!InlineEditing) {
     $("#DTE_Field_vendorId").val(vendorSuggestData[selectedSuggestId].id);
-  //  }
-  //  else {
+    //  }
+    //  else {
 
     //if (!isNullOrUndefined(selectedStockItemRowData)) {
     //    selectedStockItemRowData["vendorId"] = vendorSuggestData[selectedSuggestId].id;
     //}
 
-    
-   // }
+
+    // }
 
     selectedStockItemRowData["vendorId"] = vendorSuggestData[selectedSuggestId].id;
 
- 
+
 }
 

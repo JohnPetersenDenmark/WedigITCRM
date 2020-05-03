@@ -107,6 +107,7 @@ namespace WedigITCRM.Controllers
 
             if (ModelState.IsValid)
             {
+               
                 if (datamodelInput.action.Equals("edit"))
                 {
                     Company company = _companyRepository.GetCompany(int.Parse(datamodelInput.id));
@@ -251,6 +252,7 @@ namespace WedigITCRM.Controllers
         {
             if (ModelState.IsValid)
             {
+               
                 if (datamodelInput.action.Equals("edit"))
                 {
                     ContactPerson contactPerson = _contactPersonRepository.GetContactPerson(int.Parse(datamodelInput.id));
@@ -326,6 +328,8 @@ namespace WedigITCRM.Controllers
 
             if (ModelState.IsValid)
             {
+                
+
                 if (model.action.Equals("edit"))
                 {
                     Activity activity = _activityRepository.getActivity(int.Parse(model.Id));

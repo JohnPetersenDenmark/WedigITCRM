@@ -1,0 +1,57 @@
+2020-05-03 00:04:03.3409|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-03 00:04:03.6456|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-03 00:04:03.7491|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-03 00:04:03.8481|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-03 00:04:07.3726|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 00:07:51.5082|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-03 00:07:51.5294|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-03 08:32:46.3888|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-03 08:32:47.6110|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-03 08:32:47.9715|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-03 08:32:48.7878|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-03 08:32:54.7365|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-03 08:32:54.7365|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-05-03 08:32:58.3603|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 08:33:10.9069|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-03 08:33:10.9624|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-03 08:59:20.1642|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-03 08:59:21.5082|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-03 08:59:21.8658|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-03 08:59:22.0438|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-03 08:59:25.0947|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-03 08:59:25.1169|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-03 08:59:27.7708|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 09:38:47.4428|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-03 09:38:47.8263|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-03 09:38:47.9988|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-03 09:38:48.0978|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-03 09:39:06.3458|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-03 09:39:06.3633|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-03 09:39:08.7401|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 10:38:49.1694|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 10:53:57.0387|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-03 10:53:58.7672|ERROR|WedigITCRM.Startup|{"Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Object reference not set to an instance of an object.\r\n                                         \r\n\r\n                                            at WedigITCRM.Controllers.StockItemController.EditStockItem(ReducedStockItem datamodelInput, CompanyAccount companyAccount) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\StockItemController.cs:line 472\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)","Instance":"0ff854e7-5e21-47b9-8be7-6f8fef8f69ce"}
+2020-05-03 11:38:48.9271|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 13:40:37.8716|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 14:04:44.0395|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-03 14:04:44.9571|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-03 14:04:45.2219|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-03 14:04:45.4147|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-03 14:04:47.5667|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-03 14:04:47.5667|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-05-03 14:04:55.4305|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 14:05:02.7074|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-03 14:05:02.7074|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-03 19:15:47.3966|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 19:27:03.7662|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-03 19:27:05.5449|ERROR|WedigITCRM.Startup|{"Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Object reference not set to an instance of an object.\r\n                                         \r\n\r\n                                            at WedigITCRM.Controllers.StockItemController.EditStockItem(ReducedStockItem datamodelInput, CompanyAccount companyAccount) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\StockItemController.cs:line 472\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)","Instance":"1a00d422-ca56-4743-80cd-a1d38706a8f8"}
+2020-05-03 20:15:47.2864|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 20:43:29.2892|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-03 20:43:30.1063|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-03 20:43:30.4966|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-03 20:43:30.7121|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-03 20:43:37.9411|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-03 20:43:37.9411|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-03 20:43:39.3693|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 21:43:31.5983|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 22:43:31.8560|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService

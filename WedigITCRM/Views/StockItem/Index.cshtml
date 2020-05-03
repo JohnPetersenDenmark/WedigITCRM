@@ -1,63 +1,63 @@
 ﻿
 
-    <div style="width:90%; margin:0 auto;">
-        <table id="stockitemtable" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Varenavn</th>
-                    <th>Varenummer</th>
-                    <th>Kat 1</th>
-                    <th>Kat 2</th>
-                    <th>Kat 3</th>
-                    <th>Antal</th>
-                    <th>Min. antal på lager</th>
-                    <th>Lokation</th>
-                    <th>Leverandør</th>
-                    <th>Lev. Id</th>
-                    <th>Lev. varenummer</th>
-                    <th>Kostpris</th>
-                    <th>Lagerværdi</th>
-                    <th>Salgspris</th>
-                    <th>På lager igen</th>
-                    <th>Udløbsdato</th>
-                    <th>Ændret</th>
-                    <th>Oprettet</th>
-                    <th>Kat 1 id</th>
-                    <th>Kat 2 id</th>
-                    <th>Kat 3 id</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>Id</th>
-                    <th>Varenavn</th>
-                    <th>Varenummer</th>
-                    <th>Kat 1</th>
-                    <th>Kat 2</th>
-                    <th>Kat 3</th>
-                    <th>Antal</th>
-                    <th>Min. antal på lager</th>
-                    <th>Lokation</th>
-                    <th>Leverandør</th>
-                    <th>Lev. Id</th>
-                    <th>Lev. varenummer</th>
-                    <th>Kostpris</th>
-                    <th>Lagerværdi</th>
-                    <th>Salgspris</th>
-                    <th>På lager igen</th>
-                    <th>Udløbsdato</th>
-                    <th>Ændret</th>
-                    <th>Oprettet</th>
-                    <th>Kat 1 id</th>
-                    <th>Kat 2 id</th>
-                    <th>Kat 3 id</th>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
+<div style="width:90%; margin:0 auto;">
+    <table id="stockitemtable" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Varenavn</th>
+                <th>Varenummer</th>
+                <th>Kat 1</th>
+                <th>Kat 2</th>
+                <th>Kat 3</th>
+                <th>Antal</th>
+                <th>Min. antal på lager</th>
+                <th>Lokation</th>
+                <th>Leverandør</th>
+                <th>Lev. Id</th>
+                <th>Lev. varenummer</th>
+                <th>Kostpris</th>
+                <th>Lagerværdi</th>
+                <th>Salgspris</th>
+                <th>På lager igen</th>
+                <th>Udløbsdato</th>
+                <th>Ændret</th>
+                <th>Oprettet</th>
+                <th>Kat 1 id</th>
+                <th>Kat 2 id</th>
+                <th>Kat 3 id</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Varenavn</th>
+                <th>Varenummer</th>
+                <th>Kat 1</th>
+                <th>Kat 2</th>
+                <th>Kat 3</th>
+                <th>Antal</th>
+                <th>Min. antal på lager</th>
+                <th>Lokation</th>
+                <th>Leverandør</th>
+                <th>Lev. Id</th>
+                <th>Lev. varenummer</th>
+                <th>Kostpris</th>
+                <th>Lagerværdi</th>
+                <th>Salgspris</th>
+                <th>På lager igen</th>
+                <th>Udløbsdato</th>
+                <th>Ændret</th>
+                <th>Oprettet</th>
+                <th>Kat 1 id</th>
+                <th>Kat 2 id</th>
+                <th>Kat 3 id</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
 
 <br />
 <br />
@@ -71,6 +71,7 @@
     var initializingCategory2Field;
     var stockitemtable;
     var stockItemEditor; // use a global for the submit and return data rendering in the examples
+    var stockItemCategoryEditor; // use a global for the submit and return data rendering in the examples
     var optionsCategory1 = [];
     var optionsCategory2 = [];
     var optionsCategory3 = [];
@@ -83,7 +84,7 @@
 
         initializeStockItemEditor();
 
-        initializeStockItemCategoryEditor();
+        initializeStockItemCategoryEditor1();
 
         initializeStockitemtable();
 
@@ -101,7 +102,7 @@
         activateSelectOnStockItemTable();
         initializeTypeAheadInputStockItemVendorName();
 
-        //stockitemtable.columns.adjust();
+        setPostSubmitEventHandlerOnStockItemCategoryEditor();
 
 
         var newItem = document.createElement("div");       // Create a <div> node
@@ -125,6 +126,22 @@
         }
 
 
+        //stockItemCategoryEditor.buttons([
+        //    {
+        //        text: 'Gem ja',
+        //        className: 'primary',
+        //        action: function () {
+        //            this.submit();
+        //        }
+        //    },
+        //    {
+        //        text: 'Luk ja',
+        //        action: function () {
+        //            this.close();
+        //        }
+        //    }
+        //]);
+
         stockItemEditor.on('opened', function (e, json, data) {
             $("#DTE_Field_inStockAgainDate").datetimepicker({
                 timepicker: false,
@@ -133,7 +150,7 @@
                 format: 'd-m-yy'
             });
 
-              $("#DTE_Field_expirationdate").datetimepicker({
+            $("#DTE_Field_expirationdate").datetimepicker({
                 timepicker: false,
                 datepicker: true,
                 hours12: false,
@@ -144,9 +161,57 @@
         });
 
 
+
+
+
+        stockItemCategoryEditor.on('opened', function (e, json, data) {
+
+            stockItemCategoryEditor.buttons([
+                {
+                    text: 'Gem',
+                    className: 'primary',
+                    action: function () {
+                        stockItemCategoryEditor.submit();
+                    }
+                },
+                {
+                    text: 'Annuller',
+                    action: function () {
+                        var myTable = $('#stockitemtable').DataTable();
+                        var editor = myTable.editor();
+                        editor.close();
+                    }
+                }
+            ]);
+         
+            var selectedDatatableRowData = stockitemtable.row({ selected: true }).data();
+
+            if (selectedDatatableRowData.category1Id != null) {
+                $("#DTE_Field_category1").val(selectedDatatableRowData.category1Id);
+                getCategory2ByCategory1(selectedDatatableRowData.category1Id);
+                if (selectedDatatableRowData.category2Id != null) {
+                    getCategory3ByCategory2(selectedDatatableRowData.category2Id);
+                    $("#DTE_Field_category2").val(selectedDatatableRowData.category2Id);
+                    if (selectedDatatableRowData.category3Id != null) {
+                        $("#DTE_Field_category3").val(selectedDatatableRowData.category3Id);
+
+                    }
+                }
+            }
+            initializeCategoryFieldsChangeEvents1();
+
+
+        });
+
+        stockItemCategoryEditor.on('open', function (e, mode, action) {
+            var x = 1;
+           // stockItemCategoryEditor.close();
+        });
+       
+
         stockitemtable.on('xhr.dt', function (e, settings, json, xhr) {
             if (xhr.status != 200) {
-                 $.fn.dataTable.ext.errMode = 'throw';  // this disables the datatables error handling
+                $.fn.dataTable.ext.errMode = 'throw';  // this disables the datatables error handling
                 var errorJson = xhr.responseJSON;
                 var errorText = errorJson.Detail;
                 var errorTitle = errorJson.Title;

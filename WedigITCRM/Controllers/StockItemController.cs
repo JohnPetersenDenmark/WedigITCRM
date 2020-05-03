@@ -168,6 +168,8 @@ namespace WedigITCRM.Controllers
             {
                 NumberFormatInfo danishNumberAndCurrencyFormatInfo = CultureInfo.GetCultureInfo("da-DK").NumberFormat;
 
+                
+
                 if (datamodelInput.action.Equals("edit"))
                 {
                     DateTime testdate;

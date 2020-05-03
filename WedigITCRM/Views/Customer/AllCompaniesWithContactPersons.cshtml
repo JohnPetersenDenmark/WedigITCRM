@@ -107,7 +107,7 @@
 
         initializeTypeAheadInputCompanyName();
         initializeTypeAheadInputCompanyCVR();
-        //$('#companytable').dataTable({searching: false, paging: false, info: false});
+      
 
         contactPersonEditor = initializeContactPersonEditor();
         contactpersontable = initializeContactPersonTable()
@@ -122,6 +122,9 @@
         setContactPersonListenOnDeSelectCompany();
 
         setPresubmitEventHandlerOnContactPersonEditor();
+        setPostSubmitEventHandlerOnContactPersonEditor();
+
+        setPresubmitEventHandlerOnCompanyEditor();
         setPostSubmitEventHandlerOnCompanyEditor();
         
         var getThediv = $('#companytable_length').parent();

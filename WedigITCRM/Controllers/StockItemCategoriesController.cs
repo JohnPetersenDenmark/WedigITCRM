@@ -181,6 +181,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getCategory1Ajax([FromBody] Category1ViewModelAjax model, CompanyAccount companyAccount)
         {
+           
             StockItemCategory1 Cat1 = null;
             if (ModelState.IsValid)
             {
@@ -201,6 +202,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getCategory2Ajax([FromBody] Category2ViewModelAjax model, CompanyAccount companyAccount)
         {
+           
             StockItemCategory2 Cat2 = null;
             if (ModelState.IsValid)
             {
@@ -221,6 +223,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getCategory3Ajax([FromBody] Category3ViewModelAjax model, CompanyAccount companyAccount)
         {
+           // throw new Exception("StockItemCategoryController. Method Category3ViewModelAjax");
             StockItemCategory3 Cat3 = null;
             if (ModelState.IsValid)
             {
@@ -240,18 +243,22 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getAllCategory2s([FromBody] Category1ViewModelAjax model, CompanyAccount companyAccount)
         {
+           
             var Cat2List = _stockItemCategory2Repository.GetAllStockItemCategory2s().ToList().Where(cat2 => cat2.Category1Id.ToString().Equals(model.Category1Id) && cat2.companyAccountId == companyAccount.companyAccountId).ToList();
             return Json(Cat2List);
         }
 
         public IActionResult getAllCategory2ByCategory1s(int Category1Id, CompanyAccount companyAccount)
         {
+            
+
             var Cat2List = _stockItemCategory2Repository.GetAllStockItemCategory2s().ToList().Where(cat2 => cat2.Category1Id == Category1Id && cat2.companyAccountId == companyAccount.companyAccountId).ToList();
             return Json(Cat2List);
         }
 
         public IActionResult getAllCategory3ByCategory2s([FromBody] Category2ViewModelAjax model, CompanyAccount companyAccount)
         {
+           
             var Cat3List = _stockItemCategory3Repository.GetAllStockItemCategory3s().ToList().Where(cat2 => cat2.Category2Id.ToString().Equals(model.Category2Id)   && cat2.companyAccountId == companyAccount.companyAccountId).ToList();
             return Json(Cat3List);
         }

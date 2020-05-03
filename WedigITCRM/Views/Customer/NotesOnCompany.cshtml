@@ -90,13 +90,16 @@
         initializeSearchCompanyTableFooter();
         initializeTypeAheadInputCompanyName();
         initializeTypeAheadInputCompanyCVR();
+        setPresubmitEventHandlerOnCompanyEditor();
+        setPostSubmitEventHandlerOnCompanyEditor();
 
         initializenoteEditor();
         initializenotetable();
         initializenotetableFooter();
         initializeSearchnotetableFooter();
+
         setPresubmitEventHandlerOnnoteEditor();
-    setPostSubmitEventHandlerOnNoteEditor();
+        setPostSubmitEventHandlerOnNoteEditor();
 
 
         setRelationNoteAndCompany();
@@ -105,7 +108,7 @@
         SetStatusCreateButtonOnNoteTable(companytable);
         setListenOnSelectCompany();
         setListenOnDeSelectCompany();
-        setPresubmitEventHandlerOnnoteEditor();
+       
 
         var getThediv = $('#companytable_length').parent();
         var htmlStr = '<div class="col-sm-1"><select class="custom-select custom-select-sm form-control form-control-sm" id="customershowselection"><option value="1">Alle</option><option value="2">Private</option><option value="3">CVR-registrerede</option> </select></div>';

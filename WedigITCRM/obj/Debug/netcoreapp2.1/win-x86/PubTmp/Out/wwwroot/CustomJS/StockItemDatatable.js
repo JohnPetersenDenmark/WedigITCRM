@@ -723,6 +723,24 @@ function activateInLineEdit() {
 }
 
 
+function setPostSubmitEventHandlerOnStockItemEditor() {
+    stockItemEditor.on('postSubmit', function (e, json, data, action) {
+
+        for (var prop in json) {
+            if (prop == "Status") {
+                if (json.Status == 500) {
+                    var errorText = json.Detail;
+                    var errorTitle = json.Title;
+                    var errorInstance = json.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            }
+        }
+
+
+    });
+}
+
 
 function setPresubmitEventHandlerOnStockItemEditor() {
     stockItemEditor.on('preSubmit', function (e, o, action) {

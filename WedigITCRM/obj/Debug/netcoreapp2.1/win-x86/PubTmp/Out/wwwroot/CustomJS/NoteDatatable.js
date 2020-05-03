@@ -302,6 +302,27 @@ function initializeSearchnotetableFooter() {
     });
 }
 
+
+function setPostSubmitEventHandlerOnNoteEditor() {
+    noteEditor.on('postSubmit', function (e, json, data, action) {
+
+        for (var prop in json) {
+            if (prop == "Status") {
+                if (json.Status == 500) {
+                    var errorText = json.Detail;
+                    var errorTitle = json.Title;
+                    var errorInstance = json.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            }
+        }
+
+
+    });
+}
+
+
+
 function setPresubmitEventHandlerOnnoteEditor() {
     noteEditor.on('preSubmit', function (e, o, action) {
         if (action == 'edit' || action == 'create') {
