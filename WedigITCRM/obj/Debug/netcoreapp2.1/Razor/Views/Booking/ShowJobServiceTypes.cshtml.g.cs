@@ -136,7 +136,7 @@ using X.PagedList;
                                 ");
             EndContext();
             BeginContext(659, 146, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bab9d477aa5543d79ae0848a2f1f7cc9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "272b79b245e0484ea98efcbc96b1ac65", async() => {
                 BeginContext(794, 7, true);
                 WriteLiteral("Rediger");
                 EndContext();
@@ -174,7 +174,7 @@ using X.PagedList;
             WriteLiteral("\r\n                                ");
             EndContext();
             BeginContext(839, 145, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fd5f59479204e4184bb2bf3ef4f1600", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c14a73f082cf4bca990ca2c42e8d8157", async() => {
                 BeginContext(976, 4, true);
                 WriteLiteral("Slet");
                 EndContext();
@@ -226,7 +226,7 @@ using X.PagedList;
             WriteLiteral("\r\n    <div class=\"rowcontainer\">\r\n        <div class=\"row\">\r\n            <div class=\"col-2\">\r\n                ");
             EndContext();
             BeginContext(1254, 112, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9c8b3a012b78432d90b2165990ba0c39", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9320d762e9004027abc6e61bd309f8be", async() => {
                 BeginContext(1357, 5, true);
                 WriteLiteral("Opret");
                 EndContext();

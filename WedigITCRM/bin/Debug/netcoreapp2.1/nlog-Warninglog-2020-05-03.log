@@ -55,3 +55,5 @@
 2020-05-03 20:43:39.3693|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
 2020-05-03 21:43:31.5983|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
 2020-05-03 22:43:31.8560|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-03 23:01:07.7154|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-03 23:01:07.9689|ERROR|WedigITCRM.Startup|end of ConfigureServices
