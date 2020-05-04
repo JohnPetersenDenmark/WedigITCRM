@@ -28,24 +28,11 @@
             contentType: "application/json",
         },
 
-        i18n: {
-            //create: {
-            //    button: "Ny",
-            //    title: "Opret vare",
-            //},
+        i18n: {         
             edit: {
                 button: "Rediger kategorier",
                 title: "Rediger"              
             }
-            //,
-            //remove: {
-            //    button: "Slet",
-            //    title: "Slet",
-            //    confirm: {
-            //        _: "Sikker på at du vil slette?",
-            //        1: "Sikker på at du vil slette?"
-            //    }
-            //}
        },
 
         table: "#stockitemtable",
@@ -229,9 +216,7 @@ function initializeStockItemEditor() {
 function initializeStockitemtable() {
 
     stockitemtable = $('#stockitemtable').DataTable(
-        {
-            //dom: "Bript",
-            //dom: "<'row'<'col-sm-12'Brlpit>>"  ,
+        { 
             dom: "<'row'<'col-sm-3'B><'col-sm-3'l><'col-sm-3'i><'col-sm-3'p>>" + "<'row'<'col-sm-12't>>",
             paging: true,
             sort: true,
@@ -306,34 +291,7 @@ function initializeStockitemtable() {
                 },
                 {
                     extend: "edit",
-                    editor: stockItemCategoryEditor
-                    //,   
-                    //formButtons: [    
-                    //    'Edit',
-                    //    {
-                    //        text: 'Cancel', action: function ()
-                    //        {
-                    //            this.close();
-                    //        }
-                    //    }
-                        //{
-                        //    editor: stockItemCategoryEditor,   
-                        //    text: 'Annuller', fn: function ()
-                        //    {
-                        //        //this.close();
-                        //        //stockitemtable
-                        //        var noget = stockItemCategoryEditor.title();
-                        //        var noget1 = stockItemCategoryEditor.close();
-                        //        //editor.destroy();
-                        //    }
-                        //},
-                        //{
-                        //    text: 'Gem noget', fn: function ()
-                        //    {
-                        //        stockItemCategoryEditor.submit();
-                        //    }
-                        //}
-                    // ]
+                    editor: stockItemCategoryEditor                 
                 },                            
                 {
                     extend: "remove",
@@ -344,8 +302,6 @@ function initializeStockitemtable() {
                     ]
                 }
             ],
-
-
 
             columns: [
                 { "data": "id" },
@@ -536,14 +492,10 @@ function initializeSearchStockitemtableFooter() {
     });
 }
 
-function initializeCategoryFieldsChangeEvents1() {
-    //$(document).on('focus', '#DTE_Field_felt', function () {
+function initializeCategoryFieldsChangeEvents1() { 
         setCategory1Dependency();
         setCategory2Dependency();
-        setCategory3Dependency();
-        //$('#DTE_Field_felt').prop("disabled", true);
-        //$('#DTE_Field_felt').hide();
-   // });
+        setCategory3Dependency(); 
 }
 
 function setCategory1Dependency() {
@@ -567,7 +519,7 @@ function setCategory1Dependency() {
             success: function (json) {
                 stockItemCategoryEditor.field('category1Id').set(json.category1Id);
                 getCategory2ByCategory1(val);
-                $("#DTE_Field_category1").val(val);
+               // $("#DTE_Field_category1").val(val);
                 callback(true);
             },
             error: function (request, status, error) {
@@ -581,9 +533,6 @@ function setCategory1Dependency() {
 
     });
 }
-
-
-
 
 function setCategory2Dependency() {
     stockItemCategoryEditor.dependent('category2', function (val, data, callback) {
@@ -603,7 +552,7 @@ function setCategory2Dependency() {
             success: function (json) {
                 stockItemCategoryEditor.field('category2Id').set(json.category2Id);
                 getCategory3ByCategory2(val);
-                $("#DTE_Field_category2").val(val);
+               // $("#DTE_Field_category2").val(val);
                 callback(true);
             },
             error: function (request, status, error) {
@@ -634,7 +583,7 @@ function setCategory3Dependency() {
             data: DataToPost,
             success: function (json) {
                 stockItemCategoryEditor.field('category3Id').set(json.category3Id);
-                $("#DTE_Field_category3").val(val);
+              //  $("#DTE_Field_category3").val(val);
                 callback(true);
             },
             error: function (request, status, error) {
@@ -904,18 +853,9 @@ function initializeVendorPopUp(selectedSuggestId) {
 
     $("#DTE_Field_vendorName").val(vendorSuggestData[selectedSuggestId].name);
 
-
-    //  if (!InlineEditing) {
+  
     $("#DTE_Field_vendorId").val(vendorSuggestData[selectedSuggestId].id);
-    //  }
-    //  else {
-
-    //if (!isNullOrUndefined(selectedStockItemRowData)) {
-    //    selectedStockItemRowData["vendorId"] = vendorSuggestData[selectedSuggestId].id;
-    //}
-
-
-    // }
+ 
 
     selectedStockItemRowData["vendorId"] = vendorSuggestData[selectedSuggestId].id;
 

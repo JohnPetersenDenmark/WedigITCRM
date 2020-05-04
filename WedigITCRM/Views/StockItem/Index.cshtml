@@ -91,9 +91,6 @@
         initializeStockitemtableFooter();
         initializeSearchStockitemtableFooter();
 
-        // setCategory1Dependency();
-        // setCategory2Dependency();
-        // setCategory3Dependency();
         setPresubmitEventHandlerOnStockItemEditor();
         setPostSubmitEventHandlerOnStockItemEditor();
 
@@ -126,22 +123,6 @@
         }
 
 
-        //stockItemCategoryEditor.buttons([
-        //    {
-        //        text: 'Gem ja',
-        //        className: 'primary',
-        //        action: function () {
-        //            this.submit();
-        //        }
-        //    },
-        //    {
-        //        text: 'Luk ja',
-        //        action: function () {
-        //            this.close();
-        //        }
-        //    }
-        //]);
-
         stockItemEditor.on('opened', function (e, json, data) {
             $("#DTE_Field_inStockAgainDate").datetimepicker({
                 timepicker: false,
@@ -159,9 +140,6 @@
 
             $.datetimepicker.setLocale('da');
         });
-
-
-
 
 
         stockItemCategoryEditor.on('opened', function (e, json, data) {
@@ -198,6 +176,7 @@
                     }
                 }
             }
+
             initializeCategoryFieldsChangeEvents1();
 
 
