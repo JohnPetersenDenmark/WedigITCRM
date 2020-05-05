@@ -1,0 +1,110 @@
+2020-05-05 08:36:43.9724|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 08:36:45.1687|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 08:36:45.4456|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-05 08:36:45.7749|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-05 08:36:51.9864|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 08:36:52.0151|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-05-05 08:36:56.5063|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-05 08:37:16.1246|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 08:37:16.1909|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-05 09:36:46.7473|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-05 10:36:46.6164|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-05 11:36:46.7438|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-05 17:04:50.1377|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-05 17:12:55.2285|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 17:12:56.3256|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 17:12:56.7121|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-05 17:12:57.3395|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-05 17:13:05.4696|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 17:13:05.4696|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-05 17:13:06.2754|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-05 17:13:55.7129|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 17:13:55.9784|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-05 17:17:46.0053|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-05 17:17:51.9770|ERROR|WedigITCRM.Startup|{"Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Error converting value {null} to type 'System.Int32'. Path 'Collection[113].PaymentConditionNumberOfDays', line 1, position 65629.\r\n                                         \r\n\r\n                                            at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)\r\n   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)\r\n   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)\r\n   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)\r\n   at WedigITCRM.DineroAPI.DineroContacts.getContactsFromDinero(String LastupdatedDateTime, Int32 page, Int32 pageSize) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\DineroAPI\\DineroContacts.cs:line 42\r\n   at WedigITCRM.DineroAPI.DineroContacts.CopyCustomersFromDinero(CompanyAccount companyAccount, ICompanyRepository _companyRepository) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\DineroAPI\\DineroContacts.cs:line 294\r\n   at WedigITCRM.Controllers.AccountController.CopyCustomerFromDineroToNyxium(DummyModel model, CompanyAccount companyAccount) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\AccountController.cs:line 622\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)","Instance":"704edea5-f363-4f32-83bf-dacb941ed849"}
+2020-05-05 17:26:50.4782|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 17:26:53.3101|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 17:26:55.7446|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-05 17:26:56.3786|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-05 17:27:05.7577|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 17:27:05.8170|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-05 17:27:09.0874|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-05 17:32:09.7286|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-05 17:32:13.8773|ERROR|WedigITCRM.Startup|{"Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Input string was not in a correct format.\r\n                                         \r\n\r\n                                            at System.Number.StringToNumber(ReadOnlySpan`1 str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)\r\n   at System.Number.ParseInt32(ReadOnlySpan`1 s, NumberStyles style, NumberFormatInfo info)\r\n   at System.Int32.Parse(String s)\r\n   at WedigITCRM.DineroAPI.DineroContacts.MapUpdateDineroContactToCustomer(READDineroAPIcontact contactToAdd, Company wedigitCompany) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\DineroAPI\\DineroContacts.cs:line 240\r\n   at WedigITCRM.DineroAPI.DineroContacts.updateOrAddContactInNyxium(READDineroAPIcontact dineroContact, DineroContacts dineroContactsToNyxium, CompanyAccount companyAccount, ICompanyRepository _companyRepository) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\DineroAPI\\DineroContacts.cs:line 343\r\n   at WedigITCRM.DineroAPI.DineroContacts.CopyCustomersFromDinero(CompanyAccount companyAccount, ICompanyRepository _companyRepository) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\DineroAPI\\DineroContacts.cs:line 297\r\n   at WedigITCRM.Controllers.AccountController.CopyCustomerFromDineroToNyxium(DummyModel model, CompanyAccount companyAccount) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\AccountController.cs:line 622\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()\r\n   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)","Instance":"34a94a22-61f4-419f-b73f-467879b4d2fd"}
+2020-05-05 17:39:22.1612|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 17:39:23.0853|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 17:39:23.3416|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-05 17:39:23.5979|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-05 17:39:55.0556|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 17:40:02.4608|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-05 17:42:36.6312|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-05 17:55:59.1359|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 17:56:01.3079|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 17:56:01.8273|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-05 17:56:02.2373|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-05 17:56:05.7066|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 17:56:05.7471|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-05 17:56:06.9224|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred in the database while iterating the results of a query for context type 'WedigITCRM.AppDbContext'.
+System.InvalidOperationException: An exception occurred while reading a database value for property 'Company.CVRNumber'. The expected type was 'System.String' but the actual value was of type 'System.Int32'. ---> System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.ThrowReadValueException[TValue](Exception exception, Object value, IPropertyBase property)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+2020-05-05 17:56:07.0423|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|An exception occurred while reading a database value for property 'Company.CVRNumber'. The expected type was 'System.String' but the actual value was of type 'System.Int32'.
+2020-05-05 17:56:07.7215|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred in the database while iterating the results of a query for context type 'WedigITCRM.AppDbContext'.
+System.InvalidOperationException: An exception occurred while reading a database value for property 'Company.CVRNumber'. The expected type was 'System.String' but the actual value was of type 'System.Int32'. ---> System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at lambda_method(Closure , DbDataReader )
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.ThrowReadValueException[TValue](Exception exception, Object value, IPropertyBase property)
+   at lambda_method(Closure , DbDataReader )
+   at Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+2020-05-05 17:57:25.0012|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 17:57:25.2981|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 17:57:52.3470|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 17:57:52.5410|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 17:58:09.8685|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 17:58:14.5725|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 17:58:15.0811|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-05 17:58:15.3236|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-05 17:58:19.5666|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 17:58:19.5796|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-05 18:08:35.0491|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 18:08:37.2417|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 18:08:37.9425|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-05 18:08:38.2322|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-05 18:08:44.0544|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 18:08:44.0694|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-05 18:08:48.1601|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-05 18:10:29.8880|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 18:10:30.7351|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 18:10:30.9571|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-05 18:10:31.1053|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-05 18:10:33.8452|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 18:10:33.8601|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-05 18:10:36.0890|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-05 18:18:47.1888|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 18:18:49.5971|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 18:18:51.0543|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-05 18:18:54.4132|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-05 18:19:14.4606|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 18:19:14.5970|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-05 18:19:14.7905|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-05 18:21:29.2475|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 18:21:29.2939|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-05 18:23:27.9654|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 18:23:27.9654|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action

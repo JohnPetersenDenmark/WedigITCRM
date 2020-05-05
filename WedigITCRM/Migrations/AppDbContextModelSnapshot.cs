@@ -385,7 +385,7 @@ namespace WedigITCRM.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CVRNumber");
+                    b.Property<string>("CVRNumber");
 
                     b.Property<string>("City");
 

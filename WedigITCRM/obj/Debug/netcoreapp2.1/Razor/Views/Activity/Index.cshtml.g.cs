@@ -103,12 +103,12 @@ using X.PagedList;
             WriteLiteral("\r\n\r\n<div class=\"mysearchbar\">\r\n    <br />\r\n    ");
             EndContext();
             BeginContext(78, 2268, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b9ff32324384a048e099d531ddea68f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ce9e7ce29e940fdb409c7a615ecd443", async() => {
                 BeginContext(158, 88, true);
                 WriteLiteral("\r\n\r\n        <div class=\"form-row\">\r\n            <div class=\"col-auto\">\r\n                ");
                 EndContext();
                 BeginContext(246, 112, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e90584a389374b638c2fd014d3e5e728", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "3bf644258b524736a88a6780c684d30d", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -411,7 +411,7 @@ WriteAttributeValue("", 4941, activity.activity.Id, 4941, 21, false);
             WriteLiteral("\r\n            <div class=\"col-1\">\r\n                <div class=\"dropdown\">\r\n                    <div class=\"dropbtn\"><i class=\"fa fa-bars icon-menu-background-color\"></i></div>\r\n                    <div class=\"dropdown-content\">\r\n                        ");
             EndContext();
             BeginContext(6009, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69d72565e1ea48519d5cc4043ded4bd6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68efbfd1f3574894aed6ad1742091f2d", async() => {
                 BeginContext(6093, 7, true);
                 WriteLiteral("Rediger");
                 EndContext();
@@ -448,7 +448,7 @@ WriteAttributeValue("", 4941, activity.activity.Id, 4941, 21, false);
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(6130, 94, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2317ff96e0b74cae9b192f365c8baf7c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e2a674c24774634b1f01ac8b048668a", async() => {
                 BeginContext(6216, 4, true);
                 WriteLiteral("Slet");
                 EndContext();
@@ -550,7 +550,7 @@ WriteAttributeValue("", 6573, activity.contactPerson.CellPhone, 6573, 33, false)
             WriteLiteral("\r\n<br />\r\n\r\n");
             EndContext();
             BeginContext(6791, 141, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e117f1f0a1a48b8a97043ca4631275d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bfdbbec9a7354f55ad114b210f69fa63", async() => {
                 BeginContext(6878, 47, true);
                 WriteLiteral("\r\n    <input id=\"Id\" type=\"hidden\" name=\"Id\">\r\n");
                 EndContext();

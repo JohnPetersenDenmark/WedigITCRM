@@ -518,8 +518,7 @@ function setCategory1Dependency() {
             data: DataToPost,
             success: function (json) {
                 stockItemCategoryEditor.field('category1Id').set(json.category1Id);
-                getCategory2ByCategory1(val);
-               // $("#DTE_Field_category1").val(val);
+                getCategory2ByCategory1(val);              
                 callback(true);
             },
             error: function (request, status, error) {
@@ -549,10 +548,9 @@ function setCategory2Dependency() {
             url: '/StockItemCategories/getCategory2Ajax',
             dataType: 'json',
             data: DataToPost,
-            success: function (json) {
-                stockItemCategoryEditor.field('category2Id').set(json.category2Id);
+            success: function (json) {              
                 getCategory3ByCategory2(val);
-               // $("#DTE_Field_category2").val(val);
+                stockItemCategoryEditor.field('category2Id').set(json.category2Id);              
                 callback(true);
             },
             error: function (request, status, error) {
@@ -583,7 +581,6 @@ function setCategory3Dependency() {
             data: DataToPost,
             success: function (json) {
                 stockItemCategoryEditor.field('category3Id').set(json.category3Id);
-              //  $("#DTE_Field_category3").val(val);
                 callback(true);
             },
             error: function (request, status, error) {
@@ -601,6 +598,8 @@ function setCategory3Dependency() {
 function getCategory2ByCategory1(category1Id) {
 
     var DataToPost = JSON.stringify({ Category1Id: category1Id.toString(), Category1: "noget" });
+
+    var selectedValue = $('#DTE_Field_category2 :selected').val();
 
     $.ajax({
         type: "POST",
@@ -623,6 +622,7 @@ function getCategory2ByCategory1(category1Id) {
                 option = {};
             }
             stockItemCategoryEditor.field('category2').update(optionsCategory2);
+           // $("#DTE_Field_category2").val(selectedValue);
         },
         error: function (request, status, error) {
             var jsonErrorObj = request.responseJSON
@@ -637,6 +637,8 @@ function getCategory2ByCategory1(category1Id) {
 function getCategory3ByCategory2(category2Id) {
 
     var DataToPost = JSON.stringify({ Category2Id: category2Id.toString(), Category2: "noget" });
+
+    var selectedValue = $('#DTE_Field_category3 :selected').val();
 
     $.ajax({
         type: "POST",
@@ -659,6 +661,7 @@ function getCategory3ByCategory2(category2Id) {
                 option = {};
             }
             stockItemCategoryEditor.field('category3').update(optionsCategory3);
+            //$("#DTE_Field_category3").val(selectedValue);
         },
         error: function (request, status, error) {
             var jsonErrorObj = request.responseJSON

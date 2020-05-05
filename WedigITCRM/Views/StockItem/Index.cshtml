@@ -161,18 +161,36 @@
                     }
                 }
             ]);
-         
+
             var selectedDatatableRowData = stockitemtable.row({ selected: true }).data();
+
+             stockItemCategoryEditor.undependent('category1', function (val, data, callback) {
+             })
+
+               stockItemCategoryEditor.undependent('category2', function (val, data, callback) {
+               })
+
+               stockItemCategoryEditor.undependent('category3', function (val, data, callback) {
+          })
 
             if (selectedDatatableRowData.category1Id != null) {
                 $("#DTE_Field_category1").val(selectedDatatableRowData.category1Id);
                 getCategory2ByCategory1(selectedDatatableRowData.category1Id);
                 if (selectedDatatableRowData.category2Id != null) {
-                    getCategory3ByCategory2(selectedDatatableRowData.category2Id);
-                    $("#DTE_Field_category2").val(selectedDatatableRowData.category2Id);
-                    if (selectedDatatableRowData.category3Id != null) {
-                        $("#DTE_Field_category3").val(selectedDatatableRowData.category3Id);
+                  //  
+                    //$("#DTE_Field_category2").val(selectedDatatableRowData.category2Id);
 
+                   //var  htmlStr = '<option value ="' + selectedDatatableRowData.category2Id + '">' + selectedDatatableRowData.category2 + '</option>'
+                   // $("#DTE_Field_category2").val(htmlStr);
+
+                    $("#DTE_Field_category2").append($('<option>').val(selectedDatatableRowData.category2Id).text(selectedDatatableRowData.category2));
+                    $("#DTE_Field_category2").val(selectedDatatableRowData.category2Id);
+                    getCategory3ByCategory2(selectedDatatableRowData.category2Id);
+
+                    if (selectedDatatableRowData.category3Id != null) {
+                        //$("#DTE_Field_category3").val(selectedDatatableRowData.category3Id);                         
+                        $("#DTE_Field_category3").append($('<option>').val(selectedDatatableRowData.category3Id).text(selectedDatatableRowData.category3));
+                        $("#DTE_Field_category3").val(selectedDatatableRowData.category3Id);
                     }
                 }
             }
@@ -182,22 +200,30 @@
 
         });
 
-        stockItemCategoryEditor.on('open', function (e, mode, action) {
-            var x = 1;
-           // stockItemCategoryEditor.close();
-        });
-       
+        stockItemCategoryEditor.on('close', function (e, mode, action)
+        {
+           
+             stockItemCategoryEditor.undependent('category1', function (val, data, callback) {
+             })
 
-        stockitemtable.on('xhr.dt', function (e, settings, json, xhr) {
-            if (xhr.status != 200) {
-                $.fn.dataTable.ext.errMode = 'throw';  // this disables the datatables error handling
-                var errorJson = xhr.responseJSON;
-                var errorText = errorJson.Detail;
-                var errorTitle = errorJson.Title;
-                var errorInstance = errorJson.Instance;
-                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
-            }
+               stockItemCategoryEditor.undependent('category2', function (val, data, callback) {
+               })
+
+               stockItemCategoryEditor.undependent('category3', function (val, data, callback) {
+          })
         })
+
+
+    stockitemtable.on('xhr.dt', function (e, settings, json, xhr) {
+        if (xhr.status != 200) {
+            $.fn.dataTable.ext.errMode = 'throw';  // this disables the datatables error handling
+            var errorJson = xhr.responseJSON;
+            var errorText = errorJson.Detail;
+            var errorTitle = errorJson.Title;
+            var errorInstance = errorJson.Instance;
+            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+        }
+    })
 
     });
 

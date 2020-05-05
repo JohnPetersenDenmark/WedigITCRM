@@ -116,7 +116,7 @@ namespace WedigITCRM.Controllers
                         company.Name = datamodelInput.name;
                         if (!string.IsNullOrEmpty(datamodelInput.cvrNumber))
                         {
-                            company.CVRNumber = int.Parse(datamodelInput.cvrNumber);
+                            company.CVRNumber = datamodelInput.cvrNumber;
                         }
 
                         company.Street = datamodelInput.street;
@@ -165,7 +165,7 @@ namespace WedigITCRM.Controllers
                     company.Name = datamodelInput.name;
                     if (!string.IsNullOrEmpty(datamodelInput.cvrNumber))
                     {
-                        company.CVRNumber = int.Parse(datamodelInput.cvrNumber);
+                        company.CVRNumber = datamodelInput.cvrNumber;
                     }
                     company.Street = datamodelInput.street;
                     company.Zip = datamodelInput.zip;
@@ -571,7 +571,7 @@ namespace WedigITCRM.Controllers
                     }
 
                     ReducedCustomer.Email = customer.Email;
-                    ReducedCustomer.cvrNumber = customer.CVRNumber.ToString();
+                    ReducedCustomer.cvrNumber = customer.CVRNumber;
                     ReducedCustomer.postalCodeId = customer.postalCodeId;
                     ReducedCustomer.companyAccountId = customer.companyAccountId;
                     data1.Add(ReducedCustomer);
