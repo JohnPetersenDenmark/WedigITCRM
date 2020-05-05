@@ -132,3 +132,12 @@ System.InvalidOperationException: An exception occurred while reading a database
 2020-05-05 19:38:05.0544|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
 2020-05-05 19:38:49.9369|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
 2020-05-05 19:38:49.9369|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-05-05 19:43:57.9857|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 19:43:58.1844|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 19:54:02.6417|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-05 19:54:04.2643|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-05 19:54:04.6309|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-05 19:54:05.2862|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-05 19:54:11.0630|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-05 19:54:11.0755|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-05 19:54:11.4788|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
