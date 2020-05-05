@@ -10,7 +10,7 @@ namespace WedigITCRM
     {
         public int Id { get; set; }
 
-        public int CVRNumber { get; set; }
+        public string CVRNumber { get; set; }
 
         [Required(ErrorMessage = "Firmanavn skal udfyldes")]
         public string  Name { get; set; }

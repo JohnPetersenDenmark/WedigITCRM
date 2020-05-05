@@ -155,7 +155,7 @@ namespace WedigITCRM.DineroAPI
             dineroContact.Street = contactCompanyOrPerson.Street;
             dineroContact.City = contactCompanyOrPerson.City;
             dineroContact.ZipCode = contactCompanyOrPerson.Zip;
-            dineroContact.VatNumber = contactCompanyOrPerson.CVRNumber.ToString();
+            dineroContact.VatNumber = contactCompanyOrPerson.CVRNumber;
 
             dineroContact.CountryKey = contactCompanyOrPerson.CountryCode;
             dineroContact.CountryKey = contactCompanyOrPerson.CountryCode;
@@ -186,7 +186,7 @@ namespace WedigITCRM.DineroAPI
             addOrUpdateContact.VatNumber = readDineroContact.VatNumber;
             addOrUpdateContact.EanNumber = readDineroContact.EanNumber;
             addOrUpdateContact.PaymentConditionType = readDineroContact.PaymentConditionType;
-            addOrUpdateContact.PaymentConditionNumberOfDays = readDineroContact.PaymentConditionNumberOfDays;
+            addOrUpdateContact.PaymentConditionNumberOfDays = Int32.Parse(readDineroContact.PaymentConditionNumberOfDays);
             addOrUpdateContact.IsPerson = readDineroContact.IsPerson;
             addOrUpdateContact.IsMember = readDineroContact.IsMember;
             addOrUpdateContact.MemberNumber = readDineroContact.MemberNumber;
@@ -202,14 +202,7 @@ namespace WedigITCRM.DineroAPI
         {
             Company wedigitCompany = new Company();
 
-            if (contactToAdd.VatNumber == null || contactToAdd.VatNumber == "")
-            {
-                wedigitCompany.CVRNumber = 0;
-            }
-            else
-            {
-                wedigitCompany.CVRNumber = int.Parse(contactToAdd.VatNumber);
-            }
+            wedigitCompany.CVRNumber = contactToAdd.VatNumber;
 
             wedigitCompany.Name = contactToAdd.Name;
             wedigitCompany.Street = contactToAdd.Street;
@@ -231,14 +224,7 @@ namespace WedigITCRM.DineroAPI
 
         public Company MapUpdateDineroContactToCustomer(READDineroAPIcontact contactToAdd, Company wedigitCompany)
         {
-            if (contactToAdd.VatNumber == null || contactToAdd.VatNumber == "")
-            {
-                wedigitCompany.CVRNumber = 0;
-            }
-            else
-            {
-                wedigitCompany.CVRNumber = int.Parse(contactToAdd.VatNumber);
-            }
+            wedigitCompany.CVRNumber = contactToAdd.VatNumber;
 
             wedigitCompany.Name = contactToAdd.Name;
             wedigitCompany.IsPerson = contactToAdd.IsPerson;
@@ -248,14 +234,7 @@ namespace WedigITCRM.DineroAPI
             wedigitCompany.CountryCode = contactToAdd.CountryKey;
             wedigitCompany.PhoneNumber = contactToAdd.Phone;
             wedigitCompany.HomePage = contactToAdd.Webpage;
-            if (!string.IsNullOrEmpty(contactToAdd.VatNumber))
-            {
-                wedigitCompany.CVRNumber = Int32.Parse(contactToAdd.VatNumber);
-            }
-            else
-            {
-                wedigitCompany.CVRNumber = 0;
-            }
+           
 
             wedigitCompany.DineroGuiD = new Guid(contactToAdd.ContactGuid);
             wedigitCompany.LastEditedDate = DateTime.Now;
@@ -378,7 +357,7 @@ namespace WedigITCRM.DineroAPI
         public string VatNumber { get; set; }
         public string EanNumber { get; set; }
         public string PaymentConditionType { get; set; }
-        public int PaymentConditionNumberOfDays { get; set; }
+        public string PaymentConditionNumberOfDays { get; set; }
         public bool IsPerson { get; set; }
         public bool IsMember { get; set; }
         public string MemberNumber { get; set; }

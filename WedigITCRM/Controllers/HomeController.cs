@@ -160,6 +160,7 @@ namespace WedigITCRM.Controllers
 
         public async Task<IActionResult> searchInVirkByCVR(string term)
         {
+            List<CompanyData> companies = new List<CompanyData>();
 
             VirkAPI.Companies virkapi = new VirkAPI.Companies();
             VirkQuery virkquery = new VirkQuery();
@@ -179,14 +180,14 @@ namespace WedigITCRM.Controllers
             }
             else
             {
-                term = "88888888";
+                return new JsonResult(companies);
             }
 
             virkquery.query.query_string.query = term;
 
             VirkResponse virkResponse = await virkapi.search(virkquery);
 
-            List<CompanyData> companies = new List<CompanyData>();
+          
 
 
             List<vedIkke> result = virkResponse.hits.hits_property;

@@ -76,6 +76,9 @@
     var optionsCategory2 = [];
     var optionsCategory3 = [];
 
+    var category1AvoidDependentFirstCall = true;
+    var category2AvoidDependentFirstCall = true;
+    var category3AvoidDependentFirstCall = true;
 
     $(document).ready(function () {
 
@@ -91,9 +94,6 @@
         initializeStockitemtableFooter();
         initializeSearchStockitemtableFooter();
 
-        // setCategory1Dependency();
-        // setCategory2Dependency();
-        // setCategory3Dependency();
         setPresubmitEventHandlerOnStockItemEditor();
         setPostSubmitEventHandlerOnStockItemEditor();
 
@@ -126,22 +126,6 @@
         }
 
 
-        //stockItemCategoryEditor.buttons([
-        //    {
-        //        text: 'Gem ja',
-        //        className: 'primary',
-        //        action: function () {
-        //            this.submit();
-        //        }
-        //    },
-        //    {
-        //        text: 'Luk ja',
-        //        action: function () {
-        //            this.close();
-        //        }
-        //    }
-        //]);
-
         stockItemEditor.on('opened', function (e, json, data) {
             $("#DTE_Field_inStockAgainDate").datetimepicker({
                 timepicker: false,
@@ -159,9 +143,6 @@
 
             $.datetimepicker.setLocale('da');
         });
-
-
-
 
 
         stockItemCategoryEditor.on('opened', function (e, json, data) {
@@ -183,31 +164,61 @@
                     }
                 }
             ]);
-         
+
             var selectedDatatableRowData = stockitemtable.row({ selected: true }).data();
+
+            stockItemCategoryEditor.undependent('category1', function (val, data, callback) {
+            })
+
+            stockItemCategoryEditor.undependent('category2', function (val, data, callback) {
+            })
+
+            stockItemCategoryEditor.undependent('category3', function (val, data, callback) {
+            })
+
+             category1AvoidDependentFirstCall = false;
+             category2AvoidDependentFirstCall = true;
+             category3AvoidDependentFirstCall = true;
 
             if (selectedDatatableRowData.category1Id != null) {
                 $("#DTE_Field_category1").val(selectedDatatableRowData.category1Id);
                 getCategory2ByCategory1(selectedDatatableRowData.category1Id);
                 if (selectedDatatableRowData.category2Id != null) {
-                    getCategory3ByCategory2(selectedDatatableRowData.category2Id);
-                    $("#DTE_Field_category2").val(selectedDatatableRowData.category2Id);
-                    if (selectedDatatableRowData.category3Id != null) {
-                        $("#DTE_Field_category3").val(selectedDatatableRowData.category3Id);
+                    //
+                    //$("#DTE_Field_category2").val(selectedDatatableRowData.category2Id);
 
+                    //var  htmlStr = '<option value ="' + selectedDatatableRowData.category2Id + '">' + selectedDatatableRowData.category2 + '</option>'
+                    // $("#DTE_Field_category2").val(htmlStr);
+
+                    $("#DTE_Field_category2").append($('<option>').val(selectedDatatableRowData.category2Id).text(selectedDatatableRowData.category2));
+                    $("#DTE_Field_category2").val(selectedDatatableRowData.category2Id);
+                    getCategory3ByCategory2(selectedDatatableRowData.category2Id);
+
+                    if (selectedDatatableRowData.category3Id != null) {
+                        //$("#DTE_Field_category3").val(selectedDatatableRowData.category3Id);
+                        $("#DTE_Field_category3").append($('<option>').val(selectedDatatableRowData.category3Id).text(selectedDatatableRowData.category3));
+                        $("#DTE_Field_category3").val(selectedDatatableRowData.category3Id);
                     }
                 }
             }
+
             initializeCategoryFieldsChangeEvents1();
 
 
         });
 
-        stockItemCategoryEditor.on('open', function (e, mode, action) {
-            var x = 1;
-           // stockItemCategoryEditor.close();
-        });
-       
+        stockItemCategoryEditor.on('close', function (e, mode, action) {
+
+            stockItemCategoryEditor.undependent('category1', function (val, data, callback) {
+            })
+
+            stockItemCategoryEditor.undependent('category2', function (val, data, callback) {
+            })
+
+            stockItemCategoryEditor.undependent('category3', function (val, data, callback) {
+            })
+        })
+
 
         stockitemtable.on('xhr.dt', function (e, settings, json, xhr) {
             if (xhr.status != 200) {

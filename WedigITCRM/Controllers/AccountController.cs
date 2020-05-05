@@ -302,7 +302,7 @@ namespace WedigITCRM.Controllers
         {
             if (ModelState.IsValid)
             {
-                List<Company> companies = _companyRepository.GetAllCompanies().Where(company => company.CVRNumber == Int32.Parse(model.CVRNumber)).ToList();
+                List<Company> companies = _companyRepository.GetAllCompanies().Where(company => company.CVRNumber.Equals(model.CVRNumber)).ToList();
                 if (companies.Count > 0)
                 {
                     ModelState.AddModelError("CVRNumber", "Der er allerede oprettet en konto med CVR-nummer: " + model.CVRNumber);
