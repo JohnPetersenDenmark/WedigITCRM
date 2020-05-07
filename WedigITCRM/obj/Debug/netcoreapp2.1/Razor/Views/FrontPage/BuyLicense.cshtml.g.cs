@@ -105,7 +105,7 @@ using X.PagedList;
             WriteLiteral("\r\n    <html lang=\"en\">\r\n\r\n    ");
             EndContext();
             BeginContext(132, 1022, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e1071682500548a3970ea46706bd576c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b26fc500a4b4767929bd31fc0c69c0d", async() => {
                 BeginContext(138, 1009, true);
                 WriteLiteral(@"
         <meta charset=""UTF-8"">
@@ -171,7 +171,7 @@ using X.PagedList;
         ");
             EndContext();
             BeginContext(2140, 6408, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d407bf591ccd4cb5b3fd0efb060f60e6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b99c1a4f4b94867958b331e7fb40a8a", async() => {
                 BeginContext(2146, 5009, true);
                 WriteLiteral(@"
 
@@ -250,7 +250,7 @@ using X.PagedList;
             ");
                 EndContext();
                 BeginContext(7155, 78, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e036ffa9e8984bc7b1626ce67a85f838", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "aa8f7a8d3ecf4d218993aca2a158d747", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -279,7 +279,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n    </div>\r\n\r\n\r\n\r\n\r\n\r\n    <section class=\"integrations-overview container-et-eb text-center\">\r\n    </section>\r\n\r\n\r\n    <div class=\"container-et-eb pb50 testimonials\">\r\n\r\n\r\n\r\n    </div>\r\n\r\n\r\n    ");
                 EndContext();
                 BeginContext(7429, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "76ad497a75bd48358ceeac7e35e29c5a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87b4668fe7784790bad3b56a882acef5", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

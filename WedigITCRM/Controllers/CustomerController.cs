@@ -103,7 +103,8 @@ namespace WedigITCRM.Controllers
 
         public IActionResult EditCompany([FromBody] CompanyInputPostModel datamodelInput, CompanyAccount companyAccount)
         {
-         
+
+           
 
             if (ModelState.IsValid)
             {
@@ -518,7 +519,7 @@ namespace WedigITCRM.Controllers
             
                 List<Company> companies = new List<Company>();
 
-           
+            //throw new Exception("throw error ");
 
             if (!string.IsNullOrEmpty(customerCategory))
                 {

@@ -553,7 +553,9 @@ function setCategory2Dependency() {
             $("#DTE_Field_category3").val("0");
             return (true);
         }
+
         var DataToPost = JSON.stringify({ Category2Id: val.toString(), Category2: "noget" });
+
         $.ajax({
             type: "POST",
             contentType: "application/json",
