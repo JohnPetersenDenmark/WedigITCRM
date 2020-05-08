@@ -501,6 +501,12 @@ function initializeCategoryFieldsChangeEvents1() {
 function setCategory1Dependency() {
     stockItemCategoryEditor.dependent('category1', function (val, data, callback) {
 
+        if (category1AvoidDependentFirstCall) {
+            category1AvoidDependentFirstCall = false;
+            callback(true);
+            return;
+        }
+
         if (val == null) {
             $("#DTE_Field_category2").val("0");
             $("#DTE_Field_category3").val("0");
@@ -536,11 +542,20 @@ function setCategory1Dependency() {
 function setCategory2Dependency() {
     stockItemCategoryEditor.dependent('category2', function (val, data, callback) {
 
+
+        if (category2AvoidDependentFirstCall) {
+            category2AvoidDependentFirstCall = false;
+            callback(true);
+            return;
+        }
+
         if (val == null) {
             $("#DTE_Field_category3").val("0");
             return (true);
         }
+
         var DataToPost = JSON.stringify({ Category2Id: val.toString(), Category2: "noget" });
+
         $.ajax({
             type: "POST",
             contentType: "application/json",
@@ -567,6 +582,12 @@ function setCategory2Dependency() {
 
 function setCategory3Dependency() {
     stockItemCategoryEditor.dependent('category3', function (val, data, callback) {
+
+        if (category3AvoidDependentFirstCall) {
+            category3AvoidDependentFirstCall = false;
+            callback(true);
+            return;
+        }
 
         if (val == null) {
             return (true);

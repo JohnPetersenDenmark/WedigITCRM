@@ -219,4 +219,3 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigIT
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.pdb
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csproj.CopyComplete
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp2.1\WedigITCRM.csprojAssemblyReference.cache

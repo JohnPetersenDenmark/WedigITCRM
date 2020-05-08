@@ -85,8 +85,9 @@ namespace WedigITCRM.Controllers
 
         public async Task<IActionResult> searchInVirkByCompanyName(string term)
         {
-            
 
+           
+          
             VirkAPI.Companies virkapi = new VirkAPI.Companies();
             VirkQuery virkquery = new VirkQuery();
 
@@ -161,7 +162,9 @@ namespace WedigITCRM.Controllers
 
         public async Task<IActionResult> searchInVirkByCVR(string term)
         {
+
            
+
             List<CompanyData> companies = new List<CompanyData>();
 
             VirkAPI.Companies virkapi = new VirkAPI.Companies();
@@ -244,7 +247,7 @@ namespace WedigITCRM.Controllers
         }
 
 
-        
+        [AllowAnonymous]
         public IActionResult ShowErrorForJSON(string errorinstance)
 
         {
