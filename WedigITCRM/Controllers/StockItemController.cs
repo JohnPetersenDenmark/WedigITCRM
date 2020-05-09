@@ -528,7 +528,8 @@ namespace WedigITCRM.Controllers
         public IActionResult searchstockItemByName(string term, CompanyAccount companyAccount)
         {
            
-                var stockItemData = _stockItemRepository.GetAllstockItems().Where(stockitem => stockitem.companyAccountId == companyAccount.companyAccountId && stockitem.ItemName.ToLower().Contains(term.ToLower())).ToList();
+
+            var stockItemData = _stockItemRepository.GetAllstockItems().Where(stockitem => stockitem.companyAccountId == companyAccount.companyAccountId && stockitem.ItemName.ToLower().Contains(term.ToLower())).ToList();
 
                 List<StockItemSearckResultViewModel> data = new List<StockItemSearckResultViewModel>();
                 foreach (var stockItem in stockItemData)
