@@ -52,6 +52,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult GetAnnualCycleCalendar(CompanyAccount companyAccount)
         {
+           
             DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
             var annualCycleEvents = _calendarEventRepository.GetCalendarEntries().Where(calendarEntry => calendarEntry.IsFromResourceCalendar == false && calendarEntry.companyAccountId == companyAccount.companyAccountId).ToList();
             List<AnnualCycleEvent> annualCycleEventOutputList = new List<AnnualCycleEvent>();
@@ -68,6 +69,8 @@ namespace WedigITCRM.Controllers
 
         public IActionResult GetResourceCalendarEvents(AnnualCycleEvent model, CompanyAccount companyAccount)
         {
+
+           
             List<AnnualCycleEvent> resourceCalendarEvents = new List<AnnualCycleEvent>();
             if (ModelState.IsValid)
             {
@@ -335,6 +338,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getAllResources(BookingResourceModel model, CompanyAccount companyAccount)
         {
+           
             List<BookingResource> bookingResources = new List<BookingResource>();
             List<BookingResourceModel> bookingResourceList = new List<BookingResourceModel>();
             if (ModelState.IsValid)
@@ -343,11 +347,12 @@ namespace WedigITCRM.Controllers
 
                 if (!model.id.Equals("All"))
                 {
-
+                   
                     bookingResources = _bookingResourceRepository.GetBookingResources().Where(bookingResource => bookingResource.Id.ToString().Equals(model.id) && bookingResource.companyAccountId == companyAccount.companyAccountId).ToList();
                 }
                 else
                 {
+                    
                     bookingResources = _bookingResourceRepository.GetBookingResources().Where(bookingResource => bookingResource.companyAccountId == companyAccount.companyAccountId).ToList();
                 }
 
@@ -423,6 +428,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getEventsForResource(BookingResourceModel model, CompanyAccount companyAccount)
         {
+           
             Dictionary<string, List<GoogleCalRepeatedEntryModel>> repeatedEventList = new Dictionary<string, List<GoogleCalRepeatedEntryModel>>();
 
             Dictionary<string, List<int>> repeatedEventWeekdays = new Dictionary<string, List<int>>();
@@ -638,6 +644,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult removeEventsForResource(BookingResourceModel model, CompanyAccount companyAccount)
         {
+            
             if (ModelState.IsValid)
             {
                 if (!string.IsNullOrEmpty(model.id))
@@ -680,6 +687,8 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult AddOrEditAnnualCycleEvent(AnnualCycleEvent model, CompanyAccount companyAccount)
         {
+
+            
 
             if (ModelState.IsValid)
 
@@ -1373,6 +1382,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getRepeatedCalendarEvent(AnnualCycleEvent model, CompanyAccount companyAccount)
         {
+           
             DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
 
             List<AnnualCycleEvent> eventModelList = new List<AnnualCycleEvent>();
