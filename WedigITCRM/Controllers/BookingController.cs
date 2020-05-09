@@ -338,7 +338,8 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getAllResources(BookingResourceModel model, CompanyAccount companyAccount)
         {
-           
+            
+
             List<BookingResource> bookingResources = new List<BookingResource>();
             List<BookingResourceModel> bookingResourceList = new List<BookingResourceModel>();
             if (ModelState.IsValid)
@@ -402,7 +403,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getResource(BookingResourceModel model, CompanyAccount companyAccount)
         {
-
+           
             List<BookingResource> bookingResources = _bookingResourceRepository.GetBookingResources().Where(bookingResource => bookingResource.Id.ToString().Equals(model.id) && bookingResource.companyAccountId == companyAccount.companyAccountId).ToList();
             if (bookingResources.Count == 1)
             {
@@ -2329,6 +2330,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getBookingFreeTime(BookingServiceModel model, CompanyAccount companyAccount)
         {
+            
             List<AnnualCycleEvent> freeTimeEventList = new List<AnnualCycleEvent>();
 
             if (!model.id.Equals("0") && !model.id.Equals("null"))
@@ -2651,6 +2653,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getAllBookingServices(BookingServiceModel model, CompanyAccount companyAccount)
         {
+          
             List<BookingService> bookingServiceList = new List<BookingService>();
             List<BookingServiceModel> bookingServiceModelList = new List<BookingServiceModel>();
 
@@ -2710,6 +2713,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getBookingService(BookingServiceModel model, CompanyAccount companyAccount)
         {
+           
             if (!string.IsNullOrEmpty(model.id))
             {
                 List<BookingService> services = _bookingServiceRepository.GetAllBookingServices().Where(service => service.companyAccountId == companyAccount.companyAccountId && service.id.ToString().Equals(model.id)).ToList();
@@ -2729,6 +2733,8 @@ namespace WedigITCRM.Controllers
 
         public IActionResult bookerLogin(BookingLoginModel model, CompanyAccount companyAccount)
         {
+           
+
             if (!string.IsNullOrEmpty(model.BookingAPIkey))
             {
                 List<BookingSetup> bookingSetupList = _bookingSetupRepository.GetAllBookingSetups().Where(setup => setup.BookingAPIkey.Equals(model.BookingAPIkey)).ToList();
@@ -2763,6 +2769,8 @@ namespace WedigITCRM.Controllers
 
         public IActionResult bookerRegistration(BookingLoginModel model, CompanyAccount companyAccount)
         {
+           
+
             if (!string.IsNullOrEmpty(model.BookingAPIkey))
             {
                 List<BookingSetup> bookingSetupList = _bookingSetupRepository.GetAllBookingSetups().Where(setup => setup.BookingAPIkey.Equals(model.BookingAPIkey)).ToList();
@@ -2817,6 +2825,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult sendVerificationSMS(BookingLoginModel model)
         {
+          
             if (!string.IsNullOrEmpty(model.BookingAPIkey))
             {
                 List<BookingSetup> bookingSetupList = _bookingSetupRepository.GetAllBookingSetups().Where(setup => setup.BookingAPIkey.Equals(model.BookingAPIkey)).ToList();
@@ -2857,6 +2866,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult book(BookingModel model)
         {
+           
             if (!string.IsNullOrEmpty(model.BookingAPIkey))
             {
                 if (string.IsNullOrEmpty(model.smsVerificationCode))

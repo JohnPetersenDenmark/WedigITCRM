@@ -249,9 +249,12 @@
                     $("#bookername").val(result.name)
                     loggedIn = true;
                 },
-
-                failure: function (errMsg) {
-                    alert(errMsg);
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                 }
             });
 
@@ -322,8 +325,12 @@
 
                 },
 
-                failure: function (errMsg) {
-                    alert(errMsg);
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                 }
             });
 
@@ -408,8 +415,12 @@
 
                 },
 
-                failure: function (errMsg) {
-                    alert(errMsg);
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                 }
             });
         });
@@ -438,7 +449,7 @@
                     start: calendarStartDate,
                     end: calendarEndDate
                 },
-                 defaultView: 'agendaWeek',
+                defaultView: 'agendaWeek',
                 header: {
                     left: 'prev,next today',
                     center: 'title',
@@ -551,6 +562,13 @@
                             });
 
                             callback(events);
+                        },
+                        error: function (request, status, error) {
+                            var jsonErrorObj = request.responseJSON
+                            var errorText = jsonErrorObj.Detail;
+                            var errorTitle = jsonErrorObj.Title;
+                            var errorInstance = jsonErrorObj.Instance;
+                            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                         }
                     });
                 }
@@ -591,8 +609,12 @@
                     $('#' + domElementId).val("0");
                 },
 
-                failure: function (errMsg) {
-                    alert(errMsg);
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                 }
             });
 
@@ -610,13 +632,17 @@
                 success: function (result) {
                     $('#freetimeresourcename').val(result.jobDescription);
                     if (AddColorDivFlag) {
-                         addResourceColorTagDiv(result);
+                        addResourceColorTagDiv(result);
                     }
-                   
+
                 },
 
-                failure: function (errMsg) {
-                    alert(errMsg);
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                 }
             });
 
@@ -653,8 +679,12 @@
                     $('#' + domElementId).val("0");
                 },
 
-                failure: function (errMsg) {
-                    alert(errMsg);
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                 }
             });
 
@@ -692,8 +722,12 @@
                                 DialogVerifyBooking();
                             },
 
-                            failure: function (errMsg) {
-                                alert(errMsg);
+                            error: function (request, status, error) {
+                                var jsonErrorObj = request.responseJSON
+                                var errorText = jsonErrorObj.Detail;
+                                var errorTitle = jsonErrorObj.Title;
+                                var errorInstance = jsonErrorObj.Instance;
+                                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                             }
                         });
                     }
@@ -732,9 +766,12 @@
                             $('#bookingcalendar').fullCalendar("refetchEvents");
                             $('#dialogverifybooking').dialog("close");
                         },
-
-                        failure: function (errMsg) {
-                            alert(errMsg);
+                        error: function (request, status, error) {
+                            var jsonErrorObj = request.responseJSON
+                            var errorText = jsonErrorObj.Detail;
+                            var errorTitle = jsonErrorObj.Title;
+                            var errorInstance = jsonErrorObj.Instance;
+                            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                         }
                     });
                 },
@@ -808,9 +845,13 @@
 
             },
 
-            failure: function (errMsg) {
-                alert(errMsg);
-            }
+           error: function (request, status, error) {
+                            var jsonErrorObj = request.responseJSON
+                            var errorText = jsonErrorObj.Detail;
+                            var errorTitle = jsonErrorObj.Title;
+                            var errorInstance = jsonErrorObj.Instance;
+                            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                        }
         });
 
 
