@@ -300,6 +300,7 @@
                 type: "GET",
                 url: "/StockItemCategories/getAllCategory1s",
                 async: false,
+                dataType: 'json',
                 success: function (data) {
                     $('#selectcategory1').append('<option value=0>' + 'Vælg' + '</option>');
 
@@ -308,7 +309,14 @@
                     });
 
                     $("#selectcategory1").prop('selectedIndex', 0);
-                }
+                },
+                  error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+            }
             });
         }
 
@@ -325,6 +333,7 @@
                 type: "GET",
                 url: "/StockItemCategories/getAllCategory2ByCategory1s",
                 async: false,
+                  dataType: 'json',
                 data: { 'Category1Id': Category1Id },
                 success: function (data) {
                     $('#selectcategory2').append('<option value=0>' + 'Vælg' + '</option>');
@@ -334,7 +343,14 @@
 
                     $("#selectcategory2 option:first").attr('selected', 'selected');
 
-                }
+                },
+                  error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+            }
             });
         }
 
@@ -350,6 +366,7 @@
                 type: "GET",
                 url: "/StockItemCategories/getAllCategory3s",
                 async: false,
+                  dataType: 'json',
                 data: { 'Category2Id': Category2Id },
                 success: function (data) {
                     $('#selectcategory3').append('<option value=0>' + 'Vælg' + '</option>');
@@ -358,7 +375,14 @@
                     });
                     $('#selectcategory3 option')[0].selected = true;
 
-                }
+                },
+                  error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+            }
             });
         }
     </script>
