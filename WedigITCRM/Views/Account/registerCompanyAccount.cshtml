@@ -174,7 +174,23 @@
 
 
         $("#companyNameSuggest").autocomplete({
-            source: '/home/searchInVirkByCompanyName',
+            source: function (request, response) {
+                $.ajax({
+                    url: '/home/searchInVirkByCompanyName',
+                    data: { term: request.term },
+                    success: function (data) {
+                        response(data);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        var jsonErrorObj = jqXHR.responseJSON
+                        var errorText = jsonErrorObj.Detail;
+                        var errorTitle = jsonErrorObj.Title;
+                        var errorInstance = jsonErrorObj.Instance;
+                        location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                    },
+                    dataType: 'json'
+                });
+            },
             select: function (event, ui) {
                 $("#companyNameSuggest").val(ui.item.label);
                 $("#companyCVRSuggest").val(ui.item.cvrNumber);
@@ -185,7 +201,23 @@
 
 
         $("#companyCVRSuggest").autocomplete({
-            source: '/home/searchInVirkByCVR',
+             source: function (request, response) {
+                $.ajax({
+                    url: '/home/searchInVirkByCVR',
+                    data: { term: request.term },
+                    success: function (data) {
+                        response(data);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        var jsonErrorObj = jqXHR.responseJSON
+                        var errorText = jsonErrorObj.Detail;
+                        var errorTitle = jsonErrorObj.Title;
+                        var errorInstance = jsonErrorObj.Instance;
+                        location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                    },
+                    dataType: 'json'
+                });
+            },
             select: function (event, ui) {
                 $("#companyNameSuggest").val(ui.item.label);
                 $("#companyCVRSuggest").val(ui.item.cvrNumber);

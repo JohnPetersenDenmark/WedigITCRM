@@ -174,6 +174,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getAllCategory1s(CompanyAccount companyAccount)
         {
+           
             var Cat1List = _stockItemCategory1Repository.GetAllStockItemCategory1s().Where(cat1 => cat1.companyAccountId == companyAccount.companyAccountId).ToList();
             return Json(Cat1List);
         }
@@ -250,7 +251,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getAllCategory2ByCategory1s(int Category1Id, CompanyAccount companyAccount)
         {
-            
+           
 
             var Cat2List = _stockItemCategory2Repository.GetAllStockItemCategory2s().ToList().Where(cat2 => cat2.Category1Id == Category1Id && cat2.companyAccountId == companyAccount.companyAccountId).ToList();
             return Json(Cat2List);
@@ -270,6 +271,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getAllCategory3s(int Category2Id, CompanyAccount companyAccount)
         {
+           
             var Cat3List = _stockItemCategory3Repository.GetAllStockItemCategory3s().ToList().Where(cat3 => cat3.Category2Id == Category2Id && cat3.companyAccountId == companyAccount.companyAccountId).ToList();
             return Json(Cat3List);
         }

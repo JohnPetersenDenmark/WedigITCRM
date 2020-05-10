@@ -18,7 +18,7 @@
         <div class="form-group col-sm-2 tableheadline">
             Aftalekalender
         </div>
-        <div class="form-group col-sm-2">            
+        <div class="form-group col-sm-2">
             <select id="selectcalendarresource" name="selectcalendarresource" class="custom-select">
             </select>
         </div>
@@ -288,7 +288,7 @@
                     start: calendarStartDate,
                     end: calendarEndDate
                 },
-                 defaultView: 'agendaWeek',
+                defaultView: 'agendaWeek',
                 header: {
                     left: 'prev,next today,monthForward, monthPrev',
                     center: 'title',
@@ -364,6 +364,13 @@
                             });
 
                             callback(events);
+                        },
+                        error: function (request, status, error) {
+                            var jsonErrorObj = request.responseJSON
+                            var errorText = jsonErrorObj.Detail;
+                            var errorTitle = jsonErrorObj.Title;
+                            var errorInstance = jsonErrorObj.Instance;
+                            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                         }
                     });
 
@@ -386,7 +393,7 @@
                     start: calendarStartDate,
                     end: calendarEndDate
                 },
-                  defaultView: 'agendaWeek',
+                defaultView: 'agendaWeek',
                 customButtons: {
 
                 },
@@ -677,6 +684,13 @@
                             });
 
                             callback(events);
+                        },
+                        error: function (request, status, error) {
+                            var jsonErrorObj = request.responseJSON
+                            var errorText = jsonErrorObj.Detail;
+                            var errorTitle = jsonErrorObj.Title;
+                            var errorInstance = jsonErrorObj.Instance;
+                            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                         }
                     });
                 }
@@ -738,9 +752,12 @@
                         }
                     });
             },
-
-            failure: function (errMsg) {
-                alert(errMsg);
+            error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
             }
         });
     }
@@ -775,8 +792,12 @@
                 $('#selectcalendarresource').val("0");
             },
 
-            failure: function (errMsg) {
-                alert(errMsg);
+            error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
             }
         });
 
@@ -796,8 +817,12 @@
                 addResourceColorTagDiv(result[0]);
             },
 
-            failure: function (errMsg) {
-                alert(errMsg);
+            error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
             }
         });
 
@@ -850,66 +875,17 @@
                     });
                 });
 
-               // $('#annualcyclecalendar').fullCalendar('destroy');
-               // $('#annualcyclecalendar').fullCalendar();
+                // $('#annualcyclecalendar').fullCalendar('destroy');
+                // $('#annualcyclecalendar').fullCalendar();
                 // $('#annualcyclecalendar').fullCalendar('removeEvents');
-                    $('#annualcyclecalendar').fullCalendar("refetchEvents");
+                $('#annualcyclecalendar').fullCalendar("refetchEvents");
             },
-            failure: function (errMsg) {
-                alert(errMsg);
-            }
-        });
-
-    }
-
-    function postDeleteCalendarEntry() {
-
-        var JsonCalData = $("#myForm").serializeArray()
-
-
-        $.ajax({
-            type: "POST",
-            url: "/booking/AddOrEditAnnualCycleEvent",
-            data: JsonCalData,
-            contentType: "application/x-www-form-urlencoded; charset=utf-8",
-            dataType: "json",
-            success: function (result) {
-
-                $.each(result, function (i, data) {
-                    var momentStartDateDA = moment(data.startDateTime, 'DD-MM-YYYY kk:mm')
-                    var momentStartDateCalStyleStr = momentStartDateDA.format("YYYY-MM-DD kk:mm");
-                    var startDateTime = moment(momentStartDateCalStyleStr);
-
-                    var momentEndDateDA = moment(data.endDateTime, 'DD-MM-YYYY kk:mm')
-                    var momentEndDateCalStyleStr = momentEndDateDA.format("YYYY-MM-DD kk:mm");
-                    var endDateTime = moment(momentEndDateCalStyleStr);
-
-                    var AllDayFlag = false;
-                    if (data.selectallday == "true") {
-                        AllDayFlag = true;
-                    }
-
-                    var selectRepeatFlag = false;
-                    if (data.selectRepeat == "true") {
-                        selectRepeatFlag = true;
-                    }
-
-                    $('#annualcyclecalendar').fullCalendar('renderEvent', {
-                        _id: data.calEventId,
-                        repeatedId: data.repeatedId,
-                        title: data.description,
-                        start: startDateTime,
-                        end: endDateTime,
-                        allDay: AllDayFlag,
-                        selectRepeat: selectRepeatFlag,
-                        backgroundColor: "#F8D69A",
-                        borderColor: "#DD5328"
-                    });
-                });
-
-            },
-            failure: function (errMsg) {
-                alert(errMsg);
+            error: function (request, status, error) {
+                var jsonErrorObj = request.responseJSON
+                var errorText = jsonErrorObj.Detail;
+                var errorTitle = jsonErrorObj.Title;
+                var errorInstance = jsonErrorObj.Instance;
+                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
             }
         });
 
@@ -1148,6 +1124,13 @@
                                     );
                                 });
 
+                            },
+                            error: function (request, status, error) {
+                                var jsonErrorObj = request.responseJSON
+                                var errorText = jsonErrorObj.Detail;
+                                var errorTitle = jsonErrorObj.Title;
+                                var errorInstance = jsonErrorObj.Instance;
+                                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                             }
                         });
                     }
@@ -1166,6 +1149,13 @@
                             dataType: "json",
                             success: function (result) {
 
+                            },
+                              error: function (request, status, error) {
+                                var jsonErrorObj = request.responseJSON
+                                var errorText = jsonErrorObj.Detail;
+                                var errorTitle = jsonErrorObj.Title;
+                                var errorInstance = jsonErrorObj.Instance;
+                                location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                             }
                         });
                     }

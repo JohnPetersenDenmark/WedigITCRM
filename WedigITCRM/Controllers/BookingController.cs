@@ -52,6 +52,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult GetAnnualCycleCalendar(CompanyAccount companyAccount)
         {
+           
             DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
             var annualCycleEvents = _calendarEventRepository.GetCalendarEntries().Where(calendarEntry => calendarEntry.IsFromResourceCalendar == false && calendarEntry.companyAccountId == companyAccount.companyAccountId).ToList();
             List<AnnualCycleEvent> annualCycleEventOutputList = new List<AnnualCycleEvent>();
@@ -68,6 +69,8 @@ namespace WedigITCRM.Controllers
 
         public IActionResult GetResourceCalendarEvents(AnnualCycleEvent model, CompanyAccount companyAccount)
         {
+
+           
             List<AnnualCycleEvent> resourceCalendarEvents = new List<AnnualCycleEvent>();
             if (ModelState.IsValid)
             {
@@ -335,6 +338,8 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getAllResources(BookingResourceModel model, CompanyAccount companyAccount)
         {
+            
+
             List<BookingResource> bookingResources = new List<BookingResource>();
             List<BookingResourceModel> bookingResourceList = new List<BookingResourceModel>();
             if (ModelState.IsValid)
@@ -343,11 +348,12 @@ namespace WedigITCRM.Controllers
 
                 if (!model.id.Equals("All"))
                 {
-
+                   
                     bookingResources = _bookingResourceRepository.GetBookingResources().Where(bookingResource => bookingResource.Id.ToString().Equals(model.id) && bookingResource.companyAccountId == companyAccount.companyAccountId).ToList();
                 }
                 else
                 {
+                    
                     bookingResources = _bookingResourceRepository.GetBookingResources().Where(bookingResource => bookingResource.companyAccountId == companyAccount.companyAccountId).ToList();
                 }
 
@@ -397,7 +403,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getResource(BookingResourceModel model, CompanyAccount companyAccount)
         {
-
+           
             List<BookingResource> bookingResources = _bookingResourceRepository.GetBookingResources().Where(bookingResource => bookingResource.Id.ToString().Equals(model.id) && bookingResource.companyAccountId == companyAccount.companyAccountId).ToList();
             if (bookingResources.Count == 1)
             {
@@ -423,6 +429,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getEventsForResource(BookingResourceModel model, CompanyAccount companyAccount)
         {
+           
             Dictionary<string, List<GoogleCalRepeatedEntryModel>> repeatedEventList = new Dictionary<string, List<GoogleCalRepeatedEntryModel>>();
 
             Dictionary<string, List<int>> repeatedEventWeekdays = new Dictionary<string, List<int>>();
@@ -638,6 +645,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult removeEventsForResource(BookingResourceModel model, CompanyAccount companyAccount)
         {
+            
             if (ModelState.IsValid)
             {
                 if (!string.IsNullOrEmpty(model.id))
@@ -680,6 +688,8 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult AddOrEditAnnualCycleEvent(AnnualCycleEvent model, CompanyAccount companyAccount)
         {
+
+            
 
             if (ModelState.IsValid)
 
@@ -1373,6 +1383,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult getRepeatedCalendarEvent(AnnualCycleEvent model, CompanyAccount companyAccount)
         {
+           
             DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
 
             List<AnnualCycleEvent> eventModelList = new List<AnnualCycleEvent>();
@@ -2319,6 +2330,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getBookingFreeTime(BookingServiceModel model, CompanyAccount companyAccount)
         {
+            
             List<AnnualCycleEvent> freeTimeEventList = new List<AnnualCycleEvent>();
 
             if (!model.id.Equals("0") && !model.id.Equals("null"))
@@ -2641,6 +2653,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getAllBookingServices(BookingServiceModel model, CompanyAccount companyAccount)
         {
+          
             List<BookingService> bookingServiceList = new List<BookingService>();
             List<BookingServiceModel> bookingServiceModelList = new List<BookingServiceModel>();
 
@@ -2700,6 +2713,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getBookingService(BookingServiceModel model, CompanyAccount companyAccount)
         {
+           
             if (!string.IsNullOrEmpty(model.id))
             {
                 List<BookingService> services = _bookingServiceRepository.GetAllBookingServices().Where(service => service.companyAccountId == companyAccount.companyAccountId && service.id.ToString().Equals(model.id)).ToList();
@@ -2719,6 +2733,8 @@ namespace WedigITCRM.Controllers
 
         public IActionResult bookerLogin(BookingLoginModel model, CompanyAccount companyAccount)
         {
+           
+
             if (!string.IsNullOrEmpty(model.BookingAPIkey))
             {
                 List<BookingSetup> bookingSetupList = _bookingSetupRepository.GetAllBookingSetups().Where(setup => setup.BookingAPIkey.Equals(model.BookingAPIkey)).ToList();
@@ -2753,6 +2769,8 @@ namespace WedigITCRM.Controllers
 
         public IActionResult bookerRegistration(BookingLoginModel model, CompanyAccount companyAccount)
         {
+           
+
             if (!string.IsNullOrEmpty(model.BookingAPIkey))
             {
                 List<BookingSetup> bookingSetupList = _bookingSetupRepository.GetAllBookingSetups().Where(setup => setup.BookingAPIkey.Equals(model.BookingAPIkey)).ToList();
@@ -2807,6 +2825,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult sendVerificationSMS(BookingLoginModel model)
         {
+          
             if (!string.IsNullOrEmpty(model.BookingAPIkey))
             {
                 List<BookingSetup> bookingSetupList = _bookingSetupRepository.GetAllBookingSetups().Where(setup => setup.BookingAPIkey.Equals(model.BookingAPIkey)).ToList();
@@ -2847,6 +2866,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult book(BookingModel model)
         {
+           
             if (!string.IsNullOrEmpty(model.BookingAPIkey))
             {
                 if (string.IsNullOrEmpty(model.smsVerificationCode))

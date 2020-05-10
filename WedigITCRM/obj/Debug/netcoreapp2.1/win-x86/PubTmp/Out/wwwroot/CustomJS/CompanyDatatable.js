@@ -33,7 +33,7 @@ function initializeCompanyEditor() {
                 }
 
             },
-
+         
             contentType: "application/json"
 
         },
@@ -499,54 +499,58 @@ function getCompanySuggestions() {
     document.getElementById("DTE_Field_name").disabled = true;
     var myUrl = "/home/searchInVirkByCompanyName?Term=" + KeyUpValue;
 
-    var jqxhr = $.get(myUrl, function (data) {
-        if ($('#popUpDiv').length) {
-            $('#popUpDiv').html("");
-        }
-        else {
-            var txt1 = '<div id="popUpDiv"></div>';        
-
-
-            $("#DTE_Field_name").parent().append(txt1);   
-        }
-
-        var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
-        $('#popUpDiv').append(htmlStr);
-
-        suggestData = data;
-
-        jQuery.each(data, function (i, val) {
-            var suggestElement = '<div id="' + i + '"' + ' class="suggestion">' + val.label + '</div>';
-            $('#popUpDiv').append(suggestElement);
-        });
-
-        var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup" >Luk</button><div>';
-        $('#popUpDiv').append(htmlStr);
-
-
-        $('.closepopup').bind("click", function () {          
-            $("#popUpDiv").hide();
-        });
-
-        $('.suggestion').bind("click", function () {
-            var selectedSuggestId = $(this).attr('id');
-            initializePopUpNew(selectedSuggestId);
-            $("#popUpDiv").hide();
-        });
-
-        $("#popUpDiv").show();
-        $("#DTE_Field_name").prop("disabled", false);
-        document.getElementById("DTE_Field_name").focus();
-
-    })
-
-        .fail(function () {
-            $("#DTE_Field_name").prop("disabled", false);
+    $.ajax({
+        method: "GET",
+        url: myUrl,
+        dataType: "json",
+        success: function (data) {
             if ($('#popUpDiv').length) {
                 $('#popUpDiv').html("");
-                $("#popUpDiv").hide();
             }
-        });
+            else {
+                var txt1 = '<div id="popUpDiv"></div>';
+
+
+                $("#DTE_Field_name").parent().append(txt1);
+            }
+
+            var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
+            $('#popUpDiv').append(htmlStr);
+
+            suggestData = data;
+
+            jQuery.each(data, function (i, val) {
+                var suggestElement = '<div id="' + i + '"' + ' class="suggestion">' + val.label + '</div>';
+                $('#popUpDiv').append(suggestElement);
+            });
+
+            var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup" >Luk</button><div>';
+            $('#popUpDiv').append(htmlStr);
+
+
+            $('.closepopup').bind("click", function () {
+                $("#popUpDiv").hide();
+            });
+
+            $('.suggestion').bind("click", function () {
+                var selectedSuggestId = $(this).attr('id');
+                initializePopUpNew(selectedSuggestId);
+                $("#popUpDiv").hide();
+            });
+
+            $("#popUpDiv").show();
+            $("#DTE_Field_name").prop("disabled", false);
+            document.getElementById("DTE_Field_name").focus();
+        },
+        error: function (request, status, error) {
+            var jsonErrorObj = request.responseJSON
+            var errorText = jsonErrorObj.Detail;
+            var errorTitle = jsonErrorObj.Title;
+            var errorInstance = jsonErrorObj.Instance;
+            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+        }
+    });
+
 }
 
 function initializePopUpNew(selectedSuggestId) {
@@ -594,51 +598,57 @@ function getCompanySuggestionsCVR() {
     document.getElementById("DTE_Field_cvrNumber").disabled = true;
     var myUrl = "/home/searchInVirkByCVR?Term=" + KeyUpValue;
 
-    var jqxhr = $.get(myUrl, function (data) {
-        if ($('#popUpDiv').length) {
-            $('#popUpDiv').html("");
-        }
-        else {
-            var txt1 = '<div id="popUpDiv"></div>';        // Create text with HTML
 
-
-            $("#DTE_Field_cvrNumber").parent().append(txt1);   // Append new elements
-        }
-
-        var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
-        $('#popUpDiv').append(htmlStr);
-
-        suggestData = data;
-
-        jQuery.each(data, function (i, val) {
-            var suggestElement = '<div id="' + i + '"' + ' class="suggestion">' + val.label + '</div>';
-            $('#popUpDiv').append(suggestElement);
-        });
-
-        var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
-        $('#popUpDiv').append(htmlStr);
-
-        $('.closepopup').bind("click", function () {
-            $("#popUpDiv").hide();
-        });
-
-        $('.suggestion').bind("click", function () {
-            var selectedSuggestId = $(this).attr('id');
-            initializePopUpNew(selectedSuggestId);
-            $("#popUpDiv").hide();
-        });
-
-        $("#popUpDiv").show();
-        $("#DTE_Field_cvrNumber").prop("disabled", false);
-        document.getElementById("DTE_Field_cvrNumber").focus();
-
-    })
-
-        .fail(function () {
-            $("#DTE_Field_cvrNumber").prop("disabled", false);
+    $.ajax({
+        method: "GET",
+        url: myUrl,
+        dataType: "json",
+        success: function (data) {
             if ($('#popUpDiv').length) {
                 $('#popUpDiv').html("");
-                $("#popUpDiv").hide();
             }
-        });
+            else {
+                var txt1 = '<div id="popUpDiv"></div>';        // Create text with HTML
+
+
+                $("#DTE_Field_cvrNumber").parent().append(txt1);   // Append new elements
+            }
+
+            var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
+            $('#popUpDiv').append(htmlStr);
+
+            suggestData = data;
+
+            jQuery.each(data, function (i, val) {
+                var suggestElement = '<div id="' + i + '"' + ' class="suggestion">' + val.label + '</div>';
+                $('#popUpDiv').append(suggestElement);
+            });
+
+            var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
+            $('#popUpDiv').append(htmlStr);
+
+            $('.closepopup').bind("click", function () {
+                $("#popUpDiv").hide();
+            });
+
+            $('.suggestion').bind("click", function () {
+                var selectedSuggestId = $(this).attr('id');
+                initializePopUpNew(selectedSuggestId);
+                $("#popUpDiv").hide();
+            });
+
+            $("#popUpDiv").show();
+            $("#DTE_Field_cvrNumber").prop("disabled", false);
+            document.getElementById("DTE_Field_cvrNumber").focus();
+
+        },
+        error: function (request, status, error) {
+            var jsonErrorObj = request.responseJSON
+            var errorText = jsonErrorObj.Detail;
+            var errorTitle = jsonErrorObj.Title;
+            var errorInstance = jsonErrorObj.Instance;
+            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+        }
+    });
+
 }

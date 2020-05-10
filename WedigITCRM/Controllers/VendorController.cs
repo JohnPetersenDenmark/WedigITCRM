@@ -179,7 +179,9 @@ namespace WedigITCRM.Controllers
 
         public async Task<IActionResult> searchVendorByName(string term, CompanyAccount companyAccount)
         {
-           
+
+            
+
                 var vendorData = _vendorRepository.GetAllVendors().Where(company => company.companyAccountId == companyAccount.companyAccountId && company.Name.ToLower().Contains(term.ToLower())).ToList();
 
                 List<ReducedVendor> data = new List<ReducedVendor>();

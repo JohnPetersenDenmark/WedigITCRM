@@ -553,7 +553,9 @@ function setCategory2Dependency() {
             $("#DTE_Field_category3").val("0");
             return (true);
         }
+
         var DataToPost = JSON.stringify({ Category2Id: val.toString(), Category2: "noget" });
+
         $.ajax({
             type: "POST",
             contentType: "application/json",
@@ -820,55 +822,58 @@ function getVendorSuggestions() {
     document.getElementById("DTE_Field_vendorName").disabled = true;
     var myUrl = "/vendor/searchVendorByName?term=" + VendorNameKeyUpValue;
 
-    var jqxhr = $.get(myUrl, function (data) {
-        if ($('#popUpDiv').length) {
-            $('#popUpDiv').html("");
-        }
-        else {
-            var txt1 = '<div id="popUpDiv"></div>';        // Create text with HTML
-
-
-            $("#DTE_Field_vendorName").parent().append(txt1);   // Append new elements
-        }
-
-        var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
-        $('#popUpDiv').append(htmlStr);
-
-        vendorSuggestData = data;
-
-        jQuery.each(data, function (i, val) {
-            var suggestElement = '<div id="' + i + '"' + ' class="suggestion">' + val.name + '</div>';
-            $('#popUpDiv').append(suggestElement);
-        });
-
-        var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
-        $('#popUpDiv').append(htmlStr);
-
-        $('.closepopup').bind("click", function () {
-            $("#popUpDiv").hide();
-        });
-
-        $('.suggestion').bind("click", function (event) {
-
-            var selectedSuggestId = $(this).attr('id');
-            initializeVendorPopUp(selectedSuggestId);
-            $("#popUpDiv").hide();
-            document.getElementById("DTE_Field_vendorName").focus();
-        });
-
-        $("#popUpDiv").show();
-        $("#DTE_Field_vendorName").prop("disabled", false);
-        document.getElementById("DTE_Field_vendorName").focus();
-
-    })
-
-        .fail(function () {
-            $("#DTE_Field_vendorName").prop("disabled", false);
+    $.ajax({
+        method: "GET",
+        url: myUrl,
+        dataType: "json",
+        success: function (data) {
             if ($('#popUpDiv').length) {
                 $('#popUpDiv').html("");
-                $("#popUpDiv").hide();
             }
-        });
+            else {
+                var txt1 = '<div id="popUpDiv"></div>';        // Create text with HTML
+
+
+                $("#DTE_Field_vendorName").parent().append(txt1);   // Append new elements
+            }
+
+            var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
+            $('#popUpDiv').append(htmlStr);
+
+            vendorSuggestData = data;
+
+            jQuery.each(data, function (i, val) {
+                var suggestElement = '<div id="' + i + '"' + ' class="suggestion">' + val.name + '</div>';
+                $('#popUpDiv').append(suggestElement);
+            });
+
+            var htmlStr = '<div class="DTE_Form_Buttons" data-dte-e="form_buttons"><button class="btn closepopup">Luk</button><div>';
+            $('#popUpDiv').append(htmlStr);
+
+            $('.closepopup').bind("click", function () {
+                $("#popUpDiv").hide();
+            });
+
+            $('.suggestion').bind("click", function (event) {
+
+                var selectedSuggestId = $(this).attr('id');
+                initializeVendorPopUp(selectedSuggestId);
+                $("#popUpDiv").hide();
+                document.getElementById("DTE_Field_vendorName").focus();
+            });
+
+            $("#popUpDiv").show();
+            $("#DTE_Field_vendorName").prop("disabled", false);
+            document.getElementById("DTE_Field_vendorName").focus();
+        },
+        error: function (request, status, error) {
+            var jsonErrorObj = request.responseJSON
+            var errorText = jsonErrorObj.Detail;
+            var errorTitle = jsonErrorObj.Title;
+            var errorInstance = jsonErrorObj.Instance;
+            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+        }
+    });
 }
 
 function initializeVendorPopUp(selectedSuggestId) {
