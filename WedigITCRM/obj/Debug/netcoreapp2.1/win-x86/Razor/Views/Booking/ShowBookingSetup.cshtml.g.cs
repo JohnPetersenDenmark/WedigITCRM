@@ -139,7 +139,7 @@ using X.PagedList;
             WriteLiteral("            <div class=\"rowcontainer\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-2\">\r\n                        ");
             EndContext();
             BeginContext(893, 110, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0228085ad664497b8047149173a23d52", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dd38dcc3309b48429573be3b9b3f8100", async() => {
                 BeginContext(994, 5, true);
                 WriteLiteral("Opret");
                 EndContext();
@@ -174,7 +174,7 @@ using X.PagedList;
             WriteLiteral("            <div class=\"rowcontainer\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-2\">\r\n                        ");
             EndContext();
             BeginContext(1253, 135, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da4c4ecce8034e23a10b4d24e9af1663", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "837a7a72caaf4a928940d3f734b5e050", async() => {
                 BeginContext(1377, 7, true);
                 WriteLiteral("Rediger");
                 EndContext();
@@ -212,7 +212,7 @@ using X.PagedList;
             WriteLiteral("\r\n                    </div>\r\n                    <div class=\"col-2\">\r\n                        ");
             EndContext();
             BeginContext(1483, 134, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bcaff15a84434002a9f463bc4df3be73", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2943593839e485c858ecbefe665beeb", async() => {
                 BeginContext(1609, 4, true);
                 WriteLiteral("Slet");
                 EndContext();

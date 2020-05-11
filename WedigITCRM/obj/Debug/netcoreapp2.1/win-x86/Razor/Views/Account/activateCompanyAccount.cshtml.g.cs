@@ -109,7 +109,7 @@ using X.PagedList;
             WriteLiteral("            <div class=\"form-group row\">\r\n                <div class=\"col-sm-8\">\r\n                    ");
             EndContext();
             BeginContext(382, 58, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cbada8970d8747469e7fcacf95854341", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b80d8670fd44bd8b38b01b450571ae6", async() => {
                 BeginContext(429, 7, true);
                 WriteLiteral("Log ind");
                 EndContext();
@@ -143,7 +143,7 @@ using X.PagedList;
             WriteLiteral("            <div class=\"form-group row\">\r\n                <div class=\"col-sm-8\">\r\n                    ");
             EndContext();
             BeginContext(624, 58, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "39451e4cc9a14a7ba1ff638262b07fa8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5041886998b4f6798a1a2cbb903afac", async() => {
                 BeginContext(671, 7, true);
                 WriteLiteral("Log ind");
                 EndContext();

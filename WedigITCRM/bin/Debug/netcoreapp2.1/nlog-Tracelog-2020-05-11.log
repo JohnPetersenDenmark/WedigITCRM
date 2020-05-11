@@ -1,0 +1,1268 @@
+2020-05-11 00:34:44.4157|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:34:44.4157|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:34:44.4497|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:34:44.4547|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (26ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:34:44.4547|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:34:44.4726|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:36:16.4110|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:36:16.4110|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:36:16.4259|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:36:16.4427|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:36:16.4427|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:36:16.4652|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:37:16.3990|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:37:16.3990|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:37:16.4117|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:37:16.4117|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:37:16.4379|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:37:16.4668|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:38:16.4259|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:38:16.4259|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:38:16.4431|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:38:16.4623|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (23ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:38:16.4894|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:38:16.4894|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:39:16.4263|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:39:16.4263|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:39:16.4676|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:39:16.4983|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (26ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:39:16.5075|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:39:16.5172|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:40:16.4046|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:40:16.4046|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:40:16.4171|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:40:16.4225|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:40:16.4416|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:40:16.4558|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:41:16.4145|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:41:16.4145|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:41:16.4414|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:41:16.4599|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (20ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:41:16.4926|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (17ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:41:16.5083|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:42:16.4213|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:42:16.4328|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:42:16.4537|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:42:16.4866|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (40ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:42:16.5239|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (22ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:42:16.5508|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (20ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:43:16.3994|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:43:16.3994|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:43:16.4069|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:43:16.4277|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (18ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:43:16.4394|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:43:16.4394|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:44:16.4079|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:44:16.4443|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:44:16.5662|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (86ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:44:16.5954|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (143ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:44:16.6107|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:44:16.6287|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:45:16.4063|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:45:16.4132|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:45:16.4508|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:45:16.4668|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (31ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:45:16.4830|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:45:16.4934|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:46:16.4115|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:46:16.4115|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:46:16.4325|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:46:16.4552|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (18ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:46:16.4552|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:46:16.4999|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:47:16.4118|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:47:16.4287|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:47:16.4773|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:47:16.5108|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (53ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:47:16.5346|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:47:16.5661|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:48:16.4139|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:48:16.4262|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:48:16.4479|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:48:16.4687|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (16ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:48:16.5007|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:48:16.5007|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:49:16.4091|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:49:16.4091|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:49:16.4290|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:49:16.4452|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:49:16.4873|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (20ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:49:16.5159|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (16ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:50:16.4163|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:50:16.4163|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:50:16.4341|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:50:16.4481|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (20ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:50:16.4611|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:50:16.4739|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:51:16.4046|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:51:16.4070|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:51:16.4070|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:51:16.4508|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:51:16.4665|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:51:16.4766|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:52:16.4216|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:52:16.4315|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:52:16.4481|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:52:16.4689|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (21ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:52:16.4750|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:52:16.4750|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:53:16.4102|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:53:16.4102|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:53:16.4269|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:53:16.4269|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:53:16.4566|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:53:16.4566|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:54:16.4215|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:54:16.7050|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:54:16.7363|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:54:16.7511|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (254ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:54:16.7706|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:54:16.7843|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:55:16.4028|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:55:16.4028|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:55:16.4200|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:55:16.4511|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (23ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:55:16.4894|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (22ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:55:16.5083|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:56:16.4100|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:56:16.4100|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:56:16.4278|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:56:16.4486|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (28ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:56:16.4585|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:56:16.4585|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:57:16.4051|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:57:16.4135|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:57:16.4265|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:57:16.4265|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:57:16.4631|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:57:16.4942|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:58:16.4032|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:58:16.4100|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:58:16.4100|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:58:16.4376|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (20ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:58:16.4502|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:58:16.4630|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 00:59:16.4096|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:59:16.4115|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 00:59:16.4230|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 00:59:16.4545|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:59:16.4545|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 00:59:16.4779|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:00:16.4104|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:00:16.4104|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:00:16.4285|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:00:16.4446|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (18ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:00:16.4446|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:00:16.4674|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:01:16.4290|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:01:16.4290|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:01:16.4383|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:01:16.4383|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:01:16.4383|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:01:16.4624|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:01:16.4711|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyName], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-05-11 01:01:16.4711|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyName], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-05-11 01:01:16.4871|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:01:16.4871|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:01:16.9223|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[DineroGuiD], [c].[Email], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-05-11 01:01:16.9380|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@p16='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Guid), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTime2), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Int32), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Companies] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [DineroGuiD] = @p4, [Email] = @p5, [HomePage] = @p6, [IsPerson] = @p7, [LastEditedDate] = @p8, [Name] = @p9, [PhoneNumber] = @p10, [SMSverificationCode] = @p11, [Street] = @p12, [Zip] = @p13, [companyAccountId] = @p14, [postalCodeId] = @p15
+WHERE [Id] = @p16;
+SELECT @@ROWCOUNT;
+2020-05-11 01:01:16.9652|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@p27='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTime2), @p14='?' (DbType = DateTime2), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Guid), @p22='?' (DbType = DateTime2), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyName] = @p2, [Companyidentifier] = @p3, [ContactsToDineroLastSynchronizationDate] = @p4, [ContactsToNyxiumLastSynchronizationDate] = @p5, [DineroAPIOrganization] = @p6, [DineroAPIOrganizationKey] = @p7, [IntegrationDinero] = @p8, [LogoAttachmentIds] = @p9, [NyxiumLicenseTypeId] = @p10, [NyxiumLicenseTypeName] = @p11, [SalesStatistic] = @p12, [StockItemsToDineroLastSynchronizationDate] = @p13, [StockItemsToNyxiumSynchronizationDate] = @p14, [SubscriptionCRM] = @p15, [SubscriptionInventory] = @p16, [SubscriptionProcurement] = @p17, [SubscriptionVendor] = @p18, [VendorsItemsToDineroLastSynchronizationDate] = @p19, [activationDate] = @p20, [activationKey] = @p21, [registrationDate] = @p22, [synchronizeCustomerFromDineroToNyxium] = @p23, [synchronizeCustomerFromNyxiumToDinero] = @p24, [synchronizeStockItemFromDineroToNyxium] = @p25, [synchronizeStockItemFromNyxiumToDinero] = @p26
+WHERE [companyAccountId] = @p27;
+SELECT @@ROWCOUNT;
+2020-05-11 01:01:16.9652|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-11 01:01:16.9869|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@p27='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTime2), @p14='?' (DbType = DateTime2), @p15='?' (DbType = Boolean), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Guid), @p22='?' (DbType = DateTime2), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyName] = @p2, [Companyidentifier] = @p3, [ContactsToDineroLastSynchronizationDate] = @p4, [ContactsToNyxiumLastSynchronizationDate] = @p5, [DineroAPIOrganization] = @p6, [DineroAPIOrganizationKey] = @p7, [IntegrationDinero] = @p8, [LogoAttachmentIds] = @p9, [NyxiumLicenseTypeId] = @p10, [NyxiumLicenseTypeName] = @p11, [SalesStatistic] = @p12, [StockItemsToDineroLastSynchronizationDate] = @p13, [StockItemsToNyxiumSynchronizationDate] = @p14, [SubscriptionCRM] = @p15, [SubscriptionInventory] = @p16, [SubscriptionProcurement] = @p17, [SubscriptionVendor] = @p18, [VendorsItemsToDineroLastSynchronizationDate] = @p19, [activationDate] = @p20, [activationKey] = @p21, [registrationDate] = @p22, [synchronizeCustomerFromDineroToNyxium] = @p23, [synchronizeCustomerFromNyxiumToDinero] = @p24, [synchronizeStockItemFromDineroToNyxium] = @p25, [synchronizeStockItemFromNyxiumToDinero] = @p26
+WHERE [companyAccountId] = @p27;
+SELECT @@ROWCOUNT;
+2020-05-11 01:02:16.4074|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:02:16.4074|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:02:16.4293|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:02:16.4399|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:02:16.4598|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:02:16.4761|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:03:16.4009|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:03:16.4009|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:03:16.4183|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:03:16.4183|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:03:16.4501|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:03:16.4634|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:04:16.4093|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:04:16.4093|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:04:16.4287|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:04:16.4440|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:04:16.4560|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:04:16.4560|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:05:16.4153|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:05:16.4153|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:05:16.4416|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:05:16.4416|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:05:16.4666|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:05:16.4754|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:06:16.4070|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:06:16.4085|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:06:16.4277|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:06:16.4277|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (17ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:06:16.4648|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (16ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:06:16.4755|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:07:16.4176|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:07:16.4176|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:07:16.4475|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:07:16.4744|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (45ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:07:16.5630|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:07:16.6025|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (28ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:08:16.4167|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:08:16.4340|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:08:16.4542|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:08:16.4542|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (22ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:08:16.4927|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (19ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:08:16.5079|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:09:16.4079|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:09:16.4079|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:09:16.4259|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:09:16.4442|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (22ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:09:16.4606|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:09:16.4895|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:10:16.4088|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:10:16.4240|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:10:16.4466|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:10:16.4708|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (30ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:10:16.4708|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:10:16.4938|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:11:16.4186|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:11:16.4186|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:11:16.4391|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:11:16.4584|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (24ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:11:16.4584|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:11:16.4811|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:12:16.4179|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:12:16.4179|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:12:16.4338|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:12:16.4518|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (21ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:12:16.4584|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:12:16.4584|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:13:16.4156|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:13:16.4293|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:13:16.4559|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:13:16.4559|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (21ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:13:16.4737|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:13:16.4737|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:14:16.4145|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:14:16.4145|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:14:16.4255|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:14:16.4433|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:14:16.4624|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:14:16.4726|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:15:16.4030|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:15:16.4078|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:15:16.4242|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:15:16.4242|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:15:16.4695|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:15:16.4695|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:16:16.4186|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:16:16.4267|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:16:16.4267|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:16:16.4431|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:16:16.4650|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:16:16.4773|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:17:16.4287|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:17:16.4287|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:17:16.4633|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:17:16.4775|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (33ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:17:16.4959|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:17:16.5089|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:18:16.4175|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:18:16.4175|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:18:16.4319|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:18:16.4385|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:18:16.4749|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (18ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:18:16.4883|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:19:16.3986|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:19:16.3986|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:19:16.4123|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:19:16.4236|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:19:16.4422|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:19:16.4422|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:20:16.3989|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:20:16.3989|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:20:16.4084|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:20:16.4309|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:20:16.4309|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:20:16.4465|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:21:16.4063|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:21:16.4085|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:21:16.4085|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:21:16.4400|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (20ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:21:16.4400|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:21:16.4638|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:22:16.4133|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:22:16.4133|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:22:16.4254|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:22:16.4254|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:22:16.4489|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:22:16.4585|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:23:16.4112|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:23:16.4112|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:23:16.4365|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:23:16.4411|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:23:16.4770|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (16ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:23:16.4934|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:24:16.4138|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:24:16.4379|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:24:16.4563|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:24:16.4769|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (22ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:24:16.4933|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:24:16.5071|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:25:16.4087|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:25:16.4087|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:25:16.4246|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:25:16.4246|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:25:16.4518|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:25:16.4607|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:26:16.4085|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:26:16.4085|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:26:16.4413|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:26:16.4597|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (23ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:26:16.4714|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:26:16.4714|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:27:16.3994|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:27:16.3994|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:27:16.4237|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:27:16.4511|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:27:16.4539|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:27:16.4868|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:28:16.4074|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:28:16.4074|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:28:16.4282|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:28:16.4399|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:28:16.4654|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:28:16.4737|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:29:16.4082|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:29:16.4082|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:29:16.4422|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:29:16.4422|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:29:16.4669|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:29:16.4745|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:30:16.4112|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:30:16.4112|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:30:16.4231|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:30:16.4231|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:30:16.4477|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:30:16.4595|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:31:16.3992|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:31:16.3992|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:31:16.4125|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:31:16.4380|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:31:16.4561|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:31:16.4561|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:32:16.4085|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:32:16.4085|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:32:16.4308|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:32:16.4394|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:32:16.4578|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:32:16.4767|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:33:16.4066|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:33:16.4184|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:33:16.4336|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:33:16.4423|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:33:16.4654|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:33:16.4776|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:34:16.4149|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:34:16.4149|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:34:16.4407|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:34:16.4407|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:34:16.4646|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:34:16.4756|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:35:16.4207|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:35:16.4340|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:35:16.4599|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:35:16.4791|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (20ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:35:16.5090|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:35:16.5168|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:36:16.4082|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:36:16.4082|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:36:16.4571|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:36:16.4571|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:36:16.4739|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:36:16.4739|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:37:16.4157|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:37:16.4335|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:37:16.4468|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:37:16.4568|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:37:16.4568|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:37:16.4742|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:38:16.4071|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:38:16.4071|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:38:16.4284|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:38:16.4284|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:38:16.4620|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:38:16.4697|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:39:16.4150|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:39:16.4150|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:39:16.4474|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:39:16.4577|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (19ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:39:16.4802|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:39:16.4884|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:40:16.4030|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:40:16.4082|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:40:16.4082|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:40:16.4260|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:40:16.4453|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:40:16.4453|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:41:16.4141|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:41:16.4141|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:41:16.4297|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:41:16.4429|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:41:16.4429|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:41:16.4635|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:42:16.4148|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:42:16.4148|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:42:16.4285|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:42:16.4575|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:42:16.4716|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:42:16.4716|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:43:16.4150|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:43:16.4283|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:43:16.4283|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:43:16.4436|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:43:16.4633|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:43:16.4708|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:44:16.4147|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:44:16.4147|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:44:16.4341|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:44:16.4523|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (24ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:44:16.4619|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:44:16.4700|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 01:45:16.4151|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:45:16.4151|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 01:45:16.4353|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 01:45:16.4530|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (21ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:45:16.4634|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 01:45:16.4712|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 04:46:15.3689|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 04:46:15.3689|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 04:46:15.4275|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 04:46:15.4991|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (74ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 04:46:15.5139|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 04:46:15.6970|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (166ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2020-05-11 07:30:33.7754|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 07:30:33.7754|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.11-servicing-32099 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-05-11 07:30:33.8057|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-05-11 07:30:33.8373|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (49ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 07:30:33.8552|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2020-05-11 07:30:33.8635|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0

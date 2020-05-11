@@ -1,0 +1,21 @@
+2020-05-10 08:02:04.8661|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-10 08:02:05.1664|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-10 08:05:16.0841|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-10 08:05:18.0502|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-10 08:05:19.3598|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-10 08:05:20.2078|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-10 08:05:25.8663|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-10 08:05:25.8787|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-05-10 08:05:33.2090|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-10 08:05:57.5754|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-10 08:05:57.5754|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-10 20:00:40.7950|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-10 20:00:42.9874|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-10 20:00:44.1266|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-10 20:00:45.1337|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-10 20:00:50.6161|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-10 20:00:50.6161|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-05-10 20:01:03.3372|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService
+2020-05-10 20:01:05.9911|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-10 20:01:06.2228|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-10 21:00:46.1772|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|Forced error in SynchronizeDineroContactsService

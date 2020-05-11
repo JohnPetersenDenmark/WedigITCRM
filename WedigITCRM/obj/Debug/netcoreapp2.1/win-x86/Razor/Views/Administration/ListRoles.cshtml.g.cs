@@ -139,7 +139,7 @@ WriteAttributeValue("", 197, role.Id, 197, 8, false);
                                 ");
             EndContext();
             BeginContext(636, 92, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a93177af63e4f46951efc8c9e9d8ab3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d1b4ac918036416cbf549651235f50cb", async() => {
                 BeginContext(717, 7, true);
                 WriteLiteral("Rediger");
                 EndContext();
@@ -176,7 +176,7 @@ WriteAttributeValue("", 197, role.Id, 197, 8, false);
             WriteLiteral("\r\n                                ");
             EndContext();
             BeginContext(762, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cc0677e6ee0a43468dc9cfa9006a0882", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a9325305343c4da38f6cab3b636bf7a1", async() => {
                 BeginContext(845, 4, true);
                 WriteLiteral("Slet");
                 EndContext();
@@ -222,7 +222,7 @@ WriteAttributeValue("", 197, role.Id, 197, 8, false);
             WriteLiteral("        </div>\r\n<br />\r\n\r\n        ");
             EndContext();
             BeginContext(1044, 163, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a27b734f7afb4c518ae865b0dec51a29", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef5d0b1529da408aab7876faf18c2fad", async() => {
                 BeginContext(1137, 63, true);
                 WriteLiteral("\r\n            <input id=\"Id\" type=\"hidden\" name=\"Id\">\r\n        ");
                 EndContext();
