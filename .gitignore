@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 WedigITCRM/bin/Debug/netcoreapp2.1/appsettings.json
 WedigITCRM/bin/Debug/netcoreapp2.1/appsettings.json
@@ -217,3 +218,6 @@ WedigITCRM/obj/Debug/netcoreapp2.1/Razor/Views/Support/SendSupportTicket.cshtml.
 WedigITCRM/obj/Debug/netcoreapp2.1/WedigITCRM.Views.dll
 *.ide
 *.log
+=======
+*.dll
+>>>>>>> John
