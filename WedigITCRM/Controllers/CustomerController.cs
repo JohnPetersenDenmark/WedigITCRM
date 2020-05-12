@@ -13,6 +13,7 @@ using WedigITCRM.DineroAPI;
 using WedigITCRM.ViewControllers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Authorization;
+using WedigITCRM.ExtensionMethods;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -112,6 +113,8 @@ namespace WedigITCRM.Controllers
                 if (datamodelInput.action.Equals("edit"))
                 {
                     Company company = _companyRepository.GetCompany(int.Parse(datamodelInput.id));
+
+                   
                     if (company != null)
                     {
                         company.Name = datamodelInput.name;

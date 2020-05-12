@@ -61,7 +61,7 @@ namespace WedigITCRM.Controllers
 
         }
 
-        // public UserManager<IdentityUser> UserManager { get; }
+       
 
         [HttpGet]
         public IActionResult Register()
