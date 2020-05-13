@@ -12,8 +12,8 @@ namespace WedigITCRM.Controllers
 {
     public class FrontPageController : Controller
     {
-        private IHostingEnvironment _env;
-        public FrontPageController(IHostingEnvironment env)
+        private IWebHostEnvironment _env;
+        public FrontPageController(IWebHostEnvironment env)
         {
             _env = env;
         }

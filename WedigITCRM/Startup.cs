@@ -17,7 +17,7 @@ using WedigITCRM.DineroAPI;
 using WedigITCRM.StorageInterfaces;
 using WedigITCRM.SQLImplmementationModels;
 using Microsoft.Extensions.Logging;
-
+using Microsoft.Extensions.Hosting;
 
 namespace WedigITCRM
 {
@@ -89,10 +89,11 @@ namespace WedigITCRM
 
                 services.AddScoped<EmailUtility>();
 
-
+              
                 services.AddMvc(options =>
                 {
                     options.Filters.Add<GetCompanyAccountFilter>();
+                    options.EnableEndpointRouting = false;
                 });
 
                 services.AddAuthentication().AddGoogle(options =>
@@ -131,7 +132,7 @@ namespace WedigITCRM
         }
 
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             try
             {

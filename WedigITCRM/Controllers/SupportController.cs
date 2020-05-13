@@ -16,12 +16,12 @@ namespace WedigITCRM.Controllers
     [Authorize]
     public class SupportController : Controller
     {
-        private IHostingEnvironment _env;
+        private IWebHostEnvironment _env;
         private ILogger<SupportController> _logger;
         private EmailUtility _emailUtility;
 
 
-        public SupportController(EmailUtility emailUtility, ILogger<SupportController> logger, IHostingEnvironment env)
+        public SupportController(EmailUtility emailUtility, ILogger<SupportController> logger, IWebHostEnvironment env)
         {
             _env = env;
             _logger = logger;

@@ -13,6 +13,7 @@ using System.Net.Mail;
 using System.Globalization;
 using Microsoft.Extensions.Logging;
 using WedigITCRM.StorageInterfaces;
+using Microsoft.AspNetCore.Hosting;
 
 namespace WedigITCRM.Maintenance
 {
@@ -62,11 +63,11 @@ namespace WedigITCRM.Maintenance
                 var relateUserWithCompanyAccountRepository = scope.ServiceProvider.GetRequiredService<IRelateCompanyAccountWithUserRepository>();
 
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
-                var env = scope.ServiceProvider.GetRequiredService<Microsoft.AspNetCore.Hosting.IHostingEnvironment>();
+                var env = scope.ServiceProvider.GetRequiredService<IWebHostEnvironment>();
 
                 var activities = activityRepository.GetAllActivities().Where(activity => activity.NotifyOffset != null && activity.UserId != null && activity.NotificationIsSent == false).ToList();
 
-                DateTime testDate;
+              
                 DateTime now = DateTime.Now;
 
                 int testInteger;

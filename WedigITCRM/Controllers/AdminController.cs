@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WedigITCRM.Utilities;
@@ -20,11 +21,11 @@ namespace WedigITCRM.Controllers
         private readonly RoleManager<IdentityRole> roleManager;
         IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;
         ICompanyAccountRepository _CompanyAccountRepository;
-        Microsoft.AspNetCore.Hosting.IHostingEnvironment _env;
+        IWebHostEnvironment _env;
         MiscUtility miscUtility;
-        int ElementsPerPage = 5;
+       
 
-        public AdminController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, ICompanyAccountRepository CompanyAccountRepository, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
+        public AdminController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, ICompanyAccountRepository CompanyAccountRepository, IWebHostEnvironment env)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;

@@ -1,0 +1,37 @@
+.company-connect {
+    text-align: center;
+    margin-top: $m50;
+        .company-connect_grid {
+            display: flex;
+            flex-direction: column;
+            
+            img {
+                height: 150px;
+                width: auto;
+            }
+            .box-gray-text {
+                background-color: $lightgray;
+                padding: $m30 $m15;
+                text-align: left;
+                margin-bottom: $m30;
+                
+            }
+            .box-gray-img {
+                text-align: right;
+                display: flex;
+                font-weight: 700;
+                justify-content: flex-end;
+                p {
+                    margin-bottom: 10px;
+                    margin-top: 0px;
+                    
+                }
+                img {
+                    min-height: 80px;
+                    margin-right: $m30;
+                }
+            }
+        }
+    }
+
+

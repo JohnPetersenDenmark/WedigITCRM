@@ -15,9 +15,9 @@ namespace WedigITCRM.Utilities
 {
     public class EmailUtility
     {
-        private IHostingEnvironment _env;
+        private IWebHostEnvironment _env;
       
-        public EmailUtility(IHostingEnvironment env)
+        public EmailUtility(IWebHostEnvironment env)
         {
             _env = env;
   

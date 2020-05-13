@@ -27,7 +27,7 @@ namespace WedigITCRM.Controllers
         private IBookingSetupRepository _bookingSetupRepository;
         private ICompanyRepository _companyRepository;
         private ICompanyAccountRepository _companyAccountRepository;
-        private object random;
+       
 
         public BookingController(ICompanyAccountRepository companyAccountRepository, ICompanyRepository companyRepository, IBookingSetupRepository bookingSetupRepository, IBookingServiceRepository bookingServiceRepository, ICalendarEventRepository calendarEventRepository, IJobServiceTypeRepository jobServiceTypeRepository, IBookingResourceRepository bookingResourceRepository)
         {
@@ -899,6 +899,7 @@ namespace WedigITCRM.Controllers
                             {
                                 // we are editing an repeated event
                                 // we are editing a  All day event
+
                                 if (!String.IsNullOrEmpty(model.modifiedRepeatedEventIds))
                                 {
                                     string[] repeatedEventIds = { };

@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Hosting;
 using System.Net.Mail;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Hosting;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -28,10 +29,10 @@ namespace WedigITCRM.Controllers
         private readonly RoleManager<IdentityRole> roleManager;
         IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;      
         ICompanyAccountRepository _CompanyAccountRepository;
-        Microsoft.AspNetCore.Hosting.IHostingEnvironment _env;
+        IWebHostEnvironment _env;
         int ElementsPerPage = 5;
 
-        public AdministrationController(EmailUtility emailUtility, ILogger<AdministrationController> logger, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository,  ICompanyAccountRepository CompanyAccountRepository, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
+        public AdministrationController(EmailUtility emailUtility, ILogger<AdministrationController> logger, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository,  ICompanyAccountRepository CompanyAccountRepository, IWebHostEnvironment env)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;

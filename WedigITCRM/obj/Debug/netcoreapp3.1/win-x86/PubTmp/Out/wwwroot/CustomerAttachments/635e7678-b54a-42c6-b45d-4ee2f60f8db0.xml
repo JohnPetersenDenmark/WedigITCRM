@@ -1,0 +1,1396 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+	<Styles>
+		<Style ss:ID="Default" ss:Name="Normal">
+		<Alignment ss:Vertical="Bottom" ss:WrapText="1"/>
+		<Borders/>
+		<Font/>
+		<Interior/>
+		<NumberFormat/>
+		<Protection/>
+		</Style>
+		<Style ss:ID="title">
+			<Font ss:Bold="1"/>
+		</Style>
+		<Style ss:ID="tright">
+			<Alignment ss:Horizontal="Right"/>
+			<Font ss:Bold="1"/>
+		</Style>
+		<Style ss:ID="tcenter">
+			<Alignment ss:Horizontal="Center"/>
+			<Font ss:Bold="1"/>
+		</Style>
+		<Style ss:ID="dt1"><NumberFormat ss:Format="dd\.mm\.yyyy;@"/></Style>
+<Style ss:ID="n02"><NumberFormat ss:Format="#,##0.00"/></Style>
+	</Styles>
+	<Worksheet ss:Name="KBBevEkspL-19010133">
+		<Table>
+			<Column ss:StyleID="dt1" ss:AutoFitWidth="1" ss:Width="60"/><Column ss:Width="120"/><Column ss:StyleID="n02" ss:AutoFitWidth="1" ss:Width="80"/><Column ss:StyleID="n02" ss:AutoFitWidth="1" ss:Width="80"/><Column ss:Width="40"/><Column ss:Width="60"/>
+			<Row><Cell ss:StyleID="title"><Data ss:Type="String">Dato</Data></Cell><Cell ss:StyleID="title"><Data ss:Type="String">Tekst</Data></Cell><Cell ss:StyleID="tright"><Data ss:Type="String">Beløb</Data></Cell><Cell ss:StyleID="tright"><Data ss:Type="String">Saldo</Data></Cell><Cell ss:StyleID="title"><Data ss:Type="String">Status</Data></Cell><Cell ss:StyleID="title"><Data ss:Type="String">Afstemt</Data></Cell></Row>
+			<Row><Cell><Data ss:Type="String">02.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">ovf. jan 2011</Data></Cell>
+<Cell><Data ss:Type="Number">24000.00</Data></Cell>
+<Cell><Data ss:Type="Number">40823.31</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Mercedes-Benz Finans Dan</Data></Cell>
+<Cell><Data ss:Type="Number">-2101.60</Data></Cell>
+<Cell><Data ss:Type="Number">38721.71</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">DR Licens</Data></Cell>
+<Cell><Data ss:Type="Number">-1150.00</Data></Cell>
+<Cell><Data ss:Type="Number">37571.71</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Tryg</Data></Cell>
+<Cell><Data ss:Type="Number">-1070.50</Data></Cell>
+<Cell><Data ss:Type="Number">36501.21</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Tryg</Data></Cell>
+<Cell><Data ss:Type="Number">-864.75</Data></Cell>
+<Cell><Data ss:Type="Number">35636.46</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">FTF-A</Data></Cell>
+<Cell><Data ss:Type="Number">-1227.00</Data></Cell>
+<Cell><Data ss:Type="Number">34409.46</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Telenor bredbånd</Data></Cell>
+<Cell><Data ss:Type="Number">-238.00</Data></Cell>
+<Cell><Data ss:Type="Number">34171.46</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danica Pension</Data></Cell>
+<Cell><Data ss:Type="Number">-1076.20</Data></Cell>
+<Cell><Data ss:Type="Number">33095.26</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Telenor bredbånd</Data></Cell>
+<Cell><Data ss:Type="Number">-204.32</Data></Cell>
+<Cell><Data ss:Type="Number">32890.94</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Sygeforsikringen Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1060.00</Data></Cell>
+<Cell><Data ss:Type="Number">31830.94</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">06.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Telia</Data></Cell>
+<Cell><Data ss:Type="Number">-1686.00</Data></Cell>
+<Cell><Data ss:Type="Number">30144.94</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">07.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Centralregistret For Mot</Data></Cell>
+<Cell><Data ss:Type="Number">-332.00</Data></Cell>
+<Cell><Data ss:Type="Number">29812.94</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">10.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danmarks Jægerforbund</Data></Cell>
+<Cell><Data ss:Type="Number">-971.00</Data></Cell>
+<Cell><Data ss:Type="Number">28841.94</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">10.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Egedal Kommune Ejendomss</Data></Cell>
+<Cell><Data ss:Type="Number">-6227.37</Data></Cell>
+<Cell><Data ss:Type="Number">22614.57</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">17.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Net 1</Data></Cell>
+<Cell><Data ss:Type="Number">-447.00</Data></Cell>
+<Cell><Data ss:Type="Number">22167.57</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">18.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Net 1</Data></Cell>
+<Cell><Data ss:Type="Number">-747.00</Data></Cell>
+<Cell><Data ss:Type="Number">21420.57</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">18.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Olivers-hundemad</Data></Cell>
+<Cell><Data ss:Type="Number">2168.68</Data></Cell>
+<Cell><Data ss:Type="Number">23589.25</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">18.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Oliver´s 100111</Data></Cell>
+<Cell><Data ss:Type="Number">-2768.68</Data></Cell>
+<Cell><Data ss:Type="Number">20820.57</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">20.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Dansk Autohjælp</Data></Cell>
+<Cell><Data ss:Type="Number">-1680.00</Data></Cell>
+<Cell><Data ss:Type="Number">19140.57</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1563.08</Data></Cell>
+<Cell><Data ss:Type="Number">17577.49</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.01.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3566.68</Data></Cell>
+<Cell><Data ss:Type="Number">14010.81</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Viasat A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-1650.00</Data></Cell>
+<Cell><Data ss:Type="Number">12360.81</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Tdc Mobil</Data></Cell>
+<Cell><Data ss:Type="Number">-995.67</Data></Cell>
+<Cell><Data ss:Type="Number">11365.14</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danica Pension</Data></Cell>
+<Cell><Data ss:Type="Number">-2191.20</Data></Cell>
+<Cell><Data ss:Type="Number">9173.94</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Mercedes-Benz Finans Dan</Data></Cell>
+<Cell><Data ss:Type="Number">-2101.60</Data></Cell>
+<Cell><Data ss:Type="Number">7072.34</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Februar 2011</Data></Cell>
+<Cell><Data ss:Type="Number">22000.00</Data></Cell>
+<Cell><Data ss:Type="Number">29072.34</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Telia John</Data></Cell>
+<Cell><Data ss:Type="Number">-1022.23</Data></Cell>
+<Cell><Data ss:Type="Number">28050.11</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Kia jan 2011</Data></Cell>
+<Cell><Data ss:Type="Number">-300.00</Data></Cell>
+<Cell><Data ss:Type="Number">27750.11</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Kia jan 2011</Data></Cell>
+<Cell><Data ss:Type="Number">-300.00</Data></Cell>
+<Cell><Data ss:Type="Number">27450.11</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">04.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Kab</Data></Cell>
+<Cell><Data ss:Type="Number">-155.00</Data></Cell>
+<Cell><Data ss:Type="Number">27295.11</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">04.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Min A-Kasse</Data></Cell>
+<Cell><Data ss:Type="Number">-534.00</Data></Cell>
+<Cell><Data ss:Type="Number">26761.11</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">07.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Dong Energy A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-2703.23</Data></Cell>
+<Cell><Data ss:Type="Number">24057.88</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">07.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Finansforbundet Konting.</Data></Cell>
+<Cell><Data ss:Type="Number">-720.00</Data></Cell>
+<Cell><Data ss:Type="Number">23337.88</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">07.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Hmn Naturgas I/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3215.55</Data></Cell>
+<Cell><Data ss:Type="Number">20122.33</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">11.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Centralregistret For Mot</Data></Cell>
+<Cell><Data ss:Type="Number">-8180.00</Data></Cell>
+<Cell><Data ss:Type="Number">11942.33</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">11.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">grundejerforening</Data></Cell>
+<Cell><Data ss:Type="Number">-687.50</Data></Cell>
+<Cell><Data ss:Type="Number">11254.83</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">23.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Telia restbeløb</Data></Cell>
+<Cell><Data ss:Type="Number">-322.55</Data></Cell>
+<Cell><Data ss:Type="Number">10932.28</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">23.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Telia</Data></Cell>
+<Cell><Data ss:Type="Number">-779.30</Data></Cell>
+<Cell><Data ss:Type="Number">10152.98</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">28.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1563.08</Data></Cell>
+<Cell><Data ss:Type="Number">8589.90</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">28.02.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3566.68</Data></Cell>
+<Cell><Data ss:Type="Number">5023.22</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Mercedes-Benz Finans Dan</Data></Cell>
+<Cell><Data ss:Type="Number">-2101.60</Data></Cell>
+<Cell><Data ss:Type="Number">2921.62</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danica Pension</Data></Cell>
+<Cell><Data ss:Type="Number">-1095.60</Data></Cell>
+<Cell><Data ss:Type="Number">1826.02</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Tryg</Data></Cell>
+<Cell><Data ss:Type="Number">-9871.75</Data></Cell>
+<Cell><Data ss:Type="Number">-8045.73</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Viasat A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-399.00</Data></Cell>
+<Cell><Data ss:Type="Number">-8444.73</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Min A-Kasse</Data></Cell>
+<Cell><Data ss:Type="Number">-532.00</Data></Cell>
+<Cell><Data ss:Type="Number">-8976.73</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">04.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Jagttegnsløsere</Data></Cell>
+<Cell><Data ss:Type="Number">-530.00</Data></Cell>
+<Cell><Data ss:Type="Number">-9506.73</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">07.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">ovf. feb. 2011</Data></Cell>
+<Cell><Data ss:Type="Number">22000.00</Data></Cell>
+<Cell><Data ss:Type="Number">12493.27</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">14.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Fra Tinne</Data></Cell>
+<Cell><Data ss:Type="Number">600.00</Data></Cell>
+<Cell><Data ss:Type="Number">13093.27</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">23.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Kia 160311</Data></Cell>
+<Cell><Data ss:Type="Number">-300.00</Data></Cell>
+<Cell><Data ss:Type="Number">12793.27</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3566.71</Data></Cell>
+<Cell><Data ss:Type="Number">9226.56</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1563.07</Data></Cell>
+<Cell><Data ss:Type="Number">7663.49</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Kia 250311</Data></Cell>
+<Cell><Data ss:Type="Number">-200.00</Data></Cell>
+<Cell><Data ss:Type="Number">7463.49</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Budget april 2011</Data></Cell>
+<Cell><Data ss:Type="Number">22000.00</Data></Cell>
+<Cell><Data ss:Type="Number">29463.49</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Rente</Data></Cell>
+<Cell><Data ss:Type="Number">4.25</Data></Cell>
+<Cell><Data ss:Type="Number">29467.74</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.03.2011</Data></Cell>
+<Cell><Data ss:Type="String">Rente</Data></Cell>
+<Cell><Data ss:Type="Number">-12.44</Data></Cell>
+<Cell><Data ss:Type="Number">29455.30</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Telia Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1068.56</Data></Cell>
+<Cell><Data ss:Type="Number">28386.74</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">FTF-A</Data></Cell>
+<Cell><Data ss:Type="Number">-1227.00</Data></Cell>
+<Cell><Data ss:Type="Number">27159.74</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Tryg</Data></Cell>
+<Cell><Data ss:Type="Number">-2538.00</Data></Cell>
+<Cell><Data ss:Type="Number">24621.74</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danica Pension</Data></Cell>
+<Cell><Data ss:Type="Number">-1095.60</Data></Cell>
+<Cell><Data ss:Type="Number">23526.14</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Tdc Mobil</Data></Cell>
+<Cell><Data ss:Type="Number">-438.89</Data></Cell>
+<Cell><Data ss:Type="Number">23087.25</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Mercedes-Benz Finans Dan</Data></Cell>
+<Cell><Data ss:Type="Number">-2101.60</Data></Cell>
+<Cell><Data ss:Type="Number">20985.65</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">04.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Min A-Kasse</Data></Cell>
+<Cell><Data ss:Type="Number">-532.00</Data></Cell>
+<Cell><Data ss:Type="Number">20453.65</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">04.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">hosting</Data></Cell>
+<Cell><Data ss:Type="Number">-120.00</Data></Cell>
+<Cell><Data ss:Type="Number">20333.65</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Sygeforsikringen Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1060.00</Data></Cell>
+<Cell><Data ss:Type="Number">19273.65</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">07.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Dong Energy A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-2613.53</Data></Cell>
+<Cell><Data ss:Type="Number">16660.12</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">08.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Centralregistret For Mot</Data></Cell>
+<Cell><Data ss:Type="Number">-9810.00</Data></Cell>
+<Cell><Data ss:Type="Number">6850.12</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">15.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Net 1</Data></Cell>
+<Cell><Data ss:Type="Number">-447.00</Data></Cell>
+<Cell><Data ss:Type="Number">6403.12</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">18.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Net 1</Data></Cell>
+<Cell><Data ss:Type="Number">-747.00</Data></Cell>
+<Cell><Data ss:Type="Number">5656.12</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">18.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">pærer vito</Data></Cell>
+<Cell><Data ss:Type="Number">-119.38</Data></Cell>
+<Cell><Data ss:Type="Number">5536.74</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">18.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">pærer vito</Data></Cell>
+<Cell><Data ss:Type="Number">-119.38</Data></Cell>
+<Cell><Data ss:Type="Number">5417.36</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">18.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">fysio john</Data></Cell>
+<Cell><Data ss:Type="Number">-474.03</Data></Cell>
+<Cell><Data ss:Type="Number">4943.33</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">29.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3566.68</Data></Cell>
+<Cell><Data ss:Type="Number">1376.65</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">29.04.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1563.08</Data></Cell>
+<Cell><Data ss:Type="Number">-186.43</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">Viasat A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-2049.00</Data></Cell>
+<Cell><Data ss:Type="Number">-2235.43</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danica Pension</Data></Cell>
+<Cell><Data ss:Type="Number">-1095.60</Data></Cell>
+<Cell><Data ss:Type="Number">-3331.03</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">Min A-Kasse</Data></Cell>
+<Cell><Data ss:Type="Number">-532.00</Data></Cell>
+<Cell><Data ss:Type="Number">-3863.03</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">Mercedes-Benz Finans Dan</Data></Cell>
+<Cell><Data ss:Type="Number">-2107.01</Data></Cell>
+<Cell><Data ss:Type="Number">-5970.04</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">Telia Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-867.90</Data></Cell>
+<Cell><Data ss:Type="Number">-6837.94</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">opdatering jagt</Data></Cell>
+<Cell><Data ss:Type="Number">-137.00</Data></Cell>
+<Cell><Data ss:Type="Number">-6974.94</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">Kia april 2011</Data></Cell>
+<Cell><Data ss:Type="Number">-800.00</Data></Cell>
+<Cell><Data ss:Type="Number">-7774.94</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">kadanleje</Data></Cell>
+<Cell><Data ss:Type="Number">6000.00</Data></Cell>
+<Cell><Data ss:Type="Number">-1774.94</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">budget maj 11</Data></Cell>
+<Cell><Data ss:Type="Number">13000.00</Data></Cell>
+<Cell><Data ss:Type="Number">11225.06</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">kadanleje</Data></Cell>
+<Cell><Data ss:Type="Number">-6856.00</Data></Cell>
+<Cell><Data ss:Type="Number">4369.06</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">træning Dijon</Data></Cell>
+<Cell><Data ss:Type="Number">-300.00</Data></Cell>
+<Cell><Data ss:Type="Number">4069.06</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">Egedal Kommune - Renovat</Data></Cell>
+<Cell><Data ss:Type="Number">-3558.73</Data></Cell>
+<Cell><Data ss:Type="Number">510.33</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">Egedal Forsyning &amp; Servi</Data></Cell>
+<Cell><Data ss:Type="Number">-5755.65</Data></Cell>
+<Cell><Data ss:Type="Number">-5245.32</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">Finansforbundet Konting.</Data></Cell>
+<Cell><Data ss:Type="Number">-720.00</Data></Cell>
+<Cell><Data ss:Type="Number">-5965.32</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">budget maj 2011</Data></Cell>
+<Cell><Data ss:Type="Number">9000.00</Data></Cell>
+<Cell><Data ss:Type="Number">3034.68</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">11.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">Dyrlæge Sverige</Data></Cell>
+<Cell><Data ss:Type="Number">-663.10</Data></Cell>
+<Cell><Data ss:Type="Number">2371.58</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3566.68</Data></Cell>
+<Cell><Data ss:Type="Number">-1195.10</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.05.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1563.08</Data></Cell>
+<Cell><Data ss:Type="Number">-2758.18</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">Hundemad Marianne</Data></Cell>
+<Cell><Data ss:Type="Number">-835.00</Data></Cell>
+<Cell><Data ss:Type="Number">-3593.18</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">Mercedes-Benz Finans Dan</Data></Cell>
+<Cell><Data ss:Type="Number">-2103.61</Data></Cell>
+<Cell><Data ss:Type="Number">-5696.79</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danica Pension</Data></Cell>
+<Cell><Data ss:Type="Number">-1095.60</Data></Cell>
+<Cell><Data ss:Type="Number">-6792.39</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">Telia Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-821.44</Data></Cell>
+<Cell><Data ss:Type="Number">-7613.83</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">budget juni 2011</Data></Cell>
+<Cell><Data ss:Type="Number">23000.00</Data></Cell>
+<Cell><Data ss:Type="Number">15386.17</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">06.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">Prosa</Data></Cell>
+<Cell><Data ss:Type="Number">-532.00</Data></Cell>
+<Cell><Data ss:Type="Number">14854.17</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">06.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">Topdanmark Forsikring</Data></Cell>
+<Cell><Data ss:Type="Number">-1582.00</Data></Cell>
+<Cell><Data ss:Type="Number">13272.17</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">15.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">Dansk Retriever Klub.</Data></Cell>
+<Cell><Data ss:Type="Number">-445.00</Data></Cell>
+<Cell><Data ss:Type="Number">12827.17</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">23.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">jagt 2011/2012</Data></Cell>
+<Cell><Data ss:Type="Number">-8050.00</Data></Cell>
+<Cell><Data ss:Type="Number">4777.17</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">23.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">Liam Pompdelux</Data></Cell>
+<Cell><Data ss:Type="Number">-89.00</Data></Cell>
+<Cell><Data ss:Type="Number">4688.17</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">23.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">2 t-shirt Sven</Data></Cell>
+<Cell><Data ss:Type="Number">-97.50</Data></Cell>
+<Cell><Data ss:Type="Number">4590.67</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">23.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">2 x neglelak</Data></Cell>
+<Cell><Data ss:Type="Number">-106.50</Data></Cell>
+<Cell><Data ss:Type="Number">4484.17</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1563.07</Data></Cell>
+<Cell><Data ss:Type="Number">2921.10</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3566.71</Data></Cell>
+<Cell><Data ss:Type="Number">-645.61</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.06.2011</Data></Cell>
+<Cell><Data ss:Type="String">budget juli 2011</Data></Cell>
+<Cell><Data ss:Type="Number">23000.00</Data></Cell>
+<Cell><Data ss:Type="Number">22354.39</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Telia Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-903.21</Data></Cell>
+<Cell><Data ss:Type="Number">21451.18</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">FTF-A</Data></Cell>
+<Cell><Data ss:Type="Number">-1227.00</Data></Cell>
+<Cell><Data ss:Type="Number">20224.18</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danica Pension</Data></Cell>
+<Cell><Data ss:Type="Number">-1095.60</Data></Cell>
+<Cell><Data ss:Type="Number">19128.58</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Tryg</Data></Cell>
+<Cell><Data ss:Type="Number">-3235.50</Data></Cell>
+<Cell><Data ss:Type="Number">15893.08</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">DR Licens</Data></Cell>
+<Cell><Data ss:Type="Number">-1150.00</Data></Cell>
+<Cell><Data ss:Type="Number">14743.08</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Mercedes-Benz Finans Dan</Data></Cell>
+<Cell><Data ss:Type="Number">-2107.01</Data></Cell>
+<Cell><Data ss:Type="Number">12636.07</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">04.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Prosa</Data></Cell>
+<Cell><Data ss:Type="Number">-532.00</Data></Cell>
+<Cell><Data ss:Type="Number">12104.07</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Sygeforsikringen Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1060.00</Data></Cell>
+<Cell><Data ss:Type="Number">11044.07</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Choco</Data></Cell>
+<Cell><Data ss:Type="Number">-525.50</Data></Cell>
+<Cell><Data ss:Type="Number">10518.57</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">renter boligkredit</Data></Cell>
+<Cell><Data ss:Type="Number">-28.08</Data></Cell>
+<Cell><Data ss:Type="Number">10490.49</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">06.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Hmn Naturgas I/S</Data></Cell>
+<Cell><Data ss:Type="Number">-4639.71</Data></Cell>
+<Cell><Data ss:Type="Number">5850.78</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">07.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Dong Energy A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-2750.03</Data></Cell>
+<Cell><Data ss:Type="Number">3100.75</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">08.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Centralregistret For Mot</Data></Cell>
+<Cell><Data ss:Type="Number">-332.00</Data></Cell>
+<Cell><Data ss:Type="Number">2768.75</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">11.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Egedal Kommune Ejendomss</Data></Cell>
+<Cell><Data ss:Type="Number">-6227.37</Data></Cell>
+<Cell><Data ss:Type="Number">-3458.62</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">20.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Huset i Sverige</Data></Cell>
+<Cell><Data ss:Type="Number">-4000.00</Data></Cell>
+<Cell><Data ss:Type="Number">-7458.62</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">29.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1563.08</Data></Cell>
+<Cell><Data ss:Type="Number">-9021.70</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">29.07.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3566.68</Data></Cell>
+<Cell><Data ss:Type="Number">-12588.38</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">Telia Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-826.73</Data></Cell>
+<Cell><Data ss:Type="Number">-13415.11</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">Viasat A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-1650.00</Data></Cell>
+<Cell><Data ss:Type="Number">-15065.11</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danica Pension</Data></Cell>
+<Cell><Data ss:Type="Number">-1095.60</Data></Cell>
+<Cell><Data ss:Type="Number">-16160.71</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">Mercedes-Benz Finans Dan</Data></Cell>
+<Cell><Data ss:Type="Number">-2107.01</Data></Cell>
+<Cell><Data ss:Type="Number">-18267.72</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">Net 1</Data></Cell>
+<Cell><Data ss:Type="Number">-796.00</Data></Cell>
+<Cell><Data ss:Type="Number">-19063.72</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">Budget august 2011</Data></Cell>
+<Cell><Data ss:Type="Number">23000.00</Data></Cell>
+<Cell><Data ss:Type="Number">3936.28</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">Prosa</Data></Cell>
+<Cell><Data ss:Type="Number">-532.00</Data></Cell>
+<Cell><Data ss:Type="Number">3404.28</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">Finansforbundet Konting.</Data></Cell>
+<Cell><Data ss:Type="Number">-720.00</Data></Cell>
+<Cell><Data ss:Type="Number">2684.28</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">09.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">nyt medlemskort</Data></Cell>
+<Cell><Data ss:Type="Number">-100.00</Data></Cell>
+<Cell><Data ss:Type="Number">2584.28</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">11.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">Indbetaling</Data></Cell>
+<Cell><Data ss:Type="Number">1000.00</Data></Cell>
+<Cell><Data ss:Type="Number">3584.28</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">15.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">Kontingent Yorkvej</Data></Cell>
+<Cell><Data ss:Type="Number">-687.50</Data></Cell>
+<Cell><Data ss:Type="Number">2896.78</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">22.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">2 x orm + estée vac.</Data></Cell>
+<Cell><Data ss:Type="Number">-2769.95</Data></Cell>
+<Cell><Data ss:Type="Number">126.83</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1563.08</Data></Cell>
+<Cell><Data ss:Type="Number">-1436.25</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.08.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3566.68</Data></Cell>
+<Cell><Data ss:Type="Number">-5002.93</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Mercedes-Benz Finans Dan</Data></Cell>
+<Cell><Data ss:Type="Number">-2118.44</Data></Cell>
+<Cell><Data ss:Type="Number">-7121.37</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Viasat A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-399.00</Data></Cell>
+<Cell><Data ss:Type="Number">-7520.37</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danica Pension</Data></Cell>
+<Cell><Data ss:Type="Number">-1095.60</Data></Cell>
+<Cell><Data ss:Type="Number">-8615.97</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Telia Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-253.73</Data></Cell>
+<Cell><Data ss:Type="Number">-8869.70</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Net 1</Data></Cell>
+<Cell><Data ss:Type="Number">-398.00</Data></Cell>
+<Cell><Data ss:Type="Number">-9267.70</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">budget sep. 2011</Data></Cell>
+<Cell><Data ss:Type="Number">23000.00</Data></Cell>
+<Cell><Data ss:Type="Number">13732.30</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Prosa</Data></Cell>
+<Cell><Data ss:Type="Number">-532.00</Data></Cell>
+<Cell><Data ss:Type="Number">13200.30</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Topdanmark Forsikring</Data></Cell>
+<Cell><Data ss:Type="Number">-1730.50</Data></Cell>
+<Cell><Data ss:Type="Number">11469.80</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">06.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Hmn Naturgas I/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3415.78</Data></Cell>
+<Cell><Data ss:Type="Number">8054.02</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">12.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Dansk Kennelklub</Data></Cell>
+<Cell><Data ss:Type="Number">-440.00</Data></Cell>
+<Cell><Data ss:Type="Number">7614.02</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">15.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Syn Toyota</Data></Cell>
+<Cell><Data ss:Type="Number">-385.00</Data></Cell>
+<Cell><Data ss:Type="Number">7229.02</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">23.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Valutahandel</Data></Cell>
+<Cell><Data ss:Type="Number">-3649.89</Data></Cell>
+<Cell><Data ss:Type="Number">3579.13</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3566.71</Data></Cell>
+<Cell><Data ss:Type="Number">12.42</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1563.07</Data></Cell>
+<Cell><Data ss:Type="Number">-1550.65</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Rente</Data></Cell>
+<Cell><Data ss:Type="Number">0.61</Data></Cell>
+<Cell><Data ss:Type="Number">-1550.04</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.09.2011</Data></Cell>
+<Cell><Data ss:Type="String">Rente</Data></Cell>
+<Cell><Data ss:Type="Number">-41.64</Data></Cell>
+<Cell><Data ss:Type="Number">-1591.68</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Budget oktober 2011</Data></Cell>
+<Cell><Data ss:Type="Number">23000.00</Data></Cell>
+<Cell><Data ss:Type="Number">21408.32</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Net 1</Data></Cell>
+<Cell><Data ss:Type="Number">-398.00</Data></Cell>
+<Cell><Data ss:Type="Number">21010.32</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Mercedes-Benz Finans Dan</Data></Cell>
+<Cell><Data ss:Type="Number">-2111.57</Data></Cell>
+<Cell><Data ss:Type="Number">18898.75</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danica Pension</Data></Cell>
+<Cell><Data ss:Type="Number">-1095.60</Data></Cell>
+<Cell><Data ss:Type="Number">17803.15</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Tryg</Data></Cell>
+<Cell><Data ss:Type="Number">-5177.00</Data></Cell>
+<Cell><Data ss:Type="Number">12626.15</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Tryg</Data></Cell>
+<Cell><Data ss:Type="Number">-5177.00</Data></Cell>
+<Cell><Data ss:Type="Number">7449.15</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">FTF-A</Data></Cell>
+<Cell><Data ss:Type="Number">-1227.00</Data></Cell>
+<Cell><Data ss:Type="Number">6222.15</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Prosa</Data></Cell>
+<Cell><Data ss:Type="Number">-532.00</Data></Cell>
+<Cell><Data ss:Type="Number">5690.15</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">03.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Forsikring Dijon</Data></Cell>
+<Cell><Data ss:Type="Number">-456.75</Data></Cell>
+<Cell><Data ss:Type="Number">5233.40</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Sygeforsikringen Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1060.00</Data></Cell>
+<Cell><Data ss:Type="Number">4173.40</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">07.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Dong Energy A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-2716.37</Data></Cell>
+<Cell><Data ss:Type="Number">1457.03</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">10.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">DK Hostmaster A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-45.00</Data></Cell>
+<Cell><Data ss:Type="Number">1412.03</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">16.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Kia sep. 2011</Data></Cell>
+<Cell><Data ss:Type="Number">-600.00</Data></Cell>
+<Cell><Data ss:Type="Number">812.03</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">17.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Ormekur 30.09.2011</Data></Cell>
+<Cell><Data ss:Type="Number">-697.18</Data></Cell>
+<Cell><Data ss:Type="Number">114.85</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3566.68</Data></Cell>
+<Cell><Data ss:Type="Number">-3451.83</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">31.10.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1563.08</Data></Cell>
+<Cell><Data ss:Type="Number">-5014.91</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">Net 1</Data></Cell>
+<Cell><Data ss:Type="Number">-398.00</Data></Cell>
+<Cell><Data ss:Type="Number">-5412.91</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danske Torpare</Data></Cell>
+<Cell><Data ss:Type="Number">-375.00</Data></Cell>
+<Cell><Data ss:Type="Number">-5787.91</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danica Pension</Data></Cell>
+<Cell><Data ss:Type="Number">-1095.60</Data></Cell>
+<Cell><Data ss:Type="Number">-6883.51</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">Viasat A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-2049.00</Data></Cell>
+<Cell><Data ss:Type="Number">-8932.51</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">Mercedes-Benz Finans Dan</Data></Cell>
+<Cell><Data ss:Type="Number">-2111.57</Data></Cell>
+<Cell><Data ss:Type="Number">-11044.08</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">Prosa</Data></Cell>
+<Cell><Data ss:Type="Number">-1062.00</Data></Cell>
+<Cell><Data ss:Type="Number">-12106.08</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">06.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">hundemad sep.okt</Data></Cell>
+<Cell><Data ss:Type="Number">-1020.00</Data></Cell>
+<Cell><Data ss:Type="Number">-13126.08</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">06.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">nov. 2011</Data></Cell>
+<Cell><Data ss:Type="Number">23000.00</Data></Cell>
+<Cell><Data ss:Type="Number">9873.92</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">06.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">kia okt 2011</Data></Cell>
+<Cell><Data ss:Type="Number">-900.00</Data></Cell>
+<Cell><Data ss:Type="Number">8973.92</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">07.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">Hmn Naturgas I/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3421.12</Data></Cell>
+<Cell><Data ss:Type="Number">5552.80</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">07.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">Finansforbundet Konting.</Data></Cell>
+<Cell><Data ss:Type="Number">-720.00</Data></Cell>
+<Cell><Data ss:Type="Number">4832.80</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">16.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">juleting 2011</Data></Cell>
+<Cell><Data ss:Type="Number">-320.00</Data></Cell>
+<Cell><Data ss:Type="Number">4512.80</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">DAB opdatering</Data></Cell>
+<Cell><Data ss:Type="Number">-125.00</Data></Cell>
+<Cell><Data ss:Type="Number">4387.80</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1563.08</Data></Cell>
+<Cell><Data ss:Type="Number">2824.72</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.11.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3566.68</Data></Cell>
+<Cell><Data ss:Type="Number">-741.96</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.12.2011</Data></Cell>
+<Cell><Data ss:Type="String">Prosa</Data></Cell>
+<Cell><Data ss:Type="Number">-797.00</Data></Cell>
+<Cell><Data ss:Type="Number">-1538.96</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.12.2011</Data></Cell>
+<Cell><Data ss:Type="String">Mercedes-Benz Finans Dan</Data></Cell>
+<Cell><Data ss:Type="Number">-2106.09</Data></Cell>
+<Cell><Data ss:Type="Number">-3645.05</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">01.12.2011</Data></Cell>
+<Cell><Data ss:Type="String">Danica Pension</Data></Cell>
+<Cell><Data ss:Type="Number">-1095.60</Data></Cell>
+<Cell><Data ss:Type="Number">-4740.65</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">02.12.2011</Data></Cell>
+<Cell><Data ss:Type="String">Net 1</Data></Cell>
+<Cell><Data ss:Type="Number">-398.00</Data></Cell>
+<Cell><Data ss:Type="Number">-5138.65</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.12.2011</Data></Cell>
+<Cell><Data ss:Type="String">ormekur 18.11.2011</Data></Cell>
+<Cell><Data ss:Type="Number">-645.96</Data></Cell>
+<Cell><Data ss:Type="Number">-5784.61</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">05.12.2011</Data></Cell>
+<Cell><Data ss:Type="String">budget dec 2011</Data></Cell>
+<Cell><Data ss:Type="Number">23000.00</Data></Cell>
+<Cell><Data ss:Type="Number">17215.39</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">07.12.2011</Data></Cell>
+<Cell><Data ss:Type="String">Dong Energy A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-2604.12</Data></Cell>
+<Cell><Data ss:Type="Number">14611.27</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.12.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark</Data></Cell>
+<Cell><Data ss:Type="Number">-1563.07</Data></Cell>
+<Cell><Data ss:Type="Number">13048.20</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.12.2011</Data></Cell>
+<Cell><Data ss:Type="String">Realkredit Danmark A/S</Data></Cell>
+<Cell><Data ss:Type="Number">-3566.71</Data></Cell>
+<Cell><Data ss:Type="Number">9481.49</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+<Row><Cell><Data ss:Type="String">30.12.2011</Data></Cell>
+<Cell><Data ss:Type="String">Rente</Data></Cell>
+<Cell><Data ss:Type="Number">-22.85</Data></Cell>
+<Cell><Data ss:Type="Number">9458.64</Data></Cell>
+<Cell><Data ss:Type="String">Udført</Data></Cell>
+<Cell><Data ss:Type="String">Nej</Data></Cell>
+</Row>
+
+		</Table>
+	</Worksheet>
+</Workbook>
