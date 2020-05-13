@@ -13,4 +13,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <Value>Data Source=mssql15.unoeuro.com%3bdatabase=nyxium_dk_db_nyxium%3bUser ID=nyxium_dk%3bPassword=Keiler1234%3bConnect Timeout=30%3bEncrypt=False%3bTrustServerCertificate=False%3bApplicationIntent=ReadWrite%3bMultiSubnetFailover=False</Value>
     </DestinationConnectionStrings>
   </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="WedigITCRM.AppDbContext">
+      <Value>Data Source=mssql15.unoeuro.com%3bdatabase=nyxium_dk_db_nyxium%3bUser ID=nyxium_dk%3bPassword=Keiler1234%3bConnect Timeout=30%3bEncrypt=False%3bTrustServerCertificate=False%3bApplicationIntent=ReadWrite%3bMultiSubnetFailover=False</Value>
+    </EFMigrations>
+  </ItemGroup>
 </Project>

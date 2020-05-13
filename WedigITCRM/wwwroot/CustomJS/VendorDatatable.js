@@ -74,6 +74,11 @@ function initializeVendorEditor() {
                     name: "name"
                 },
                 {
+                    label: "Land",
+                    name: "countryCode",
+                    type: "select"
+                },
+                {
                     label: "CVR",
                     name: "cvrNumber"
                 },
@@ -96,10 +101,13 @@ function initializeVendorEditor() {
                     name: "city"
                 },
                 {
-                    label: "Land",
-                    name: "countryCode",
-                    type: "select"
+                    label: "Postnummer",
+                    name: "foreignZip"
                 },
+                {
+                    label: "By",
+                    name: "foreignCity"
+                },    
                 {
                     label: "Telefonnummer",
                     name: "phoneNumber"
@@ -347,6 +355,29 @@ function setVendorZipDependency() {
                 callback(true);
             }
         });
+    });
+}
+
+function setVendorCountryCodeDependency() {
+    vendorEditor.dependent('countryCode', function (val, data, callback) {
+        data = JSON.stringify(data.values);
+        if (val == "DK") {
+            $("div.DTE_Field_Name_zip ").show();
+            $("div.DTE_Field_Name_city ").show();
+
+            $("div.DTE_Field_Name_foreignZip ").hide();
+            $("div.DTE_Field_Name_foreignCity ").hide();
+        }
+        else {
+            $("div.DTE_Field_Name_zip ").hide();
+            $("div.DTE_Field_Name_city ").hide();
+
+            $("div.DTE_Field_Name_foreignZip ").show();
+            $("div.DTE_Field_Name_foreignCity ").show();
+        }
+
+        callback(true);
+
     });
 }
 

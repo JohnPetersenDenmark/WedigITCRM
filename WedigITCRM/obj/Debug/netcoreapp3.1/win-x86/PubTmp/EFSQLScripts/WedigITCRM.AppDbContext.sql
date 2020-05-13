@@ -1873,3 +1873,25 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200513212238_vendorForeignZipCity')
+BEGIN
+    ALTER TABLE [Vendors] ADD [ForeignCity] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200513212238_vendorForeignZipCity')
+BEGIN
+    ALTER TABLE [Vendors] ADD [ForeignZip] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200513212238_vendorForeignZipCity')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200513212238_vendorForeignZipCity', N'3.1.4');
+END;
+
+GO
+

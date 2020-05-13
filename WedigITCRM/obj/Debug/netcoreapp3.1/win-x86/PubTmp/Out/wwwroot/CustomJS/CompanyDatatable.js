@@ -101,12 +101,12 @@ function initializeCompanyEditor() {
                     type: "hidden"
                 },
                 {
-                    label: "Postnummer DK",
+                    label: "Postnummer",
                     name: "zip",
                     type: "select"
                 },
                 {
-                    label: "By DK",
+                    label: "By",
                     name: "city"
                 }, 
                 {

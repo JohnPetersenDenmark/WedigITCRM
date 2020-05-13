@@ -21,20 +21,20 @@ namespace WedigITCRM.Controllers
         private UserManager<IdentityUser> _userManager;
         private ICompanyAccountRepository _companyAccountRepository;
         private IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;
-       
-        
 
 
-        public VendorController(ILogger<VendorController> logger, IVendorRepository vendorRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, ICompanyAccountRepository companyAccountRepository,  IPostalCodeRepository postalCodeRepository, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+
+
+        public VendorController(ILogger<VendorController> logger, IVendorRepository vendorRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, ICompanyAccountRepository companyAccountRepository, IPostalCodeRepository postalCodeRepository, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
         {
             _logger = logger;
             _vendorRepository = vendorRepository;
-            _postalCodeRepository = postalCodeRepository;                  
+            _postalCodeRepository = postalCodeRepository;
             _signInManager = signInManager;
             _userManager = userManager;
             _companyAccountRepository = companyAccountRepository;
             _relateCompanyAccountWithUserRepository = relateCompanyAccountWithUserRepository;
-          
+
         }
 
         public IActionResult AllVendors()
@@ -44,30 +44,32 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getVendors(CompanyAccount companyAccount)
         {
-            
-                var vendorData = _vendorRepository.GetAllVendors().Where(company => company.companyAccountId == companyAccount.companyAccountId).ToList();
 
-                List<ReducedVendor> data = new List<ReducedVendor>();
-                foreach (var vendor in vendorData)
-                {
-                    DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+            var vendorData = _vendorRepository.GetAllVendors().Where(company => company.companyAccountId == companyAccount.companyAccountId).ToList();
 
-                    ReducedVendor reducedVendor = new ReducedVendor();
-                    reducedVendor.id = vendor.Id.ToString();
-                    reducedVendor.name = vendor.Name;
-                    reducedVendor.street = vendor.Street;
-                    reducedVendor.city = vendor.City;
-                    reducedVendor.zip = vendor.Zip;
-                    reducedVendor.HomePage = vendor.HomePage;
-                    reducedVendor.LastEditedDate = vendor.LastEditedDate.ToString(danishDateTimeformat.ShortDatePattern + " " + danishDateTimeformat.ShortTimePattern);
-                    reducedVendor.CreatedDate = vendor.LastEditedDate.ToString(danishDateTimeformat.ShortDatePattern + " " + danishDateTimeformat.ShortTimePattern);
-                    reducedVendor.dineroGuiD = vendor.DineroGuiD;
-                    reducedVendor.PhoneNumber = vendor.PhoneNumber;
-                    reducedVendor.postalCodeId = vendor.postalCodeId;
-                    reducedVendor.CountryCode = vendor.CountryCode;
-                    reducedVendor.companyAccountId = vendor.companyAccountId;
-                    data.Add(reducedVendor);
-                }
+            List<ReducedVendor> data = new List<ReducedVendor>();
+            foreach (var vendor in vendorData)
+            {
+                DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+
+                ReducedVendor reducedVendor = new ReducedVendor();
+                reducedVendor.id = vendor.Id.ToString();
+                reducedVendor.name = vendor.Name;
+                reducedVendor.street = vendor.Street;
+                reducedVendor.city = vendor.City;
+                reducedVendor.zip = vendor.Zip;
+                reducedVendor.ForeignCity = vendor.ForeignCity;
+                reducedVendor.ForeignZip = vendor.ForeignZip;
+                reducedVendor.HomePage = vendor.HomePage;
+                reducedVendor.LastEditedDate = vendor.LastEditedDate.ToString(danishDateTimeformat.ShortDatePattern + " " + danishDateTimeformat.ShortTimePattern);
+                reducedVendor.CreatedDate = vendor.LastEditedDate.ToString(danishDateTimeformat.ShortDatePattern + " " + danishDateTimeformat.ShortTimePattern);
+                reducedVendor.dineroGuiD = vendor.DineroGuiD;
+                reducedVendor.PhoneNumber = vendor.PhoneNumber;
+                reducedVendor.postalCodeId = vendor.postalCodeId;
+                reducedVendor.CountryCode = vendor.CountryCode;
+                reducedVendor.companyAccountId = vendor.companyAccountId;
+                data.Add(reducedVendor);
+            }
 
             // throw new Exception("Forced error in Vendor controller");
 
@@ -83,7 +85,7 @@ namespace WedigITCRM.Controllers
                 if (datamodelInput.action.Equals("edit"))
                 {
 
-                    
+
 
                     Vendor vendor = _vendorRepository.GetVendor(int.Parse(datamodelInput.id));
                     if (vendor != null)
@@ -93,10 +95,12 @@ namespace WedigITCRM.Controllers
                         {
                             vendor.CVRNumber = int.Parse(datamodelInput.cvrNumber);
                         }
-
+                        
                         vendor.Street = datamodelInput.street;
                         vendor.Zip = datamodelInput.zip;
                         vendor.City = datamodelInput.city;
+                        vendor.ForeignZip = datamodelInput.ForeignZip;
+                        vendor.ForeignCity = datamodelInput.ForeignCity;
                         vendor.Name = datamodelInput.name;
                         vendor.CountryCode = datamodelInput.CountryCode;
                         vendor.PhoneNumber = datamodelInput.PhoneNumber;
@@ -119,6 +123,8 @@ namespace WedigITCRM.Controllers
                     vendor.Street = datamodelInput.street;
                     vendor.Zip = datamodelInput.zip;
                     vendor.City = datamodelInput.city;
+                    vendor.ForeignZip = datamodelInput.ForeignZip;
+                    vendor.ForeignCity = datamodelInput.ForeignCity;
                     vendor.Name = datamodelInput.name;
                     vendor.CountryCode = datamodelInput.CountryCode;
                     vendor.PhoneNumber = datamodelInput.PhoneNumber;
@@ -180,22 +186,22 @@ namespace WedigITCRM.Controllers
         public async Task<IActionResult> searchVendorByName(string term, CompanyAccount companyAccount)
         {
 
-            
 
-                var vendorData = _vendorRepository.GetAllVendors().Where(company => company.companyAccountId == companyAccount.companyAccountId && company.Name.ToLower().Contains(term.ToLower())).ToList();
 
-                List<ReducedVendor> data = new List<ReducedVendor>();
-                foreach (var vendor in vendorData)
-                {
-                    DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+            var vendorData = _vendorRepository.GetAllVendors().Where(company => company.companyAccountId == companyAccount.companyAccountId && company.Name.ToLower().Contains(term.ToLower())).ToList();
 
-                    ReducedVendor reducedVendor = new ReducedVendor();
-                    reducedVendor.id = vendor.Id.ToString();
-                    reducedVendor.name = vendor.Name;                  
-                    data.Add(reducedVendor);
-                }
+            List<ReducedVendor> data = new List<ReducedVendor>();
+            foreach (var vendor in vendorData)
+            {
+                DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
 
-                return Json(data);
+                ReducedVendor reducedVendor = new ReducedVendor();
+                reducedVendor.id = vendor.Id.ToString();
+                reducedVendor.name = vendor.Name;
+                data.Add(reducedVendor);
+            }
+
+            return Json(data);
 
         }
 
@@ -208,7 +214,8 @@ namespace WedigITCRM.Controllers
 
             public string city { get; set; }
             public string street { get; set; }
-
+            public string ForeignZip { get; set; }
+            public string ForeignCity { get; set; }
             public string zip { get; set; }
             public string CountryCode { get; set; }
             public string PhoneNumber { get; set; }
@@ -233,7 +240,8 @@ namespace WedigITCRM.Controllers
 
             public string city { get; set; }
             public string street { get; set; }
-
+            public string ForeignZip { get; set; }
+            public string ForeignCity { get; set; }
             public string zip { get; set; }
             public string CountryCode { get; set; }
             public string PhoneNumber { get; set; }
