@@ -38,10 +38,10 @@ namespace WedigITCRM.Controllers
         private ICompanyRepository _companyRepository;
         IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;
         RoleManager<IdentityRole> _roleManager;
-        IHostingEnvironment _env;
+        IWebHostEnvironment _env;
         MiscUtility miscUtility;
 
-        public AccountController(EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IHostingEnvironment env)
+        public AccountController(EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -243,44 +243,7 @@ namespace WedigITCRM.Controllers
                 return LocalRedirect(returnUrl);
 
             }
-            /* JLP 16-12-2019 ************************************************************************************************************************************************************************
-            // If there is no record in AspNetUserLogins table, the user may not have
-            // a local account
-            else
-            {
-
-                 Get the email claim value
-                        var email = info.Principal.FindFirstValue(ClaimTypes.Email);
-
-                    if (email != null)
-                    {
-                        // Create a new user without password if we do not have a user already
-                        var user = await userManager.FindByEmailAsync(email);
-
-                        if (user == null)
-                     {
-                             user = new IdentityUser();
-                           user.UserName = info.Principal.FindFirstValue(ClaimTypes.Email);
-                            user.Email = info.Principal.FindFirstValue(ClaimTypes.Email);
-
-                         await userManager.CreateAsync(user);
-                        }
-
-                    // Add a login (i.e insert a row for the user in AspNetUserLogins table)
-                    await userManager.AddLoginAsync(user, info);
-                    await signInManager.SignInAsync(user, isPersistent: false);
-
-                    return LocalRedirect(returnUrl);
-                    }
-
-            JLP 16-12-2019 ************************************************************************************************************************************************************************
-                */
-
-            // If we cannot find the user email we cannot continue 
-            ViewBag.ErrorTitle = $"Email claim not received from: {info.LoginProvider}";
-            ViewBag.ErrorMessage = "Please contact support on Pragim@PragimTech.com";
-
-            return View("Error");
+          
 
         }
 

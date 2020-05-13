@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAphMGhYi0sUCFXlW5YthC1gAAAAACAAAAAAAQZgAAAAEAACAAAAC4rfQx8f0/aLHgQaSLxfFUS0Oqw65IHwnRoKX0CvQsxgAAAAAOgAAAAAIAACAAAABgCDXkOzVYssNtHL2qyKRxQiAcntFzt20zo2raInrNCyAAAADYZe3+6J89lLnPfmDpJLg4jshv0ACjnh1Yb3JsoQUlFEAAAAAwf5GS9SwGHMawO427adTGTu2IBjRGUe3w6tQ5oVVBpQqwymFAwcHkOrLq/NUuWwbNhCIYoCjDAP5DbyYtEVMD</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=mssql15.unoeuro.com%3bdatabase=nyxium_dk_db_nyxium%3bUser ID=nyxium_dk%3bPassword=Keiler1234%3bConnect Timeout=30%3bEncrypt=False%3bTrustServerCertificate=False%3bApplicationIntent=ReadWrite%3bMultiSubnetFailover=False</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

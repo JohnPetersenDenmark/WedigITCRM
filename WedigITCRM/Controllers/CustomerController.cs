@@ -30,12 +30,12 @@ namespace WedigITCRM.Controllers
         SignInManager<IdentityUser> _signInManager;
         UserManager<IdentityUser> _userManager;
         ICompanyAccountRepository _companyAccountRepository;
-        IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;       
-        IHostingEnvironment _env;
+        IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;
+        IWebHostEnvironment _env;
 
         AppDbContext _dbContext;
 
-        public CustomerController(ICountryRepository countryRepository, IHostingEnvironment env,  IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, ICompanyAccountRepository companyAccountRepository, ICompanyRepository companyRepository, IPostalCodeRepository postalCodeRepository, IContactPersonRepository contactPersonRepository, IActivityRepository activityRepository, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, AppDbContext dbContext)
+        public CustomerController(ICountryRepository countryRepository, IWebHostEnvironment env,  IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, ICompanyAccountRepository companyAccountRepository, ICompanyRepository companyRepository, IPostalCodeRepository postalCodeRepository, IContactPersonRepository contactPersonRepository, IActivityRepository activityRepository, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, AppDbContext dbContext)
         {
             _companyRepository = companyRepository;
             _postalCodeRepository = postalCodeRepository;
@@ -126,6 +126,8 @@ namespace WedigITCRM.Controllers
                         company.Street = datamodelInput.street;
                         company.Zip = datamodelInput.zip;
                         company.City = datamodelInput.city;
+                        company.ForeignZip = datamodelInput.ForeignZip;
+                        company.ForeignCity = datamodelInput.ForeignCity;
                         company.Name = datamodelInput.name;
                         company.CountryCode = datamodelInput.CountryCode;
                         company.PhoneNumber = datamodelInput.PhoneNumber;
@@ -174,6 +176,8 @@ namespace WedigITCRM.Controllers
                     company.Street = datamodelInput.street;
                     company.Zip = datamodelInput.zip;
                     company.City = datamodelInput.city;
+                    company.ForeignZip = datamodelInput.ForeignZip;
+                    company.ForeignCity = datamodelInput.ForeignCity;
                     company.Name = datamodelInput.name;
                     company.CountryCode = datamodelInput.CountryCode;
                     company.PhoneNumber = datamodelInput.PhoneNumber;
@@ -559,7 +563,9 @@ namespace WedigITCRM.Controllers
                     ReducedCustomer.street = customer.Street;
                     ReducedCustomer.city = customer.City;
                     ReducedCustomer.zip = customer.Zip;
-                    ReducedCustomer.CountryCode = customer.CountryCode;
+                ReducedCustomer.ForeignCity = customer.ForeignCity;
+                ReducedCustomer.ForeignZip = customer.ForeignZip;
+                ReducedCustomer.CountryCode = customer.CountryCode;
                     ReducedCustomer.HomePage = customer.HomePage;
                     ReducedCustomer.LastEditedDate = customer.LastEditedDate.ToString(danishDateTimeformat.ShortDatePattern + " " + danishDateTimeformat.ShortTimePattern);
                     ReducedCustomer.CreatedDate = customer.CreatedDate.ToString(danishDateTimeformat.ShortDatePattern + " " + danishDateTimeformat.ShortTimePattern);
@@ -747,7 +753,8 @@ namespace WedigITCRM.Controllers
 
         public string city { get; set; }
         public string street { get; set; }
-
+        public string ForeignZip { get; set; }
+        public string ForeignCity { get; set; }
         public string zip { get; set; }
         public string CountryCode { get; set; }
         public string PhoneNumber { get; set; }
@@ -809,7 +816,8 @@ namespace WedigITCRM.Controllers
 
         public string city { get; set; }
         public string street { get; set; }
-
+        public string ForeignZip { get; set; }
+        public string ForeignCity { get; set; }
         public string zip { get; set; }
         public string CountryCode { get; set; }
         public string PhoneNumber { get; set; }

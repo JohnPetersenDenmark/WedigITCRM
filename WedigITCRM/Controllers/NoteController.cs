@@ -25,10 +25,10 @@ namespace WedigITCRM.Controllers
     public class NoteController : Controller
     {
         private INoteRepository _noteRepository;
-        private IHostingEnvironment _hostingEnvironment;
+        private IWebHostEnvironment _hostingEnvironment;
         private IAttachmentRepository _attachmentRepository;
         private IContentTypeRepository _contentTypeRepository;
-        public NoteController(IContentTypeRepository contentTypeRepository, IHostingEnvironment hostingEnvironment, INoteRepository noteRepository, IAttachmentRepository attachmentRepository)
+        public NoteController(IContentTypeRepository contentTypeRepository, IWebHostEnvironment hostingEnvironment, INoteRepository noteRepository, IAttachmentRepository attachmentRepository)
         {
             _noteRepository = noteRepository;
             _hostingEnvironment = hostingEnvironment;

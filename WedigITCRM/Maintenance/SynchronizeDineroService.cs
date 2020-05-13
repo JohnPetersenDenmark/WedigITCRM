@@ -98,7 +98,7 @@ namespace WedigITCRM.Maintenance
 
                     }
 
-                        throw new Exception("Forced error in SynchronizeDineroContactsService");
+                      
 
                     companyAccount.ContactsToNyxiumLastSynchronizationDate = DateTime.Now;
                     _companyAccountRepository.Update(companyAccount);

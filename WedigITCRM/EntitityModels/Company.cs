@@ -23,6 +23,11 @@ namespace WedigITCRM
         public string PhoneNumber { get; set; }
         public string HomePage { get; set; }
 
+        public string ForeignZip { get; set; }
+        public string ForeignCity { get; set; }
+
+        public string PaymentConditions { get; set; }
+
         public string Email { get; set; }
         public bool IsPerson { get; set; }
         public string postalCodeId { get; set; }

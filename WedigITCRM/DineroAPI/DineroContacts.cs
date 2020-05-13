@@ -153,12 +153,23 @@ namespace WedigITCRM.DineroAPI
             dineroContact.Email = contactCompanyOrPerson.Email;
             dineroContact.Name = contactCompanyOrPerson.Name;
             dineroContact.Street = contactCompanyOrPerson.Street;
-            dineroContact.City = contactCompanyOrPerson.City;
-            dineroContact.ZipCode = contactCompanyOrPerson.Zip;
-            dineroContact.VatNumber = contactCompanyOrPerson.CVRNumber;
 
-            dineroContact.CountryKey = contactCompanyOrPerson.CountryCode;
-            dineroContact.CountryKey = contactCompanyOrPerson.CountryCode;
+            if (contactCompanyOrPerson.CountryCode.Equals("DK"))
+            {
+                dineroContact.City = contactCompanyOrPerson.City;
+                dineroContact.ZipCode = contactCompanyOrPerson.Zip;
+            }
+            else
+            {
+                dineroContact.City = contactCompanyOrPerson.ForeignCity;
+                dineroContact.ZipCode = contactCompanyOrPerson.ForeignZip;
+            }
+
+
+
+          
+            dineroContact.VatNumber = contactCompanyOrPerson.CVRNumber;
+            dineroContact.CountryKey = contactCompanyOrPerson.CountryCode;           
             dineroContact.Phone = contactCompanyOrPerson.PhoneNumber;
             dineroContact.Webpage = contactCompanyOrPerson.HomePage;
             dineroContact.IsMember = false;
@@ -229,9 +240,21 @@ namespace WedigITCRM.DineroAPI
             wedigitCompany.Name = contactToAdd.Name;
             wedigitCompany.IsPerson = contactToAdd.IsPerson;
             wedigitCompany.Street = contactToAdd.Street;
-            wedigitCompany.City = contactToAdd.City;
-            wedigitCompany.Zip = contactToAdd.ZipCode;
             wedigitCompany.CountryCode = contactToAdd.CountryKey;
+
+            if (contactToAdd.CountryKey.Equals("DK"))
+            {
+                wedigitCompany.City = contactToAdd.City;
+                wedigitCompany.Zip = contactToAdd.ZipCode;
+            }
+            else
+            {
+                wedigitCompany.ForeignCity = contactToAdd.City;
+                wedigitCompany.ForeignZip = contactToAdd.ZipCode;
+            }
+
+          
+          
             wedigitCompany.PhoneNumber = contactToAdd.Phone;
             wedigitCompany.HomePage = contactToAdd.Webpage;
            
@@ -247,7 +270,7 @@ namespace WedigITCRM.DineroAPI
         public void CopyCustomersFromDinero(CompanyAccount companyAccount, ICompanyRepository _companyRepository)
         {
             DateTimeFormatInfo SweedishTimeformat = CultureInfo.GetCultureInfo("sv-SE").DateTimeFormat;
-            int testInteger;
+          
             Int32 page;
             Int32 pageSize;
 

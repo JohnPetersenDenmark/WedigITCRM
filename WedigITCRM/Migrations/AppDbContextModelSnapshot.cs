@@ -15,22 +15,25 @@ namespace WedigITCRM.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
+                .HasAnnotation("ProductVersion", "3.1.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken();
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
                     b.Property<string>("NormalizedName")
+                        .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
@@ -47,14 +50,18 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ClaimType");
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ClaimValue");
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RoleId")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -66,39 +73,53 @@ namespace WedigITCRM.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("AccessFailedCount");
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken();
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
-                    b.Property<bool>("EmailConfirmed");
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
 
-                    b.Property<bool>("LockoutEnabled");
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
 
-                    b.Property<DateTimeOffset?>("LockoutEnd");
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
                     b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
-                    b.Property<string>("PasswordHash");
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneNumber");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("PhoneNumberConfirmed");
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("SecurityStamp");
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("TwoFactorEnabled");
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
 
                     b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
@@ -118,14 +139,18 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ClaimType");
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ClaimValue");
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -136,14 +161,18 @@ namespace WedigITCRM.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("ProviderKey");
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("ProviderDisplayName");
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -154,9 +183,11 @@ namespace WedigITCRM.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.Property<string>("UserId");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("RoleId");
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -167,13 +198,17 @@ namespace WedigITCRM.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.Property<string>("UserId");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Value");
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
@@ -184,31 +219,43 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CompanyId");
+                    b.Property<int>("CompanyId")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Date");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LastEditedDate");
+                    b.Property<DateTime>("LastEditedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<bool>("NotificationIsSent");
+                    b.Property<bool>("NotificationIsSent")
+                        .HasColumnType("bit");
 
                     b.Property<string>("NotifyOffset")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Subject")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
-                    b.Property<int>("contactPersonId");
+                    b.Property<int>("contactPersonId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -219,23 +266,32 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CalendarEventsColor");
+                    b.Property<string>("CalendarEventsColor")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("EmailForCalendar");
+                    b.Property<string>("EmailForCalendar")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("JobDescription");
+                    b.Property<string>("JobDescription")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("JobServiceTypes");
+                    b.Property<string>("JobServiceTypes")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LastEditedDate");
+                    b.Property<DateTime>("LastEditedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -246,32 +302,44 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("DineroGuiD");
+                    b.Property<Guid>("DineroGuiD")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("GapTimeAfterInMinutes");
+                    b.Property<int>("GapTimeAfterInMinutes")
+                        .HasColumnType("int");
 
-                    b.Property<int>("GapTimeBeforeInMinutes");
+                    b.Property<int>("GapTimeBeforeInMinutes")
+                        .HasColumnType("int");
 
-                    b.Property<bool>("IsBookable");
+                    b.Property<bool>("IsBookable")
+                        .HasColumnType("bit");
 
-                    b.Property<DateTime>("LastEditedDate");
+                    b.Property<DateTime>("LastEditedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProductNumber");
+                    b.Property<string>("ProductNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("SalesPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
-                    b.Property<int>("durationInMinutes");
+                    b.Property<int>("durationInMinutes")
+                        .HasColumnType("int");
 
                     b.HasKey("id");
 
@@ -282,41 +350,59 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BookingAPIkey");
+                    b.Property<string>("BookingAPIkey")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("BookingFreeTimeInterval");
+                    b.Property<int>("BookingFreeTimeInterval")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("FridayOfficeEndTime");
+                    b.Property<DateTime>("FridayOfficeEndTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("FridayOfficeStartTime");
+                    b.Property<DateTime>("FridayOfficeStartTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("MondayOfficeEndTime");
+                    b.Property<DateTime>("MondayOfficeEndTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("MondayOfficeStartTime");
+                    b.Property<DateTime>("MondayOfficeStartTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("SaturdayOfficeEndTime");
+                    b.Property<DateTime>("SaturdayOfficeEndTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("SaturdayOfficeStartTime");
+                    b.Property<DateTime>("SaturdayOfficeStartTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("SundayOfficeEndTime");
+                    b.Property<DateTime>("SundayOfficeEndTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("SundayOfficeStartTime");
+                    b.Property<DateTime>("SundayOfficeStartTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ThursdayOfficeEndTime");
+                    b.Property<DateTime>("ThursdayOfficeEndTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ThursdayOfficeStartTime");
+                    b.Property<DateTime>("ThursdayOfficeStartTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("TuesdayOfficeEndTime");
+                    b.Property<DateTime>("TuesdayOfficeEndTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("TuesdayOfficeStartTime");
+                    b.Property<DateTime>("TuesdayOfficeStartTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("WednesdayOfficeEndTime");
+                    b.Property<DateTime>("WednesdayOfficeEndTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("WednesdayOfficeStartTime");
+                    b.Property<DateTime>("WednesdayOfficeStartTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -327,33 +413,47 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CalendarEventResourceOwnerId");
+                    b.Property<int>("CalendarEventResourceOwnerId")
+                        .HasColumnType("int");
 
-                    b.Property<bool>("IsFromResourceCalendar");
+                    b.Property<bool>("IsFromResourceCalendar")
+                        .HasColumnType("bit");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
-                    b.Property<int>("customerId");
+                    b.Property<int>("customerId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("description");
+                    b.Property<string>("description")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("endDateTime");
+                    b.Property<DateTime>("endDateTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("endDateTimeRange");
+                    b.Property<DateTime>("endDateTimeRange")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("rangeWeekDays");
+                    b.Property<string>("rangeWeekDays")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("repeatingId");
+                    b.Property<int>("repeatingId")
+                        .HasColumnType("int");
 
-                    b.Property<bool>("selectRepeat");
+                    b.Property<bool>("selectRepeat")
+                        .HasColumnType("bit");
 
-                    b.Property<bool>("selectallday");
+                    b.Property<bool>("selectallday")
+                        .HasColumnType("bit");
 
-                    b.Property<DateTime>("startDateTime");
+                    b.Property<DateTime>("startDateTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("startDateTimeRange");
+                    b.Property<DateTime>("startDateTimeRange")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("id");
 
@@ -364,15 +464,20 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<Guid>("LinkRequestId");
+                    b.Property<Guid>("LinkRequestId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("RequestDateTime");
+                    b.Property<DateTime>("RequestDateTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("SendToEmail");
+                    b.Property<string>("SendToEmail")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -383,40 +488,66 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CVRNumber");
+                    b.Property<string>("CVRNumber")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("City");
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CountryCode");
+                    b.Property<string>("CountryCode")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<Guid>("DineroGuiD");
+                    b.Property<Guid>("DineroGuiD")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HomePage");
+                    b.Property<string>("ForeignCity")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsPerson");
+                    b.Property<string>("ForeignZip")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LastEditedDate");
+                    b.Property<string>("HomePage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsPerson")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastEditedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneNumber");
+                    b.Property<string>("PaymentConditions")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SMSverificationCode");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Street");
+                    b.Property<int>("SMSverificationCode")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Zip");
+                    b.Property<string>("Street")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<string>("Zip")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("postalCodeId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("postalCodeId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -429,62 +560,89 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("companyAccountId")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal>("AmountToPayForLicense")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<bool>("Booking");
+                    b.Property<bool>("Booking")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("CompanyName");
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Companyidentifier");
+                    b.Property<string>("Companyidentifier")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ContactsToDineroLastSynchronizationDate");
+                    b.Property<DateTime>("ContactsToDineroLastSynchronizationDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ContactsToNyxiumLastSynchronizationDate");
+                    b.Property<DateTime>("ContactsToNyxiumLastSynchronizationDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("DineroAPIOrganization");
+                    b.Property<string>("DineroAPIOrganization")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DineroAPIOrganizationKey");
+                    b.Property<string>("DineroAPIOrganizationKey")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IntegrationDinero");
+                    b.Property<bool>("IntegrationDinero")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("LogoAttachmentIds");
+                    b.Property<string>("LogoAttachmentIds")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NyxiumLicenseTypeId");
+                    b.Property<int>("NyxiumLicenseTypeId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("NyxiumLicenseTypeName");
+                    b.Property<string>("NyxiumLicenseTypeName")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("SalesStatistic");
+                    b.Property<bool>("SalesStatistic")
+                        .HasColumnType("bit");
 
-                    b.Property<DateTime>("StockItemsToDineroLastSynchronizationDate");
+                    b.Property<DateTime>("StockItemsToDineroLastSynchronizationDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("StockItemsToNyxiumSynchronizationDate");
+                    b.Property<DateTime>("StockItemsToNyxiumSynchronizationDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<bool>("SubscriptionCRM");
+                    b.Property<bool>("SubscriptionCRM")
+                        .HasColumnType("bit");
 
-                    b.Property<bool>("SubscriptionInventory");
+                    b.Property<bool>("SubscriptionInventory")
+                        .HasColumnType("bit");
 
-                    b.Property<bool>("SubscriptionProcurement");
+                    b.Property<bool>("SubscriptionProcurement")
+                        .HasColumnType("bit");
 
-                    b.Property<bool>("SubscriptionVendor");
+                    b.Property<bool>("SubscriptionVendor")
+                        .HasColumnType("bit");
 
-                    b.Property<DateTime>("VendorsItemsToDineroLastSynchronizationDate");
+                    b.Property<DateTime>("VendorsItemsToDineroLastSynchronizationDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("activationDate");
+                    b.Property<DateTime>("activationDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<Guid>("activationKey");
+                    b.Property<Guid>("activationKey")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("registrationDate");
+                    b.Property<DateTime>("registrationDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<bool>("synchronizeCustomerFromDineroToNyxium");
+                    b.Property<bool>("synchronizeCustomerFromDineroToNyxium")
+                        .HasColumnType("bit");
 
-                    b.Property<bool>("synchronizeCustomerFromNyxiumToDinero");
+                    b.Property<bool>("synchronizeCustomerFromNyxiumToDinero")
+                        .HasColumnType("bit");
 
-                    b.Property<bool>("synchronizeStockItemFromDineroToNyxium");
+                    b.Property<bool>("synchronizeStockItemFromDineroToNyxium")
+                        .HasColumnType("bit");
 
-                    b.Property<bool>("synchronizeStockItemFromNyxiumToDinero");
+                    b.Property<bool>("synchronizeStockItemFromNyxiumToDinero")
+                        .HasColumnType("bit");
 
                     b.HasKey("companyAccountId");
 
@@ -495,33 +653,46 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CellPhone");
+                    b.Property<string>("CellPhone")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CompanyId");
+                    b.Property<int>("CompanyId")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Department");
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("DineroGuiD");
+                    b.Property<Guid>("DineroGuiD")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LastEditedDate");
+                    b.Property<DateTime>("LastEditedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("LastName")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneNumber");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -532,11 +703,14 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CountryCode");
+                    b.Property<string>("CountryCode")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CountryName");
+                    b.Property<string>("CountryName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -547,17 +721,23 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ContentType");
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OriginalFileName");
+                    b.Property<string>("OriginalFileName")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
-                    b.Property<long>("length");
+                    b.Property<long>("length")
+                        .HasColumnType("bigint");
 
-                    b.Property<string>("uniqueInternalFileName");
+                    b.Property<string>("uniqueInternalFileName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -567,11 +747,13 @@ namespace WedigITCRM.Migrations
             modelBuilder.Entity("WedigITCRM.EntitityModels.ContentType", b =>
                 {
                     b.Property<string>("Type")
-                        .ValueGeneratedOnAdd();
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("FileExtension");
+                    b.Property<string>("FileExtension")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IconFileName");
+                    b.Property<string>("IconFileName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Type");
 
@@ -582,33 +764,47 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AttachedFilesNameAndPath");
+                    b.Property<string>("AttachedFilesNameAndPath")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AttachedmentIds");
+                    b.Property<string>("AttachedmentIds")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Comment");
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CompanyId");
+                    b.Property<int>("CompanyId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("ContentTypes");
+                    b.Property<string>("ContentTypes")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Date");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("FileNamesOnly");
+                    b.Property<string>("FileNamesOnly")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IconsFilePathAndName");
+                    b.Property<string>("IconsFilePathAndName")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LastEditedDate");
+                    b.Property<DateTime>("LastEditedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Subject");
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
-                    b.Property<int>("contactPersonId");
+                    b.Property<int>("contactPersonId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -619,16 +815,21 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BookingServicesIds");
+                    b.Property<string>("BookingServicesIds")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Desciption");
+                    b.Property<string>("Desciption")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -639,9 +840,11 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("SalesPriceAnnualPayment")
                         .HasColumnType("decimal(18,2)");
@@ -658,11 +861,14 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("City");
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Zip");
+                    b.Property<string>("Zip")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -673,11 +879,14 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("companyAccount");
+                    b.Property<int>("companyAccount")
+                        .HasColumnType("int");
 
-                    b.Property<string>("role");
+                    b.Property<string>("role")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
@@ -688,15 +897,20 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CompanyName");
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("companyAccount");
+                    b.Property<int>("companyAccount")
+                        .HasColumnType("int");
 
-                    b.Property<string>("user");
+                    b.Property<string>("user")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("userName");
+                    b.Property<string>("userName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
@@ -707,32 +921,44 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Category");
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("CostPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<Guid>("DineroGuiD");
+                    b.Property<Guid>("DineroGuiD")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Expirationdate");
+                    b.Property<DateTime>("Expirationdate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("InStockAgainDate");
+                    b.Property<DateTime>("InStockAgainDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("ItemName");
+                    b.Property<string>("ItemName")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ItemNumber");
+                    b.Property<string>("ItemNumber")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LastEditedDate");
+                    b.Property<DateTime>("LastEditedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Location");
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NumberInStock");
+                    b.Property<int>("NumberInStock")
+                        .HasColumnType("int");
 
-                    b.Property<int>("ReorderNumberInStock");
+                    b.Property<int>("ReorderNumberInStock")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("SalesPrice")
                         .HasColumnType("decimal(18,2)");
@@ -740,19 +966,26 @@ namespace WedigITCRM.Migrations
                     b.Property<decimal>("StockValue")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("Unit");
+                    b.Property<string>("Unit")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("VendorId");
+                    b.Property<int>("VendorId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("VendorItemNumber");
+                    b.Property<string>("VendorItemNumber")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("category1Id");
+                    b.Property<int>("category1Id")
+                        .HasColumnType("int");
 
-                    b.Property<int>("category2Id");
+                    b.Property<int>("category2Id")
+                        .HasColumnType("int");
 
-                    b.Property<int>("category3Id");
+                    b.Property<int>("category3Id")
+                        .HasColumnType("int");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -763,11 +996,14 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -778,13 +1014,17 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Category1Id");
+                    b.Property<int>("Category1Id")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -795,13 +1035,17 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Category2Id");
+                    b.Property<int>("Category2Id")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -812,34 +1056,48 @@ namespace WedigITCRM.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CVRNumber");
+                    b.Property<int>("CVRNumber")
+                        .HasColumnType("int");
 
-                    b.Property<string>("City");
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CountryCode");
+                    b.Property<string>("CountryCode")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<Guid>("DineroGuiD");
+                    b.Property<Guid>("DineroGuiD")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("HomePage");
+                    b.Property<string>("HomePage")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LastEditedDate");
+                    b.Property<DateTime>("LastEditedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneNumber");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Street");
+                    b.Property<string>("Street")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Zip");
+                    b.Property<string>("Zip")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("companyAccountId");
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("postalCodeId");
+                    b.Property<string>("postalCodeId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -850,47 +1108,53 @@ namespace WedigITCRM.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WedigITCRM.Company", b =>
@@ -898,7 +1162,8 @@ namespace WedigITCRM.Migrations
                     b.HasOne("WedigITCRM.CompanyAccount", "companyAccount")
                         .WithMany()
                         .HasForeignKey("companyAccountId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WedigITCRM.Vendor", b =>
@@ -906,7 +1171,8 @@ namespace WedigITCRM.Migrations
                     b.HasOne("WedigITCRM.CompanyAccount", "companyAccount")
                         .WithMany()
                         .HasForeignKey("companyAccountId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
