@@ -163,7 +163,7 @@ namespace WedigITCRM.Controllers
                             if (dineroAPIConnect.connectToDinero(companyAccount) != null)
                             {
                                 DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
-                                string status = dineroContacts.UpdateContactInDinero(newCompany, newCompany.DineroGuiD);
+                                string status = dineroContacts.UpdateCustomerContactInDinero(newCompany, newCompany.DineroGuiD);
                             }
                         }
                     }
@@ -221,7 +221,7 @@ namespace WedigITCRM.Controllers
                         if (dineroAPIConnect.connectToDinero(companyAccount) != null)
                         {
                             DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
-                            string status = dineroContacts.AddContactToDineroAsync(newCompany).ToString();
+                            string status = dineroContacts.AddCustomerContactToDineroAsync(newCompany).ToString();
                             if (!status.Equals("NotOK"))
                             {
                                 Guid DineroGuidId = Guid.Parse(status);

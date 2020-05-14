@@ -2801,7 +2801,7 @@ namespace WedigITCRM.Controllers
                                 if (dineroAPIConnect.connectToDinero(companyAccount) != null)
                                 {
                                     DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
-                                    string status = dineroContacts.AddContactToDineroAsync(newCustomer).ToString();
+                                    string status = dineroContacts.AddCustomerContactToDineroAsync(newCustomer).ToString();
                                     if (!status.Equals("NotOK"))
                                     {
                                         Guid DineroGuidId = Guid.Parse(status);

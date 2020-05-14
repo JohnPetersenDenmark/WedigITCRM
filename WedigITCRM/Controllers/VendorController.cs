@@ -94,7 +94,7 @@ namespace WedigITCRM.Controllers
                         vendor.Name = datamodelInput.name;
                         if (!string.IsNullOrEmpty(datamodelInput.cvrNumber))
                         {
-                            vendor.CVRNumber = int.Parse(datamodelInput.cvrNumber);
+                            vendor.CVRNumber = datamodelInput.cvrNumber;
                         }
                         
                         vendor.Street = datamodelInput.street;
@@ -109,7 +109,17 @@ namespace WedigITCRM.Controllers
                         vendor.postalCodeId = datamodelInput.postalCodeId;
                         vendor.HomePage = datamodelInput.HomePage;
                         vendor.LastEditedDate = DateTime.Now;
-                        _vendorRepository.Update(vendor);
+                        Vendor newVendor =_vendorRepository.Update(vendor);
+
+                        if (companyAccount.IntegrationDinero && companyAccount.synchronizeCustomerFromNyxiumToDinero)
+                        {
+                            DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
+                            if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+                            {
+                                DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
+                                string status = dineroContacts.UpdateVendorInDinero(newVendor, newVendor.DineroGuiD);
+                            }
+                        }
                     }
                 }
 
@@ -120,7 +130,7 @@ namespace WedigITCRM.Controllers
                     vendor.Name = datamodelInput.name;
                     if (!string.IsNullOrEmpty(datamodelInput.cvrNumber))
                     {
-                        vendor.CVRNumber = int.Parse(datamodelInput.cvrNumber);
+                        vendor.CVRNumber = datamodelInput.cvrNumber;
                     }
                     vendor.Street = datamodelInput.street;
                     vendor.Zip = datamodelInput.zip;
@@ -150,17 +160,23 @@ namespace WedigITCRM.Controllers
                     datamodelInput.LastEditedDate = danishdatetime;
                     datamodelInput.CreatedDate = danishdatetime;
 
+                    if (companyAccount.IntegrationDinero && companyAccount.synchronizeCustomerFromNyxiumToDinero)
+                    {
+                        DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
+                        if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+                        {
+                            DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
+                            string status = dineroContacts.AddVendorToDinero(newVendor).ToString();
+                            if (!status.Equals("NotOK"))
+                            {
+                                Guid DineroGuidId = Guid.Parse(status);
+                                newVendor.DineroGuiD = DineroGuidId;
+                                _vendorRepository.Update(newVendor);
+                            }
+                        }
+                    }
 
-                    //if (_dineroContacts.synchronizeCompanies)
-                    //{
-                    //    string status = _dineroContacts.AddContactToDineroAsync(newVendor).ToString();
-                    //    if (!status.Equals("NotOK"))
-                    //    {
-                    //        Guid DineroGuidId = Guid.Parse(status);
-                    //        newVendor.DineroGuiD = DineroGuidId;
-                    //        _vendorRepository.Update(newVendor);
-                    //    }
-                    //}
+                 
 
                 }
 
@@ -170,6 +186,15 @@ namespace WedigITCRM.Controllers
                     if (vendor != null)
                     {
                         _vendorRepository.Delete(int.Parse(datamodelInput.id));
+                        if (companyAccount.IntegrationDinero && companyAccount.synchronizeCustomerFromNyxiumToDinero)
+                        {
+                            DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
+                            if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+                            {
+                                DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
+                                dineroContacts.DeleteContactInDinero(vendor.DineroGuiD);
+                            }
+                        }
                     }
                 }
             }

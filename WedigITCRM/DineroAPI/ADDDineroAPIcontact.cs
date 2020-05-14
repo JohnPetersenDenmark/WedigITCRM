@@ -23,11 +23,12 @@ namespace WedigITCRM.DineroAPI
         public string EanNumber { get; set; }
         public string PaymentConditionType { get; set; }
         public int PaymentConditionNumberOfDays { get; set; }
-        public bool IsPerson { get; set; }
+        public bool IsPerson { get; set; }      
         public bool IsMember { get; set; }
         public string MemberNumber { get; set; }
         public bool UseCvr { get; set; }
-        public string CompanyTypeKey { get; set; }       
+        public string CompanyTypeKey { get; set; }
+
     }
 }
 

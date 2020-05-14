@@ -54,13 +54,38 @@ namespace WedigITCRM.DineroAPI
 
 
 
-        public string AddContactToDineroAsync(Company contactCompanyOrPerson)
+        public string AddCustomerContactToDineroAsync(Company contact)
         {
             ADDAndUpdateDineroAPIcontact dineroContact = new ADDAndUpdateDineroAPIcontact();
-            ADDAndUpdateDineroAPIcontact contactToAdd = MapWedigitCustomerToDineroContact(contactCompanyOrPerson, dineroContact);
+            ADDAndUpdateDineroAPIcontact contactToAdd = MapWedigitCustomerToDineroContact(contact, dineroContact);
 
 
             HttpClient client = new HttpClient();
+
+            string tmpJson = JsonConvert.SerializeObject(contactToAdd);
+
+            var content = new StringContent(JsonConvert.SerializeObject(contactToAdd), System.Text.Encoding.UTF8, "application/json");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _dineroAPIConnect._APItoken);
+
+            var result = client.PostAsync(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "contacts", content).Result;
+            if (result.IsSuccessStatusCode)
+            {
+                JObject JsonObj = JsonConvert.DeserializeObject<JObject>(result.Content.ReadAsStringAsync().Result);
+                string returnValue = JsonObj.GetValue("ContactGuid").ToString();
+                return returnValue;
+            }
+            return ("NotOK");
+        }
+
+        public string AddVendorToDinero(Vendor vendor)
+        {
+            ADDAndUpdateDineroAPIcontact dineroContact = new ADDAndUpdateDineroAPIcontact();
+            ADDAndUpdateDineroAPIcontact contactToAdd = MapWedigitVendorToDineroContact(vendor, dineroContact);
+
+
+            HttpClient client = new HttpClient();
+
+            string tmpJson = JsonConvert.SerializeObject(contactToAdd);
 
             var content = new StringContent(JsonConvert.SerializeObject(contactToAdd), System.Text.Encoding.UTF8, "application/json");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _dineroAPIConnect._APItoken);
@@ -89,7 +114,7 @@ namespace WedigITCRM.DineroAPI
             return ("NotOK");
         }
 
-        public string UpdateContactInDinero(Company contactCompanyOrPerson, Guid dineroContactGuid)
+        public string UpdateCustomerContactInDinero(Company contactCompanyOrPerson, Guid dineroContactGuid)
         {
 
             READDineroAPIcontact readDineroAPIcontact = getContactFromDinero(dineroContactGuid);
@@ -110,10 +135,46 @@ namespace WedigITCRM.DineroAPI
                 return ("NotOK");
             }
 
-
+            string tmpJson = JsonConvert.SerializeObject(contactToAdd);
             HttpClient client = new HttpClient();
 
-            var content = new StringContent(JsonConvert.SerializeObject(contactToUpdate), System.Text.Encoding.UTF8, "application/json");
+            var content = new StringContent(JsonConvert.SerializeObject(contactToAdd), System.Text.Encoding.UTF8, "application/json");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _dineroAPIConnect._APItoken);
+
+            var result = client.PutAsync(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "contacts" + "/" + dineroContactGuid.ToString(), content).Result;
+            if (result.IsSuccessStatusCode)
+            {
+                return "OK";
+            }
+            return ("NotOK");
+        }
+
+        public string UpdateVendorInDinero(Vendor vendor, Guid dineroContactGuid)
+        {
+
+            READDineroAPIcontact readDineroAPIcontact = getContactFromDinero(dineroContactGuid);
+
+            if (readDineroAPIcontact == null)
+            {
+                return ("NotOK");
+            }
+
+
+            ADDAndUpdateDineroAPIcontact contactToUpdate = copyDineroContactFromreadToAddUpdate(readDineroAPIcontact);
+
+            ADDAndUpdateDineroAPIcontact contactToAdd = MapWedigitVendorToDineroContact(vendor, contactToUpdate);
+                                                        
+
+
+            if (contactToUpdate == null)
+            {
+                return ("NotOK");
+            }
+
+            string tmpJson = JsonConvert.SerializeObject(contactToAdd);
+            HttpClient client = new HttpClient();
+
+            var content = new StringContent(JsonConvert.SerializeObject(contactToAdd), System.Text.Encoding.UTF8, "application/json");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _dineroAPIConnect._APItoken);
 
             var result = client.PutAsync(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "contacts" + "/" + dineroContactGuid.ToString(), content).Result;
@@ -146,7 +207,7 @@ namespace WedigITCRM.DineroAPI
         public ADDAndUpdateDineroAPIcontact MapWedigitCustomerToDineroContact(Company contactCompanyOrPerson, ADDAndUpdateDineroAPIcontact dineroContact)
         {
 
-
+            
             dineroContact.IsPerson = contactCompanyOrPerson.IsPerson;
 
             dineroContact.Name = contactCompanyOrPerson.Name;
@@ -165,9 +226,7 @@ namespace WedigITCRM.DineroAPI
                 dineroContact.ZipCode = contactCompanyOrPerson.ForeignZip;
             }
 
-
-
-          
+            dineroContact.ExternalReference = "IsNyxiumCustomer";
             dineroContact.VatNumber = contactCompanyOrPerson.CVRNumber;
             dineroContact.CountryKey = contactCompanyOrPerson.CountryCode;           
             dineroContact.Phone = contactCompanyOrPerson.PhoneNumber;
@@ -179,10 +238,43 @@ namespace WedigITCRM.DineroAPI
             return dineroContact;
         }
 
+        public ADDAndUpdateDineroAPIcontact MapWedigitVendorToDineroContact(Vendor vendor, ADDAndUpdateDineroAPIcontact dineroContact)
+        {
+
+
+            dineroContact.IsPerson = false;
+           
+            dineroContact.Name = vendor.Name;
+            dineroContact.Street = vendor.Street;
+
+            if (vendor.CountryCode.Equals("DK"))
+            {
+                dineroContact.City = vendor.City;
+                dineroContact.ZipCode = vendor.Zip;
+            }
+            else
+            {
+                dineroContact.City = vendor.ForeignCity;
+                dineroContact.ZipCode = vendor.ForeignZip;
+            }
+
+            dineroContact.ExternalReference = "IsNyxiumVendor";
+            dineroContact.VatNumber = vendor.CVRNumber;
+            dineroContact.CountryKey = vendor.CountryCode;
+            dineroContact.Phone = vendor.PhoneNumber;
+            dineroContact.Webpage = vendor.HomePage;
+            dineroContact.IsMember = false;
+            dineroContact.UseCvr = false;
+
+
+            return dineroContact;
+        }
+
         public ADDAndUpdateDineroAPIcontact copyDineroContactFromreadToAddUpdate(READDineroAPIcontact readDineroContact)
         {
             ADDAndUpdateDineroAPIcontact addOrUpdateContact = new ADDAndUpdateDineroAPIcontact();
 
+            
             addOrUpdateContact.ExternalReference = readDineroContact.ExternalReference;
             addOrUpdateContact.Name = readDineroContact.Name;
             addOrUpdateContact.Street = readDineroContact.Street;
@@ -209,28 +301,7 @@ namespace WedigITCRM.DineroAPI
 
 
 
-        public Company MapNewDineroContactToCustomer(READDineroAPIcontact contactToAdd)
-        {
-            Company wedigitCompany = new Company();
-
-            wedigitCompany.CVRNumber = contactToAdd.VatNumber;
-
-            wedigitCompany.Name = contactToAdd.Name;
-            wedigitCompany.Street = contactToAdd.Street;
-            wedigitCompany.City = contactToAdd.City;
-            wedigitCompany.Zip = contactToAdd.ZipCode;
-            wedigitCompany.CountryCode = contactToAdd.CountryKey;
-
-            wedigitCompany.PhoneNumber = contactToAdd.Phone;
-            wedigitCompany.HomePage = contactToAdd.Webpage;
-            wedigitCompany.DineroGuiD = new Guid(contactToAdd.ContactGuid);
-            wedigitCompany.CreatedDate = DateTime.Now;
-            wedigitCompany.LastEditedDate = DateTime.Now;
-
-
-            return wedigitCompany;
-        }
-
+     
 
 
         public Company MapUpdateDineroContactToCustomer(READDineroAPIcontact contactToAdd, Company wedigitCompany)
@@ -266,6 +337,39 @@ namespace WedigITCRM.DineroAPI
             return wedigitCompany;
         }
 
+        public Vendor MapUpdateDineroContactToVendor(READDineroAPIcontact contactToAdd, Vendor wedigitVendor)
+        {
+            wedigitVendor.CVRNumber = contactToAdd.VatNumber;
+
+            wedigitVendor.Name = contactToAdd.Name;
+
+            wedigitVendor.Street = contactToAdd.Street;
+            wedigitVendor.CountryCode = contactToAdd.CountryKey;
+
+            if (contactToAdd.CountryKey.Equals("DK"))
+            {
+                wedigitVendor.City = contactToAdd.City;
+                wedigitVendor.Zip = contactToAdd.ZipCode;
+            }
+            else
+            {
+                wedigitVendor.ForeignCity = contactToAdd.City;
+                wedigitVendor.ForeignZip = contactToAdd.ZipCode;
+            }
+
+
+
+            wedigitVendor.PhoneNumber = contactToAdd.Phone;
+            wedigitVendor.HomePage = contactToAdd.Webpage;
+
+
+            wedigitVendor.DineroGuiD = new Guid(contactToAdd.ContactGuid);
+            wedigitVendor.LastEditedDate = DateTime.Now;
+
+
+            return wedigitVendor;
+        }
+
 
         public void CopyCustomersFromDinero(CompanyAccount companyAccount, ICompanyRepository _companyRepository)
         {
@@ -296,7 +400,7 @@ namespace WedigITCRM.DineroAPI
                     readDineroAPIcollection = dineroContactsToNyxium.getContactsFromDinero(LastupdatedToDineroAPIDateTime, page, pageSize);
                     foreach (var dineroContact in readDineroAPIcollection.Collection)
                     {
-                        updateOrAddContactInNyxium(dineroContact, dineroContactsToNyxium, companyAccount, _companyRepository);
+                        updateOrAddCustomerContactInNyxium(dineroContact, dineroContactsToNyxium, companyAccount, _companyRepository);
                     }
 
                 } while (readDineroAPIcollection.Pagination.Result == pageSize);
@@ -312,7 +416,7 @@ namespace WedigITCRM.DineroAPI
 
             foreach (var company in companies)
             {
-                string status = AddContactToDineroAsync(company).ToString();
+                string status = AddCustomerContactToDineroAsync(company).ToString();
                 if (!status.Equals("NotOK"))
                 {
                     Guid DineroGuidId = Guid.Parse(status);
@@ -322,7 +426,7 @@ namespace WedigITCRM.DineroAPI
             }
         }
 
-        public void updateOrAddContactInNyxium(READDineroAPIcontact dineroContact, DineroContacts dineroContactsToNyxium, CompanyAccount companyAccount, ICompanyRepository _companyRepository)
+        public void updateOrAddCustomerContactInNyxium(READDineroAPIcontact dineroContact, DineroContacts dineroContactsToNyxium, CompanyAccount companyAccount, ICompanyRepository _companyRepository)
         {
             if (!string.IsNullOrEmpty(dineroContact.ContactGuid))
             {
@@ -347,6 +451,37 @@ namespace WedigITCRM.DineroAPI
                         newCompany.CreatedDate = DateTime.Now;
                         newCompany.companyAccountId = companyAccount.companyAccountId;
                         _companyRepository.Add(newCompany);
+                    }
+                }
+            }
+
+        }
+
+        public void updateOrAddVendorInNyxium(READDineroAPIcontact dineroContact, DineroContacts dineroContactsToNyxium, CompanyAccount companyAccount, IVendorRepository _vendorRepository)
+        {
+            if (!string.IsNullOrEmpty(dineroContact.ContactGuid))
+            {
+                Guid dineroGuid = Guid.Parse(dineroContact.ContactGuid);
+                List<Vendor> vendorList = _vendorRepository.GetAllVendors().Where(tmpVendor => tmpVendor.DineroGuiD == dineroGuid).ToList();
+                if (vendorList.Count == 1)
+                {
+                    Vendor vendor = vendorList.First();
+                    vendor = dineroContactsToNyxium.MapUpdateDineroContactToVendor(dineroContact, vendor);
+
+                    vendor.LastEditedDate = DateTime.Now;
+                    _vendorRepository.Update(vendor);
+                }
+                else
+                {
+                    if (vendorList.Count == 0)
+                    {
+                        Vendor vendor = new Vendor();
+
+                        Vendor newVendor = dineroContactsToNyxium.MapUpdateDineroContactToVendor(dineroContact, vendor);
+                        newVendor.LastEditedDate = DateTime.Now;
+                        newVendor.CreatedDate = DateTime.Now;
+                        newVendor.companyAccountId = companyAccount.companyAccountId;
+                        _vendorRepository.Add(newVendor);
                     }
                 }
             }
