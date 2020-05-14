@@ -67,6 +67,7 @@ namespace WedigITCRM.Controllers
                 reducedVendor.PhoneNumber = vendor.PhoneNumber;
                 reducedVendor.postalCodeId = vendor.postalCodeId;
                 reducedVendor.CountryCode = vendor.CountryCode;
+                reducedVendor.CurrencyCode = vendor.CurrencyCode;
                 reducedVendor.companyAccountId = vendor.companyAccountId;
                 data.Add(reducedVendor);
             }
@@ -103,6 +104,7 @@ namespace WedigITCRM.Controllers
                         vendor.ForeignCity = datamodelInput.ForeignCity;
                         vendor.Name = datamodelInput.name;
                         vendor.CountryCode = datamodelInput.CountryCode;
+                        vendor.CurrencyCode = datamodelInput.CurrencyCode;
                         vendor.PhoneNumber = datamodelInput.PhoneNumber;
                         vendor.postalCodeId = datamodelInput.postalCodeId;
                         vendor.HomePage = datamodelInput.HomePage;
@@ -127,6 +129,7 @@ namespace WedigITCRM.Controllers
                     vendor.ForeignCity = datamodelInput.ForeignCity;
                     vendor.Name = datamodelInput.name;
                     vendor.CountryCode = datamodelInput.CountryCode;
+                    vendor.CurrencyCode = datamodelInput.CurrencyCode;
                     vendor.PhoneNumber = datamodelInput.PhoneNumber;
                     vendor.postalCodeId = datamodelInput.postalCodeId;
                     vendor.HomePage = datamodelInput.HomePage;
@@ -218,6 +221,7 @@ namespace WedigITCRM.Controllers
             public string ForeignCity { get; set; }
             public string zip { get; set; }
             public string CountryCode { get; set; }
+            public string CurrencyCode { get; set; }
             public string PhoneNumber { get; set; }
 
             public string HomePage { get; set; }
@@ -244,6 +248,8 @@ namespace WedigITCRM.Controllers
             public string ForeignCity { get; set; }
             public string zip { get; set; }
             public string CountryCode { get; set; }
+            public string CurrencyCode { get; set; }
+            
             public string PhoneNumber { get; set; }
 
             public string HomePage { get; set; }

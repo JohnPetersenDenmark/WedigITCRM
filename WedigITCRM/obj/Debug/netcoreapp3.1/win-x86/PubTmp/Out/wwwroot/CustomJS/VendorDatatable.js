@@ -79,6 +79,11 @@ function initializeVendorEditor() {
                     type: "select"
                 },
                 {
+                    label: "Valuta",
+                    name: "currencyCode",
+                    type: "select"
+                },
+                {
                     label: "CVR",
                     name: "cvrNumber"
                 },
@@ -313,6 +318,31 @@ function initializeVendorTable() {
                     var i = 1;
                     vendorEditor.field('zip').update(optionsA);
                 });
+
+
+                $.getJSON("/Customer/getCurrencies", {
+                    term: "-1"
+                },
+                    function (data) {
+
+                        var option = {};
+                        for (var prop in data) {
+                            if (data.hasOwnProperty(prop)) {
+                                //option.value = prop;
+                                //option.label = data[prop];
+
+                                option.value = prop;
+                                option.label = prop;
+                                optionsCurrency.push(option);
+                                option = {};
+                            }
+                        }
+                    }
+                ).done(function () {
+                    vendorEditor.field('currencyCode').update(optionsCurrency);
+
+                });
+
 
                 $.getJSON("/Customer/getCountries", {
                     term: "-1"

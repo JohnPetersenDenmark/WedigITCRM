@@ -20,6 +20,7 @@ namespace WedigITCRM
         public string ForeignZip { get; set; }
         public string ForeignCity { get; set; }
         public string CountryCode { get; set; }
+        public string CurrencyCode { get; set; }
         public string PhoneNumber { get; set; }
         public string HomePage { get; set; }
 

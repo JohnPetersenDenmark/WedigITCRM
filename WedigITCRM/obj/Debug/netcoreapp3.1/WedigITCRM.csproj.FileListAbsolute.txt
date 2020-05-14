@@ -93,6 +93,7 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\runtime
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csprojAssemblyReference.cache
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.Properties.Resources.resources
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csproj.GenerateResource.cache
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csproj.CoreCompileInputs.cache
@@ -195,4 +196,3 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\staticw
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.pdb
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.genruntimeconfig.cache
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csprojAssemblyReference.cache

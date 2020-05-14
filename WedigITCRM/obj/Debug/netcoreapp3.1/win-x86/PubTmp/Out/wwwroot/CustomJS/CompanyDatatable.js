@@ -72,6 +72,11 @@ function initializeCompanyEditor() {
                 {
                     label: "Navn",
                     name: "name"
+                },              
+                {
+                    label: "Privat",
+                    name: "isPerson",
+                    type: "select"
                 },
                 {
                     label: "Land",
@@ -79,8 +84,8 @@ function initializeCompanyEditor() {
                     type: "select"
                 },
                 {
-                    label: "Privat",
-                    name: "isPerson",
+                    label: "Valuta",
+                    name: "currencyCode",
                     type: "select"
                 },
                 {
@@ -341,6 +346,29 @@ function initializeCompanyTable() {
 
                 });
 
+                $.getJSON("/Customer/getCurrencies", {
+                    term: "-1"
+                },
+                    function (data) {
+
+                        var option = {};
+                        for (var prop in data) {
+                            if (data.hasOwnProperty(prop)) {
+                                //option.value = prop;
+                                //option.label = data[prop];
+
+                                option.value = prop;
+                                option.label = prop;
+                                optionsCurrency.push(option);
+                                option = {};
+                            }
+                        }
+                    }
+                ).done(function () {
+                    companyEditor.field('currencyCode').update(optionsCurrency);
+
+                });
+
                 $.getJSON("/Customer/getCountries", {
                     term: "-1"
                 },
@@ -404,20 +432,7 @@ function setCountryCodeDependency() {
         }
 
         callback(true);
-
-
-        //$.ajax({
-        //    type: "POST",
-        //    contentType: "application/json",
-        //    url: '/Customer/getCityByZipCode',
-        //    dataType: 'json',
-        //    data: data,
-        //    success: function (json) {
-        //        companyEditor.field('city').set(json.city);
-        //        companyEditor.field('postalCodeId').set(json.postalCodeId);
-              
-        //    }
-        //});
+    
     });
 }
 

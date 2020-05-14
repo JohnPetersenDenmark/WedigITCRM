@@ -62,3 +62,23 @@
 2020-05-14 08:37:31.9651|ERROR|WedigITCRM.Startup|end of Configure method
 2020-05-14 08:37:34.9237|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
 2020-05-14 08:37:34.9237|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-14 08:52:43.8691|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-14 08:52:44.1249|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-14 08:53:15.6153|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-14 08:53:15.7234|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-14 08:53:42.6853|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-14 08:53:44.0963|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-14 08:53:44.2144|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-14 08:53:44.5154|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-14 08:53:45.3284|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-14 08:53:45.3507|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-05-14 08:53:58.8918|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-14 08:53:58.9128|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-14 09:00:39.9317|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-14 09:00:41.8488|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-05-14 09:00:42.0249|ERROR|WedigITCRM.Startup|start of Configure method
+2020-05-14 09:00:42.3395|ERROR|WedigITCRM.Startup|end of Configure method
+2020-05-14 09:00:47.2909|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-05-14 09:00:47.3027|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-05-14 09:04:40.9131|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-05-14 09:04:41.1255|ERROR|WedigITCRM.Startup|end of ConfigureServices

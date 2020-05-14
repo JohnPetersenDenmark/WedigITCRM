@@ -1895,3 +1895,52 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200514051401_currencyCodes')
+BEGIN
+    CREATE TABLE [CurrencyCodes] (
+        [Id] nvarchar(450) NOT NULL,
+        [Description] nvarchar(max) NULL,
+        CONSTRAINT [PK_CurrencyCodes] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200514051401_currencyCodes')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200514051401_currencyCodes', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200514055243_currencyCodeCustomer')
+BEGIN
+    ALTER TABLE [Companies] ADD [CurrencyCode] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200514055243_currencyCodeCustomer')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200514055243_currencyCodeCustomer', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200514065245_currencyOnVendor')
+BEGIN
+    ALTER TABLE [Vendors] ADD [CurrencyCode] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200514065245_currencyOnVendor')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200514065245_currencyOnVendor', N'3.1.4');
+END;
+
+GO
+
