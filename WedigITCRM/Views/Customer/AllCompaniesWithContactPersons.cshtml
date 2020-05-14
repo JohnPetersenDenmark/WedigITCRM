@@ -89,7 +89,8 @@
     var contactpersontable;
     var myAjax;
     var optionsA = [];
-     var optionsCountries = [];
+    var optionsCountries = [];
+    var optionsCurrency = [];
     var Myurl = "/Customer/getContactPersons";
     var selectedCustomerCategory;
 
@@ -117,6 +118,7 @@
 
         setRelationContactPersonAndCompany();
         setZipDependency();
+        setCountryCodeDependency();
         SetStatusCreateButtonOnContactPersonTable();
         setContactPersonListenOnSelectCompany();
         setContactPersonListenOnDeSelectCompany();

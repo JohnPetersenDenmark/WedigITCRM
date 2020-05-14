@@ -73,7 +73,8 @@
     var companytable;
 
     var noteParentTableName = "companytable";
-     var optionsCountries = [];
+    var optionsCountries = [];
+    var optionsCurrency = [];
     var myAjax;
     var optionsA = [];
     var getNotesUrl = "/Note/GetNotes?searchAll=0";
@@ -101,6 +102,8 @@
         setPresubmitEventHandlerOnnoteEditor();
         setPostSubmitEventHandlerOnNoteEditor();
 
+        setZipDependency();
+        setCountryCodeDependency();
 
         setRelationNoteAndCompany();
 

@@ -80,7 +80,8 @@
     var companytable;
     var activityParentTableName = "companytable";
     var myAjax;
-     var optionsCountries = [];
+    var optionsCountries = [];
+    var optionsCurrency = [];
     var optionsA = [];
     var getActivitiesUrl = "/Customer/getActivities?searchAll=0";
     var selectedCustomerCategory;
@@ -103,6 +104,10 @@
         initializeActivityTable();
         initializeActivityTableFooter();
         initializeSearchActivityTableFooter();
+
+
+        setZipDependency();
+        setCountryCodeDependency();
 
         setRelationActivityAndCompany()
 

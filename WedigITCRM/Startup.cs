@@ -66,6 +66,7 @@ namespace WedigITCRM
                 services.AddScoped<IRelateCompanyAccountWithUserRepository, SQLRelateCompanyAccountWithUserRepository>();
                 services.AddScoped<IRelateCompanyAccountWithRoleRepository, SQLRelateCompanyAccountWithRoleRepository>();
                 services.AddScoped<IPostalCodeRepository, SQLPostalCodeRepository>();
+                services.AddScoped<ICurrencyCodeRepository, SQLCurrencyCodeRepository>();
                 services.AddScoped<IContactPersonRepository, SQLContactPersonRepository>();
                 services.AddScoped<IActivityRepository, SQLActivityRepository>();
 

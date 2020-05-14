@@ -24,6 +24,8 @@ namespace WedigITCRM
         public DbSet<Note> Notes { get; set; }
         public DbSet<PostalCode> postnumre { get; set; }
 
+        public DbSet<CurrencyCode> CurrencyCodes { get; set; }
+
         public DbSet<Country> Countries { get; set; }
 
         public DbSet<ContentType> ContentTypes { get; set; }
