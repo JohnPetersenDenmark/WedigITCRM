@@ -33,7 +33,7 @@ namespace WedigITCRM.Maintenance
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            _timer = new Timer(SynchronizeDineroContacts, null, 0, 60000);
+            _timer = new Timer(SynchronizeDineroContacts, null, 0, 3000000);
             return Task.CompletedTask;
         }
 
@@ -77,7 +77,13 @@ namespace WedigITCRM.Maintenance
                             Int32 page;
                             Int32 pageSize;
 
-                            DateTime LastupdatedDateTime = companyAccount.ContactsToNyxiumLastSynchronizationDate;
+                            // DateTime LastupdatedDateTime = companyAccount.ContactsToNyxiumLastSynchronizationDate;
+
+
+
+
+                            DateTime LastupdatedDateTime = new DateTime(1980, 01, 01);
+
 
                             string dateStr = LastupdatedDateTime.ToUniversalTime().ToString(SweedishTimeformat.ShortDatePattern);
                             string timeStr = LastupdatedDateTime.ToUniversalTime().ToLongTimeString();
@@ -93,17 +99,15 @@ namespace WedigITCRM.Maintenance
                                 readDineroAPIcollection = dineroContactsToNyxium.getContactsFromDinero(LastupdatedToDineroAPIDateTime, page, pageSize);
                                 foreach (var dineroContact in readDineroAPIcollection.Collection)
                                 {
-                                    if (dineroContact.IsDebitor || dineroContact.ExternalReference.Equals("IsNyxiumCustomer"))
+                                    if (dineroContact.IsDebitor || ( !string.IsNullOrEmpty(dineroContact.ExternalReference) && dineroContact.ExternalReference.Equals("IsNyxiumCustomer")))
                                     {
                                         dineroContactsToNyxium.updateOrAddCustomerContactInNyxium(dineroContact, dineroContactsToNyxium, companyAccount, _companyRepository);
                                     }
 
-                                    if (dineroContact.IsCreditor || dineroContact.ExternalReference.Equals("IsNyxiumVendor"))
+                                    if (dineroContact.IsCreditor || (!string.IsNullOrEmpty(dineroContact.ExternalReference) && dineroContact.ExternalReference.Equals("IsNyxiumVendor")))
                                     {
                                         dineroContactsToNyxium.updateOrAddVendorInNyxium(dineroContact, dineroContactsToNyxium, companyAccount, _vendorRepository);                                        
                                     }
-
-
                                 }
 
                             } while (readDineroAPIcollection.Pagination.Result == pageSize);

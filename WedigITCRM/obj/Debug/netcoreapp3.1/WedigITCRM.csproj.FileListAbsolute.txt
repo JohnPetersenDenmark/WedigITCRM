@@ -195,3 +195,4 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\staticw
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.pdb
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.genruntimeconfig.cache
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csprojAssemblyReference.cache
