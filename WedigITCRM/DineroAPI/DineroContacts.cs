@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using WedigITCRM.EntitityModels;
 using WedigITCRM.Models;
+using WedigITCRM.StorageInterfaces;
 
 namespace WedigITCRM.DineroAPI
 {
@@ -463,6 +464,39 @@ namespace WedigITCRM.DineroAPI
             return wedigitVendor;
         }
 
+        public Contact MapUpdateDineroContactToNyxiumContact(READDineroAPIcontact contactToAdd, Contact nyxiumContact)
+        {
+            nyxiumContact.CVRNumber = contactToAdd.VatNumber;
+
+            nyxiumContact.Name = contactToAdd.Name;
+
+            nyxiumContact.Street = contactToAdd.Street;
+            nyxiumContact.CountryCode = contactToAdd.CountryKey;
+
+            if (contactToAdd.CountryKey.Equals("DK"))
+            {
+                nyxiumContact.City = contactToAdd.City;
+                nyxiumContact.Zip = contactToAdd.ZipCode;
+            }
+            else
+            {
+                nyxiumContact.ForeignCity = contactToAdd.City;
+                nyxiumContact.ForeignZip = contactToAdd.ZipCode;
+            }
+
+
+
+            nyxiumContact.PhoneNumber = contactToAdd.Phone;
+            nyxiumContact.HomePage = contactToAdd.Webpage;
+
+
+            nyxiumContact.DineroGuiD = new Guid(contactToAdd.ContactGuid);
+            nyxiumContact.LastEditedDate = DateTime.Now;
+
+
+            return nyxiumContact;
+        }
+
 
         public void CopyCustomersFromDinero(CompanyAccount companyAccount, ICompanyRepository _companyRepository)
         {
@@ -579,6 +613,78 @@ namespace WedigITCRM.DineroAPI
                 }
             }
 
+        }
+
+        public void updateOrAddContactInNyxium(READDineroAPIcontact dineroContact, DineroContacts dineroContactsToNyxium, CompanyAccount companyAccount, IContactRepository _contactRepository)
+        {
+            if (!string.IsNullOrEmpty(dineroContact.ContactGuid))
+            {
+                Guid dineroGuid = Guid.Parse(dineroContact.ContactGuid);
+                List<Contact> contactList = _contactRepository.GetAllContacts().Where(tmpContact => tmpContact.DineroGuiD == dineroGuid).ToList();
+                if (contactList.Count == 1)
+                {
+                    Contact contact = contactList.First();
+                    contact = dineroContactsToNyxium.MapUpdateDineroContactToNyxiumContact(dineroContact, contact);
+
+                    contact.LastEditedDate = DateTime.Now;
+                    _contactRepository.Update(contact);
+                }
+                else
+                {
+                    if (contactList.Count == 0)
+                    {
+                        Contact contact =  new Contact();                      
+                        Contact newContact = dineroContactsToNyxium.MapUpdateDineroContactToNyxiumContact(dineroContact, contact);
+                        newContact.LastEditedDate = DateTime.Now;
+                        newContact.CreatedDate = DateTime.Now;
+                        newContact.companyAccountId = companyAccount.companyAccountId;
+                        _contactRepository.Add(newContact);
+                    }
+                }
+            }
+
+        }
+
+        public void deleteCustomer(string dineroContactGuid, ICompanyRepository _companyRepository)
+        {
+            if (!string.IsNullOrEmpty(dineroContactGuid))
+            {
+                Guid dineroGuid = Guid.Parse(dineroContactGuid);
+                List<Company> companyList = _companyRepository.GetAllCompanies().Where(tmpCompany => tmpCompany.DineroGuiD == dineroGuid).ToList();
+                if (companyList.Count == 1)
+                {
+                    Company company = companyList.First();
+                    _companyRepository.Delete(company.Id);
+                }
+            }
+        }
+
+        public void deleteVendor(string dineroContactGuid, IVendorRepository _vendorRepository)
+        {
+            if (!string.IsNullOrEmpty(dineroContactGuid))
+            {
+                Guid dineroGuid = Guid.Parse(dineroContactGuid);
+                List<Vendor> vendorList = _vendorRepository.GetAllVendors().Where(tmpVendor => tmpVendor.DineroGuiD == dineroGuid).ToList();
+                if (vendorList.Count == 1)
+                {
+                    Vendor vendor = vendorList.First();
+                    _vendorRepository.Delete(vendor.Id);
+                }
+            }
+        }
+
+        public void deleteContact(string dineroContactGuid, IContactRepository _contactRepository)
+        {
+            if (!string.IsNullOrEmpty(dineroContactGuid))
+            {
+                Guid dineroGuid = Guid.Parse(dineroContactGuid);
+                List<Contact> contactList = _contactRepository.GetAllContacts().Where(tmpContact => tmpContact.DineroGuiD == dineroGuid).ToList();
+                if (contactList.Count == 1)
+                {
+                    Contact contact = contactList.First();
+                    _contactRepository.Delete(contact.Id);
+                }
+            }
         }
 
     }
