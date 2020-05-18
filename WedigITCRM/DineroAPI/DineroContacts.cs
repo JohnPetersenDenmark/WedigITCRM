@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Threading.Tasks;
+using WedigITCRM.EntitityModels;
 using WedigITCRM.Models;
 
 namespace WedigITCRM.DineroAPI
@@ -100,6 +101,29 @@ namespace WedigITCRM.DineroAPI
             return ("NotOK");
         }
 
+        public string AddContactToDineroAsync(Contact contact)
+        {
+            ADDAndUpdateDineroAPIcontact dineroContact = new ADDAndUpdateDineroAPIcontact();
+            ADDAndUpdateDineroAPIcontact contactToAdd = MapWedigitContactToDineroContact(contact, dineroContact);
+
+
+            HttpClient client = new HttpClient();
+
+            string tmpJson = JsonConvert.SerializeObject(contactToAdd);
+
+            var content = new StringContent(JsonConvert.SerializeObject(contactToAdd), System.Text.Encoding.UTF8, "application/json");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _dineroAPIConnect._APItoken);
+
+            var result = client.PostAsync(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "contacts", content).Result;
+            if (result.IsSuccessStatusCode)
+            {
+                JObject JsonObj = JsonConvert.DeserializeObject<JObject>(result.Content.ReadAsStringAsync().Result);
+                string returnValue = JsonObj.GetValue("ContactGuid").ToString();
+                return returnValue;
+            }
+            return ("NotOK");
+        }
+
         public string DeleteContactInDinero(Guid dineroId)
         {
             HttpClient client = new HttpClient();
@@ -128,6 +152,41 @@ namespace WedigITCRM.DineroAPI
             ADDAndUpdateDineroAPIcontact contactToUpdate = copyDineroContactFromreadToAddUpdate(readDineroAPIcontact);
 
             ADDAndUpdateDineroAPIcontact contactToAdd = MapWedigitCustomerToDineroContact(contactCompanyOrPerson, contactToUpdate);
+
+
+            if (contactToUpdate == null)
+            {
+                return ("NotOK");
+            }
+
+            string tmpJson = JsonConvert.SerializeObject(contactToAdd);
+            HttpClient client = new HttpClient();
+
+            var content = new StringContent(JsonConvert.SerializeObject(contactToAdd), System.Text.Encoding.UTF8, "application/json");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _dineroAPIConnect._APItoken);
+
+            var result = client.PutAsync(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "contacts" + "/" + dineroContactGuid.ToString(), content).Result;
+            if (result.IsSuccessStatusCode)
+            {
+                return "OK";
+            }
+            return ("NotOK");
+        }
+
+        public string UpdateContactInDinero(Contact contactCompanyOrPerson, Guid dineroContactGuid)
+        {
+
+            READDineroAPIcontact readDineroAPIcontact = getContactFromDinero(dineroContactGuid);
+
+            if (readDineroAPIcontact == null)
+            {
+                return ("NotOK");
+            }
+
+
+            ADDAndUpdateDineroAPIcontact contactToUpdate = copyDineroContactFromreadToAddUpdate(readDineroAPIcontact);
+
+            ADDAndUpdateDineroAPIcontact contactToAdd = MapWedigitContactToDineroContact(contactCompanyOrPerson, contactToUpdate);
 
 
             if (contactToUpdate == null)
@@ -229,6 +288,40 @@ namespace WedigITCRM.DineroAPI
             dineroContact.ExternalReference = "IsNyxiumCustomer";
             dineroContact.VatNumber = contactCompanyOrPerson.CVRNumber;
             dineroContact.CountryKey = contactCompanyOrPerson.CountryCode;           
+            dineroContact.Phone = contactCompanyOrPerson.PhoneNumber;
+            dineroContact.Webpage = contactCompanyOrPerson.HomePage;
+            dineroContact.IsMember = false;
+            dineroContact.UseCvr = false;
+
+
+            return dineroContact;
+        }
+
+        public ADDAndUpdateDineroAPIcontact MapWedigitContactToDineroContact(Contact contactCompanyOrPerson, ADDAndUpdateDineroAPIcontact dineroContact)
+        {
+
+
+            dineroContact.IsPerson = contactCompanyOrPerson.IsPerson;
+
+            dineroContact.Name = contactCompanyOrPerson.Name;
+            dineroContact.Email = contactCompanyOrPerson.Email;
+            dineroContact.Name = contactCompanyOrPerson.Name;
+            dineroContact.Street = contactCompanyOrPerson.Street;
+
+            if (contactCompanyOrPerson.CountryCode.Equals("DK"))
+            {
+                dineroContact.City = contactCompanyOrPerson.City;
+                dineroContact.ZipCode = contactCompanyOrPerson.Zip;
+            }
+            else
+            {
+                dineroContact.City = contactCompanyOrPerson.ForeignCity;
+                dineroContact.ZipCode = contactCompanyOrPerson.ForeignZip;
+            }
+
+            dineroContact.ExternalReference = "IsNyxiumCustomer";
+            dineroContact.VatNumber = contactCompanyOrPerson.CVRNumber;
+            dineroContact.CountryKey = contactCompanyOrPerson.CountryCode;
             dineroContact.Phone = contactCompanyOrPerson.PhoneNumber;
             dineroContact.Webpage = contactCompanyOrPerson.HomePage;
             dineroContact.IsMember = false;

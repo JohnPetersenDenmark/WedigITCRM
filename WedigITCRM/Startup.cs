@@ -62,6 +62,7 @@ namespace WedigITCRM
                 services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
                 services.AddMvc();
                 services.AddScoped<ICompanyRepository, SQLCompanyRepository>();
+                services.AddScoped<IContactRepository, SQLContactRepository>();
                 services.AddScoped<ICompanyAccountRepository, SQLCompanyAccountRepository>();
                 services.AddScoped<IRelateCompanyAccountWithUserRepository, SQLRelateCompanyAccountWithUserRepository>();
                 services.AddScoped<IRelateCompanyAccountWithRoleRepository, SQLRelateCompanyAccountWithRoleRepository>();

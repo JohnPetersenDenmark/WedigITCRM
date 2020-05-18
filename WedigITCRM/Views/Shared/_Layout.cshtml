@@ -69,7 +69,7 @@
         <script src="~/CustomJS/ABCStockAnalasysDatatable.js"></script>
         <script src="~/CustomJS/NoteDatatable.js"></script>
 
-        <script src="~/CustomJS/DummyDatatable.js"></script>
+        <script src="~/CustomJS/ContactDatatable.js"></script>
 
 
     </environment>
@@ -127,7 +127,8 @@
         <script src="~/CustomJS/ABCStockAnalasysDatatable.js"></script>
         <script src="~/CustomJS/NoteDatatable.js"></script>
 
-        <script src="~/CustomJS/DummyDatatable.js"></script>
+
+        <script src="~/CustomJS/ContactDatatable.js"></script>
 
 
     </environment>
@@ -195,13 +196,22 @@
                 {
                     <ul id="side-main-menu" class="side-menu list-unstyled">
                         <li>
+                            <a href="#contactDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/kontaktpersoner-icon.png" class="imgicon" /> Kontakter </a>
+                            <ul id="contactDropdown" class="collapse list-unstyled ">
+                                <li><a asp-controller="contact" asp-action="AllContacts"><img src="~/Images/virksomheder-icon.png" class="imgicon" /> Kontaktliste</a></li>                               
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <ul id="side-main-menu" class="side-menu list-unstyled">
+                        <li>
                             <a href="#customerDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/kontaktpersoner-icon.png" class="imgicon" /> Kunder </a>
                             <ul id="customerDropdown" class="collapse list-unstyled ">
                                 <li><a asp-controller="customer" asp-action="AllCustomers"><img src="~/Images/virksomheder-icon.png" class="imgicon" /> Kundeliste</a></li>
                                 <li><a asp-controller="customer" asp-action="notesOnCompany">Kundenotater</a></li>
                             </ul>
                         </li>
-                       
+
                     </ul>
                     <ul id="side-main-menu" class="side-menu list-unstyled">
                         <li>
