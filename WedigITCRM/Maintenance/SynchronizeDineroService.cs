@@ -35,7 +35,7 @@ namespace WedigITCRM.Maintenance
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            _timer = new Timer(SynchronizeDineroContacts, null, 0, 60000);
+            _timer = new Timer(SynchronizeDineroContacts, null, 0, 360000);
             return Task.CompletedTask;
         }
 

@@ -30,24 +30,28 @@ namespace WedigITCRM.Controllers
         private UserManager<IdentityUser> userManager;
         private SignInManager<IdentityUser> signInManager;
         private ILogger<AccountController> _logger;
-        ICompanyAccountRepository _companyAccountRepository;
+        private ICompanyAccountRepository _companyAccountRepository;
         private IContentTypeRepository _contentTypeRepository;
         private IAttachmentRepository _attachmentRepository;
-        IStockItemRepository _stockItemRepository;
-        ILicenseType _licenseTypeRepository;
+        private IStockItemRepository _stockItemRepository;
+        private ILicenseType _licenseTypeRepository;
         private ICompanyRepository _companyRepository;
-        IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;
-        RoleManager<IdentityRole> _roleManager;
-        IWebHostEnvironment _env;
-        MiscUtility miscUtility;
+        private IVendorRepository _vendorRepository;
+        private IContactRepository _contactRepository;
+        private IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;
+        private RoleManager<IdentityRole> _roleManager;
+        private IWebHostEnvironment _env;
+        private MiscUtility miscUtility;
 
-        public AccountController(EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
+        public AccountController(IContactRepository contactRepository, IVendorRepository vendorRepository, EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             _logger = logger;
             this._companyAccountRepository = companyAccountRepository;
             _companyRepository = companyRepository;
+            _vendorRepository = vendorRepository;
+            _contactRepository = contactRepository;
             _stockItemRepository = stockItemRepository;
             _licenseTypeRepository = licenseTypeRepository;
             this._relateCompanyAccountWithUserRepository = relateCompanyAccountWithUserRepository;
@@ -583,7 +587,7 @@ namespace WedigITCRM.Controllers
             if (dineroAPIConnect.connectToDinero(companyAccount) != null)
             {
                 DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
-                dineroContacts.CopyCustomersFromDinero(companyAccount, _companyRepository);
+                dineroContacts.CopyCustomersFromDinero(companyAccount, _companyRepository, _vendorRepository, _contactRepository);
                 companyAccount.ContactsToNyxiumLastSynchronizationDate = DateTime.Now;
                 _companyAccountRepository.Update(companyAccount);
 

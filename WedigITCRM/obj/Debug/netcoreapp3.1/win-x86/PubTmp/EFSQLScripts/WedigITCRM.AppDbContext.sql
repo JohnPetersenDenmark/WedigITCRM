@@ -1965,3 +1965,49 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200518212252_contactEntityAdded')
+BEGIN
+    CREATE TABLE [Contacts] (
+        [Id] int NOT NULL IDENTITY,
+        [CVRNumber] nvarchar(max) NULL,
+        [Name] nvarchar(max) NOT NULL,
+        [Street] nvarchar(max) NULL,
+        [City] nvarchar(max) NULL,
+        [Zip] nvarchar(max) NULL,
+        [CurrencyCode] nvarchar(max) NULL,
+        [CountryCode] nvarchar(max) NULL,
+        [PhoneNumber] nvarchar(max) NULL,
+        [HomePage] nvarchar(max) NULL,
+        [ForeignZip] nvarchar(max) NULL,
+        [ForeignCity] nvarchar(max) NULL,
+        [PaymentConditions] nvarchar(max) NULL,
+        [Email] nvarchar(max) NULL,
+        [IsPerson] bit NOT NULL,
+        [postalCodeId] nvarchar(max) NULL,
+        [companyAccountId] int NOT NULL,
+        [DineroGuiD] uniqueidentifier NOT NULL,
+        [SMSverificationCode] int NOT NULL,
+        [LastEditedDate] datetime2 NOT NULL,
+        [CreatedDate] datetime2 NOT NULL,
+        CONSTRAINT [PK_Contacts] PRIMARY KEY ([Id]),
+        CONSTRAINT [FK_Contacts_companyAccounts_companyAccountId] FOREIGN KEY ([companyAccountId]) REFERENCES [companyAccounts] ([companyAccountId]) ON DELETE CASCADE
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200518212252_contactEntityAdded')
+BEGIN
+    CREATE INDEX [IX_Contacts_companyAccountId] ON [Contacts] ([companyAccountId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200518212252_contactEntityAdded')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200518212252_contactEntityAdded', N'3.1.4');
+END;
+
+GO
+

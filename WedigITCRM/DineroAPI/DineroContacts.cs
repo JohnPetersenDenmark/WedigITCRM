@@ -498,7 +498,7 @@ namespace WedigITCRM.DineroAPI
         }
 
 
-        public void CopyCustomersFromDinero(CompanyAccount companyAccount, ICompanyRepository _companyRepository)
+        public void CopyCustomersFromDinero(CompanyAccount companyAccount, ICompanyRepository _companyRepository,   IVendorRepository _vendorRepository, IContactRepository _contactRepository)
         {
             DateTimeFormatInfo SweedishTimeformat = CultureInfo.GetCultureInfo("sv-SE").DateTimeFormat;
           
@@ -527,7 +527,43 @@ namespace WedigITCRM.DineroAPI
                     readDineroAPIcollection = dineroContactsToNyxium.getContactsFromDinero(LastupdatedToDineroAPIDateTime, page, pageSize);
                     foreach (var dineroContact in readDineroAPIcollection.Collection)
                     {
-                        updateOrAddCustomerContactInNyxium(dineroContact, dineroContactsToNyxium, companyAccount, _companyRepository);
+                        if (dineroContact.IsDebitor)
+                        {
+                            dineroContactsToNyxium.updateOrAddCustomerContactInNyxium(dineroContact, dineroContactsToNyxium, companyAccount, _companyRepository);
+                        }
+
+                        if (dineroContact.IsCreditor)
+                        {
+                            dineroContactsToNyxium.updateOrAddVendorInNyxium(dineroContact, dineroContactsToNyxium, companyAccount, _vendorRepository);
+                        }
+
+                        if (!dineroContact.IsCreditor && !dineroContact.IsDebitor)
+                        {
+                            dineroContactsToNyxium.updateOrAddContactInNyxium(dineroContact, dineroContactsToNyxium, companyAccount, _contactRepository);
+                        }
+
+                        if (dineroContact.IsDebitor && !dineroContact.IsCreditor)
+                        {
+                            // remove from vendor table if exists
+                            dineroContactsToNyxium.deleteVendor(dineroContact.ContactGuid, _vendorRepository);
+                            // remove from contact table if exists
+                            dineroContactsToNyxium.deleteContact(dineroContact.ContactGuid, _contactRepository);
+                        }
+                        if (!dineroContact.IsDebitor && dineroContact.IsCreditor)
+                        {
+                            // remove from customer table if exists
+                            dineroContactsToNyxium.deleteCustomer(dineroContact.ContactGuid, _companyRepository);
+                            // remove from contact table if exists
+                            dineroContactsToNyxium.deleteContact(dineroContact.ContactGuid, _contactRepository);
+                        }
+
+                        if (!dineroContact.IsCreditor && !dineroContact.IsDebitor)
+                        {
+                            // remove from customer table if exists
+                            dineroContactsToNyxium.deleteCustomer(dineroContact.ContactGuid, _companyRepository);
+                            // remove from vendor table if exists
+                            dineroContactsToNyxium.deleteVendor(dineroContact.ContactGuid, _vendorRepository);
+                        }
                     }
 
                 } while (readDineroAPIcollection.Pagination.Result == pageSize);
