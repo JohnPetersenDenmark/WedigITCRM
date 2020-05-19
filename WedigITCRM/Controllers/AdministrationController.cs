@@ -658,25 +658,19 @@ namespace WedigITCRM.Controllers
             {
                 return View(model);
             }
-
+          
             GeneralReplyViewModel generalReplyViewModel = new GeneralReplyViewModel();
 
             IdentityUser user = await userManager.FindByEmailAsync(model.Email);
             if (user != null)
-            {
-                // if (await userManager.IsEmailConfirmedAsync(user))
-                // {
+            {               
                 var token = await userManager.GeneratePasswordResetTokenAsync(user);
                 var changePasswordUrl = Url.Action("EnterNewPassword", "Administration", new { email = model.Email, token = token }, Request.Scheme);
                 Dictionary<string, string> tokens = new Dictionary<string, string>();
-                tokens.Add("changePasswordUrl", changePasswordUrl);
-
-
-               // EmailUtility emailUtility = new EmailUtility();
+                tokens.Add("changePasswordUrl", changePasswordUrl);              
 
                 AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.Resetpassword,  tokens);
-                _emailUtility.send(model.Email, "support@nyxium.dk",  "Ændring af kodeord.", htmlView, true);
-                // }
+                _emailUtility.send(model.Email, "support@nyxium.dk",  "Ændring af kodeord.", htmlView, true);          
             }
 
             generalReplyViewModel.PageTitle = "Der er nu sendt en email til dig.";

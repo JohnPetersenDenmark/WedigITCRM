@@ -156,7 +156,8 @@ namespace WedigITCRM.Maintenance
             }
             catch (Exception e)
             {
-                _logger.LogError(e.Message);
+                _logger.LogError(e.Message + "nyxium stack trace: " + e.StackTrace);
+                
             }
         }
 

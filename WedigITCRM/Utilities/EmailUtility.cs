@@ -41,7 +41,7 @@ namespace WedigITCRM.Utilities
 
 
             SmtpClient client = new SmtpClient("smtp.unoeuro.com", 587);
-            System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("admin@nyxium.dk", "Keiler1234");
+            System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("admin@nyxium.dk", "Kronhjort1234");
 
             // If it fails with a message lige not logged in to service in google then use this link:
             // https://myaccount.google.com/lesssecureapps
