@@ -35,11 +35,16 @@ namespace WedigITCRM.Controllers
         {
             _logger.LogError("Entering index action in home controller");
 
+           
+
             if (!_signInManager.IsSignedIn(User))
             {
+                
                 _logger.LogError("index action in home controller redirecting to frontpage controller index action");
                 return RedirectToAction("index", "FrontPage");
             }
+
+            throw new Exception("user logged in");
 
             if (companyAccount.SubscriptionCRM)
             {

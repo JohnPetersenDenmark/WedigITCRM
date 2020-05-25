@@ -39,6 +39,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult AllVendors()
         {
+           
             return View();
         }
 

@@ -28,12 +28,16 @@ namespace WedigITCRM
 
         private IConfiguration _config;
         private ILogger<Startup> _logger;
-        
+        private IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;
 
-        public Startup(IConfiguration config, ILogger<Startup> logger)
+
+        public Startup(IConfiguration config, ILogger<Startup> logger, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository)
         {
             _config = config;
-            _logger = logger;          
+            _logger = logger;
+            _relateCompanyAccountWithUserRepository = relateCompanyAccountWithUserRepository;
+
+
         }
  
         public void ConfigureServices(IServiceCollection services)
@@ -42,8 +46,8 @@ namespace WedigITCRM
             {
                 _logger.LogError("start of ConfigureServices");
 
-                //services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString ("WedigitDbConnection")));
-                services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
+             
+               //services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
                 services.AddIdentity<IdentityUser, IdentityRole>(options =>
                 {
                     options.Password.RequireDigit = true;
@@ -64,7 +68,7 @@ namespace WedigITCRM
                 services.AddScoped<ICompanyRepository, SQLCompanyRepository>();
                 services.AddScoped<IContactRepository, SQLContactRepository>();
                 services.AddScoped<ICompanyAccountRepository, SQLCompanyAccountRepository>();
-                services.AddScoped<IRelateCompanyAccountWithUserRepository, SQLRelateCompanyAccountWithUserRepository>();
+                // services.AddScoped<IRelateCompanyAccountWithUserRepository, SQLRelateCompanyAccountWithUserRepository>();
                 services.AddScoped<IRelateCompanyAccountWithRoleRepository, SQLRelateCompanyAccountWithRoleRepository>();
                 services.AddScoped<IPostalCodeRepository, SQLPostalCodeRepository>();
                 services.AddScoped<ICurrencyCodeRepository, SQLCurrencyCodeRepository>();
@@ -146,9 +150,10 @@ namespace WedigITCRM
                 }
                 else
                 {
+
                    
 
-                    app.UseGlobalExceptionHandler(env
+                        app.UseGlobalExceptionHandler( _relateCompanyAccountWithUserRepository, env
                                    , _logger
                                    , errorPagePath: "/Home/Error"
                                    , respondWithJsonErrorDetails: true);

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
@@ -8,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using WedigITCRM.Utilities;
@@ -20,7 +23,7 @@ namespace WedigITCRM
         //It will respond json response for ajax calls that send the json accept header
         //otherwise it will redirect to an error page
         // public static void UseGlobalExceptionHandler(this IApplicationBuilder app , ILogger logger , string errorPagePath , bool respondWithJsonErrorDetails = false )
-        public static void UseGlobalExceptionHandler(this IApplicationBuilder app, IWebHostEnvironment env, ILogger logger, string errorPagePath, bool respondWithJsonErrorDetails = false)
+        public static void UseGlobalExceptionHandler(this IApplicationBuilder app, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, IWebHostEnvironment env,  ILogger logger, string errorPagePath, bool respondWithJsonErrorDetails = false)
         {
             app.UseExceptionHandler(appBuilder =>
             {
@@ -33,6 +36,7 @@ namespace WedigITCRM
                    
 
                     var exception = context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>().Error;
+                  
 
                     string errorDetails = $@"{exception.Message}
                                          {Environment.NewLine}
@@ -41,7 +45,7 @@ namespace WedigITCRM
                     int statusCode = (int)HttpStatusCode.InternalServerError;
 
                     context.Response.StatusCode = statusCode;
-
+                  
                     var problemDetails = new Microsoft.AspNetCore.Mvc.ProblemDetails
                     {
                         Title = "Unexpected Error",
@@ -54,8 +58,16 @@ namespace WedigITCRM
 
                     logger.LogError(json);
 
+                 
+                    if (context.Request.HttpContext.User.Identity.IsAuthenticated)
+                    {
+
+                        var userId = context.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+                    }
+
                     //============================================================
-                    //Email error to support. Added to this class
+                    //Email error to support. JLP Added this code
                     //============================================================
 
                     string fixedsendToList = "johnpetersen1959@gmail.com,support@nyxium.dk";
