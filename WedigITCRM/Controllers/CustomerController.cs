@@ -13,7 +13,6 @@ using WedigITCRM.DineroAPI;
 using WedigITCRM.ViewControllers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Authorization;
-using WedigITCRM.ExtensionMethods;
 using WedigITCRM.StorageInterfaces;
 using WedigITCRM.EntitityModels;
 

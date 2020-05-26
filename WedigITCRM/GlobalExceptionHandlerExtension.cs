@@ -27,7 +27,7 @@ namespace WedigITCRM
         {
             app.UseExceptionHandler(appBuilder =>
             {
-                appBuilder.Run(async context =>
+                appBuilder.Run(  async context =>
                 {
                     //============================================================
                     //Log Exception
@@ -45,8 +45,10 @@ namespace WedigITCRM
                     int statusCode = (int)HttpStatusCode.InternalServerError;
 
                     context.Response.StatusCode = statusCode;
-                  
-                    var problemDetails = new Microsoft.AspNetCore.Mvc.ProblemDetails
+
+                    // var problemDetails = new Microsoft.AspNetCore.Mvc.ProblemDetails
+
+                    ProblemDetailsExtended problemDetailsExtended = new ProblemDetailsExtended()
                     {
                         Title = "Unexpected Error",
                         Status = statusCode,
@@ -54,17 +56,42 @@ namespace WedigITCRM
                         Instance = Guid.NewGuid().ToString()
                     };
 
-                    var json = JsonConvert.SerializeObject(problemDetails);
 
-                    logger.LogError(json);
-
-                 
                     if (context.Request.HttpContext.User.Identity.IsAuthenticated)
                     {
 
-                        var userId = context.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                        var userName = context.User.FindFirst(ClaimTypes.Name);
+                        problemDetailsExtended.UserName = userName.Value;
 
+                        var userId = context.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                        problemDetailsExtended.UserId = userId;
+
+
+                        IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository = context.RequestServices.GetService<IRelateCompanyAccountWithUserRepository>();
+
+                        List<RelateCompanyAccountWithUser> relationList =  relateCompanyAccountWithUserRepository.GetAllRelateCompanyAccountWithUser().Where(relation => relation.user.Equals(userId)).ToList();
+
+                        if (relationList.Count == 1)
+                        {
+                            RelateCompanyAccountWithUser relation = relationList.First();
+                            if ( relation != null)
+                            {
+                                int companyAccountId = relation.companyAccount;
+                                ICompanyAccountRepository companyAccountRepository = context.RequestServices.GetService<ICompanyAccountRepository>();
+                                CompanyAccount companyAccount = companyAccountRepository.GetCompanyAccount(companyAccountId);
+                                if (companyAccount != null)
+                                {
+                                    problemDetailsExtended.CompanyId = companyAccountId.ToString();
+                                    problemDetailsExtended.CompanyName = companyAccount.CompanyName;
+                                }
+                            }
+                        }
                     }
+
+                    var json = JsonConvert.SerializeObject(problemDetailsExtended);
+
+                    logger.LogError(json);
+
 
                     //============================================================
                     //Email error to support. JLP Added this code
@@ -73,9 +100,13 @@ namespace WedigITCRM
                     string fixedsendToList = "johnpetersen1959@gmail.com,support@nyxium.dk";
                     Dictionary<string, string> tokens = new Dictionary<string, string>();
 
-                    tokens.Add("systemErrorSubject", problemDetails.Title);
-                    tokens.Add("systemErrorDetails", problemDetails.Detail);
-                    tokens.Add("systemErrorIdentifier", problemDetails.Instance);
+                    tokens.Add("systemErrorSubject", problemDetailsExtended.Title);
+                    tokens.Add("systemErrorDetails", problemDetailsExtended.Detail);
+                    tokens.Add("systemErrorIdentifier", problemDetailsExtended.Instance);
+                    tokens.Add("systemErrorUserId", problemDetailsExtended.UserId);
+                    tokens.Add("systemErrorUserName", problemDetailsExtended.UserName);
+                    tokens.Add("systemErrorCompanyId", problemDetailsExtended.CompanyId);
+                    tokens.Add("systemErrorCompanyName", problemDetailsExtended.CompanyName);
 
                     EmailUtility emailUtility = new EmailUtility(env);                   
                     AlternateView htmlView = emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.SupportTicketSystemError, tokens);

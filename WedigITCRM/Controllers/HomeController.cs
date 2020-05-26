@@ -44,7 +44,7 @@ namespace WedigITCRM.Controllers
                 return RedirectToAction("index", "FrontPage");
             }
 
-            throw new Exception("user logged in");
+           // throw new Exception("user logged in");
 
             if (companyAccount.SubscriptionCRM)
             {

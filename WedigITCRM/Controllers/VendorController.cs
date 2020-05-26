@@ -39,7 +39,7 @@ namespace WedigITCRM.Controllers
 
         public IActionResult AllVendors()
         {
-           
+            //throw new Exception("user logged in");
             return View();
         }
 

@@ -39,15 +39,15 @@ namespace WedigITCRM
 
               .ConfigureServices(services =>
               {
-                  // START added this code 26-05-2020
+                 // START added this code 26 - 05 - 2020
                   var serviceProvider = services.BuildServiceProvider();
                   var scope = serviceProvider.CreateScope();
                   var scopedServices = scope.ServiceProvider;
-                  var db = scopedServices.GetRequiredService<IConfiguration>();
+                  var configurationservice = scopedServices.GetRequiredService<IConfiguration>();
 
                   services.AddDbContextPool<AppDbContext>(options =>
                   {
-                      options.UseSqlServer(db.GetConnectionString("DefaultConnection"));
+                      options.UseSqlServer(configurationservice.GetConnectionString("DefaultConnection"));
                   });
 
                   services.AddScoped<IRelateCompanyAccountWithUserRepository, SQLRelateCompanyAccountWithUserRepository>();
