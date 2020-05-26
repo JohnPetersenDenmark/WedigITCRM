@@ -24,7 +24,7 @@ namespace WedigITCRM
     public class Startup
     {
 
-     
+
 
         private IConfiguration _config;
         private ILogger<Startup> _logger;
@@ -36,18 +36,16 @@ namespace WedigITCRM
             _config = config;
             _logger = logger;
             _relateCompanyAccountWithUserRepository = relateCompanyAccountWithUserRepository;
-
-
         }
- 
+
         public void ConfigureServices(IServiceCollection services)
         {
             try
             {
                 _logger.LogError("start of ConfigureServices");
 
-             
-               //services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
+
+                //services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
                 services.AddIdentity<IdentityUser, IdentityRole>(options =>
                 {
                     options.Password.RequireDigit = true;
@@ -60,7 +58,7 @@ namespace WedigITCRM
                     .AddDefaultTokenProviders()
                     .AddErrorDescriber<LocalizedIdentityErrorDescriber>();
 
-            
+
 
 
                 services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
@@ -89,13 +87,13 @@ namespace WedigITCRM
                 services.AddScoped<IBookingSetupRepository, SQLBookingSetupRepository>();
                 services.AddScoped<ILicenseType, SQLLicenseTypeRepository>();
                 services.AddScoped<ICountryRepository, SQLCountryRepository>();
-                services.AddScoped<IAttachmentRepository, SQLAttachmentRepository>();               
+                services.AddScoped<IAttachmentRepository, SQLAttachmentRepository>();
                 services.AddScoped<DineroAPIConnect>();
 
 
                 services.AddScoped<EmailUtility>();
 
-              
+
                 services.AddMvc(options =>
                 {
                     options.Filters.Add<GetCompanyAccountFilter>();
@@ -104,8 +102,8 @@ namespace WedigITCRM
 
                 services.AddAuthentication().AddGoogle(options =>
                 {
-                // https://console.developers.google.com/apis/dashboard?project=api-project-305705860120
-                options.ClientId = "305705860120-nopt8838891tv00skpj95o572gkv8r63.apps.googleusercontent.com";
+                    // https://console.developers.google.com/apis/dashboard?project=api-project-305705860120
+                    options.ClientId = "305705860120-nopt8838891tv00skpj95o572gkv8r63.apps.googleusercontent.com";
                     options.ClientSecret = "sBjpboSHK85r5qYcA5yzHQH4";
                 });
 
@@ -150,14 +148,11 @@ namespace WedigITCRM
                 }
                 else
                 {
+                    app.UseGlobalExceptionHandler(_relateCompanyAccountWithUserRepository, env
+                               , _logger
+                               , errorPagePath: "/Home/Error"
+                               , respondWithJsonErrorDetails: true);
 
-                   
-
-                        app.UseGlobalExceptionHandler( _relateCompanyAccountWithUserRepository, env
-                                   , _logger
-                                   , errorPagePath: "/Home/Error"
-                                   , respondWithJsonErrorDetails: true);
-                                 
 
                     // app.UseHsts(); dette skal prøves af.
                 }
