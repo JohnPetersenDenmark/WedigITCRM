@@ -228,9 +228,7 @@ function initializeContactPersonTable() {
                 { "data": "phoneNumber" },
                 { "data": "department" },
                 { "data": "email" },
-                { "data": "companyId" },
-                { "data": "lastEditedDate" },
-                { "data": "createdDate" }
+                { "data": "companyId" }
             ],
 
             columnDefs: [
@@ -278,18 +276,7 @@ function initializeContactPersonTable() {
                     "targets": 8,
                     "visible": true,
                     "searchable": true
-                },
-                {
-                    "targets": 9,
-                    "visible": true,
-                    "searchable": true
-                },
-                {
-                    "targets": 10,
-                    "visible": true,
-                    "searchable": true
                 }
-               
             ],
 
 

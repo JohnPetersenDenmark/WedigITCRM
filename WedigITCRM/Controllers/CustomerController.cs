@@ -852,7 +852,7 @@ namespace WedigITCRM.Controllers
 
         public string action { get; set; }
 
-        public string companyAccountId { get; set; }
+        public int companyAccountId { get; set; }
         public Guid dineroGuiD { get; set; }
         public string LastEditedDate { get; set; }
         public string IsPerson { get; set; }

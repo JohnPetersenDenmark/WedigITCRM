@@ -248,10 +248,7 @@ function initializecontactTable() {
                 { "data": "city" },
                 { "data": "countryCode" },
                 { "data": "phoneNumber" },
-                { "data": "homePage" },
-                { "data": "lastEditedDate" },
-                { "data": "createdDate" }
-
+                { "data": "homePage" }
             ],
 
             columnDefs: [
@@ -307,16 +304,6 @@ function initializecontactTable() {
                 },
                 {
                     "targets": 10,
-                    "visible": true,
-                    "searchable": true
-                },
-                {
-                    "targets": 11,
-                    "visible": true,
-                    "searchable": true
-                },
-                {
-                    "targets": 12,
                     "visible": true,
                     "searchable": true
                 }
