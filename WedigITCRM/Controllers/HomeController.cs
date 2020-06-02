@@ -57,7 +57,7 @@ namespace WedigITCRM.Controllers
                 return RedirectToAction("AllVendors", "Vendor");
             }
 
-            return RedirectToAction("index", "FrontPage");
+            return RedirectToAction("AllCustomers", "Customer");
         }
 
 

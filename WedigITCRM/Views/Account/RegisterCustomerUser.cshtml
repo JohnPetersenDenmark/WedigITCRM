@@ -1,0 +1,87 @@
+﻿@model RegisterCustomerUserViewModel
+
+
+<h1>Opret bruger</h1>
+
+
+<div class="formcontainer">
+    <form method="post">
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group form-group-sm">
+            <label for="companyAccountNameSuggest" class="col-form-label">Konto</label>
+            <input id="companyAccountNameSuggest" class="form-control" placeholder="Konto">
+            <span asp-validation-for="@Model.CompanyAccountName" class="validation-style"></span>
+        </div>
+        <div class="form-group row">
+            <div class="form-group col-md-4">
+                <button type="submit" class="btn btn-outline-secondary btn-sm">Gem</button>
+                <a class="btn btn-outline-secondary btn-sm" href="@Context.Request.Headers["Referer"].ToString()">Tilbage</a>
+            </div>
+        </div>
+        <input asp-for="@Model.companyAccountId" id="companyAccountId" type="text" />
+    </form>
+</div>
+<br />
+
+@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+
+            $("#companyAccountNameSuggest").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '/account/searchCompanyAccount',
+                        data: { term: request.term },
+                        success: function (data) {
+                            response(data);
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            var jsonErrorObj = jqXHR.responseJSON
+                            var errorText = jsonErrorObj.Detail;
+                            var errorTitle = jsonErrorObj.Title;
+                            var errorInstance = jsonErrorObj.Instance;
+                            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                        },
+                        dataType: 'json'
+                    });
+                },
+                select: function (event, ui) {
+                    $("#companyAccountId").val(ui.item.value);
+                    $("#companyAccountNameSuggest").val(ui.item.label);                 
+                },
+                minLength: 1
+            });
+        }
+        );
+    </script>
+}
