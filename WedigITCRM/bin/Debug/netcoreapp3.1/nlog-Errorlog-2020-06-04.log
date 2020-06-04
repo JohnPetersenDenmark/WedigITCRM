@@ -220,3 +220,17 @@ System.InvalidOperationException: Timeout expired.  The timeout period elapsed p
 2020-06-04 22:11:00.2611|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
 2020-06-04 22:16:50.2817|ERROR|WedigITCRM.Startup|start of ConfigureServices
 2020-06-04 22:16:50.3799|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-04 23:41:52.1730|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-04 23:41:53.5734|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-04 23:41:53.6589|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-04 23:41:54.2042|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-04 23:41:55.5196|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-04 23:41:55.7733|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-06-04 23:42:15.2673|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-04 23:42:15.4039|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-04 23:49:46.4315|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-04 23:49:47.2625|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-04 23:49:47.3294|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-04 23:49:47.5372|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-04 23:49:50.5815|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-04 23:49:50.6198|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action

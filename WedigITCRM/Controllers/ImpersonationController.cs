@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using WedigITCRM.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -19,41 +20,87 @@ namespace WedigITCRM.Controllers
 
         private UserManager<IdentityUser> _userManager;
         private SignInManager<IdentityUser> _signInManager;
-        public ImpersonationController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        private ICompanyAccountRepository _companyAccountRepository;
+        private IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;
+        public ImpersonationController(IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ICompanyAccountRepository companyAccountRepository)
         {
             _userManager = userManager;
            _signInManager = signInManager;
+            _companyAccountRepository = companyAccountRepository;
+            _relateCompanyAccountWithUserRepository = relateCompanyAccountWithUserRepository;
         }
 
-       
+
+        [HttpGet]
+        public IActionResult SelectUserToImpersonate()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult>  SelectUserToImpersonate(ImpersonateCustomerUserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (!string.IsNullOrEmpty(model.UserToImpersonateId))
+                {
+                    var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+                    var impersonatedUser = await _userManager.FindByIdAsync(model.UserToImpersonateId);
+
+                    var userPrincipal = await _signInManager.CreateUserPrincipalAsync(impersonatedUser);
+
+                    userPrincipal.Identities.First().AddClaim(new Claim("OriginalUserId", currentUserId));
+                    userPrincipal.Identities.First().AddClaim(new Claim("IsImpersonating", "true"));
+
+                    // sign out the current user
+                    await _signInManager.SignOutAsync();
+
+
+
+                    // await HttpContext.SignInAsync(cookieOptions.ApplicationCookieAuthenticationScheme, userPrincipal);
+                    await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, userPrincipal);
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            return View();
+        }
+
+
         public async Task<IActionResult> ImpersonateUser(String userId)
         {
-            
-            var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            if (ModelState.IsValid)
+            {
 
-            var impersonatedUser = await _userManager.FindByIdAsync(userId);
+                var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
-            var userPrincipal = await _signInManager.CreateUserPrincipalAsync(impersonatedUser);
+                var impersonatedUser = await _userManager.FindByIdAsync(userId);
 
-            userPrincipal.Identities.First().AddClaim(new Claim("OriginalUserId", currentUserId));
-            userPrincipal.Identities.First().AddClaim(new Claim("IsImpersonating", "true"));
+                var userPrincipal = await _signInManager.CreateUserPrincipalAsync(impersonatedUser);
 
-            // sign out the current user
-            await _signInManager.SignOutAsync();
+                userPrincipal.Identities.First().AddClaim(new Claim("OriginalUserId", currentUserId));
+                userPrincipal.Identities.First().AddClaim(new Claim("IsImpersonating", "true"));
+
+                // sign out the current user
+                await _signInManager.SignOutAsync();
 
 
 
-            // await HttpContext.SignInAsync(cookieOptions.ApplicationCookieAuthenticationScheme, userPrincipal);
-           await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, userPrincipal);
-            return RedirectToAction("Index", "Home");
+                // await HttpContext.SignInAsync(cookieOptions.ApplicationCookieAuthenticationScheme, userPrincipal);
+                await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, userPrincipal);
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View();
         }
         
 
 
         public async Task<IActionResult> StopImpersonation()
         {
-
-            var claims = User.Claims;
+           
             if (!User.HasClaim("IsImpersonating", "true"))
             {
                 throw new Exception("You are not impersonating now. Can't stop impersonation");
@@ -68,6 +115,71 @@ namespace WedigITCRM.Controllers
             await _signInManager.SignInAsync(originalUser, isPersistent: true);
 
             return RedirectToAction("Index", "Home");
+        }
+
+
+        public IActionResult searchCompanyAccount(string term)
+
+        {
+            List<CompanyAccount> companyAccountList = _companyAccountRepository.GetAllCompanyAccounts().Where(account => account.CompanyName.ToLower().Contains(term.ToLower())).ToList();
+            List<CompanyAccountResultViewModel> data = new List<CompanyAccountResultViewModel>();
+
+            foreach (var companyAccount in companyAccountList)
+            {
+                CompanyAccountResultViewModel outputModel = new CompanyAccountResultViewModel();
+
+                outputModel.label = companyAccount.CompanyName;
+
+                outputModel.value = companyAccount.companyAccountId.ToString();
+
+                data.Add(outputModel);
+            }
+
+            return Json(data);
+        }
+
+        [HttpPost]
+        public IActionResult getUsersForCompanyAccount(ImpersonateCustomerUserViewModel model, CompanyAccount companyAccount)
+        {
+            List<CompanyAccountUserModel> companyAccountUserList = new List<CompanyAccountUserModel>();
+            if (ModelState.IsValid)
+            {
+                if(! string.IsNullOrEmpty(model.companyAccountId))
+                {
+                    List<RelateCompanyAccountWithUser> relationList = _relateCompanyAccountWithUserRepository.GetAllRelateCompanyAccountWithUser().Where(relation => relation.companyAccount.ToString().Equals(model.companyAccountId)).ToList();
+
+                    foreach(var companyAccountUserRelation in relationList)
+                    {
+                        if (!string.IsNullOrEmpty(companyAccountUserRelation.user))
+                        {
+                            IdentityUser user = _userManager.FindByIdAsync(companyAccountUserRelation.user).Result;
+                            if (user != null)
+                            {
+                                CompanyAccountUserModel companyAccountUserModel = new CompanyAccountUserModel();
+                                companyAccountUserModel.UserID = user.Id;
+                                companyAccountUserModel.UserName = user.UserName;
+
+                                companyAccountUserList.Add(companyAccountUserModel);
+                            }
+                        }
+                       
+                    }
+                }
+            }
+
+           return Json (companyAccountUserList);
+        }
+
+        public class CompanyAccountUserModel
+        {
+            public string UserName { get; set; }
+            public string UserID { get; set; }
+        }
+
+        public class CompanyAccountResultViewModel
+        {
+            public string label { get; set; }
+            public string value { get; set; }
         }
     }
 }

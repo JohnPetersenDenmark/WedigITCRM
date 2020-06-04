@@ -66,48 +66,7 @@ namespace WedigITCRM.Controllers
 
         }
 
-        [HttpGet]
-        public IActionResult RegisterCustomerUser()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> RegisterCustomerUser(RegisterCustomerUserViewModel model, CompanyAccount companyAccount)
-        {
-            if (ModelState.IsValid)
-            {
-                if (companyAccount != null)
-                {
-                    var newUser = new IdentityUser { UserName = model.Email, Email = model.Email };
-                    var result = await userManager.CreateAsync(newUser, model.Password);
-                    if (result.Succeeded)
-                    {
-                        RelateCompanyAccountWithUser relateCompanyAccountWithUser = new RelateCompanyAccountWithUser();
-                        relateCompanyAccountWithUser.user = newUser.Id;
-                        relateCompanyAccountWithUser.userName = model.UserName;
-                        relateCompanyAccountWithUser.companyAccount = model.companyAccountId;
-                        relateCompanyAccountWithUser.CompanyName = model.CompanyAccountName;
-                        _relateCompanyAccountWithUserRepository.Add(relateCompanyAccountWithUser);
-
-                        //await signInManager.SignInAsync(user, isPersistent: false);
-
-                        var result1 = await signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
-                        if (result.Succeeded)
-                        {
-                            string a = "success";
-                        }
-                            return RedirectToAction("Index", "Home");
-                    }
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError("", error.Description);
-                    }
-                }
-            }
-            return View();
-        }
-
+           
         [HttpGet]
         public IActionResult Register()
         {
@@ -861,24 +820,7 @@ namespace WedigITCRM.Controllers
             }
             return RedirectToAction("Index", "Note");
         }
-
-        public IActionResult searchCompanyAccount(string term)
-        {
-            List<CompanyAccount> companyAccountList = _companyAccountRepository.GetAllCompanyAccounts().Where(account => account.CompanyName.ToLower().Contains(term.ToLower())).ToList();
-          
-            List<CompanyAccountResultViewModel> data = new List<CompanyAccountResultViewModel>();
-            foreach (var companyAccount in companyAccountList)
-            {
-                CompanyAccountResultViewModel outputModel = new CompanyAccountResultViewModel();
-                outputModel.label = companyAccount.CompanyName;
-                outputModel.value = companyAccount.companyAccountId.ToString();
-                data.Add(outputModel);
-            }
-
-            return Json(data);
-
-        }
-
+     
         public class CompanyAccountResultViewModel
         {
             public string label { get; set; }
