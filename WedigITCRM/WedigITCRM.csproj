@@ -926,6 +926,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Extensions\" />
     <Folder Include="wwwroot\CustomerAttachments\NewFolder1\" />
     <Folder Include="wwwroot\CustomerAttachments\NewFolder\NewFolder\" />
     <Folder Include="wwwroot\CustomJS\FullCalendar\" />

@@ -525,3 +525,5 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\WedigITCRM.genruntimeconfig.cache
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\WedigITCRM.csprojAssemblyReference.cache
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\Razor\Views\Contact\AllContacts.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\win-x86\wwwroot\CustomJS\ContactDatatable.js
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\Razor\Views\Account\RegisterCustomerUser.cshtml.g.cs

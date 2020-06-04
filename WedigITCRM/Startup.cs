@@ -18,6 +18,7 @@ using WedigITCRM.StorageInterfaces;
 using WedigITCRM.SQLImplmementationModels;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace WedigITCRM
 {
@@ -56,10 +57,20 @@ namespace WedigITCRM
                 })
                     .AddEntityFrameworkStores<AppDbContext>()
                     .AddDefaultTokenProviders()
-                    .AddErrorDescriber<LocalizedIdentityErrorDescriber>();
+                    .AddErrorDescriber<LocalizedIdentityErrorDescriber>();               
 
-
-
+                services.ConfigureApplicationCookie(options =>
+                {                   
+                    options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                    options.Cookie.Name = "nyxiumApp";
+                    options.Cookie.HttpOnly = true;
+                    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                    options.LoginPath = "/Account/Login";
+                    // ReturnUrlParameter requires 
+                    //using Microsoft.AspNetCore.Authentication.Cookies;
+                    options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                    options.SlidingExpiration = true;
+                });
 
                 services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
                 services.AddMvc();
@@ -126,6 +137,7 @@ namespace WedigITCRM
                     twitterOptions.RetrieveUserDetails = true;
                 });
 
+
                 _logger.LogError("end of ConfigureServices");
             }
             catch (Exception e)
@@ -160,7 +172,9 @@ namespace WedigITCRM
                 // app.UseHttpsRedirection();    dette skal prøves af.
 
                 app.UseStaticFiles();
+
                 app.UseAuthentication();
+
                 app.UseMvcWithDefaultRoute();
                 _logger.LogError("end of Configure method");
             }
