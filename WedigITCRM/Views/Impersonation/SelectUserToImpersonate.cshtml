@@ -1,53 +1,49 @@
 ﻿@model ImpersonateCustomerUserViewModel
 
-<h1>Udgiv dig for</h1>
+
 
 
 <div class="formcontainer">
-
-    <form method="post">
-
-
-
-        <div asp-validation-summary="All" class="text-danger"></div>
-
-
-
-        <div class="form-group form-group-sm">
-
-            <label for="companyAccountNameSuggest" class="col-form-label">Konto</label>
-
-            <input id="companyAccountNameSuggest" class="form-control" placeholder="Konto">
-
-            <span asp-validation-for="@Model.CompanyAccountName" class="validation-style"></span>
-
-        </div>
-
-        <div class="form-group form-group-sm">
-
-            <label for="selectuser">Medarbejder</label>
-            <select class="form-control form-control-sm" id="selectuser">
-            </select>
-
-        </div>
-
-        <div class="form-group row">
-
-            <div class="form-group col-md-4">
-
-                <button type="submit" class="btn btn-outline-secondary btn-sm">Gem</button>
-
-                <a class="btn btn-outline-secondary btn-sm" href="@Context.Request.Headers["Referer"].ToString()">Tilbage</a>
-
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group form-group-sm tableheadline">
+                Overtag bruger
             </div>
 
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="form-group form-group-sm">
+                    <label for="companyAccountNameSuggest" class="col-form-label">Søg firmanavn</label>
+                    <input id="companyAccountNameSuggest" class="form-control" placeholder="Søg i firmanavn">
+                    <span asp-validation-for="@Model.CompanyAccountName" class="validation-style"></span>
+                </div>
+
+                <div class="form-group form-group-sm">
+                    <label for="selectuser">Bruger</label>
+                    <select class="form-control form-control-sm" id="selectuser">
+                    </select>
+                </div>
+
+
+                <div class="form-group form-group-sm">
+                    <label for="userNameSuggest" class="col-form-label">Søg bruger</label>
+                    <input id="userNameSuggest" class="form-control" placeholder="Bruger">
+                    <span asp-validation-for="@Model.CompanyAccountName" class="validation-style"></span>
+                </div>
+
+                <div class="form-group form-group-sm">
+                    <button type="submit" class="btn btn-outline-secondary btn-sm">Overtag</button>
+                    <a class="btn btn-outline-secondary btn-sm" href="@Context.Request.Headers["Referer"].ToString()">Tilbage</a>
+                </div>
+
+                <input asp-for="@Model.companyAccountId" id="companyAccountId" type="hidden" />
+                <input asp-for="@Model.UserToImpersonateId" id="userId" type="hidden" />
+
+            </form>
+
         </div>
-
-        <input asp-for="@Model.companyAccountId" id="companyAccountId" type="text" />
-        <input asp-for="@Model.UserToImpersonateId" id="userId" type="text" />
-
-    </form>
-
+    </div>
 </div>
 
 <br />
@@ -63,66 +59,72 @@
         $(document).ready(function () {
 
             $('#selectuser').bind('change', function () {
-
                 var userId = $(this).val();
-
                 $('#userId').val(userId);
-              
-
             });
 
             $("#companyAccountNameSuggest").autocomplete({
-
                 source: function (request, response) {
-
                     $.ajax({
-
                         url: '/Impersonation/searchCompanyAccount',
-
                         data: { term: request.term },
-
                         success: function (data) {
-
                             response(data);
-
                         },
-
                         error: function (jqXHR, textStatus, errorThrown) {
-
                             var jsonErrorObj = jqXHR.responseJSON
-
                             var errorText = jsonErrorObj.Detail;
-
                             var errorTitle = jsonErrorObj.Title;
-
                             var errorInstance = jsonErrorObj.Instance;
-
                             location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
-
                         },
-
                         dataType: 'json'
-
                     });
-
                 },
 
                 select: function (event, ui) {
-
                     $("#companyAccountId").val(ui.item.value);
-
                     $("#companyAccountNameSuggest").val(ui.item.label);
-
                     getUsersForCompanyAccount(ui.item.value);
                 },
-
                 minLength: 1
-
             });
 
         }
 
         );
+
+
+        $("#userNameSuggest").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: '/Impersonation/searchUser',
+                    data: { term: request.term },
+                    success: function (data) {
+                        response(data);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        var jsonErrorObj = jqXHR.responseJSON
+                        var errorText = jsonErrorObj.Detail;
+                        var errorTitle = jsonErrorObj.Title;
+                        var errorInstance = jsonErrorObj.Instance;
+                        location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                    },
+                    dataType: 'json'
+                });
+
+            },
+            select: function (event, ui) {
+                $("#userId").val(ui.item.value);
+                $("#userNameSuggest").val(ui.item.label);
+                getUsersForCompanyAccount(ui.item.value);
+            },
+            minLength: 1
+        });
+
+
+
+
 
         function getUsersForCompanyAccount(companyAccountId) {
             $.ajax({
@@ -143,15 +145,15 @@
 
                     }).appendTo('#selectuser');
 
-                    $.each(result, function (i, data) {                       
-                            $("<option/>", {
-                                value: data.userID,
-                                text: data.userName
-                            }).appendTo('#selectuser');
+                    $.each(result, function (i, data) {
+                        $("<option/>", {
+                            value: data.userID,
+                            text: data.userName
+                        }).appendTo('#selectuser');
                     });
 
                     $('#selectuser').val("0");
-                   
+
                 },
 
                 error: function (request, status, error) {

@@ -40,16 +40,16 @@ namespace WedigITCRM.Utilities
             message.AlternateViews.Add(htmlView);
 
 
-            //SmtpClient client = new SmtpClient("smtp.unoeuro.com", 587);
-            //System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("admin@nyxium.dk", "Kronhjort1234");
+            SmtpClient client = new SmtpClient("smtp.unoeuro.com", 587);
+            System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("admin@nyxium.dk", "Kronhjort1234");
 
             // If it fails with a message lige not logged in to service in google then use this link:
             // https://myaccount.google.com/lesssecureapps
 
 
-            sentFrom = "johnpetersen1959@gmail.com";
-            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-            System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("johnpetersen1959@gmail.com", "Keiler1234");
+            //sentFrom = "johnpetersen1959@gmail.com";
+            //SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+            //System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("johnpetersen1959@gmail.com", "Keiler1234");
 
             client.EnableSsl = true;
             // hvis det fejler at med at sende email så brug dette link: https://accounts.google.com/b/0/DisplayUnlockCaptcha

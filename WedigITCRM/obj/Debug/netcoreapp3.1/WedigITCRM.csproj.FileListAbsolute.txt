@@ -168,6 +168,7 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\V
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\Home\ShowErrorForJSON.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\Home\welcome.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\Impersonation\SelectUserToImpersonate.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\Note\Index.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\Note\NoteCreate.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\Note\NoteEdit.cshtml.g.cs
@@ -197,5 +198,4 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\staticw
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.pdb
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.genruntimeconfig.cache
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\Impersonation\SelectUserToImpersonate.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csprojAssemblyReference.cache

@@ -24,7 +24,7 @@ function initializeRoleOnUserEditor() {
                         if (d.data.hasOwnProperty(prop)) {
                             d.data[prop].action = d.action;
                             if (d.data[prop].active.length == 0) {
-                                d.data[prop].active = 0;
+                                d.data[prop].active = "0";
                             }
                             return JSON.stringify(d.data[prop]);
                         }

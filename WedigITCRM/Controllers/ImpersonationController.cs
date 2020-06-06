@@ -62,7 +62,10 @@ namespace WedigITCRM.Controllers
                     await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, userPrincipal);
                     return RedirectToAction("Index", "Home");
                 }
+
+                ModelState.AddModelError("Bruger", "Bruger skal angives");
             }
+
 
             return View();
         }
@@ -170,11 +173,37 @@ namespace WedigITCRM.Controllers
            return Json (companyAccountUserList);
         }
 
+        public IActionResult searchUser(string term)
+        {
+            List<UserModel> userserList = new List<UserModel>();
+
+            List<IdentityUser> userList = _userManager.Users.Where(user => user.UserName.Contains(term)).ToList();
+
+            foreach (var user in userList)
+            {
+                UserModel userModel = new UserModel();
+                userModel.value = user.Id;
+                userModel.label = user.UserName;
+
+                userserList.Add(userModel);
+            }
+
+            return Json(userserList);
+        }
+
+        public class UserModel
+        {
+            public string label { get; set; }
+            public string value { get; set; }
+        }
+
         public class CompanyAccountUserModel
         {
             public string UserName { get; set; }
             public string UserID { get; set; }
         }
+
+        
 
         public class CompanyAccountResultViewModel
         {

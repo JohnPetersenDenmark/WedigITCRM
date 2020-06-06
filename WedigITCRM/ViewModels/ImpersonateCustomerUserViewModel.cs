@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,7 +13,10 @@ namespace WedigITCRM.ViewModels
 
         public string UserToImpersonateName{ get; set; }
 
+        //[Required(ErrorMessage = "Der skal angives en bruger")]
+       // [Display(Name = "Bruger")]
         public string UserToImpersonateId { get; set; }
 
     }
 }
+
