@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WedigITCRM.ViewModels;
@@ -12,6 +13,7 @@ using WedigITCRM.ViewModels;
 
 namespace WedigITCRM.Controllers
 {
+    [Authorize]
     public class ImpersonationController : Controller
     {
 
@@ -32,12 +34,14 @@ namespace WedigITCRM.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Support, SystemAdministrator")]
         public IActionResult SelectUserToImpersonate()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Support, SystemAdministrator")]
         public async Task<IActionResult>  SelectUserToImpersonate(ImpersonateCustomerUserViewModel model)
         {
             if (ModelState.IsValid)
@@ -71,36 +75,7 @@ namespace WedigITCRM.Controllers
         }
 
 
-        public async Task<IActionResult> ImpersonateUser(String userId)
-        {
-            if (ModelState.IsValid)
-            {
-
-                var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
-
-                var impersonatedUser = await _userManager.FindByIdAsync(userId);
-
-                var userPrincipal = await _signInManager.CreateUserPrincipalAsync(impersonatedUser);
-
-                userPrincipal.Identities.First().AddClaim(new Claim("OriginalUserId", currentUserId));
-                userPrincipal.Identities.First().AddClaim(new Claim("IsImpersonating", "true"));
-
-                // sign out the current user
-                await _signInManager.SignOutAsync();
-
-
-
-                // await HttpContext.SignInAsync(cookieOptions.ApplicationCookieAuthenticationScheme, userPrincipal);
-                await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, userPrincipal);
-
-                return RedirectToAction("Index", "Home");
-            }
-
-            return View();
-        }
         
-
-
         public async Task<IActionResult> StopImpersonation()
         {
            

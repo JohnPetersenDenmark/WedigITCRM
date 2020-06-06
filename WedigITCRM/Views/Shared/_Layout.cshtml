@@ -142,6 +142,7 @@
         bool IsCustomerAdmin = false;
         bool IsWedigitSystemAdministrator = false;
         bool IsSupporter = false;
+        bool IsImpersonating = false;
         CompanyAccount companyAccount = null;
     }
     @if (signInManager.IsSignedIn(User))
@@ -163,6 +164,10 @@
             IsSupporter = true;
         }
 
+        if (User.HasClaim("IsImpersonating", "true"))
+        {
+            IsImpersonating = true;
+        }
 
         var userId = userManager.GetUserId(User);
         var relationuserCompanyAccount = sQLRelateCompanyAccountWithUserRepository.GetAllRelateCompanyAccountWithUser().Where(u => u.user.Equals(userId)).ToList();
@@ -374,11 +379,14 @@
                                                     <a asp-controller="Account" asp-action="CompanyAccountSettings" rel="nofollow" class="dropdown-item"><span>Konfiguration</span></a>
                                                 </li>
                                             }
-                                            @if (IsSupporter || IsWedigitSystemAdministrator)
+                                            @if ((IsSupporter || IsWedigitSystemAdministrator) && (!IsImpersonating))
                                             {
                                                 <li>
                                                     <a asp-controller="Impersonation" asp-action="SelectUserToImpersonate" rel="nofollow" class="dropdown-item"><span>Overtag bruger</span></a>
-                                                </li>
+                                                </li>                                              
+                                            }
+                                            @if (IsImpersonating)
+                                            {                                              
                                                 <li>
                                                     <a asp-controller="Impersonation" asp-action="StopImpersonation" rel="nofollow" class="dropdown-item"><span>Stop overtagelse af bruger</span></a>
                                                 </li>
