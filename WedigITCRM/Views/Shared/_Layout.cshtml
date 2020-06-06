@@ -9,430 +9,445 @@
 
 
 
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>nyxium</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>nyxium</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all,follow">
 
-    <environment include="Development">
-        <!-- CSS-->
-        <link rel="stylesheet" href="~/lib/vendor/font-awesome/css/font-awesome.min.css">
-        <link href="~/lib/css/style.blue.premium.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" rel="stylesheet" />
+        <environment include="Development">
+            <!-- CSS-->
+            <link rel="stylesheet" href="~/lib/vendor/font-awesome/css/font-awesome.min.css">
+            <link href="~/lib/css/style.blue.premium.css" rel="stylesheet" />
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" rel="stylesheet" />
 
-        <link href="~/lib/css/editor.dataTables.min.css" rel="stylesheet" />
+            <link href="~/lib/css/editor.dataTables.min.css" rel="stylesheet" />
 
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/1.2.1/typeaheadjs.css">
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
-        <link rel="stylesheet" href="~/lib/css/custom.css">
-        <link rel="stylesheet" href="~/lib/css/bootstrap-social.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/1.2.1/typeaheadjs.css">
+            <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
+            <link rel="stylesheet" href="~/lib/css/custom.css">
+            <link rel="stylesheet" href="~/lib/css/bootstrap-social.css">
 
-        <!-- General JavaScript files-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-
-
-        <!-- Datatables JavaScript files-->
-        <script src="~/CustomJS/moment.js"></script>
-        <script src="~/CustomJS/locales-all.js"></script>
-        <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
-        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
-        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.bootstrap4.min.js"></script>
-        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
-        <script src="~/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="~/lib/vendor/database.net-editor/dataTables.editor.js"></script>
-        <script src="~/CustomJS/editor.bootstrap4.min.js"></script>
-
-        <!-- charts JavaScript files-->
-        <script src="~/lib/vendor/chart.js/Chart.min.js"></script>
-        <script src="~/lib/vendor/jquery-validation/jquery.validate.min.js"></script>
-        <script src="~/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-
-        <!-- nyxium specific JavaScript files-->
-        <script src="~/CustomJS/CompanyDatatable.js"></script>
-        <script src="~/CustomJS/ContactPersonDatatable.js"></script>
-        <script src="~/CustomJS/ActivityDatatable.js"></script>
-        <script src="~/CustomJS/UserDataTable.js"></script>
-        <script src="~/CustomJS/RoleDatatable.js"></script>
-        <script src="~/CustomJS/RolesOnUserDatatable.js"></script>
-        <script src="~/CustomJS/VendorDatatable.js"></script>
-        <script src="~/CustomJS/StockItemDatatable.js"></script>
-        <script src="~/CustomJS/ABCStockAnalasysDatatable.js"></script>
-        <script src="~/CustomJS/NoteDatatable.js"></script>
-
-        <script src="~/CustomJS/ContactDatatable.js"></script>
+            <!-- General JavaScript files-->
+            <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 
 
-    </environment>
+            <!-- Datatables JavaScript files-->
+            <script src="~/CustomJS/moment.js"></script>
+            <script src="~/CustomJS/locales-all.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.bootstrap4.min.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+            <script src="~/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+            <script src="~/lib/vendor/database.net-editor/dataTables.editor.js"></script>
+            <script src="~/CustomJS/editor.bootstrap4.min.js"></script>
+
+            <!-- charts JavaScript files-->
+            <script src="~/lib/vendor/chart.js/Chart.min.js"></script>
+            <script src="~/lib/vendor/jquery-validation/jquery.validate.min.js"></script>
+            <script src="~/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+            <!-- nyxium specific JavaScript files-->
+            <script src="~/CustomJS/CompanyDatatable.js"></script>
+            <script src="~/CustomJS/ContactPersonDatatable.js"></script>
+            <script src="~/CustomJS/ActivityDatatable.js"></script>
+            <script src="~/CustomJS/UserDataTable.js"></script>
+            <script src="~/CustomJS/RoleDatatable.js"></script>
+            <script src="~/CustomJS/RolesOnUserDatatable.js"></script>
+            <script src="~/CustomJS/VendorDatatable.js"></script>
+            <script src="~/CustomJS/StockItemDatatable.js"></script>
+            <script src="~/CustomJS/ABCStockAnalasysDatatable.js"></script>
+            <script src="~/CustomJS/NoteDatatable.js"></script>
+
+            <script src="~/CustomJS/ContactDatatable.js"></script>
+
+
+        </environment>
 
 
 
-    <environment exclude="Development">
-        <!-- CSS-->
-        <link rel="stylesheet" href="~/lib/vendor/font-awesome/css/font-awesome.min.css">
-        <link href="~/lib/css/style.blue.premium.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" rel="stylesheet" />
+        <environment exclude="Development">
+            <!-- CSS-->
+            <link rel="stylesheet" href="~/lib/vendor/font-awesome/css/font-awesome.min.css">
+            <link href="~/lib/css/style.blue.premium.css" rel="stylesheet" />
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" rel="stylesheet" />
 
-        <link href="~/lib/css/editor.dataTables.min.css" rel="stylesheet" />
+            <link href="~/lib/css/editor.dataTables.min.css" rel="stylesheet" />
 
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/1.2.1/typeaheadjs.css">
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
-        <link rel="stylesheet" href="~/lib/css/custom.css">
-        <link rel="stylesheet" href="~/lib/css/bootstrap-social.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/1.2.1/typeaheadjs.css">
+            <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
+            <link rel="stylesheet" href="~/lib/css/custom.css">
+            <link rel="stylesheet" href="~/lib/css/bootstrap-social.css">
 
-        <!-- General JavaScript files-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-
-
-        <!-- Datatables JavaScript files-->
-        <script src="~/CustomJS/moment.js"></script>
-        <script src="~/CustomJS/locales-all.js"></script>
-        <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
-        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
-        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.bootstrap4.min.js"></script>
-        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
-        <script src="~/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="~/lib/vendor/database.net-editor/dataTables.editor.js"></script>
-        <script src="~/CustomJS/editor.bootstrap4.min.js"></script>
-
-        <!-- charts JavaScript files-->
-        <script src="~/lib/vendor/chart.js/Chart.min.js"></script>
-        <script src="~/lib/vendor/jquery-validation/jquery.validate.min.js"></script>
-        <script src="~/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-
-        <!-- nyxium specific JavaScript files-->
-        <script src="~/CustomJS/CompanyDatatable.js"></script>
-        <script src="~/CustomJS/ContactPersonDatatable.js"></script>
-        <script src="~/CustomJS/ActivityDatatable.js"></script>
-        <script src="~/CustomJS/UserDataTable.js"></script>
-        <script src="~/CustomJS/RoleDatatable.js"></script>
-        <script src="~/CustomJS/RolesOnUserDatatable.js"></script>
-        <script src="~/CustomJS/VendorDatatable.js"></script>
-        <script src="~/CustomJS/StockItemDatatable.js"></script>
-        <script src="~/CustomJS/ABCStockAnalasysDatatable.js"></script>
-        <script src="~/CustomJS/NoteDatatable.js"></script>
+            <!-- General JavaScript files-->
+            <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 
 
-        <script src="~/CustomJS/ContactDatatable.js"></script>
+            <!-- Datatables JavaScript files-->
+            <script src="~/CustomJS/moment.js"></script>
+            <script src="~/CustomJS/locales-all.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.bootstrap4.min.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+            <script src="~/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+            <script src="~/lib/vendor/database.net-editor/dataTables.editor.js"></script>
+            <script src="~/CustomJS/editor.bootstrap4.min.js"></script>
+
+            <!-- charts JavaScript files-->
+            <script src="~/lib/vendor/chart.js/Chart.min.js"></script>
+            <script src="~/lib/vendor/jquery-validation/jquery.validate.min.js"></script>
+            <script src="~/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+            <!-- nyxium specific JavaScript files-->
+            <script src="~/CustomJS/CompanyDatatable.js"></script>
+            <script src="~/CustomJS/ContactPersonDatatable.js"></script>
+            <script src="~/CustomJS/ActivityDatatable.js"></script>
+            <script src="~/CustomJS/UserDataTable.js"></script>
+            <script src="~/CustomJS/RoleDatatable.js"></script>
+            <script src="~/CustomJS/RolesOnUserDatatable.js"></script>
+            <script src="~/CustomJS/VendorDatatable.js"></script>
+            <script src="~/CustomJS/StockItemDatatable.js"></script>
+            <script src="~/CustomJS/ABCStockAnalasysDatatable.js"></script>
+            <script src="~/CustomJS/NoteDatatable.js"></script>
 
 
-    </environment>
-</head>
+            <script src="~/CustomJS/ContactDatatable.js"></script>
 
 
-@{
-    string companyName = "";
-    string userName = "";
-    bool IsUserSignedIn = false;
-    bool IsCustomerAdmin = false;
-    bool IsWedigitSystemAdministrator = false;
-    CompanyAccount companyAccount = null;
-}
-@if (signInManager.IsSignedIn(User))
-{
-    IsUserSignedIn = true;
+        </environment>
+    </head>
 
-    @if (User.IsInRole("Admin"))
-    {
-        IsCustomerAdmin = true;
+
+    @{
+        string companyName = "";
+        string userName = "";
+        bool IsUserSignedIn = false;
+        bool IsCustomerAdmin = false;
+        bool IsWedigitSystemAdministrator = false;
+        bool IsSupporter = false;
+        CompanyAccount companyAccount = null;
     }
-
-    @if (User.IsInRole("SystemAdministrator"))
+    @if (signInManager.IsSignedIn(User))
     {
-        IsWedigitSystemAdministrator = true;
-    }
+        IsUserSignedIn = true;
 
-
-    var userId = userManager.GetUserId(User);
-    var relationuserCompanyAccount = sQLRelateCompanyAccountWithUserRepository.GetAllRelateCompanyAccountWithUser().Where(u => u.user.Equals(userId)).ToList();
-
-    @if (relationuserCompanyAccount.Count == 1)
-    {
-        var relationUserAndCompany = relationuserCompanyAccount.First();
-        userName = relationUserAndCompany.userName;
-        companyAccount = SQLCompanyAccountRepository.GetCompanyAccount(relationUserAndCompany.companyAccount);
-        if (companyAccount != null)
+        @if (User.IsInRole("Admin"))
         {
-            companyName = companyAccount.CompanyName;
+            IsCustomerAdmin = true;
+        }
+
+        @if (User.IsInRole("SystemAdministrator"))
+        {
+            IsWedigitSystemAdministrator = true;
+        }
+
+        @if (User.IsInRole("Support"))
+        {
+            IsSupporter = true;
+        }
+
+
+        var userId = userManager.GetUserId(User);
+        var relationuserCompanyAccount = sQLRelateCompanyAccountWithUserRepository.GetAllRelateCompanyAccountWithUser().Where(u => u.user.Equals(userId)).ToList();
+
+        @if (relationuserCompanyAccount.Count == 1)
+        {
+            var relationUserAndCompany = relationuserCompanyAccount.First();
+            userName = relationUserAndCompany.userName;
+            companyAccount = SQLCompanyAccountRepository.GetCompanyAccount(relationUserAndCompany.companyAccount);
+            if (companyAccount != null)
+            {
+                companyName = companyAccount.CompanyName;
+            }
         }
     }
-}
 
-<body style="background-color:gray">
-    <!-- Side Navbar -->
+    <body style="background-color:gray">
+        <!-- Side Navbar -->
 
-    <nav class="side-navbar">
-        <div class="side-navbar-wrapper">
-            <!-- Sidebar Header    -->
-            <div class="sidenav-header d-flex align-items-center justify-content-center">
-                <!-- User Info-->
-                <div class="sidenav-header-inner">
-                    <a asp-controller="home" asp-action="index"><img src="~/Images/connect_logo.png" alt="person" class="img-fluid"></a>
+        <nav class="side-navbar">
+            <div class="side-navbar-wrapper">
+                <!-- Sidebar Header    -->
+                <div class="sidenav-header d-flex align-items-center justify-content-center">
+                    <!-- User Info-->
+                    <div class="sidenav-header-inner">
+                        <a asp-controller="home" asp-action="index"><img src="~/Images/connect_logo.png" alt="person" class="img-fluid"></a>
+                    </div>
+
+                    <!-- Small Brand information, appears on minimized sidebar-->
+
                 </div>
+                <!-- Sidebar Navigation Menus-->
 
-                <!-- Small Brand information, appears on minimized sidebar-->
+                <div class="main-menu">
+                    <h5 class="sidenav-heading"></h5>
+                    @if (IsUserSignedIn && companyAccount.SubscriptionCRM)
+                    {
+                        <ul id="side-main-menu" class="side-menu list-unstyled">
+                            <li>
+                                <a href="#contactDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/kontaktpersoner-icon.png" class="imgicon" /> Kontakter </a>
+                                <ul id="contactDropdown" class="collapse list-unstyled ">
+                                    <li><a asp-controller="contact" asp-action="AllContacts"><img src="~/Images/virksomheder-icon.png" class="imgicon" /> Kontaktliste</a></li>
+                                </ul>
+                            </li>
 
-            </div>
-            <!-- Sidebar Navigation Menus-->
-
-            <div class="main-menu">
-                <h5 class="sidenav-heading"></h5>
-                @if (IsUserSignedIn && companyAccount.SubscriptionCRM)
-                {
-                    <ul id="side-main-menu" class="side-menu list-unstyled">
-                        <li>
-                            <a href="#contactDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/kontaktpersoner-icon.png" class="imgicon" /> Kontakter </a>
-                            <ul id="contactDropdown" class="collapse list-unstyled ">
-                                <li><a asp-controller="contact" asp-action="AllContacts"><img src="~/Images/virksomheder-icon.png" class="imgicon" /> Kontaktliste</a></li>                               
-                            </ul>
-                        </li>
-
-                    </ul>
-                    <ul id="side-main-menu" class="side-menu list-unstyled">
-                        <li>
-                            <a href="#customerDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/kontaktpersoner-icon.png" class="imgicon" /> Kunder </a>
-                            <ul id="customerDropdown" class="collapse list-unstyled ">
-                                <li><a asp-controller="customer" asp-action="AllCustomers"><img src="~/Images/virksomheder-icon.png" class="imgicon" /> Kundeliste</a></li>
-                                <li><a asp-controller="customer" asp-action="notesOnCompany">Kundenotater</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                    <ul id="side-main-menu" class="side-menu list-unstyled">
-                        <li>
-                            <a href="#contactPersonDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/kontaktpersoner-icon.png" class="imgicon" /> Kontaktpersoner </a>
-                            <ul id="contactPersonDropdown" class="collapse list-unstyled ">
-                                <li><a asp-controller="customer" asp-action="AllContactPersons">Alle</a></li>
-                                <li><a asp-controller="customer" asp-action="AllCompaniesWithContactPersons">Efter firma</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul id="side-main-menu" class="side-menu list-unstyled">
-                        <li>
-                            <a href="#activityDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/aktiviteter-icon.png" class="imgicon" /> Aktiviteter </a>
-                            <ul id="activityDropdown" class="collapse list-unstyled ">
-                                <li><a asp-controller="customer" asp-action="AllActivities">Alle</a></li>
-                                <li><a asp-controller="customer" asp-action="ActivitiesOnContactPerson">Efter kontaktperson</a></li>
-                                <li><a asp-controller="customer" asp-action="ActivitiesOnCompany">Efter virksomhed</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                }
-
-                @if (IsUserSignedIn)
-                {
-                    <ul id="side-main-menu" class="side-menu list-unstyled">
-                        <li><a asp-controller="note" asp-action="ShowAllNotes"><img src="~/Images/leverandoerer-icon.png" class="imgicon" /> Notater</a></li>
-                    </ul>
-                }
-
-
-                @if (IsUserSignedIn && companyAccount.SubscriptionVendor)
-                {
-                    <ul id="side-main-menu" class="side-menu list-unstyled">
-                        <li><a asp-controller="vendor" asp-action="AllVendors"><img src="~/Images/leverandoerer-icon.png" class="imgicon" /> Leverandører</a></li>
-                    </ul>
-                }
-                @if (IsUserSignedIn && companyAccount.SubscriptionInventory)
-                {
-
-                    <ul id="side-main-menu" class="side-menu list-unstyled">
-                        <li>
-                            <a href="#stockitemDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/varer-icon.png" class="imgicon" /> Varer</a>
-                            <ul id="stockitemDropdown" class="collapse list-unstyled ">
-                                <li><a asp-controller="stockitemcategories" asp-action="index">Varekategorier</a></li>
-                                <li><a asp-controller="stockitem" asp-action="index">Alle varer</a></li>
-                                <li><a asp-controller="stockitem" asp-action="ABCAnalasys">ABC-analyse</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                }
-
-                @if (IsUserSignedIn && companyAccount.SalesStatistic)
-                {
-
-                    <ul id="side-main-menu" class="side-menu list-unstyled">
-                        <li>
-                            <a href="#StatisticsTurnOver" aria-expanded="false" data-toggle="collapse"><img src="~/Images/statistik-icon.png" class="imgicon" /> Statistik</a>
-                            <ul id="StatisticsTurnOver" class="collapse list-unstyled ">
-                                <li><a asp-controller="sales" asp-action="StatisticsTurnOver">Omsætning</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                }
-
-                @if (IsUserSignedIn && companyAccount.Booking)
-                {
-
-                    <ul id="side-main-menu" class="side-menu list-unstyled">
-                        <li>
-                            <a href="#resourcetypes" aria-expanded="false" data-toggle="collapse"><img src="~/Images/booking-icon.png" class="imgicon" /> Booking</a>
-                            <ul id="resourcetypes" class="collapse list-unstyled ">
-                                <li><a asp-controller="booking" asp-action="ShowBookingSetup">Åbningstider</a></li>
-                                <li><a asp-controller="booking" asp-action="ShowBookingServices">Ydelser</a></li>
-                                <li><a asp-controller="booking" asp-action="ShowJobServiceTypes">Resursetyper</a></li>
-                                <li><a asp-controller="booking" asp-action="ShowBookingResources">Resurser</a></li>
-                                <li><a asp-controller="booking" asp-action="AdminAnnualCycle">Aftalekalender</a></li>
-                                <li><a asp-controller="booking" asp-action="index">Online tider</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                }
-
-                @if (IsUserSignedIn)
-                {
-                    <ul id="side-main-menu" class="side-menu list-unstyled">
-                        <li><a asp-controller="support" asp-action="SendSupportTicket"><img src="~/Images/support-icon.png" class="imgicon" /> Support</a></li>
-                    </ul>
-                }
-
-                @if (IsUserSignedIn)
-                {
-                    <ul id="side-main-menu" class="side-menu list-unstyled">
-                        <li>
-                            <a href="#help" aria-expanded="false" data-toggle="collapse"><img src="~/Images/booking-icon.png" class="imgicon" /> Hjælp</a>
-                            <ul id="help" class="collapse list-unstyled ">
-                                <a href="/FrontPage/GetPDF?fileName=Opretkunder.pdf" target="_blank">Kunder</a>
-                                <a href="/FrontPage/GetPDF?fileName=Opretaktiviteter.pdf" target="_blank">Aktiviteter</a>
-                                <a href="/FrontPage/GetPDF?fileName=Opretleverandører.pdf" target="_blank">Leverandører</a>
-                                <a href="/FrontPage/GetPDF?fileName=Opretvarer.pdf" target="_blank">Varer</a>
-                                <a href="/FrontPage/GetPDF?fileName=Opretvarekategori.pdf" target="_blank">Varekategorier</a>
-                                <a href="/FrontPage/GetPDF?fileName=IntegrationDinero.pdf" target="_blank">Integration med Dinero</a>
-                            </ul>
-                        </li>
-                    </ul>
-                }
-
-            </div>
-        </div>
-    </nav>
-
-
-    <div class="page">
-        <!-- navbar-->
-        <header class="header">
-            <nav class="navbar">
-                <div class="container-fluid">
-                    <div class="navbar-holder d-flex align-items-center justify-content-between">
-                        <div class="navbar-header">
-                            <a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a asp-controller="home" asp-action="index" class="navbar-brand"><div class="d-none d-md-inline-block"><span>nyxium.</span><strong>connect</strong></div></a>
-                        </div>
-                        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                            @if (IsUserSignedIn)
-                            {
-                                <li class="nav-item dropdown">
-                                    <a id="userandroles" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><span class="d-none d-sm-inline-block"></span><i class="fa fa-user-plus"></i></a>
-                                    <ul aria-labelledby="userandroles" class="dropdown-menu">
-                                        @if (IsCustomerAdmin || IsWedigitSystemAdministrator)
-                                        {
-                                            <li>
-                                                <a asp-controller="Admin" asp-action="ShowUsers" rel="nofollow" class="dropdown-item"><span>Vis brugere</span></a>
-                                            </li>
-                                            <li>
-                                                <a asp-controller="Admin" asp-action="AdministrateRolesOnUser" rel="nofollow" class="dropdown-item"><span>Administrer roller</span></a>
-                                            </li>
-                                        }
-                                        @if (IsWedigitSystemAdministrator)
-                                        {
-                                            <li>
-                                                <a asp-controller="Admin" asp-action="ShowRoles" rel="nofollow" class="dropdown-item"><span>Vis roller</span></a>
-                                            </li>
-
-                                            <li>
-                                                <a asp-controller="Account" asp-action="RegisterCustomerUser" rel="nofollow" class="dropdown-item"><span>Opret kundelogin</span></a>
-                                            </li>
-                                        }
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a id="companyconfiguration" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><span class="d-none d-sm-inline-block"></span><i class="fa fa-cog"></i></a>
-                                    <ul aria-labelledby="companyconfiguration" class="dropdown-menu">
-                                        @if (IsCustomerAdmin || IsWedigitSystemAdministrator)
-                                        {
-                                            <li>
-                                                <a asp-controller="Account" asp-action="CompanyAccountSettings" rel="nofollow" class="dropdown-item"><span>Konfiguration</span></a>
-                                            </li>
-                                        }
-                                    </ul>
-                                </li>
-                                <li class="nav-item companyname">
-                                    <span class="d-none d-sm-inline-block">@companyName</span><i class="fa fa-industry"></i>
-                                </li>
-                                <!-- change password-->
-                                <li class="nav-item dropdown">
-                                    <a id="currentuser" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><span class="d-none d-sm-inline-block"></span><i class="fa fa-user"></i></a>
-                                    <ul aria-labelledby="currentuser" class="dropdown-menu">
-
-
-                                        <li class="nav-item username">
-                                            <a asp-controller="Administration" asp-action="ChangePassword" rel="nofollow" class="dropdown-item"><span>Skift kodeord</span></a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <!-- Log out-->
-                                <li class="nav-item"><a id="logoutLink" href="#" class="nav-link logout"><span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
-                            }
-                            else
-                            {
-                                <!-- Log in-->
-                                <li class="nav-item"><a asp-controller="account" asp-action="login" class="nav-link logout"><span class="d-none d-sm-inline-block">Log ind</span><i class="fa fa-sign-in"></i></a></li>
-
-                            }
                         </ul>
-                    </div>
-                </div>
-            </nav>
-            <form id="FormLogout" method="post" asp-action="Logout" asp-controller="account">
-            </form>
-        </header>
-        @RenderBody()
+                        <ul id="side-main-menu" class="side-menu list-unstyled">
+                            <li>
+                                <a href="#customerDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/kontaktpersoner-icon.png" class="imgicon" /> Kunder </a>
+                                <ul id="customerDropdown" class="collapse list-unstyled ">
+                                    <li><a asp-controller="customer" asp-action="AllCustomers"><img src="~/Images/virksomheder-icon.png" class="imgicon" /> Kundeliste</a></li>
+                                    <li><a asp-controller="customer" asp-action="notesOnCompany">Kundenotater</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <ul id="side-main-menu" class="side-menu list-unstyled">
+                            <li>
+                                <a href="#contactPersonDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/kontaktpersoner-icon.png" class="imgicon" /> Kontaktpersoner </a>
+                                <ul id="contactPersonDropdown" class="collapse list-unstyled ">
+                                    <li><a asp-controller="customer" asp-action="AllContactPersons">Alle</a></li>
+                                    <li><a asp-controller="customer" asp-action="AllCompaniesWithContactPersons">Efter firma</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul id="side-main-menu" class="side-menu list-unstyled">
+                            <li>
+                                <a href="#activityDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/aktiviteter-icon.png" class="imgicon" /> Aktiviteter </a>
+                                <ul id="activityDropdown" class="collapse list-unstyled ">
+                                    <li><a asp-controller="customer" asp-action="AllActivities">Alle</a></li>
+                                    <li><a asp-controller="customer" asp-action="ActivitiesOnContactPerson">Efter kontaktperson</a></li>
+                                    <li><a asp-controller="customer" asp-action="ActivitiesOnCompany">Efter virksomhed</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+
+                    @if (IsUserSignedIn)
+                    {
+                        <ul id="side-main-menu" class="side-menu list-unstyled">
+                            <li><a asp-controller="note" asp-action="ShowAllNotes"><img src="~/Images/leverandoerer-icon.png" class="imgicon" /> Notater</a></li>
+                        </ul>
+                    }
 
 
-        <footer class="main-footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <p>@companyName 2020</p>
-                    </div>
-                    <div class="col-sm-6 text-right">
-                        <p>Version 1.4.5</p>
-                    </div>
+                    @if (IsUserSignedIn && companyAccount.SubscriptionVendor)
+                    {
+                        <ul id="side-main-menu" class="side-menu list-unstyled">
+                            <li><a asp-controller="vendor" asp-action="AllVendors"><img src="~/Images/leverandoerer-icon.png" class="imgicon" /> Leverandører</a></li>
+                        </ul>
+                    }
+                    @if (IsUserSignedIn && companyAccount.SubscriptionInventory)
+                    {
+
+                        <ul id="side-main-menu" class="side-menu list-unstyled">
+                            <li>
+                                <a href="#stockitemDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/varer-icon.png" class="imgicon" /> Varer</a>
+                                <ul id="stockitemDropdown" class="collapse list-unstyled ">
+                                    <li><a asp-controller="stockitemcategories" asp-action="index">Varekategorier</a></li>
+                                    <li><a asp-controller="stockitem" asp-action="index">Alle varer</a></li>
+                                    <li><a asp-controller="stockitem" asp-action="ABCAnalasys">ABC-analyse</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+
+                    @if (IsUserSignedIn && companyAccount.SalesStatistic)
+                    {
+
+                        <ul id="side-main-menu" class="side-menu list-unstyled">
+                            <li>
+                                <a href="#StatisticsTurnOver" aria-expanded="false" data-toggle="collapse"><img src="~/Images/statistik-icon.png" class="imgicon" /> Statistik</a>
+                                <ul id="StatisticsTurnOver" class="collapse list-unstyled ">
+                                    <li><a asp-controller="sales" asp-action="StatisticsTurnOver">Omsætning</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+
+                    @if (IsUserSignedIn && companyAccount.Booking)
+                    {
+
+                        <ul id="side-main-menu" class="side-menu list-unstyled">
+                            <li>
+                                <a href="#resourcetypes" aria-expanded="false" data-toggle="collapse"><img src="~/Images/booking-icon.png" class="imgicon" /> Booking</a>
+                                <ul id="resourcetypes" class="collapse list-unstyled ">
+                                    <li><a asp-controller="booking" asp-action="ShowBookingSetup">Åbningstider</a></li>
+                                    <li><a asp-controller="booking" asp-action="ShowBookingServices">Ydelser</a></li>
+                                    <li><a asp-controller="booking" asp-action="ShowJobServiceTypes">Resursetyper</a></li>
+                                    <li><a asp-controller="booking" asp-action="ShowBookingResources">Resurser</a></li>
+                                    <li><a asp-controller="booking" asp-action="AdminAnnualCycle">Aftalekalender</a></li>
+                                    <li><a asp-controller="booking" asp-action="index">Online tider</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+
+                    @if (IsUserSignedIn)
+                    {
+                        <ul id="side-main-menu" class="side-menu list-unstyled">
+                            <li><a asp-controller="support" asp-action="SendSupportTicket"><img src="~/Images/support-icon.png" class="imgicon" /> Support</a></li>
+                        </ul>
+                    }
+
+                    @if (IsUserSignedIn)
+                    {
+                        <ul id="side-main-menu" class="side-menu list-unstyled">
+                            <li>
+                                <a href="#help" aria-expanded="false" data-toggle="collapse"><img src="~/Images/booking-icon.png" class="imgicon" /> Hjælp</a>
+                                <ul id="help" class="collapse list-unstyled ">
+                                    <a href="/FrontPage/GetPDF?fileName=Opretkunder.pdf" target="_blank">Kunder</a>
+                                    <a href="/FrontPage/GetPDF?fileName=Opretaktiviteter.pdf" target="_blank">Aktiviteter</a>
+                                    <a href="/FrontPage/GetPDF?fileName=Opretleverandører.pdf" target="_blank">Leverandører</a>
+                                    <a href="/FrontPage/GetPDF?fileName=Opretvarer.pdf" target="_blank">Varer</a>
+                                    <a href="/FrontPage/GetPDF?fileName=Opretvarekategori.pdf" target="_blank">Varekategorier</a>
+                                    <a href="/FrontPage/GetPDF?fileName=IntegrationDinero.pdf" target="_blank">Integration med Dinero</a>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+
                 </div>
             </div>
-        </footer>
-    </div>
+        </nav>
 
 
-    <script type="text/javascript">
-        $(document).ready(function () { // JQuery not loaded here, $ is undefined
-            $("#logoutLink").click(function () {
-                $("#FormLogout").submit();
+        <div class="page">
+            <!-- navbar-->
+            <header class="header">
+                <nav class="navbar">
+                    <div class="container-fluid">
+                        <div class="navbar-holder d-flex align-items-center justify-content-between">
+                            <div class="navbar-header">
+                                <a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a asp-controller="home" asp-action="index" class="navbar-brand"><div class="d-none d-md-inline-block"><span>nyxium.</span><strong>connect</strong></div></a>
+                            </div>
+                            <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                                @if (IsUserSignedIn)
+                                {
+                                    <li class="nav-item dropdown">
+                                        <a id="userandroles" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><span class="d-none d-sm-inline-block"></span><i class="fa fa-user-plus"></i></a>
+                                        <ul aria-labelledby="userandroles" class="dropdown-menu">
+                                            @if (IsCustomerAdmin || IsWedigitSystemAdministrator)
+                                            {
+                                                <li>
+                                                    <a asp-controller="Admin" asp-action="ShowUsers" rel="nofollow" class="dropdown-item"><span>Vis brugere</span></a>
+                                                </li>
+                                                <li>
+                                                    <a asp-controller="Admin" asp-action="AdministrateRolesOnUser" rel="nofollow" class="dropdown-item"><span>Administrer roller</span></a>
+                                                </li>
+                                            }
+                                            @if (IsWedigitSystemAdministrator)
+                                            {
+                                                <li>
+                                                    <a asp-controller="Admin" asp-action="ShowRoles" rel="nofollow" class="dropdown-item"><span>Vis roller</span></a>
+                                                </li>
+
+                                                <li>
+                                                    <a asp-controller="Account" asp-action="RegisterCustomerUser" rel="nofollow" class="dropdown-item"><span>Opret kundelogin</span></a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a id="companyconfiguration" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><span class="d-none d-sm-inline-block"></span><i class="fa fa-cog"></i></a>
+                                        <ul aria-labelledby="companyconfiguration" class="dropdown-menu">
+                                            @if (IsCustomerAdmin || IsWedigitSystemAdministrator)
+                                            {
+                                                <li>
+                                                    <a asp-controller="Account" asp-action="CompanyAccountSettings" rel="nofollow" class="dropdown-item"><span>Konfiguration</span></a>
+                                                </li>
+                                            }
+                                            @if (IsSupporter || IsWedigitSystemAdministrator)
+                                            {
+                                                <li>
+                                                    <a asp-controller="Impersonation" asp-action="SelectUserToImpersonate" rel="nofollow" class="dropdown-item"><span>Overtag kunde</span></a>
+                                                </li>
+                                                <li>
+                                                    <a asp-controller="Impersonation" asp-action="StopImpersonation" rel="nofollow" class="dropdown-item"><span>Stop overtagelse kunde</span></a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item companyname">
+                                        <span class="d-none d-sm-inline-block">@companyName</span><i class="fa fa-industry"></i>
+                                    </li>
+                                    <!-- change password-->
+                                    <li class="nav-item dropdown">
+                                        <a id="currentuser" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><span class="d-none d-sm-inline-block"></span><i class="fa fa-user"></i></a>
+                                        <ul aria-labelledby="currentuser" class="dropdown-menu">
+
+
+                                            <li class="nav-item username">
+                                                <a asp-controller="Administration" asp-action="ChangePassword" rel="nofollow" class="dropdown-item"><span>Skift kodeord</span></a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <!-- Log out-->
+                                    <li class="nav-item"><a id="logoutLink" href="#" class="nav-link logout"><span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
+                                }
+                                else
+                                {
+                                    <!-- Log in-->
+                                    <li class="nav-item"><a asp-controller="account" asp-action="login" class="nav-link logout"><span class="d-none d-sm-inline-block">Log ind</span><i class="fa fa-sign-in"></i></a></li>
+
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <form id="FormLogout" method="post" asp-action="Logout" asp-controller="account">
+                </form>
+            </header>
+            @RenderBody()
+
+
+            <footer class="main-footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p>@companyName 2020</p>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <p>Version 1.4.5</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+        <script type="text/javascript">
+            $(document).ready(function () { // JQuery not loaded here, $ is undefined
+                $("#logoutLink").click(function () {
+                    $("#FormLogout").submit();
+                });
             });
-        });
-    </script>
+        </script>
 
 
-    @if (IsSectionDefined("Scripts"))
-    {
-        @RenderSection("Scripts", required: true)
-    }
+        @if (IsSectionDefined("Scripts"))
+        {
+            @RenderSection("Scripts", required: true)
+        }
 
 
-</body>
-</html>
+    </body>
+    </html>

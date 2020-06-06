@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -374,7 +375,7 @@ namespace WedigITCRM.Controllers
             public string Id { get; set; }
             public string Name { get; set; }
             public string userId { get; set; }
-            public int active { get; set; }
+            public string active { get; set; }
         }
 
         [HttpPost]
@@ -385,10 +386,18 @@ namespace WedigITCRM.Controllers
             IdentityUser user = null;
             if (!string.IsNullOrEmpty(userId))
             {
+                var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
                 user = await userManager.FindByIdAsync(userId);
                 if (user != null)
                 {
+                    List<IdentityRole> allRoleslist = new List<IdentityRole>();
                     foreach (var role in roleManager.Roles)
+                    {
+                        allRoleslist.Add(role);
+                    }
+                       
+                    foreach (var role in allRoleslist)
                     {
                         if (!role.Name.Equals("SystemAdministrator"))
                         {
@@ -399,15 +408,32 @@ namespace WedigITCRM.Controllers
                             roleModel.Id = role.Id;
 
                             roleModel.userId = user.Id;
-                            if (await userManager.IsInRoleAsync(user, role.Name))
+                            bool tmpflag = false;
+                            try
                             {
-                                roleModel.active = 1;
+                                if (currentUserId.Equals(userId))
+                                {
+                                    tmpflag = User.IsInRole(role.Name);
+                                }
+                                else
+                                {
+                                    tmpflag = userManager.IsInRoleAsync(user, role.Name).Result;
+                                }
+                               
+                                if (tmpflag)
+                                {
+                                    roleModel.active = "1";
+                                }
+                                else
+                                {
+                                    roleModel.active = "0";
+                                }
+                                outputModel.data.Add(roleModel);
                             }
-                            else
+                            catch (Exception e)
                             {
-                                roleModel.active = 0;
+                                string g = e.Message;
                             }
-                            outputModel.data.Add(roleModel);
                         }
                     }
                 }
@@ -440,7 +466,7 @@ namespace WedigITCRM.Controllers
                             var roleList = userHasRoleNames.ToList<string>().Where(tmpRole => tmpRole.Equals(role.Name)).ToList();
                             if (roleList.Count == 0)
                             {
-                                if (roleModel.active == 1)
+                                if (roleModel.active.Equals("1"))
                                 {
                                     List<string> rolesList = new List<string>();
                                     rolesList.Add(role.Name);
@@ -450,7 +476,7 @@ namespace WedigITCRM.Controllers
                             }
                             else
                             {
-                                if (roleModel.active == 0)
+                                if (roleModel.active.Equals("0"))
                                 {
                                     List<string> rolesList = new List<string>();
                                     rolesList.Add(role.Name);
