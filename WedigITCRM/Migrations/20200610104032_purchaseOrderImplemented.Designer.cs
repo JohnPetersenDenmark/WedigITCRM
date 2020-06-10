@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WedigITCRM;
 
 namespace WedigITCRM.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200610104032_purchaseOrderImplemented")]
+    partial class purchaseOrderImplemented
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -936,9 +938,6 @@ namespace WedigITCRM.Migrations
                     b.Property<string>("PaymentTerms")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PurchaseOrderDocumentNumber")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ReceivedStatus")
                         .HasColumnType("int");
 
@@ -948,34 +947,10 @@ namespace WedigITCRM.Migrations
                     b.Property<DateTime>("SendToVendorDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("VendorCity")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VendorCountryCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VendorCurrencyCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VendorHomePage")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("VendorId")
                         .HasColumnType("int");
 
-                    b.Property<string>("VendorName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VendorPhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("VendorReference")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VendorStreet")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VendorZip")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WantedDeliveryDate")

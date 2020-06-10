@@ -945,6 +945,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\PurchaseOrder\CreatePO.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\CustomJS\ContactDatatable.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

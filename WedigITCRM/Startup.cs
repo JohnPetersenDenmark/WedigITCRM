@@ -83,6 +83,7 @@ namespace WedigITCRM
                 services.AddScoped<ICurrencyCodeRepository, SQLCurrencyCodeRepository>();
                 services.AddScoped<IContactPersonRepository, SQLContactPersonRepository>();
                 services.AddScoped<IActivityRepository, SQLActivityRepository>();
+                services.AddScoped<IPurchaseOrderRepository, SQLPurchaseOrderRepository>();
 
                 services.AddScoped<IVendorRepository, SQLVendorRepository>();
                 services.AddScoped<INoteRepository, SQLNoteRepository>();
