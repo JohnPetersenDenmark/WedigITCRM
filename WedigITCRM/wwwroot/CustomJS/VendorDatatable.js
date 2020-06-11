@@ -118,6 +118,15 @@ function initializeVendorEditor() {
                     name: "phoneNumber"
                 },
                 {
+                    label: "Email",
+                    name: "email"
+                },
+                {
+                    label: "Betalingsbetingelser",
+                    name: "paymentConditionsId",
+                    type: "select"
+                },
+                {
                     label: "Hjemmeside",
                     name: "homePage"
                 },
@@ -234,6 +243,8 @@ function initializeVendorTable() {
                 { "data": "city" },
                 { "data": "countryCode" },
                 { "data": "phoneNumber" },
+                { "data": "paymentConditionsId" },                
+                { "data": "email" },
                 { "data": "homePage" },
                 { "data": "lastEditedDate" },
                 { "data": "createdDate" }
@@ -293,6 +304,16 @@ function initializeVendorTable() {
                 },
                 {
                     "targets": 10,
+                    "visible": true,
+                    "searchable": true
+                },
+                {
+                    "targets": 11,
+                    "visible": true,
+                    "searchable": true
+                },
+                {
+                    "targets": 11,
                     "visible": true,
                     "searchable": true
                 }
@@ -363,6 +384,26 @@ function initializeVendorTable() {
                     vendorEditor.field('countryCode').update(optionsCountries);
 
                 });
+
+                $.getJSON("/Vendor/getPaymentConditions", {
+                    term: "-1"
+                },
+                    function (data) {
+                        var option = {};
+                        for (var i = 0; i < data.length; i++)
+                        {                            
+                                option.value = data[i].value;
+                                option.label = data[i].label;
+                                optionsPaymentConditions.push(option);
+                                option = {};                            
+                        }
+                    }
+                ).done(function () {
+                    vendorEditor.field('paymentConditionsId').update(optionsPaymentConditions);
+
+                });
+
+                
             }
         });
    

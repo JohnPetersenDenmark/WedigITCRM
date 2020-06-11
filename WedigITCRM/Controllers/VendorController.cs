@@ -4,10 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using WedigITCRM.DineroAPI;
+using WedigITCRM.Utilities;
 
 namespace WedigITCRM.Controllers
 {
@@ -56,6 +59,7 @@ namespace WedigITCRM.Controllers
                 ReducedVendor reducedVendor = new ReducedVendor();
                 reducedVendor.id = vendor.Id.ToString();
                 reducedVendor.name = vendor.Name;
+                reducedVendor.Email = vendor.Email;
                 reducedVendor.street = vendor.Street;
                 reducedVendor.city = vendor.City;
                 reducedVendor.zip = vendor.Zip;
@@ -68,6 +72,8 @@ namespace WedigITCRM.Controllers
                 reducedVendor.PhoneNumber = vendor.PhoneNumber;
                 reducedVendor.postalCodeId = vendor.postalCodeId;
                 reducedVendor.CountryCode = vendor.CountryCode;
+                reducedVendor.PaymentConditionsId = vendor.PaymentConditionsId.ToString();
+                reducedVendor.PaymentConditions = vendor.PaymentConditions;
                 reducedVendor.CurrencyCode = vendor.CurrencyCode;
                 reducedVendor.companyAccountId = vendor.companyAccountId;
                 data.Add(reducedVendor);
@@ -97,7 +103,19 @@ namespace WedigITCRM.Controllers
                         {
                             vendor.CVRNumber = datamodelInput.cvrNumber;
                         }
-                        
+
+                        vendor.Email = datamodelInput.Email;
+                        vendor.PaymentConditionsId = Int32.Parse(datamodelInput.PaymentConditionsId);
+                        if (!string.IsNullOrEmpty(datamodelInput.PaymentConditionsId))
+                        {
+                            int paymentConditionId = int.Parse(datamodelInput.PaymentConditionsId);
+                            Type enumType = typeof(EnumPaymentConditions);
+                            MemberInfo[] x = enumType.GetMember(Enum.GetName(enumType, paymentConditionId));
+                            MemberInfo y = x.First();
+                            DisplayAttribute z = y.GetCustomAttribute<DisplayAttribute>();
+                            vendor.PaymentConditions = z.Name;
+                            vendor.PaymentConditionsId = paymentConditionId;
+                        }
                         vendor.Street = datamodelInput.street;
                         vendor.Zip = datamodelInput.zip;
                         vendor.City = datamodelInput.city;
@@ -133,6 +151,21 @@ namespace WedigITCRM.Controllers
                     {
                         vendor.CVRNumber = datamodelInput.cvrNumber;
                     }
+
+                    vendor.Email = datamodelInput.Email;
+                    vendor.PaymentConditionsId = Int32.Parse(datamodelInput.PaymentConditionsId);
+
+                    if (!string.IsNullOrEmpty(datamodelInput.PaymentConditionsId))
+                    {
+                        int paymentConditionId = int.Parse(datamodelInput.PaymentConditionsId);
+                        Type enumType = typeof(EnumPaymentConditions);
+                        MemberInfo[] x = enumType.GetMember(Enum.GetName(enumType, paymentConditionId));
+                        MemberInfo y = x.First();
+                        DisplayAttribute z = y.GetCustomAttribute<DisplayAttribute>();
+                        vendor.PaymentConditions = z.Name;
+                        vendor.PaymentConditionsId = paymentConditionId;
+                    }
+                    
                     vendor.Street = datamodelInput.street;
                     vendor.Zip = datamodelInput.zip;
                     vendor.City = datamodelInput.city;
@@ -234,6 +267,37 @@ namespace WedigITCRM.Controllers
 
         }
 
+        public IActionResult getPaymentConditions()
+        {
+            
+            List<PaymentConditionViewModel> paymentConditionList = new List<PaymentConditionViewModel>();
+
+             Type enumType = typeof(EnumPaymentConditions);
+
+            var numberOfPaymentConditionTypesCount = Enum.GetNames(enumType).Length;
+
+            for (var i = 0; i < numberOfPaymentConditionTypesCount; i++)
+            {
+                MemberInfo[] x = enumType.GetMember(Enum.GetName(enumType, i));
+                MemberInfo y = x.First();
+                DisplayAttribute z = y.GetCustomAttribute<DisplayAttribute>();
+               
+                PaymentConditionViewModel PaymentConditionViewModel = new PaymentConditionViewModel();
+                PaymentConditionViewModel.Label = z.Name;
+                PaymentConditionViewModel.Value = i.ToString();
+                paymentConditionList.Add(PaymentConditionViewModel);
+            }
+
+
+            return Json(paymentConditionList);
+        }
+
+        public class PaymentConditionViewModel
+        {
+            public string Label { get; set; }
+            public string Value { get; set; }
+        }
+
         public class ReducedVendor
         {
 
@@ -249,7 +313,10 @@ namespace WedigITCRM.Controllers
             public string CountryCode { get; set; }
             public string CurrencyCode { get; set; }
             public string PhoneNumber { get; set; }
+            public string Email { get; set; }
 
+            public string PaymentConditionsId { get; set; }
+            public string PaymentConditions { get; set; }
             public string HomePage { get; set; }
             public string postalCodeId { get; set; }
 
@@ -275,8 +342,11 @@ namespace WedigITCRM.Controllers
             public string zip { get; set; }
             public string CountryCode { get; set; }
             public string CurrencyCode { get; set; }
-            
+            public string PaymentConditionsId { get; set; }
+            public string PaymentConditions { get; set; }
+
             public string PhoneNumber { get; set; }
+            public string Email { get; set; }
 
             public string HomePage { get; set; }
             public string postalCodeId { get; set; }

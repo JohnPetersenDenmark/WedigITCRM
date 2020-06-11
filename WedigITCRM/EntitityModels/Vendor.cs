@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using WedigITCRM.Utilities;
 
 namespace WedigITCRM
 {
@@ -22,6 +23,7 @@ namespace WedigITCRM
         public string CountryCode { get; set; }
         public string CurrencyCode { get; set; }
         public string PhoneNumber { get; set; }
+        public string Email { get; set; }
         public string HomePage { get; set; }
 
         public string postalCodeId { get; set; }
@@ -30,7 +32,9 @@ namespace WedigITCRM
         public CompanyAccount companyAccount { get; set; }
         public Guid DineroGuiD { get; set; }
 
+        public int PaymentConditionsId { get; set; }
 
+        public string PaymentConditions { get; set; }
 
         public DateTime LastEditedDate { get; set; }
 

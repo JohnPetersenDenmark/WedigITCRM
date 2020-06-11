@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WedigITCRM.EntitityModels;
 using WedigITCRM.StorageInterfaces;
+using WedigITCRM.Utilities;
 using WedigITCRM.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -46,11 +49,26 @@ namespace WedigITCRM.Controllers
                 purchaseOrder.VendorName = model.VendorName;
                 purchaseOrder.VendorStreet = model.VendorStreet;
                 purchaseOrder.VendorCity = model.VendorCity;
+                purchaseOrder.VendorEmail = model.VendorEmail;
                 purchaseOrder.VendorZip = model.VendorZip;
                 purchaseOrder.VendorCountryCode = model.VendorCountryCode;
                 purchaseOrder.VendorCurrencyCode = model.VendorCurrencyCode;
                 purchaseOrder.VendorPhoneNumber = model.VendorPhoneNumber;
                 purchaseOrder.VendorHomePage = model.VendorHomePage;
+
+                purchaseOrder.companyAccountId = companyAccount.companyAccountId;
+              
+                if (!string.IsNullOrEmpty(model.VendorPaymentConditionId))
+                {
+                    int paymentConditionId  = int.Parse(model.VendorPaymentConditionId);                  
+                    Type enumType = typeof(EnumPaymentConditions);
+                    MemberInfo[] x = enumType.GetMember(Enum.GetName(enumType, paymentConditionId));
+                    MemberInfo y = x.First();
+                    DisplayAttribute z = y.GetCustomAttribute<DisplayAttribute>();
+                    purchaseOrder.VendorPaymentConditionsId = model.VendorPaymentConditionId;
+
+                    purchaseOrder.VendorPaymentConditions = z.Name;
+                }
 
 
                 string DocumentNumber = getNextPurchaseOrderNumber(companyAccount.companyAccountId);
@@ -72,6 +90,7 @@ namespace WedigITCRM.Controllers
                 model.VendorName = purchaseOrder.VendorName;
                 model.VendorStreet = purchaseOrder.VendorStreet;
                 model.VendorCity = purchaseOrder.VendorCity;
+                purchaseOrder.VendorEmail = model.VendorEmail;
                 model.VendorZip = purchaseOrder.VendorZip;
                 model.VendorCountryCode = purchaseOrder.VendorCountryCode;
                 model.VendorCurrencyCode = purchaseOrder.VendorCurrencyCode;
@@ -145,6 +164,9 @@ namespace WedigITCRM.Controllers
                     model.CountryCode = vendor.CountryCode;
                     model.CurrencyCode = vendor.CurrencyCode;
                     model.PhoneNumber = vendor.PhoneNumber;
+                    model.VendorEmail = vendor.Email;
+                    model.VendorPaymentConditionsId = vendor.PaymentConditionsId.ToString();
+                    model.VendorPaymentConditions = vendor.PaymentConditions;
                 }
             }
             return Json(model);
@@ -184,7 +206,12 @@ namespace WedigITCRM.Controllers
         public string CurrencyCode { get; set; }
         public string PhoneNumber { get; set; }
         public string HomePage { get; set; }
+        public string VendorEmail { get; set; }
 
+        public string VendorPaymentConditionsId { get; set; }
+
+        public string VendorPaymentConditions { get; set; }
+     
     }
     public enum PurchaseOrderReceivedStatus
     {

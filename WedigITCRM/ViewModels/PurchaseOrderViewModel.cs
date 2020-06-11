@@ -17,5 +17,18 @@ namespace WedigITCRM.ViewModels
         public string VendorCurrencyCode { get; set; }
         public string VendorPhoneNumber { get; set; }
         public string VendorHomePage { get; set; }
+        public string VendorEmail { get; set; }
+        public string VendorReference { get; set; }
+
+        public string VendorPaymentConditionId { get; set; }
+
+        public string VendorPaymentCondition { get; set; }
+
+        public string VendorDeliveryConditionId { get; set; }
+
+        public string VendorDeliveryCondition { get; set; }
+
+
+        public string OurReference { get; set; }
     }
 }

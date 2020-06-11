@@ -933,9 +933,6 @@ namespace WedigITCRM.Migrations
                     b.Property<string>("OurReference")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PaymentTerms")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PurchaseOrderDocumentNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -957,6 +954,9 @@ namespace WedigITCRM.Migrations
                     b.Property<string>("VendorCurrencyCode")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("VendorEmail")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("VendorHomePage")
                         .HasColumnType("nvarchar(max)");
 
@@ -964,6 +964,12 @@ namespace WedigITCRM.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("VendorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VendorPaymentConditions")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VendorPaymentConditionsId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("VendorPhoneNumber")
@@ -1255,6 +1261,9 @@ namespace WedigITCRM.Migrations
                     b.Property<Guid>("DineroGuiD")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ForeignCity")
                         .HasColumnType("nvarchar(max)");
 
@@ -1270,6 +1279,12 @@ namespace WedigITCRM.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaymentConditions")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PaymentConditionsId")
+                        .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
