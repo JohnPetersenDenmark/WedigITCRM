@@ -27,8 +27,9 @@ namespace WedigITCRM.ViewModels
         public string VendorDeliveryConditionId { get; set; }
 
         public string VendorDeliveryCondition { get; set; }
-
-
+        public string Note { get; set; }
+        public string OurWantedDeliveryDate { get; set; }
+        public string OurOrderingDate { get; set; }
         public string OurReference { get; set; }
     }
 }

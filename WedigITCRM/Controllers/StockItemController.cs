@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DocumentFormat.OpenXml.EMMA;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -145,7 +146,7 @@ namespace WedigITCRM.Controllers
                     reducedStockItem.NumberInStock = stockItem.NumberInStock.ToString();
                     reducedStockItem.ReorderNumberInStock = stockItem.ReorderNumberInStock.ToString();
                     reducedStockItem.Category = stockItem.Category;
-                   
+                reducedStockItem.Unit = stockItem.Unit;
 
                     reducedStockItem.SalesPrice = stockItem.SalesPrice.ToString("C", danishNumberAndCurrencyFormatInfo);
                     reducedStockItem.CostPrice = stockItem.CostPrice.ToString("C", danishNumberAndCurrencyFormatInfo);
@@ -180,7 +181,7 @@ namespace WedigITCRM.Controllers
                     if (stockItem != null)
                     {
                         DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
-
+                        
                         stockItem.ItemName = datamodelInput.ItemName;
                         stockItem.ItemNumber = datamodelInput.ItemNumber;
                         stockItem.Location = datamodelInput.Location;
@@ -316,7 +317,7 @@ namespace WedigITCRM.Controllers
                             }
                         }
 
-                        stockItem.Unit = "parts";
+                        stockItem.Unit = datamodelInput.Unit;
 
                         stockItem.LastEditedDate = DateTime.Now;
                         StockItem  stockItemToUpdate = _stockItemRepository.Update(stockItem);
@@ -416,7 +417,7 @@ namespace WedigITCRM.Controllers
                         }
                     }
 
-                    stockItem.Unit = "parts";
+                    stockItem.Unit = datamodelInput.Unit;
 
                     stockItem.CreatedDate = DateTime.Now;
                     stockItem.LastEditedDate = DateTime.Now;
@@ -543,6 +544,44 @@ namespace WedigITCRM.Controllers
                 }
 
                 return Json(data);
+
+        }
+
+        public IActionResult searchstockItemByNameAndVendor(string term, string vendorId, CompanyAccount companyAccount)
+        {
+            List<StockItemSearckResultViewModel> data = new List<StockItemSearckResultViewModel>();
+            List<StockItem> stockItemData = new List<StockItem>();
+
+            if (string.IsNullOrEmpty(vendorId))
+            {
+                return Json(data);
+            }
+
+            int vendorIdNumeric = Int32.Parse(vendorId);
+
+            if (!string.IsNullOrEmpty(term))
+            {
+                stockItemData = _stockItemRepository.GetAllstockItems().Where(stockitem => stockitem.companyAccountId == companyAccount.companyAccountId && stockitem.VendorId == vendorIdNumeric && stockitem.ItemName.ToLower().Contains(term.ToLower())).ToList();
+            }
+            else
+            {
+                stockItemData = _stockItemRepository.GetAllstockItems().Where(stockitem => stockitem.companyAccountId == companyAccount.companyAccountId && stockitem.VendorId == vendorIdNumeric ).ToList();
+            }
+
+            
+
+            
+            foreach (var stockItem in stockItemData)
+            {
+                DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+
+                StockItemSearckResultViewModel outputModel = new StockItemSearckResultViewModel();
+                outputModel.label = stockItem.ItemName;
+                outputModel.StockItemId = stockItem.Id.ToString();
+                data.Add(outputModel);
+            }
+
+            return Json(data);
 
         }
 
@@ -838,6 +877,7 @@ namespace WedigITCRM.Controllers
             public string CostPrice { get; set; }
 
             public string StockValue { get; set; }
+            public string Unit { get; set; }
 
             public string SalesPrice { get; set; }
 

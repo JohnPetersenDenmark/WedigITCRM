@@ -954,9 +954,6 @@ namespace WedigITCRM.Migrations
                     b.Property<string>("Currency")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DeliveryConditions")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ExchangeRate")
                         .HasColumnType("nvarchar(max)");
 
@@ -965,6 +962,9 @@ namespace WedigITCRM.Migrations
 
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OurOrderingDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("OurReference")
                         .HasColumnType("nvarchar(max)");
@@ -988,6 +988,12 @@ namespace WedigITCRM.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("VendorCurrencyCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VendorDeliveryConditionId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VendorDeliveryConditions")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("VendorEmail")
@@ -1020,8 +1026,8 @@ namespace WedigITCRM.Migrations
                     b.Property<string>("VendorZip")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WantedDeliveryDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("WantedDeliveryDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("companyAccountId")
                         .HasColumnType("int");
@@ -1029,6 +1035,69 @@ namespace WedigITCRM.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PurchaseOrders");
+                });
+
+            modelBuilder.Entity("WedigITCRM.EntitityModels.PurchaseOrderLine", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastEditedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OurItemName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OurItemNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OurLocation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OurUnit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("OurUnitCostPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("OurUnitSalesPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("PurchaseOrderId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("QuantityToOrder")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("ReceivedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("VendorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VendorItemName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VendorItemNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("VendorSalesUnitPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("VendorUnit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("companyAccountId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PurchaseOrderLines");
                 });
 
             modelBuilder.Entity("WedigITCRM.JobServiceType", b =>
@@ -1192,6 +1261,9 @@ namespace WedigITCRM.Migrations
                     b.Property<int>("VendorId")
                         .HasColumnType("int");
 
+                    b.Property<string>("VendorItemName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("VendorItemNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -1293,6 +1365,12 @@ namespace WedigITCRM.Migrations
 
                     b.Property<string>("CurrencyCode")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeliveryConditions")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DeliveryConditionsId")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("DineroGuiD")
                         .HasColumnType("uniqueidentifier");

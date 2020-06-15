@@ -127,6 +127,11 @@ function initializeVendorEditor() {
                     type: "select"
                 },
                 {
+                    label: "Leveringsbetingelser",
+                    name: "deliveryConditionsId",
+                    type: "select"
+                },
+                {
                     label: "Hjemmeside",
                     name: "homePage"
                 },
@@ -243,7 +248,8 @@ function initializeVendorTable() {
                 { "data": "city" },
                 { "data": "countryCode" },
                 { "data": "phoneNumber" },
-                { "data": "paymentConditionsId" },                
+                { "data": "paymentConditionsId" },
+                { "data": "deliveryConditionsId" },         
                 { "data": "email" },
                 { "data": "homePage" },
                 { "data": "lastEditedDate" },
@@ -294,12 +300,12 @@ function initializeVendorTable() {
                 },
                 {
                     "targets": 8,
-                    "visible": true,
+                    "visible": false,
                     "searchable": true
                 },
                 {
                     "targets": 9,
-                    "visible": true,
+                    "visible": false,
                     "searchable": true
                 },
                 {
@@ -313,7 +319,12 @@ function initializeVendorTable() {
                     "searchable": true
                 },
                 {
-                    "targets": 11,
+                    "targets": 12,
+                    "visible": true,
+                    "searchable": true
+                },
+                {
+                    "targets": 13,
                     "visible": true,
                     "searchable": true
                 }
@@ -400,6 +411,23 @@ function initializeVendorTable() {
                     }
                 ).done(function () {
                     vendorEditor.field('paymentConditionsId').update(optionsPaymentConditions);
+
+                });
+
+                $.getJSON("/Vendor/getDeliveryConditions", {
+                    term: "-1"
+                },
+                    function (data) {
+                        var option = {};
+                        for (var i = 0; i < data.length; i++) {
+                            option.value = data[i].value;
+                            option.label = data[i].label;
+                            optionsDeliveryConditions.push(option);
+                            option = {};
+                        }
+                    }
+                ).done(function () {
+                    vendorEditor.field('deliveryConditionsId').update(optionsDeliveryConditions);
 
                 });
 

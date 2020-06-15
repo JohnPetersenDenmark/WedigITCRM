@@ -470,7 +470,32 @@ i.fa-phone {
 }
 
 
+input[type=text].PurchaseOrderInput {
+    width: 100%;
+    margin-bottom: 10px;
+ 
+}
+
+select.PurchaseOrderInput {
+    width: 100%;
+    margin-bottom: 10px;
+}
 
 
+label {
+    margin: 0px 0px;
+    display: block;
+}
 
+textarea.PurchaseOrderTextarea {
+    width: 100%;
+    height: 150px;
+}
 
+.modal-dialog.modal-lg {
+    max-width: 70% !important;
+}
+
+ul.ui-autocomplete {
+    z-index: 1100;
+}

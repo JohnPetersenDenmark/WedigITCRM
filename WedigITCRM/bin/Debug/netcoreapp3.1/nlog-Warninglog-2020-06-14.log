@@ -1,0 +1,79 @@
+2020-06-14 11:05:03.9047|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-14 11:05:05.2642|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-14 11:05:05.3710|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-14 11:05:05.9417|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-14 11:05:08.9499|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-14 11:05:09.2888|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-06-14 11:05:23.9748|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-14 11:05:23.9946|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-14 11:27:18.3089|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (448ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AllReceivedDate], [p].[CreatedDate], [p].[Currency], [p].[ExchangeRate], [p].[LastEditedDate], [p].[Note], [p].[OurReference], [p].[PurchaseOrderDocumentNumber], [p].[ReceivedStatus], [p].[SendDate], [p].[SendToVendorDate], [p].[VendorCity], [p].[VendorCountryCode], [p].[VendorCurrencyCode], [p].[VendorDeliveryConditionId], [p].[VendorDeliveryConditions], [p].[VendorEmail], [p].[VendorHomePage], [p].[VendorId], [p].[VendorName], [p].[VendorPaymentConditions], [p].[VendorPaymentConditionsId], [p].[VendorPhoneNumber], [p].[VendorReference], [p].[VendorStreet], [p].[VendorZip], [p].[WantedDeliveryDate], [p].[companyAccountId]
+FROM [PurchaseOrders] AS [p]
+2020-06-14 11:27:18.3735|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'VendorDeliveryConditionId'.
+Invalid column name 'VendorDeliveryConditions'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:f3f8e802-140b-4e93-beb2-d3d729981171
+Error Number:207,State:1,Class:16
+2020-06-14 11:28:34.5413|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-14 11:28:36.3652|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-14 11:28:36.5813|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-14 11:28:41.0251|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-14 11:28:48.9992|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-14 11:28:49.0492|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-06-14 11:33:09.1610|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-14 11:33:09.1905|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-14 11:33:18.4884|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-14 11:33:18.5088|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-06-14 11:33:24.2367|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-14 11:33:24.2938|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-14 11:34:13.2841|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AllReceivedDate], [p].[CreatedDate], [p].[Currency], [p].[ExchangeRate], [p].[LastEditedDate], [p].[Note], [p].[OurReference], [p].[PurchaseOrderDocumentNumber], [p].[ReceivedStatus], [p].[SendDate], [p].[SendToVendorDate], [p].[VendorCity], [p].[VendorCountryCode], [p].[VendorCurrencyCode], [p].[VendorDeliveryConditionId], [p].[VendorDeliveryConditions], [p].[VendorEmail], [p].[VendorHomePage], [p].[VendorId], [p].[VendorName], [p].[VendorPaymentConditions], [p].[VendorPaymentConditionsId], [p].[VendorPhoneNumber], [p].[VendorReference], [p].[VendorStreet], [p].[VendorZip], [p].[WantedDeliveryDate], [p].[companyAccountId]
+FROM [PurchaseOrders] AS [p]
+2020-06-14 11:34:13.3649|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'VendorDeliveryConditionId'.
+Invalid column name 'VendorDeliveryConditions'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:24ea6727-7038-4cf7-9044-45225c2ee69a
+Error Number:207,State:1,Class:16
+2020-06-14 11:35:00.2953|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-14 11:35:00.4584|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-14 11:35:32.0561|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-14 11:35:32.1732|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-14 11:35:52.5700|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-14 11:35:53.7849|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-14 11:35:53.8828|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-14 11:35:54.7419|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-14 11:35:56.9721|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-14 11:35:57.0213|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-06-14 11:36:12.1140|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-14 11:36:12.1308|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action

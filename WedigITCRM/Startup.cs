@@ -84,6 +84,7 @@ namespace WedigITCRM
                 services.AddScoped<IContactPersonRepository, SQLContactPersonRepository>();
                 services.AddScoped<IActivityRepository, SQLActivityRepository>();
                 services.AddScoped<IPurchaseOrderRepository, SQLPurchaseOrderRepository>();
+                services.AddScoped<IPurchaseOrderLineRepository, SQLPurchaseOrderLineRepository>();
                 services.AddScoped<IDeliveryConditionRepository, SQLDeliveryConditionRepository>();
                 services.AddScoped<IVendorRepository, SQLVendorRepository>();
                 services.AddScoped<INoteRepository, SQLNoteRepository>();
@@ -100,11 +101,8 @@ namespace WedigITCRM
                 services.AddScoped<ILicenseType, SQLLicenseTypeRepository>();
                 services.AddScoped<ICountryRepository, SQLCountryRepository>();
                 services.AddScoped<IAttachmentRepository, SQLAttachmentRepository>();
-                services.AddScoped<IPaymentConditionRepository, SQLPaymentConditionRepository>();
-            
+                services.AddScoped<IPaymentConditionRepository, SQLPaymentConditionRepository>();            
                 services.AddScoped<DineroAPIConnect>();
-
-
                 services.AddScoped<EmailUtility>();
 
 

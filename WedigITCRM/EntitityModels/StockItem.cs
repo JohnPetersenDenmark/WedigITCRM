@@ -22,6 +22,7 @@ namespace WedigITCRM
         public int VendorId { get; set; }
         
         public string VendorItemNumber { get; set; }
+        public string VendorItemName { get; set; }
         public DateTime Expirationdate { get; set; }
         public DateTime InStockAgainDate { get; set; }
         [Column(TypeName = "decimal(18,2)")]

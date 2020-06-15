@@ -15,11 +15,12 @@ namespace WedigITCRM.EntitityModels
         public string Currency { get; set; }
         public string ExchangeRate { get; set; }
        
-        public string DeliveryConditions { get; set; }
+        
         public DateTime SendDate { get; set; }
         public string  Note { get; set; }        
         public  PurchaseOrderReceivedStatus ReceivedStatus { get; set; }
-        public string WantedDeliveryDate { get; set; }
+        public DateTime WantedDeliveryDate { get; set; }
+        public DateTime OurOrderingDate { get; set; }
         public DateTime SendToVendorDate { get; set; }        
         public DateTime AllReceivedDate { get; set; }
         public DateTime LastEditedDate { get; set; }
@@ -35,8 +36,9 @@ namespace WedigITCRM.EntitityModels
         public string VendorHomePage { get; set; }
         public string VendorEmail { get; set; }
         public string VendorPaymentConditionsId { get; set; }
-
         public string VendorPaymentConditions { get; set; }
+        public string VendorDeliveryConditions { get; set; }
+        public string VendorDeliveryConditionId { get; set; }
         public int companyAccountId { get; set; }
     }
 }

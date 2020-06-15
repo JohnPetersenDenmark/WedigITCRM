@@ -163,6 +163,10 @@ function initializeStockItemEditor() {
                     name: "itemNumber"
                 },
                 {
+                    label: "Enheder",
+                    name: "unit"
+                },
+                {
                     label: "Antal på lager",
                     name: "numberInStock"
                 },
@@ -307,6 +311,7 @@ function initializeStockitemtable() {
                 { "data": "id" },
                 { "data": "itemName" },
                 { "data": "itemNumber" },
+                { "data": "unit" },
                 { "data": "category1" },
                 { "data": "category2" },
                 { "data": "category3" },
@@ -439,6 +444,11 @@ function initializeStockitemtable() {
                     "visible": false,
                     "searchable": false
                 },
+                {
+                    "targets": 22,
+                    "visible": false,
+                    "searchable": false
+                }
             ],
             initComplete: function (settings, json) {
 

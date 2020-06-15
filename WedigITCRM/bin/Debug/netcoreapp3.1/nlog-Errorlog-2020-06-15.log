@@ -1,0 +1,235 @@
+2020-06-15 11:40:06.7393|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 11:40:07.6811|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 11:40:40.1524|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 11:40:40.2637|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 11:40:46.0827|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (99ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[PurchaseOrders]') AND [c].[name] = N'WantedDeliveryDate');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [PurchaseOrders] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [PurchaseOrders] ALTER COLUMN [WantedDeliveryDate] datetime2 NOT NULL;
+2020-06-15 11:45:47.0019|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 11:45:47.1093|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 11:46:12.1928|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 11:46:13.1760|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 11:46:13.6292|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 11:46:14.6639|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 11:46:19.7640|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 11:46:19.7989|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-06-15 11:46:30.8008|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 11:46:30.8125|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 12:22:44.2928|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 12:22:44.4409|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 12:23:12.8562|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 12:23:13.0041|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 12:26:51.9269|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 12:26:53.4062|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 12:26:53.5363|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 12:26:54.0946|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 12:27:00.2855|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 12:27:00.3252|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 12:33:15.1820|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 12:33:15.9620|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 12:33:16.0312|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 12:33:17.6069|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 12:33:21.4175|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 12:33:21.4549|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 12:50:11.0691|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 12:50:12.2090|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 12:50:12.3226|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 12:50:12.9023|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 12:50:16.8945|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 12:50:16.9423|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 12:52:26.7371|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-06-15 12:52:27.2487|ERROR|WedigITCRM.Startup|{"UserId":"6c1e27cf-820e-4335-b9a5-7ed1142c531c","UserName":"johnpetersen1959@gmail.com","CompanyId":"13024","CompanyName":"Hack and Wood","Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Object reference not set to an instance of an object.\r\n                                         \r\n\r\n                                            at AspNetCore.Views_PurchaseOrder_CreatePO.<ExecuteAsync>b__29_0() in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Views\\PurchaseOrder\\CreatePO.cshtml:line 140\r\n   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)\r\n   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)\r\n   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)\r\n   at AspNetCore.Views_PurchaseOrder_CreatePO.ExecuteAsync()\r\n   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)\r\n   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)\r\n   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)\r\n   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)\r\n   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)\r\n   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)\r\n   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)\r\n   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"a3d9ccc9-8395-401c-b4b7-bb57552fb917","Extensions":{}}
+2020-06-15 12:52:27.4865|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An exception was thrown attempting to execute the error handler.
+2020-06-15 12:52:27.5229|ERROR|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "16933534604818645010", Request ID "80000013-0001-eb00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+2020-06-15 12:53:02.1491|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 12:53:02.9417|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 13:34:34.4502|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 13:34:35.8495|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 13:34:35.9229|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 13:34:36.5100|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 13:34:41.1080|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 13:34:41.1244|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 14:00:43.0444|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 14:00:43.9866|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 14:00:44.0466|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 14:00:44.9665|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 14:00:48.1530|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 14:00:48.2018|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 15:13:33.0291|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 15:13:33.8727|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 15:13:33.9953|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 15:13:34.6793|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 15:13:39.5984|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 15:13:39.6160|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 15:25:39.9037|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 15:25:40.9084|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 15:25:40.9879|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 15:25:41.7071|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 15:25:45.5404|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 15:25:45.7951|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 15:33:54.3299|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 15:33:55.2887|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 15:33:55.3578|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 15:33:55.9423|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 15:33:59.5322|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 15:33:59.7562|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 16:00:05.4316|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-06-15 16:00:05.5709|ERROR|WedigITCRM.Startup|{"UserId":"6c1e27cf-820e-4335-b9a5-7ed1142c531c","UserName":"johnpetersen1959@gmail.com","CompanyId":"13024","CompanyName":"Hack and Wood","Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Object reference not set to an instance of an object.\r\n                                         \r\n\r\n                                            at WedigITCRM.Controllers.StockItemController.<>c__DisplayClass16_0.<searchstockItemByName>b__0(StockItem stockitem) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\StockItemController.cs:line 532\r\n   at System.Linq.Enumerable.WhereEnumerableIterator`1.ToList()\r\n   at WedigITCRM.Controllers.StockItemController.searchstockItemByName(String term, CompanyAccount companyAccount) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\StockItemController.cs:line 532\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"775a12a3-bdd3-4d63-b370-624b1dfaeee0","Extensions":{}}
+2020-06-15 16:00:05.7139|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An exception was thrown attempting to execute the error handler.
+2020-06-15 16:00:05.7316|ERROR|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "17870283323016740969", Request ID "8000006a-0000-f800-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+2020-06-15 16:15:54.6236|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 16:15:55.8219|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 16:15:55.9360|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 16:15:56.5851|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 16:15:59.7007|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 16:16:00.9382|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 16:30:05.0853|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 16:30:06.0382|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 16:30:06.1160|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 16:30:06.8233|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 16:30:11.1790|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 16:30:11.1948|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 17:42:49.5294|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 17:42:50.4844|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 17:42:50.5824|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 17:42:51.2153|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 17:42:56.4459|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 17:42:56.4672|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 17:55:29.5783|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 17:55:30.6785|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 17:55:30.8515|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 17:55:32.0411|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 17:55:36.4419|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 17:55:36.4608|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 18:40:56.0825|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. This is usually caused by different threads using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+2020-06-15 18:40:56.1714|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|A second operation started on this context before a previous operation completed. This is usually caused by different threads using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.nyxium stack trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.ToList()
+   at WedigITCRM.DineroAPI.DineroContacts.updateOrAddVendorInNyxium(READDineroAPIcontact dineroContact, DineroContacts dineroContactsToNyxium, CompanyAccount companyAccount, IVendorRepository _vendorRepository) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroContacts.cs:line 628
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 112
+2020-06-15 21:46:13.6088|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 21:46:13.8516|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 21:46:40.1629|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 21:46:40.2901|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 21:47:23.6595|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 21:47:24.8280|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 21:47:24.9330|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 21:47:25.7574|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 21:47:30.0106|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 21:47:30.0247|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-06-15 21:47:39.1280|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 21:47:39.1516|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 21:49:12.7280|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 21:49:13.6451|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 21:49:13.7167|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 21:49:14.3040|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 21:49:18.4453|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 21:49:18.4715|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 21:51:04.4093|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-06-15 21:51:05.0278|ERROR|WedigITCRM.Startup|{"UserId":"6c1e27cf-820e-4335-b9a5-7ed1142c531c","UserName":"johnpetersen1959@gmail.com","CompanyId":"13024","CompanyName":"Hack and Wood","Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Value cannot be null. (Parameter 's')\r\n                                         \r\n\r\n                                            at System.Decimal.Parse(String s)\r\n   at WedigITCRM.Controllers.PurchaseOrderController.saveOrderLine(StockItemDetailModel model, CompanyAccount companyAccount) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\PurchaseOrderController.cs:line 245\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"24f48283-cb6c-45cb-a4a1-5ee61e1f41c1","Extensions":{}}
+2020-06-15 21:51:05.1912|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An exception was thrown attempting to execute the error handler.
+2020-06-15 21:51:05.2106|ERROR|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "17509995357122068556", Request ID "8000004d-0001-f300-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+2020-06-15 22:14:05.6375|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+System.InvalidOperationException: A second operation started on this context before a previous operation completed. This is usually caused by different threads using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+2020-06-15 22:14:05.8215|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|A second operation started on this context before a previous operation completed. This is usually caused by different threads using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.nyxium stack trace:    at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.ToList()
+   at WedigITCRM.DineroAPI.DineroContacts.updateOrAddVendorInNyxium(READDineroAPIcontact dineroContact, DineroContacts dineroContactsToNyxium, CompanyAccount companyAccount, IVendorRepository _vendorRepository) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroContacts.cs:line 628
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 112
+2020-06-15 22:14:06.0026|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|The instance of entity type 'CompanyAccount' cannot be tracked because another instance with the same key value for {'companyAccountId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.nyxium stack trace:    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.DbContext.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.DbContext.SetEntityState[TEntity](TEntity entity, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.DbContext.Attach[TEntity](TEntity entity)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Attach(TEntity entity)
+   at WedigITCRM.Models.SQLCompanyAccountRepository.Update(CompanyAccount companyAccountChanges) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\SQLImplmementationModels\SQLCompanyAccountRepository.cs:line 30
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 153
+2020-06-15 22:19:52.1657|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 22:19:53.2265|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 22:19:53.3089|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 22:19:54.2929|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 22:19:59.7194|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 22:19:59.7313|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 23:16:56.0139|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 23:16:56.1423|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 23:17:23.6494|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 23:17:23.8132|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 23:17:49.6572|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 23:17:51.0836|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 23:17:51.1803|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 23:17:52.5579|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 23:17:58.8836|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 23:17:58.8968|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 23:34:49.7748|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 23:34:49.8925|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 23:35:20.1860|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 23:35:20.3087|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 23:39:15.2995|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 23:39:17.5120|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 23:39:17.6457|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 23:39:19.8578|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 23:39:23.2278|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 23:39:23.7459|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-15 23:41:02.3727|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (8ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Decimal), @p7='?' (DbType = Decimal), @p8='?' (DbType = Int32), @p9='?' (DbType = Decimal), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Int32), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Decimal), @p15='?' (Size = 4000), @p16='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseOrderLines] ([CreatedDate], [LastEditedDate], [OurItemName], [OurItemNumber], [OurLocation], [OurUnit], [OurUnitCostPrice], [OurUnitSalesPrice], [PurchaseOrderId], [QuantityToOrder], [ReceivedDate], [VendorId], [VendorItemName], [VendorItemNumber], [VendorSalesUnitPrice], [VendorUnit], [companyAccountId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+SELECT [Id]
+FROM [PurchaseOrderLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-06-15 23:41:02.7668|ERROR|Microsoft.EntityFrameworkCore.Update|An exception occurred in the database while saving changes for context type 'WedigITCRM.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'OurLocation'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:12f15812-d63e-400f-b668-8a7605c22b55
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2020-06-15 23:41:44.8019|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 23:41:44.9637|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 23:42:11.4814|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 23:42:11.6584|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 23:43:50.8753|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-15 23:43:51.7753|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-15 23:43:51.8371|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-15 23:43:52.3962|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-15 23:43:57.1887|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-15 23:43:57.2445|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action

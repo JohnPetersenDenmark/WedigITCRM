@@ -10,6 +10,8 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using WedigITCRM.DineroAPI;
+using WedigITCRM.EntitityModels;
+using WedigITCRM.StorageInterfaces;
 using WedigITCRM.Utilities;
 
 namespace WedigITCRM.Controllers
@@ -17,6 +19,8 @@ namespace WedigITCRM.Controllers
     [Authorize]
     public class VendorController : Controller
     {
+        private readonly IDeliveryConditionRepository _deliveryConditionRepository;
+        private readonly IPaymentConditionRepository _paymentConditionRepository;
         private ILogger<VendorController> _logger;
         private IVendorRepository _vendorRepository;
         private IPostalCodeRepository _postalCodeRepository;
@@ -28,8 +32,10 @@ namespace WedigITCRM.Controllers
 
 
 
-        public VendorController(ILogger<VendorController> logger, IVendorRepository vendorRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, ICompanyAccountRepository companyAccountRepository, IPostalCodeRepository postalCodeRepository, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        public VendorController(IDeliveryConditionRepository deliveryConditionRepository, IPaymentConditionRepository paymentConditionRepository, ILogger<VendorController> logger, IVendorRepository vendorRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, ICompanyAccountRepository companyAccountRepository, IPostalCodeRepository postalCodeRepository, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
         {
+            _deliveryConditionRepository = deliveryConditionRepository;
+            _paymentConditionRepository = paymentConditionRepository;
             _logger = logger;
             _vendorRepository = vendorRepository;
             _postalCodeRepository = postalCodeRepository;
@@ -74,6 +80,8 @@ namespace WedigITCRM.Controllers
                 reducedVendor.CountryCode = vendor.CountryCode;
                 reducedVendor.PaymentConditionsId = vendor.PaymentConditionsId.ToString();
                 reducedVendor.PaymentConditions = vendor.PaymentConditions;
+                reducedVendor.DeliveryConditionsId = vendor.DeliveryConditionsId.ToString();
+                reducedVendor.DeliveryConditions = vendor.DeliveryConditions;
                 reducedVendor.CurrencyCode = vendor.CurrencyCode;
                 reducedVendor.companyAccountId = vendor.companyAccountId;
                 data.Add(reducedVendor);
@@ -108,14 +116,24 @@ namespace WedigITCRM.Controllers
                         vendor.PaymentConditionsId = Int32.Parse(datamodelInput.PaymentConditionsId);
                         if (!string.IsNullOrEmpty(datamodelInput.PaymentConditionsId))
                         {
-                            int paymentConditionId = int.Parse(datamodelInput.PaymentConditionsId);
-                            Type enumType = typeof(EnumPaymentConditions);
-                            MemberInfo[] x = enumType.GetMember(Enum.GetName(enumType, paymentConditionId));
-                            MemberInfo y = x.First();
-                            DisplayAttribute z = y.GetCustomAttribute<DisplayAttribute>();
-                            vendor.PaymentConditions = z.Name;
-                            vendor.PaymentConditionsId = paymentConditionId;
+                            PaymentCondition paymentCondition = _paymentConditionRepository.GetPaymentCondition(Int32.Parse(datamodelInput.PaymentConditionsId));
+                            if (paymentCondition != null)
+                            {
+                                vendor.PaymentConditions = paymentCondition.Description;
+                            }                                                     
                         }
+
+                        vendor.DeliveryConditionsId= Int32.Parse(datamodelInput.DeliveryConditionsId);
+                        if (!string.IsNullOrEmpty(datamodelInput.DeliveryConditionsId))
+                        {
+                            DeliveryCondition deliveryCondition = _deliveryConditionRepository.GetDeliveryCondition(Int32.Parse(datamodelInput.DeliveryConditionsId));
+                            if (deliveryCondition != null)
+                            {
+                                vendor.PaymentConditions = deliveryCondition.Description;
+                            }
+                        }
+
+
                         vendor.Street = datamodelInput.street;
                         vendor.Zip = datamodelInput.zip;
                         vendor.City = datamodelInput.city;
@@ -128,7 +146,7 @@ namespace WedigITCRM.Controllers
                         vendor.postalCodeId = datamodelInput.postalCodeId;
                         vendor.HomePage = datamodelInput.HomePage;
                         vendor.LastEditedDate = DateTime.Now;
-                        Vendor newVendor =_vendorRepository.Update(vendor);
+                        Vendor newVendor = _vendorRepository.Update(vendor);
 
                         if (companyAccount.IntegrationDinero && companyAccount.synchronizeCustomerFromNyxiumToDinero)
                         {
@@ -157,15 +175,24 @@ namespace WedigITCRM.Controllers
 
                     if (!string.IsNullOrEmpty(datamodelInput.PaymentConditionsId))
                     {
-                        int paymentConditionId = int.Parse(datamodelInput.PaymentConditionsId);
-                        Type enumType = typeof(EnumPaymentConditions);
-                        MemberInfo[] x = enumType.GetMember(Enum.GetName(enumType, paymentConditionId));
-                        MemberInfo y = x.First();
-                        DisplayAttribute z = y.GetCustomAttribute<DisplayAttribute>();
-                        vendor.PaymentConditions = z.Name;
-                        vendor.PaymentConditionsId = paymentConditionId;
+                        PaymentCondition paymentCondition = _paymentConditionRepository.GetPaymentCondition(Int32.Parse(datamodelInput.PaymentConditionsId));
+                        if (paymentCondition != null)
+                        {
+                            vendor.PaymentConditions = paymentCondition.Description;
+                        }
                     }
-                    
+
+                    vendor.DeliveryConditionsId = Int32.Parse(datamodelInput.DeliveryConditionsId);
+                    if (!string.IsNullOrEmpty(datamodelInput.DeliveryConditionsId))
+                    {
+                        DeliveryCondition deliveryCondition = _deliveryConditionRepository.GetDeliveryCondition(Int32.Parse(datamodelInput.DeliveryConditionsId));
+                        if (deliveryCondition != null)
+                        {
+                            vendor.PaymentConditions = deliveryCondition.Description;
+                        }
+                    }
+
+
                     vendor.Street = datamodelInput.street;
                     vendor.Zip = datamodelInput.zip;
                     vendor.City = datamodelInput.city;
@@ -210,7 +237,7 @@ namespace WedigITCRM.Controllers
                         }
                     }
 
-                 
+
 
                 }
 
@@ -267,32 +294,64 @@ namespace WedigITCRM.Controllers
 
         }
 
-        public IActionResult getPaymentConditions()
+        public IActionResult getPaymentConditions(CompanyAccount companyAccount)
         {
-            
-            List<PaymentConditionViewModel> paymentConditionList = new List<PaymentConditionViewModel>();
 
-             Type enumType = typeof(EnumPaymentConditions);
 
-            var numberOfPaymentConditionTypesCount = Enum.GetNames(enumType).Length;
 
-            for (var i = 0; i < numberOfPaymentConditionTypesCount; i++)
+            // Type enumType = typeof(EnumPaymentConditions);
+
+            //var numberOfPaymentConditionTypesCount = Enum.GetNames(enumType).Length;
+
+            //for (var i = 0; i < numberOfPaymentConditionTypesCount; i++)
+            //{
+            //    MemberInfo[] x = enumType.GetMember(Enum.GetName(enumType, i));
+            //    MemberInfo y = x.First();
+            //    DisplayAttribute z = y.GetCustomAttribute<DisplayAttribute>();
+
+            //    PaymentConditionViewModel PaymentConditionViewModel = new PaymentConditionViewModel();
+            //    PaymentConditionViewModel.Label = z.Name;
+            //    PaymentConditionViewModel.Value = i.ToString();
+            //    paymentConditionList.Add(PaymentConditionViewModel);
+            //}
+
+            List<PaymentConditionViewModel> paymentConditionModelList = new List<PaymentConditionViewModel>();
+            List<PaymentCondition> paymentConditionList = _paymentConditionRepository.GetAllPaymentConditions().Where(paymentConditionType => paymentConditionType.companyAccountId == companyAccount.companyAccountId).ToList();
+
+            foreach (var paymentConditionType in paymentConditionList)
             {
-                MemberInfo[] x = enumType.GetMember(Enum.GetName(enumType, i));
-                MemberInfo y = x.First();
-                DisplayAttribute z = y.GetCustomAttribute<DisplayAttribute>();
-               
                 PaymentConditionViewModel PaymentConditionViewModel = new PaymentConditionViewModel();
-                PaymentConditionViewModel.Label = z.Name;
-                PaymentConditionViewModel.Value = i.ToString();
-                paymentConditionList.Add(PaymentConditionViewModel);
+                PaymentConditionViewModel.Label = paymentConditionType.Description;
+                PaymentConditionViewModel.Value = paymentConditionType.Id.ToString();
+                paymentConditionModelList.Add(PaymentConditionViewModel);
             }
 
+            return Json(paymentConditionModelList);
+        }
 
-            return Json(paymentConditionList);
+        public IActionResult getDeliveryConditions(CompanyAccount companyAccount)
+        {
+            List<DeliveryConditionViewModel> deliveryConditionModelList = new List<DeliveryConditionViewModel>();
+            List<DeliveryCondition> deliveryConditionList = _deliveryConditionRepository.GetAllDeliveryConditions().Where(deliveryConditionType => deliveryConditionType.companyAccountId == companyAccount.companyAccountId).ToList();
+
+            foreach (var paymentConditionType in deliveryConditionList)
+            {
+                DeliveryConditionViewModel deliveryConditionViewModel = new DeliveryConditionViewModel();
+                deliveryConditionViewModel.Label = paymentConditionType.Description;
+                deliveryConditionViewModel.Value = paymentConditionType.Id.ToString();
+                deliveryConditionModelList.Add(deliveryConditionViewModel);
+            }
+
+            return Json(deliveryConditionModelList);
         }
 
         public class PaymentConditionViewModel
+        {
+            public string Label { get; set; }
+            public string Value { get; set; }
+        }
+
+        public class DeliveryConditionViewModel
         {
             public string Label { get; set; }
             public string Value { get; set; }
@@ -317,6 +376,9 @@ namespace WedigITCRM.Controllers
 
             public string PaymentConditionsId { get; set; }
             public string PaymentConditions { get; set; }
+            public string DeliveryConditionsId { get; set; }
+
+            public string DeliveryConditions { get; set; }
             public string HomePage { get; set; }
             public string postalCodeId { get; set; }
 
@@ -344,7 +406,9 @@ namespace WedigITCRM.Controllers
             public string CurrencyCode { get; set; }
             public string PaymentConditionsId { get; set; }
             public string PaymentConditions { get; set; }
+            public string DeliveryConditionsId { get; set; }
 
+            public string DeliveryConditions { get; set; }
             public string PhoneNumber { get; set; }
             public string Email { get; set; }
 

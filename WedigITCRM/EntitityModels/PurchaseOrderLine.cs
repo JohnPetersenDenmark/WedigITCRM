@@ -11,19 +11,24 @@ namespace WedigITCRM.EntitityModels
         public int Id { get; set; }
         public string OurItemNumber { get; set; }
         public string OurUnit { get; set; }
+        public string OurLocation { get; set; }
+        public string OurItemName { get; set; }
 
         [Column(TypeName = "decimal(18,2)")]
-        public Decimal OurUnitPrice { get; set; }
+        public Decimal OurUnitCostPrice { get; set; }
+        public Decimal OurUnitSalesPrice { get; set; }
         public int VendorId { get; set; }
         public string VendorItemNumber { get; set; }
+        public string VendorItemName { get; set; }
         public string VendorUnit { get; set; }
 
         [Column(TypeName = "decimal(18,2)")]
-        public Decimal VendorUnitPrice { get; set; }
+        public Decimal VendorSalesUnitPrice { get; set; }
         public int PurchaseOrderId { get; set; }
         public int companyAccountId { get; set; }
 
-       
+        [Column(TypeName = "decimal(18,2)")]
+        public Decimal QuantityToOrder { get; set; }
         public DateTime ReceivedDate { get; set; }
         public DateTime LastEditedDate { get; set; }
         public DateTime CreatedDate { get; set; }

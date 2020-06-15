@@ -36,6 +36,10 @@ namespace WedigITCRM
 
         public string PaymentConditions { get; set; }
 
+        public int DeliveryConditionsId { get; set; }
+
+        public string DeliveryConditions { get; set; }
+
         public DateTime LastEditedDate { get; set; }
 
         public DateTime CreatedDate { get; set; }
