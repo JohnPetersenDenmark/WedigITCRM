@@ -1077,6 +1077,9 @@ namespace WedigITCRM.Migrations
                     b.Property<DateTime>("ReceivedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("StockItemId")
+                        .HasColumnType("int");
+
                     b.Property<int>("VendorId")
                         .HasColumnType("int");
 

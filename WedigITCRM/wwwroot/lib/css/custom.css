@@ -499,3 +499,26 @@ textarea.PurchaseOrderTextarea {
 ul.ui-autocomplete {
     z-index: 1100;
 }
+
+div.orderline {
+    width: 80%;
+    height: 30px;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-color : lightgrey;
+    border-width: 1px;
+    margin-top : 10px;
+    padding-left : 10px;
+}
+
+div.orderlineheadlines {
+    width: 80%;
+    height: 30px;
+    background-color: lightgrey;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+

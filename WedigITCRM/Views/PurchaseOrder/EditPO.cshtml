@@ -2,65 +2,255 @@
 @model PurchaseOrderViewModel
 
 <div class="formcontainer">
-    <div class="form-group form-group-sm tableheadline">
-        Indkøbsordre nr.: @Model.PurchaseOrderDocumentNumber
+    <div class="tableheadline">
+        Indkøbsordre nr. @Model.PurchaseOrderDocumentNumber
     </div>
-    <div class="row">
-        <div class="form-group col-md-4">
-            <form method="post">
-                <label for="selectvendor">Leverandør</label>
-                <select id="selectvendor" name="selectvendor" class="custom-select">
-                </select>
-                <input asp-for="@Model.VendorId" id="vendorid" class="form-control" />
+    <form method="post">
+        <input asp-for="@Model.PurchaseOrderId" id="purchaseorderid" type="hidden" />
+        <div class="row">
+            <div class="col-2">
+                <div class="row">
+                    <div class="col-12">
+                        <label for="selectvendor">Leverandør</label>
+                        <select id="selectvendor" name="selectvendor" class="custom-select PurchaseOrderInput">
+                        </select>
+                        <input asp-for="@Model.VendorId" id="vendorid" type="hidden" />
+                    </div>
+                </div>
 
-                <label asp-for="@Model.VendorName">Navn</label>
-                <input asp-for="@Model.VendorName" id="vendorname" class="form-control" />
-                <span asp-validation-for="@Model.VendorName" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="vendorname">Navn</label>
+                        <input asp-for="@Model.VendorName" id="vendorname" class="PurchaseOrderInput" />
+                        <span asp-validation-for="@Model.VendorName" class="text-danger"></span>
+                    </div>
+                </div>
 
-                <label asp-for="@Model.VendorStreet">Adresse</label>
-                <input asp-for="@Model.VendorStreet" id="vendorstreet" class="form-control" />
-                <span asp-validation-for="@Model.VendorStreet" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="vendorstreet">Adresse</label>
+                        <input asp-for="@Model.VendorStreet" id="vendorstreet" class="PurchaseOrderInput" />
+                        <span asp-validation-for="@Model.VendorStreet" class="text-danger"></span>
+                    </div>
+                </div>
 
-                <label asp-for="@Model.VendorZip">Postnummer</label>
-                <input asp-for="@Model.VendorZip" id="vendorzip" class="form-control" />
-                <span asp-validation-for="@Model.VendorZip" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="vendorzip">Postnummer</label>
+                        <input asp-for="@Model.VendorZip" id="vendorzip" class="PurchaseOrderInput" />
+                        <span asp-validation-for="@Model.VendorZip" class="text-danger"></span>
+                    </div>
+                </div>
 
-                <label asp-for="@Model.VendorCity">By</label>
-                <input asp-for="@Model.VendorCity" id="vendorcity" class="form-control" />
-                <span asp-validation-for="@Model.VendorCity" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="vendorcity">By</label>
+                        <input asp-for="@Model.VendorCity" id="vendorcity" class="PurchaseOrderInput" />
+                        <span asp-validation-for="@Model.VendorCity" class="text-danger"></span>
+                    </div>
+                </div>
 
-                <label asp-for="@Model.VendorCountryCode">Landekode</label>
-                <input asp-for="@Model.VendorCountryCode" id="vendorcountrycode" class="form-control" />
-                <span asp-validation-for="@Model.VendorCountryCode" class="text-danger"></span>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="vendorcountrycode">Landekode</label>
+                        <input asp-for="@Model.VendorCountryCode" id="vendorcountrycode" class="PurchaseOrderInput" />
+                        <span asp-validation-for="@Model.VendorCountryCode" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <label for="vendorphonenumber">Telefon</label>
+                        <input asp-for="@Model.VendorPhoneNumber" id="vendorphonenumber" class="PurchaseOrderInput" />
+                        <span asp-validation-for="@Model.VendorPhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <label for="class">Email</label>
+                        <input asp-for="@Model.VendorEmail" id="vendoremail" class="PurchaseOrderInput" />
+                        <span asp-validation-for="@Model.VendorEmail" class="text-danger"></span>
+                    </div>
+                </div>
 
 
-                <label asp-for="@Model.VendorPhoneNumber">Telefon</label>
-                <input asp-for="@Model.VendorPhoneNumber" id="vendorphonenumber" class="form-control" />
-                <span asp-validation-for="@Model.VendorPhoneNumber" class="text-danger"></span>
 
+            </div>
+            <div class="col-2">
+                <div class="row">
+                    <div class="col-12">
+                        <label for="selectcurrency">Valuta</label>
+                        <select id="selectcurrency" name="selectcurrency" class="custom-select PurchaseOrderInput">
+                        </select>
+                        <input asp-for="@Model.VendorCurrencyCode" id="vendorcurrencycode" class="PurchaseOrderInput" type="hidden" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="selectpaymentcondition">Betalingsbetingelser</label>
+                        <select id="selectpaymentcondition" name="selectpaymentcondition" class="custom-select PurchaseOrderInput">
+                        </select>
+                        <input asp-for="@Model.VendorPaymentConditionId" id="vendorpaymentconditionid" type="hidden" />
+                    </div>
+                </div>
 
-                <label for="selectcurrency">Valuta</label>
-                <select id="selectcurrency" name="selectcurrency" class="custom-select">
-                </select>
-                <input asp-for="@Model.VendorCurrencyCode" id="vendorcurrencycode" class="form-control" />
-                <button type="submit" class="btn btn-yahoo btn-sm">Gem</button>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="selectdeliverycondition">Leveringsbetingelser</label>
+                        <select id="selectdeliverycondition" name="selectdeliverycondition" class="custom-select PurchaseOrderInput">
+                        </select>
+                        <input asp-for="@Model.VendorDeliveryConditionId" id="vendordeliveryconditionid" type="hidden" />
+                    </div>
+                </div>
 
-            </form>
-        </div>
-        <div class="col-md-4">
-            Col 2
-        </div>
-        <div class="col-md-4">
-            Col 3
-        </div>
-    </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="vendorreference"> Leverandørs ref.</label>
+                        <input asp-for="@Model.VendorReference" id="vendorreference" class="PurchaseOrderInput" />
+                        <span asp-validation-for="@Model.VendorReference" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <label for="vendorreference">Vores ref.</label>
+                        <input asp-for="@Model.OurReference" id="vendorreference" class="PurchaseOrderInput" />
+                        <span asp-validation-for="@Model.OurReference" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <label for="wanteddeliverydatepicker">Ønsket leveringsdato</label>
+                        <input asp-for="@Model.OurWantedDeliveryDate" id="wanteddeliverydatepicker" class="PurchaseOrderInput" />
+                        <span asp-validation-for="@Model.OurWantedDeliveryDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="ourorderingdatepicker">Bestillingsdato</label>
+                        <input asp-for="@Model.OurOrderingDate" id="ourorderingdatepicker" class="PurchaseOrderInput" />
+                        <span asp-validation-for="@Model.OurOrderingDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label>Notat til leverandør</label>
+                        @Html.TextArea("Note", null, new { @class = "PurchaseOrderTextarea" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-yahoo btn-sm">Gem</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-8">
+                <!-- Trigger the modal with a button -->
+                <button id="btnOrderLine" type="button" class="btn btn-info btn-lg">Tilføj ordrelinje</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog modal-lg">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Ordrelinje</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <label for="itemNameSuggest">Vare</label>
+                                        <input name="itemNameSuggest" id="itemNameSuggest" class="PurchaseOrderInput" />
+                                        <input name="stockitemid" id="stockitemid" type="hidden" />
+                                        <input name="purchaseorderlineid" id="purchaseorderlineid" type="hidden" />
+                                        <input id="ouritemname" class="PurchaseOrderInput" type="hidden" />
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="ouritemnumber">Varenummer</label>
+                                        <input id="ouritemnumber" class="PurchaseOrderInput" />
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="quantitytoorder">Antal</label>
+                                        <input id="quantitytoorder" class="PurchaseOrderInput" />
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="ouritemunit">Enheder</label>
+                                        <input id="ouritemunit" class="PurchaseOrderInput" />
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="ourlocation">Lokation</label>
+                                        <input id="ourlocation" class="PurchaseOrderInput" />
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="ourcostprice">Enhedspris</label>
+                                        <input id="ourcostprice" class="PurchaseOrderInput" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <label for="vendoritemnumber">Leverandørens varenummer</label>
+                                        <input id="vendoritemnumber" class="PurchaseOrderInput" />
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="vendoritemname">Leverandørens varenummer</label>
+                                        <input id="vendoritemname" class="PurchaseOrderInput" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <button type="button" id="saveorderline" class="btn btn-default">Gem</button>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="BtnCloseOrderLine" class="btn btn-default">Luk</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="orderlinescontainer" class="col-12">
+
+                    </div>
+                </div>
+            </div>
+    </form>
 </div>
+
+
 @section Scripts {
     <script>
         $(document).ready(function () {
 
             getCurrencies();
             getAllVendors();
+            getPaymentConditions();
+            getDeliveryConditions();
+
+            var purchaseOrderId = $('#purchaseorderid').val();
+            getOrderLinesByPurchaseOrderId(purchaseOrderId)
+
+
+
+
+            $('#btnOrderLine').bind('click', function () {
+                var purchaseOrderId = $('#purchaseorderid').val()
+                if (purchaseOrderId == "") {
+                    alert("no no");
+                    return;
+                }
+                $("#myModal").modal('show');
+            });
+
+            $('#BtnCloseOrderLine').bind('click', function () {
+                $("#myModal").modal('hide');
+            });
 
 
             $('#selectvendor').bind('change', function () {
@@ -75,11 +265,125 @@
                 $('#vendorcurrencycode').val(currencyCode);
             });
 
+            $('#selectpaymentcondition').bind('change', function () {
+                var vendorPaymentConditionId = $(this).val();
+                $('#vendorpaymentconditionid').val(vendorPaymentConditionId);
+            });
 
+            $('#selectdeliverycondition').bind('change', function () {
+                var vendorDeliveryConditionId = $(this).val();
+                $('#vendordeliveryconditionid').val(vendorDeliveryConditionId);
+            });
+
+            $('#saveorderline').bind('click', function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/purchaseorder/saveOrderLine",
+                    data: {
+                        id: $('#purchaseorderlineid').val(),
+                        stockItemId: $('#stockitemid').val(),
+                        ourItemNumber: $('#ouritemnumber').val(),
+                        ourItemName: $('#ouritemname').val(),
+                        ourCostPrice: $('#ourcostprice').val(),
+                        ourItemUnit: $('#ouritemunit').val(),
+                        ourLocation: $('#ourlocation').val(),
+                        vendorItemNumber: $('#vendoritemnumber').val(),
+                        vendorItemName: $('#vendoritemname').val(),
+                        quantityToOrder: $('#quantitytoorder').val(),
+                        purchaseOrderId: $('#purchaseorderid').val()
+                    },
+                    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $("#myModal").modal('hide');
+                    },
+
+                    error: function (request, status, error) {
+                        var jsonErrorObj = request.responseJSON
+                        var errorText = jsonErrorObj.Detail;
+                        var errorTitle = jsonErrorObj.Title;
+                        var errorInstance = jsonErrorObj.Instance;
+                        location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                    }
+                });
+            });
+
+
+            $("#ourorderingdatepicker").datetimepicker({
+                timepicker: false,
+                datepicker: true,
+                hours12: false,
+                format: 'd-m-Y'
+            });
+
+
+            $("#wanteddeliverydatepicker").datetimepicker({
+                timepicker: false,
+                datepicker: true,
+                hours12: false,
+                format: 'd-m-Y'
+            });
+
+            $("#itemNameSuggest").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '/stockitem/searchstockItemByNameAndVendor',
+                        data: { term: request.term, vendorId: $('#vendorid').val() },
+                        success: function (data) {
+                            response(data);
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            var jsonErrorObj = jqXHR.responseJSON
+                            var errorText = jsonErrorObj.Detail;
+                            var errorTitle = jsonErrorObj.Title;
+                            var errorInstance = jsonErrorObj.Instance;
+                            location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                        },
+                        dataType: 'json'
+                    });
+                },
+                select: function (event, ui) {
+                    $("#stockitemid").val(ui.item.stockItemId);
+                    $("#itemNameSuggest").val(ui.item.label);
+                    $("#ouritemname").val(ui.item.label);
+
+                    var stockItemId = $("#stockitemid").val();
+                    getStockItemById(stockItemId)
+                },
+                minLength: 1
+            });
         });
 
 
+        function getStockItemById(stockItemId) {
+            $.ajax({
+                type: "POST",
+                url: "/purchaseorder/getStockItemById",
+                data: 'id=' + stockItemId,
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#ourcostprice').val(result.ourCostPrice);
+                    $('#ouritemunit').val(result.ourItemUnit);
+                    $('#ourlocation').val(result.ourLocation);
+                    $('#ouritemnumber').val(result.ourItemNumber);
+                    $('#quantitytoorder').val("1,00");
 
+                    $('#vendoritemnumber').val(result.vendorItemNumber);
+                    $('#vendoritemname').val(result.vendorItemName);
+
+
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
+        }
 
         function getVendorById(vendorId) {
             $.ajax({
@@ -95,9 +399,15 @@
                     $('#vendorcity').val(result.city);
                     $('#vendorcountrycode').val(result.countryCode);
                     $('#vendorphonenumber').val(result.phoneNumber);
+                    $('#vendoremail').val(result.vendorEmail);
                     $('#vendorcurrencycode').val(result.currencyCode);
                     $('#selectcurrency').val(result.currencyCode);
 
+                    $('#selectpaymentcondition').val(result.vendorPaymentConditionsId);
+                    $('#selectdeliverycondition').val(result.vendorDeliveryConditionsId);
+
+                    $('#vendordeliveryconditionid').val(result.vendorDeliveryConditionsId);
+                    $('#vendorpaymentconditionid').val(result.vendorPaymentConditionsId);
                 },
 
                 error: function (request, status, error) {
@@ -128,14 +438,15 @@
                     }).appendTo("#selectvendor");
 
                     $.each(result, function (i, data) {
-                            $("<option/>", {
-                                value: data.id,
-                                text: data.vendorName
+                        $("<option/>", {
+                            value: data.id,
+                            text: data.vendorName
 
-                            }).appendTo("#selectvendor");
+                        }).appendTo("#selectvendor");
                     });
 
-                    $('#selectvendor').val("0");
+                    var vendorId = $('#vendorid').val();
+                    $('#selectvendor').val(vendorId);
                 },
 
                 error: function (request, status, error) {
@@ -167,12 +478,13 @@
                     $.each(result, function (i, data) {
                         $("<option/>", {
                             value: data.id,
-                            text: data.id + "-"+ data.description
+                            text: data.id + "-" + data.description
 
                         }).appendTo("#selectcurrency");
                     });
 
-                    $('#selectcurrency').val("0");
+                    var currencyCode = $('#vendorcurrencycode').val();
+                    $('#selectcurrency').val(currencyCode);
                 },
 
                 error: function (request, status, error) {
@@ -187,6 +499,171 @@
         }
 
 
+        function getPaymentConditions() {
+            $.ajax({
+                type: "GET",
+                url: "/vendor/getPaymentConditions",
+                dataType: "json",
+                success: function (result) {
+
+                    $('#selectpaymentcondition').html("");
+
+                    $("<option/>", {
+                        value: "0",
+                        text: "<Vælg betalingsbetingelse>"
+
+                    }).appendTo("#selectpaymentcondition");
+
+                    $.each(result, function (i, data) {
+                        $("<option/>", {
+                            value: data.value,
+                            text: data.label
+                        }).appendTo("#selectpaymentcondition");
+                    });
+
+                    var paymentConditionId = $('#vendorpaymentconditionid').val();
+                    $('#selectpaymentcondition').val(paymentConditionId);
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
+
+        }
+
+        function getDeliveryConditions() {
+            $.ajax({
+                type: "GET",
+                url: "/vendor/getDeliveryConditions",
+                dataType: "json",
+                success: function (result) {
+
+                    $('#selectdeliverycondition').html("");
+
+                    $("<option/>", {
+                        value: "0",
+                        text: "<Vælg leveringsbetingelse>"
+
+                    }).appendTo("#selectdeliverycondition");
+
+                    $.each(result, function (i, data) {
+                        $("<option/>", {
+                            value: data.value,
+                            text: data.label
+                        }).appendTo("#selectdeliverycondition");
+                    });
+
+                    var deliveryConditionId = $('#vendordeliveryconditionid').val();
+                    $('#selectdeliverycondition').val(deliveryConditionId);
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
+
+        }
+
+        function getOrderLinesByPurchaseOrderId(purchaseOrderId) {
+            $.ajax({
+                type: "POST",
+                url: "/purchaseorder/getOrderLines",
+                data: 'purchaseOrderId=' + purchaseOrderId,
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+
+                    var HTMLstring = "";
+
+                    HTMLstring = HTMLstring + '<div id="' + '" class="orderlineheadlines">';
+                    HTMLstring = HTMLstring + '<div class="row">'
+                    HTMLstring = HTMLstring + '<div class="col-3">' + 'Vare: ' + '</div>';
+                    HTMLstring = HTMLstring + '<div class="col-3">' + 'Varenummer: ' + '</div>';
+                    HTMLstring = HTMLstring + '<div class="col-1">' + 'Antal: ' + '</div>';
+                    HTMLstring = HTMLstring + '<div class="col-2">' + 'Pris: ' + '</div>';
+                    HTMLstring = HTMLstring + '<div class="col-3">' + 'Ialt: ' + '</div>';
+                    HTMLstring = HTMLstring + '</div>' // end of '<div class="row">'
+                    HTMLstring = HTMLstring + '</div>'      // end of '<div id="' + '" class="orderline">';
+
+                    $.each(result, function (i, data) {
+
+                        HTMLstring = HTMLstring + '<div id="' + data.id + '" class="orderline">';
+                        HTMLstring = HTMLstring + '<div class="row">'
+
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.ourItemName + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.ourItemNumber + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-1">' + data.quantityToOrder + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-2">' + data.ourCostPrice + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.orderLineTotalAmount + '</div>';
+
+
+                        HTMLstring = HTMLstring + '</div>'      // end of '<div class="row">'
+                        HTMLstring = HTMLstring + '</div>'      // end of '<div id="' + data.id + '" class="orderline">'
+                    });
+
+
+
+                    $("#orderlinescontainer").append(HTMLstring);
+
+                    $(document).on("click", ".orderline", function () {
+                        var orderLineId = $(this).attr("id");
+                        $("#myModal").modal('show');
+                        getOrderLineById(orderLineId);
+                    });
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
+        }
+
+        function getOrderLineById(orderLineId) {
+            $.ajax({
+                type: "POST",
+                url: "/purchaseorder/getOrderLineById",
+                data: 'orderLineId=' + orderLineId,
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+
+                    $('#purchaseorderlineid').val(result.id);
+                    $('#stockitemid').val(result.stockItemId);
+
+                    $('#itemNameSuggest').val(result.ourItemName);
+                    $('#ouritemname').val(result.ourItemName);
+                    $('#ourcostprice').val(result.ourCostPrice);
+                    $('#ouritemunit').val(result.ourItemUnit);
+                    $('#ourlocation').val(result.ourLocation);
+                    $('#ouritemnumber').val(result.ourItemNumber);
+                    $('#quantitytoorder').val(result.quantityToOrder);
+
+                    $('#vendoritemnumber').val(result.vendorItemNumber);
+                    $('#vendoritemname').val(result.vendorItemName);
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
+        }
 
     </script>
 }

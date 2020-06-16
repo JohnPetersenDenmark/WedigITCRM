@@ -7,6 +7,7 @@ namespace WedigITCRM.ViewModels
 {
     public class PurchaseOrderViewModel
     {
+        public string PurchaseOrderId { get; set; }
         public string PurchaseOrderDocumentNumber { get; set; }
         public string VendorId { get; set; }
         public string VendorName { get; set; }

@@ -1,0 +1,58 @@
+2020-06-17 00:10:27.6207|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-17 00:10:28.8404|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-17 00:10:28.9273|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-17 00:10:29.6244|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-17 00:10:31.0730|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-06-17 00:10:34.5095|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-17 00:10:34.5542|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-17 00:10:51.6897|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurItemName], [p].[OurItemNumber], [p].[OurLocation], [p].[OurUnit], [p].[OurUnitCostPrice], [p].[OurUnitSalesPrice], [p].[PurchaseOrderId], [p].[QuantityToOrder], [p].[ReceivedDate], [p].[StockItemId], [p].[VendorId], [p].[VendorItemName], [p].[VendorItemNumber], [p].[VendorSalesUnitPrice], [p].[VendorUnit], [p].[companyAccountId]
+FROM [PurchaseOrderLines] AS [p]
+2020-06-17 00:10:51.9992|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'StockItemId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:9f39b636-a0de-49bd-ae0c-36d5e8b71068
+Error Number:207,State:1,Class:16
+2020-06-17 00:11:41.0108|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-17 00:11:41.2011|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-17 00:11:42.7134|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-06-17 00:12:00.0048|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-17 00:12:00.1197|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-17 00:12:01.2470|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-06-17 00:12:29.0783|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-17 00:12:29.2334|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-17 00:12:30.7124|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-06-17 00:12:55.2367|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-17 00:12:56.1441|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-17 00:12:56.3951|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-17 00:12:57.1122|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-17 00:12:59.5761|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-06-17 00:13:02.5257|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-17 00:13:02.6250|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-17 00:14:43.1825|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-06-17 00:14:43.8083|ERROR|WedigITCRM.Startup|{"UserId":"6c1e27cf-820e-4335-b9a5-7ed1142c531c","UserName":"johnpetersen1959@gmail.com","CompanyId":"13024","CompanyName":"Hack and Wood","Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Value cannot be null. (Parameter 's')\r\n                                         \r\n\r\n                                            at System.Int32.Parse(String s)\r\n   at WedigITCRM.Controllers.PurchaseOrderController.saveOrderLine(PurchaseOrderLineModel model, CompanyAccount companyAccount) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\PurchaseOrderController.cs:line 360\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"88e2265b-c322-4e42-bfec-cfbf86c11e88","Extensions":{}}
+2020-06-17 00:14:43.9839|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An exception was thrown attempting to execute the error handler.
+2020-06-17 00:14:44.0152|ERROR|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "18230571297501347991", Request ID "80000098-0001-fd00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+2020-06-17 00:21:12.3417|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-17 00:21:13.8793|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-17 00:21:14.0996|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-17 00:21:15.0652|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-17 00:21:16.9625|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-06-17 00:21:19.3255|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-17 00:21:19.4421|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action

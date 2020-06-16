@@ -9,6 +9,7 @@ namespace WedigITCRM.EntitityModels
     public class PurchaseOrderLine
     {
         public int Id { get; set; }
+        public int StockItemId { get; set; }
         public string OurItemNumber { get; set; }
         public string OurUnit { get; set; }
         public string OurLocation { get; set; }

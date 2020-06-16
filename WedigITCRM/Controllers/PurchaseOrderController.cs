@@ -83,6 +83,7 @@ namespace WedigITCRM.Controllers
                 purchaseOrder.VendorHomePage = model.VendorHomePage;
                 purchaseOrder.VendorReference = model.VendorReference;
                 purchaseOrder.OurReference = model.OurReference;
+                purchaseOrder.Note = model.Note;
 
                 purchaseOrder.companyAccountId = companyAccount.companyAccountId;
 
@@ -112,36 +113,124 @@ namespace WedigITCRM.Controllers
 
                 string DocumentNumber = getNextPurchaseOrderNumber(companyAccount.companyAccountId);
                 purchaseOrder.PurchaseOrderDocumentNumber = DocumentNumber;
-                _purchaseOrderRepository.Add(purchaseOrder);
+                PurchaseOrder purchaseOrderNew = _purchaseOrderRepository.Add(purchaseOrder);
+
+                return RedirectToAction("EditPO", "PurchaseOrder", new { purchaseOrderId = purchaseOrderNew.Id });
             }
+
             return View(model);
         }
 
         [HttpGet]
         public IActionResult EditPO(int purchaseOrderId)
         {
+            DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+
             PurchaseOrder purchaseOrder = _purchaseOrderRepository.GetPurchaseOrder(purchaseOrderId);
             if (purchaseOrder != null)
             {
                 PurchaseOrderViewModel model = new PurchaseOrderViewModel();
+                model.PurchaseOrderId = purchaseOrder.Id.ToString();
                 model.PurchaseOrderDocumentNumber = purchaseOrder.PurchaseOrderDocumentNumber;
                 model.VendorId = purchaseOrder.VendorId.ToString();
                 model.VendorName = purchaseOrder.VendorName;
                 model.VendorStreet = purchaseOrder.VendorStreet;
                 model.VendorCity = purchaseOrder.VendorCity;
-                purchaseOrder.VendorEmail = model.VendorEmail;
+                model.VendorEmail = purchaseOrder.VendorEmail;
                 model.VendorZip = purchaseOrder.VendorZip;
                 model.VendorCountryCode = purchaseOrder.VendorCountryCode;
                 model.VendorCurrencyCode = purchaseOrder.VendorCurrencyCode;
                 model.VendorPhoneNumber = purchaseOrder.VendorPhoneNumber;
                 model.VendorHomePage = purchaseOrder.VendorHomePage;
-                purchaseOrder.LastEditedDate = DateTime.Now;
+                model.VendorPaymentConditionId = purchaseOrder.VendorPaymentConditionsId;
+                model.VendorDeliveryConditionId = purchaseOrder.VendorDeliveryConditionId;
+                model.VendorCountryCode = purchaseOrder.VendorCountryCode;
+                model.VendorCurrencyCode = purchaseOrder.VendorCurrencyCode;
+                model.VendorReference = purchaseOrder.VendorReference;
+                model.OurReference = purchaseOrder.OurReference;
+                model.Note = purchaseOrder.Note;
+
+                model.OurWantedDeliveryDate = purchaseOrder.WantedDeliveryDate.ToString(danishDateTimeformat.ShortDatePattern);
+                model.OurOrderingDate = purchaseOrder.OurOrderingDate.ToString(danishDateTimeformat.ShortDatePattern);
+
+
                 return View(model);
             }
 
 
             return View();
         }
+
+        [HttpPost]
+        public IActionResult EditPO(PurchaseOrderViewModel model, CompanyAccount companyAccount)
+        {
+            DateTime testdate;
+            DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+
+            if (!string.IsNullOrEmpty(model.PurchaseOrderId))
+            {
+                PurchaseOrder purchaseOrder = _purchaseOrderRepository.GetPurchaseOrder(Int32.Parse(model.PurchaseOrderId));
+
+                if (!string.IsNullOrEmpty(model.OurWantedDeliveryDate))
+                {
+                    if (DateTime.TryParse(model.OurWantedDeliveryDate, out testdate))
+                    {
+                        purchaseOrder.WantedDeliveryDate = DateTime.Parse(model.OurWantedDeliveryDate, danishDateTimeformat);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(model.OurOrderingDate))
+                {
+                    if (DateTime.TryParse(model.OurOrderingDate, out testdate))
+                    {
+                        purchaseOrder.OurOrderingDate = DateTime.Parse(model.OurOrderingDate, danishDateTimeformat);
+                    }
+                }
+
+                purchaseOrder.VendorId = Int32.Parse(model.VendorId);
+                purchaseOrder.VendorName = model.VendorName;
+                purchaseOrder.VendorStreet = model.VendorStreet;
+                purchaseOrder.VendorCity = model.VendorCity;
+                purchaseOrder.VendorEmail = model.VendorEmail;
+                purchaseOrder.VendorZip = model.VendorZip;
+                purchaseOrder.VendorCountryCode = model.VendorCountryCode;
+                purchaseOrder.VendorCurrencyCode = model.VendorCurrencyCode;
+                purchaseOrder.VendorPhoneNumber = model.VendorPhoneNumber;
+                purchaseOrder.VendorHomePage = model.VendorHomePage;
+                purchaseOrder.VendorReference = model.VendorReference;
+                purchaseOrder.OurReference = model.OurReference;
+                purchaseOrder.Note = model.Note;               
+                purchaseOrder.VendorPaymentConditionsId = model.VendorPaymentConditionId;
+
+                if (!string.IsNullOrEmpty(model.VendorPaymentConditionId))
+                {
+                    PaymentCondition paymentCondition = _paymentConditionRepository.GetPaymentCondition(Int32.Parse(model.VendorPaymentConditionId));
+                    if (paymentCondition != null)
+                    {
+                        purchaseOrder.VendorPaymentConditions = paymentCondition.Description;
+                    }
+                }
+
+                purchaseOrder.VendorDeliveryConditionId = model.VendorDeliveryConditionId;
+                if (!string.IsNullOrEmpty(model.VendorDeliveryConditionId))
+                {
+                    DeliveryCondition deliveryCondition = _deliveryConditionRepository.GetDeliveryCondition(Int32.Parse(model.VendorDeliveryConditionId));
+                    if (deliveryCondition != null)
+                    {
+                        purchaseOrder.VendorDeliveryConditions = deliveryCondition.Description;
+                    }
+                }
+               
+                purchaseOrder.LastEditedDate = DateTime.Now;
+
+                
+                 _purchaseOrderRepository.Update(purchaseOrder);
+            }
+
+
+            return View(model);
+        }
+
         public IActionResult getCurrencies()
         {
             List<CurrencyCode> currencyList = _currencyCodeRepository.getAllCurrencyCodes().ToList();
@@ -223,7 +312,7 @@ namespace WedigITCRM.Controllers
                 StockItem stockItem = _stockItemRepository.getStockItem(Int32.Parse(model.Id));
                 if (stockItem != null)
                 {
-                    model.OurSalesPrice = stockItem.SalesPrice.ToString();
+                    model.OurCostPrice = stockItem.CostPrice.ToString();
                     model.OurLocation = stockItem.Location;
                     model.OurItemNumber = stockItem.ItemNumber;
                     model.OurItemUnit = stockItem.Unit;
@@ -238,13 +327,14 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult saveOrderLine(PurchaseOrderLineModel model, CompanyAccount companyAccount)
         {
-            if (!string.IsNullOrEmpty(model.Id))
+            if (string.IsNullOrEmpty(model.Id))
             {
                 // PurchaseOrderLine orderLine = _purchaseOrderLineRepository.GetPurchaseOrderLine(Int32.Parse(model.Id));
                 PurchaseOrderLine orderLine = new PurchaseOrderLine();
                 if (orderLine != null)
                 {
-                    orderLine.OurUnitSalesPrice = Decimal.Parse(model.OurSalesPrice);
+                    orderLine.StockItemId = Int32.Parse(model.StockItemId);
+                    orderLine.OurUnitCostPrice = Decimal.Parse(model.OurCostPrice);
                     orderLine.OurItemNumber = model.OurItemNumber;
                     orderLine.OurItemName = model.OurItemName;
                     orderLine.OurLocation = model.OurLocation;
@@ -262,8 +352,101 @@ namespace WedigITCRM.Controllers
                     _purchaseOrderLineRepository.Add(orderLine);
                 }
             }
+            else
+            {
+                 PurchaseOrderLine orderLine = _purchaseOrderLineRepository.GetPurchaseOrderLine(Int32.Parse(model.Id));
+                if (orderLine != null)
+                {
+                    orderLine.StockItemId = Int32.Parse(model.StockItemId);
+                    orderLine.OurUnitCostPrice = Decimal.Parse(model.OurCostPrice);
+                    orderLine.OurItemNumber = model.OurItemNumber;
+                    orderLine.OurItemName = model.OurItemName;
+                    orderLine.OurLocation = model.OurLocation;
+                    orderLine.OurUnit = model.OurItemUnit;
+                    orderLine.QuantityToOrder = Decimal.Parse(model.QuantityToOrder);
+                    orderLine.VendorItemNumber = model.VendorItemNumber;
+                    orderLine.VendorItemName = model.VendorItemName;
+
+                    if (!string.IsNullOrEmpty(model.PurchaseOrderId))
+                    {
+                        orderLine.PurchaseOrderId = Int32.Parse(model.PurchaseOrderId);
+                    }
+
+                    _purchaseOrderLineRepository.Update(orderLine);
+                }
+            }
             return Json(model);
         }
+
+        [HttpPost]
+        public IActionResult getOrderLines(string purchaseOrderId, CompanyAccount companyAccount)
+        {
+            Decimal orderTotal = 0;
+            List<PurchaseOrderLineModel> orderLineModels = new List<PurchaseOrderLineModel>();
+
+            if (!string.IsNullOrEmpty(purchaseOrderId))
+            {
+                List<PurchaseOrderLine> orderLines = _purchaseOrderLineRepository.GetAllpurchaseOrderLines().Where(po => po.PurchaseOrderId == Int32.Parse(purchaseOrderId)).ToList();
+               
+                foreach ( var orderLine in orderLines)
+                {
+                    Decimal orderLineTotal = 0;
+                    PurchaseOrderLineModel model = new PurchaseOrderLineModel();
+
+                    model.Id = orderLine.Id.ToString();
+                    model.OurCostPrice = orderLine.OurUnitCostPrice.ToString();
+                    model.OurItemName = orderLine.OurItemName;
+                    model.OurItemNumber = orderLine.OurItemNumber;
+                    model.StockItemId = orderLine.StockItemId.ToString();
+                    model.OurLocation = orderLine.OurLocation;
+                    model.OurItemUnit = orderLine.OurUnit;
+                    model.QuantityToOrder = orderLine.QuantityToOrder.ToString();
+                    model.VendorItemNumber = orderLine.VendorItemNumber;
+                    model.VendorItemName = orderLine.VendorItemName;
+
+                    orderLineTotal = orderLine.QuantityToOrder * orderLine.OurUnitCostPrice;
+                    orderTotal = orderTotal + orderLineTotal;
+
+                    //model.OrderLineTotalAmount = orderLineTotal.ToString();
+
+                    
+                    var danishCulture = CultureInfo.GetCultureInfo("da-DK");
+                    model.OrderLineTotalAmount = orderLineTotal.ToString("C", danishCulture);
+
+                    orderLineModels.Add(model);
+                }              
+            }
+            return Json(orderLineModels);
+        }
+
+        [HttpPost]
+        public IActionResult getOrderLineById(string orderLineId, CompanyAccount companyAccount)
+        {
+            PurchaseOrderLineModel model = new PurchaseOrderLineModel();
+
+            if (!string.IsNullOrEmpty(orderLineId))
+            {
+                PurchaseOrderLine orderLine = _purchaseOrderLineRepository.GetPurchaseOrderLine(Int32.Parse(orderLineId));
+
+                if (orderLine != null)
+                {
+                    model.Id = orderLine.Id.ToString();
+                    model.OurCostPrice = orderLine.OurUnitCostPrice.ToString();
+                    model.OurItemName = orderLine.OurItemName;
+                    model.OurItemNumber = orderLine.OurItemNumber;
+                    model.StockItemId = orderLine.StockItemId.ToString();
+                    model.OurLocation = orderLine.OurLocation;
+                    model.OurItemUnit = orderLine.OurUnit;
+                    model.QuantityToOrder = orderLine.QuantityToOrder.ToString();
+                    model.VendorItemNumber = orderLine.VendorItemNumber;
+                    model.VendorItemName = orderLine.VendorItemName;
+                }
+            }
+
+
+            return Json(model);
+        }
+
 
         private string getNextPurchaseOrderNumber(int companyAccountId)
         {
@@ -382,10 +565,13 @@ namespace WedigITCRM.Controllers
         public string OurInStockAgainDate { get; set; }
 
         public string OurCostPrice { get; set; }
-
+        public string StockItemId { get; set; }
+        
         public string OurStockValue { get; set; }
 
         public string OurSalesPrice { get; set; }
+
+        public string OrderLineTotalAmount { get; set; }
 
         public int companyAccountId { get; set; }
 
