@@ -478,10 +478,11 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\ru\Micr
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csproj.CoreCompileInputs.cache
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\PaymentCondition\Create.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\PaymentCondition\Edit.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\PaymentCondition\Index.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csprojAssemblyReference.cache
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\DinkToPdf.dll
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csproj.CoreCompileInputs.cache
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.MvcApplicationPartsAssemblyInfo.cache

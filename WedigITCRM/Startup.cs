@@ -19,6 +19,8 @@ using WedigITCRM.SQLImplmementationModels;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using DinkToPdf.Contracts;
+using DinkToPdf;
 
 namespace WedigITCRM
 {
@@ -43,6 +45,11 @@ namespace WedigITCRM
         {
             try
             {
+
+                services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+
+
+
                 _logger.LogError("start of ConfigureServices");
 
 
@@ -104,6 +111,7 @@ namespace WedigITCRM
                 services.AddScoped<IPaymentConditionRepository, SQLPaymentConditionRepository>();            
                 services.AddScoped<DineroAPIConnect>();
                 services.AddScoped<EmailUtility>();
+                services.AddScoped<PurchaseOrderToHTML>();
 
 
                 services.AddMvc(options =>
