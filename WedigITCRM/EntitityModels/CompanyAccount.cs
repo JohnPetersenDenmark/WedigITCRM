@@ -19,6 +19,10 @@ namespace WedigITCRM
         public Decimal AmountToPayForLicense { get; set; }
 
         public string CompanyName { get; set; }
+        public string CompanyStreet { get; set; }
+        public string CompanyZip { get; set; }
+        public string CompanyCity { get; set; }
+        public string CompanyCountryCode { get; set; }
 
         public string Companyidentifier { get; set; }
        

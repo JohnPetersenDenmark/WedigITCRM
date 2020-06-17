@@ -10,6 +10,10 @@ namespace WedigITCRM.ViewControllers
     {
         public int companyAccountId { get; set; }
         public string CompanyName { get; set; }
+        public string CompanyStreet { get; set; }
+        public string CompanyZip { get; set; }
+        public string CompanyCity { get; set; }
+        public string CompanyCountryCode { get; set; }
         public DateTime registrationDate { get; set; }
 
         public bool SubscriptionCRM { get; set; }

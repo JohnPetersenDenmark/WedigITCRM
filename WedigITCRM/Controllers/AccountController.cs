@@ -447,6 +447,10 @@ namespace WedigITCRM.Controllers
         {
             CompanyAccountSettingsViewModel companyAccountSettingsViewModel = new CompanyAccountSettingsViewModel();
             companyAccountSettingsViewModel.CompanyName = companyAccount.CompanyName;
+            companyAccountSettingsViewModel.CompanyStreet = companyAccount.CompanyStreet;
+            companyAccountSettingsViewModel.CompanyZip = companyAccount.CompanyZip;
+            companyAccountSettingsViewModel.CompanyCity = companyAccount.CompanyCity;
+            companyAccountSettingsViewModel.CompanyCountryCode = companyAccount.CompanyCountryCode;
             companyAccountSettingsViewModel.SubscriptionCRM = companyAccount.SubscriptionCRM;
             companyAccountSettingsViewModel.synchronizeCustomerFromNyxiumToDinero = companyAccount.synchronizeCustomerFromNyxiumToDinero;
             companyAccountSettingsViewModel.synchronizeCustomerFromDineroToNyxium = companyAccount.synchronizeCustomerFromDineroToNyxium;
@@ -517,6 +521,11 @@ namespace WedigITCRM.Controllers
                 CompanyAccount companyAccount = _companyAccountRepository.GetCompanyAccount(model.companyAccountId);
 
                 companyAccount.CompanyName = model.CompanyName;
+                companyAccount.CompanyStreet = model.CompanyStreet;
+                companyAccount.CompanyZip = model.CompanyZip;
+                companyAccount.CompanyCity = model.CompanyCity;
+                companyAccount.CompanyCountryCode = model.CompanyCountryCode;
+
                 companyAccount.synchronizeCustomerFromNyxiumToDinero = model.synchronizeCustomerFromNyxiumToDinero;
                 companyAccount.synchronizeCustomerFromDineroToNyxium = model.synchronizeCustomerFromDineroToNyxium;
                 companyAccount.synchronizeStockItemFromNyxiumToDinero = model.synchronizeStockItemFromNyxiumToDinero;

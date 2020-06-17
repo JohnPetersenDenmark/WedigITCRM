@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,17 +20,17 @@ namespace WedigITCRM.Utilities
             _purchaseOrderLineRepository = purchaseOrderLineRepository;
         }
 
-        public string generateHTML(int purchaseOrderId)
+        public string generateHTML(int purchaseOrderId, CompanyAccount companyAccount)
         {
             string html = "";
+           
 
-            
             PurchaseOrder purchaseOrder = _purchaseOrderRepository.GetPurchaseOrder(purchaseOrderId);
 
             if (purchaseOrder == null)
             {
                 return html;
-                
+
             }
 
             List<PurchaseOrderLine> orderLineList = new List<PurchaseOrderLine>();
@@ -38,6 +39,12 @@ namespace WedigITCRM.Utilities
             {
                 return html;
             }
+
+            DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+            DateTime myToday = DateTime.Today;
+
+            string myTodayStr = myToday.ToString(danishDateTimeformat.ShortDatePattern);
+            string OurWantedDeliveryDate = purchaseOrder.WantedDeliveryDate.ToString(danishDateTimeformat.ShortDatePattern);
 
             var sb = new StringBuilder();
             sb.Append(@"
@@ -50,35 +57,139 @@ namespace WedigITCRM.Utilities
             sb.AppendFormat(@"
                                 <tr>
                                     <td>{0}</td>
-                                    <td>{5}</td>
+                                    <td></td>
+                                    <td>{8}</td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <td>{1}</td>
-                                    <td>{6}</td>
+                                    <td></td>
+                                    <td>{9}</td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <td>{2}</td>
-                                    <td>{7}</td>
+                                    <td></td>
+                                    <td>{10}</td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <td>{3}</td>
-                                    <td>{0}</td>
+                                    <td></td>
+                                    <td>{11}</td>
+                                    <td></td>
                                 </tr>
                                  <tr>
-                                    <td>{4}</td>
-                                    <td>{0}</td>
-                                </tr>"
-                                  , purchaseOrder.VendorName, purchaseOrder.VendorStreet, purchaseOrder.VendorZip + " " + purchaseOrder.VendorCity, purchaseOrder.VendorPhoneNumber,  purchaseOrder.VendorEmail,
-                                  purchaseOrder.VendorCurrencyCode, purchaseOrder.VendorDeliveryConditions, purchaseOrder.VendorPaymentConditions);
+                                     <td>{4}</td>
+                                    <td></td>
+                                    <td>{12}</td>
+                                    <td>{13}</td>
+                                </tr>
+                                 <tr>
+                                    <td>{5}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                 <tr>
+                                     <td>{6}</td>
+                                    <td>{7}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                 <tr>  
+                                     <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                     <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                     <td></td>
+                                    <td></td>
+                                    <td>{14}</td>
+                                    <td>{15}</td>
+                                </tr>
+                                <tr>
+                                     <td></td>
+                                    <td></td>
+                                    <td>{16}</td>
+                                    <td>{17}</td>
+                                </tr>
+                                <tr>
+                                     <td></td>
+                                    <td></td>
+                                    <td>{18}</td>
+                                    <td>{19}</td>
+                                </tr>
+                                     <td></td>
+                                    <td></td>
+                                    <td>{20}</td>
+                                    <td>{21}</td>
+                                </tr>
+                                </tr>
+                                     <td></td>
+                                    <td></td>
+                                    <td>{22}</td>
+                                    <td>{23}</td>
+                                </tr>
+                                </tr>
+                                     <td></td>
+                                    <td></td>
+                                    <td>{24}</td>
+                                    <td>{25}</td>
+                                </tr>
+                                ",
+                                  purchaseOrder.VendorName,                                         // 0
+                                  purchaseOrder.VendorStreet,                                       // 1
+                                  purchaseOrder.VendorZip + " " + purchaseOrder.VendorCity,         // 2
+                                  purchaseOrder.VendorCountryCode,                                  // 3
+                                  purchaseOrder.VendorPhoneNumber,                                  // 4
+                                  purchaseOrder.VendorEmail,                                        // 5   
+                                  "Deres ref.:",                                                    // 6
+                                  purchaseOrder.VendorReference,                                    // 7   
+
+                                  companyAccount.CompanyName,                                       // 8
+                                  companyAccount.CompanyStreet,                                     // 9
+                                  companyAccount.CompanyZip + " " + companyAccount.CompanyCity,     // 10
+                                  companyAccount.CompanyCountryCode,                                // 11
+                                  "Vores ref.:",                                                    // 12
+                                  purchaseOrder.OurReference,                                       // 13
+
+
+                                  "Bestillingsnummer:",                                             // 14
+                                  purchaseOrder.PurchaseOrderDocumentNumber,                        // 15
+                                  "Ønsket lev. dato:",                                              // 16
+                                  OurWantedDeliveryDate,                                            // 17
+                                  "Dato:",                                                          // 18
+                                  myTodayStr,                                                       // 19
+                                  
+                                  "Valuta:",                                                        // 20
+                                  purchaseOrder.VendorCurrencyCode,                                 // 21
+                                  "Leveringsbetingelser:",                                          // 22
+                                  purchaseOrder.VendorDeliveryConditions,                           // 23
+                                   "Betalingsbetingelser:",                                         // 24                                                                 
+                                  purchaseOrder.VendorPaymentConditions);                           // 25
+
+
+
 
             sb.Append(@"
                                 </table>
+                                <br/>
+                                <br/>
                                 <table align='left'>
                                     <tr>
-                                        <th>Antal</th>
-                                        <th>Vare</th>
-                                        <th>Varenummer</th>
+                                        <th>Lev. varenr.</th>                                        
+                                        <th>Vores varenr.</th>
+                                        <th>Varebeskrivelse</th>
                                         <th>Enheder</th>
+                                        <th>Antal</th>
                                     </tr>");
 
             foreach (var orderLine in orderLineList)
@@ -88,7 +199,8 @@ namespace WedigITCRM.Utilities
                                     <td>{1}</td>
                                     <td>{2}</td>
                                     <td>{3}</td>
-                                  </tr>", orderLine.QuantityToOrder, orderLine.VendorItemName, orderLine.VendorItemNumber, orderLine.OurUnit);
+                                    <td>{4}</td>
+                                  </tr>", orderLine.VendorItemNumber, orderLine.OurItemNumber, orderLine.OurItemName, orderLine.OurUnit, orderLine.QuantityToOrder);
             }
 
             sb.Append(@"

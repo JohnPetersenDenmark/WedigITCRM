@@ -25,7 +25,7 @@ namespace WedigITCRM.Controllers
         }
 
 
-        public IActionResult createPurchaseOrderPDF(int purchaseOrderId)
+        public IActionResult createPurchaseOrderPDF(int purchaseOrderId, CompanyAccount companyAccount)
         {
             var globalSettings = new DinkToPdf.GlobalSettings
             {
@@ -41,10 +41,10 @@ namespace WedigITCRM.Controllers
             {
                 PagesCount = true,             
                 // HtmlContent = "<html><head></head><body>THIS IS HTML</body></html>",
-                HtmlContent = _purchaseOrderToHTML.generateHTML(purchaseOrderId),
+                HtmlContent = _purchaseOrderToHTML.generateHTML(purchaseOrderId, companyAccount),
                 WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(), "assets", "styles.css") },
-                HeaderSettings = { FontName = "Arial", FontSize = 9, Right = "Page [page] of [toPage]", Line = true },
-                FooterSettings = { FontName = "Arial", FontSize = 9, Line = true, Center = "Report Footer" }
+                HeaderSettings = { FontName = "Arial", FontSize = 9, Right = "Side [page] af [toPage]", Line = true },
+                FooterSettings = { FontName = "Arial", FontSize = 9, Line = true, Center = "Indkøbsordre" }
             };
 
             var pdf = new HtmlToPdfDocument()
