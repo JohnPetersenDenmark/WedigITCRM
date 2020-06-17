@@ -142,7 +142,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-yahoo btn-sm">Gem</button>
+                        <button type="submit" class="btn btn-info btn-lg">Gem</button>
                     </div>
                 </div>
             </div>
@@ -200,14 +200,10 @@
                                         <label for="vendoritemname">Leverandørens varenummer</label>
                                         <input id="vendoritemname" class="PurchaseOrderInput" />
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-2">
-                                        <button type="button" id="saveorderline" class="btn btn-default">Gem</button>
-                                    </div>
-                                </div>
+                                </div>                              
                                 <div class="modal-footer">
-                                    <button type="button" id="BtnCloseOrderLine" class="btn btn-default">Luk</button>
+                                    <button type="button" id="saveorderline" class="btn btn-info btn-lg">Gem</button>
+                                    <button type="button" id="BtnCloseOrderLine" class="btn btn-info btn-lg">Luk</button>
                                 </div>
                             </div>
 
@@ -245,6 +241,21 @@
                     alert("no no");
                     return;
                 }
+
+                
+                $('#purchaseorderlineid').val("");
+                $('#stockitemid').val("");
+                $('#itemNameSuggest').val("");
+
+                $('#ourcostprice').val("");
+                $('#ouritemunit').val("");
+                $('#ourlocation').val("");
+                $('#ouritemnumber').val("");
+                $('#ouritemname').val("");
+                $('#quantitytoorder').val("1,00");
+
+                $('#vendoritemnumber').val("");
+                $('#vendoritemname').val("");
                 $("#myModal").modal('show');
             });
 
@@ -296,6 +307,8 @@
                     dataType: "json",
                     success: function (result) {
                         $("#myModal").modal('hide');
+                        var purchaseOrderId = $('#purchaseorderid').val();
+                        getOrderLinesByPurchaseOrderId(purchaseOrderId)
                     },
 
                     error: function (request, status, error) {
@@ -582,6 +595,7 @@
                 dataType: "json",
                 success: function (result) {
 
+                    $("#orderlinescontainer").html("");
                     var HTMLstring = "";
 
                     HTMLstring = HTMLstring + '<div id="' + '" class="orderlineheadlines">';
