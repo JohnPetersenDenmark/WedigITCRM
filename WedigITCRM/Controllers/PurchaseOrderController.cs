@@ -150,9 +150,14 @@ namespace WedigITCRM.Controllers
                 model.OurReference = purchaseOrder.OurReference;
                 model.Note = purchaseOrder.Note;
 
+                model.AttachedmentIds = purchaseOrder.AttachedmentIds;
+                model.AttachedFilesNameAndPath = purchaseOrder.AttachedFilesNameAndPath;
+                model.FileNamesOnly = purchaseOrder.FileNamesOnly;
+                model.IconsFilePathAndName = purchaseOrder.IconsFilePathAndName;
+
+
                 model.OurWantedDeliveryDate = purchaseOrder.WantedDeliveryDate.ToString(danishDateTimeformat.ShortDatePattern);
                 model.OurOrderingDate = purchaseOrder.OurOrderingDate.ToString(danishDateTimeformat.ShortDatePattern);
-
 
                 return View(model);
             }

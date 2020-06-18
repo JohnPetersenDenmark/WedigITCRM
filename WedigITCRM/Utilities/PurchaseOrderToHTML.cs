@@ -20,21 +20,13 @@ namespace WedigITCRM.Utilities
             _purchaseOrderLineRepository = purchaseOrderLineRepository;
         }
 
-        public string generateHTML(int purchaseOrderId, CompanyAccount companyAccount)
+        public string generateHTML(PurchaseOrder purchaseOrder, CompanyAccount companyAccount)
         {
             string html = "";
-           
-
-            PurchaseOrder purchaseOrder = _purchaseOrderRepository.GetPurchaseOrder(purchaseOrderId);
-
-            if (purchaseOrder == null)
-            {
-                return html;
-
-            }
+         
 
             List<PurchaseOrderLine> orderLineList = new List<PurchaseOrderLine>();
-            orderLineList = _purchaseOrderLineRepository.GetAllpurchaseOrderLines().Where(purchaseOrderLine => purchaseOrderLine.PurchaseOrderId == purchaseOrderId).ToList();
+            orderLineList = _purchaseOrderLineRepository.GetAllpurchaseOrderLines().Where(purchaseOrderLine => purchaseOrderLine.PurchaseOrderId == purchaseOrder.Id).ToList();
             if (orderLineList.Count() == 0)
             {
                 return html;
@@ -53,7 +45,7 @@ namespace WedigITCRM.Utilities
                             </head>
                             <body>
                                 <div class='header'><h1>Indkøbsordre</h1></div>
-                                <table align='left'>");
+                                <table class='purchaseOrderHeader'>");
             sb.AppendFormat(@"
                                 <tr>
                                     <td>{0}</td>
@@ -82,8 +74,8 @@ namespace WedigITCRM.Utilities
                                  <tr>
                                      <td>{4}</td>
                                     <td></td>
-                                    <td>{12}</td>
-                                    <td>{13}</td>
+                                    <td>{12} {13}</td>
+                                    <td></td>
                                 </tr>
                                  <tr>
                                     <td>{5}</td>
@@ -92,58 +84,31 @@ namespace WedigITCRM.Utilities
                                     <td></td>
                                 </tr>
                                  <tr>
-                                     <td>{6}</td>
-                                    <td>{7}</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                 <tr>  
-                                     <td></td>
+                                     <td>{6} {7}</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                </tr>
+                                </tr> 
+                                </table>
+                                <hr>
+                                <table class='purchaseOrderHeader'>
                                 <tr>
-                                     <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                     <td></td>
-                                    <td></td>
-                                    <td>{14}</td>
+                                     <td>{14}</td>
                                     <td>{15}</td>
-                                </tr>
-                                <tr>
-                                     <td></td>
-                                    <td></td>
                                     <td>{16}</td>
                                     <td>{17}</td>
-                                </tr>
+                                </tr>                            
                                 <tr>
-                                     <td></td>
-                                    <td></td>
-                                    <td>{18}</td>
+                                     <td>{18}</td>
                                     <td>{19}</td>
-                                </tr>
-                                     <td></td>
-                                    <td></td>
                                     <td>{20}</td>
-                                    <td>{21}</td>
+                                    <td>{21}</td>                              
                                 </tr>
-                                </tr>
-                                     <td></td>
-                                    <td></td>
-                                    <td>{22}</td>
+                                     <td>{22}</td>
                                     <td>{23}</td>
-                                </tr>
-                                </tr>
-                                     <td></td>
-                                    <td></td>
                                     <td>{24}</td>
                                     <td>{25}</td>
-                                </tr>
+                                </tr>                          
                                 ",
                                   purchaseOrder.VendorName,                                         // 0
                                   purchaseOrder.VendorStreet,                                       // 1
@@ -181,9 +146,9 @@ namespace WedigITCRM.Utilities
 
             sb.Append(@"
                                 </table>
-                                <br/>
-                                <br/>
-                                <table align='left'>
+                                <hr>
+                                <br>
+                                <table class='purchaseOrderLines'>
                                     <tr>
                                         <th>Lev. varenr.</th>                                        
                                         <th>Vores varenr.</th>

@@ -670,7 +670,7 @@ namespace WedigITCRM.Controllers
                 tokens.Add("changePasswordUrl", changePasswordUrl);              
 
                 AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.Resetpassword,  tokens);
-                _emailUtility.send(model.Email, "support@nyxium.dk",  "Ændring af kodeord.", htmlView, true);          
+                _emailUtility.send(model.Email, "support@nyxium.dk",  "Ændring af kodeord.", htmlView, true, null);          
             }
 
             generalReplyViewModel.PageTitle = "Der er nu sendt en email til dig.";

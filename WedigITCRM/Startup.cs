@@ -111,6 +111,7 @@ namespace WedigITCRM
                 services.AddScoped<IPaymentConditionRepository, SQLPaymentConditionRepository>();            
                 services.AddScoped<DineroAPIConnect>();
                 services.AddScoped<EmailUtility>();
+                services.AddScoped<MiscUtility>();
                 services.AddScoped<PurchaseOrderToHTML>();
 
 

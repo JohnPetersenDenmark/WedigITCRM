@@ -16,15 +16,15 @@ namespace WedigITCRM.Utilities
     public class EmailUtility
     {
         private IWebHostEnvironment _env;
-      
+
         public EmailUtility(IWebHostEnvironment env)
         {
             _env = env;
-  
+
         }
 
 
-        public void send(string sendTo, string sentFrom, string subject, AlternateView htmlView, bool IsBodyHtml)
+        public void send(string sendTo, string sentFrom, string subject, AlternateView htmlView, bool IsBodyHtml, string FilePathAndNameToAttach)
         {
             // You have to enable login from other timezone / ip for your google account.
             // to do this follow the link https://g.co/allowaccess and allow access by clicking the continue button. 
@@ -39,17 +39,29 @@ namespace WedigITCRM.Utilities
             message.IsBodyHtml = IsBodyHtml;
             message.AlternateViews.Add(htmlView);
 
+            if (!string.IsNullOrEmpty(FilePathAndNameToAttach))
+            {
+                if (System.IO.File.Exists(FilePathAndNameToAttach))
+                {
+                    {
+                        Attachment attachment = new Attachment(FilePathAndNameToAttach, MediaTypeNames.Application.Octet);
 
-            SmtpClient client = new SmtpClient("smtp.unoeuro.com", 587);
-            System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("admin@nyxium.dk", "Kronhjort1234");
+                        message.Attachments.Add(attachment);
+                    }
+                }
+            }
+
+
+            //SmtpClient client = new SmtpClient("smtp.unoeuro.com", 587);
+            //System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("admin@nyxium.dk", "Kronhjort1234");
 
             // If it fails with a message lige not logged in to service in google then use this link:
             // https://myaccount.google.com/lesssecureapps
 
 
-            //sentFrom = "johnpetersen1959@gmail.com";
-            //SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-            //System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("johnpetersen1959@gmail.com", "Keiler1234");
+            sentFrom = "johnpetersen1959@gmail.com";
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+            System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("johnpetersen1959@gmail.com", "Keiler1234");
 
             client.EnableSsl = true;
             // hvis det fejler at med at sende email så brug dette link: https://accounts.google.com/b/0/DisplayUnlockCaptcha
@@ -59,130 +71,138 @@ namespace WedigITCRM.Utilities
 
         }
 
-      
 
 
-        public AlternateView getFormattedBodyByMailtemplate(MailTemplateType mailTemplateType,  Dictionary<string, string> tokens, CompanyAccount companyAccount, IAttachmentRepository _attachmentRepository)
+
+        public AlternateView getFormattedBodyByMailtemplate(MailTemplateType mailTemplateType, Dictionary<string, string> tokens, CompanyAccount companyAccount, IAttachmentRepository _attachmentRepository)
         {
-          
-                string body = string.Empty;
-                string mailtemplateFileName = "";
 
-                switch (mailTemplateType)
+            string body = string.Empty;
+            string mailtemplateFileName = "";
+
+            switch (mailTemplateType)
+            {
+                case MailTemplateType.AccountConfirmationToWedigit:
+                    mailtemplateFileName = "AccountConfirmationWedigitEmail.html";
+                    break;
+
+                case MailTemplateType.AccountConfirmation:
+                    mailtemplateFileName = "AccountConfirmationEmail.html";
+                    break;
+
+                case MailTemplateType.SupportTicket:
+                    mailtemplateFileName = "SupportTicketEmail.html";
+                    break;
+
+                case MailTemplateType.Resetpassword:
+                    mailtemplateFileName = "ResetPassword.html";
+                    break;
+
+                case MailTemplateType.PurchaseOrder:
+                    mailtemplateFileName = "PurchaseOrder.html";
+                    break;
+
+                case MailTemplateType.ActivityNotification:
+                    mailtemplateFileName = "ActivityNotification.html";
+                    break;
+
+
+            }
+
+            StreamReader reader = new StreamReader(_env.WebRootPath + "/" + "MailTemplates" + "/" + mailtemplateFileName);
+            {
+                body = reader.ReadToEnd();
+            }
+
+            foreach (var tokenKeyAndValue in tokens)
+            {
+                string tokenStr = "{" + tokenKeyAndValue.Key + "}";
+
+                if (body.IndexOf(tokenStr) > (-1))
                 {
-                    case MailTemplateType.AccountConfirmationToWedigit:
-                        mailtemplateFileName = "AccountConfirmationWedigitEmail.html";
-                        break;
-
-                    case MailTemplateType.AccountConfirmation:
-                        mailtemplateFileName = "AccountConfirmationEmail.html";
-                        break;
-
-                    case MailTemplateType.SupportTicket:
-                        mailtemplateFileName = "SupportTicketEmail.html";
-                        break;
-
-                    case MailTemplateType.Resetpassword:
-                        mailtemplateFileName = "ResetPassword.html";
-                        break;
-
-                    case MailTemplateType.ActivityNotification:
-                        mailtemplateFileName = "ActivityNotification.html";
-                        break;
-
-
-                }
-
-                StreamReader reader = new StreamReader(_env.WebRootPath + "/" + "MailTemplates" + "/" + mailtemplateFileName);
-                {
-                    body = reader.ReadToEnd();
-                }
-
-                foreach (var tokenKeyAndValue in tokens)
-                {
-                    string tokenStr = "{" + tokenKeyAndValue.Key + "}";
-
-                    if (body.IndexOf(tokenStr) > (-1))
+                    if (!string.IsNullOrEmpty(tokenKeyAndValue.Value))
                     {
-                        if (!string.IsNullOrEmpty(tokenKeyAndValue.Value))
-                        {
-                            body = body.Replace("{" + tokenKeyAndValue.Key + "}", tokenKeyAndValue.Value);
-                        }
-                        else
-                        {
-                            body = body.Replace("{" + tokenKeyAndValue.Key + "}", "");
-                        }
-
+                        body = body.Replace("{" + tokenKeyAndValue.Key + "}", tokenKeyAndValue.Value);
+                    }
+                    else
+                    {
+                        body = body.Replace("{" + tokenKeyAndValue.Key + "}", "");
                     }
 
                 }
 
-                LinkedResource LinkedImage = null;
+            }
 
-                if (mailTemplateType == MailTemplateType.ActivityNotification)
+            LinkedResource LinkedImage = null;
+
+            if (mailTemplateType == MailTemplateType.ActivityNotification)
+            {
+                if (!string.IsNullOrEmpty(companyAccount.LogoAttachmentIds))
                 {
-                    if (!string.IsNullOrEmpty(companyAccount.LogoAttachmentIds))
+                    WedigITCRM.EntitityModels.Attachment attachment = _attachmentRepository.GetAttachment(Int32.Parse(companyAccount.LogoAttachmentIds));
+                    if (attachment != null)
                     {
-                        WedigITCRM.EntitityModels.Attachment attachment = _attachmentRepository.GetAttachment(Int32.Parse(companyAccount.LogoAttachmentIds));
-                        if (attachment != null)
-                        {
 
-                            LinkedImage = new LinkedResource(_env.WebRootPath + "/" + "CustomerAttachments" + "/" + "Logos" + "/" + attachment.uniqueInternalFileName, attachment.ContentType);
-                        }
+                        LinkedImage = new LinkedResource(_env.WebRootPath + "/" + "CustomerAttachments" + "/" + "Logos" + "/" + attachment.uniqueInternalFileName, attachment.ContentType);
                     }
-
-                }
-                else
-                {
-                    LinkedImage = new LinkedResource(_env.WebRootPath + "/" + "frontpage" + "/" + "img" + "/" + "nyxium-logo.png", "image/png");
                 }
 
-                AlternateView htmlView = null;
-                if (LinkedImage != null)
-                {
-                    LinkedImage.ContentId = "logoInEmail";
-                    body = body.Replace("{logocid}", LinkedImage.ContentId);
-                    htmlView = AlternateView.CreateAlternateViewFromString(body, null, "text/html");
-                    htmlView.LinkedResources.Add(LinkedImage);
-                }
-                else
-                {
-                    body = body.Replace("{logocid}", "");
-                    htmlView = AlternateView.CreateAlternateViewFromString(body, null, "text/html");
-                }
+            }
+            else
+            {
+                LinkedImage = new LinkedResource(_env.WebRootPath + "/" + "frontpage" + "/" + "img" + "/" + "nyxium-logo.png", "image/png");
+            }
 
-                return htmlView;
-          
-            
+            AlternateView htmlView = null;
+            if (LinkedImage != null)
+            {
+                LinkedImage.ContentId = "logoInEmail";
+                body = body.Replace("{logocid}", LinkedImage.ContentId);
+                htmlView = AlternateView.CreateAlternateViewFromString(body, null, "text/html");
+                htmlView.LinkedResources.Add(LinkedImage);
+            }
+            else
+            {
+                body = body.Replace("{logocid}", "");
+                htmlView = AlternateView.CreateAlternateViewFromString(body, null, "text/html");
+            }
+
+            return htmlView;
+
+
         }
 
-        public AlternateView getFormattedBodyByMailtemplate(MailTemplateType mailTemplateType,  Dictionary<string, string> tokens)
+        public AlternateView getFormattedBodyByMailtemplate(MailTemplateType mailTemplateType, Dictionary<string, string> tokens)
         {
-         
-                string body = string.Empty;
-                string mailtemplateFileName = "";
 
-                switch (mailTemplateType)
-                {
-                    case MailTemplateType.AccountConfirmationToWedigit:
-                        mailtemplateFileName = "AccountConfirmationWedigitEmail.html";
-                        break;
+            string body = string.Empty;
+            string mailtemplateFileName = "";
 
-                    case MailTemplateType.AccountConfirmation:
-                        mailtemplateFileName = "AccountConfirmationEmail.html";
-                        break;
+            switch (mailTemplateType)
+            {
+                case MailTemplateType.AccountConfirmationToWedigit:
+                    mailtemplateFileName = "AccountConfirmationWedigitEmail.html";
+                    break;
 
-                    case MailTemplateType.SupportTicket:
-                        mailtemplateFileName = "SupportTicketEmail.html";
-                        break;
+                case MailTemplateType.AccountConfirmation:
+                    mailtemplateFileName = "AccountConfirmationEmail.html";
+                    break;
 
-                    case MailTemplateType.Resetpassword:
-                        mailtemplateFileName = "ResetPassword.html";
-                        break;
+                case MailTemplateType.SupportTicket:
+                    mailtemplateFileName = "SupportTicketEmail.html";
+                    break;
 
-                    case MailTemplateType.ActivityNotification:
-                        mailtemplateFileName = "ActivityNotification.html";
-                        break;
+                case MailTemplateType.Resetpassword:
+                    mailtemplateFileName = "ResetPassword.html";
+                    break;
+
+                case MailTemplateType.ActivityNotification:
+                    mailtemplateFileName = "ActivityNotification.html";
+                    break;
+
+                case MailTemplateType.PurchaseOrder:
+                    mailtemplateFileName = "PurchaseOrder.html";
+                    break;
 
                 case MailTemplateType.SupportTicketSystemError:
                     mailtemplateFileName = "SupportTicketsystemError.html";
@@ -191,40 +211,40 @@ namespace WedigITCRM.Utilities
 
             }
 
-                StreamReader reader = new StreamReader(_env.WebRootPath + "/" + "MailTemplates" + "/" + mailtemplateFileName);
-                {
-                    body = reader.ReadToEnd();
-                }
+            StreamReader reader = new StreamReader(_env.WebRootPath + "/" + "MailTemplates" + "/" + mailtemplateFileName);
+            {
+                body = reader.ReadToEnd();
+            }
 
-                foreach (var tokenKeyAndValue in tokens)
-                {
-                    string tokenStr = "{" + tokenKeyAndValue.Key + "}";
+            foreach (var tokenKeyAndValue in tokens)
+            {
+                string tokenStr = "{" + tokenKeyAndValue.Key + "}";
 
-                    if (body.IndexOf(tokenStr) > (-1))
+                if (body.IndexOf(tokenStr) > (-1))
+                {
+                    if (!string.IsNullOrEmpty(tokenKeyAndValue.Value))
                     {
-                        if (!string.IsNullOrEmpty(tokenKeyAndValue.Value))
-                        {
-                            body = body.Replace("{" + tokenKeyAndValue.Key + "}", tokenKeyAndValue.Value);
-                        }
-                        else
-                        {
-                            body = body.Replace("{" + tokenKeyAndValue.Key + "}", "");
-                        }
-
+                        body = body.Replace("{" + tokenKeyAndValue.Key + "}", tokenKeyAndValue.Value);
+                    }
+                    else
+                    {
+                        body = body.Replace("{" + tokenKeyAndValue.Key + "}", "");
                     }
 
                 }
 
-                LinkedResource LinkedImage = new LinkedResource(_env.WebRootPath + "/" + "frontpage" + "/" + "img" + "/" + "nyxium-logo.png", "image/png");
+            }
 
-                LinkedImage.ContentId = "logoInEmail";
-                body = body.Replace("{logocid}", LinkedImage.ContentId);
+            LinkedResource LinkedImage = new LinkedResource(_env.WebRootPath + "/" + "frontpage" + "/" + "img" + "/" + "nyxium-logo.png", "image/png");
 
-                AlternateView htmlView = AlternateView.CreateAlternateViewFromString(body, null, "text/html");
-                htmlView.LinkedResources.Add(LinkedImage);
+            LinkedImage.ContentId = "logoInEmail";
+            body = body.Replace("{logocid}", LinkedImage.ContentId);
 
-                return htmlView;
-          
+            AlternateView htmlView = AlternateView.CreateAlternateViewFromString(body, null, "text/html");
+            htmlView.LinkedResources.Add(LinkedImage);
+
+            return htmlView;
+
         }
 
         public enum MailTemplateType
@@ -234,6 +254,7 @@ namespace WedigITCRM.Utilities
             Resetpassword,
             SupportTicket,
             ActivityNotification,
+            PurchaseOrder,
             SupportTicketSystemError
         }
     }

@@ -171,7 +171,7 @@ namespace WedigITCRM.Maintenance
 
 
                             AlternateView htmlView = emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.ActivityNotification,  tokens, companyAccount, _attachmentRepository);
-                            emailUtility.send(user.Email, "support@nyxium.dk", "Aktivitet", htmlView, true);
+                            emailUtility.send(user.Email, "support@nyxium.dk", "Aktivitet", htmlView, true, null);
 
 
 

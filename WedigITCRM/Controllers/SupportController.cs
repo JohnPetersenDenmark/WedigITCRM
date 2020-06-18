@@ -69,7 +69,7 @@ namespace WedigITCRM.Controllers
 
                 AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.SupportTicket,  tokens);
 
-                _emailUtility.send("support@nyxium.dk", "support@nyxium.dk", "Support", htmlView, true);
+                _emailUtility.send("support@nyxium.dk", "support@nyxium.dk", "Support", htmlView, true, null);
 
             }
             return View(supportTicket);

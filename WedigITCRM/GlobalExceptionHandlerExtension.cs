@@ -110,7 +110,7 @@ namespace WedigITCRM
 
                     EmailUtility emailUtility = new EmailUtility(env);                   
                     AlternateView htmlView = emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.SupportTicketSystemError, tokens);
-                    emailUtility.send(fixedsendToList, "support@nyxium.dk", "System fejl i nyxium", htmlView, true);
+                    emailUtility.send(fixedsendToList, "support@nyxium.dk", "System fejl i nyxium", htmlView, true, null);
 
                     //============================================================
                     //Return response

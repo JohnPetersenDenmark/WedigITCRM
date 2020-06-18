@@ -40,5 +40,10 @@ namespace WedigITCRM.EntitityModels
         public string VendorDeliveryConditions { get; set; }
         public string VendorDeliveryConditionId { get; set; }
         public int companyAccountId { get; set; }
+
+        public string AttachedFilesNameAndPath { get; set; }
+        public string AttachedmentIds { get; set; }
+        public string FileNamesOnly { get; set; }
+        public string IconsFilePathAndName { get; set; }
     }
 }

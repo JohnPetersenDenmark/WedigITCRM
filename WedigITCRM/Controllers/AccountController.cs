@@ -349,7 +349,7 @@ namespace WedigITCRM.Controllers
 
                     // AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmation, _env, tokens);
                     AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmation,  tokens);
-                    _emailUtility.send(model.Email, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true);
+                    _emailUtility.send(model.Email, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true, null);
 
                     model.companyAccountEmailSent = true;
                     model.companyAccountEmailSentMessage = "Email er sendt til: " + model.Email;
@@ -399,7 +399,7 @@ namespace WedigITCRM.Controllers
                         AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmationToWedigit,  tokens);
 
                         string fixedsendToList = "johnpetersen1959@gmail.com,jp@wedigit.dk,kv@wedigit.dk,tj@wedigit.dk,ad@wedigit.dk";
-                        _emailUtility.send(fixedsendToList, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true);
+                        _emailUtility.send(fixedsendToList, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true, null);
                         // DONE send email to wedigit employees
 
                         model.message = "Din konto er nu aktiveret. Du kan logge ind via knappen ovenfor";

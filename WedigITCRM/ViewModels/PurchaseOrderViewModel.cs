@@ -32,5 +32,10 @@ namespace WedigITCRM.ViewModels
         public string OurWantedDeliveryDate { get; set; }
         public string OurOrderingDate { get; set; }
         public string OurReference { get; set; }
+
+        public string AttachedFilesNameAndPath { get; set; }
+        public string AttachedmentIds { get; set; }
+        public string FileNamesOnly { get; set; }
+        public string IconsFilePathAndName { get; set; }
     }
 }

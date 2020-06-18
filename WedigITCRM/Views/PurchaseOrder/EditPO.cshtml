@@ -74,6 +74,39 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-12">
+                        @if (Model.AttachedmentIds != null)
+                        {
+                            List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
+                            List<string> ExistingAttachedFilesNameAndPathList = Model.IconsFilePathAndName.Split(",").ToList();
+                            List<string> ExistingFileNamesOnlyList = Model.FileNamesOnly.Split(",").ToList();
+                            List<string> ExistingAttachedFilesTypeIconPathList = Model.IconsFilePathAndName.Split(",").ToList();
+                            var index = 0;
+                            foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+                            {
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        @ExistingFileNamesOnlyList[index];
+                                        <img src="@ExistingAttachedFilesTypeIconPathList[index]" height="42" width="42" />
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <a asp-controller="Note" asp-action="openAttachment" asp-route-id="@ExistingAttachedmentId">Se ordre</a>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <a asp-controller="Note" asp-action="downloadAttachment" asp-route-id="@ExistingAttachedmentId">Gem ordre på disk</a>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <a asp-controller="Note" asp-action="deleteAttachment" asp-route-id="@ExistingAttachedmentId">Slet ordrebilag</a>
+                                    </div>
+                                </div>
+                                index++;
+                            }
+                        }
+                    </div>
+                </div>              
+           
+
 
 
             </div>
