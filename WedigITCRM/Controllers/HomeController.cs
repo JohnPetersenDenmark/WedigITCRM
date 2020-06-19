@@ -91,8 +91,13 @@ namespace WedigITCRM.Controllers
         public async Task<IActionResult> searchInVirkByCompanyName(string term)
         {
 
-           
-          
+            List<CompanyData> companies = new List<CompanyData>();
+
+            if (string.IsNullOrEmpty(term))
+            {
+                return new JsonResult(companies);
+            }
+
             VirkAPI.Companies virkapi = new VirkAPI.Companies();
             VirkQuery virkquery = new VirkQuery();
 
@@ -100,8 +105,8 @@ namespace WedigITCRM.Controllers
 
             VirkResponse virkResponse = await virkapi.search(virkquery);
 
-            List<CompanyData> companies = new List<CompanyData>();
-
+           
+           
 
             List<vedIkke> result = virkResponse.hits.hits_property;
 

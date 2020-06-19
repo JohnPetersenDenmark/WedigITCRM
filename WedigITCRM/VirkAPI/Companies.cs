@@ -17,7 +17,7 @@ namespace WedigITCRM.VirkAPI
 
         public async Task<VirkResponse> search(VirkQuery virkquery)
         {
-            VirkResponse virkResponse = null; ;
+            VirkResponse virkResponse = null; 
 
             string jsonQueryString = JsonConvert.SerializeObject(virkquery);
 

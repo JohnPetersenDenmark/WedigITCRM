@@ -68,6 +68,7 @@ namespace WedigITCRM.Utilities
             client.Credentials = basicCredential1;
 
             client.Send(message);
+            message.Dispose();
 
         }
 

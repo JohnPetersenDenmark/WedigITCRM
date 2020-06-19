@@ -12,7 +12,7 @@ function initializenoteEditor() {
                     for (var prop in d.data[0]) {
                         if (d.data[0].hasOwnProperty(prop)) {
                             if (prop == "files-many-count") {
-                                ownData["fileCount"] = d.data[0][prop];
+                                 ownData["fileCount"] = d.data[0][prop].toString();
                             }
                             else {
                                 ownData[prop] = d.data[0][prop];

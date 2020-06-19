@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using WedigITCRM.EntitityModels;
 using WedigITCRM.StorageInterfaces;
@@ -19,13 +20,17 @@ namespace WedigITCRM.Controllers
         public IVendorRepository _vendorRepository;
         private IPurchaseOrderRepository _purchaseOrderRepository;
         private IPurchaseOrderLineRepository _purchaseOrderLineRepository;
+        private readonly IWebHostEnvironment _hostingEnvironment;
+        private readonly IAttachmentRepository _attachmentRepository;
         private readonly IStockItemRepository _stockItemRepository;
         private readonly IDeliveryConditionRepository _deliveryConditionRepository;
         private readonly IPaymentConditionRepository _paymentConditionRepository;
         public ICurrencyCodeRepository _currencyCodeRepository;
 
-        public PurchaseOrderController(IStockItemRepository stockItemRepository, IDeliveryConditionRepository deliveryConditionRepository, IPaymentConditionRepository paymentConditionRepository, ICurrencyCodeRepository currencyCodeRepository, IVendorRepository vendorRepository, IPurchaseOrderRepository purchaseOrderRepository, IPurchaseOrderLineRepository purchaseOrderLineRepository)
+        public PurchaseOrderController(IWebHostEnvironment hostingEnvironment, IAttachmentRepository attachmentRepository, IStockItemRepository stockItemRepository, IDeliveryConditionRepository deliveryConditionRepository, IPaymentConditionRepository paymentConditionRepository, ICurrencyCodeRepository currencyCodeRepository, IVendorRepository vendorRepository, IPurchaseOrderRepository purchaseOrderRepository, IPurchaseOrderLineRepository purchaseOrderLineRepository)
         {
+            _hostingEnvironment = hostingEnvironment;
+            _attachmentRepository = attachmentRepository;
             _stockItemRepository = stockItemRepository;
             _deliveryConditionRepository = deliveryConditionRepository;
             _paymentConditionRepository = paymentConditionRepository;
@@ -204,7 +209,7 @@ namespace WedigITCRM.Controllers
                 purchaseOrder.VendorHomePage = model.VendorHomePage;
                 purchaseOrder.VendorReference = model.VendorReference;
                 purchaseOrder.OurReference = model.OurReference;
-                purchaseOrder.Note = model.Note;               
+                purchaseOrder.Note = model.Note;
                 purchaseOrder.VendorPaymentConditionsId = model.VendorPaymentConditionId;
 
                 if (!string.IsNullOrEmpty(model.VendorPaymentConditionId))
@@ -225,11 +230,11 @@ namespace WedigITCRM.Controllers
                         purchaseOrder.VendorDeliveryConditions = deliveryCondition.Description;
                     }
                 }
-               
+
                 purchaseOrder.LastEditedDate = DateTime.Now;
 
-                
-                 _purchaseOrderRepository.Update(purchaseOrder);
+
+                _purchaseOrderRepository.Update(purchaseOrder);
             }
 
 
@@ -359,7 +364,7 @@ namespace WedigITCRM.Controllers
             }
             else
             {
-                 PurchaseOrderLine orderLine = _purchaseOrderLineRepository.GetPurchaseOrderLine(Int32.Parse(model.Id));
+                PurchaseOrderLine orderLine = _purchaseOrderLineRepository.GetPurchaseOrderLine(Int32.Parse(model.Id));
                 if (orderLine != null)
                 {
                     orderLine.StockItemId = Int32.Parse(model.StockItemId);
@@ -392,8 +397,8 @@ namespace WedigITCRM.Controllers
             if (!string.IsNullOrEmpty(purchaseOrderId))
             {
                 List<PurchaseOrderLine> orderLines = _purchaseOrderLineRepository.GetAllpurchaseOrderLines().Where(po => po.PurchaseOrderId == Int32.Parse(purchaseOrderId)).ToList();
-               
-                foreach ( var orderLine in orderLines)
+
+                foreach (var orderLine in orderLines)
                 {
                     Decimal orderLineTotal = 0;
                     PurchaseOrderLineModel model = new PurchaseOrderLineModel();
@@ -414,12 +419,12 @@ namespace WedigITCRM.Controllers
 
                     //model.OrderLineTotalAmount = orderLineTotal.ToString();
 
-                    
+
                     var danishCulture = CultureInfo.GetCultureInfo("da-DK");
                     model.OrderLineTotalAmount = orderLineTotal.ToString("C", danishCulture);
 
                     orderLineModels.Add(model);
-                }              
+                }
             }
             return Json(orderLineModels);
         }
@@ -458,6 +463,62 @@ namespace WedigITCRM.Controllers
             List<PurchaseOrder> purchaseOrderList = _purchaseOrderRepository.GetAllPurchaseOrders().Where(purchaseOrder => purchaseOrder.companyAccountId == companyAccountId).ToList();
             int purchaseOrderNumber = purchaseOrderList.Count + 1;
             return (purchaseOrderNumber.ToString());
+        }
+
+        public IActionResult deleteAttachment(string Id, CompanyAccount companyAccount)
+        {
+
+            if (!string.IsNullOrEmpty(Id))
+            {
+                Attachment attachment = _attachmentRepository.GetAttachment(Int32.Parse(Id));
+                if (attachment != null)
+                {
+                    string filePathAndFileName = _hostingEnvironment.WebRootPath + "\\" + "CustomerAttachments" + "\\" + attachment.uniqueInternalFileName;
+                    if (System.IO.File.Exists(filePathAndFileName))
+                    {
+                        System.IO.File.Delete(filePathAndFileName);
+                    }
+                    _attachmentRepository.Delete(attachment.Id);
+                }
+
+
+                List<PurchaseOrder> purchaseOrderNoteList = _purchaseOrderRepository.GetAllPurchaseOrders().Where(purchaseOrder => !string.IsNullOrEmpty(purchaseOrder.AttachedmentIds) && purchaseOrder.AttachedmentIds.Contains(Id)).ToList();
+                if (purchaseOrderNoteList.Count == 1)
+                {
+                    PurchaseOrder purchaseOrder = purchaseOrderNoteList.First();
+
+                    List<string> ExistingAttachedmentIdsList = purchaseOrder.AttachedmentIds.Split(",").ToList();
+                    List<string> ExistingFileNamesOnlyList = purchaseOrder.FileNamesOnly.Split(",").ToList();
+                    List<string> AttachedFilesNameAndPathList = purchaseOrder.AttachedFilesNameAndPath.Split(",").ToList();
+                    List<string> IconsFilePathAndNameList = purchaseOrder.IconsFilePathAndName.Split(",").ToList();
+
+                    int index = ExistingAttachedmentIdsList.IndexOf(Id);
+
+                    ExistingAttachedmentIdsList.RemoveAt(index);
+                    ExistingFileNamesOnlyList.RemoveAt(index);
+                    AttachedFilesNameAndPathList.RemoveAt(index);
+                    IconsFilePathAndNameList.RemoveAt(index);
+
+                    if (ExistingAttachedmentIdsList.Count == 0)
+                    {
+                        purchaseOrder.AttachedmentIds = null;
+                        purchaseOrder.FileNamesOnly = null;
+                        purchaseOrder.AttachedFilesNameAndPath = null;
+                        purchaseOrder.IconsFilePathAndName = null;
+                    }
+                    else
+                    {
+                        purchaseOrder.AttachedmentIds = string.Join(",", ExistingAttachedmentIdsList.ToArray());
+                        purchaseOrder.FileNamesOnly = string.Join(",", ExistingFileNamesOnlyList.ToArray());
+                        purchaseOrder.AttachedFilesNameAndPath = string.Join(",", AttachedFilesNameAndPathList.ToArray());
+                        purchaseOrder.IconsFilePathAndName = string.Join(",", IconsFilePathAndNameList.ToArray());
+                    }
+
+                    _purchaseOrderRepository.Update(purchaseOrder);
+                }
+            }
+
+            return RedirectToAction("Index", "Note");
         }
     }
 
@@ -571,7 +632,7 @@ namespace WedigITCRM.Controllers
 
         public string OurCostPrice { get; set; }
         public string StockItemId { get; set; }
-        
+
         public string OurStockValue { get; set; }
 
         public string OurSalesPrice { get; set; }

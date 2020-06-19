@@ -739,11 +739,12 @@ namespace WedigITCRM.Controllers
 
         [HttpPost]
         [Consumes("application/json")]
-        public string PostedNote([FromBody] NoteModelTest model, CompanyAccount companyAccount)
-        {
+         public IActionResult PostedNote([FromBody] NoteModelTest model, CompanyAccount companyAccount)     
+        {           
             if (ModelState.IsValid)
             {
-                List<NoteModelTest> noteListOutput = new List<NoteModelTest>();
+              
+                 List<NoteModelTest> noteListOutput = new List<NoteModelTest>();
 
 
                 if (model.action.Equals("create"))
@@ -798,9 +799,9 @@ namespace WedigITCRM.Controllers
                     NoteOutputDataModelTest noteOutputDataModel1 = new NoteOutputDataModelTest();
                     noteOutputDataModel1.data.Add(model);
 
-                    string JsonStr = JsonConvert.SerializeObject(noteOutputDataModel1);
+                   // string JsonStr = JsonConvert.SerializeObject(noteOutputDataModel1);
 
-                    return JsonStr;
+                      return Json(noteOutputDataModel1); 
                 }
 
                 if (model.action.Equals("edit"))
@@ -893,7 +894,7 @@ namespace WedigITCRM.Controllers
 
                         string JsonStr = JsonConvert.SerializeObject(noteOutputDataModelTest);
 
-                        return JsonStr;
+                        return Json(noteOutputDataModelTest);
                     }
                 }
 
@@ -926,13 +927,13 @@ namespace WedigITCRM.Controllers
                         _noteRepository.Delete(note.Id);
                     }
 
-                    string JsonStr = JsonConvert.SerializeObject(model);
+                    //string JsonStr = JsonConvert.SerializeObject(model);
 
-                    return JsonStr;
+                    return Json(model);
                 }
 
             }
-            return "";
+            return Json(model);
         }
 
 
@@ -1001,6 +1002,8 @@ namespace WedigITCRM.Controllers
             public Upload upload { get; set; }
         }
 
+
+
         public class NoteModelTest
         {
             public NoteModelTest()
@@ -1018,7 +1021,6 @@ namespace WedigITCRM.Controllers
             public string companyId { get; set; }
 
         }
-
         public class NoteFileModelTest
         {
             public string id { get; set; }

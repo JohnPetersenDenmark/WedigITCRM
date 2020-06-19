@@ -92,10 +92,10 @@ namespace WedigITCRM.Controllers
             }
 
             WedigITCRM.EntitityModels.Attachment attachment = new WedigITCRM.EntitityModels.Attachment();
-            attachment.ContentType = "pdf";
-            FileInfo info = new FileInfo(uniqueFilePathAndName);            
+            attachment.ContentType = "application/pdf";
+            FileInfo info = new FileInfo(uniqueFilePathAndName);
             attachment.length = info.Length;
-            attachment.OriginalFileName = uniqueFilePathAndName;
+            attachment.OriginalFileName = "purchaseOrder.pdf";
             attachment.uniqueInternalFileName = uniqueFileName1;
             attachment.companyAccountId = companyAccount.companyAccountId;
 
@@ -105,7 +105,7 @@ namespace WedigITCRM.Controllers
             if (!string.IsNullOrEmpty(purchaseOrder.FileNamesOnly))
             {
                 fileNamesOnlyList = purchaseOrder.FileNamesOnly.Split(",").ToList();
-                fileNamesOnlyList.Add(uniqueFileName1);               
+                fileNamesOnlyList.Add(uniqueFileName1);
                 purchaseOrder.FileNamesOnly = string.Join(",", fileNamesOnlyList);
             }
             else
@@ -134,9 +134,9 @@ namespace WedigITCRM.Controllers
             }
             else
             {
-                purchaseOrder.AttachedFilesNameAndPath = newAttachment.Id.ToString();
+                purchaseOrder.AttachedFilesNameAndPath = uniqueFilePathAndName;
             }
-           
+
             string iconFilePathAndName = _miscUtility.getIconFilenameAndPath(attachment.ContentType, _contentTypeRepository);
 
             List<string> IconsFilePathAndNameList = new List<string>();
@@ -148,7 +148,7 @@ namespace WedigITCRM.Controllers
             }
             else
             {
-                
+
                 purchaseOrder.IconsFilePathAndName = iconFilePathAndName;
             }
 
@@ -158,7 +158,7 @@ namespace WedigITCRM.Controllers
             // send email with PDF document nyxium attachment **********************************************************
 
             Dictionary<string, string> tokens = new Dictionary<string, string>();
-        tokens.Add("ourcompanyname", companyAccount.CompanyName);
+            tokens.Add("ourcompanyname", companyAccount.CompanyName);
             tokens.Add("ourcompanystreet", companyAccount.CompanyStreet);
             tokens.Add("ourcompanyzip", companyAccount.CompanyZip);
             tokens.Add("ourcompanycity", companyAccount.CompanyCity);
@@ -167,11 +167,11 @@ namespace WedigITCRM.Controllers
             tokens.Add("purchaseordernumber", purchaseOrder.PurchaseOrderDocumentNumber);
 
             AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.PurchaseOrder, tokens);
-        _emailUtility.send("johnpetersen1959@gmail.com", "support@nyxium.dk", "Indkøbsordre nr.: " + purchaseOrder.PurchaseOrderDocumentNumber, htmlView, true, uniqueFilePathAndName);
+            _emailUtility.send("johnpetersen1959@gmail.com", "support@nyxium.dk", "Indkøbsordre nr.: " + purchaseOrder.PurchaseOrderDocumentNumber, htmlView, true, uniqueFilePathAndName);
 
 
             return Ok("Successfully created PDF document.");
 
+        }
     }
-}
 }
