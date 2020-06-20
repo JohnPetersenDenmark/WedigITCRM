@@ -113,6 +113,8 @@ namespace WedigITCRM
                 services.AddScoped<EmailUtility>();
                 services.AddScoped<MiscUtility>();
                 services.AddScoped<PurchaseOrderToHTML>();
+                services.AddScoped<PurchaseOrderToPDF>();
+                services.AddScoped<PurchaseOrderAddAttachment>();
 
 
                 services.AddMvc(options =>

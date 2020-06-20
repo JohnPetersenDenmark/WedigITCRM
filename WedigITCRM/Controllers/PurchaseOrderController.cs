@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
@@ -20,6 +22,10 @@ namespace WedigITCRM.Controllers
         public IVendorRepository _vendorRepository;
         private IPurchaseOrderRepository _purchaseOrderRepository;
         private IPurchaseOrderLineRepository _purchaseOrderLineRepository;
+        private readonly PurchaseOrderToHTML _purchaseOrderToHTML;
+        private readonly PurchaseOrderAddAttachment _purchaseOrderAddAttachment;
+        private readonly EmailUtility _emailUtility;
+        private readonly PurchaseOrderToPDF _purchaseOrderToPDF;
         private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly IAttachmentRepository _attachmentRepository;
         private readonly IStockItemRepository _stockItemRepository;
@@ -27,8 +33,12 @@ namespace WedigITCRM.Controllers
         private readonly IPaymentConditionRepository _paymentConditionRepository;
         public ICurrencyCodeRepository _currencyCodeRepository;
 
-        public PurchaseOrderController(IWebHostEnvironment hostingEnvironment, IAttachmentRepository attachmentRepository, IStockItemRepository stockItemRepository, IDeliveryConditionRepository deliveryConditionRepository, IPaymentConditionRepository paymentConditionRepository, ICurrencyCodeRepository currencyCodeRepository, IVendorRepository vendorRepository, IPurchaseOrderRepository purchaseOrderRepository, IPurchaseOrderLineRepository purchaseOrderLineRepository)
+        public PurchaseOrderController(PurchaseOrderAddAttachment purchaseOrderAddAttachment, EmailUtility emailUtility, PurchaseOrderToPDF purchaseOrderToPDF, PurchaseOrderToHTML purchaseOrderToHTML, IWebHostEnvironment hostingEnvironment, IAttachmentRepository attachmentRepository, IStockItemRepository stockItemRepository, IDeliveryConditionRepository deliveryConditionRepository, IPaymentConditionRepository paymentConditionRepository, ICurrencyCodeRepository currencyCodeRepository, IVendorRepository vendorRepository, IPurchaseOrderRepository purchaseOrderRepository, IPurchaseOrderLineRepository purchaseOrderLineRepository)
         {
+            _purchaseOrderAddAttachment = purchaseOrderAddAttachment;
+            _emailUtility = emailUtility;
+            _purchaseOrderToPDF = purchaseOrderToPDF;
+            _purchaseOrderToHTML = purchaseOrderToHTML;
             _hostingEnvironment = hostingEnvironment;
             _attachmentRepository = attachmentRepository;
             _stockItemRepository = stockItemRepository;
@@ -457,6 +467,31 @@ namespace WedigITCRM.Controllers
             return Json(model);
         }
 
+        [HttpPost]
+        public IActionResult deleteOrderLineById(string orderLineId, string purchaseOrderId, CompanyAccount companyAccount)
+        {
+            PurchaseOrderLineModel model = new PurchaseOrderLineModel();
+
+            if (!string.IsNullOrEmpty(purchaseOrderId))
+            {
+                PurchaseOrder purchaseOrder = _purchaseOrderRepository.GetPurchaseOrder(Int32.Parse(purchaseOrderId));
+                if (purchaseOrder != null)
+                {
+                    if (!string.IsNullOrEmpty(orderLineId))
+                    {
+                        PurchaseOrderLine orderLine = _purchaseOrderLineRepository.GetPurchaseOrderLine(Int32.Parse(orderLineId));
+
+                        if (orderLine != null)
+                        {
+                            _purchaseOrderLineRepository.Delete(Int32.Parse(orderLineId));
+                        }                        
+                    }
+                }
+
+            }
+            return Json(model);
+        }
+
 
         private string getNextPurchaseOrderNumber(int companyAccountId)
         {
@@ -470,7 +505,7 @@ namespace WedigITCRM.Controllers
 
             if (!string.IsNullOrEmpty(Id))
             {
-                Attachment attachment = _attachmentRepository.GetAttachment(Int32.Parse(Id));
+                EntitityModels.Attachment attachment = _attachmentRepository.GetAttachment(Int32.Parse(Id));
                 if (attachment != null)
                 {
                     string filePathAndFileName = _hostingEnvironment.WebRootPath + "\\" + "CustomerAttachments" + "\\" + attachment.uniqueInternalFileName;
@@ -515,10 +550,61 @@ namespace WedigITCRM.Controllers
                     }
 
                     _purchaseOrderRepository.Update(purchaseOrder);
+                    return RedirectToAction("EditPO", "PurchaseOrder", new { purchaseOrderId = purchaseOrder.Id });
                 }
             }
 
             return RedirectToAction("Index", "Note");
+        }
+
+        public IActionResult sendPurchaseOrder(int purchaseOrderId, CompanyAccount companyAccount)
+        {
+
+            PurchaseOrder purchaseOrder = _purchaseOrderRepository.GetPurchaseOrder(purchaseOrderId);
+            if (purchaseOrder != null)
+            {
+                string purchaseOrdersFolder = _hostingEnvironment.WebRootPath + "\\" + "CustomerAttachments";
+
+                string uniquePDFFileName = Guid.NewGuid().ToString() + "_" + "purchaseOrder.pdf";
+                string uniquePDFFilePathAndName = purchaseOrdersFolder + "\\" + uniquePDFFileName;
+
+
+                string purchaseOrderHTML = _purchaseOrderToHTML.generateHTML(purchaseOrder, companyAccount);
+
+
+                if ( _purchaseOrderToPDF.generatePurchaseOrderPDF(purchaseOrderHTML, uniquePDFFilePathAndName) )
+                {
+                    WedigITCRM.EntitityModels.Attachment attachment = new WedigITCRM.EntitityModels.Attachment();
+                    attachment.ContentType = "application/pdf";
+                    FileInfo info = new FileInfo(uniquePDFFilePathAndName);
+                    attachment.length = info.Length;
+                    attachment.OriginalFileName = "purchaseOrder.pdf";
+                    attachment.uniqueInternalFileName = uniquePDFFileName;
+                    attachment.companyAccountId = companyAccount.companyAccountId;
+                    WedigITCRM.EntitityModels.Attachment newAttachment = _attachmentRepository.Add(attachment);
+
+                    _purchaseOrderAddAttachment.addAttacment(purchaseOrder, uniquePDFFileName, uniquePDFFilePathAndName, attachment);
+
+                    Dictionary<string, string> tokens = new Dictionary<string, string>();
+                    tokens.Add("ourcompanyname", companyAccount.CompanyName);
+                    tokens.Add("ourcompanystreet", companyAccount.CompanyStreet);
+                    tokens.Add("ourcompanyzip", companyAccount.CompanyZip);
+                    tokens.Add("ourcompanycity", companyAccount.CompanyCity);
+
+                    tokens.Add("ourreference", purchaseOrder.OurReference);
+                    tokens.Add("purchaseordernumber", purchaseOrder.PurchaseOrderDocumentNumber);
+
+                    if (!string.IsNullOrEmpty(purchaseOrder.VendorEmail))
+                    {
+                        string vendorReceipient = purchaseOrder.VendorEmail;
+                        AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.PurchaseOrder, tokens);
+                        _emailUtility.send(vendorReceipient, "support@nyxium.dk", "Indkøbsordre nr.: " + purchaseOrder.PurchaseOrderDocumentNumber, htmlView, true, uniquePDFFilePathAndName);
+                    }
+                }
+            }
+
+
+            return RedirectToAction("EditPO", "PurchaseOrder", new { purchaseOrderId = purchaseOrderId });
         }
     }
 

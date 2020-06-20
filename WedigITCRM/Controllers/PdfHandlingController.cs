@@ -51,6 +51,11 @@ namespace WedigITCRM.Controllers
                 return Ok("Ingen purchase order id");
             }
 
+           
+            string currentDirectory = _hostingEnvironment.WebRootPath;
+            string purchaseOrderStyleSheet = Path.Combine(currentDirectory, "lib\\css", "purchaseorder.css");
+
+
             string uploadsFolder = _hostingEnvironment.WebRootPath + "\\" + "CustomerAttachments";
             string uniqueFileName1 = Guid.NewGuid().ToString() + "_" + "purchaseOrder.pdf";
             string uniqueFilePathAndName = uploadsFolder + "\\" + uniqueFileName1;
@@ -65,12 +70,12 @@ namespace WedigITCRM.Controllers
                 DocumentTitle = "PDF Report",
                 Out = uniqueFilePathAndName
             };
-
+           
             var objectSettings = new ObjectSettings
             {
                 PagesCount = true,
                 HtmlContent = _purchaseOrderToHTML.generateHTML(purchaseOrder, companyAccount),
-                WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(), "assets", "styles.css") },
+                WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = purchaseOrderStyleSheet },
                 HeaderSettings = { FontName = "Arial", FontSize = 9, Right = "Side [page] af [toPage]", Line = true },
                 FooterSettings = { FontName = "Arial", FontSize = 9, Line = true, Center = "Indkøbsordre" }
             };
