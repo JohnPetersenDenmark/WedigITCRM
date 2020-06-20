@@ -1,0 +1,115 @@
+﻿@model PurchaseOrderListViewModel
+
+<div class="formcontainer">
+    <form id="searchForm" asp-controller="PurchaseOrder" asp-action="Index" method="get">
+        <div class="form-row">
+            <div class="col-2">
+                <label asp-for="@Model.ReceivedStatus">Modtaget status</label>
+                <select asp-for="@Model.ReceivedStatus" asp-items="@Model.SearchByReceivedStatus" id="searchbyreceivedstatus" class="custom-select"></select>
+            </div>
+            <div class="col-2">
+                <label asp-for="@Model.VendorId">Leverandør</label>
+                <select asp-for="@Model.VendorId" asp-items="@Model.SearchByVendor"  id="searchbyvendor" class="custom-select"></select>              
+            </div>
+            <div class="col-2">
+                <label asp-for="@Model.PurchaseDocumentNumber">Indkøbsordre nr.</label>
+                <select asp-for="@Model.PurchaseDocumentNumber" asp-items="@Model.SearchByPurchaseDocumentNumber"  id="searchbyPOdocumentno" class="custom-select"></select>              
+            </div>
+            <div class="col-2">
+                <label for="searchfromdatepicker">Fra dato</label>
+                <input asp-for="@Model.SearchFromDate" id="searchfromdatepicker" class="PurchaseOrderInput" />               
+            </div>
+            <div class="col-2">
+                <label for="searchtodatepicker">Til dato</label>
+                <input asp-for="@Model.SearchToDate" id="searchtodatepicker" class="PurchaseOrderInput" />               
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="form-row">
+            <div class="col-4">
+
+                @Html.PagedListPager(Model.PurchaseOrders, page => Url.Action("Index", new { page }), new PagedListRenderOptions
+                {
+                    LiElementClasses = new string[] { "page-item" },
+                    PageClasses = new string[] { "page-link" },
+                    LinkToFirstPageFormat = "<< Første",
+                    LinkToPreviousPageFormat = "< Forrige",
+                    LinkToNextPageFormat = "Næste >",
+                    LinkToLastPageFormat = "sidste >>"
+                })
+            </div>
+           
+        </div>
+    </form>
+
+    @if (Model != null)
+    {
+        @foreach (var purchaseOrder in Model.PurchaseOrders)
+        {
+            <div class="rowcontainer">
+                <div class="row" id="@purchaseOrder.Id">
+                    <div class="col-3 readDetails">@purchaseOrder.VendorName</div>
+                    <div class="col-2 readDetails">@purchaseOrder.OurOrderingDate</div>
+                    <div class="col-2 readDetails">@purchaseOrder.ReceivedStatus</div>
+                    <div class="col-2 readDetails">@purchaseOrder.SendToVendorDate</div>
+                    <div class="col-2 readDetails">@purchaseOrder.PurchaseOrderDocumentNumber</div>
+                    <div class="col-1">
+                        <div class="dropdown">
+                            <div class="dropbtn"><i class="fa fa-bars icon-menu-background-color"></i></div>
+                            <div class="dropdown-content">
+                                <a asp-controller="PurchaseOrder" asp-action="EditPO" asp-route-purchaseOrderId="@purchaseOrder.Id" class="dropdown-item">Rediger</a>
+                                <a asp-controller="PurchaseOrder" asp-action="Delete" asp-route-purchaseOrderId="@purchaseOrder.Id" class="dropdown-item">Slet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+</div>
+@section Scripts {
+    <script>
+
+
+        $(document).ready(function () {
+
+            $("#searchfromdatepicker").datetimepicker({
+                timepicker: false,
+                datepicker: true,
+                hours12: false,
+                format: 'd-m-Y'
+            });
+
+
+            $("#searchtodatepicker").datetimepicker({
+                timepicker: false,
+                datepicker: true,
+                hours12: false,
+                format: 'd-m-Y'
+            });
+
+            $('#searchbyreceivedstatus').bind('change', function () {
+                $("#searchForm").submit();
+            });
+
+            $('#searchbyvendor').bind('change', function () {
+                $("#searchForm").submit();
+            });
+
+            $('#searchbyPOdocumentno').bind('change', function () {
+                $("#searchForm").submit();
+            });
+
+            $('#searchfromdatepicker').bind('change', function () {
+                $("#searchForm").submit();
+            });
+
+            $('#searchtodatepicker').bind('change', function () {
+                $("#searchForm").submit();
+            });
+
+        });
+    </script>
+}

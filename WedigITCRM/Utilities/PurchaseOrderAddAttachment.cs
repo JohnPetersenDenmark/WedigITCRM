@@ -71,7 +71,7 @@ namespace WedigITCRM.Utilities
 
                 purchaseOrder.IconsFilePathAndName = iconFilePathAndName;
             }
-
+            purchaseOrder.LastEditedDate = DateTime.Now;
             _purchaseOrderRepository.Update(purchaseOrder);
         }
     }

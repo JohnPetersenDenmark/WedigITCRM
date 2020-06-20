@@ -9,11 +9,12 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using WedigITCRM.EntitityModels;
 using WedigITCRM.StorageInterfaces;
 using WedigITCRM.Utilities;
 using WedigITCRM.ViewModels;
-
+using X.PagedList;
 
 namespace WedigITCRM.Controllers
 {
@@ -50,9 +51,61 @@ namespace WedigITCRM.Controllers
             _purchaseOrderLineRepository = purchaseOrderLineRepository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int ? page, string receivedStatus, string vendorId, string purchaseDocumentNumber, string searchFromDate, string searchToDate, CompanyAccount companyAccount)
         {
-            return View();
+            DateTime testdate;
+            DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+            var pageNumber = page ?? 1;
+            int pageSize = 3;
+
+            PurchaseOrderListViewModel model = new PurchaseOrderListViewModel();
+            List<PurchaseOrder> allPurchaseOrderList = _purchaseOrderRepository.GetAllPurchaseOrders().ToList();
+            foreach(var purchaseOrder in allPurchaseOrderList)
+            {
+                model.SearchByPurchaseDocumentNumber.Add(new SelectListItem { Value = purchaseOrder.PurchaseOrderDocumentNumber, Text = purchaseOrder.PurchaseOrderDocumentNumber });
+            }
+
+            model.PurchaseOrders = allPurchaseOrderList.ToPagedList(pageNumber, pageSize);
+
+            List<Vendor> vendorList = _vendorRepository.GetAllVendors().Where(vendor => vendor.companyAccountId == companyAccount.companyAccountId).ToList();
+            foreach(var vendor in vendorList)
+            {
+                model.SearchByVendor.Add(new SelectListItem { Value = vendor.Id.ToString(), Text = vendor.Name });
+            }
+
+
+            //if(!string.IsNullOrEmpty(receivedStatus)  && !receivedStatus.Equals("0"))
+            //{
+            //    allPurchaseOrderList = allPurchaseOrderList.Where(purchaseOrder => purchaseOrder.ReceivedStatus.ToString().Equals(receivedStatus)).ToList();
+            //}
+            if (!string.IsNullOrEmpty(vendorId) && !vendorId.Equals("0"))
+            {
+                allPurchaseOrderList = allPurchaseOrderList.Where(purchaseOrder => purchaseOrder.VendorId.ToString().Equals(vendorId)).ToList();
+            }
+            if (!string.IsNullOrEmpty(purchaseDocumentNumber) && !purchaseDocumentNumber.Equals("0"))
+            {
+                allPurchaseOrderList = allPurchaseOrderList.Where(purchaseOrder => purchaseOrder.PurchaseOrderDocumentNumber.Equals(purchaseDocumentNumber)).ToList();
+            }
+            if (!string.IsNullOrEmpty(searchFromDate))
+            {
+                if (DateTime.TryParse(searchFromDate, out testdate))
+                {
+                    DateTime dateTimeFromDate = DateTime.Parse(searchFromDate, danishDateTimeformat);
+                    allPurchaseOrderList = allPurchaseOrderList.Where(purchaseOrder => purchaseOrder.OurOrderingDate > dateTimeFromDate).ToList();
+                }
+            }
+            if (!string.IsNullOrEmpty(searchToDate))
+            {
+                if (DateTime.TryParse(searchToDate, out testdate))
+                {
+                    DateTime dateTimeToDate = DateTime.Parse(searchToDate, danishDateTimeformat);
+                    allPurchaseOrderList = allPurchaseOrderList.Where(purchaseOrder => purchaseOrder.OurOrderingDate < dateTimeToDate).ToList();
+                }
+            }
+
+            model.PurchaseOrders = allPurchaseOrderList.ToPagedList(pageNumber, pageSize);
+
+            return View(model);
         }
 
         [HttpGet]
@@ -599,6 +652,10 @@ namespace WedigITCRM.Controllers
                         string vendorReceipient = purchaseOrder.VendorEmail;
                         AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.PurchaseOrder, tokens);
                         _emailUtility.send(vendorReceipient, "support@nyxium.dk", "Indkøbsordre nr.: " + purchaseOrder.PurchaseOrderDocumentNumber, htmlView, true, uniquePDFFilePathAndName);
+                        purchaseOrder.SendDate = DateTime.Now;
+                        purchaseOrder.LastEditedDate = DateTime.Now;
+                       
+                        _purchaseOrderRepository.Update(purchaseOrder);
                     }
                 }
             }
