@@ -11,7 +11,7 @@
             <div class="col-2">
                 <div class="row">
                     <div class="col-12">
-                        <label for="selectvendor">Leverandør</label>
+                        <label>Leverandør</label>
                         <select id="selectvendor" name="selectvendor" class="custom-select PurchaseOrderInput">
                         </select>
                         <input asp-for="@Model.VendorId" id="vendorid" type="hidden" />
@@ -20,7 +20,7 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <label for="vendorname">Navn</label>
+                        <label>Leverandør</label>
                         <input asp-for="@Model.VendorName" id="vendorname" class="PurchaseOrderInput" />
                         <span asp-validation-for="@Model.VendorName" class="text-danger"></span>
                     </div>

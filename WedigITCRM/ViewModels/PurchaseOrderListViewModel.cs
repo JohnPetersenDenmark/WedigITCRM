@@ -8,21 +8,14 @@ using X.PagedList;
 
 namespace WedigITCRM.ViewModels
 {
-    public class PurchaseOrderListViewModel
+    public class SearchPurchaseOrderViewModel
     {
-        public PurchaseOrderListViewModel()
-        {
-            
-        }
-
         public string ReceivedStatus { get; set; }
         public string VendorId { get; set; }
         public string PurchaseDocumentNumber { get; set; }
-
         public string SearchFromDate { get; set; }
         public string SearchToDate { get; set; }
-
-        public IPagedList<PurchaseOrder> PurchaseOrders { get; set; }
+        public IPagedList<PurchaseOrderViewLineModel> PurchaseOrdersViewLines { get; set; }
         public List<SelectListItem> SearchByPurchaseDocumentNumber { get; } = new List<SelectListItem>
         {
               new SelectListItem { Value = "0", Text = "Vælg" }
@@ -47,5 +40,15 @@ namespace WedigITCRM.ViewModels
             new SelectListItem { Value = "2", Text = "Bogført" }         
         };
 
+    }
+    public class PurchaseOrderViewLineModel
+    {
+        public string Id { get; set; }
+        public string VendorName { get; set; }
+        public string OurOrderingDate { get; set; }
+        public string SendToVendorDate { get; set; }
+        public string PurchaseOrderDocumentNumber { get; set; }
+
+        public string ReceivedStatus { get; set; }
     }
 }

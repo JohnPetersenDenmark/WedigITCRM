@@ -1,0 +1,152 @@
+﻿@model PurchaseOrderReceiveViewModel
+
+<div class="formcontainer">
+    <div class="tableheadline">
+        Indkøbsordre nr. @Model.PurchaseOrderDocumentNumber
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <form method="post">
+                <button type="submit" class="btn btn-info btn-lg">Gem</button>
+            </form>
+        </div>
+        <div class="col-3"></div>
+        <div class="col-1"></div>
+        <div class="col-3"></div>
+
+        <div class="col-3">
+            @if (Model.AttachedmentIds != null)
+            {
+                List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
+                List<string> ExistingAttachedFilesTypeIconPathList = Model.IconsFilePathAndName.Split(",").ToList();
+                var index = 0;
+                foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+                {
+                    <img src="@ExistingAttachedFilesTypeIconPathList[index]" height="42" width="42" />
+                    index++;
+                }
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label for="vendorname">Leverandør</label>
+        </div>
+        <div class="col-3">
+            @Model.VendorName
+        </div>
+
+        <div class="col-1">
+            <label for="vendorname">Vores ref.</label>
+        </div>
+        <div class="col-3">
+            @Model.OurReference
+        </div>
+        <div class="col-3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1">
+            <label for="VendorReference">Leverandørs ref.</label>
+        </div>
+        <div class="col-3">
+            @Model.VendorReference
+        </div>
+        <div class="col-1">
+            <label for="OurOrderingDate">Bestillingsdato.</label>
+        </div>
+        <div class="col-3">
+            @Model.OurOrderingDate
+        </div>
+        <div class="col-3">
+            @if (Model.AttachedmentIds != null)
+            {
+                List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
+                var index = 0;
+                foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+                {
+                    <a asp-controller="Note" asp-action="openAttachment" asp-route-id="@ExistingAttachedmentId">Se ordre</a>
+                    index++;
+                }
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <label for="VendorPaymentCondition">Betalingsbetingelser</label>
+        </div>
+        <div class="col-3">
+            @Model.VendorPaymentCondition
+        </div>
+        <div class="col-1">
+            <label for="OurWantedDeliveryDate">Ønsket lev. dato.</label>
+        </div>
+        <div class="col-3">
+            @Model.OurWantedDeliveryDate
+        </div>
+        <div class="col-3">
+            @if (Model.AttachedmentIds != null)
+            {
+                List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
+                var index = 0;
+                foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+                {
+                    <a asp-controller="Note" asp-action="downloadAttachment" asp-route-id="@ExistingAttachedmentId">Gem ordre på disk</a>
+                    index++;
+                }
+            }
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-3"></div>
+        <div class="col-1"></div>
+        <div class="col-3"></div>
+        <div class="col-3">
+            @if (Model.AttachedmentIds != null)
+            {
+                List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
+                var index = 0;
+                foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+                {
+                    <a asp-controller="PurchaseOrder" asp-action="deleteAttachment" asp-route-id="@ExistingAttachedmentId">Slet ordrebilag</a>
+                    index++;
+                }
+            }
+        </div>
+    </div>
+    <hr />
+
+    @if (Model.OrderLinesToReceive != null)
+    {
+        foreach (var OrderLine in Model.OrderLinesToReceive)
+        {
+            <div class="row">
+                <div class="col-1">
+                    <input asp-for="@OrderLine.QuantityReceived" class="PurchaseOrderInput" />
+                </div>
+                <div class="col-1">
+                    @OrderLine.QuantityToOrder
+                </div>
+                <div class="col-1">
+                    @OrderLine.OurItemName
+                </div>
+                <div class="col-1">
+                    @OrderLine.OurItemNumber
+                </div>
+                <div class="col-1">
+                    @OrderLine.VendorItemName
+                </div>
+                <div class="col-1">
+                    @OrderLine.VendorItemNumber
+                </div>
+            </div>
+        }
+    }
+
+</div>

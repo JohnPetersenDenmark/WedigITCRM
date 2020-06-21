@@ -485,5 +485,6 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\DinkToP
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csproj.CoreCompileInputs.cache
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csprojAssemblyReference.cache
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\PurchaseOrder\Index.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csprojAssemblyReference.cache
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\PurchaseOrder\receivePurchaseOrder.cshtml.g.cs

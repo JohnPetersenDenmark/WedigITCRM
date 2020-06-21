@@ -1,0 +1,48 @@
+2020-06-22 00:47:24.2667|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-22 00:47:25.2865|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-22 00:47:25.3638|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-22 00:47:25.9238|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-22 00:47:27.2551|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-22 00:47:27.2711|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-06-22 00:47:39.1318|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-22 00:47:39.1498|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-22 01:33:03.0828|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-22 01:33:05.2372|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-22 01:33:05.3112|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-22 01:33:06.3024|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-22 01:33:08.8665|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-22 01:33:08.9917|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-06-22 01:33:19.0181|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-22 01:33:19.0374|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-22 01:38:19.5185|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-22 01:38:20.3924|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-22 01:38:20.4899|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-22 01:38:21.0266|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-22 01:38:22.4421|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-22 01:38:22.4558|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-06-22 01:38:30.4704|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-22 01:38:30.4704|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-22 01:45:23.2515|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-22 01:45:24.1992|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-22 01:45:24.4002|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-22 01:45:24.9784|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-22 01:45:28.9145|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-22 01:45:28.9505|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-06-22 01:45:38.1261|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-22 01:45:38.1504|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-06-22 01:45:50.4024|ERROR|Microsoft.AspNetCore.Mvc.Infrastructure.ActionSelector|Request matched multiple actions resulting in ambiguity. Matching actions: WedigITCRM.Controllers.PurchaseOrderController.receivePurchaseOrder (WedigITCRM)
+WedigITCRM.Controllers.PurchaseOrderController.receivePurchaseOrder (WedigITCRM)
+2020-06-22 01:45:50.4773|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-06-22 01:45:50.5762|ERROR|WedigITCRM.Startup|{"UserId":"6c1e27cf-820e-4335-b9a5-7ed1142c531c","UserName":"johnpetersen1959@gmail.com","CompanyId":"13024","CompanyName":"wedigIT ApS","Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Multiple actions matched. The following actions matched route data and had all constraints satisfied:\r\n\r\nWedigITCRM.Controllers.PurchaseOrderController.receivePurchaseOrder (WedigITCRM)\r\nWedigITCRM.Controllers.PurchaseOrderController.receivePurchaseOrder (WedigITCRM)\r\n                                         \r\n\r\n                                            at Microsoft.AspNetCore.Mvc.Infrastructure.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)\r\n   at Microsoft.AspNetCore.Mvc.Routing.MvcRouteHandler.RouteAsync(RouteContext context)\r\n   at Microsoft.AspNetCore.Routing.Route.OnRouteMatched(RouteContext context)\r\n   at Microsoft.AspNetCore.Routing.RouteBase.RouteAsync(RouteContext context)\r\n   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"592b8492-14ba-4e5d-a64f-9c0213f86de9","Extensions":{}}
+2020-06-22 01:46:02.9843|ERROR|Microsoft.AspNetCore.Mvc.Infrastructure.ActionSelector|Request matched multiple actions resulting in ambiguity. Matching actions: WedigITCRM.Controllers.PurchaseOrderController.receivePurchaseOrder (WedigITCRM)
+WedigITCRM.Controllers.PurchaseOrderController.receivePurchaseOrder (WedigITCRM)
+2020-06-22 01:46:03.0003|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-06-22 01:46:03.0363|ERROR|WedigITCRM.Startup|{"UserId":"6c1e27cf-820e-4335-b9a5-7ed1142c531c","UserName":"johnpetersen1959@gmail.com","CompanyId":"13024","CompanyName":"wedigIT ApS","Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Multiple actions matched. The following actions matched route data and had all constraints satisfied:\r\n\r\nWedigITCRM.Controllers.PurchaseOrderController.receivePurchaseOrder (WedigITCRM)\r\nWedigITCRM.Controllers.PurchaseOrderController.receivePurchaseOrder (WedigITCRM)\r\n                                         \r\n\r\n                                            at Microsoft.AspNetCore.Mvc.Infrastructure.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)\r\n   at Microsoft.AspNetCore.Mvc.Routing.MvcRouteHandler.RouteAsync(RouteContext context)\r\n   at Microsoft.AspNetCore.Routing.Route.OnRouteMatched(RouteContext context)\r\n   at Microsoft.AspNetCore.Routing.RouteBase.RouteAsync(RouteContext context)\r\n   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"d44fcf7c-eee5-401d-8d39-7a7b4df39af1","Extensions":{}}
+2020-06-22 01:47:24.6896|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-06-22 01:47:25.4983|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-06-22 01:47:25.5961|ERROR|WedigITCRM.Startup|start of Configure method
+2020-06-22 01:47:26.2726|ERROR|WedigITCRM.Startup|end of Configure method
+2020-06-22 01:47:27.5283|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-22 01:47:27.5432|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-06-22 01:47:38.0662|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-06-22 01:47:38.0792|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action

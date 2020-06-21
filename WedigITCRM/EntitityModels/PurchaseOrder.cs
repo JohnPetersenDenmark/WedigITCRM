@@ -18,7 +18,9 @@ namespace WedigITCRM.EntitityModels
         
         public DateTime SendDate { get; set; }
         public string  Note { get; set; }        
-        public  PurchaseOrderReceivedStatus ReceivedStatus { get; set; }
+       // public  PurchaseOrderReceivedStatus ReceivedStatus { get; set; }
+
+        public string ReceivedStatus { get; set; }
         public DateTime WantedDeliveryDate { get; set; }
         public DateTime OurOrderingDate { get; set; }
         public DateTime SendToVendorDate { get; set; }        

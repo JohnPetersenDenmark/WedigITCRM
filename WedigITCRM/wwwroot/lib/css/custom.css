@@ -281,8 +281,11 @@ div.homepageHeading {
 
 
 
+
+
 .rowcontainer .row {
-    line-height: 20px;
+    line-height: 50px;
+    height: 50px;
     font-size: 15px;
     font-weight: 200;
     align-items: center;
@@ -307,6 +310,15 @@ i.fa-phone {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.formcontainer .form-row {
+    line-height: 20px;
+    height: 20px;
+    font-size: 15px;
+    font-weight: 200;
+   vertical-align: middle;
+}
+
 
 
 
