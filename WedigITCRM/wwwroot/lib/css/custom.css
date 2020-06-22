@@ -534,3 +534,10 @@ div.orderlineheadlines {
     padding-left: 10px;
 }
 
+.receiveorderlinenormal {
+   color : blue;
+}
+
+.receiveorderlinewarning {
+    color: red;
+}

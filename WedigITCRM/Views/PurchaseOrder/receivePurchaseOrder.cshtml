@@ -4,149 +4,227 @@
     <div class="tableheadline">
         Indkøbsordre nr. @Model.PurchaseOrderDocumentNumber
     </div>
+    <form method="post">
+        <div class="row">
+            <div class="col-1">
 
-    <div class="row">
-        <div class="col-1">
-            <form method="post">
                 <button type="submit" class="btn btn-info btn-lg">Gem</button>
-            </form>
-        </div>
-        <div class="col-3"></div>
-        <div class="col-1"></div>
-        <div class="col-3"></div>
 
-        <div class="col-3">
-            @if (Model.AttachedmentIds != null)
-            {
-                List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
-                List<string> ExistingAttachedFilesTypeIconPathList = Model.IconsFilePathAndName.Split(",").ToList();
-                var index = 0;
-                foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+            </div>
+            <div class="col-3"></div>
+            <div class="col-1"></div>
+            <div class="col-3"></div>
+
+            <div class="col-3">
+                @if (Model.AttachedmentIds != null)
                 {
-                    <img src="@ExistingAttachedFilesTypeIconPathList[index]" height="42" width="42" />
-                    index++;
+                    List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
+                    List<string> ExistingAttachedFilesTypeIconPathList = Model.IconsFilePathAndName.Split(",").ToList();
+                    var index = 0;
+                    foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+                    {
+                        <img src="@ExistingAttachedFilesTypeIconPathList[index]" height="42" width="42" />
+                        index++;
+                    }
                 }
-            }
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-1">
-            <label for="vendorname">Leverandør</label>
-        </div>
-        <div class="col-3">
-            @Model.VendorName
+            </div>
         </div>
 
-        <div class="col-1">
-            <label for="vendorname">Vores ref.</label>
+        <div class="row">
+            <div class="col-1">
+                <label for="vendorname">Leverandør</label>
+            </div>
+            <div class="col-3">
+                @Model.VendorName
+            </div>
+
+            <div class="col-1">
+                <label for="vendorname">Vores ref.</label>
+            </div>
+            <div class="col-3">
+                @Model.OurReference
+            </div>
+            <div class="col-3">
+            </div>
         </div>
-        <div class="col-3">
-            @Model.OurReference
-        </div>
-        <div class="col-3">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-1">
-            <label for="VendorReference">Leverandørs ref.</label>
-        </div>
-        <div class="col-3">
-            @Model.VendorReference
-        </div>
-        <div class="col-1">
-            <label for="OurOrderingDate">Bestillingsdato.</label>
-        </div>
-        <div class="col-3">
-            @Model.OurOrderingDate
-        </div>
-        <div class="col-3">
-            @if (Model.AttachedmentIds != null)
-            {
-                List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
-                var index = 0;
-                foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+        <div class="row">
+            <div class="col-1">
+                <label for="VendorReference">Leverandørs ref.</label>
+            </div>
+            <div class="col-3">
+                @Model.VendorReference
+            </div>
+            <div class="col-1">
+                <label for="OurOrderingDate">Bestillingsdato.</label>
+            </div>
+            <div class="col-3">
+                @Model.OurOrderingDate
+            </div>
+            <div class="col-3">
+                @if (Model.AttachedmentIds != null)
                 {
-                    <a asp-controller="Note" asp-action="openAttachment" asp-route-id="@ExistingAttachedmentId">Se ordre</a>
-                    index++;
+                    List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
+                    var index = 0;
+                    foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+                    {
+                        <a asp-controller="Note" asp-action="openAttachment" asp-route-id="@ExistingAttachedmentId">Se ordre</a>
+                        index++;
+                    }
                 }
-            }
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-1">
-            <label for="VendorPaymentCondition">Betalingsbetingelser</label>
-        </div>
-        <div class="col-3">
-            @Model.VendorPaymentCondition
-        </div>
-        <div class="col-1">
-            <label for="OurWantedDeliveryDate">Ønsket lev. dato.</label>
-        </div>
-        <div class="col-3">
-            @Model.OurWantedDeliveryDate
-        </div>
-        <div class="col-3">
-            @if (Model.AttachedmentIds != null)
-            {
-                List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
-                var index = 0;
-                foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+        <div class="row">
+            <div class="col-1">
+                <label for="VendorPaymentCondition">Betalingsbetingelser</label>
+            </div>
+            <div class="col-3">
+                @Model.VendorPaymentCondition
+            </div>
+            <div class="col-1">
+                <label for="OurWantedDeliveryDate">Ønsket lev. dato.</label>
+            </div>
+            <div class="col-3">
+                @Model.OurWantedDeliveryDate
+            </div>
+            <div class="col-3">
+                @if (Model.AttachedmentIds != null)
                 {
-                    <a asp-controller="Note" asp-action="downloadAttachment" asp-route-id="@ExistingAttachedmentId">Gem ordre på disk</a>
-                    index++;
+                    List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
+                    var index = 0;
+                    foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+                    {
+                        <a asp-controller="Note" asp-action="downloadAttachment" asp-route-id="@ExistingAttachedmentId">Gem ordre på disk</a>
+                        index++;
+                    }
                 }
-            }
+            </div>
+
         </div>
 
-    </div>
-
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-3"></div>
-        <div class="col-1"></div>
-        <div class="col-3"></div>
-        <div class="col-3">
-            @if (Model.AttachedmentIds != null)
-            {
-                List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
-                var index = 0;
-                foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-3"></div>
+            <div class="col-1"></div>
+            <div class="col-3"></div>
+            <div class="col-3">
+                @if (Model.AttachedmentIds != null)
                 {
-                    <a asp-controller="PurchaseOrder" asp-action="deleteAttachment" asp-route-id="@ExistingAttachedmentId">Slet ordrebilag</a>
-                    index++;
+                    List<string> ExistingAttachedmentList = Model.AttachedmentIds.Split(",").ToList();
+                    var index = 0;
+                    foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
+                    {
+                        <a asp-controller="PurchaseOrder" asp-action="deleteAttachment" asp-route-id="@ExistingAttachedmentId">Slet ordrebilag</a>
+                        index++;
+                    }
                 }
-            }
+            </div>
         </div>
-    </div>
-    <hr />
+        <hr />
 
-    @if (Model.OrderLinesToReceive != null)
-    {
-        foreach (var OrderLine in Model.OrderLinesToReceive)
+        @if (Model.OrderLinesToReceive != null)
         {
             <div class="row">
-                <div class="col-1">
-                    <input asp-for="@OrderLine.QuantityReceived" class="PurchaseOrderInput" />
+                <div class="col-2">
+                    Modtaget antal
                 </div>
                 <div class="col-1">
-                    @OrderLine.QuantityToOrder
+                    Bestilt antal
+                </div>
+                <div class="col-2">
+                    Lev. vare
+                </div>
+                <div class="col-2">
+                    Lev. varenr.
+                </div>
+                <div class="col-2">
+                    Vores vare
+                </div>
+                <div class="col-2">
+                    Vores varenr.
                 </div>
                 <div class="col-1">
-                    @OrderLine.OurItemName
-                </div>
-                <div class="col-1">
-                    @OrderLine.OurItemNumber
-                </div>
-                <div class="col-1">
-                    @OrderLine.VendorItemName
-                </div>
-                <div class="col-1">
-                    @OrderLine.VendorItemNumber
+                    <button type="button" id="setallokay" class="btn btn-info btn-lg">Alt Ok</button>
                 </div>
             </div>
+            <hr />
+            for (var i = 0; i < Model.OrderLinesToReceive.Count; i++)
+            {
+                var lineno = "lineno" + @i;
+                <div class="row receiveorderlinenormal" id="@lineno">
+                    <input asp-for="@Model.OrderLinesToReceive[i].Id" type="hidden" />
+                    <input asp-for="@Model.OrderLinesToReceive[i].StockItemId" type="hidden" />
+                    <input asp-for="@Model.OrderLinesToReceive[i].QuantityToOrder" class="quantitytoorder" type="hidden" />
+                    <div class="col-2">
+                        <input asp-for="@Model.OrderLinesToReceive[i].QuantityReceived" class="observevaluechange" />
+                    </div>
+                    <div class="col-1">
+                        @Model.OrderLinesToReceive[i].QuantityToOrder
+                    </div>
+                    <div class="col-2">
+                        @Model.OrderLinesToReceive[i].VendorItemName
+                    </div>
+                    <div class="col-2">
+                        @Model.OrderLinesToReceive[i].VendorItemNumber
+                    </div>
+                    <div class="col-2">
+                        @Model.OrderLinesToReceive[i].OurItemName
+                    </div>
+                    <div class="col-2">
+                        @Model.OrderLinesToReceive[i].OurItemNumber
+                    </div>
+                    <div class="col-1">
+                        <input asp-for="@Model.OrderLinesToReceive[i].IsSelected" class="selectlineokay" />
+                    </div>
+                </div>
+               
+            }
         }
-    }
-
+    </form>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            $('#setallokay').bind('click', function () {
+                $('.selectlineokay').each(function () {
+                    this.checked = true;
+                });
+            });
+
+            $('.observevaluechange').bind('change', function () {
+               // var lineId = $(this).parent().parent().attr("id");                
+               
+                var OrderLineRowDiv = $(this).parent().parent();
+
+
+                var QuantityToOrder = OrderLineRowDiv.find(".quantitytoorder").val();
+                QuantityToOrder = QuantityToOrder.replace(",", ".");
+
+                var receivedQuantity = $(this).val();
+                receivedQuantity = receivedQuantity.replace(",", ".");
+
+                if (!isNaN(receivedQuantity)) {
+                    if (!isNaN(QuantityToOrder)) {               
+                        if (Number(receivedQuantity) != Number(QuantityToOrder)) {
+                            OrderLineRowDiv.removeClass().addClass("row receiveorderlinewarning");
+                            // OrderLineRowDiv.addClass("receiveorderlinewarning");       
+                        }
+                        else {
+                            
+                            OrderLineRowDiv.removeClass().addClass("row receiveorderlinenormal");
+                            // OrderLineRowDiv.addClass("receiveorderlinenormal");                         
+                        }
+                    }
+                }
+                
+            });
+
+
+
+
+
+        });
+    </script>
+}

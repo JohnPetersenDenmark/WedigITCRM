@@ -743,9 +743,11 @@ namespace WedigITCRM.Controllers
                     purchaseOrderLineReceiveModel.OurItemNumber = orderLine.OurItemNumber;
                     purchaseOrderLineReceiveModel.VendorItemName = orderLine.VendorItemName;
                     purchaseOrderLineReceiveModel.VendorItemNumber = orderLine.VendorItemNumber;
+                    purchaseOrderLineReceiveModel.StockItemId = orderLine.StockItemId.ToString();
+                    purchaseOrderLineReceiveModel.IsSelected = false;
                     orderLinesToReceive.Add(purchaseOrderLineReceiveModel);
 
-
+                   
 
                 }
                 model.OrderLinesToReceive = orderLinesToReceive;
@@ -756,6 +758,11 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult receivePurchaseOrder(PurchaseOrderReceiveViewModel model, CompanyAccount companyAccount)
         {
+            if (ModelState.IsValid)
+            {
+                int i = 1;
+            }
+
             return View(model);
         }
     }
@@ -774,6 +781,7 @@ namespace WedigITCRM.Controllers
         public string VendorItemNumber { get; set; }
         public string QuantityToOrder { get; set; }
         public string QuantityReceived { get; set; }
+        public bool IsSelected { get; set; }
     }
     public class VendorSelectionModel
     {
