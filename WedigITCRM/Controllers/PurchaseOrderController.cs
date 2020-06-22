@@ -758,9 +758,61 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult receivePurchaseOrder(PurchaseOrderReceiveViewModel model, CompanyAccount companyAccount)
         {
-            if (ModelState.IsValid)
+            Decimal testDecimal;
+            Decimal receivedQuantity;
+            Decimal orderedQuantity;
+            if (ModelState.IsValid)               
             {
-                int i = 1;
+                bool orderCompleteReceived = true;
+
+                foreach (var receivedOrderLine in model.OrderLinesToReceive)
+                {
+                    if (Decimal.TryParse(receivedOrderLine.QuantityReceived, out testDecimal))
+                    {
+                         receivedQuantity = Decimal.Parse(receivedOrderLine.QuantityReceived);
+                        if (Decimal.TryParse(receivedOrderLine.QuantityToOrder, out testDecimal))
+                        {
+                            orderedQuantity = Decimal.Parse(receivedOrderLine.QuantityToOrder);
+                            if (receivedQuantity != orderedQuantity)
+                            {
+                                if (!receivedOrderLine.IsSelected)
+                                {
+                                    orderCompleteReceived = false;
+                                }
+                            }
+
+                            int stockItemId = Int32.Parse(receivedOrderLine.StockItemId);
+                            StockItem stockItem = _stockItemRepository.getStockItem(stockItemId);
+                            stockItem.NumberInStock = stockItem.NumberInStock + receivedQuantity;
+                            _stockItemRepository.Update(stockItem);
+                        }
+                        else
+                        {
+                            orderCompleteReceived = false;
+                        }
+                    }
+                    else
+                    {
+                        orderCompleteReceived = false;
+                    }
+                }
+
+                if ( !string.IsNullOrEmpty(model.PurchaseOrderId))
+                {
+                    PurchaseOrder purchaseOrder = _purchaseOrderRepository.GetPurchaseOrder(Int32.Parse(model.PurchaseOrderId));
+                    if (purchaseOrder != null)
+                    {
+                        if (orderCompleteReceived)
+                        {
+                            purchaseOrder.ReceivedStatus = "1";
+                        }
+                        else
+                        {
+                            purchaseOrder.ReceivedStatus = "3";
+                        }
+                        _purchaseOrderRepository.Update(purchaseOrder);
+                    }
+                }
             }
 
             return View(model);

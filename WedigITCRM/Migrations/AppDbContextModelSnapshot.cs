@@ -1270,8 +1270,8 @@ namespace WedigITCRM.Migrations
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NumberInStock")
-                        .HasColumnType("int");
+                    b.Property<decimal>("NumberInStock")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ReorderNumberInStock")
                         .HasColumnType("int");

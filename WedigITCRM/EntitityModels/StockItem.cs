@@ -13,9 +13,9 @@ namespace WedigITCRM
 
         public string ItemNumber { get; set; }
         public string Unit { get; set; }
-        public int NumberInStock { get; set; }
-
-       public int ReorderNumberInStock { get; set; }
+        // public int NumberInStock { get; set; }
+        public Decimal NumberInStock { get; set; }
+        public int ReorderNumberInStock { get; set; }
         public string Location { get; set; }
 
         public string Category { get; set; }

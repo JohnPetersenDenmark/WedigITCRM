@@ -187,7 +187,7 @@ namespace WedigITCRM.DineroAPI
                     StockItem stockItem = stockItemList.First();
                     stockItem.ItemName = dineroStockItem.Name;
                     stockItem.CostPrice = dineroStockItem.BaseAmountValue;
-                    stockItem.NumberInStock = (Int32)(dineroStockItem.Quantity);
+                    stockItem.NumberInStock = dineroStockItem.Quantity;
                     stockItem.ItemNumber = dineroStockItem.ProductNumber;
                     stockItem.Unit = dineroStockItem.Unit;
                     stockItem.SalesPrice = dineroStockItem.TotalAmount;
@@ -202,7 +202,7 @@ namespace WedigITCRM.DineroAPI
                         StockItem stockItem = new StockItem();
                         stockItem.ItemName = dineroStockItem.Name;
                         stockItem.CostPrice = dineroStockItem.BaseAmountValue;
-                        stockItem.NumberInStock = (Int32)(dineroStockItem.Quantity);
+                        stockItem.NumberInStock = dineroStockItem.Quantity;
                         stockItem.ItemNumber = dineroStockItem.ProductNumber;
                         stockItem.Unit = dineroStockItem.Unit;
                         stockItem.CostPrice = dineroStockItem.BaseAmountValue;
@@ -240,7 +240,7 @@ namespace WedigITCRM.DineroAPI
 
                 stockItem.ItemName = dineroStockItem.Name;
                 stockItem.CostPrice = dineroStockItem.BaseAmountValue;
-                stockItem.NumberInStock = (Int32)(dineroStockItem.Quantity);
+                stockItem.NumberInStock = dineroStockItem.Quantity;
                 stockItem.ItemNumber = dineroStockItem.ProductNumber;
                 stockItem.Unit = dineroStockItem.Unit;
                 stockItem.CostPrice = dineroStockItem.BaseAmountValue;
