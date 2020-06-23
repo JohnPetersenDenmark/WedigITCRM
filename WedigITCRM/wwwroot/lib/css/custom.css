@@ -119,7 +119,7 @@ nav.navbar {
 
 
 .page-item.active .page-link {
-    background-color: #1BDDAC !important;
+    background-color: #17a2b8 !important;
     border: 0px !important;
 }
 
@@ -512,8 +512,18 @@ ul.ui-autocomplete {
     z-index: 1100;
 }
 
-div.orderline {
-    width: 80%;
+div.purchaseorderindexorderline {
+    background-color: #FFFFFF;
+
+}
+
+.row.purchaseorderindexheadlines {
+    background-color: lightgrey;
+    font-weight: 900;
+}
+
+div .row.orderline {
+    width: 100%;
     height: 30px;
     background-color: #FFFFFF;
     border-style: solid;
@@ -524,11 +534,11 @@ div.orderline {
 }
 
 div.orderlineheadlines {
-    width: 80%;
+    width: 100%;
     height: 30px;
     background-color: lightgrey;
     border-style: solid;
-    border-color: lightgrey;
+    border-color: grey;
     border-width: 1px;
     margin-top: 10px;
     padding-left: 10px;

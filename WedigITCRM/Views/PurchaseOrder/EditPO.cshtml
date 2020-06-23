@@ -2,9 +2,10 @@
 @model PurchaseOrderViewModel
 
 <div class="formcontainer">
-    <div class="tableheadline">
+    <div style="color : #17a2b8;" class="tableheadline">
         Indkøbsordre nr. @Model.PurchaseOrderDocumentNumber
     </div>
+    <br />
     <form method="post">
         <input asp-for="@Model.PurchaseOrderId" id="purchaseorderid" type="hidden" />
         <div class="row">
@@ -181,65 +182,67 @@
             </div>
 
             <div class="col-8">
-                <!-- Trigger the modal with a button -->
-                <button id="btnOrderLine" type="button" class="btn btn-info btn-lg">Tilføj ordrelinje</button>
+                <div class="row">
+                    <!-- Trigger the modal with a button -->
+                    <button id="btnOrderLine" type="button" class="btn btn-info btn-lg">Tilføj ordrelinje</button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
-                    <div class="modal-dialog modal-lg">
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-lg">
 
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Ordrelinje</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <label for="itemNameSuggest">Vare</label>
-                                        <input name="itemNameSuggest" id="itemNameSuggest" class="PurchaseOrderInput" />
-                                        <input name="stockitemid" id="stockitemid" type="hidden" />
-                                        <input name="purchaseorderlineid" id="purchaseorderlineid" type="hidden" />
-                                        <input id="ouritemname" class="PurchaseOrderInput" type="hidden" />
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Ordrelinje</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <label for="itemNameSuggest">Vare</label>
+                                            <input name="itemNameSuggest" id="itemNameSuggest" class="PurchaseOrderInput" />
+                                            <input name="stockitemid" id="stockitemid" type="hidden" />
+                                            <input name="purchaseorderlineid" id="purchaseorderlineid" type="hidden" />
+                                            <input id="ouritemname" class="PurchaseOrderInput" type="hidden" />
+                                        </div>
+                                        <div class="col-2">
+                                            <label for="ouritemnumber">Varenummer</label>
+                                            <input id="ouritemnumber" class="PurchaseOrderInput" />
+                                        </div>
+                                        <div class="col-2">
+                                            <label for="quantitytoorder">Antal</label>
+                                            <input id="quantitytoorder" class="PurchaseOrderInput" />
+                                        </div>
+                                        <div class="col-2">
+                                            <label for="ouritemunit">Enheder</label>
+                                            <input id="ouritemunit" class="PurchaseOrderInput" />
+                                        </div>
+                                        <div class="col-2">
+                                            <label for="ourlocation">Lokation</label>
+                                            <input id="ourlocation" class="PurchaseOrderInput" />
+                                        </div>
+                                        <div class="col-2">
+                                            <label for="ourcostprice">Enhedspris</label>
+                                            <input id="ourcostprice" class="PurchaseOrderInput" />
+                                        </div>
                                     </div>
-                                    <div class="col-2">
-                                        <label for="ouritemnumber">Varenummer</label>
-                                        <input id="ouritemnumber" class="PurchaseOrderInput" />
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <label for="vendoritemnumber">Leverandørens varenummer</label>
+                                            <input id="vendoritemnumber" class="PurchaseOrderInput" />
+                                        </div>
+                                        <div class="col-2">
+                                            <label for="vendoritemname">Leverandørens varenummer</label>
+                                            <input id="vendoritemname" class="PurchaseOrderInput" />
+                                        </div>
                                     </div>
-                                    <div class="col-2">
-                                        <label for="quantitytoorder">Antal</label>
-                                        <input id="quantitytoorder" class="PurchaseOrderInput" />
-                                    </div>
-                                    <div class="col-2">
-                                        <label for="ouritemunit">Enheder</label>
-                                        <input id="ouritemunit" class="PurchaseOrderInput" />
-                                    </div>
-                                    <div class="col-2">
-                                        <label for="ourlocation">Lokation</label>
-                                        <input id="ourlocation" class="PurchaseOrderInput" />
-                                    </div>
-                                    <div class="col-2">
-                                        <label for="ourcostprice">Enhedspris</label>
-                                        <input id="ourcostprice" class="PurchaseOrderInput" />
+                                    <div class="modal-footer">
+                                        <button type="button" id="saveorderline" class="btn btn-info btn-lg">Gem</button>
+                                        <button type="button" id="BtnCloseOrderLine" class="btn btn-info btn-lg">Luk</button>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-2">
-                                        <label for="vendoritemnumber">Leverandørens varenummer</label>
-                                        <input id="vendoritemnumber" class="PurchaseOrderInput" />
-                                    </div>
-                                    <div class="col-2">
-                                        <label for="vendoritemname">Leverandørens varenummer</label>
-                                        <input id="vendoritemname" class="PurchaseOrderInput" />
-                                    </div>
-                                </div>                              
-                                <div class="modal-footer">
-                                    <button type="button" id="saveorderline" class="btn btn-info btn-lg">Gem</button>
-                                    <button type="button" id="BtnCloseOrderLine" class="btn btn-info btn-lg">Luk</button>
-                                </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -631,27 +634,26 @@
                     $("#orderlinescontainer").html("");
                     var HTMLstring = "";
 
-                     HTMLstring = HTMLstring + '<div id="' + '" class="orderlineheadlines">';
-                    HTMLstring = HTMLstring + '<div class="row">'
+                    // HTMLstring = HTMLstring + '<div class="">';
+                    HTMLstring = HTMLstring + '<div class="row orderlineheadlines">'
                     HTMLstring = HTMLstring + '<div class="col-3">' + 'Vare: ' + '</div>';
                     HTMLstring = HTMLstring + '<div class="col-3">' + 'Varenummer: ' + '</div>';
                     HTMLstring = HTMLstring + '<div class="col-1">' + 'Antal: ' + '</div>';
                     HTMLstring = HTMLstring + '<div class="col-2">' + 'Pris: ' + '</div>';
                     HTMLstring = HTMLstring + '<div class="col-2">' + 'Ialt: ' + '</div>';
-                    HTMLstring = HTMLstring + '<div class="col-1">' + 'Ialt: ' + '</div>';
+                    HTMLstring = HTMLstring + '<div class="col-1"></div>';
                     HTMLstring = HTMLstring + '</div>' // end of '<div class="row">'
-                    HTMLstring = HTMLstring + '</div>'      // end of '<div id="' + '" class="orderline">';
+                   // HTMLstring = HTMLstring + '</div>'      // end of '<div id="' + '" class="orderline">';
 
                     $.each(result, function (i, data) {
 
-                       // HTMLstring = HTMLstring + '<div id="' + data.id + '">';
-                        HTMLstring = HTMLstring + '<div class="row" id="' + data.id + '">';
+                        HTMLstring = HTMLstring + '<div class="row orderline" id="' + data.id + '">';
 
-                        HTMLstring = HTMLstring + '<div class="col-3 orderline">' + data.ourItemName + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-3 orderline">' + data.ourItemNumber + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-1 orderline">' + data.quantityToOrder + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-2 orderline">' + data.ourCostPrice + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-2 orderline">' + data.orderLineTotalAmount + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.ourItemName + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.ourItemNumber + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-1">' + data.quantityToOrder + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-2">' + data.ourCostPrice + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-2">' + data.orderLineTotalAmount + '</div>';
                         HTMLstring = HTMLstring + '<div class="col-1 orderlinedelete">' + 'Slet' + '</div>';
 
 
@@ -663,8 +665,8 @@
 
                     $("#orderlinescontainer").append(HTMLstring);
 
-                    $(document).on("click", ".orderline", function (event) {
-                        var orderLineId = $(this).parent().attr("id");
+                    $(document).on("click", ".orderline", function (event) {                     
+                        var orderLineId = $(this).attr("id");
                         $("#myModal").modal('show');
                         getOrderLineById(orderLineId);
                         event.stopImmediatePropagation()

@@ -1,9 +1,10 @@
 ﻿@model SearchPurchaseOrderViewModel
 
 <div class="formcontainer">
-    <div class="tableheadline">
+    <div style="color : #17a2b8;" class="tableheadline">
         Indkøbsordrer
     </div>
+    <br />
     <form id="searchForm" asp-controller="PurchaseOrder" asp-action="Index" method="get">
         <div class="form-row">
             <div class="col-2">
@@ -21,21 +22,19 @@
             <div class="col-2">
                 <div class="input-icons">
                     <label for="searchfromdatepicker">Fra dato</label>
-                    <i class="fa fa-calendar icon"></i>
+                    <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
                     <input asp-for="@Model.SearchFromDate" class="input-field" id="searchfromdatepicker" />
                 </div>
             </div>
             <div class="col-2">
                 <div class="input-icons">
                     <label for="searchtodatepicker">Til dato</label>
-                    <i class="fa fa-calendar icon"></i>
+                    <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
                     <input asp-for="@Model.SearchToDate" id="searchtodatepicker" class="input-field" />
                 </div>
             </div>
-            <div class="col-2">
-                
-                    <a asp-controller="PurchaseOrder" asp-action="CreatePO" style="margin-top: 18px; height: 37px"  class="btn btn-info btn-lg">Opret</a>
-               
+            <div class="col-2">                
+                    <a asp-controller="PurchaseOrder" asp-action="CreatePO" style="margin-top: 18px; height: 37px"  class="btn btn-info btn-lg">Opret</a>               
             </div>
         </div>
         <br />
@@ -47,29 +46,29 @@
         if (Model.PurchaseOrdersViewLines.Count > 0)
         {
             <div class="rowcontainer">
-                <div class="row">
-                    <div class="col-3">Leverandør</div>
+                <div class="row purchaseorderindexheadlines">
+                    <div class="col-2">Leverandør</div>
                     <div class="col-2">Orderdato</div>
                     <div class="col-2">Modtaget status</div>
                     <div class="col-2">Sendt til lev.</div>
                     <div class="col-2">Indkøbsordre nr.</div>
-                    <div class="col-1">
+                    <div class="col-2">
                     </div>
                 </div>
             </div>
             @foreach (var purchaseOrder in Model.PurchaseOrdersViewLines)
             {
-                <div class="rowcontainer">
+                <div class="rowcontainer purchaseorderindexorderline">
                     <div class="row" id="@purchaseOrder.Id">
-                        <div class="col-3">@purchaseOrder.VendorName</div>
+                        <div class="col-2">@purchaseOrder.VendorName</div>
                         <div class="col-2">@purchaseOrder.OurOrderingDate</div>
                         <div class="col-2">@purchaseOrder.ReceivedStatus</div>
                         <div class="col-2">@purchaseOrder.SendToVendorDate</div>
                         <div class="col-2">@purchaseOrder.PurchaseOrderDocumentNumber</div>
-                        <div class="col-1">
-                            <a asp-controller="PurchaseOrder" asp-action="EditPO" asp-route-purchaseOrderId="@purchaseOrder.Id">Rediger</a>
-                            <a asp-controller="PurchaseOrder" asp-action="receivePurchaseOrder" asp-route-purchaseOrderId="@purchaseOrder.Id">Modtag</a>
-                            <a asp-controller="PurchaseOrder" asp-action="Delete" asp-route-purchaseOrderId="@purchaseOrder.Id">Slet</a>
+                        <div class="col-2">
+                            <a asp-controller="PurchaseOrder" asp-action="EditPO" asp-route-purchaseOrderId="@purchaseOrder.Id"><i style="color : #17a2b8;" class="fa fa-pencil-square-o fa-2x fa-fw"></i></a>
+                            <a asp-controller="PurchaseOrder" asp-action="receivePurchaseOrder" asp-route-purchaseOrderId="@purchaseOrder.Id"><i style="color : #17a2b8;" class="fa fa-envelope-open fa-2x fa-fw"></i></a>
+                            <a asp-controller="PurchaseOrder" asp-action="Delete" asp-route-purchaseOrderId="@purchaseOrder.Id"><i style="color : #17a2b8;" class="fa fa-times fa-2x fa-fw"></i></a>
                         </div>
                     </div>
                 </div>
