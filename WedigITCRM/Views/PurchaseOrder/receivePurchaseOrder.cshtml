@@ -126,7 +126,10 @@
         {
             <div class="row">
                 <div class="col-2">
-                    Modtaget antal
+                    Modtag antal
+                </div>
+                <div class="col-1">
+                    Modtaget indtil nu
                 </div>
                 <div class="col-1">
                     Bestilt antal
@@ -137,7 +140,7 @@
                 <div class="col-2">
                     Lev. varenr.
                 </div>
-                <div class="col-2">
+                <div class="col-1">
                     Vores vare
                 </div>
                 <div class="col-2">
@@ -155,8 +158,13 @@
                     <input asp-for="@Model.OrderLinesToReceive[i].Id" type="hidden" />
                     <input asp-for="@Model.OrderLinesToReceive[i].StockItemId" type="hidden" />
                     <input asp-for="@Model.OrderLinesToReceive[i].QuantityToOrder" class="quantitytoorder" type="hidden" />
+                    <input asp-for="@Model.OrderLinesToReceive[i].QuantityReceivedUntillNow" class="quantityreceiveduntillnow" type="hidden" />
+
                     <div class="col-2">
-                        <input asp-for="@Model.OrderLinesToReceive[i].QuantityReceived" class="observevaluechange" />
+                        <input asp-for="@Model.OrderLinesToReceive[i].QuantityStillToReceive" style="width : 100px; height: 25px;" class="observevaluechange" />
+                    </div>
+                    <div class="col-1">
+                        @Model.OrderLinesToReceive[i].QuantityReceivedUntillNow
                     </div>
                     <div class="col-1">
                         @Model.OrderLinesToReceive[i].QuantityToOrder
@@ -167,7 +175,7 @@
                     <div class="col-2">
                         @Model.OrderLinesToReceive[i].VendorItemNumber
                     </div>
-                    <div class="col-2">
+                    <div class="col-1">
                         @Model.OrderLinesToReceive[i].OurItemName
                     </div>
                     <div class="col-2">
@@ -177,7 +185,7 @@
                         <input asp-for="@Model.OrderLinesToReceive[i].IsSelected" class="selectlineokay" />
                     </div>
                 </div>
-               
+
             }
         }
     </form>
@@ -194,31 +202,30 @@
             });
 
             $('.observevaluechange').bind('change', function () {
-               // var lineId = $(this).parent().parent().attr("id");                
-               
-                var OrderLineRowDiv = $(this).parent().parent();
 
+                var OrderLineRowDiv = $(this).parent().parent();
 
                 var QuantityToOrder = OrderLineRowDiv.find(".quantitytoorder").val();
                 QuantityToOrder = QuantityToOrder.replace(",", ".");
+
+                var quantityReceivedUntillNow = OrderLineRowDiv.find(".quantityreceiveduntillnow").val();
+                quantityReceivedUntillNow = quantityReceivedUntillNow.replace(",", ".");
 
                 var receivedQuantity = $(this).val();
                 receivedQuantity = receivedQuantity.replace(",", ".");
 
                 if (!isNaN(receivedQuantity)) {
-                    if (!isNaN(QuantityToOrder)) {               
-                        if (Number(receivedQuantity) != Number(QuantityToOrder)) {
-                            OrderLineRowDiv.removeClass().addClass("row receiveorderlinewarning");
-                            // OrderLineRowDiv.addClass("receiveorderlinewarning");       
+                    if (!isNaN(QuantityToOrder)) {
+                        if (Number((receivedQuantity) + Number(quantityReceivedUntillNow)) != Number(QuantityToOrder)) {
+                            OrderLineRowDiv.removeClass().addClass("row receiveorderlinewarning");                            
                         }
                         else {
-                            
-                            OrderLineRowDiv.removeClass().addClass("row receiveorderlinenormal");
-                            // OrderLineRowDiv.addClass("receiveorderlinenormal");                         
+
+                            OrderLineRowDiv.removeClass().addClass("row receiveorderlinenormal");                           
                         }
                     }
                 }
-                
+
             });
 
 

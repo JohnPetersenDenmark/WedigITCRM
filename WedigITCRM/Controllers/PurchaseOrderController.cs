@@ -52,7 +52,7 @@ namespace WedigITCRM.Controllers
             _purchaseOrderLineRepository = purchaseOrderLineRepository;
         }
 
-        public IActionResult Index(int ? page, string receivedStatus, string vendorId, string purchaseDocumentNumber, string searchFromDate, string searchToDate, CompanyAccount companyAccount)
+        public IActionResult Index(int? page, string receivedStatus, string vendorId, string purchaseDocumentNumber, string searchFromDate, string searchToDate, CompanyAccount companyAccount)
         {
             DateTime testdate;
             DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
@@ -61,7 +61,7 @@ namespace WedigITCRM.Controllers
 
             SearchPurchaseOrderViewModel model = new SearchPurchaseOrderViewModel();
             List<PurchaseOrder> allPurchaseOrderList = _purchaseOrderRepository.GetAllPurchaseOrders().ToList();
-            foreach(var purchaseOrder in allPurchaseOrderList)
+            foreach (var purchaseOrder in allPurchaseOrderList)
             {
                 model.SearchByPurchaseDocumentNumber.Add(new SelectListItem { Value = purchaseOrder.PurchaseOrderDocumentNumber, Text = purchaseOrder.PurchaseOrderDocumentNumber });
             }
@@ -69,7 +69,7 @@ namespace WedigITCRM.Controllers
             //model.PurchaseOrders = allPurchaseOrderList.ToPagedList(pageNumber, pageSize);
 
             List<Vendor> vendorList = _vendorRepository.GetAllVendors().Where(vendor => vendor.companyAccountId == companyAccount.companyAccountId).ToList();
-            foreach(var vendor in vendorList)
+            foreach (var vendor in vendorList)
             {
                 model.SearchByVendor.Add(new SelectListItem { Value = vendor.Id.ToString(), Text = vendor.Name });
             }
@@ -102,7 +102,7 @@ namespace WedigITCRM.Controllers
                     DateTime dateTimeToDate = DateTime.Parse(searchToDate, danishDateTimeformat);
                     allPurchaseOrderList = allPurchaseOrderList.Where(purchaseOrder => purchaseOrder.OurOrderingDate < dateTimeToDate).ToList();
                 }
-            }           
+            }
 
             List<PurchaseOrderViewLineModel> PurchaseOrderViewLines = new List<PurchaseOrderViewLineModel>();
             foreach (var purchaseOrder in allPurchaseOrderList)
@@ -129,7 +129,7 @@ namespace WedigITCRM.Controllers
                     purchaseOrderViewLineModel.SendToVendorDate = purchaseOrder.SendToVendorDate.ToString(danishDateTimeformat.ShortDatePattern);
                 }
 
-                SelectListItem  selItem = model.SearchByReceivedStatus.Find(element => element.Value.Equals(purchaseOrder.ReceivedStatus));
+                SelectListItem selItem = model.SearchByReceivedStatus.Find(element => element.Value.Equals(purchaseOrder.ReceivedStatus));
                 purchaseOrderViewLineModel.ReceivedStatus = selItem.Text;
 
                 PurchaseOrderViewLines.Add(purchaseOrderViewLineModel);
@@ -139,7 +139,7 @@ namespace WedigITCRM.Controllers
             return View(model);
         }
 
-      
+
 
         [HttpGet]
         public IActionResult CreatePO()
@@ -185,7 +185,7 @@ namespace WedigITCRM.Controllers
                 purchaseOrder.VendorReference = model.VendorReference;
                 purchaseOrder.OurReference = model.OurReference;
                 purchaseOrder.Note = model.Note;
-                purchaseOrder.ReceivedStatus ="1";
+                purchaseOrder.ReceivedStatus = "1";
 
                 purchaseOrder.companyAccountId = companyAccount.companyAccountId;
 
@@ -571,7 +571,7 @@ namespace WedigITCRM.Controllers
                         if (orderLine != null)
                         {
                             _purchaseOrderLineRepository.Delete(Int32.Parse(orderLineId));
-                        }                        
+                        }
                     }
                 }
 
@@ -660,7 +660,7 @@ namespace WedigITCRM.Controllers
                 string purchaseOrderHTML = _purchaseOrderToHTML.generateHTML(purchaseOrder, companyAccount);
 
 
-                if ( _purchaseOrderToPDF.generatePurchaseOrderPDF(purchaseOrderHTML, uniquePDFFilePathAndName) )
+                if (_purchaseOrderToPDF.generatePurchaseOrderPDF(purchaseOrderHTML, uniquePDFFilePathAndName))
                 {
                     WedigITCRM.EntitityModels.Attachment attachment = new WedigITCRM.EntitityModels.Attachment();
                     attachment.ContentType = "application/pdf";
@@ -689,7 +689,7 @@ namespace WedigITCRM.Controllers
                         _emailUtility.send(vendorReceipient, "support@nyxium.dk", "Indkøbsordre nr.: " + purchaseOrder.PurchaseOrderDocumentNumber, htmlView, true, uniquePDFFilePathAndName);
                         purchaseOrder.SendToVendorDate = DateTime.Now;
                         purchaseOrder.LastEditedDate = DateTime.Now;
-                       
+
                         _purchaseOrderRepository.Update(purchaseOrder);
                     }
                 }
@@ -709,14 +709,14 @@ namespace WedigITCRM.Controllers
             PurchaseOrder purchaseOrder = _purchaseOrderRepository.GetPurchaseOrder(purchaseOrderId);
             if (purchaseOrder != null)
             {
-               
+
                 model.PurchaseOrderId = purchaseOrder.Id.ToString();
                 model.PurchaseOrderDocumentNumber = purchaseOrder.PurchaseOrderDocumentNumber;
                 model.VendorId = purchaseOrder.VendorId.ToString();
                 model.VendorName = purchaseOrder.VendorName;
-               
+
                 model.VendorPaymentConditionId = purchaseOrder.VendorPaymentConditionsId;
-               
+
                 model.VendorReference = purchaseOrder.VendorReference;
                 model.OurReference = purchaseOrder.OurReference;
                 model.Note = purchaseOrder.Note;
@@ -732,13 +732,16 @@ namespace WedigITCRM.Controllers
 
                 List<PurchaseOrderLine> purchaseOrderLines = _purchaseOrderLineRepository.GetAllpurchaseOrderLines().Where(purchaseOrderLine => purchaseOrderLine.PurchaseOrderId == purchaseOrder.Id).ToList();
                 List<PurchaseOrderLineReceiveModel> orderLinesToReceive = new List<PurchaseOrderLineReceiveModel>();
-                foreach(var orderLine in purchaseOrderLines)
+                foreach (var orderLine in purchaseOrderLines)
                 {
                     PurchaseOrderLineReceiveModel purchaseOrderLineReceiveModel = new PurchaseOrderLineReceiveModel();
                     purchaseOrderLineReceiveModel.Id = orderLine.Id.ToString();
                     purchaseOrderLineReceiveModel.OurCostPrice = orderLine.OurUnitCostPrice.ToString();
                     purchaseOrderLineReceiveModel.QuantityToOrder = orderLine.QuantityToOrder.ToString();
-                    purchaseOrderLineReceiveModel.QuantityReceived = orderLine.QuantityToOrder.ToString();
+
+                    purchaseOrderLineReceiveModel.QuantityReceivedUntillNow = orderLine.QuantityReceivedUntillNow.ToString();
+                    purchaseOrderLineReceiveModel.QuantityStillToReceive = (orderLine.QuantityToOrder - orderLine.QuantityReceivedUntillNow).ToString();
+
                     purchaseOrderLineReceiveModel.OurItemName = orderLine.OurItemName;
                     purchaseOrderLineReceiveModel.OurItemNumber = orderLine.OurItemNumber;
                     purchaseOrderLineReceiveModel.VendorItemName = orderLine.VendorItemName;
@@ -747,7 +750,7 @@ namespace WedigITCRM.Controllers
                     purchaseOrderLineReceiveModel.IsSelected = false;
                     orderLinesToReceive.Add(purchaseOrderLineReceiveModel);
 
-                   
+
 
                 }
                 model.OrderLinesToReceive = orderLinesToReceive;
@@ -759,21 +762,23 @@ namespace WedigITCRM.Controllers
         public IActionResult receivePurchaseOrder(PurchaseOrderReceiveViewModel model, CompanyAccount companyAccount)
         {
             Decimal testDecimal;
-            Decimal receivedQuantity;
+            Decimal quantityStillToReceive;
             Decimal orderedQuantity;
-            if (ModelState.IsValid)               
+            Decimal quantityReceivedUntillNow;
+            if (ModelState.IsValid)
             {
                 bool orderCompleteReceived = true;
 
                 foreach (var receivedOrderLine in model.OrderLinesToReceive)
                 {
-                    if (Decimal.TryParse(receivedOrderLine.QuantityReceived, out testDecimal))
+                    if (Decimal.TryParse(receivedOrderLine.QuantityStillToReceive, out testDecimal))
                     {
-                         receivedQuantity = Decimal.Parse(receivedOrderLine.QuantityReceived);
+                        quantityStillToReceive = Decimal.Parse(receivedOrderLine.QuantityStillToReceive);
                         if (Decimal.TryParse(receivedOrderLine.QuantityToOrder, out testDecimal))
                         {
+                            quantityReceivedUntillNow = Decimal.Parse(receivedOrderLine.QuantityReceivedUntillNow);
                             orderedQuantity = Decimal.Parse(receivedOrderLine.QuantityToOrder);
-                            if (receivedQuantity != orderedQuantity)
+                            if ((quantityReceivedUntillNow + quantityStillToReceive) != orderedQuantity)
                             {
                                 if (!receivedOrderLine.IsSelected)
                                 {
@@ -783,8 +788,15 @@ namespace WedigITCRM.Controllers
 
                             int stockItemId = Int32.Parse(receivedOrderLine.StockItemId);
                             StockItem stockItem = _stockItemRepository.getStockItem(stockItemId);
-                            stockItem.NumberInStock = stockItem.NumberInStock + receivedQuantity;
+                            stockItem.NumberInStock = stockItem.NumberInStock + quantityStillToReceive;
                             _stockItemRepository.Update(stockItem);
+
+                            PurchaseOrderLine purchaseOrderLine = _purchaseOrderLineRepository.GetPurchaseOrderLine(Int32.Parse(receivedOrderLine.Id));
+                            if (purchaseOrderLine != null)
+                            {
+                                purchaseOrderLine.QuantityReceivedUntillNow = purchaseOrderLine.QuantityReceivedUntillNow + quantityStillToReceive;
+                                _purchaseOrderLineRepository.Update(purchaseOrderLine);
+                            }
                         }
                         else
                         {
@@ -797,7 +809,7 @@ namespace WedigITCRM.Controllers
                     }
                 }
 
-                if ( !string.IsNullOrEmpty(model.PurchaseOrderId))
+                if (!string.IsNullOrEmpty(model.PurchaseOrderId))
                 {
                     PurchaseOrder purchaseOrder = _purchaseOrderRepository.GetPurchaseOrder(Int32.Parse(model.PurchaseOrderId));
                     if (purchaseOrder != null)
@@ -815,7 +827,7 @@ namespace WedigITCRM.Controllers
                 }
             }
 
-            return View(model);
+            return RedirectToAction("receivePurchaseOrder", "PurchaseOrder", new { purchaseOrderId = Int32.Parse(model.PurchaseOrderId) });
         }
     }
 
@@ -832,7 +844,8 @@ namespace WedigITCRM.Controllers
         public string VendorItemName { get; set; }
         public string VendorItemNumber { get; set; }
         public string QuantityToOrder { get; set; }
-        public string QuantityReceived { get; set; }
+        public string QuantityReceivedUntillNow { get; set; }
+        public string QuantityStillToReceive { get; set; }
         public bool IsSelected { get; set; }
     }
     public class VendorSelectionModel
@@ -957,5 +970,5 @@ namespace WedigITCRM.Controllers
 
         public string CreatedDate { get; set; }
     }
-  
+
 }

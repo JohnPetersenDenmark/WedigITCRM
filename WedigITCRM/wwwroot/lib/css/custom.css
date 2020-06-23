@@ -541,3 +541,29 @@ div.orderlineheadlines {
 .receiveorderlinewarning {
     color: red;
 }
+
+
+.input-icons i {
+    position: absolute;
+}
+
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.icon {
+    padding: 10px;
+    min-width: 40px;
+   
+}
+
+.input-field {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    height: 37px;
+    width: 60%;
+    padding: 10px;
+    padding-left: 30px;
+    text-align: left;
+} 

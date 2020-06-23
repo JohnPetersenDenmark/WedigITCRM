@@ -192,6 +192,10 @@ function initializeStockItemEditor() {
                     name: "vendorItemNumber"
                 },
                 {
+                    label: "Lev. vare",
+                    name: "vendorItemName"
+                },
+                {
                     label: "Kostpris",
                     name: "costPrice"
                 },
@@ -321,6 +325,7 @@ function initializeStockitemtable() {
                 { "data": "vendorName" },
                 { "data": "vendorId" },
                 { "data": "vendorItemNumber" },
+                { "data": "vendorItemName" },
                 { "data": "costPrice" },
                 { "data": "stockValue" },
                 { "data": "salesPrice" },
@@ -446,6 +451,11 @@ function initializeStockitemtable() {
                 },
                 {
                     "targets": 22,
+                    "visible": false,
+                    "searchable": false
+                },
+                  {
+                    "targets": 23,
                     "visible": false,
                     "searchable": false
                 }

@@ -86,10 +86,11 @@ namespace WedigITCRM.Controllers
                     }
 
                     reducedStockItem.VendorItemNumber = stockItem.VendorItemNumber;
+                reducedStockItem.VendorItemName = stockItem.VendorItemName;
 
-                   
-                    
-                    if (DateTime.MinValue != stockItem.Expirationdate)
+
+
+                if (DateTime.MinValue != stockItem.Expirationdate)
                     {
                         reducedStockItem.Expirationdate = stockItem.Expirationdate.ToString(danishDateTimeformat.ShortDatePattern);
                     }
@@ -204,7 +205,7 @@ namespace WedigITCRM.Controllers
                         }
 
                         stockItem.VendorItemNumber = datamodelInput.VendorItemNumber;
-
+                        stockItem.VendorItemName = datamodelInput.VendorItemName;
 
                         if (!string.IsNullOrEmpty(datamodelInput.Expirationdate))
                         {
@@ -362,6 +363,7 @@ namespace WedigITCRM.Controllers
                     }
 
                     stockItem.VendorItemNumber = datamodelInput.VendorItemNumber;
+                    stockItem.VendorItemName = datamodelInput.VendorItemName;
 
                     if (!string.IsNullOrEmpty(datamodelInput.Expirationdate))
                     {
@@ -869,8 +871,9 @@ namespace WedigITCRM.Controllers
             public string Category { get; set; }
             public string VendorId { get; set; }
             public string VendorName { get; set; }
-
             public string VendorItemNumber { get; set; }
+            public string VendorItemName { get; set; }
+            
             public string Expirationdate { get; set; }
             public string InStockAgainDate { get; set; }
 

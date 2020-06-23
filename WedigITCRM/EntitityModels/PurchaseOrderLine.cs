@@ -30,6 +30,7 @@ namespace WedigITCRM.EntitityModels
 
         [Column(TypeName = "decimal(18,2)")]
         public Decimal QuantityToOrder { get; set; }
+        public Decimal QuantityReceivedUntillNow { get; set; }
         public DateTime ReceivedDate { get; set; }
         public DateTime LastEditedDate { get; set; }
         public DateTime CreatedDate { get; set; }
