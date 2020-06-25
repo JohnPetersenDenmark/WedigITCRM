@@ -18,25 +18,32 @@
             <div class="col-2">
                 <label asp-for="@Model.PurchaseDocumentNumber">Indkøbsordre nr.</label>
                 <select asp-for="@Model.PurchaseDocumentNumber" asp-items="@Model.SearchByPurchaseDocumentNumber" id="searchbyPOdocumentno" class="custom-select"></select>
-            </div>
-            <div class="col-2">
-                <div class="input-icons">
-                    <label for="searchfromdatepicker">Fra dato</label>
-                    <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
-                    <input asp-for="@Model.SearchFromDate" class="input-field" id="searchfromdatepicker" />
+                <div class="noget">
+                    <i class="fa fa-times"></i>
                 </div>
             </div>
-            <div class="col-2">
-                <div class="input-icons">
-                    <label for="searchtodatepicker">Til dato</label>
-                    <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
-                    <input asp-for="@Model.SearchToDate" id="searchtodatepicker" class="input-field" />
+                <div class="col-2">
+                    <div class="input-icons">
+                        <label for="searchfromdatepicker">Fra dato</label>
+                        <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
+                        <i class="fa fa-times icon-clear"></i>
+                        <input asp-for="@Model.SearchFromDate" autocomplete="off" class="input-field" id="searchfromdatepicker" />
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="input-icons">
+                        <label for="searchtodatepicker">Til dato</label>
+                        <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
+                        <i class="fa fa-times icon-clear"></i>
+                        <input asp-for="@Model.SearchToDate" id="searchtodatepicker" autocomplete="off" class="input-field" />
+
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <a asp-controller="PurchaseOrder" asp-action="CreatePO" style="margin-top: 18px; height: 37px" class="btn btn-info btn-lg">Opret</a>
                 </div>
             </div>
-            <div class="col-2">                
-                    <a asp-controller="PurchaseOrder" asp-action="CreatePO" style="margin-top: 18px; height: 37px"  class="btn btn-info btn-lg">Opret</a>               
-            </div>
-        </div>
         <br />
         <br />
     </form>
@@ -116,8 +123,11 @@
                 timepicker: false,
                 datepicker: true,
                 hours12: false,
+                regional: 'de',
                 format: 'd-m-Y'
             });
+
+            $.datetimepicker.setLocale('da');
 
 
             $("#searchtodatepicker").datetimepicker({

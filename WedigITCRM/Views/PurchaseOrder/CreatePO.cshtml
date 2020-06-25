@@ -123,14 +123,14 @@
                 <div class="row">
                     <div class="col-12">
                         <label for="wanteddeliverydatepicker">Ønsket leveringsdato</label>
-                        <input asp-for="@Model.OurWantedDeliveryDate" id="wanteddeliverydatepicker" class="PurchaseOrderInput" />
+                        <input asp-for="@Model.OurWantedDeliveryDate" id="wanteddeliverydatepicker" autocomplete="off" class="PurchaseOrderInput" />
                         <span asp-validation-for="@Model.OurWantedDeliveryDate" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <label for="ourorderingdatepicker">Bestillingsdato</label>
-                        <input asp-for="@Model.OurOrderingDate" id="ourorderingdatepicker" class="PurchaseOrderInput" />
+                        <input asp-for="@Model.OurOrderingDate" id="ourorderingdatepicker" autocomplete="off" class="PurchaseOrderInput" />
                         <span asp-validation-for="@Model.OurOrderingDate" class="text-danger"></span>
                     </div>
                 </div>
@@ -200,7 +200,7 @@
             });
         });
 
-
+        $.datetimepicker.setLocale('da');
 
 
         function getVendorById(vendorId) {

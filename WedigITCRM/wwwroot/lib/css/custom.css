@@ -564,8 +564,14 @@ div.orderlineheadlines {
 
 .icon {
     padding: 10px;
+    min-width: 40px;   
+}
+
+.icon-clear {
+    color : red;
+    padding-left: 50%;
+    padding-top: 5px;
     min-width: 40px;
-   
 }
 
 .input-field {
@@ -576,4 +582,15 @@ div.orderlineheadlines {
     padding: 10px;
     padding-left: 30px;
     text-align: left;
-} 
+}
+
+.custom-select {   
+    width: 60%;
+
+}
+
+
+
+.noget {   
+    float : right;
+}
