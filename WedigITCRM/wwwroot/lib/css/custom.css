@@ -558,8 +558,9 @@ div.orderlineheadlines {
 }
 
 .input-icons {
-    width: 100%;
+    width: 80%;
     margin-bottom: 10px;
+    float: left;
 }
 
 .icon {
@@ -584,13 +585,38 @@ div.orderlineheadlines {
     text-align: left;
 }
 
-.custom-select {   
-    width: 60%;
 
+
+.input-select-room-for-icon {
+    width: 80%; 
+    float: left;
 }
 
+.icon-beside-input-select {
+    margin-left: 83%;
+    margin-top: 30px;
+    color: red;
+    cursor: pointer;
+}
 
+.input-datepicker-room-for-icon {
+    width: 80%;
+    float: left;
+}
 
-.noget {   
-    float : right;
+.icon-beside-input-datepicker {
+    margin-left: 83%;
+    margin-top: 30px;
+    color: red;
+    cursor: pointer;
+}
+
+.datepicker-input-field {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    height: 37px;
+    width: 100%;
+    padding: 10px;
+    padding-left: 30px;
+    text-align: left;
 }

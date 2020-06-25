@@ -8,42 +8,57 @@
     <form id="searchForm" asp-controller="PurchaseOrder" asp-action="Index" method="get">
         <div class="form-row">
             <div class="col-2">
-                <label asp-for="@Model.ReceivedStatus">Modtaget status</label>
-                <select asp-for="@Model.ReceivedStatus" asp-items="@Model.SearchByReceivedStatus" id="searchbyreceivedstatus" class="custom-select"></select>
+                <div class="input-select-room-for-icon">
+                    <label asp-for="@Model.ReceivedStatus">Modtaget status</label>
+                    <select asp-for="@Model.ReceivedStatus" asp-items="@Model.SearchByReceivedStatus" id="searchbyreceivedstatus" class="custom-select"></select>
+                </div>
+                <div class="icon-beside-input-select">
+                    <i id="resetreceivedstatus" class="fa fa-times"></i>
+                </div>
             </div>
             <div class="col-2">
-                <label asp-for="@Model.VendorId">Leverandør</label>
-                <select asp-for="@Model.VendorId" asp-items="@Model.SearchByVendor" id="searchbyvendor" class="custom-select"></select>
+                <div class="input-select-room-for-icon">
+                    <label asp-for="@Model.VendorId">Leverandør</label>
+                    <select asp-for="@Model.VendorId" asp-items="@Model.SearchByVendor" id="searchbyvendor" class="custom-select"></select>
+                </div>
+                <div class="icon-beside-input-select">
+                    <i id="resetvendor" class="fa fa-times"></i>
+                </div>
             </div>
             <div class="col-2">
-                <label asp-for="@Model.PurchaseDocumentNumber">Indkøbsordre nr.</label>
-                <select asp-for="@Model.PurchaseDocumentNumber" asp-items="@Model.SearchByPurchaseDocumentNumber" id="searchbyPOdocumentno" class="custom-select"></select>
-                <div class="noget">
-                    <i class="fa fa-times"></i>
+                <div class="input-select-room-for-icon">
+                    <label asp-for="@Model.PurchaseDocumentNumber">Indkøbsordre nr.</label>
+                    <select asp-for="@Model.PurchaseDocumentNumber" asp-items="@Model.SearchByPurchaseDocumentNumber" id="searchbyPOdocumentno" class="custom-select"></select>
+                </div>
+                <div class="icon-beside-input-select">
+                    <i id="resetpurchaseordernumber" class="fa fa-times"></i>
                 </div>
             </div>
-                <div class="col-2">
-                    <div class="input-icons">
-                        <label for="searchfromdatepicker">Fra dato</label>
-                        <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
-                        <i class="fa fa-times icon-clear"></i>
-                        <input asp-for="@Model.SearchFromDate" autocomplete="off" class="input-field" id="searchfromdatepicker" />
-                    </div>
+            <div class="col-2">
+                <div class="input-icons">
+                    <label for="searchfromdatepicker">Fra dato</label>
+                    <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
+                    <input asp-for="@Model.SearchFromDate" autocomplete="off" class="datepicker-input-field" id="searchfromdatepicker" />                  
                 </div>
-                <div class="col-2">
-                    <div class="input-icons">
-                        <label for="searchtodatepicker">Til dato</label>
-                        <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
-                        <i class="fa fa-times icon-clear"></i>
-                        <input asp-for="@Model.SearchToDate" id="searchtodatepicker" autocomplete="off" class="input-field" />
-
-                    </div>
-                </div>
-
-                <div class="col-2">
-                    <a asp-controller="PurchaseOrder" asp-action="CreatePO" style="margin-top: 18px; height: 37px" class="btn btn-info btn-lg">Opret</a>
+                <div class="icon-beside-input-datepicker">
+                    <i id="resetfromdate" class="fa fa-times"></i>
                 </div>
             </div>
+            <div class="col-2">
+                <div class="input-icons">
+                    <label for="searchtodatepicker">Til dato</label>
+                    <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
+                    <input asp-for="@Model.SearchToDate" id="searchtodatepicker" autocomplete="off" class="datepicker-input-field" />
+                </div>
+                <div class="icon-beside-input-datepicker">
+                    <i id="resettodate" class="fa fa-times"></i>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <a asp-controller="PurchaseOrder" asp-action="CreatePO" style="margin-top: 18px; height: 37px" class="btn btn-info btn-lg">Opret</a>
+            </div>
+        </div>
         <br />
         <br />
     </form>
@@ -157,6 +172,28 @@
                 $("#searchForm").submit();
             });
 
+            $(document).on("click", ".fa-times", function (event) {
+                var resetFieldId = $(this).attr("id");
+                switch (resetFieldId) {
+                    case "resetreceivedstatus":
+                        $('#searchbyreceivedstatus').val("0");
+                        break;
+                    case "resetvendor":
+                        $('#searchbyvendor').val("0");
+                        break;
+                    case "resetpurchaseordernumber":
+                        $('#searchbyPOdocumentno').val("0");
+                        break;
+                    case "resetfromdate":
+                        $('#searchfromdatepicker').val("");
+                        break;
+                    case "resettodate":
+                        $('#searchtodatepicker').val("");
+                        break;
+                }
+                $("#searchForm").submit();
+                event.stopImmediatePropagation()
+            });
         });
     </script>
 }
