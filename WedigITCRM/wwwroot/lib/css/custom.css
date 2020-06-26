@@ -620,3 +620,17 @@ div.orderlineheadlines {
     padding-left: 30px;
     text-align: left;
 }
+
+.modal-title {
+    position: absolute;
+    float: left;
+}
+
+.modal-content {
+   background-color : #F4F7FA;
+}
+
+
+
+
+

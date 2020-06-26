@@ -16,6 +16,7 @@
                         <select id="selectvendor" name="selectvendor" class="custom-select PurchaseOrderInput">
                         </select>
                         <input asp-for="@Model.VendorId" id="vendorid" type="hidden" />
+                        <span asp-validation-for="@Model.VendorId" class="text-danger"></span>
                     </div>
                 </div>
 
@@ -87,7 +88,7 @@
                             foreach (var ExistingAttachedmentId in ExistingAttachedmentList)
                             {
                                 <div class="form-group row">
-                                    <div class="col-sm-10">                                        
+                                    <div class="col-sm-10">
                                         <img src="@ExistingAttachedFilesTypeIconPathList[index]" height="42" width="42" />
                                     </div>
                                     <div class="col-sm-10">
@@ -104,8 +105,8 @@
                             }
                         }
                     </div>
-                </div>              
-           
+                </div>
+
 
 
 
@@ -155,16 +156,21 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <label for="wanteddeliverydatepicker">Ønsket leveringsdato</label>
-                        <input asp-for="@Model.OurWantedDeliveryDate" id="wanteddeliverydatepicker" class="PurchaseOrderInput" />
-                        <span asp-validation-for="@Model.OurWantedDeliveryDate" class="text-danger"></span>
+                        <div class="input-icons">
+                            <label for="wanteddeliverydatepicker">Ønsket leveringsdato</label>
+                            <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
+                            <input asp-for="@Model.OurWantedDeliveryDate" id="wanteddeliverydatepicker" class="datepicker-input-field" />
+
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <label for="ourorderingdatepicker">Bestillingsdato</label>
-                        <input asp-for="@Model.OurOrderingDate" id="ourorderingdatepicker" class="PurchaseOrderInput" />
-                        <span asp-validation-for="@Model.OurOrderingDate" class="text-danger"></span>
+                        <div class="input-icons">
+                            <label for="ourorderingdatepicker">Bestillingsdato</label>
+                            <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
+                            <input asp-for="@Model.OurOrderingDate" id="ourorderingdatepicker" class="datepicker-input-field" />
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -172,7 +178,7 @@
                         <label>Notat til leverandør</label>
                         @Html.TextArea("Note", null, new { @class = "PurchaseOrderTextarea" })
                     </div>
-                </div>               
+                </div>
                 <div class="row">
                     <div class="col-12">
                         <button type="submit" class="btn btn-info btn-lg">Gem</button>
@@ -194,7 +200,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Ordrelinje</h4>
+                                    <div style="color : #17a2b8;" class="modal-title tableheadline">Ordrelinje</div>
                                 </div>
                                 <div class="modal-body">
                                     <div class="row">
@@ -278,7 +284,7 @@
                     return;
                 }
 
-                
+
                 $('#purchaseorderlineid').val("");
                 $('#stockitemid').val("");
                 $('#itemNameSuggest').val("");
@@ -643,7 +649,7 @@
                     HTMLstring = HTMLstring + '<div class="col-2">' + 'Ialt: ' + '</div>';
                     HTMLstring = HTMLstring + '<div class="col-1"></div>';
                     HTMLstring = HTMLstring + '</div>' // end of '<div class="row">'
-                   // HTMLstring = HTMLstring + '</div>'      // end of '<div id="' + '" class="orderline">';
+                    // HTMLstring = HTMLstring + '</div>'      // end of '<div id="' + '" class="orderline">';
 
                     $.each(result, function (i, data) {
 
@@ -658,14 +664,14 @@
 
 
                         HTMLstring = HTMLstring + '</div>'      // end of '<div class="row">'
-                     //  HTMLstring = HTMLstring + '</div>'      // end of '<div id="' + data.id + '" class="orderline">'
+                        //  HTMLstring = HTMLstring + '</div>'      // end of '<div id="' + data.id + '" class="orderline">'
                     });
 
 
 
                     $("#orderlinescontainer").append(HTMLstring);
 
-                    $(document).on("click", ".orderline", function (event) {                     
+                    $(document).on("click", ".orderline", function (event) {
                         var orderLineId = $(this).attr("id");
                         $("#myModal").modal('show');
                         getOrderLineById(orderLineId);
@@ -673,7 +679,7 @@
                     });
 
                     $(document).on("click", ".orderlinedelete", function (event) {
-                        var orderLineId = $(this).parent().attr("id");                          
+                        var orderLineId = $(this).parent().attr("id");
                         deleteOrderLineById(orderLineId);
                         event.stopImmediatePropagation();
                     });

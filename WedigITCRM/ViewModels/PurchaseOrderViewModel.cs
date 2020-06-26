@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,6 +10,8 @@ namespace WedigITCRM.ViewModels
     {
         public string PurchaseOrderId { get; set; }
         public string PurchaseOrderDocumentNumber { get; set; }
+
+        [Required(ErrorMessage = "Der skal vælges en leverandør")]
         public string VendorId { get; set; }
         public string VendorName { get; set; }
         public string VendorStreet { get; set; }

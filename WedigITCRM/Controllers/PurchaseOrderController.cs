@@ -6,9 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Reflection;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Google.Apis.Util;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WedigITCRM.EntitityModels;
@@ -25,6 +27,7 @@ namespace WedigITCRM.Controllers
         private IPurchaseOrderRepository _purchaseOrderRepository;
         private IPurchaseOrderLineRepository _purchaseOrderLineRepository;
         private readonly PurchaseOrderToHTML _purchaseOrderToHTML;
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly PurchaseOrderAddAttachment _purchaseOrderAddAttachment;
         private readonly EmailUtility _emailUtility;
         private readonly PurchaseOrderToPDF _purchaseOrderToPDF;
@@ -35,8 +38,9 @@ namespace WedigITCRM.Controllers
         private readonly IPaymentConditionRepository _paymentConditionRepository;
         public ICurrencyCodeRepository _currencyCodeRepository;
 
-        public PurchaseOrderController(PurchaseOrderAddAttachment purchaseOrderAddAttachment, EmailUtility emailUtility, PurchaseOrderToPDF purchaseOrderToPDF, PurchaseOrderToHTML purchaseOrderToHTML, IWebHostEnvironment hostingEnvironment, IAttachmentRepository attachmentRepository, IStockItemRepository stockItemRepository, IDeliveryConditionRepository deliveryConditionRepository, IPaymentConditionRepository paymentConditionRepository, ICurrencyCodeRepository currencyCodeRepository, IVendorRepository vendorRepository, IPurchaseOrderRepository purchaseOrderRepository, IPurchaseOrderLineRepository purchaseOrderLineRepository)
+        public PurchaseOrderController(UserManager<IdentityUser> userManager, PurchaseOrderAddAttachment purchaseOrderAddAttachment, EmailUtility emailUtility, PurchaseOrderToPDF purchaseOrderToPDF, PurchaseOrderToHTML purchaseOrderToHTML, IWebHostEnvironment hostingEnvironment, IAttachmentRepository attachmentRepository, IStockItemRepository stockItemRepository, IDeliveryConditionRepository deliveryConditionRepository, IPaymentConditionRepository paymentConditionRepository, ICurrencyCodeRepository currencyCodeRepository, IVendorRepository vendorRepository, IPurchaseOrderRepository purchaseOrderRepository, IPurchaseOrderLineRepository purchaseOrderLineRepository)
         {
+            _userManager = userManager;
             _purchaseOrderAddAttachment = purchaseOrderAddAttachment;
             _emailUtility = emailUtility;
             _purchaseOrderToPDF = purchaseOrderToPDF;
@@ -144,7 +148,21 @@ namespace WedigITCRM.Controllers
         [HttpGet]
         public IActionResult CreatePO()
         {
-            return View();
+            DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+            DateTime myNow = DateTime.Now;
+
+            PurchaseOrderViewModel model = new PurchaseOrderViewModel();
+            var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var currentUser = _userManager.FindByIdAsync(currentUserId).Result;
+            if (currentUser != null)
+            {
+                model.OurReference = currentUser.UserName;
+            }
+
+            model.OurOrderingDate = myNow.ToString(danishDateTimeformat.ShortDatePattern);
+            myNow = myNow.AddDays(14);
+            model.OurWantedDeliveryDate = myNow.ToString(danishDateTimeformat.ShortDatePattern);
+            return View(model);
         }
 
         [HttpPost]
@@ -152,74 +170,79 @@ namespace WedigITCRM.Controllers
         {
             if (ModelState.IsValid)
             {
-                DateTime testdate;
-                DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
-                PurchaseOrder purchaseOrder = new PurchaseOrder();
-
-                if (!string.IsNullOrEmpty(model.OurWantedDeliveryDate))
+                if (!string.IsNullOrEmpty(model.VendorId))
                 {
-                    if (DateTime.TryParse(model.OurWantedDeliveryDate, out testdate))
+
+
+                    DateTime testdate;
+                    DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+                    PurchaseOrder purchaseOrder = new PurchaseOrder();
+
+                    if (!string.IsNullOrEmpty(model.OurWantedDeliveryDate))
                     {
-                        purchaseOrder.WantedDeliveryDate = DateTime.Parse(model.OurWantedDeliveryDate, danishDateTimeformat);
+                        if (DateTime.TryParse(model.OurWantedDeliveryDate, out testdate))
+                        {
+                            purchaseOrder.WantedDeliveryDate = DateTime.Parse(model.OurWantedDeliveryDate, danishDateTimeformat);
+                        }
                     }
-                }
 
-                if (!string.IsNullOrEmpty(model.OurOrderingDate))
-                {
-                    if (DateTime.TryParse(model.OurOrderingDate, out testdate))
+                    if (!string.IsNullOrEmpty(model.OurOrderingDate))
                     {
-                        purchaseOrder.OurOrderingDate = DateTime.Parse(model.OurOrderingDate, danishDateTimeformat);
+                        if (DateTime.TryParse(model.OurOrderingDate, out testdate))
+                        {
+                            purchaseOrder.OurOrderingDate = DateTime.Parse(model.OurOrderingDate, danishDateTimeformat);
+                        }
                     }
-                }
 
-                purchaseOrder.VendorId = Int32.Parse(model.VendorId);
-                purchaseOrder.VendorName = model.VendorName;
-                purchaseOrder.VendorStreet = model.VendorStreet;
-                purchaseOrder.VendorCity = model.VendorCity;
-                purchaseOrder.VendorEmail = model.VendorEmail;
-                purchaseOrder.VendorZip = model.VendorZip;
-                purchaseOrder.VendorCountryCode = model.VendorCountryCode;
-                purchaseOrder.VendorCurrencyCode = model.VendorCurrencyCode;
-                purchaseOrder.VendorPhoneNumber = model.VendorPhoneNumber;
-                purchaseOrder.VendorHomePage = model.VendorHomePage;
-                purchaseOrder.VendorReference = model.VendorReference;
-                purchaseOrder.OurReference = model.OurReference;
-                purchaseOrder.Note = model.Note;
-                purchaseOrder.ReceivedStatus = "1";
+                    purchaseOrder.VendorId = Int32.Parse(model.VendorId);
+                    purchaseOrder.VendorName = model.VendorName;
+                    purchaseOrder.VendorStreet = model.VendorStreet;
+                    purchaseOrder.VendorCity = model.VendorCity;
+                    purchaseOrder.VendorEmail = model.VendorEmail;
+                    purchaseOrder.VendorZip = model.VendorZip;
+                    purchaseOrder.VendorCountryCode = model.VendorCountryCode;
+                    purchaseOrder.VendorCurrencyCode = model.VendorCurrencyCode;
+                    purchaseOrder.VendorPhoneNumber = model.VendorPhoneNumber;
+                    purchaseOrder.VendorHomePage = model.VendorHomePage;
+                    purchaseOrder.VendorReference = model.VendorReference;
+                    purchaseOrder.OurReference = model.OurReference;
 
-                purchaseOrder.companyAccountId = companyAccount.companyAccountId;
+                    purchaseOrder.Note = model.Note;
+                    purchaseOrder.ReceivedStatus = "1";
 
-                purchaseOrder.VendorPaymentConditionsId = model.VendorPaymentConditionId;
+                    purchaseOrder.companyAccountId = companyAccount.companyAccountId;
 
-                if (!string.IsNullOrEmpty(model.VendorPaymentConditionId))
-                {
-                    PaymentCondition paymentCondition = _paymentConditionRepository.GetPaymentCondition(Int32.Parse(model.VendorPaymentConditionId));
-                    if (paymentCondition != null)
+                    purchaseOrder.VendorPaymentConditionsId = model.VendorPaymentConditionId;
+
+                    if (!string.IsNullOrEmpty(model.VendorPaymentConditionId))
                     {
-                        purchaseOrder.VendorPaymentConditions = paymentCondition.Description;
+                        PaymentCondition paymentCondition = _paymentConditionRepository.GetPaymentCondition(Int32.Parse(model.VendorPaymentConditionId));
+                        if (paymentCondition != null)
+                        {
+                            purchaseOrder.VendorPaymentConditions = paymentCondition.Description;
+                        }
                     }
-                }
 
-                purchaseOrder.VendorDeliveryConditionId = model.VendorDeliveryConditionId;
-                if (!string.IsNullOrEmpty(model.VendorDeliveryConditionId))
-                {
-                    DeliveryCondition deliveryCondition = _deliveryConditionRepository.GetDeliveryCondition(Int32.Parse(model.VendorDeliveryConditionId));
-                    if (deliveryCondition != null)
+                    purchaseOrder.VendorDeliveryConditionId = model.VendorDeliveryConditionId;
+                    if (!string.IsNullOrEmpty(model.VendorDeliveryConditionId))
                     {
-                        purchaseOrder.VendorDeliveryConditions = deliveryCondition.Description;
+                        DeliveryCondition deliveryCondition = _deliveryConditionRepository.GetDeliveryCondition(Int32.Parse(model.VendorDeliveryConditionId));
+                        if (deliveryCondition != null)
+                        {
+                            purchaseOrder.VendorDeliveryConditions = deliveryCondition.Description;
+                        }
                     }
+
+                    purchaseOrder.CreatedDate = DateTime.Now;
+                    purchaseOrder.LastEditedDate = DateTime.Now;
+
+                    string DocumentNumber = getNextPurchaseOrderNumber(companyAccount.companyAccountId);
+                    purchaseOrder.PurchaseOrderDocumentNumber = DocumentNumber;
+                    PurchaseOrder purchaseOrderNew = _purchaseOrderRepository.Add(purchaseOrder);
+
+                    return RedirectToAction("EditPO", "PurchaseOrder", new { purchaseOrderId = purchaseOrderNew.Id });
                 }
-
-                purchaseOrder.CreatedDate = DateTime.Now;
-                purchaseOrder.LastEditedDate = DateTime.Now;
-
-                string DocumentNumber = getNextPurchaseOrderNumber(companyAccount.companyAccountId);
-                purchaseOrder.PurchaseOrderDocumentNumber = DocumentNumber;
-                PurchaseOrder purchaseOrderNew = _purchaseOrderRepository.Add(purchaseOrder);
-
-                return RedirectToAction("EditPO", "PurchaseOrder", new { purchaseOrderId = purchaseOrderNew.Id });
             }
-
             return View(model);
         }
 

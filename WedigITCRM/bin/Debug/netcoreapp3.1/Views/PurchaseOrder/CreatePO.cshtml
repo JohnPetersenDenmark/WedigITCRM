@@ -122,16 +122,21 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <label for="wanteddeliverydatepicker">Ønsket leveringsdato</label>
-                        <input asp-for="@Model.OurWantedDeliveryDate" id="wanteddeliverydatepicker" autocomplete="off" class="PurchaseOrderInput" />
-                        <span asp-validation-for="@Model.OurWantedDeliveryDate" class="text-danger"></span>
+                        <div class="input-icons">
+                            <label for="wanteddeliverydatepicker">Ønsket leveringsdato</label>
+                            <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
+                            <input asp-for="@Model.OurWantedDeliveryDate" id="wanteddeliverydatepicker" class="datepicker-input-field" />
+
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <label for="ourorderingdatepicker">Bestillingsdato</label>
-                        <input asp-for="@Model.OurOrderingDate" id="ourorderingdatepicker" autocomplete="off" class="PurchaseOrderInput" />
-                        <span asp-validation-for="@Model.OurOrderingDate" class="text-danger"></span>
+                        <div class="input-icons">
+                            <label for="ourorderingdatepicker">Bestillingsdato</label>
+                            <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
+                            <input asp-for="@Model.OurOrderingDate" id="ourorderingdatepicker" class="datepicker-input-field" />
+                        </div>
                     </div>
                 </div>
                 <div class="row">
