@@ -281,6 +281,7 @@ namespace WedigITCRM.Controllers
                 model.IconsFilePathAndName = purchaseOrder.IconsFilePathAndName;
 
 
+
                 model.OurWantedDeliveryDate = purchaseOrder.WantedDeliveryDate.ToString(danishDateTimeformat.ShortDatePattern);
                 model.OurOrderingDate = purchaseOrder.OurOrderingDate.ToString(danishDateTimeformat.ShortDatePattern);
 
@@ -359,6 +360,128 @@ namespace WedigITCRM.Controllers
 
 
             return View(model);
+        }
+
+
+        [HttpGet]
+        public IActionResult ReorderPO(int purchaseOrderId, CompanyAccount companyAccount)
+        {
+            DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+
+            PurchaseOrder purchaseOrder = _purchaseOrderRepository.GetPurchaseOrder(purchaseOrderId);
+            if (purchaseOrder != null)
+            {
+
+                PurchaseOrder reorderPurchaseOrder = new PurchaseOrder();
+
+                reorderPurchaseOrder.VendorId = purchaseOrder.VendorId;
+                reorderPurchaseOrder.VendorName = purchaseOrder.VendorName;
+                reorderPurchaseOrder.VendorStreet = purchaseOrder.VendorStreet;
+                reorderPurchaseOrder.VendorCity = purchaseOrder.VendorCity;
+                reorderPurchaseOrder.VendorEmail = purchaseOrder.VendorEmail;
+                reorderPurchaseOrder.VendorZip = purchaseOrder.VendorZip;
+                reorderPurchaseOrder.VendorCountryCode = purchaseOrder.VendorCountryCode;
+                reorderPurchaseOrder.VendorCurrencyCode = purchaseOrder.VendorCurrencyCode;
+                reorderPurchaseOrder.VendorPhoneNumber = purchaseOrder.VendorPhoneNumber;
+                reorderPurchaseOrder.VendorHomePage = purchaseOrder.VendorHomePage;
+                reorderPurchaseOrder.VendorPaymentConditionsId = purchaseOrder.VendorPaymentConditionsId;
+                reorderPurchaseOrder.VendorDeliveryConditionId = purchaseOrder.VendorDeliveryConditionId;
+                reorderPurchaseOrder.VendorCountryCode = purchaseOrder.VendorCountryCode;
+                reorderPurchaseOrder.VendorCurrencyCode = purchaseOrder.VendorCurrencyCode;
+                reorderPurchaseOrder.VendorReference = purchaseOrder.VendorReference;
+
+                var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                var currentUser = _userManager.FindByIdAsync(currentUserId).Result;
+                if (currentUser != null)
+                {
+                    reorderPurchaseOrder.OurReference = currentUser.UserName;
+                }
+
+                reorderPurchaseOrder.Note = purchaseOrder.Note;
+
+                DateTime myNow = DateTime.Now;
+
+                reorderPurchaseOrder.OurOrderingDate = myNow;
+                myNow = myNow.AddDays(14);
+                reorderPurchaseOrder.WantedDeliveryDate = myNow;
+
+                reorderPurchaseOrder.ReceivedStatus = "1";
+                reorderPurchaseOrder.companyAccountId = companyAccount.companyAccountId;
+
+                reorderPurchaseOrder.CreatedDate = DateTime.Now;
+                reorderPurchaseOrder.LastEditedDate = DateTime.Now;
+
+                string DocumentNumber = getNextPurchaseOrderNumber(companyAccount.companyAccountId);
+                reorderPurchaseOrder.PurchaseOrderDocumentNumber = DocumentNumber;
+                PurchaseOrder purchaseOrderNew = _purchaseOrderRepository.Add(reorderPurchaseOrder);
+
+
+                List<PurchaseOrderLine> orderLines = _purchaseOrderLineRepository.GetAllpurchaseOrderLines().Where(orderLine => orderLine.PurchaseOrderId == purchaseOrder.Id).ToList();
+                foreach (var orderLine in orderLines)
+                {
+                    PurchaseOrderLine newOrderLine = new PurchaseOrderLine();
+
+                    newOrderLine.PurchaseOrderId = reorderPurchaseOrder.Id;
+                    newOrderLine.OurUnitCostPrice = orderLine.OurUnitCostPrice;
+                    newOrderLine.OurItemName = orderLine.OurItemName;
+                    newOrderLine.OurItemNumber = orderLine.OurItemNumber;
+                    newOrderLine.StockItemId = orderLine.StockItemId;
+                    newOrderLine.OurLocation = orderLine.OurLocation;
+                    newOrderLine.OurUnit = orderLine.OurUnit;
+                    newOrderLine.QuantityToOrder = orderLine.QuantityToOrder;
+                    newOrderLine.VendorItemNumber = orderLine.VendorItemNumber;
+                    newOrderLine.VendorItemName = orderLine.VendorItemName;
+
+                    newOrderLine.companyAccountId = orderLine.companyAccountId;
+                    _purchaseOrderLineRepository.Add(newOrderLine);
+
+                }
+
+                return RedirectToAction("EditPO", "PurchaseOrder", new { purchaseOrderId = purchaseOrderNew.Id });
+            }
+
+            return View();
+        }
+
+
+        [HttpGet]
+        public IActionResult Delete(int purchaseOrderId, CompanyAccount companyAccount)
+        {
+            PurchaseOrder purchaseOrder = _purchaseOrderRepository.GetPurchaseOrder(purchaseOrderId);
+            if (purchaseOrder != null)
+            {
+                if (!string.IsNullOrEmpty(purchaseOrder.AttachedmentIds))
+                {
+                    List<string> AttachedmentIdsList = purchaseOrder.AttachedmentIds.Split(",").ToList();
+
+                    foreach (var attachmentId in AttachedmentIdsList)
+                    {
+                        EntitityModels.Attachment attachment = _attachmentRepository.GetAttachment(Int32.Parse(attachmentId));
+                        if (attachment != null)
+                        {
+                            string filePathAndFileName = _hostingEnvironment.WebRootPath + "\\" + "CustomerAttachments" + "\\" + attachment.uniqueInternalFileName;
+                            if (System.IO.File.Exists(filePathAndFileName))
+                            {
+                                System.IO.File.Delete(filePathAndFileName);
+                            }
+
+                            _attachmentRepository.Delete(attachment.Id);
+                        }
+                    }
+                }
+
+
+                List<PurchaseOrderLine> orderLines = _purchaseOrderLineRepository.GetAllpurchaseOrderLines().Where(orderLine => orderLine.PurchaseOrderId == purchaseOrder.Id).ToList();
+                foreach (var orderLine in orderLines)
+                {
+                    _purchaseOrderLineRepository.Delete(orderLine.Id);
+                }
+
+
+                _purchaseOrderRepository.Delete(purchaseOrderId);
+            }
+
+            return RedirectToAction("index", "PurchaseOrder");
         }
 
         public IActionResult getCurrencies()

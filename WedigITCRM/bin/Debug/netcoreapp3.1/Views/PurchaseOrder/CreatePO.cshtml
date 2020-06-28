@@ -15,6 +15,7 @@
                         <select id="selectvendor" name="selectvendor" class="custom-select PurchaseOrderInput">
                         </select>
                         <input asp-for="@Model.VendorId" id="vendorid" type="hidden" />
+                        <span asp-validation-for="@Model.VendorId" class="text-danger"></span>
                     </div>
                 </div>
 
