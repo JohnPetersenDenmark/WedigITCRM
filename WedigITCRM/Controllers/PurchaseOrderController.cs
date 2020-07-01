@@ -484,6 +484,14 @@ namespace WedigITCRM.Controllers
             return RedirectToAction("index", "PurchaseOrder");
         }
 
+
+
+        [HttpGet]
+        public IActionResult CreatePurchaseBudget()
+        {
+            PurchaseBudgetViewModel model = new PurchaseBudgetViewModel();
+            return View(model);
+        }
         public IActionResult getCurrencies()
         {
             List<CurrencyCode> currencyList = _currencyCodeRepository.getAllCurrencyCodes().ToList();

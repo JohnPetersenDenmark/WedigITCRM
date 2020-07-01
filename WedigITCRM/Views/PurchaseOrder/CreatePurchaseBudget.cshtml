@@ -1,0 +1,113 @@
+﻿@model PurchaseBudgetViewModel
+
+<div class="formcontainer">
+    <div class="tableheadline">
+        Indkøbsbudget
+    </div>
+
+
+    <form method="post">
+        <div class="row">
+            <div class="col-2">
+                <div class="input-select-room-for-icon">
+                    <label asp-for="@Model.Period">Periode</label>
+                    <select asp-for="@Model.Period" asp-items="@Model.SelectPeriod" id="period" class="custom-select"></select>
+                </div>            
+            </div>
+            <div id="divperiodfromdatepicker" class="col-2">
+                <div  class="input-icons">
+                    <label for="periodfromdatepicker">Fra dato</label>
+                    <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
+                    <input asp-for="@Model.PeriodFromDate" autocomplete="off" class="datepicker-input-field" id="periodfromdatepicker" />
+                </div>
+                <div class="icon-beside-input-datepicker">
+                    <i id="resetperiodfromdate" class="fa fa-times"></i>
+                </div>
+            </div>
+            <div id="divperiodtodatepicker" class="col-2">
+                <div  class="input-icons">
+                    <label for="periodtodatepicker">Til dato</label>
+                    <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
+                    <input asp-for="@Model.PeriodFromDate" autocomplete="off" class="datepicker-input-field" id="periodtodatepicker" />
+                </div>
+                <div class="icon-beside-input-datepicker">
+                    <i id="resetperiodtodate" class="fa fa-times"></i>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            $('#divperiodfromdatepicker').hide();
+            $('#divperiodtodatepicker').hide();
+
+            $('#period').bind('change', function () {
+                var period = $(this).val();
+                switch (period) {
+                    case "0":
+                        $('#divperiodfromdatepicker').hide();
+                        $('#divperiodtodatepicker').hide();
+                        break;
+                    case "1":
+                        $('#divperiodtodatepicker').hide();
+                        $('#divperiodfromdatepicker').show();
+                        break;
+                    case "2":
+                        $('#divperiodtodatepicker').hide();
+                        $('#divperiodfromdatepicker').show();
+                        break;
+                    case "3":
+                        $('#divperiodtodatepicker').hide();
+                        $('#divperiodfromdatepicker').show();
+                        break;
+                    case "4":
+                        $('#divperiodtodatepicker').hide();
+                        $('#divperiodfromdatepicker').show();
+                        break;
+                    case "5":
+                        $('#divperiodfromdatepicker').show();
+                        $('#divperiodtodatepicker').show();
+                        break;
+                }
+            });
+
+            $("#periodfromdatepicker").datetimepicker({
+                timepicker: false,
+                datepicker: true,
+                hours12: false,
+                format: 'd-m-Y'
+            });
+
+            $("#periodtodatepicker").datetimepicker({
+                timepicker: false,
+                datepicker: true,
+                hours12: false,
+                format: 'd-m-Y'
+            });
+
+            $(document).on("click", ".fa-times", function (event) {
+                var resetFieldId = $(this).attr("id");
+                switch (resetFieldId) {
+                    case "resetperiodfromdate":
+                        $('#periodfromdatepicker').val("");
+                        break;
+                    case "resetperiodtodate":
+                        $('#periodtodatepicker').val("");
+                        break;                   
+                }
+
+                // $("#searchForm").submit();
+                // event.stopImmediatePropagation()
+            });
+
+        });
+
+
+    </script>
+}
