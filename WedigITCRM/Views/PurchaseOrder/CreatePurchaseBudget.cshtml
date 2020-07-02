@@ -6,33 +6,39 @@
     </div>
 
 
-    <form method="post">
+    <form id="budgetform" method="post">
         <div class="row">
             <div class="col-2">
                 <div class="input-select-room-for-icon">
                     <label asp-for="@Model.Period">Periode</label>
                     <select asp-for="@Model.Period" asp-items="@Model.SelectPeriod" id="period" class="custom-select"></select>
-                </div>            
+                    <span asp-validation-for="@Model.Period" class="text-danger"></span>
+                </div>
             </div>
             <div id="divperiodfromdatepicker" class="col-2">
-                <div  class="input-icons">
+                <div class="input-icons">
                     <label for="periodfromdatepicker">Fra dato</label>
                     <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
                     <input asp-for="@Model.PeriodFromDate" autocomplete="off" class="datepicker-input-field" id="periodfromdatepicker" />
+                    <span asp-validation-for="@Model.PeriodFromDate" class="text-danger"></span>                   
                 </div>
                 <div class="icon-beside-input-datepicker">
                     <i id="resetperiodfromdate" class="fa fa-times"></i>
                 </div>
             </div>
             <div id="divperiodtodatepicker" class="col-2">
-                <div  class="input-icons">
+                <div class="input-icons">
                     <label for="periodtodatepicker">Til dato</label>
                     <i style="color : #17a2b8;" class="fa fa-calendar icon"></i>
-                    <input asp-for="@Model.PeriodFromDate" autocomplete="off" class="datepicker-input-field" id="periodtodatepicker" />
+                    <input asp-for="@Model.PeriodToDate" autocomplete="off" class="datepicker-input-field" id="periodtodatepicker" />
+                    <span asp-validation-for="@Model.PeriodToDate" class="text-danger"></span>
                 </div>
                 <div class="icon-beside-input-datepicker">
                     <i id="resetperiodtodate" class="fa fa-times"></i>
                 </div>
+            </div>
+            <div id="buttoncreatebudget" class="col-2">
+                <button type="submit" class="btn btn-info btn-lg">Opret budget</button>
             </div>
         </div>
     </form>
@@ -47,6 +53,9 @@
             $('#divperiodfromdatepicker').hide();
             $('#divperiodtodatepicker').hide();
 
+
+
+
             $('#period').bind('change', function () {
                 var period = $(this).val();
                 switch (period) {
@@ -54,22 +63,15 @@
                         $('#divperiodfromdatepicker').hide();
                         $('#divperiodtodatepicker').hide();
                         break;
-                    case "1":
-                        $('#divperiodtodatepicker').hide();
-                        $('#divperiodfromdatepicker').show();
-                        break;
+
+                    case "1":                       
                     case "2":
-                        $('#divperiodtodatepicker').hide();
-                        $('#divperiodfromdatepicker').show();
-                        break;
                     case "3":
-                        $('#divperiodtodatepicker').hide();
-                        $('#divperiodfromdatepicker').show();
-                        break;
                     case "4":
                         $('#divperiodtodatepicker').hide();
                         $('#divperiodfromdatepicker').show();
-                        break;
+                        break; 
+                    
                     case "5":
                         $('#divperiodfromdatepicker').show();
                         $('#divperiodtodatepicker').show();
@@ -101,9 +103,6 @@
                         $('#periodtodatepicker').val("");
                         break;                   
                 }
-
-                // $("#searchForm").submit();
-                // event.stopImmediatePropagation()
             });
 
         });

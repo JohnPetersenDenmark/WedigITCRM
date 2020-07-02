@@ -1,0 +1,108 @@
+﻿@model PurchaseBudgetEditViewModel
+
+    <div class="formcontainer">
+        <div class="tableheadline">
+            Indkøbsbudget
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                search
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                @if (Model != null)
+                {
+                    @foreach (var stockItem in Model.StockItems)
+                    {
+                        <div class="rowcontainer">
+                            <div class="row budgetitemline" id="@stockItem.Id" draggable="true" ondragstart="dragStockItemLine(event)">
+                                <div class="col-3">@stockItem.ItemName</div>
+                                <div class="col-3">@stockItem.ItemNumber</div>
+                                <div class="col-3">@stockItem.Unit</div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="col-2">
+
+            </div>
+
+            <div class="col-6">
+                <div id="jan" class="periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    Januar
+                </div>
+                <div id="feb" class="row periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    Februar
+                </div>
+                <div id="mar" class="row periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    Marts
+                </div>
+                <div id="april" class="row periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    April
+                </div>
+                <div id="maj" class="row periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    Maj
+                </div>
+                <div id="juni" class="row periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    Juni
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        @section Scripts {
+            <script>
+                $(document).ready(function () {
+
+
+
+                });
+
+
+                function allowDrop(ev) {
+                    ev.preventDefault();
+                }
+
+                function dragStockItemLine(ev) {
+                    ev.dataTransfer.setData("text", ev.target.id + "|" + "1");
+                }
+
+                function dragPeriodLineLine(ev) {
+                    ev.dataTransfer.setData("text", ev.target.id + "|" + "0");
+                }
+
+                function drop(ev) {
+                    ev.preventDefault();
+
+                    var data = ev.dataTransfer.getData("text");
+                    var dataArray = data.split("|");
+
+                    if (ev.ctrlKey && dataArray[1] != "1") {
+                        var nodeCopy = document.getElementById(dataArray[0]).cloneNode(true);
+                        nodeCopy.id = "newId"; /* We cannot use the same ID */
+                        ev.target.appendChild(nodeCopy);
+                    }
+                    else {
+
+                        var sourceDiv = document.getElementById(dataArray[0]);
+                        sourceDiv.removeAttribute("ondragstart");
+                        sourceDiv.setAttribute("ondragstart", "dragPeriodLineLine(event)")
+
+                        sourceDiv.classList.remove("row");
+
+                        var periodcontainerDivId = ev.target.getAttribute("id");
+                        sourceDiv.innerHTML = '<label>Antal</label><input type="text" name="Quantity" class="periodline-input-field">' + sourceDiv.innerHTML ;
+                        sourceDiv.innerHTML = sourceDiv.innerHTML + '<input type="text" hidden name="periodeDivId" value="' + periodcontainerDivId + '">';
+                       // ev.target.appendChild(sourceDiv);
+                        ev.target.insertBefore(sourceDiv, ev.target.childNodes[1]);
+                    }
+                }
+
+            </script>
+        }

@@ -95,6 +95,7 @@ namespace WedigITCRM
                 services.AddScoped<IDeliveryConditionRepository, SQLDeliveryConditionRepository>();
                 services.AddScoped<IVendorRepository, SQLVendorRepository>();
                 services.AddScoped<INoteRepository, SQLNoteRepository>();
+                services.AddScoped<IPurchaseBudgetRepository, SQLPurchaseBudgetRepository>();
                 services.AddScoped<IContentTypeRepository, SQLContentTypeRepository>();
                 services.AddScoped<IStockItemRepository, SQLStockItemRepository>();
                 services.AddScoped<IStockItemCategory1Repository, SQLStockItemCategory1Repository>();
@@ -115,6 +116,7 @@ namespace WedigITCRM
                 services.AddScoped<PurchaseOrderToHTML>();
                 services.AddScoped<PurchaseOrderToPDF>();
                 services.AddScoped<PurchaseOrderAddAttachment>();
+               
 
 
                 services.AddMvc(options =>

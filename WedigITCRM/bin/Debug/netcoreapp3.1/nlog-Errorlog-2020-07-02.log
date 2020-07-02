@@ -1,0 +1,16 @@
+2020-07-02 21:56:06.5151|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-02 21:56:15.7038|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-02 21:56:19.3957|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-02 21:56:23.9857|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-02 21:56:32.1305|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-02 21:56:32.2022|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-02 21:57:18.2749|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-02 21:57:19.1156|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-02 23:14:25.0540|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|The remote server returned an error: (502) Bad Gateway.nyxium stack trace:    at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.DownloadBits(WebRequest request, Stream writeStream)
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at System.Net.WebClient.DownloadString(String address)
+   at WedigITCRM.DineroAPI.DineroContacts.getContactsFromDinero(String LastupdatedDateTime, Int32 page, Int32 pageSize) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroContacts.cs:line 42
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 102

@@ -57,7 +57,7 @@ namespace WedigITCRM
         public DbSet<BookingSetup> BookingSetups { get; set; }
 
         public DbSet<CalendarEntry> CalendarEntries { get; set; }
-
+        public DbSet<PurchaseBudget> PurchaseBudgets { get; set; }
         public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
         public DbSet<PurchaseOrderLine> PurchaseOrderLines { get; set; }
         //

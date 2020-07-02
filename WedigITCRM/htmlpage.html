@@ -1,124 +1,102 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <style>
+        .periodcontainerline {
+            width: 300px;
+            height: 30px;
+            border: 1px solid black;
+        }
 
+        .periodcontainer {
+            width: 300px;
+            height: 200px;
+            scrollbar-face-color: limegreen;
+            overflow: auto;
+            border: 1px solid black;
+        }
 
+        .itemline {
+            width: 100px;
+            height: 30px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
-   
-    <link href="C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\database.net-editor\editor.dataTables.min.css" rel="stylesheet" />
+        function dragStockItemLine(ev) {
+            ev.dataTransfer.setData("text", ev.target.id + "|" + "1");
+        }
 
+        function dragPeriodLineLine(ev) {
+            ev.dataTransfer.setData("text", ev.target.id + "|" + "0");
+        }
 
+        function drop(ev) {
+            ev.preventDefault();
 
-    <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+            var data = ev.dataTransfer.getData("text");
+            var dataArray = data.split("|");
 
+            if (ev.ctrlKey && dataArray[1] != "1") {               
+                    var nodeCopy = document.getElementById(dataArray[0]).cloneNode(true);
+                    nodeCopy.id = "newId"; /* We cannot use the same ID */
+                    ev.target.appendChild(nodeCopy);                
+            }
+            else {
 
+                var sourceDiv = document.getElementById(dataArray[0]);
+                sourceDiv.removeAttribute("ondragstart");
+                sourceDiv.setAttribute("ondragstart", "dragPeriodLineLine(event)")
 
-    <script src="C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\database.net-editor\dataTables.editor.min.js"></script>
-
-
-
-
-
+                var periodcontainerDivId = ev.target.getAttribute("id");
+                sourceDiv.innerHTML = sourceDiv.innerHTML + '<label>Antal</label><input type="text" name="Quantity">';               
+                sourceDiv.innerHTML = sourceDiv.innerHTML + '<label>periode div id</label><input type="text" name="periodeDivId" value="' + periodcontainerDivId  + '">';
+                ev.target.appendChild(sourceDiv);
+            }
+        }
+    </script>
 </head>
 <body>
-    <table width="100%" class="display" id="example">
-        <thead>
-            <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Updated date</th>
-                <th>Registered date</th>
-            </tr>
-        </thead>
-    </table>
 
-    <script>
+    <h2>Drag and Drop</h2>
+    <p>Drag the image back and forth between the two div elements.</p>
 
 
+    <div id="Item1" draggable="true" ondragstart="dragStockItemLine(event)" class="itemline">
+        <label>Vare</label>
+        <input type="text" name="stockItemName" value="testvare3" readonly>
+        <label>Varenummer</label>
+        <input type="text" name="stockItemNumber" value="100-tst3" readonly>
+        <label>VareId</label>
+        <input type="text" name="Id" value="Item1" readonly>
+    </div>
 
+    <div id="Item2" draggable="true" ondragstart="dragStockItemLine(event)" class="itemline">
+    Item2
+    </div>
+    <div id="Item3" draggable="true" ondragstart="dragStockItemLine(event)" class="itemline">Item3</div>
+    <div id="Item4" draggable="true" ondragstart="dragStockItemLine(event)" class="itemline">Item4</div>
+    <div id="Item5" draggable="true" ondragstart="dragStockItemLine(event)" class="itemline">Item5</div>
+    <div id="Item6" draggable="true" ondragstart="dragStockItemLine(event)" class="itemline">Item6</div>
+    <div id="Item7" draggable="true" ondragstart="dragStockItemLine(event)" class="itemline">Item7</div>
+    <div id="Item8" draggable="true" ondragstart="dragStockItemLine(event)" class="itemline">Item8</div>
+    <div id="Item9" draggable="true" ondragstart="dragStockItemLine(event)" class="itemline">Item9</div>
+    <div id="Item10" draggable="true" ondragstart="dragStockItemLine(event)" class="itemline">Item10</div>
 
-        $(document).ready(function () {
+    <br />
+    <br />
+    <br />
 
-            var editor; // use a global for the submit and return data rendering in the examples
+    <div id="jan" ondrop="drop(event)" ondragover="allowDrop(event)" class="periodcontainer">Januar</div>
+    <div id="feb" ondrop="drop(event)" ondragover="allowDrop(event)" class="periodcontainer">Februar</div>
+    <div id="marts" ondrop="drop(event)" ondragover="allowDrop(event)" class="periodcontainer">Marts</div>
+    <div id="april" ondrop="drop(event)" ondragover="allowDrop(event)" class="periodcontainer">April</div>
+    <div id="Maj" ondrop="drop(event)" ondragover="allowDrop(event)" class="periodcontainer">Maj</div>
+    <div id="Juni" ondrop="drop(event)" ondragover="allowDrop(event)" class="periodcontainer">Juni</div>
 
-
-            editor = new $.fn.dataTable.Editor({
-                ajax: 'dr.dk',
-                table: '#example',
-
-                fields: [{
-                    label: 'First name:',
-                    name: 'first_name'
-                }, {
-                    label: 'Last name:',
-                    name: 'last_name'
-                }, {
-                    label: 'Updated date:',
-                    name: 'updated_date',
-                    type: 'datetime',
-                    def: function () { return new Date(); },
-                    format: 'DD-MM-YYYY h:mm',
-                    fieldInfo: 'US style m-d-y date input with 12 hour clock',
-                    opts: {
-                        minutesIncrement: 5
-                    }
-                }, {
-                    label: 'Registered date:',
-                    name: 'registered_date',
-                    type: 'datetime',
-                    def: function () { return new Date(); },
-                    format: 'D MMM YYYY HH:mm',
-                    fieldInfo: 'Euro style date with 24 hour clock',
-                    opts: {
-                        hoursAvailable: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                        minutesAvailable: [5, 10, 20, 25, 26, 45]
-                    }
-                }
-                ]
-            });
-
-
-            $('#example').DataTable({
-                dom: 'Bfrtip',
-                layout: {
-                    topLeft: 'buttons'
-                },
-                ajax: '#',
-                columns: [
-                    { data: 'first_name' },
-                    { data: 'last_name' },
-                    { data: 'updated_date' },
-                    { data: 'registered_date' }
-                ],
-                select: true,
-                buttons: [
-                    {
-                        extend: "create",
-                        editor: editor,
-                        formButtons: [
-                            'Create',
-                            { text: 'Cancel', action: function () { this.close(); } }
-                        ]
-                    },
-                    { extend: 'edit', editor: editor },
-                    { extend: 'remove', editor: editor }
-                ]
-
-            });
-
-
-
-
-        });
-    </script>
 </body>
 </html>

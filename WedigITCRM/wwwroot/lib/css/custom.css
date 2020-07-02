@@ -631,6 +631,23 @@ div.orderlineheadlines {
 }
 
 
+.periodcontainer {
+    width: 90%;
+    height: 200px;
+    background-color: #FFFFFF;
+    scrollbar-face-color: limegreen;
+    overflow: auto;
+    border: 1px solid black;
+    margin-bottom : 30px;
+}
 
-
+.periodline-input-field {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    height: 20px;
+    width: 10%;
+    padding: 10px;
+    padding-left: 30px;
+    text-align: left;
+}
 

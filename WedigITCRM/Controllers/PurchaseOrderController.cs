@@ -27,6 +27,7 @@ namespace WedigITCRM.Controllers
         private IPurchaseOrderRepository _purchaseOrderRepository;
         private IPurchaseOrderLineRepository _purchaseOrderLineRepository;
         private readonly PurchaseOrderToHTML _purchaseOrderToHTML;
+        private readonly IPurchaseBudgetRepository _purchaseBudgetRepository;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly PurchaseOrderAddAttachment _purchaseOrderAddAttachment;
         private readonly EmailUtility _emailUtility;
@@ -38,8 +39,9 @@ namespace WedigITCRM.Controllers
         private readonly IPaymentConditionRepository _paymentConditionRepository;
         public ICurrencyCodeRepository _currencyCodeRepository;
 
-        public PurchaseOrderController(UserManager<IdentityUser> userManager, PurchaseOrderAddAttachment purchaseOrderAddAttachment, EmailUtility emailUtility, PurchaseOrderToPDF purchaseOrderToPDF, PurchaseOrderToHTML purchaseOrderToHTML, IWebHostEnvironment hostingEnvironment, IAttachmentRepository attachmentRepository, IStockItemRepository stockItemRepository, IDeliveryConditionRepository deliveryConditionRepository, IPaymentConditionRepository paymentConditionRepository, ICurrencyCodeRepository currencyCodeRepository, IVendorRepository vendorRepository, IPurchaseOrderRepository purchaseOrderRepository, IPurchaseOrderLineRepository purchaseOrderLineRepository)
+        public PurchaseOrderController(IPurchaseBudgetRepository purchaseBudgetRepository, UserManager<IdentityUser> userManager, PurchaseOrderAddAttachment purchaseOrderAddAttachment, EmailUtility emailUtility, PurchaseOrderToPDF purchaseOrderToPDF, PurchaseOrderToHTML purchaseOrderToHTML, IWebHostEnvironment hostingEnvironment, IAttachmentRepository attachmentRepository, IStockItemRepository stockItemRepository, IDeliveryConditionRepository deliveryConditionRepository, IPaymentConditionRepository paymentConditionRepository, ICurrencyCodeRepository currencyCodeRepository, IVendorRepository vendorRepository, IPurchaseOrderRepository purchaseOrderRepository, IPurchaseOrderLineRepository purchaseOrderLineRepository)
         {
+           _purchaseBudgetRepository = purchaseBudgetRepository;
             _userManager = userManager;
             _purchaseOrderAddAttachment = purchaseOrderAddAttachment;
             _emailUtility = emailUtility;
@@ -492,6 +494,79 @@ namespace WedigITCRM.Controllers
             PurchaseBudgetViewModel model = new PurchaseBudgetViewModel();
             return View(model);
         }
+
+        [HttpPost]
+        public IActionResult CreatePurchaseBudget(PurchaseBudgetViewModel model, CompanyAccount companyAccount)
+        {
+            DateTime periodFromDate = DateTime.MinValue;
+            DateTime periodToDate = DateTime.MinValue;
+            DateTime testdate;
+            DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+
+            if (model.Period.Equals("0"))
+            {
+                ModelState.AddModelError("Period", "Der skal vælges en periode");
+                return View(model);
+            }
+
+            if (!string.IsNullOrEmpty(model.PeriodFromDate))
+            {
+                if (DateTime.TryParse(model.PeriodFromDate, out testdate))
+                {
+                    periodFromDate = DateTime.Parse(model.PeriodFromDate, danishDateTimeformat);
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("PeriodFromDate", "Der skal vælges en startdato");
+                return View(model);
+            }
+
+            if (model.Period.Equals("5"))
+            {
+                if (!string.IsNullOrEmpty(model.PeriodToDate))
+                {
+                    if (DateTime.TryParse(model.PeriodToDate, out testdate))
+                    {
+                        periodToDate = DateTime.Parse(model.PeriodToDate, danishDateTimeformat);
+                    }
+                }
+
+                else
+                {
+                    ModelState.AddModelError("PeriodFromDate", "Der skal vælges en slutdato");
+                    return View(model);
+                }
+            }
+
+            PurchaseBudget purchaseBudget = new PurchaseBudget();
+
+            purchaseBudget.Period = model.Period;
+
+            purchaseBudget.StartDateOfPeriod = periodFromDate;
+            purchaseBudget.EndDateOfPeriod = periodToDate;
+
+            purchaseBudget.companyAccountId = companyAccount.companyAccountId;
+            purchaseBudget.CreatedDate = DateTime.Now;
+            purchaseBudget.LastEditedDate = DateTime.Now;
+
+            PurchaseBudget purchaseBudgetNew = _purchaseBudgetRepository.Add(purchaseBudget);
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult EditPurchaseBudget(int purchaseOrderId)
+        {
+            PurchaseBudgetEditViewModel model = new PurchaseBudgetEditViewModel();
+
+
+            model.StockItems =_stockItemRepository.GetAllstockItems().ToList();
+            return View(model);
+        }
+
+
+
         public IActionResult getCurrencies()
         {
             List<CurrencyCode> currencyList = _currencyCodeRepository.getAllCurrencyCodes().ToList();
@@ -733,7 +808,7 @@ namespace WedigITCRM.Controllers
             return Json(model);
         }
 
-
+       
         private string getNextPurchaseOrderNumber(int companyAccountId)
         {
             List<PurchaseOrder> purchaseOrderList = _purchaseOrderRepository.GetAllPurchaseOrders().Where(purchaseOrder => purchaseOrder.companyAccountId == companyAccountId).ToList();
@@ -1125,4 +1200,23 @@ namespace WedigITCRM.Controllers
         public string CreatedDate { get; set; }
     }
 
+    public class PurchaseBudgetLineModel
+    {
+        public string Id { get; set; }
+        public string StockItemId { get; set; }
+        public string PeriodLineId { get; set; }
+        public string OurItemName { get; set; }
+        public string OurItemUnit { get; set; }
+        public string OurItemNumber { get; set; }
+        public string QuantityToOrder { get; set; }
+        public int companyAccountId { get; set; }       
+        public string OurCostPrice { get; set; }
+    }
+
 }
+
+
+
+
+
+
