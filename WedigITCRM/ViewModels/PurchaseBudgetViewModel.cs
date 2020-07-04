@@ -17,9 +17,10 @@ namespace WedigITCRM.ViewModels
              new SelectListItem { Value = "0", Text = "Vælg"  },
              new SelectListItem { Value = "1", Text = "1 år" },
             new SelectListItem { Value = "2", Text = "½ år" },
-            new SelectListItem { Value = "3", Text = "1 måned" },
-             new SelectListItem { Value = "4", Text = "1 uge" },
-            new SelectListItem { Value = "5", Text = "Mindre end 1 uge" }
+              new SelectListItem { Value = "3", Text = "3 måneder" },
+            new SelectListItem { Value = "4", Text = "1 måned" },
+             new SelectListItem { Value = "5", Text = "1 uge" },
+            new SelectListItem { Value = "6", Text = "Mindre end 1 uge" }
 
         };
     }

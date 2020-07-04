@@ -6,21 +6,17 @@ using System.Threading.Tasks;
 
 namespace WedigITCRM.EntitityModels
 {
-    public class purchaseBudgetLine
+    public class PurchaseBudgetLine
     {
         public int Id { get; set; }
         public int StockItemId { get; set; }
-        public string OurItemNumber { get; set; }
-        public string OurUnit { get; set; }
-        public string OurLocation { get; set; }
-        public string OurItemName { get; set; }
         public int PurchaseBudgetId { get; set; }
+        public string OurLocationId { get; set; }
+        public string PeriodLineId { get; set; }
 
         [Column(TypeName = "decimal(18,2)")]
-        public Decimal OurUnitCostPrice { get; set; }
-        public Decimal OurUnitSalesPrice { get; set; }
-        public int VendorId { get; set; }
-
+        public Decimal QuantityToOrder { get; set; }
+       
         public DateTime LastEditedDate { get; set; }
         public DateTime CreatedDate { get; set; }
     }

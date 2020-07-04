@@ -24,6 +24,10 @@ namespace WedigITCRM
         public DbSet<PaymentCondition> PaymentConditions { get; set; }
         public DbSet<ContactPerson> ContactPersons { get; set; }
 
+        public DbSet<PurchaseBudgetLine> PurchaseBudgetLines { get; set; }
+        public DbSet<PurchaseBudgetPeriodLine> PurchaseBudgetPeriodLines { get; set; }
+
+        
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<Attachment> Attachments { get; set; }
         public DbSet<Activity> Activities { get; set; }

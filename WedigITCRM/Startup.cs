@@ -109,7 +109,11 @@ namespace WedigITCRM
                 services.AddScoped<ILicenseType, SQLLicenseTypeRepository>();
                 services.AddScoped<ICountryRepository, SQLCountryRepository>();
                 services.AddScoped<IAttachmentRepository, SQLAttachmentRepository>();
-                services.AddScoped<IPaymentConditionRepository, SQLPaymentConditionRepository>();            
+                services.AddScoped<IPaymentConditionRepository, SQLPaymentConditionRepository>();
+                services.AddScoped<IPurchaseBudgetLineRepository, SQLPurchaseBudgetLinesRepository>();
+
+                services.AddScoped<IPurchaseBudgetPeriodLineRepository, SQLPurchaseBudgetPeriodLineRepository>();
+                
                 services.AddScoped<DineroAPIConnect>();
                 services.AddScoped<EmailUtility>();
                 services.AddScoped<MiscUtility>();
