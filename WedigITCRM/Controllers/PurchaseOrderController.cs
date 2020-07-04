@@ -679,7 +679,7 @@ namespace WedigITCRM.Controllers
 
 
         [HttpPost]
-        public IActionResult CreateBudgetLine(PurchaseBudgetLineModel model, CompanyAccount companyAccount)
+        public IActionResult createBudgetLineFromItemLine(PurchaseBudgetLineModel model, CompanyAccount companyAccount)
         {
             if (!string.IsNullOrEmpty(model.PurchaseBudgetId))
             {
@@ -708,6 +708,7 @@ namespace WedigITCRM.Controllers
                             model.OurItemName = stockItem.ItemName;
                             model.OurItemNumber = stockItem.ItemNumber;
                             model.OurItemUnit = stockItem.Unit;
+                            model.StockItemId = stockItem.Id.ToString();
                         }
                     }
                 }
@@ -715,6 +716,48 @@ namespace WedigITCRM.Controllers
 
             return Json(model);
         }
+
+        [HttpPost]
+        public IActionResult CreateBudgetLineFromBudgetLine(PurchaseBudgetLineModel model, CompanyAccount companyAccount)
+        {
+            if (!string.IsNullOrEmpty(model.PurchaseBudgetId))
+            {
+                PurchaseBudget purchaseBudget = _purchaseBudgetRepository.GetPurchaseBudget(Int32.Parse(model.PurchaseBudgetId));
+                if (purchaseBudget != null)
+                {
+                    if (!string.IsNullOrEmpty(model.Id))
+                    {
+                        PurchaseBudgetLine budgetLineToCopyFrom = _purchaseBudgetLinesRepository.GetPurchaseBudgetLine(Int32.Parse(model.Id));
+                        if (budgetLineToCopyFrom != null)
+                        {
+                            PurchaseBudgetLine budgetLineToCopyTo = new PurchaseBudgetLine();
+
+                            budgetLineToCopyTo.PurchaseBudgetId = budgetLineToCopyFrom.PurchaseBudgetId;
+                            budgetLineToCopyTo.QuantityToOrder = budgetLineToCopyFrom.QuantityToOrder;
+                           
+                            budgetLineToCopyTo.StockItemId = budgetLineToCopyFrom.StockItemId;
+                            budgetLineToCopyTo.PeriodLineId = model.PeriodLineId;
+
+                            PurchaseBudgetLine budgetLineToCopyToNew = _purchaseBudgetLinesRepository.Add(budgetLineToCopyTo);
+
+                            StockItem stockItem = _stockItemRepository.getStockItem(budgetLineToCopyTo.StockItemId);
+                            if (stockItem != null)
+                            {
+                                model.OurItemName = stockItem.ItemName;
+                                model.OurItemNumber = stockItem.ItemNumber;
+                                model.OurItemUnit = stockItem.Unit;
+                            }
+
+                            model.Id = budgetLineToCopyToNew.Id.ToString();
+                            model.QuantityToOrder = budgetLineToCopyTo.QuantityToOrder.ToString();
+
+                        }
+                    }
+                }
+            }
+                    return Json(model);
+        }
+
 
         [HttpPost]
         public IActionResult updateBudgetLineQuantity(PurchaseBudgetLineModel model, CompanyAccount companyAccount)

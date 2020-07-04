@@ -97,44 +97,29 @@
 
 
 
-            if (dataArray[1] == "1") {
-
-                /*    var sourceDiv = document.getElementById(dataArray[0]);
-
-                    sourceDiv.removeAttribute("ondragstart");
-                    sourceDiv.setAttribute("ondragstart", "dragPeriodLine(event)")
-
-                    sourceDiv.classList.remove("itemline");
-                    sourceDiv.classList.add("budgetitemline");
-
-                    var periodcontainerDivId = ev.target.getAttribute("id");
-                    sourceDiv.innerHTML = ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field"></div>' + sourceDiv.innerHTML;
-                    sourceDiv.innerHTML = sourceDiv.innerHTML + '<input type="text" hidden name="periodeDivId" value="' + periodcontainerDivId + '">';
-
-                    var targetCol = ev.target.firstElementChild;
-                    targetCol.append(sourceDiv);
-                    */
+            if (dataArray[1] == "1") {   // drag and  drop a item line to budget line.
 
                 var stockItemId = dataArray[0];
                 var periodLineId = ev.target.getAttribute("id");
 
-                createBudgetLine(stockItemId, periodLineId);
+                createBudgetLineFromItemLine(stockItemId, periodLineId);
             }
 
-            if (dataArray[1] == "0") {
+            if (dataArray[1] == "0") {  // drag and  drop a budget line line to new budget line.
                 if (ev.ctrlKey) {
-                    var nodeCopy = document.getElementById(dataArray[0]).cloneNode(true);
-                    nodeCopy.id = "newId"; /* We cannot use the same ID */
-                    ev.target.appendChild(nodeCopy);
+                    var sourceBudgetLineId = dataArray[0];
+                    var periodLineId = ev.target.getAttribute("id");
+
+                    createBudgetLineFromBudgetLineFromItemLine(sourceBudgetLineId, periodLineId);
                     return;
                 }
-                else {
+                else {  // drag and  drop a budget line i.e move
 
                     var sourceBudgetLineId = dataArray[0];
                     var sourceBudgetLineDiv = document.getElementById(sourceBudgetLineId);
 
                     var newBudgetLineDiv = sourceBudgetLineDiv.cloneNode(true);
-                
+
                     sourceBudgetLineDiv.remove();
 
                     var childDivs = newBudgetLineDiv.getElementsByTagName('input');
@@ -146,7 +131,7 @@
                         var inputField = childDivs[i];
 
                         if (inputField.name == "periodeDivId") {
-                            sourceperiodeDivId = inputField.value;                                           
+                            sourceperiodeDivId = inputField.value;
                         }
 
                         if (inputField.name == "Quantity") {
@@ -173,7 +158,7 @@
                     newBudgetLineDiv.innerHTML = newBudgetLineDiv.innerHTML + '<input type="text" hidden name="periodeDivId" value="' + ev.target.getAttribute("id") + '" />';
                     newBudgetLineDiv.innerHTML = newBudgetLineDiv.innerHTML + '<input type="text" hidden name="stockItemId" value="' + sourcestockItemId + '" />';
 
-                      //inputField.value = ev.target.getAttribute("id");    
+
 
                     var targetCol = ev.target.firstElementChild;
                     targetCol.appendChild(newBudgetLineDiv);
@@ -186,11 +171,11 @@
             }
         }
 
-        function createBudgetLine(stockItemId, periodLineId) {
+        function createBudgetLineFromItemLine(stockItemId, periodLineId) {
 
             $.ajax({
                 type: "POST",
-                url: "/purchaseorder/CreateBudgetLine",
+                url: "/purchaseorder/createBudgetLineFromItemLine",
                 data: {
                     stockItemId: stockItemId,
                     periodLineId: periodLineId,
@@ -218,6 +203,49 @@
 
                     var targetCol = periodLine.firstElementChild;
                     targetCol.append(sourceDiv);
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
+        }
+
+        function createBudgetLineFromBudgetLineFromItemLine(sourceBudgetLineId, periodLineId) {
+
+            $.ajax({
+                type: "POST",
+                url: "/purchaseorder/CreateBudgetLineFromBudgetLine",
+                data: {
+                    id: sourceBudgetLineId,
+                    periodLineId: periodLineId,
+                    purchaseBudgetId: $('#PurchaseBudgetId').val()
+                },
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+
+                    var periodLine = document.getElementById(result.periodLineId);
+                    var htmlStr;
+
+                    htmlStr = '<div class="row budgetitemline" id="' + result.id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
+                    htmlStr = htmlStr + ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>' ;
+                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemName + '</div>';
+                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemNumber + '</div>';
+                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemUnit + '</div>';
+                    htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
+                    htmlStr = htmlStr + '</div>';
+
+                    var newDivNode = document.createElement("div");
+                    newDivNode.innerHTML = htmlStr;
+                   
+                    var targetCol = periodLine.firstElementChild;
+                    targetCol.append(newDivNode);
                 },
 
                 error: function (request, status, error) {
