@@ -585,8 +585,8 @@ namespace WedigITCRM.Controllers
             {
                 case "1":
                     numberOfPeriodLines = 12;
-                    PeriodLineUnit = 1;                 
-                    periodStartDateTime = new DateTime(periodFromDate.Year,  periodFromDate.Month, 1);
+                    PeriodLineUnit = 1;
+                    periodStartDateTime = new DateTime(periodFromDate.Year, periodFromDate.Month, 1);
                     break;
                 case "2":
                     numberOfPeriodLines = 6;
@@ -602,7 +602,7 @@ namespace WedigITCRM.Controllers
                     numberOfPeriodLines = 4;
                     PeriodLineUnit = 2;
                     periodStartDateTime = WeekCalculation.getDateOffFirstDayInWeek(periodStartDateTime);
-                     weekNo = WeekCalculation.getWeekNumberBydate(periodStartDateTime);
+                    weekNo = WeekCalculation.getWeekNumberBydate(periodStartDateTime);
                     break;
                 case "5":
                     numberOfPeriodLines = 7;
@@ -618,7 +618,7 @@ namespace WedigITCRM.Controllers
                     break;
 
             }
-        
+
             for (var i = 0; i < numberOfPeriodLines; i++)
             {
                 PurchaseBudgetPeriodLine purchaseBudgetPeriodLine = new PurchaseBudgetPeriodLine();
@@ -628,27 +628,27 @@ namespace WedigITCRM.Controllers
 
                 switch (PeriodLineUnit)
                 {
-                    case 1 :
+                    case 1:
                         tmpPeriodStartDate = periodStartDateTime;
                         purchaseBudgetPeriodLine.PeriodStartDate = tmpPeriodStartDate.AddMonths(i);
-                        purchaseBudgetPeriodLine.HeadLine = danishDateTimeformat.GetMonthName(purchaseBudgetPeriodLine.PeriodStartDate.Month) + " " + purchaseBudgetPeriodLine.PeriodStartDate.Year.ToString();                      
+                        purchaseBudgetPeriodLine.HeadLine = danishDateTimeformat.GetMonthName(purchaseBudgetPeriodLine.PeriodStartDate.Month) + " " + purchaseBudgetPeriodLine.PeriodStartDate.Year.ToString();
                         tmpPeriodEndDate = tmpPeriodEndDate.AddMonths(i + 1);
                         tmpPeriodEndDate = tmpPeriodEndDate.AddDays(-1);
                         purchaseBudgetPeriodLine.PeriodEndDate = tmpPeriodEndDate;
                         break;
 
-                    case 2 :
+                    case 2:
                         purchaseBudgetPeriodLine.PeriodStartDate = tmpPeriodStartDate.AddDays(i * 7);
 
-                        tmpPeriodEndDate.AddDays((i + 1) * 7 );
+                        tmpPeriodEndDate.AddDays((i + 1) * 7);
                         tmpPeriodEndDate.AddDays(-1);
                         purchaseBudgetPeriodLine.PeriodEndDate = tmpPeriodEndDate;
-                       
+
                         break;
-                    case 3 :
-                       
-                        purchaseBudgetPeriodLine.PeriodStartDate = tmpPeriodStartDate.AddDays(i);                     
-                        purchaseBudgetPeriodLine.PeriodEndDate = tmpPeriodEndDate.AddDays(i); 
+                    case 3:
+
+                        purchaseBudgetPeriodLine.PeriodStartDate = tmpPeriodStartDate.AddDays(i);
+                        purchaseBudgetPeriodLine.PeriodEndDate = tmpPeriodEndDate.AddDays(i);
                         break;
                 }
 
@@ -657,7 +657,7 @@ namespace WedigITCRM.Controllers
 
             return RedirectToAction("EditPurchaseBudget", "PurchaseOrder", new { purchaseBudgetId = purchaseBudgetNew.Id });
 
-            
+
         }
 
         [HttpGet]
@@ -673,7 +673,7 @@ namespace WedigITCRM.Controllers
                 model.StockItems = _stockItemRepository.GetAllstockItems().ToList();
                 model.PeriodLines = _purchaseBudgetPeriodLineRepository.GetAllPurchaseBudgetPeriodLines().Where(periodLine => periodLine.PurchaseBudgetId == purchaseBudgetId).ToList();
             }
-          
+
             return View(model);
         }
 
@@ -681,17 +681,16 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult CreateBudgetLine(PurchaseBudgetLineModel model, CompanyAccount companyAccount)
         {
-            if(! string.IsNullOrEmpty(model.PurchaseBudgetId))
+            if (!string.IsNullOrEmpty(model.PurchaseBudgetId))
             {
                 PurchaseBudget purchaseBudget = _purchaseBudgetRepository.GetPurchaseBudget(Int32.Parse(model.PurchaseBudgetId));
                 if (purchaseBudget != null)
                 {
                     PurchaseBudgetLine budgetLine = new PurchaseBudgetLine();
 
-                    budgetLine.PurchaseBudgetId =  purchaseBudget.Id;
+                    budgetLine.PurchaseBudgetId = purchaseBudget.Id;
                     budgetLine.StockItemId = Int32.Parse(model.StockItemId);
- 
-                    budgetLine.QuantityToOrder = Decimal.Parse(model.QuantityToOrder);
+                    budgetLine.PeriodLineId = model.PeriodLineId;
 
 
                     budgetLine.LastEditedDate = DateTime.Now;
@@ -699,11 +698,78 @@ namespace WedigITCRM.Controllers
 
                     PurchaseBudgetLine budgetLineNew = _purchaseBudgetLinesRepository.Add(budgetLine);
 
+                    model.Id = budgetLineNew.Id.ToString();
+
+                    if (!string.IsNullOrEmpty(model.StockItemId))
+                    {
+                        StockItem stockItem = _stockItemRepository.getStockItem(budgetLineNew.StockItemId);
+                        if (stockItem != null)
+                        {
+                            model.OurItemName = stockItem.ItemName;
+                            model.OurItemNumber = stockItem.ItemNumber;
+                            model.OurItemUnit = stockItem.Unit;
+                        }
+                    }
                 }
             }
 
             return Json(model);
         }
+
+        [HttpPost]
+        public IActionResult updateBudgetLineQuantity(PurchaseBudgetLineModel model, CompanyAccount companyAccount)
+        {
+            if (!string.IsNullOrEmpty(model.PurchaseBudgetId))
+            {
+                PurchaseBudget purchaseBudget = _purchaseBudgetRepository.GetPurchaseBudget(Int32.Parse(model.PurchaseBudgetId));
+                if (purchaseBudget != null)
+                {
+                    if (!string.IsNullOrEmpty(model.Id))
+                    {
+                        PurchaseBudgetLine budgetLine = _purchaseBudgetLinesRepository.GetPurchaseBudgetLine(Int32.Parse(model.Id));
+                        if (budgetLine != null)
+                        {
+                            if (!string.IsNullOrEmpty(model.QuantityToOrder))
+                            {
+                                budgetLine.QuantityToOrder = Decimal.Parse(model.QuantityToOrder);
+                                _purchaseBudgetLinesRepository.Update(budgetLine);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return Json(model);
+        }
+
+
+        [HttpPost]
+        public IActionResult updateBudgetLinePeriod(PurchaseBudgetLineModel model, CompanyAccount companyAccount)
+        {
+            if (!string.IsNullOrEmpty(model.PurchaseBudgetId))
+            {
+                PurchaseBudget purchaseBudget = _purchaseBudgetRepository.GetPurchaseBudget(Int32.Parse(model.PurchaseBudgetId));
+                if (purchaseBudget != null)
+                {
+                    if (!string.IsNullOrEmpty(model.Id))
+                    {
+                        PurchaseBudgetLine budgetLine = _purchaseBudgetLinesRepository.GetPurchaseBudgetLine(Int32.Parse(model.Id));
+                        if (budgetLine != null)
+                        {
+                            if (!string.IsNullOrEmpty(model.PeriodLineId))
+                            {
+                                budgetLine.PeriodLineId = model.PeriodLineId;
+                                _purchaseBudgetLinesRepository.Update(budgetLine);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return Json(model);
+        }
+
+
 
         public IActionResult getCurrencies()
         {
@@ -946,7 +1012,7 @@ namespace WedigITCRM.Controllers
             return Json(model);
         }
 
-       
+
         private string getNextPurchaseOrderNumber(int companyAccountId)
         {
             List<PurchaseOrder> purchaseOrderList = _purchaseOrderRepository.GetAllPurchaseOrders().Where(purchaseOrder => purchaseOrder.companyAccountId == companyAccountId).ToList();
@@ -1352,8 +1418,8 @@ namespace WedigITCRM.Controllers
         public string OurCostPrice { get; set; }
         public string QuantityToOrder { get; set; }
         public string LineTotalAmount { get; set; }
-        public int companyAccountId { get; set; }       
-       
+        public int companyAccountId { get; set; }
+
     }
 
 }

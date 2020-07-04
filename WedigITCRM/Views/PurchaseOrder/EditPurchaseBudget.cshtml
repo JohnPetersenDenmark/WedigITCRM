@@ -1,57 +1,57 @@
 ﻿@model PurchaseBudgetEditViewModel
 
-    <div class="formcontainer">
-        <div class="tableheadline">
-            Indkøbsbudget
-        </div>
+<div class="formcontainer">
+    <div class="tableheadline">
+        Indkøbsbudget
+    </div>
 
-        <div class="row">
-            <div class="col-12">
-                search
-            </div>
-        </div>
-
-        <input asp-for="@Model.PurchaseBudgetId" class="form-control" />
-
-        <div class="row">
-            <div class="col-4">
-                @if (Model != null)
-                {
-                    @foreach (var stockItem in Model.StockItems)
-                    {
-                        <div class="rowcontainer">
-                            <div class="row itemline" id="@stockItem.Id" draggable="true" ondragstart="dragStockItemLine(event)">
-                                <div class="col-3">@stockItem.ItemName</div>
-                                <div class="col-3">@stockItem.ItemNumber</div>
-                                <div class="col-3">@stockItem.Unit</div>
-                            </div>
-                        </div>
-                    }
-                }
-            </div>
-            <div class="col-2">
-
-            </div>
-
-            <div class="col-6">
-
-
-                @if (Model != null)
-                {
-                    @foreach (var periodLine in Model.PeriodLines)
-                    {
-                        <div>@periodLine.HeadLine</div>
-                        <div id="@periodLine.Id" class="row periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
-                            <div style="height :100px" class="col-12">
-
-                            </div>
-                        </div>
-                    }
-                }
-
-            </div>
+    <div class="row">
+        <div class="col-12">
+            search
         </div>
     </div>
+
+    <input asp-for="@Model.PurchaseBudgetId" id="PurchaseBudgetId" />
+
+    <div class="row">
+        <div class="col-4">
+            @if (Model != null)
+            {
+                @foreach (var stockItem in Model.StockItems)
+                {
+                    <div class="rowcontainer">
+                        <div class="row itemline" id="@stockItem.Id" draggable="true" ondragstart="dragStockItemLine(event)">
+                            <div class="col-3">@stockItem.ItemName</div>
+                            <div class="col-3">@stockItem.ItemNumber</div>
+                            <div class="col-3">@stockItem.Unit</div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div class="col-2">
+
+        </div>
+
+        <div class="col-6">
+
+
+            @if (Model != null)
+            {
+                @foreach (var periodLine in Model.PeriodLines)
+                {
+                    <div>@periodLine.HeadLine</div>
+                    <div id="@periodLine.Id" class="row periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <div style="height : 100px" class="col-12">
+
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+</div>
 
 
 
@@ -60,6 +60,14 @@
         $(document).ready(function () {
 
 
+
+
+            $(document).on('change', '.periodline-input-field', function () {
+                var quantity = $(this).val();
+                var budgetLineId = $(this).parent().parent().attr("id");
+
+                updateBudgetLineQuantity(budgetLineId, quantity);
+            });
 
         });
 
@@ -87,31 +95,30 @@
             var data = ev.dataTransfer.getData("text");
             var dataArray = data.split("|");
 
-           
+
 
             if (dataArray[1] == "1") {
 
-                var sourceDiv = document.getElementById(dataArray[0]);
+                /*    var sourceDiv = document.getElementById(dataArray[0]);
 
-                alert(sourceDiv.innerHTML);
+                    sourceDiv.removeAttribute("ondragstart");
+                    sourceDiv.setAttribute("ondragstart", "dragPeriodLine(event)")
 
-                sourceDiv.removeAttribute("ondragstart");
-                sourceDiv.setAttribute("ondragstart", "dragPeriodLine(event)")
+                    sourceDiv.classList.remove("itemline");
+                    sourceDiv.classList.add("budgetitemline");
 
-                sourceDiv.classList.remove("itemline");
-                sourceDiv.classList.add("budgetitemline");
+                    var periodcontainerDivId = ev.target.getAttribute("id");
+                    sourceDiv.innerHTML = ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field"></div>' + sourceDiv.innerHTML;
+                    sourceDiv.innerHTML = sourceDiv.innerHTML + '<input type="text" hidden name="periodeDivId" value="' + periodcontainerDivId + '">';
 
-              
+                    var targetCol = ev.target.firstElementChild;
+                    targetCol.append(sourceDiv);
+                    */
 
-                var periodcontainerDivId = ev.target.getAttribute("id");
-                sourceDiv.innerHTML = ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field"></div>' + sourceDiv.innerHTML;
-                sourceDiv.innerHTML = sourceDiv.innerHTML + '<input type="text" hidden name="periodeDivId" value="' + periodcontainerDivId + '">';
+                var stockItemId = dataArray[0];
+                var periodLineId = ev.target.getAttribute("id");
 
-                alert(sourceDiv.innerHTML);
-
-                var targetCol = ev.target.firstElementChild;
-                var dummy = targetCol.getAttribute("id");
-                targetCol.append(sourceDiv);
+                createBudgetLine(stockItemId, periodLineId);
             }
 
             if (dataArray[1] == "0") {
@@ -122,54 +129,161 @@
                     return;
                 }
                 else {
-                    var sourceDiv = document.getElementById(dataArray[0]);
 
-                    var childDivs = sourceDiv.getElementsByTagName('input');
+                    var sourceBudgetLineId = dataArray[0];
+                    var sourceBudgetLineDiv = document.getElementById(sourceBudgetLineId);
+
+                    var newBudgetLineDiv = sourceBudgetLineDiv.cloneNode(true);
+                
+                    sourceBudgetLineDiv.remove();
+
+                    var childDivs = newBudgetLineDiv.getElementsByTagName('input');
+
+                    var sourceQuantity;
+                    var sourceperiodeDivId;
+                    var sourcestockItemId;
                     for (i = 0; i < childDivs.length; i++) {
-                        var inputField = childDivs[i];                        
+                        var inputField = childDivs[i];
+
                         if (inputField.name == "periodeDivId") {
-                            inputField.value = ev.target.getAttribute("id");
+                            sourceperiodeDivId = inputField.value;                                           
+                        }
+
+                        if (inputField.name == "Quantity") {
+                            sourceQuantity = inputField.value;
+                        }
+
+                        if (inputField.name == "stockItemId") {
+                            sourcestockItemId = inputField.value;
                         }
                     }
-                  
+
+                    while (childDivs.length > 0) {
+                        var inputField = childDivs[0];
+                        inputField.remove();
+                    }
+
+                    var childDivs = newBudgetLineDiv.getElementsByTagName('label');
+                    var labelNode = childDivs[0];
+                    var parentRow = labelNode.parentNode;
+                    parentRow.remove();
+
+
+                    newBudgetLineDiv.innerHTML = ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field" value="' + sourceQuantity + '"/></div>' + newBudgetLineDiv.innerHTML;
+                    newBudgetLineDiv.innerHTML = newBudgetLineDiv.innerHTML + '<input type="text" hidden name="periodeDivId" value="' + ev.target.getAttribute("id") + '" />';
+                    newBudgetLineDiv.innerHTML = newBudgetLineDiv.innerHTML + '<input type="text" hidden name="stockItemId" value="' + sourcestockItemId + '" />';
+
+                      //inputField.value = ev.target.getAttribute("id");    
+
                     var targetCol = ev.target.firstElementChild;
-                    targetCol.appendChild(sourceDiv);
+                    targetCol.appendChild(newBudgetLineDiv);
+
+
+
+                    var periodLineId = ev.target.getAttribute("id")
+                    updateBudgetLinePeriod(sourceBudgetLineId, periodLineId)
                 }
             }
         }
 
-        function createBudgetLine(ev) {
-           
-                $.ajax({
-                    type: "POST",
-                    url: "/purchaseorder/CreateBudgetLine",
-                    data: {
-                        id: $('#purchaseorderlineid').val(),
-                        stockItemId: $('#stockitemid').val(),
-                        ourItemNumber: $('#ouritemnumber').val(),
-                        ourItemName: $('#ouritemname').val(),
-                        ourCostPrice: $('#ourcostprice').val(),
-                        ourItemUnit: $('#ouritemunit').val(),
-                        ourLocation: $('#ourlocation').val(),
-                        vendorItemNumber: $('#vendoritemnumber').val(),
-                        vendorItemName: $('#vendoritemname').val(),
-                        quantityToOrder: $('#quantitytoorder').val(),
-                        purchaseOrderId: $('#purchaseorderid').val()
-                    },
-                    contentType: "application/x-www-form-urlencoded; charset=utf-8",
-                    dataType: "json",
-                    success: function (result) {
-                      
-                    },
+        function createBudgetLine(stockItemId, periodLineId) {
 
-                    error: function (request, status, error) {
-                        var jsonErrorObj = request.responseJSON
-                        var errorText = jsonErrorObj.Detail;
-                        var errorTitle = jsonErrorObj.Title;
-                        var errorInstance = jsonErrorObj.Instance;
-                        location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
-                    }
-                });
+            $.ajax({
+                type: "POST",
+                url: "/purchaseorder/CreateBudgetLine",
+                data: {
+                    stockItemId: stockItemId,
+                    periodLineId: periodLineId,
+                    purchaseBudgetId: $('#PurchaseBudgetId').val()
+                },
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+
+                    var periodLine = document.getElementById(result.periodLineId);
+                    var sourceDiv = document.getElementById(result.stockItemId);
+
+                    sourceDiv.removeAttribute("ondragstart");
+                    sourceDiv.setAttribute("ondragstart", "dragPeriodLine(event)")
+
+                    sourceDiv.removeAttribute("id");
+                    sourceDiv.setAttribute("id", result.id);
+
+                    sourceDiv.classList.remove("itemline");
+                    sourceDiv.classList.add("budgetitemline");
+
+                    sourceDiv.innerHTML = ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field" /></div>' + sourceDiv.innerHTML;
+                    sourceDiv.innerHTML = sourceDiv.innerHTML + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
+                    sourceDiv.innerHTML = sourceDiv.innerHTML + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
+
+                    var targetCol = periodLine.firstElementChild;
+                    targetCol.append(sourceDiv);
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
         }
+
+        function updateBudgetLineQuantity(budgetLineId, Quantity) {
+
+            $.ajax({
+                type: "POST",
+                url: "/purchaseorder/updateBudgetLineQuantity",
+                data: {
+                    id: budgetLineId,
+                    quantityToOrder: Quantity,
+                    purchaseBudgetId: $('#PurchaseBudgetId').val()
+                },
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+
+                    // Empty
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
+        }
+
+        function updateBudgetLinePeriod(budgetLineId, periodLineId) {
+
+            $.ajax({
+                type: "POST",
+                url: "/purchaseorder/updateBudgetLinePeriod",
+                data: {
+                    id: budgetLineId,
+                    periodLineId: periodLineId,
+                    purchaseBudgetId: $('#PurchaseBudgetId').val()
+                },
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+
+                    // Empty
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
+        }
+
+
     </script>
 }
