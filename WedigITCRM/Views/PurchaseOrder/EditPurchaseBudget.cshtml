@@ -7,11 +7,71 @@
 
     <div class="row">
         <div class="col-12">
-            search
+            <form id="searchForm" asp-controller="PurchaseOrder" asp-action="EditPurchaseBudget" method="get">
+                <input asp-for="@Model.PurchaseBudgetId" hidden id="PurchaseBudgetId" />
+                <div class="form-row">
+                    <div class="col-2">
+                        <div class="input-select-room-for-icon">
+                            <label asp-for="@Model.SearchByStockItemName">Vare</label>
+                            <input asp-for="@Model.SearchByStockItemName" id="searchbyitemname" />
+                        </div>
+                        <div class="icon-beside-input-select">
+                            <i id="resetsearchbyitemname" class="fa fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-select-room-for-icon">
+                            <label asp-for="@Model.SearchByStockItemNumber">Varenummer</label>
+                            <input asp-for="@Model.SearchByStockItemNumber" id="searchbyitemnumber" />
+                        </div>
+                        <div class="icon-beside-input-select">
+                            <i id="resetsearchbyitemnumber" class="fa fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-select-room-for-icon">
+                            <label asp-for="@Model.VendorId">Leverandør</label>
+                            <select asp-for="@Model.VendorId" asp-items="@Model.SearchByVendor" id="searchbyvendor" class="custom-select"></select>
+                        </div>
+                        <div class="icon-beside-input-select">
+                            <i id="resetsearchbyvendor" class="fa fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-select-room-for-icon">
+                            <label asp-for="@Model.category1Id">Kategori 1</label>
+                            <select asp-for="@Model.category1Id" asp-items="@Model.SearchByCategory1" id="searchbycategory1" class="custom-select"></select>
+                        </div>
+                        <div class="icon-beside-input-select">
+                            <i id="resetsearchbycategory1" class="fa fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-select-room-for-icon">
+                            <label asp-for="@Model.category2Id">Kategori 2</label>
+                            <select asp-for="@Model.category2Id" asp-items="@Model.SearchByCategory2" id="searchbycategory2" class="custom-select"></select>
+                        </div>
+                        <div class="icon-beside-input-select">
+                            <i id="resetsearchbycategory2" class="fa fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-select-room-for-icon">
+                            <label asp-for="@Model.category3Id">Kategori 3</label>
+                            <select asp-for="@Model.category3Id" asp-items="@Model.SearchByCategory3" id="searchbycategory3" class="custom-select"></select>
+                        </div>
+                        <div class="icon-beside-input-select">
+                            <i id="resetsearchbycategory3" class="fa fa-times"></i>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </form>
         </div>
     </div>
 
-    <input asp-for="@Model.PurchaseBudgetId" hidden id="PurchaseBudgetId" />
+    
 
     <div class="row">
         <div class="col-4">
@@ -60,7 +120,7 @@
     <script>
         $(document).ready(function () {
 
-                      
+
             var budgetLines = @Html.Raw(Json.Serialize(Model.BudgetLines.ToArray()));
             for (var i = 0; i < budgetLines.length; i++) {
 
@@ -91,6 +151,58 @@
 
                 updateBudgetLineQuantity(budgetLineId, quantity);
             });
+
+
+            $('#searchbyitemname').bind('change', function () {
+                $("#searchForm").submit();
+            });
+
+            $('#searchbyitemnumber').bind('change', function () {
+                $("#searchForm").submit();
+            });
+
+            $('#searchbyvendor').bind('change', function () {
+                $("#searchForm").submit();
+            });
+
+            $('#searchbycategory1').bind('change', function () {
+                $("#searchForm").submit();
+            });
+
+            $('#searchbycategory2').bind('change', function () {
+                $("#searchForm").submit();
+            });
+
+            $('#searchbycategory3').bind('change', function () {
+                $("#searchForm").submit();
+            });
+
+            $(document).on("click", ".fa-times", function (event) {
+                var resetFieldId = $(this).attr("id");
+                switch (resetFieldId) {
+                    case "resetsearchbyitemname":
+                        $('#searchbyitemname').val("");
+                        break;
+                    case "resetsearchbyitemnumber":
+                        $('#searchbyitemnumber').val("");
+                        break;
+                    case "resetsearchbyvendor":
+                        $('#searchbyvendor').val("0");
+                        break;
+                    case "resetsearchbycategory1":
+                        $('#searchbycategory1').val("");
+                        break;
+                    case "resetsearchbycategory2":
+                        $('#searchbycategory2').val("");
+                        break;
+                    case "resetsearchbycategory3":
+                        $('#searchbycategory3').val("");
+                        break;
+                }
+                $("#searchForm").submit();
+                event.stopImmediatePropagation()
+            });
+
 
         });
 
