@@ -661,16 +661,50 @@ namespace WedigITCRM.Controllers
         }
 
         [HttpGet]
-        public IActionResult EditPurchaseBudget(int purchaseBudgetId)
+        public IActionResult EditPurchaseBudget(int purchaseBudgetId, CompanyAccount companyAccount)
         {
             PurchaseBudgetEditViewModel model = new PurchaseBudgetEditViewModel();
 
             PurchaseBudget purchaseBudget = _purchaseBudgetRepository.GetPurchaseBudget(purchaseBudgetId);
 
+            List<StockItem> Allstocktems = _stockItemRepository.GetAllstockItems().Where(companyAccount => companyAccount.companyAccountId == companyAccount.companyAccountId).ToList();
+
+           
+
+            List<StockItem> stockItems = new List<StockItem>();
+            List<PurchaseBudgetLineModel> purchaseBudgetLineModelList = new List<PurchaseBudgetLineModel>();
+
+            List<PurchaseBudgetLine> budgetLines = _purchaseBudgetLinesRepository.GetAllPurchaseBudgetLines().Where(budgetLine => budgetLine.PurchaseBudgetId == purchaseBudget.Id).ToList();
+            foreach (var budgetLine in budgetLines)
+            {
+                stockItems = Allstocktems.Where(stockItem => stockItem.Id == budgetLine.StockItemId).ToList();
+                if ( stockItems.Count > 0)
+                {
+                    StockItem stockItemTmp = stockItems.First();
+                    Allstocktems.Remove(stockItemTmp);
+                }
+
+                PurchaseBudgetLineModel purchaseBudgetLineModel = new PurchaseBudgetLineModel();
+
+                StockItem stockItem = _stockItemRepository.getStockItem(budgetLine.StockItemId);
+                if ( stockItem != null)
+                {
+                    purchaseBudgetLineModel.Id = budgetLine.Id.ToString();
+                    purchaseBudgetLineModel.PeriodLineId = budgetLine.PeriodLineId;
+                    purchaseBudgetLineModel.QuantityToOrder = budgetLine.QuantityToOrder.ToString();
+                    purchaseBudgetLineModel.OurItemName = stockItem.ItemName;
+                    purchaseBudgetLineModel.OurItemNumber = stockItem.ItemNumber;
+                    purchaseBudgetLineModel.OurItemUnit = stockItem.Unit;
+                    purchaseBudgetLineModel.StockItemId = stockItem.Id.ToString();
+                    purchaseBudgetLineModelList.Add(purchaseBudgetLineModel);
+                }
+            }
+
             if (purchaseBudget != null)
             {
                 model.PurchaseBudgetId = purchaseBudget.Id.ToString();
-                model.StockItems = _stockItemRepository.GetAllstockItems().ToList();
+                model.StockItems = Allstocktems;
+                model.BudgetLines = purchaseBudgetLineModelList;
                 model.PeriodLines = _purchaseBudgetPeriodLineRepository.GetAllPurchaseBudgetPeriodLines().Where(periodLine => periodLine.PurchaseBudgetId == purchaseBudgetId).ToList();
             }
 

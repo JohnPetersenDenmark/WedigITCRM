@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <input asp-for="@Model.PurchaseBudgetId" id="PurchaseBudgetId" />
+    <input asp-for="@Model.PurchaseBudgetId" hidden id="PurchaseBudgetId" />
 
     <div class="row">
         <div class="col-4">
@@ -42,6 +42,7 @@
                 {
                     <div>@periodLine.HeadLine</div>
                     <div id="@periodLine.Id" class="row periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        Træk hertil
                         <div style="height : 100px" class="col-12">
 
                         </div>
@@ -59,8 +60,30 @@
     <script>
         $(document).ready(function () {
 
+                      
+            var budgetLines = @Html.Raw(Json.Serialize(Model.BudgetLines.ToArray()));
+            for (var i = 0; i < budgetLines.length; i++) {
 
 
+                var htmlStr;
+
+                htmlStr = '<div class="row budgetitemline" id="' + budgetLines[i].id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
+                htmlStr = htmlStr + ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field" value="' + budgetLines[i].quantityToOrder + '" /></div>';
+                htmlStr = htmlStr + '<div class="col-3">' + budgetLines[i].ourItemName + '</div>';
+                htmlStr = htmlStr + '<div class="col-3">' + budgetLines[i].ourItemNumber + '</div>';
+                htmlStr = htmlStr + '<div class="col-3">' + budgetLines[i].ourItemUnit + '</div>';
+                htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + budgetLines[i].periodLineId + '" />';
+                htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + budgetLines[i].stockItemId + '" />';
+                htmlStr = htmlStr + '</div>';
+
+                var newDivNode = document.createElement("div");
+                newDivNode.innerHTML = htmlStr;
+
+                var periodeDiv = document.getElementById(budgetLines[i].periodLineId);
+
+                var targetCol = periodeDiv.firstElementChild;
+                targetCol.appendChild(newDivNode);
+            }
 
             $(document).on('change', '.periodline-input-field', function () {
                 var quantity = $(this).val();
@@ -243,7 +266,7 @@
 
                     var newDivNode = document.createElement("div");
                     newDivNode.innerHTML = htmlStr;
-                   
+
                     var targetCol = periodLine.firstElementChild;
                     targetCol.append(newDivNode);
                 },
