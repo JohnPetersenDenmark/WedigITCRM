@@ -501,7 +501,10 @@ namespace WedigITCRM.Controllers
         [HttpGet]
         public IActionResult CreatePurchaseBudget()
         {
+            DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
             PurchaseBudgetViewModel model = new PurchaseBudgetViewModel();
+            DateTime myNow = DateTime.Now;
+            model.PeriodFromDate = myNow.ToString(danishDateTimeformat.ShortDatePattern);
             return View(model);
         }
 
@@ -590,36 +593,35 @@ namespace WedigITCRM.Controllers
 
             switch (model.Period)
             {
-                case "1":
-                    numberOfPeriodLines = 12;
+                case "1":                       // 1 year
+                    numberOfPeriodLines = 12;   
                     PeriodLineUnit = 1;
                     periodStartDateTime = new DateTime(periodFromDate.Year, periodFromDate.Month, 1);
                     break;
-                case "2":
-                    numberOfPeriodLines = 6;
+                case "2":                       // 1/2 year
+                    numberOfPeriodLines = 6; 
                     PeriodLineUnit = 1;
                     periodStartDateTime = new DateTime(periodFromDate.Year, periodFromDate.Month, 1);
                     break;
-                case "3":
-                    numberOfPeriodLines = 3;
+                case "3":                       // A Quarter
+                    numberOfPeriodLines = 3; 
                     PeriodLineUnit = 1;
                     periodStartDateTime = new DateTime(periodFromDate.Year, periodFromDate.Month, 1);
                     break;
-                case "4":
-                    numberOfPeriodLines = 6;
+                case "4":                       // 1 Month as weeks
+                    numberOfPeriodLines = 6;  
                     PeriodLineUnit = 2;
                     // periodStartDateTime = WeekCalculation.getDateOffFirstDayInWeek(periodFromDate);
                     periodStartDateTime = periodFromDate;
                     periodEndDateTime = periodFromDate.AddMonths(1);
-                    weekNo = WeekCalculation.getWeekNumberBydate(periodStartDateTime);
+                   // weekNo = WeekCalculation.getWeekNumberBydate(periodStartDateTime);
                     break;
-                case "5":
-                    numberOfPeriodLines = 7;
+                case "5":                       // 1 week as days
+                    numberOfPeriodLines = 7;  
                     PeriodLineUnit = 3;
-                    periodStartDateTime = WeekCalculation.getDateOffFirstDayInWeek(periodStartDateTime);
-                    weekNo = WeekCalculation.getWeekNumberBydate(periodStartDateTime);
+                    periodStartDateTime = periodFromDate;                    
                     break;
-                case "6":
+                case "6":                      // 1 to 6 days 
                     TimeSpan difference = periodToDate - periodFromDate;
                     numberOfPeriodLines = (int)difference.TotalDays;
                     PeriodLineUnit = 3;
@@ -698,6 +700,10 @@ namespace WedigITCRM.Controllers
                        
                         purchaseBudgetPeriodLine.PeriodStartDate = periodStartDateTime.AddDays(i);
                         purchaseBudgetPeriodLine.PeriodEndDate = periodStartDateTime.AddDays(i);
+
+                        weekNo = WeekCalculation.getWeekNumberBydate(purchaseBudgetPeriodLine.PeriodStartDate);
+                        purchaseBudgetPeriodLine.HeadLine = "Uge: " + weekNo.ToString() + "              " + purchaseBudgetPeriodLine.PeriodStartDate.ToString(danishDateTimeformat.ShortDatePattern) + "              " + purchaseBudgetPeriodLine.PeriodEndDate.ToString(danishDateTimeformat.ShortDatePattern);
+
 
                         _purchaseBudgetPeriodLineRepository.Add(purchaseBudgetPeriodLine);
                         break;

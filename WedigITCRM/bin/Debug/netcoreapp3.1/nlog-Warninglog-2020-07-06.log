@@ -108,3 +108,23 @@
 2020-07-06 13:30:21.8263|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2020-07-06 13:30:24.0668|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
 2020-07-06 13:30:24.1406|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-06 17:51:16.9318|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-06 17:51:18.6609|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-06 17:51:18.7695|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-06 17:51:19.5941|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-06 17:51:22.0982|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-06 17:51:22.1584|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-06 17:51:22.1584|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-06 17:51:22.2211|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-06 17:51:22.2760|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-06 17:52:38.8461|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-06 17:52:38.8741|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-06 17:58:02.3735|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-06 17:58:03.7672|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-06 17:58:03.8916|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-06 17:58:04.6056|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-06 17:58:07.0878|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-06 17:58:07.1181|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-06 17:58:07.1526|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-06 17:58:09.3455|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-06 17:58:09.4211|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
