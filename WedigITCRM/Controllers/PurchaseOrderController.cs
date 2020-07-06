@@ -606,7 +606,7 @@ namespace WedigITCRM.Controllers
                     periodStartDateTime = new DateTime(periodFromDate.Year, periodFromDate.Month, 1);
                     break;
                 case "4":
-                    numberOfPeriodLines = 4;
+                    numberOfPeriodLines = 6;
                     PeriodLineUnit = 2;
                     // periodStartDateTime = WeekCalculation.getDateOffFirstDayInWeek(periodFromDate);
                     periodStartDateTime = periodFromDate;
@@ -631,37 +631,77 @@ namespace WedigITCRM.Controllers
             for (var i = 0; i < numberOfPeriodLines; i++)
             {
                 PurchaseBudgetPeriodLine purchaseBudgetPeriodLine = new PurchaseBudgetPeriodLine();
+                
                 purchaseBudgetPeriodLine.PurchaseBudgetId = purchaseBudget.Id;
                
                 switch (PeriodLineUnit)
                 {
-                    case 1:                      
+                    case 1:
+                        
                         purchaseBudgetPeriodLine.PeriodStartDate = periodStartDateTime.AddMonths(i);
                         
                         purchaseBudgetPeriodLine.HeadLine = danishDateTimeformat.GetMonthName(purchaseBudgetPeriodLine.PeriodStartDate.Month) + " " + purchaseBudgetPeriodLine.PeriodStartDate.Year.ToString();
                         DateTime tmpPeriodEndDate = periodStartDateTime.AddMonths(i + 1);
                         tmpPeriodEndDate = tmpPeriodEndDate.AddDays(-1);
                         purchaseBudgetPeriodLine.PeriodEndDate = tmpPeriodEndDate;
+                        _purchaseBudgetPeriodLineRepository.Add(purchaseBudgetPeriodLine);
                         break;
 
-                    case 2:                      
-                        purchaseBudgetPeriodLine.PeriodStartDate = periodStartDateTime.AddDays(i * 7);
+                    case 2:
+                        if (periodStartDateTime < periodEndDateTime)
+                        {
+                           
 
-                        DateTime tmpWeekEndDate = periodStartDateTime.AddDays((i + 1) * 7);
-                        tmpWeekEndDate = tmpWeekEndDate.AddDays(-1);
-                        purchaseBudgetPeriodLine.PeriodEndDate = tmpWeekEndDate;
+                            int currentWeekDay = (int)periodStartDateTime.DayOfWeek;
+                            int numberOfDaysToNextSunday = 0;
 
-                        int periodweekNo = WeekCalculation.getWeekNumberBydate(purchaseBudgetPeriodLine.PeriodStartDate);
-                        purchaseBudgetPeriodLine.HeadLine = "Uge: " + periodweekNo.ToString() + " " + purchaseBudgetPeriodLine.PeriodStartDate.ToString(danishDateTimeformat.ShortDatePattern) + "-" + purchaseBudgetPeriodLine.PeriodEndDate.ToString(danishDateTimeformat.ShortDatePattern);
+                            switch (currentWeekDay)
+                            {
+                                case 0:
+                                    numberOfDaysToNextSunday = 0;
+                                    break;
+                                case 1:
+                                    numberOfDaysToNextSunday = 6;
+                                    break;
+                                case 2:
+                                case 3:
+                                case 4:
+                                case 5:
+                                case 6:
+                                    numberOfDaysToNextSunday = 7 - currentWeekDay;
+                                    break;
+                            }
+
+
+                            purchaseBudgetPeriodLine.PeriodStartDate = periodStartDateTime;
+                            if (periodStartDateTime.AddDays(numberOfDaysToNextSunday) < periodEndDateTime)
+                            {
+                                purchaseBudgetPeriodLine.PeriodEndDate = periodStartDateTime.AddDays(numberOfDaysToNextSunday);
+                            }
+                            else
+                            {
+                                purchaseBudgetPeriodLine.PeriodEndDate = periodEndDateTime;
+                            }
+
+
+
+                            int periodweekNo = WeekCalculation.getWeekNumberBydate(purchaseBudgetPeriodLine.PeriodStartDate);
+                            purchaseBudgetPeriodLine.HeadLine = "Uge: " + periodweekNo.ToString() + "              " + purchaseBudgetPeriodLine.PeriodStartDate.ToString(danishDateTimeformat.ShortDatePattern) + "              " + purchaseBudgetPeriodLine.PeriodEndDate.ToString(danishDateTimeformat.ShortDatePattern);
+
+
+                            periodStartDateTime = purchaseBudgetPeriodLine.PeriodEndDate.AddDays(1);
+
+                            _purchaseBudgetPeriodLineRepository.Add(purchaseBudgetPeriodLine);
+                        }
                         break;
                     case 3:
-
+                       
                         purchaseBudgetPeriodLine.PeriodStartDate = periodStartDateTime.AddDays(i);
                         purchaseBudgetPeriodLine.PeriodEndDate = periodStartDateTime.AddDays(i);
-                        break;
-                }
 
-                _purchaseBudgetPeriodLineRepository.Add(purchaseBudgetPeriodLine);
+                        _purchaseBudgetPeriodLineRepository.Add(purchaseBudgetPeriodLine);
+                        break;
+                }               
             }
 
             return RedirectToAction("EditPurchaseBudget", "PurchaseOrder", new { purchaseBudgetId = purchaseBudgetNew.Id });
