@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Reflection;
@@ -17,6 +18,24 @@ namespace WedigITCRM.DineroAPI
             _dineroAPIConnect = dineroAPIConnect;
         }
 
+        public READDineroAPIInvoicecollection getInvoicesByIntervalFromDinero(DateTime fromDate, DateTime toDate)
+        {
+            DateTimeFormatInfo SweedishTimeformat = CultureInfo.GetCultureInfo("sv-SE").DateTimeFormat;
+
+            string fromDateDateTimeStr = fromDate.ToString(SweedishTimeformat.ShortDatePattern);
+            
+
+            string toDateDateTimeStr = toDate.ToString(SweedishTimeformat.ShortDatePattern);
+            
+            READDineroAPIInvoices dineroAPIInvoices = new READDineroAPIInvoices();
+         
+            WebClient client = new WebClient();
+            client.Headers.Add("Authorization", "Bearer " + _dineroAPIConnect._APItoken);
+            // String JsonString = client.DownloadString(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "invoices" );
+             String JsonString = client.DownloadString(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "invoices" + "?startDate=" + fromDateDateTimeStr + "&endDate=" + toDateDateTimeStr);
+
+            return (JsonConvert.DeserializeObject<READDineroAPIInvoicecollection>(JsonString));
+        }
 
         public READDineroAPIInvoicecollection getInvoicesFromDinero()
         {

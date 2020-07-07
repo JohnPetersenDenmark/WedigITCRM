@@ -13,11 +13,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using WedigITCRM.DineroAPI;
 using WedigITCRM.EntitityModels;
+using WedigITCRM.Migrations;
 using WedigITCRM.StorageInterfaces;
 using WedigITCRM.Utilities;
 using WedigITCRM.ViewModels;
 using X.PagedList;
+using static WedigITCRM.DineroAPI.DineroInvoice;
 
 namespace WedigITCRM.Controllers
 {
@@ -784,6 +787,18 @@ namespace WedigITCRM.Controllers
                     purchaseBudgetLineModel.OurItemNumber = stockItem.ItemNumber;
                     purchaseBudgetLineModel.OurItemUnit = stockItem.Unit;
                     purchaseBudgetLineModel.StockItemId = stockItem.Id.ToString();
+                   
+
+                    if (companyAccount.IntegrationDinero)
+                    {                       
+                            PurchaseBudgetPeriodLine periodLine = _purchaseBudgetPeriodLineRepository.GetPurchaseBudgetPeriodLine(Int32.Parse(budgetLine.PeriodLineId));
+
+                            if (periodLine != null)
+                            {
+                            purchaseBudgetLineModel.QuantitySold = getTotalSoldAmountForStockItem(periodLine.PeriodStartDate, periodLine.PeriodEndDate, stockItem.DineroGuiD, companyAccount).ToString();
+                            }                        
+                    }
+
                     purchaseBudgetLineModelList.Add(purchaseBudgetLineModel);
                 }
             }
@@ -862,11 +877,48 @@ namespace WedigITCRM.Controllers
                             model.OurItemUnit = stockItem.Unit;
                             model.StockItemId = stockItem.Id.ToString();
                         }
+
+                        if (companyAccount.IntegrationDinero)
+                        {
+                            PurchaseBudgetPeriodLine periodLine = _purchaseBudgetPeriodLineRepository.GetPurchaseBudgetPeriodLine(Int32.Parse(budgetLine.PeriodLineId));
+                           
+                            if (periodLine != null)
+                            {
+                                model.QuantitySold = getTotalSoldAmountForStockItem(periodLine.PeriodStartDate, periodLine.PeriodEndDate, stockItem.DineroGuiD, companyAccount).ToString();
+                            } 
+                        }
                     }
                 }
             }
 
             return Json(model);
+        }
+
+        public Decimal getTotalSoldAmountForStockItem(DateTime fromDate, DateTime toDate, Guid DineroStockitemId, CompanyAccount companyAccount)
+        {
+            Decimal totalSoldAmount=  0;
+
+            DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
+            if (dineroAPIConnect.connectToDinero(companyAccount) == null)
+            {
+                return totalSoldAmount;
+            }
+
+                DineroInvoice dineroInvoice = new DineroInvoice(dineroAPIConnect);
+            READDineroAPIInvoicecollection rEADDineroAPIInvoicecollection = dineroInvoice.getInvoicesByIntervalFromDinero( fromDate,  toDate);
+
+            foreach (var invoice in rEADDineroAPIInvoicecollection.Collection)
+            {
+                READDineroAPIInvoiceProductLines rEADDineroAPIInvoiceProductLines = dineroInvoice.getInvoiceLinesFromDinero(invoice.Guid.ToString());
+                foreach (var invoiceProductLine in rEADDineroAPIInvoiceProductLines.ProductLines)
+                {                  
+                   if (invoiceProductLine.ProductGuid == DineroStockitemId.ToString())                    
+                    {
+                        totalSoldAmount = totalSoldAmount + invoiceProductLine.Quantity;
+                    }
+                }
+            }
+                return totalSoldAmount;
         }
 
         [HttpPost]
@@ -902,6 +954,16 @@ namespace WedigITCRM.Controllers
 
                             model.Id = budgetLineToCopyToNew.Id.ToString();
                             model.QuantityToOrder = budgetLineToCopyTo.QuantityToOrder.ToString();
+
+                            if (companyAccount.IntegrationDinero)
+                            {
+                                PurchaseBudgetPeriodLine periodLine = _purchaseBudgetPeriodLineRepository.GetPurchaseBudgetPeriodLine(Int32.Parse(budgetLineToCopyToNew.PeriodLineId));
+
+                                if (periodLine != null)
+                                {
+                                    model.QuantitySold = getTotalSoldAmountForStockItem(periodLine.PeriodStartDate, periodLine.PeriodEndDate, stockItem.DineroGuiD, companyAccount).ToString();
+                                }
+                            }
 
                         }
                     }
@@ -955,6 +1017,21 @@ namespace WedigITCRM.Controllers
                             {
                                 budgetLine.PeriodLineId = model.PeriodLineId;
                                 _purchaseBudgetLinesRepository.Update(budgetLine);
+
+                                if (companyAccount.IntegrationDinero)
+                                {
+                                   
+                                    StockItem stockItem = _stockItemRepository.getStockItem(budgetLine.StockItemId);
+                                    if (stockItem != null)
+                                    {
+                                        PurchaseBudgetPeriodLine periodLine = _purchaseBudgetPeriodLineRepository.GetPurchaseBudgetPeriodLine(Int32.Parse(budgetLine.PeriodLineId));
+
+                                        if (periodLine != null)
+                                        {
+                                            model.QuantitySold = getTotalSoldAmountForStockItem(periodLine.PeriodStartDate, periodLine.PeriodEndDate, stockItem.DineroGuiD, companyAccount).ToString();
+                                        }
+                                    }                               
+                                }
                             }
                         }
                     }
@@ -1613,6 +1690,7 @@ namespace WedigITCRM.Controllers
         public string OurCostPrice { get; set; }
         public string QuantityToOrder { get; set; }
         public string LineTotalAmount { get; set; }
+        public string QuantitySold { get; set; }
         public int companyAccountId { get; set; }
 
     }

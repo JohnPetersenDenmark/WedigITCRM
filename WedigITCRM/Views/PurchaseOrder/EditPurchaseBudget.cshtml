@@ -134,6 +134,7 @@
                 htmlStr = htmlStr + '<div class="col-3">' + budgetLines[i].ourItemUnit + '</div>';
                 htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + budgetLines[i].periodLineId + '" />';
                 htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + budgetLines[i].stockItemId + '" />';
+                htmlStr = htmlStr + '<input type="text" hidden name="quantitySold" value="' + budgetLines[i].quantitySold + '" />';
                 htmlStr = htmlStr + '</div>';
 
                 var newDivNode = document.createElement("div");
@@ -262,6 +263,7 @@
                     var sourceQuantity;
                     var sourceperiodeDivId;
                     var sourcestockItemId;
+                   
                     for (i = 0; i < childDivs.length; i++) {
                         var inputField = childDivs[i];
 
@@ -288,17 +290,13 @@
                     var parentRow = labelNode.parentNode;
                     parentRow.remove();
 
-
                     newBudgetLineDiv.innerHTML = ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field" value="' + sourceQuantity + '"/></div>' + newBudgetLineDiv.innerHTML;
                     newBudgetLineDiv.innerHTML = newBudgetLineDiv.innerHTML + '<input type="text" hidden name="periodeDivId" value="' + ev.target.getAttribute("id") + '" />';
                     newBudgetLineDiv.innerHTML = newBudgetLineDiv.innerHTML + '<input type="text" hidden name="stockItemId" value="' + sourcestockItemId + '" />';
-
-
+                    newBudgetLineDiv.innerHTML = newBudgetLineDiv.innerHTML + '<input type="text" hidden name="quantitySold" />';
 
                     var targetCol = ev.target.firstElementChild;
                     targetCol.appendChild(newBudgetLineDiv);
-
-
 
                     var periodLineId = ev.target.getAttribute("id")
                     updateBudgetLinePeriod(sourceBudgetLineId, periodLineId)
@@ -335,6 +333,7 @@
                     sourceDiv.innerHTML = ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field" /></div>' + sourceDiv.innerHTML;
                     sourceDiv.innerHTML = sourceDiv.innerHTML + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
                     sourceDiv.innerHTML = sourceDiv.innerHTML + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
+                    sourceDiv.innerHTML = sourceDiv.innerHTML + '<input type="text" hidden name="quantitySold" value="' + result.quantitySold + '" />';
 
                     var targetCol = periodLine.firstElementChild;
                     targetCol.append(sourceDiv);
@@ -374,6 +373,7 @@
                     htmlStr = htmlStr + '<div class="col-3">' + result.ourItemUnit + '</div>';
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="quantitySold" value="' + result.quantitySold + '" />';
                     htmlStr = htmlStr + '</div>';
 
                     var newDivNode = document.createElement("div");
@@ -407,7 +407,7 @@
                 dataType: "json",
                 success: function (result) {
 
-                    // Empty
+                   
                 },
 
                 error: function (request, status, error) {
@@ -434,7 +434,16 @@
                 dataType: "json",
                 success: function (result) {
 
-                    // Empty
+                    var budgetLineDiv = document.getElementById(result.id);
+                    var childDivs = budgetLineDiv.getElementsByTagName('input');
+
+                    for (i = 0; i < childDivs.length; i++) {
+                        var inputField = childDivs[i];
+
+                        if (inputField.name == "quantitySold") {
+                            inputField.value = result.quantitySold
+                        }                       
+                    }
                 },
 
                 error: function (request, status, error) {

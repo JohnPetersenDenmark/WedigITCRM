@@ -644,8 +644,8 @@ div.orderlineheadlines {
 .periodline-input-field {
     border-radius: 0.25rem;
     border: 1px solid #ced4da;
-    height: 20px;
-    width: 30%;
+    height: 80%;
+    width: 60%;
    
     text-align: right;
 }
