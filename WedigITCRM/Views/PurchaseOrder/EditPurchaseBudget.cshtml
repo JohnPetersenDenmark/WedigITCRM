@@ -104,7 +104,7 @@
                     <div id="@periodLine.Id" class="row periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
                         Træk hertil
                         <div style="height : 100px" class="col-12">
-
+                            
                         </div>
                     </div>
                 }
@@ -122,20 +122,23 @@
 
 
             var budgetLines = @Html.Raw(Json.Serialize(Model.BudgetLines.ToArray()));
+
             for (var i = 0; i < budgetLines.length; i++) {
-
-
                 var htmlStr;
 
                 htmlStr = '<div class="row budgetitemline" id="' + budgetLines[i].id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
-                htmlStr = htmlStr + ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field" value="' + budgetLines[i].quantityToOrder + '" /></div>';
+                htmlStr = htmlStr + ' <div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + budgetLines[i].quantityToOrder + '" /></div>';
                 htmlStr = htmlStr + '<div class="col-3">' + budgetLines[i].ourItemName + '</div>';
                 htmlStr = htmlStr + '<div class="col-3">' + budgetLines[i].ourItemNumber + '</div>';
                 htmlStr = htmlStr + '<div class="col-3">' + budgetLines[i].ourItemUnit + '</div>';
+                htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
                 htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + budgetLines[i].periodLineId + '" />';
                 htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + budgetLines[i].stockItemId + '" />';
-                htmlStr = htmlStr + '<input type="text" hidden name="quantitySold" value="' + budgetLines[i].quantitySold + '" />';
+                htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
+                htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + budgetLines[i].quantitySold + '" />';                             
                 htmlStr = htmlStr + '</div>';
+
+                // 
 
                 var newDivNode = document.createElement("div");
                 newDivNode.innerHTML = htmlStr;
@@ -178,6 +181,19 @@
                 $("#searchForm").submit();
             });
 
+
+            $(document).on("click", ".show-quantity-sold", function (event) {
+
+                var budgetLineDiv = $(this).parent();
+
+                var quantitySoldDiv = budgetLineDiv.find("[class='quantitysolddiv']");
+
+                quantitySoldDiv.toggle();
+
+
+                event.stopImmediatePropagation();
+            });
+
             $(document).on("click", ".fa-times", function (event) {
                 var resetFieldId = $(this).attr("id");
                 switch (resetFieldId) {
@@ -201,7 +217,7 @@
                         break;
                 }
                 $("#searchForm").submit();
-                event.stopImmediatePropagation()
+                event.stopImmediatePropagation();
             });
 
 
@@ -246,60 +262,15 @@
                     var sourceBudgetLineId = dataArray[0];
                     var periodLineId = ev.target.getAttribute("id");
 
-                    createBudgetLineFromBudgetLineFromItemLine(sourceBudgetLineId, periodLineId);
+                    createBudgetLineFromBudgetLine(sourceBudgetLineId, periodLineId);
                     return;
                 }
                 else {  // drag and  drop a budget line i.e move
-
+                
                     var sourceBudgetLineId = dataArray[0];
-                    var sourceBudgetLineDiv = document.getElementById(sourceBudgetLineId);
-
-                    var newBudgetLineDiv = sourceBudgetLineDiv.cloneNode(true);
-
-                    sourceBudgetLineDiv.remove();
-
-                    var childDivs = newBudgetLineDiv.getElementsByTagName('input');
-
-                    var sourceQuantity;
-                    var sourceperiodeDivId;
-                    var sourcestockItemId;
                    
-                    for (i = 0; i < childDivs.length; i++) {
-                        var inputField = childDivs[i];
-
-                        if (inputField.name == "periodeDivId") {
-                            sourceperiodeDivId = inputField.value;
-                        }
-
-                        if (inputField.name == "Quantity") {
-                            sourceQuantity = inputField.value;
-                        }
-
-                        if (inputField.name == "stockItemId") {
-                            sourcestockItemId = inputField.value;
-                        }
-                    }
-
-                    while (childDivs.length > 0) {
-                        var inputField = childDivs[0];
-                        inputField.remove();
-                    }
-
-                    var childDivs = newBudgetLineDiv.getElementsByTagName('label');
-                    var labelNode = childDivs[0];
-                    var parentRow = labelNode.parentNode;
-                    parentRow.remove();
-
-                    newBudgetLineDiv.innerHTML = ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field" value="' + sourceQuantity + '"/></div>' + newBudgetLineDiv.innerHTML;
-                    newBudgetLineDiv.innerHTML = newBudgetLineDiv.innerHTML + '<input type="text" hidden name="periodeDivId" value="' + ev.target.getAttribute("id") + '" />';
-                    newBudgetLineDiv.innerHTML = newBudgetLineDiv.innerHTML + '<input type="text" hidden name="stockItemId" value="' + sourcestockItemId + '" />';
-                    newBudgetLineDiv.innerHTML = newBudgetLineDiv.innerHTML + '<input type="text" hidden name="quantitySold" />';
-
-                    var targetCol = ev.target.firstElementChild;
-                    targetCol.appendChild(newBudgetLineDiv);
-
-                    var periodLineId = ev.target.getAttribute("id")
-                    updateBudgetLinePeriod(sourceBudgetLineId, periodLineId)
+                    var newPeriodLineId = ev.target.getAttribute("id")
+                    updateBudgetLinePeriod(sourceBudgetLineId, newPeriodLineId)
                 }
             }
         }
@@ -318,25 +289,31 @@
                 dataType: "json",
                 success: function (result) {
 
-                    var periodLine = document.getElementById(result.periodLineId);
-                    var sourceDiv = document.getElementById(result.stockItemId);
+                    var sourceItemLineDiv = document.getElementById(result.stockItemId);
+                    sourceItemLineDiv.remove();
 
-                    sourceDiv.removeAttribute("ondragstart");
-                    sourceDiv.setAttribute("ondragstart", "dragPeriodLine(event)")
+                    var htmlStr;
 
-                    sourceDiv.removeAttribute("id");
-                    sourceDiv.setAttribute("id", result.id);
+                    htmlStr = '<div class="row budgetitemline" id="' + result.id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
+                    htmlStr = htmlStr + ' <div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>';
+                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemName + '</div>';
+                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemNumber + '</div>';
+                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemUnit + '</div>';
+                    htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
+                    htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
+                    htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
+                    htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + result.quantitySold + '" />';
+                    htmlStr = htmlStr + '</div>';
 
-                    sourceDiv.classList.remove("itemline");
-                    sourceDiv.classList.add("budgetitemline");
+                    var newBudgetLine = document.createElement("div");
+                    newBudgetLine.innerHTML = htmlStr;
 
-                    sourceDiv.innerHTML = ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field" /></div>' + sourceDiv.innerHTML;
-                    sourceDiv.innerHTML = sourceDiv.innerHTML + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
-                    sourceDiv.innerHTML = sourceDiv.innerHTML + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
-                    sourceDiv.innerHTML = sourceDiv.innerHTML + '<input type="text" hidden name="quantitySold" value="' + result.quantitySold + '" />';
+                    var periodeDiv = document.getElementById(result.periodLineId);
 
-                    var targetCol = periodLine.firstElementChild;
-                    targetCol.append(sourceDiv);
+                    var targetCol = periodeDiv.firstElementChild;
+                    targetCol.appendChild(newBudgetLine);
+
                 },
 
                 error: function (request, status, error) {
@@ -349,7 +326,7 @@
             });
         }
 
-        function createBudgetLineFromBudgetLineFromItemLine(sourceBudgetLineId, periodLineId) {
+        function createBudgetLineFromBudgetLine(sourceBudgetLineId, periodLineId) {
 
             $.ajax({
                 type: "POST",
@@ -362,25 +339,27 @@
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
                 dataType: "json",
                 success: function (result) {
-
-                    var periodLine = document.getElementById(result.periodLineId);
                     var htmlStr;
 
                     htmlStr = '<div class="row budgetitemline" id="' + result.id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
-                    htmlStr = htmlStr + ' <div class="col-3"><label>Antal</label><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>' ;
+                    htmlStr = htmlStr + ' <div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>';
                     htmlStr = htmlStr + '<div class="col-3">' + result.ourItemName + '</div>';
                     htmlStr = htmlStr + '<div class="col-3">' + result.ourItemNumber + '</div>';
                     htmlStr = htmlStr + '<div class="col-3">' + result.ourItemUnit + '</div>';
+                    htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
-                    htmlStr = htmlStr + '<input type="text" hidden name="quantitySold" value="' + result.quantitySold + '" />';
+                    htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
+                    htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + result.quantitySold + '" />';
                     htmlStr = htmlStr + '</div>';
 
-                    var newDivNode = document.createElement("div");
-                    newDivNode.innerHTML = htmlStr;
+                    var newBudgetLine = document.createElement("div");
+                    newBudgetLine.innerHTML = htmlStr;
 
-                    var targetCol = periodLine.firstElementChild;
-                    targetCol.append(newDivNode);
+                    var periodeDiv = document.getElementById(result.periodLineId);
+
+                    var targetCol = periodeDiv.firstElementChild;
+                    targetCol.appendChild(newBudgetLine);
                 },
 
                 error: function (request, status, error) {
@@ -420,30 +399,45 @@
             });
         }
 
-        function updateBudgetLinePeriod(budgetLineId, periodLineId) {
+        function updateBudgetLinePeriod(budgetLineId, newPeriodLineId) {
 
             $.ajax({
                 type: "POST",
                 url: "/purchaseorder/updateBudgetLinePeriod",
                 data: {
                     id: budgetLineId,
-                    periodLineId: periodLineId,
+                    periodLineId: newPeriodLineId,                
                     purchaseBudgetId: $('#PurchaseBudgetId').val()
                 },
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
                 dataType: "json",
                 success: function (result) {
 
-                    var budgetLineDiv = document.getElementById(result.id);
-                    var childDivs = budgetLineDiv.getElementsByTagName('input');
+                    var sourceBudgetLineDiv = document.getElementById(result.id);
+                    sourceBudgetLineDiv.remove();
 
-                    for (i = 0; i < childDivs.length; i++) {
-                        var inputField = childDivs[i];
+                    var htmlStr;
 
-                        if (inputField.name == "quantitySold") {
-                            inputField.value = result.quantitySold
-                        }                       
-                    }
+                    htmlStr = '<div class="row budgetitemline" id="' + result.id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
+                    htmlStr = htmlStr + ' <div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>';
+                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemName + '</div>';
+                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemNumber + '</div>';
+                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemUnit + '</div>';
+                    htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
+                    htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
+                    htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
+                    htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + result.quantitySold + '" />';
+                    htmlStr = htmlStr + '</div>';
+
+                    var newBudgetLine = document.createElement("div");
+                    newBudgetLine.innerHTML = htmlStr;
+
+                    var periodeDiv = document.getElementById(result.periodLineId);
+
+                    var targetCol = periodeDiv.firstElementChild;
+                    targetCol.appendChild(newBudgetLine);
+
                 },
 
                 error: function (request, status, error) {

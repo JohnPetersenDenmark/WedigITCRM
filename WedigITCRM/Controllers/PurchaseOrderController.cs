@@ -1015,22 +1015,30 @@ namespace WedigITCRM.Controllers
                         {
                             if (!string.IsNullOrEmpty(model.PeriodLineId))
                             {
+                                string OldPeriodLineId = budgetLine.PeriodLineId;
+                              
                                 budgetLine.PeriodLineId = model.PeriodLineId;
                                 _purchaseBudgetLinesRepository.Update(budgetLine);
 
-                                if (companyAccount.IntegrationDinero)
+                                StockItem stockItem = _stockItemRepository.getStockItem(budgetLine.StockItemId);
+                                if (stockItem != null)
                                 {
-                                   
-                                    StockItem stockItem = _stockItemRepository.getStockItem(budgetLine.StockItemId);
-                                    if (stockItem != null)
-                                    {
+                                    model.OurItemName = stockItem.ItemName;
+                                    model.OurItemNumber = stockItem.ItemNumber;
+                                    model.OurItemUnit = stockItem.Unit;
+                                }
+
+                                model.oldPeriodLineId = OldPeriodLineId.ToString();
+                                model.QuantityToOrder = budgetLine.QuantityToOrder.ToString();
+
+                                if (companyAccount.IntegrationDinero)
+                                {                                                                       
                                         PurchaseBudgetPeriodLine periodLine = _purchaseBudgetPeriodLineRepository.GetPurchaseBudgetPeriodLine(Int32.Parse(budgetLine.PeriodLineId));
 
                                         if (periodLine != null)
                                         {
                                             model.QuantitySold = getTotalSoldAmountForStockItem(periodLine.PeriodStartDate, periodLine.PeriodEndDate, stockItem.DineroGuiD, companyAccount).ToString();
-                                        }
-                                    }                               
+                                        }                                                                  
                                 }
                             }
                         }
@@ -1681,6 +1689,7 @@ namespace WedigITCRM.Controllers
         public string Id { get; set; }
         public string StockItemId { get; set; }
         public string PeriodLineId { get; set; }
+        public string oldPeriodLineId { get; set; }        
         public string PurchaseBudgetId { get; set; }
         public string LocationId { get; set; }
         public string Location { get; set; }
