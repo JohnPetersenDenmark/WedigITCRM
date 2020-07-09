@@ -786,6 +786,8 @@ namespace WedigITCRM.Controllers
                     purchaseBudgetLineModel.OurItemName = stockItem.ItemName;
                     purchaseBudgetLineModel.OurItemNumber = stockItem.ItemNumber;
                     purchaseBudgetLineModel.OurItemUnit = stockItem.Unit;
+                    purchaseBudgetLineModel.OurCostPrice = stockItem.CostPrice.ToString();
+                    purchaseBudgetLineModel.LineTotalAmount = (budgetLine.QuantityToOrder * stockItem.CostPrice).ToString();
                     purchaseBudgetLineModel.StockItemId = stockItem.Id.ToString();
                    
 
@@ -875,8 +877,13 @@ namespace WedigITCRM.Controllers
                             model.OurItemName = stockItem.ItemName;
                             model.OurItemNumber = stockItem.ItemNumber;
                             model.OurItemUnit = stockItem.Unit;
+                            model.OurCostPrice = stockItem.CostPrice.ToString();                           
                             model.StockItemId = stockItem.Id.ToString();
                         }
+
+                        model.QuantityToOrder = "0";
+                        model.LineTotalAmount = "0";
+
 
                         if (companyAccount.IntegrationDinero)
                         {
@@ -950,6 +957,8 @@ namespace WedigITCRM.Controllers
                                 model.OurItemName = stockItem.ItemName;
                                 model.OurItemNumber = stockItem.ItemNumber;
                                 model.OurItemUnit = stockItem.Unit;
+                                model.OurCostPrice = stockItem.CostPrice.ToString();
+                                model.LineTotalAmount = (budgetLineToCopyFrom.QuantityToOrder * stockItem.CostPrice).ToString();
                             }
 
                             model.Id = budgetLineToCopyToNew.Id.ToString();
@@ -985,12 +994,24 @@ namespace WedigITCRM.Controllers
                     {
                         PurchaseBudgetLine budgetLine = _purchaseBudgetLinesRepository.GetPurchaseBudgetLine(Int32.Parse(model.Id));
                         if (budgetLine != null)
-                        {
-                            if (!string.IsNullOrEmpty(model.QuantityToOrder))
-                            {
-                                budgetLine.QuantityToOrder = Decimal.Parse(model.QuantityToOrder);
-                                _purchaseBudgetLinesRepository.Update(budgetLine);
-                            }
+                        {                          
+                                StockItem stockItem = _stockItemRepository.getStockItem(budgetLine.StockItemId);
+                                if (stockItem != null)
+                                {
+                                    if (!string.IsNullOrEmpty(model.QuantityToOrder))
+                                    {
+                                        budgetLine.QuantityToOrder = Decimal.Parse(model.QuantityToOrder);
+
+                                        model.LineTotalAmount = (budgetLine.QuantityToOrder * stockItem.CostPrice).ToString();
+                                    }
+                                    else
+                                    {
+                                        model.QuantityToOrder = "0";
+                                        model.LineTotalAmount = "0";
+                                    }
+                                }
+                                                     
+                            _purchaseBudgetLinesRepository.Update(budgetLine);
                         }
                     }
                 }
@@ -1026,6 +1047,8 @@ namespace WedigITCRM.Controllers
                                     model.OurItemName = stockItem.ItemName;
                                     model.OurItemNumber = stockItem.ItemNumber;
                                     model.OurItemUnit = stockItem.Unit;
+                                    model.OurCostPrice = stockItem.CostPrice.ToString();
+                                    model.LineTotalAmount = (stockItem.CostPrice * budgetLine.QuantityToOrder).ToString();
                                 }
 
                                 model.oldPeriodLineId = OldPeriodLineId.ToString();

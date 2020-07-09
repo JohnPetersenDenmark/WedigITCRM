@@ -71,7 +71,7 @@
         </div>
     </div>
 
-    
+
 
     <div class="row">
         <div class="col-4">
@@ -104,7 +104,7 @@
                     <div id="@periodLine.Id" class="row periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
                         Træk hertil
                         <div style="height : 100px" class="col-12">
-                            
+
                         </div>
                     </div>
                 }
@@ -127,18 +127,23 @@
                 var htmlStr;
 
                 htmlStr = '<div class="row budgetitemline" id="' + budgetLines[i].id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
-                htmlStr = htmlStr + ' <div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + budgetLines[i].quantityToOrder + '" /></div>';
-                htmlStr = htmlStr + '<div class="col-3">' + budgetLines[i].ourItemName + '</div>';
-                htmlStr = htmlStr + '<div class="col-3">' + budgetLines[i].ourItemNumber + '</div>';
-                htmlStr = htmlStr + '<div class="col-3">' + budgetLines[i].ourItemUnit + '</div>';
+
+                htmlStr = htmlStr + '<div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + budgetLines[i].quantityToOrder + '" /></div>';
+                htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].ourItemName + '</div>';
+                htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].ourItemNumber + '</div>';
+                htmlStr = htmlStr + '<div class="col-1">' + budgetLines[i].ourItemUnit + '</div>';
+                htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].ourCostPrice + '</div>';
+                htmlStr = htmlStr + '<div class="col-2 linetotalamount">' + budgetLines[i].lineTotalAmount + '</div>';
                 htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
                 htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + budgetLines[i].periodLineId + '" />';
                 htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + budgetLines[i].stockItemId + '" />';
                 htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
-                htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + budgetLines[i].quantitySold + '" />';                             
+                htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + budgetLines[i].quantitySold + '" />';
                 htmlStr = htmlStr + '</div>';
 
-                // 
+                htmlStr = htmlStr + '</div>';
+
+                //
 
                 var newDivNode = document.createElement("div");
                 newDivNode.innerHTML = htmlStr;
@@ -266,9 +271,9 @@
                     return;
                 }
                 else {  // drag and  drop a budget line i.e move
-                
+
                     var sourceBudgetLineId = dataArray[0];
-                   
+
                     var newPeriodLineId = ev.target.getAttribute("id")
                     updateBudgetLinePeriod(sourceBudgetLineId, newPeriodLineId)
                 }
@@ -296,14 +301,17 @@
 
                     htmlStr = '<div class="row budgetitemline" id="' + result.id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
                     htmlStr = htmlStr + ' <div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>';
-                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemName + '</div>';
-                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemNumber + '</div>';
-                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemUnit + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + result.ourItemName + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + result.ourItemNumber + '</div>';
+                    htmlStr = htmlStr + '<div class="col-1">' + result.ourItemUnit + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + result.ourCostPrice + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2 linetotalamount">' + result.lineTotalAmount + '</div>';
                     htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
                     htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
                     htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + result.quantitySold + '" />';
+                    htmlStr = htmlStr + '</div>';
                     htmlStr = htmlStr + '</div>';
 
                     var newBudgetLine = document.createElement("div");
@@ -343,14 +351,17 @@
 
                     htmlStr = '<div class="row budgetitemline" id="' + result.id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
                     htmlStr = htmlStr + ' <div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>';
-                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemName + '</div>';
-                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemNumber + '</div>';
-                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemUnit + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + result.ourItemName + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + result.ourItemNumber + '</div>';
+                    htmlStr = htmlStr + '<div class="col-1">' + result.ourItemUnit + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + result.ourCostPrice + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2 linetotalamount">' + result.lineTotalAmount + '</div>';
                     htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
                     htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
                     htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + result.quantitySold + '" />';
+                    htmlStr = htmlStr + '</div>';
                     htmlStr = htmlStr + '</div>';
 
                     var newBudgetLine = document.createElement("div");
@@ -386,7 +397,15 @@
                 dataType: "json",
                 success: function (result) {
 
-                   
+                   // class = linetotalamount
+
+                    var budgetLineDiv = document.getElementById(result.id);
+
+                    var lineTotalAmountDiv = budgetLineDiv.getElementsByClassName("linetotalamount");
+
+                    lineTotalAmountDiv[0].innerText = result.lineTotalAmount;
+
+                  
                 },
 
                 error: function (request, status, error) {
@@ -406,7 +425,7 @@
                 url: "/purchaseorder/updateBudgetLinePeriod",
                 data: {
                     id: budgetLineId,
-                    periodLineId: newPeriodLineId,                
+                    periodLineId: newPeriodLineId,
                     purchaseBudgetId: $('#PurchaseBudgetId').val()
                 },
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
@@ -420,14 +439,17 @@
 
                     htmlStr = '<div class="row budgetitemline" id="' + result.id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
                     htmlStr = htmlStr + ' <div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>';
-                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemName + '</div>';
-                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemNumber + '</div>';
-                    htmlStr = htmlStr + '<div class="col-3">' + result.ourItemUnit + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + result.ourItemName + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + result.ourItemNumber + '</div>';
+                    htmlStr = htmlStr + '<div class="col-1">' + result.ourItemUnit + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + result.ourCostPrice + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2 linetotalamount">' + result.lineTotalAmount + '</div>';
                     htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
                     htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
                     htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + result.quantitySold + '" />';
+                    htmlStr = htmlStr + '</div>';
                     htmlStr = htmlStr + '</div>';
 
                     var newBudgetLine = document.createElement("div");
