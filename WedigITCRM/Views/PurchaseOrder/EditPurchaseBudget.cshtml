@@ -100,24 +100,39 @@
             {
                 @foreach (var periodLine in Model.PeriodLines)
                 {
-                    <div>@periodLine.HeadLine</div>
-                    <div id="@periodLine.Id" class="row periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        Træk hertil
-                        <div style="height : 100px" class="col-12">
-
+ 
+                    <div id="@periodLine.Id" style="height : 100px">
+                        <div class="row">
+                            <div class="col-12 periodcontainer" style="height : 30%" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                Træk hertil  @periodLine.HeadLine
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div style="height : 60%" class="col-12 budgetlinescontainer">
+                                <div class="row">
+                                    <div class="col-2">Antal</div>
+                                    <div class="col-2">Vare</div>
+                                    <div class="col-2">Varenummer</div>
+                                    <div class="col-1">Enheder</div>
+                                    <div class="col-2">Kostpris</div>
+                                    <div class="col-2">Total</div>
+                                    <div class="col-1"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 }
             }
 
+
         </div>
     </div>
-</div>
 
 
 
-@section Scripts {
-    <script>
+    @section Scripts {
+        <script>
         $(document).ready(function () {
 
 
@@ -150,8 +165,10 @@
 
                 var periodeDiv = document.getElementById(budgetLines[i].periodLineId);
 
-                var targetCol = periodeDiv.firstElementChild;
-                targetCol.appendChild(newDivNode);
+                var targetCols = periodeDiv.getElementsByClassName("budgetlinescontainer");
+
+                //var targetCol = periodeDiv.firstElementChild;
+                targetCols[0].appendChild(newDivNode);
             }
 
             $(document).on('change', '.periodline-input-field', function () {
@@ -234,7 +251,7 @@
         }
 
         function dragStockItemLine(ev) {
-            ev.dataTransfer.setData("text", ev.target.id + "|" + "1");
+             ev.dataTransfer.setData("text", ev.target.id + "|" + "1");
         }
 
         function dragPeriodLine(ev) {
@@ -257,7 +274,7 @@
             if (dataArray[1] == "1") {   // drag and  drop a item line to budget line.
 
                 var stockItemId = dataArray[0];
-                var periodLineId = ev.target.getAttribute("id");
+                var periodLineId = ev.target.parentElement.parentElement.getAttribute("id");
 
                 createBudgetLineFromItemLine(stockItemId, periodLineId);
             }
@@ -265,7 +282,7 @@
             if (dataArray[1] == "0") {  // drag and  drop a budget line line to new budget line.
                 if (ev.ctrlKey) {
                     var sourceBudgetLineId = dataArray[0];
-                    var periodLineId = ev.target.getAttribute("id");
+                    var periodLineId = ev.target.parentElement.parentElement.getAttribute("id");
 
                     createBudgetLineFromBudgetLine(sourceBudgetLineId, periodLineId);
                     return;
@@ -274,7 +291,7 @@
 
                     var sourceBudgetLineId = dataArray[0];
 
-                    var newPeriodLineId = ev.target.getAttribute("id")
+                    var newPeriodLineId = ev.target.parentElement.parentElement.getAttribute("id");
                     updateBudgetLinePeriod(sourceBudgetLineId, newPeriodLineId)
                 }
             }
@@ -319,8 +336,10 @@
 
                     var periodeDiv = document.getElementById(result.periodLineId);
 
-                    var targetCol = periodeDiv.firstElementChild;
-                    targetCol.appendChild(newBudgetLine);
+                    //var targetCol = periodeDiv.firstElementChild;
+                    var targetCols = periodeDiv.getElementsByClassName("budgetlinescontainer");
+
+                    targetCols[0].appendChild(newBudgetLine);
 
                 },
 
@@ -369,8 +388,9 @@
 
                     var periodeDiv = document.getElementById(result.periodLineId);
 
-                    var targetCol = periodeDiv.firstElementChild;
-                    targetCol.appendChild(newBudgetLine);
+                    var targetCols = periodeDiv.getElementsByClassName("budgetlinescontainer");
+
+                    targetCols[0].appendChild(newBudgetLine);
                 },
 
                 error: function (request, status, error) {
@@ -405,7 +425,7 @@
 
                     lineTotalAmountDiv[0].innerText = result.lineTotalAmount;
 
-                  
+
                 },
 
                 error: function (request, status, error) {
@@ -457,8 +477,9 @@
 
                     var periodeDiv = document.getElementById(result.periodLineId);
 
-                    var targetCol = periodeDiv.firstElementChild;
-                    targetCol.appendChild(newBudgetLine);
+                    var targetCols = periodeDiv.getElementsByClassName("budgetlinescontainer");
+
+                    targetCols[0].appendChild(newBudgetLine);
 
                 },
 
@@ -473,5 +494,5 @@
         }
 
 
-    </script>
-}
+        </script>
+    }

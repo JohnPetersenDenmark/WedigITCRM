@@ -1,0 +1,1108 @@
+2020-07-10 00:00:01.6524|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/PurchaseOrder/EditPurchaseBudget?purchaseBudgetId=105  
+2020-07-10 00:00:01.7003|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "EditPurchaseBudget", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditPurchaseBudget(Int32, System.String, System.String, System.String, System.String, System.String, System.String, System.String, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:00:01.7079|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:00:01.7079|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:00:01.7280|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:00:01.7376|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+2020-07-10 00:00:01.7376|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:00:01.7612|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurLocationId], [p].[PeriodLineId], [p].[PurchaseBudgetId], [p].[QuantityToOrder], [p].[StockItemId]
+FROM [PurchaseBudgetLines] AS [p]
+2020-07-10 00:00:02.2167|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (47ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:00:03.1007|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:00:04.1461|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (33ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:00:05.0607|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:00:07.2821|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:00:07.2898|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory1s] AS [s]
+2020-07-10 00:00:07.2996|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category1Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory2s] AS [s]
+2020-07-10 00:00:07.2996|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category2Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory3s] AS [s]
+2020-07-10 00:00:07.3205|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+2020-07-10 00:00:07.3320|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view EditPurchaseBudget.
+2020-07-10 00:00:07.3619|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:00:07.4133|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view EditPurchaseBudget executed in 58.4607ms.
+2020-07-10 00:00:08.2370|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.EditPurchaseBudget (WedigITCRM) in 6530.2984ms
+2020-07-10 00:00:08.2370|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 6605.505ms 200 text/html; charset=utf-8
+2020-07-10 00:00:38.2638|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:00:38.2740|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:00:38.2851|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-07-10 00:00:38.2851|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:00:38.3138|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-07-10 00:01:00.6435|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseorder/createBudgetLineFromItemLine application/x-www-form-urlencoded; charset=UTF-8 55
+2020-07-10 00:01:00.6435|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "createBudgetLineFromItemLine", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult createBudgetLineFromItemLine(WedigITCRM.Controllers.PurchaseBudgetLineModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:01:00.6904|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:01:00.7093|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:01:00.7212|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:01:00.7212|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:01:00.7465|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Decimal), @p6='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetLines] ([CreatedDate], [LastEditedDate], [OurLocationId], [PeriodLineId], [PurchaseBudgetId], [QuantityToOrder], [StockItemId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [PurchaseBudgetLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:01:00.7596|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+WHERE [s].[Id] = @__p_0
+2020-07-10 00:01:00.9782|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (17ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:01:01.9866|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.PurchaseBudgetLineModel'.
+2020-07-10 00:01:02.0059|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.createBudgetLineFromItemLine (WedigITCRM) in 1340.6551ms
+2020-07-10 00:01:02.0059|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1369.176ms 200 application/json; charset=utf-8
+2020-07-10 00:01:38.2627|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:01:38.2943|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:01:38.3152|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-07-10 00:01:38.3347|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:01:38.3581|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-07-10 00:02:38.2604|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:02:38.2604|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:02:38.2859|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-07-10 00:02:38.2859|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (16ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:02:38.3045|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:02:38.3190|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-07-10 00:03:38.2670|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:03:38.2670|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:03:38.2670|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:03:38.2923|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-07-10 00:03:38.3034|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:03:38.3159|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-07-10 00:04:14.2167|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/PurchaseOrder/EditPurchaseBudget?purchaseBudgetId=105  
+2020-07-10 00:04:14.2602|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "EditPurchaseBudget", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditPurchaseBudget(Int32, System.String, System.String, System.String, System.String, System.String, System.String, System.String, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:04:14.2800|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:04:14.2962|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:04:14.3102|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:04:14.3305|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+2020-07-10 00:04:14.3764|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:04:14.7856|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurLocationId], [p].[PeriodLineId], [p].[PurchaseBudgetId], [p].[QuantityToOrder], [p].[StockItemId]
+FROM [PurchaseBudgetLines] AS [p]
+2020-07-10 00:04:14.8782|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:04:15.7533|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:04:16.6593|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (16ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:04:17.4874|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:04:20.2567|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:04:20.2686|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory1s] AS [s]
+2020-07-10 00:04:20.2830|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category1Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory2s] AS [s]
+2020-07-10 00:04:20.2977|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category2Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory3s] AS [s]
+2020-07-10 00:04:20.3171|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+2020-07-10 00:04:21.2523|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view EditPurchaseBudget.
+2020-07-10 00:04:21.3025|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:04:21.3180|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view EditPurchaseBudget executed in 985.3664ms.
+2020-07-10 00:04:21.3318|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.EditPurchaseBudget (WedigITCRM) in 7058.6893ms
+2020-07-10 00:04:21.5127|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 7125.7505ms 200 text/html; charset=utf-8
+2020-07-10 00:04:38.2749|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:04:38.2848|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:04:38.3065|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:04:38.3159|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-07-10 00:04:38.3159|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-07-10 00:04:38.4131|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (29ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:04:38.8117|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (266ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-07-10 00:04:39.5398|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:04:39.5564|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@p21='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Guid), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Vendors] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [CurrencyCode] = @p4, [DeliveryConditions] = @p5, [DeliveryConditionsId] = @p6, [DineroGuiD] = @p7, [Email] = @p8, [ForeignCity] = @p9, [ForeignZip] = @p10, [HomePage] = @p11, [LastEditedDate] = @p12, [Name] = @p13, [PaymentConditions] = @p14, [PaymentConditionsId] = @p15, [PhoneNumber] = @p16, [Street] = @p17, [Zip] = @p18, [companyAccountId] = @p19, [postalCodeId] = @p20
+WHERE [Id] = @p21;
+SELECT @@ROWCOUNT;
+2020-07-10 00:04:39.5668|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-07-10 00:04:39.5668|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Contacts] AS [c]
+2020-07-10 00:04:39.5850|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-07-10 00:04:39.6002|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@p20='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTime2), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Companies] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [CurrencyCode] = @p4, [DineroGuiD] = @p5, [Email] = @p6, [ForeignCity] = @p7, [ForeignZip] = @p8, [HomePage] = @p9, [IsPerson] = @p10, [LastEditedDate] = @p11, [Name] = @p12, [PaymentConditions] = @p13, [PhoneNumber] = @p14, [SMSverificationCode] = @p15, [Street] = @p16, [Zip] = @p17, [companyAccountId] = @p18, [postalCodeId] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;
+2020-07-10 00:04:39.6002|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:04:39.6173|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p21='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Guid), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Vendors] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [CurrencyCode] = @p4, [DeliveryConditions] = @p5, [DeliveryConditionsId] = @p6, [DineroGuiD] = @p7, [Email] = @p8, [ForeignCity] = @p9, [ForeignZip] = @p10, [HomePage] = @p11, [LastEditedDate] = @p12, [Name] = @p13, [PaymentConditions] = @p14, [PaymentConditionsId] = @p15, [PhoneNumber] = @p16, [Street] = @p17, [Zip] = @p18, [companyAccountId] = @p19, [postalCodeId] = @p20
+WHERE [Id] = @p21;
+SELECT @@ROWCOUNT;
+2020-07-10 00:04:39.6268|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Contacts] AS [c]
+2020-07-10 00:04:39.6423|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@p20='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTime2), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Contacts] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [CurrencyCode] = @p4, [DineroGuiD] = @p5, [Email] = @p6, [ForeignCity] = @p7, [ForeignZip] = @p8, [HomePage] = @p9, [IsPerson] = @p10, [LastEditedDate] = @p11, [Name] = @p12, [PaymentConditions] = @p13, [PhoneNumber] = @p14, [SMSverificationCode] = @p15, [Street] = @p16, [Zip] = @p17, [companyAccountId] = @p18, [postalCodeId] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;
+2020-07-10 00:04:39.6423|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-07-10 00:04:39.6657|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:04:39.6755|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Contacts] AS [c]
+2020-07-10 00:04:39.6755|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p20='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTime2), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Contacts] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [CurrencyCode] = @p4, [DineroGuiD] = @p5, [Email] = @p6, [ForeignCity] = @p7, [ForeignZip] = @p8, [HomePage] = @p9, [IsPerson] = @p10, [LastEditedDate] = @p11, [Name] = @p12, [PaymentConditions] = @p13, [PhoneNumber] = @p14, [SMSverificationCode] = @p15, [Street] = @p16, [Zip] = @p17, [companyAccountId] = @p18, [postalCodeId] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;
+2020-07-10 00:04:39.6941|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-07-10 00:04:39.6941|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:04:39.7112|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Contacts] AS [c]
+2020-07-10 00:04:39.7210|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p20='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTime2), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Contacts] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [CurrencyCode] = @p4, [DineroGuiD] = @p5, [Email] = @p6, [ForeignCity] = @p7, [ForeignZip] = @p8, [HomePage] = @p9, [IsPerson] = @p10, [LastEditedDate] = @p11, [Name] = @p12, [PaymentConditions] = @p13, [PhoneNumber] = @p14, [SMSverificationCode] = @p15, [Street] = @p16, [Zip] = @p17, [companyAccountId] = @p18, [postalCodeId] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;
+2020-07-10 00:04:39.7210|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-07-10 00:04:39.7395|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:04:39.7574|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@p31='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (DbType = DateTime2), @p19='?' (DbType = Boolean), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = DateTime2), @p24='?' (DbType = DateTime2), @p25='?' (DbType = Guid), @p26='?' (DbType = DateTime2), @p27='?' (DbType = Boolean), @p28='?' (DbType = Boolean), @p29='?' (DbType = Boolean), @p30='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyCity] = @p2, [CompanyCountryCode] = @p3, [CompanyName] = @p4, [CompanyStreet] = @p5, [CompanyZip] = @p6, [Companyidentifier] = @p7, [ContactsToDineroLastSynchronizationDate] = @p8, [ContactsToNyxiumLastSynchronizationDate] = @p9, [DineroAPIOrganization] = @p10, [DineroAPIOrganizationKey] = @p11, [IntegrationDinero] = @p12, [LogoAttachmentIds] = @p13, [NyxiumLicenseTypeId] = @p14, [NyxiumLicenseTypeName] = @p15, [SalesStatistic] = @p16, [StockItemsToDineroLastSynchronizationDate] = @p17, [StockItemsToNyxiumSynchronizationDate] = @p18, [SubscriptionCRM] = @p19, [SubscriptionInventory] = @p20, [SubscriptionProcurement] = @p21, [SubscriptionVendor] = @p22, [VendorsItemsToDineroLastSynchronizationDate] = @p23, [activationDate] = @p24, [activationKey] = @p25, [registrationDate] = @p26, [synchronizeCustomerFromDineroToNyxium] = @p27, [synchronizeCustomerFromNyxiumToDinero] = @p28, [synchronizeStockItemFromDineroToNyxium] = @p29, [synchronizeStockItemFromNyxiumToDinero] = @p30
+WHERE [companyAccountId] = @p31;
+SELECT @@ROWCOUNT;
+2020-07-10 00:05:07.6744|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/PurchaseOrder/EditPurchaseBudget?purchaseBudgetId=105  
+2020-07-10 00:05:07.7224|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "EditPurchaseBudget", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditPurchaseBudget(Int32, System.String, System.String, System.String, System.String, System.String, System.String, System.String, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:05:07.7224|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:05:07.7507|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:05:07.7765|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:05:07.7969|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+2020-07-10 00:05:07.8119|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:05:07.8211|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurLocationId], [p].[PeriodLineId], [p].[PurchaseBudgetId], [p].[QuantityToOrder], [p].[StockItemId]
+FROM [PurchaseBudgetLines] AS [p]
+2020-07-10 00:05:07.8351|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:05:08.6607|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:05:09.5830|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:05:10.9190|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:05:13.9319|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:05:13.9413|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory1s] AS [s]
+2020-07-10 00:05:13.9413|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category1Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory2s] AS [s]
+2020-07-10 00:05:13.9609|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category2Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory3s] AS [s]
+2020-07-10 00:05:13.9609|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+2020-07-10 00:05:14.2223|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view EditPurchaseBudget.
+2020-07-10 00:05:14.2807|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:05:14.3139|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view EditPurchaseBudget executed in 325.9668ms.
+2020-07-10 00:05:14.3139|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.EditPurchaseBudget (WedigITCRM) in 6591.288ms
+2020-07-10 00:05:14.3966|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 6727.3915ms 200 text/html; charset=utf-8
+2020-07-10 00:05:38.2764|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:05:38.2764|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (19ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:05:38.2883|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-07-10 00:05:38.3028|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:05:38.3168|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-07-10 00:06:12.6700|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseorder/updateBudgetLineQuantity application/x-www-form-urlencoded; charset=UTF-8 45
+2020-07-10 00:06:12.6989|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "updateBudgetLineQuantity", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult updateBudgetLineQuantity(WedigITCRM.Controllers.PurchaseBudgetLineModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:06:12.7235|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:06:12.7514|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:06:12.7514|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:06:12.7774|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:06:12.7929|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurLocationId], [p].[PeriodLineId], [p].[PurchaseBudgetId], [p].[QuantityToOrder], [p].[StockItemId]
+FROM [PurchaseBudgetLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:06:12.8151|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+WHERE [s].[Id] = @__p_0
+2020-07-10 00:06:12.8320|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Decimal), @p6='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [PurchaseBudgetLines] SET [CreatedDate] = @p0, [LastEditedDate] = @p1, [OurLocationId] = @p2, [PeriodLineId] = @p3, [PurchaseBudgetId] = @p4, [QuantityToOrder] = @p5, [StockItemId] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2020-07-10 00:06:12.8761|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.PurchaseBudgetLineModel'.
+2020-07-10 00:06:13.2725|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.updateBudgetLineQuantity (WedigITCRM) in 241.0494ms
+2020-07-10 00:06:13.2848|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 613.8827ms 200 application/json; charset=utf-8
+2020-07-10 00:06:38.2888|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:06:38.2888|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (30ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:06:38.3138|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-07-10 00:06:38.3220|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:06:38.3443|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-07-10 00:07:02.3428|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseorder/updateBudgetLinePeriod application/x-www-form-urlencoded; charset=UTF-8 44
+2020-07-10 00:07:02.3832|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "updateBudgetLinePeriod", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult updateBudgetLinePeriod(WedigITCRM.Controllers.PurchaseBudgetLineModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:07:02.4082|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:07:02.4082|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:07:02.4461|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:07:02.4592|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:07:02.4592|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurLocationId], [p].[PeriodLineId], [p].[PurchaseBudgetId], [p].[QuantityToOrder], [p].[StockItemId]
+FROM [PurchaseBudgetLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:07:02.4831|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Decimal), @p6='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [PurchaseBudgetLines] SET [CreatedDate] = @p0, [LastEditedDate] = @p1, [OurLocationId] = @p2, [PeriodLineId] = @p3, [PurchaseBudgetId] = @p4, [QuantityToOrder] = @p5, [StockItemId] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2020-07-10 00:07:02.4941|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+WHERE [s].[Id] = @__p_0
+2020-07-10 00:07:02.5035|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:07:03.4426|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.PurchaseBudgetLineModel'.
+2020-07-10 00:07:03.4623|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.updateBudgetLinePeriod (WedigITCRM) in 1062.3092ms
+2020-07-10 00:07:03.4760|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1131.5232ms 200 application/json; charset=utf-8
+2020-07-10 00:07:33.3425|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/purchaseOrder/createPurchasebudget  
+2020-07-10 00:07:33.3809|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "CreatePurchaseBudget", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreatePurchaseBudget() on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:07:33.4423|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:07:33.4592|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:07:33.4751|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view CreatePurchaseBudget.
+2020-07-10 00:07:33.4948|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:07:33.5076|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view CreatePurchaseBudget executed in 37.2347ms.
+2020-07-10 00:07:34.8511|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.CreatePurchaseBudget (WedigITCRM) in 116.271ms
+2020-07-10 00:07:35.0576|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1544.5945ms 200 text/html; charset=utf-8
+2020-07-10 00:07:38.2605|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:07:38.2605|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:07:38.2728|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-07-10 00:07:38.2728|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:07:38.2901|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-07-10 00:07:50.7163|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseOrder/createPurchasebudget application/x-www-form-urlencoded 274
+2020-07-10 00:07:50.7416|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "CreatePurchaseBudget", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreatePurchaseBudget(WedigITCRM.ViewModels.PurchaseBudgetViewModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:07:50.7595|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:07:50.7756|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:07:50.7881|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:07:50.8004|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgets] ([CreatedDate], [EndDateOfPeriod], [LastEditedDate], [Period], [StartDateOfPeriod], [companyAccountId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [PurchaseBudgets]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:07:50.8310|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetPeriodLines] ([HeadLine], [PeriodEndDate], [PeriodStartDate], [PurchaseBudgetId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [PurchaseBudgetPeriodLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:07:51.2469|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetPeriodLines] ([HeadLine], [PeriodEndDate], [PeriodStartDate], [PurchaseBudgetId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [PurchaseBudgetPeriodLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:07:51.3633|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetPeriodLines] ([HeadLine], [PeriodEndDate], [PeriodStartDate], [PurchaseBudgetId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [PurchaseBudgetPeriodLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:07:51.3829|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /PurchaseOrder/EditPurchaseBudget?purchaseBudgetId=106.
+2020-07-10 00:07:51.3938|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.CreatePurchaseBudget (WedigITCRM) in 643.8078ms
+2020-07-10 00:07:51.4109|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 716.5795ms 302 
+2020-07-10 00:07:51.4109|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/PurchaseOrder/EditPurchaseBudget?purchaseBudgetId=106  
+2020-07-10 00:07:51.4295|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "EditPurchaseBudget", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditPurchaseBudget(Int32, System.String, System.String, System.String, System.String, System.String, System.String, System.String, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:07:51.4440|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:07:51.4589|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:07:51.4589|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+2020-07-10 00:07:51.4868|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:07:51.4868|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurLocationId], [p].[PeriodLineId], [p].[PurchaseBudgetId], [p].[QuantityToOrder], [p].[StockItemId]
+FROM [PurchaseBudgetLines] AS [p]
+2020-07-10 00:07:51.5090|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:07:51.5173|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory1s] AS [s]
+2020-07-10 00:07:51.5173|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category1Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory2s] AS [s]
+2020-07-10 00:07:51.5449|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category2Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory3s] AS [s]
+2020-07-10 00:07:51.5559|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+2020-07-10 00:07:51.5674|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view EditPurchaseBudget.
+2020-07-10 00:07:51.5834|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:07:51.6188|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view EditPurchaseBudget executed in 43.4929ms.
+2020-07-10 00:07:51.6279|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.EditPurchaseBudget (WedigITCRM) in 188.841ms
+2020-07-10 00:07:51.6279|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 225.8679ms 200 text/html; charset=utf-8
+2020-07-10 00:08:11.5873|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseorder/createBudgetLineFromItemLine application/x-www-form-urlencoded; charset=UTF-8 55
+2020-07-10 00:08:11.5961|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "createBudgetLineFromItemLine", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult createBudgetLineFromItemLine(WedigITCRM.Controllers.PurchaseBudgetLineModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:08:11.6315|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:08:11.6481|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:08:11.6576|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:08:11.6576|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Decimal), @p6='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetLines] ([CreatedDate], [LastEditedDate], [OurLocationId], [PeriodLineId], [PurchaseBudgetId], [QuantityToOrder], [StockItemId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [PurchaseBudgetLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:08:11.6797|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+WHERE [s].[Id] = @__p_0
+2020-07-10 00:08:11.6897|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:08:13.0400|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.PurchaseBudgetLineModel'.
+2020-07-10 00:08:13.0536|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.createBudgetLineFromItemLine (WedigITCRM) in 1444.7457ms
+2020-07-10 00:08:13.0536|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1475.1852ms 200 application/json; charset=utf-8
+2020-07-10 00:08:18.9741|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseorder/CreateBudgetLineFromBudgetLine application/x-www-form-urlencoded; charset=UTF-8 44
+2020-07-10 00:08:18.9741|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "CreateBudgetLineFromBudgetLine", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateBudgetLineFromBudgetLine(WedigITCRM.Controllers.PurchaseBudgetLineModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:08:18.9935|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:08:19.0189|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:08:19.0331|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:08:19.0513|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurLocationId], [p].[PeriodLineId], [p].[PurchaseBudgetId], [p].[QuantityToOrder], [p].[StockItemId]
+FROM [PurchaseBudgetLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:08:19.0660|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Decimal), @p6='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetLines] ([CreatedDate], [LastEditedDate], [OurLocationId], [PeriodLineId], [PurchaseBudgetId], [QuantityToOrder], [StockItemId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [PurchaseBudgetLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:08:19.0660|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+WHERE [s].[Id] = @__p_0
+2020-07-10 00:08:19.0877|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:08:20.1014|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.PurchaseBudgetLineModel'.
+2020-07-10 00:08:20.1198|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.CreateBudgetLineFromBudgetLine (WedigITCRM) in 1124.9662ms
+2020-07-10 00:08:20.1309|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1154.1141ms 200 application/json; charset=utf-8
+2020-07-10 00:08:29.1054|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseorder/updateBudgetLineQuantity application/x-www-form-urlencoded; charset=UTF-8 46
+2020-07-10 00:08:29.1180|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "updateBudgetLineQuantity", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult updateBudgetLineQuantity(WedigITCRM.Controllers.PurchaseBudgetLineModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:08:29.1298|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:08:29.1437|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:08:29.1437|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:08:29.1685|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurLocationId], [p].[PeriodLineId], [p].[PurchaseBudgetId], [p].[QuantityToOrder], [p].[StockItemId]
+FROM [PurchaseBudgetLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:08:29.1791|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+WHERE [s].[Id] = @__p_0
+2020-07-10 00:08:29.1953|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Decimal), @p6='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [PurchaseBudgetLines] SET [CreatedDate] = @p0, [LastEditedDate] = @p1, [OurLocationId] = @p2, [PeriodLineId] = @p3, [PurchaseBudgetId] = @p4, [QuantityToOrder] = @p5, [StockItemId] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2020-07-10 00:08:29.1953|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.PurchaseBudgetLineModel'.
+2020-07-10 00:08:29.2126|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.updateBudgetLineQuantity (WedigITCRM) in 82.7331ms
+2020-07-10 00:08:29.2126|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 116.1795ms 200 application/json; charset=utf-8
+2020-07-10 00:08:38.2667|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:08:38.2788|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:08:38.3015|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-07-10 00:08:38.3212|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:08:38.3496|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-07-10 00:08:38.7336|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseorder/updateBudgetLinePeriod application/x-www-form-urlencoded; charset=UTF-8 44
+2020-07-10 00:08:38.7419|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "updateBudgetLinePeriod", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult updateBudgetLinePeriod(WedigITCRM.Controllers.PurchaseBudgetLineModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:08:38.7529|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:08:38.7529|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:08:38.7759|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:08:38.7907|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:08:38.8038|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurLocationId], [p].[PeriodLineId], [p].[PurchaseBudgetId], [p].[QuantityToOrder], [p].[StockItemId]
+FROM [PurchaseBudgetLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:08:38.8175|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Decimal), @p6='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [PurchaseBudgetLines] SET [CreatedDate] = @p0, [LastEditedDate] = @p1, [OurLocationId] = @p2, [PeriodLineId] = @p3, [PurchaseBudgetId] = @p4, [QuantityToOrder] = @p5, [StockItemId] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2020-07-10 00:08:38.8175|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+WHERE [s].[Id] = @__p_0
+2020-07-10 00:08:38.8395|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:08:39.6891|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.PurchaseBudgetLineModel'.
+2020-07-10 00:08:39.6891|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.updateBudgetLinePeriod (WedigITCRM) in 947.4091ms
+2020-07-10 00:08:39.7062|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1201.2518ms 200 application/json; charset=utf-8
+2020-07-10 00:09:09.1651|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/purchaseOrder/createPurchasebudget  
+2020-07-10 00:09:09.2023|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "CreatePurchaseBudget", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreatePurchaseBudget() on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:09:09.2514|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:09:09.2701|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:09:09.2855|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view CreatePurchaseBudget.
+2020-07-10 00:09:09.3110|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:09:09.3494|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view CreatePurchaseBudget executed in 36.0157ms.
+2020-07-10 00:09:10.4130|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.CreatePurchaseBudget (WedigITCRM) in 171.7479ms
+2020-07-10 00:09:10.6550|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1395.6309ms 200 text/html; charset=utf-8
+2020-07-10 00:09:16.9564|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseOrder/createPurchasebudget application/x-www-form-urlencoded 274
+2020-07-10 00:09:16.9886|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "CreatePurchaseBudget", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreatePurchaseBudget(WedigITCRM.ViewModels.PurchaseBudgetViewModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:09:17.0225|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:09:17.0426|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:09:17.4135|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgets] ([CreatedDate], [EndDateOfPeriod], [LastEditedDate], [Period], [StartDateOfPeriod], [companyAccountId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [PurchaseBudgets]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:09:17.5837|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (14ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetPeriodLines] ([HeadLine], [PeriodEndDate], [PeriodStartDate], [PurchaseBudgetId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [PurchaseBudgetPeriodLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:09:17.5997|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetPeriodLines] ([HeadLine], [PeriodEndDate], [PeriodStartDate], [PurchaseBudgetId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [PurchaseBudgetPeriodLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:09:17.6177|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetPeriodLines] ([HeadLine], [PeriodEndDate], [PeriodStartDate], [PurchaseBudgetId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [PurchaseBudgetPeriodLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:09:17.6294|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetPeriodLines] ([HeadLine], [PeriodEndDate], [PeriodStartDate], [PurchaseBudgetId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [PurchaseBudgetPeriodLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:09:17.6294|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetPeriodLines] ([HeadLine], [PeriodEndDate], [PeriodStartDate], [PurchaseBudgetId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [PurchaseBudgetPeriodLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:09:17.6512|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetPeriodLines] ([HeadLine], [PeriodEndDate], [PeriodStartDate], [PurchaseBudgetId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [PurchaseBudgetPeriodLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:09:17.6694|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetPeriodLines] ([HeadLine], [PeriodEndDate], [PeriodStartDate], [PurchaseBudgetId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [PurchaseBudgetPeriodLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:09:17.6837|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /PurchaseOrder/EditPurchaseBudget?purchaseBudgetId=107.
+2020-07-10 00:09:17.6920|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.CreatePurchaseBudget (WedigITCRM) in 672.7034ms
+2020-07-10 00:09:17.6920|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 752.4647ms 302 
+2020-07-10 00:09:17.7130|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/PurchaseOrder/EditPurchaseBudget?purchaseBudgetId=107  
+2020-07-10 00:09:17.7213|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "EditPurchaseBudget", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult EditPurchaseBudget(Int32, System.String, System.String, System.String, System.String, System.String, System.String, System.String, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:09:17.7213|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:09:17.7421|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:09:17.7535|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+2020-07-10 00:09:17.7535|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:09:17.7737|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurLocationId], [p].[PeriodLineId], [p].[PurchaseBudgetId], [p].[QuantityToOrder], [p].[StockItemId]
+FROM [PurchaseBudgetLines] AS [p]
+2020-07-10 00:09:17.7861|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:09:17.8000|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory1s] AS [s]
+2020-07-10 00:09:17.8000|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category1Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory2s] AS [s]
+2020-07-10 00:09:17.8216|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Category2Id], [s].[Name], [s].[companyAccountId]
+FROM [stockItemCategory3s] AS [s]
+2020-07-10 00:09:17.8327|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+2020-07-10 00:09:17.8327|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view EditPurchaseBudget.
+2020-07-10 00:09:17.8554|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:09:17.8968|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view EditPurchaseBudget executed in 26.9013ms.
+2020-07-10 00:09:18.4774|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.EditPurchaseBudget (WedigITCRM) in 237.3294ms
+2020-07-10 00:09:18.8200|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 816.6472ms 200 text/html; charset=utf-8
+2020-07-10 00:09:38.2632|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:09:38.2698|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:09:38.2864|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-07-10 00:09:38.3047|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:09:38.3226|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-07-10 00:09:39.2494|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseorder/createBudgetLineFromItemLine application/x-www-form-urlencoded; charset=UTF-8 55
+2020-07-10 00:09:39.2573|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "createBudgetLineFromItemLine", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult createBudgetLineFromItemLine(WedigITCRM.Controllers.PurchaseBudgetLineModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:09:39.2573|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:09:39.2793|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:09:39.2898|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:09:39.2995|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:09:39.2995|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Decimal), @p6='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetLines] ([CreatedDate], [LastEditedDate], [OurLocationId], [PeriodLineId], [PurchaseBudgetId], [QuantityToOrder], [StockItemId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [PurchaseBudgetLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:09:39.3207|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+WHERE [s].[Id] = @__p_0
+2020-07-10 00:09:39.3307|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:09:40.4302|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.PurchaseBudgetLineModel'.
+2020-07-10 00:09:40.4421|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.createBudgetLineFromItemLine (WedigITCRM) in 1175.1667ms
+2020-07-10 00:09:40.4421|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1200.713ms 200 application/json; charset=utf-8
+2020-07-10 00:09:51.7723|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseorder/updateBudgetLinePeriod application/x-www-form-urlencoded; charset=UTF-8 44
+2020-07-10 00:09:51.7723|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "updateBudgetLinePeriod", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult updateBudgetLinePeriod(WedigITCRM.Controllers.PurchaseBudgetLineModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:09:51.7910|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:09:51.8109|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:09:51.8194|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:09:51.8302|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurLocationId], [p].[PeriodLineId], [p].[PurchaseBudgetId], [p].[QuantityToOrder], [p].[StockItemId]
+FROM [PurchaseBudgetLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:09:51.8302|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Decimal), @p6='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [PurchaseBudgetLines] SET [CreatedDate] = @p0, [LastEditedDate] = @p1, [OurLocationId] = @p2, [PeriodLineId] = @p3, [PurchaseBudgetId] = @p4, [QuantityToOrder] = @p5, [StockItemId] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2020-07-10 00:09:51.8496|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+WHERE [s].[Id] = @__p_0
+2020-07-10 00:09:51.8496|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:09:53.3895|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.PurchaseBudgetLineModel'.
+2020-07-10 00:09:53.4023|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.updateBudgetLinePeriod (WedigITCRM) in 1609.2021ms
+2020-07-10 00:09:53.4109|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1638.0995ms 200 application/json; charset=utf-8
+2020-07-10 00:10:38.2658|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:10:38.2846|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:10:38.2846|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-07-10 00:10:38.2846|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:10:38.3233|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-07-10 00:10:38.3431|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:10:38.3624|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-07-10 00:10:39.7596|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:10:39.7769|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@p21='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Guid), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Vendors] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [CurrencyCode] = @p4, [DeliveryConditions] = @p5, [DeliveryConditionsId] = @p6, [DineroGuiD] = @p7, [Email] = @p8, [ForeignCity] = @p9, [ForeignZip] = @p10, [HomePage] = @p11, [LastEditedDate] = @p12, [Name] = @p13, [PaymentConditions] = @p14, [PaymentConditionsId] = @p15, [PhoneNumber] = @p16, [Street] = @p17, [Zip] = @p18, [companyAccountId] = @p19, [postalCodeId] = @p20
+WHERE [Id] = @p21;
+SELECT @@ROWCOUNT;
+2020-07-10 00:10:39.7881|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-07-10 00:10:39.7881|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Contacts] AS [c]
+2020-07-10 00:10:39.8029|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-07-10 00:10:39.8144|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@p20='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTime2), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Companies] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [CurrencyCode] = @p4, [DineroGuiD] = @p5, [Email] = @p6, [ForeignCity] = @p7, [ForeignZip] = @p8, [HomePage] = @p9, [IsPerson] = @p10, [LastEditedDate] = @p11, [Name] = @p12, [PaymentConditions] = @p13, [PhoneNumber] = @p14, [SMSverificationCode] = @p15, [Street] = @p16, [Zip] = @p17, [companyAccountId] = @p18, [postalCodeId] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;
+2020-07-10 00:10:39.8144|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:10:39.8341|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p21='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Guid), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Vendors] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [CurrencyCode] = @p4, [DeliveryConditions] = @p5, [DeliveryConditionsId] = @p6, [DineroGuiD] = @p7, [Email] = @p8, [ForeignCity] = @p9, [ForeignZip] = @p10, [HomePage] = @p11, [LastEditedDate] = @p12, [Name] = @p13, [PaymentConditions] = @p14, [PaymentConditionsId] = @p15, [PhoneNumber] = @p16, [Street] = @p17, [Zip] = @p18, [companyAccountId] = @p19, [postalCodeId] = @p20
+WHERE [Id] = @p21;
+SELECT @@ROWCOUNT;
+2020-07-10 00:10:39.8453|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Contacts] AS [c]
+2020-07-10 00:10:39.8453|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@p20='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTime2), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Contacts] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [CurrencyCode] = @p4, [DineroGuiD] = @p5, [Email] = @p6, [ForeignCity] = @p7, [ForeignZip] = @p8, [HomePage] = @p9, [IsPerson] = @p10, [LastEditedDate] = @p11, [Name] = @p12, [PaymentConditions] = @p13, [PhoneNumber] = @p14, [SMSverificationCode] = @p15, [Street] = @p16, [Zip] = @p17, [companyAccountId] = @p18, [postalCodeId] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;
+2020-07-10 00:10:39.8675|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-07-10 00:10:39.8675|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:10:39.8811|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Contacts] AS [c]
+2020-07-10 00:10:39.8811|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p20='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTime2), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Contacts] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [CurrencyCode] = @p4, [DineroGuiD] = @p5, [Email] = @p6, [ForeignCity] = @p7, [ForeignZip] = @p8, [HomePage] = @p9, [IsPerson] = @p10, [LastEditedDate] = @p11, [Name] = @p12, [PaymentConditions] = @p13, [PhoneNumber] = @p14, [SMSverificationCode] = @p15, [Street] = @p16, [Zip] = @p17, [companyAccountId] = @p18, [postalCodeId] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;
+2020-07-10 00:10:39.8953|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-07-10 00:10:39.8953|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:10:39.9080|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Contacts] AS [c]
+2020-07-10 00:10:39.9080|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p20='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTime2), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Contacts] SET [CVRNumber] = @p0, [City] = @p1, [CountryCode] = @p2, [CreatedDate] = @p3, [CurrencyCode] = @p4, [DineroGuiD] = @p5, [Email] = @p6, [ForeignCity] = @p7, [ForeignZip] = @p8, [HomePage] = @p9, [IsPerson] = @p10, [LastEditedDate] = @p11, [Name] = @p12, [PaymentConditions] = @p13, [PhoneNumber] = @p14, [SMSverificationCode] = @p15, [Street] = @p16, [Zip] = @p17, [companyAccountId] = @p18, [postalCodeId] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;
+2020-07-10 00:10:39.9230|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-07-10 00:10:39.9230|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[CVRNumber], [v].[City], [v].[CountryCode], [v].[CreatedDate], [v].[CurrencyCode], [v].[DeliveryConditions], [v].[DeliveryConditionsId], [v].[DineroGuiD], [v].[Email], [v].[ForeignCity], [v].[ForeignZip], [v].[HomePage], [v].[LastEditedDate], [v].[Name], [v].[PaymentConditions], [v].[PaymentConditionsId], [v].[PhoneNumber], [v].[Street], [v].[Zip], [v].[companyAccountId], [v].[postalCodeId]
+FROM [Vendors] AS [v]
+2020-07-10 00:10:39.9401|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@p31='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (DbType = DateTime2), @p18='?' (DbType = DateTime2), @p19='?' (DbType = Boolean), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = DateTime2), @p24='?' (DbType = DateTime2), @p25='?' (DbType = Guid), @p26='?' (DbType = DateTime2), @p27='?' (DbType = Boolean), @p28='?' (DbType = Boolean), @p29='?' (DbType = Boolean), @p30='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyCity] = @p2, [CompanyCountryCode] = @p3, [CompanyName] = @p4, [CompanyStreet] = @p5, [CompanyZip] = @p6, [Companyidentifier] = @p7, [ContactsToDineroLastSynchronizationDate] = @p8, [ContactsToNyxiumLastSynchronizationDate] = @p9, [DineroAPIOrganization] = @p10, [DineroAPIOrganizationKey] = @p11, [IntegrationDinero] = @p12, [LogoAttachmentIds] = @p13, [NyxiumLicenseTypeId] = @p14, [NyxiumLicenseTypeName] = @p15, [SalesStatistic] = @p16, [StockItemsToDineroLastSynchronizationDate] = @p17, [StockItemsToNyxiumSynchronizationDate] = @p18, [SubscriptionCRM] = @p19, [SubscriptionInventory] = @p20, [SubscriptionProcurement] = @p21, [SubscriptionVendor] = @p22, [VendorsItemsToDineroLastSynchronizationDate] = @p23, [activationDate] = @p24, [activationKey] = @p25, [registrationDate] = @p26, [synchronizeCustomerFromDineroToNyxium] = @p27, [synchronizeCustomerFromNyxiumToDinero] = @p28, [synchronizeStockItemFromDineroToNyxium] = @p29, [synchronizeStockItemFromNyxiumToDinero] = @p30
+WHERE [companyAccountId] = @p31;
+SELECT @@ROWCOUNT;
+2020-07-10 00:11:20.3297|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseorder/updateBudgetLinePeriod application/x-www-form-urlencoded; charset=UTF-8 44
+2020-07-10 00:11:20.3463|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "updateBudgetLinePeriod", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult updateBudgetLinePeriod(WedigITCRM.Controllers.PurchaseBudgetLineModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:11:20.3683|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:11:20.3779|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:11:20.3779|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:11:20.3998|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:11:20.4099|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[LastEditedDate], [p].[OurLocationId], [p].[PeriodLineId], [p].[PurchaseBudgetId], [p].[QuantityToOrder], [p].[StockItemId]
+FROM [PurchaseBudgetLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:11:20.4099|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Decimal), @p6='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [PurchaseBudgetLines] SET [CreatedDate] = @p0, [LastEditedDate] = @p1, [OurLocationId] = @p2, [PeriodLineId] = @p3, [PurchaseBudgetId] = @p4, [QuantityToOrder] = @p5, [StockItemId] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2020-07-10 00:11:20.4305|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+WHERE [s].[Id] = @__p_0
+2020-07-10 00:11:20.6574|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:11:21.6479|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.PurchaseBudgetLineModel'.
+2020-07-10 00:11:21.6589|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.updateBudgetLinePeriod (WedigITCRM) in 1302.5396ms
+2020-07-10 00:11:21.6589|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1338.5101ms 200 application/json; charset=utf-8
+2020-07-10 00:11:31.0434|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/purchaseorder/createBudgetLineFromItemLine application/x-www-form-urlencoded; charset=UTF-8 55
+2020-07-10 00:11:31.0513|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "createBudgetLineFromItemLine", controller = "PurchaseOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult createBudgetLineFromItemLine(WedigITCRM.Controllers.PurchaseBudgetLineModel, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.PurchaseOrderController (WedigITCRM).
+2020-07-10 00:11:31.0513|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-07-10 00:11:31.0889|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (17ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-07-10 00:11:31.1021|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[EndDateOfPeriod], [p].[LastEditedDate], [p].[Period], [p].[StartDateOfPeriod], [p].[companyAccountId]
+FROM [PurchaseBudgets] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:11:31.1152|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Decimal), @p6='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PurchaseBudgetLines] ([CreatedDate], [LastEditedDate], [OurLocationId], [PeriodLineId], [PurchaseBudgetId], [QuantityToOrder], [StockItemId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [PurchaseBudgetLines]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-07-10 00:11:31.1152|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Category], [s].[CostPrice], [s].[CreatedDate], [s].[DineroGuiD], [s].[Expirationdate], [s].[InStockAgainDate], [s].[ItemName], [s].[ItemNumber], [s].[LastEditedDate], [s].[Location], [s].[NumberInStock], [s].[ReorderNumberInStock], [s].[SalesPrice], [s].[StockValue], [s].[Unit], [s].[VendorId], [s].[VendorItemName], [s].[VendorItemNumber], [s].[category1Id], [s].[category2Id], [s].[category3Id], [s].[companyAccountId]
+FROM [stockItems] AS [s]
+WHERE [s].[Id] = @__p_0
+2020-07-10 00:11:31.1374|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[HeadLine], [p].[PeriodEndDate], [p].[PeriodStartDate], [p].[PurchaseBudgetId]
+FROM [PurchaseBudgetPeriodLines] AS [p]
+WHERE [p].[Id] = @__p_0
+2020-07-10 00:11:32.5209|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.PurchaseBudgetLineModel'.
+2020-07-10 00:11:32.5397|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PurchaseOrderController.createBudgetLineFromItemLine (WedigITCRM) in 1473.2308ms
+2020-07-10 00:11:32.5538|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1508.5519ms 200 application/json; charset=utf-8
+2020-07-10 00:11:38.2653|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-07-10 00:11:38.2762|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:11:38.2891|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-07-10 00:11:38.3014|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-07-10 00:11:38.3139|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
