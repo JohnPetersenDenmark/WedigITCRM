@@ -89,11 +89,11 @@
                 }
             }
         </div>
-        <div class="col-2">
+        <div class="col-1">
 
         </div>
 
-        <div class="col-6">
+        <div class="col-7">
 
 
             @if (Model != null)
@@ -101,26 +101,27 @@
                 @foreach (var periodLine in Model.PeriodLines)
                 {
  
-                    <div id="@periodLine.Id" style="height : 100px">
-                        <div class="row">
-                            <div class="col-12 periodcontainer" style="height : 30%" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                Træk hertil  @periodLine.HeadLine
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div style="height : 60%" class="col-12 budgetlinescontainer">
-                                <div class="row">
-                                    <div class="col-2">Antal</div>
-                                    <div class="col-2">Vare</div>
-                                    <div class="col-2">Varenummer</div>
-                                    <div class="col-1">Enheder</div>
-                                    <div class="col-2">Kostpris</div>
-                                    <div class="col-2">Total</div>
-                                    <div class="col-1"></div>
-                                </div>
-                            </div>
-                        </div>
+            <div id="@periodLine.Id" class="periodDiv">
+                <div class="row">
+                    <div class="col-12 periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        Træk hertil  @periodLine.HeadLine
                     </div>
+                </div>
+                <div class="row budgetlineheaders">
+                        <div class="col-2 budgetlineheaders-align-right">Antal</div>
+                        <div class="col-2 budgetlineheaders-align-left">Vare</div>
+                        <div class="col-2 budgetlineheaders-align-left">Varenummer</div>
+                        <div class="col-1 budgetlineheaders-align-left">Enheder</div>
+                        <div class="col-2 budgetlineheaders-align-right">Kostpris</div>
+                        <div class="col-2 budgetlineheaders-align-right">Total</div>
+                        <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-12 budgetlinescontainer">
+                       
+                    </div>
+                </div>
+            </div>
 
                 }
             }
@@ -143,12 +144,12 @@
 
                 htmlStr = '<div class="row budgetitemline" id="' + budgetLines[i].id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
 
-                htmlStr = htmlStr + '<div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + budgetLines[i].quantityToOrder + '" /></div>';
+                htmlStr = htmlStr + '<div class="col-2 myright"><input type="text" name="Quantity" class="periodline-input-field" value="' + budgetLines[i].quantityToOrder + '" /></div>';
                 htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].ourItemName + '</div>';
                 htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].ourItemNumber + '</div>';
                 htmlStr = htmlStr + '<div class="col-1">' + budgetLines[i].ourItemUnit + '</div>';
-                htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].ourCostPrice + '</div>';
-                htmlStr = htmlStr + '<div class="col-2 linetotalamount">' + budgetLines[i].lineTotalAmount + '</div>';
+                htmlStr = htmlStr + '<div class="col-2 myright">' + budgetLines[i].ourCostPrice + '</div>';
+                htmlStr = htmlStr + '<div class="col-2 linetotalamount myright">' + budgetLines[i].lineTotalAmount + '</div>';
                 htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
                 htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + budgetLines[i].periodLineId + '" />';
                 htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + budgetLines[i].stockItemId + '" />';
