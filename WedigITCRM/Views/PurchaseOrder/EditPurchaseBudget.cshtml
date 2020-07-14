@@ -2,7 +2,17 @@
 
 <div class="formcontainer">
     <div class="tableheadline">
-        Indkøbsbudget
+        <div class="row">
+            <div class="col-2">
+                Indkøbsbudget
+            </div>
+            <div class="col-2">
+
+            </div>
+            <div class="col-2">                
+                    @Model.Description
+            </div>
+        </div>
     </div>
 
     <div class="row">
@@ -103,8 +113,8 @@
 
                     <div id="@periodLine.Id" class="periodDiv">
                         <div class="row">
-                            <div class="col-12 periodcontainer"  ondrop="drop(event)" ondragover="allowDrop(event)">                                
-                                <div class="row" >
+                            <div class="col-12 periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <div class="row">
                                     <div class="col-2">@periodLine.displayPeriodStartText</div>
                                     <div class="col-2">@periodLine.displayPeriodEndText</div>
                                     <div class="col-2">@periodLine.displayWeekNumber</div>
@@ -154,7 +164,7 @@
                 htmlStr = htmlStr + '<div class="col-1">' + budgetLines[i].ourItemUnit + '</div>';
                 htmlStr = htmlStr + '<div class="col-2 myright">' + budgetLines[i].ourCostPrice + '</div>';
                 htmlStr = htmlStr + '<div class="col-2 linetotalamount myright">' + budgetLines[i].lineTotalAmount + '</div>';
-                htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
+                htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '<i style="color : #17a2b8;" class="fa fa-trash fa-fw removebudgetline"></i>' + '</div>';
                 htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + budgetLines[i].periodLineId + '" />';
                 htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + budgetLines[i].stockItemId + '" />';
                 htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
@@ -171,7 +181,7 @@
                 var periodeDiv = document.getElementById(budgetLines[i].periodLineId);
 
                 var targetCols = periodeDiv.getElementsByClassName("budgetlinescontainer");
-               
+
                 targetCols[0].appendChild(newDivNode);
             }
 
@@ -208,9 +218,20 @@
             });
 
 
-            $(document).on("click", ".show-quantity-sold", function (event) {
+            $(document).on("click", ".removebudgetline", function (event) {
 
-                var budgetLineDiv = $(this).parent();
+                var budgetLineId = $(this).parent().parent().attr("id");
+
+                deleteBudgetLine(budgetLineId)
+
+
+                event.stopImmediatePropagation();
+            });
+
+
+            $(document).on("click", ".fa-envelope-open", function (event) {
+
+                var budgetLineDiv = $(this).parent().parent();;
 
                 var quantitySoldDiv = budgetLineDiv.find("[class='quantitysolddiv']");
 
@@ -289,14 +310,14 @@
             if (dataArray[1] == "1") {   // drag and  drop a item line to budget line.
 
                 var stockItemId = dataArray[0];
-               
+
                 createBudgetLineFromItemLine(stockItemId, newPeriodLineId);
             }
 
             if (dataArray[1] == "0") {  // drag and  drop a budget line line to new budget line.
                 if (ev.ctrlKey) {
                     var sourceBudgetLineId = dataArray[0];
-                    
+
 
                     createBudgetLineFromBudgetLine(sourceBudgetLineId, newPeriodLineId);
                     return;
@@ -304,7 +325,7 @@
                 else {  // drag and  drop a budget line i.e move
 
                     var sourceBudgetLineId = dataArray[0];
-                  
+
                     updateBudgetLinePeriod(sourceBudgetLineId, newPeriodLineId)
                 }
             }
@@ -336,7 +357,7 @@
                     htmlStr = htmlStr + '<div class="col-1">' + result.ourItemUnit + '</div>';
                     htmlStr = htmlStr + '<div class="col-2  myright">' + result.ourCostPrice + '</div>';
                     htmlStr = htmlStr + '<div class="col-2 linetotalamount  myright">' + result.lineTotalAmount + '</div>';
-                    htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
+                    htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '<i style="color : #17a2b8;" class="fa fa-trash fa-fw removebudgetline"></i>' + '</div>';
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
                     htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
@@ -388,7 +409,7 @@
                     htmlStr = htmlStr + '<div class="col-1">' + result.ourItemUnit + '</div>';
                     htmlStr = htmlStr + '<div class="col-2 myright">' + result.ourCostPrice + '</div>';
                     htmlStr = htmlStr + '<div class="col-2 linetotalamount myright">' + result.lineTotalAmount + '</div>';
-                    htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
+                    htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '<i style="color : #17a2b8;" class="fa fa-trash fa-fw removebudgetline"></i>' + '</div>';
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
                     htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
@@ -414,7 +435,36 @@
                     location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
                 }
             });
-        }
+            }
+
+            function deleteBudgetLine(budgetLineId) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/purchaseorder/deleteBudgetLine",
+                    data: {
+                        id: budgetLineId,
+                        purchaseBudgetId: $('#PurchaseBudgetId').val()
+                    },
+                    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+
+                        $("#searchForm").submit();
+                        //var budgetLineDiv = document.getElementById(result.id);
+
+                        //budgetLineDiv.remove();
+                    },
+
+                    error: function (request, status, error) {
+                        var jsonErrorObj = request.responseJSON
+                        var errorText = jsonErrorObj.Detail;
+                        var errorTitle = jsonErrorObj.Title;
+                        var errorInstance = jsonErrorObj.Instance;
+                        location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                    }
+                });
+            }
 
         function updateBudgetLineQuantity(budgetLineId, Quantity) {
 
@@ -477,7 +527,7 @@
                     htmlStr = htmlStr + '<div class="col-1">' + result.ourItemUnit + '</div>';
                     htmlStr = htmlStr + '<div class="col-2 myright">' + result.ourCostPrice + '</div>';
                     htmlStr = htmlStr + '<div class="col-2 linetotalamount myright">' + result.lineTotalAmount + '</div>';
-                    htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
+                    htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '<i style="color : #17a2b8;" class="fa fa-trash fa-fw removebudgetline"></i>' + '</div>';
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
                     htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';

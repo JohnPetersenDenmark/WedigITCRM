@@ -12,7 +12,7 @@ namespace WedigITCRM.EntitityModels
         public DateTime StartDateOfPeriod { get; set; }
         public DateTime EndDateOfPeriod { get; set; }
 
-     
+        public string Description { get; set; }
         public string Period { get; set; }
 
         public int companyAccountId { get; set; }

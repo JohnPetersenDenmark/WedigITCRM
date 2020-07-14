@@ -577,6 +577,8 @@ namespace WedigITCRM.Controllers
 
             purchaseBudget.Period = model.Period;
 
+            purchaseBudget.Description = model.Description;
+
             purchaseBudget.StartDateOfPeriod = periodFromDate;
             purchaseBudget.EndDateOfPeriod = periodToDate;
 
@@ -841,6 +843,7 @@ namespace WedigITCRM.Controllers
 
 
                 model.PurchaseBudgetId = purchaseBudget.Id.ToString();
+                model.Description = purchaseBudget.Description;
                 model.StockItems = Allstocktems;
                 model.BudgetLines = purchaseBudgetLineModelList;
                 model.PeriodLines = _purchaseBudgetPeriodLineRepository.GetAllPurchaseBudgetPeriodLines().Where(periodLine => periodLine.PurchaseBudgetId == purchaseBudgetId).ToList();
@@ -1067,6 +1070,28 @@ namespace WedigITCRM.Controllers
                                         }                                                                  
                                 }
                             }
+                        }
+                    }
+                }
+            }
+
+            return Json(model);
+        }
+
+        [HttpPost]
+        public IActionResult deleteBudgetLine(PurchaseBudgetLineModel model, CompanyAccount companyAccount)
+        {
+            if (!string.IsNullOrEmpty(model.PurchaseBudgetId))
+            {
+                PurchaseBudget purchaseBudget = _purchaseBudgetRepository.GetPurchaseBudget(Int32.Parse(model.PurchaseBudgetId));
+                if (purchaseBudget != null)
+                {
+                    if (!string.IsNullOrEmpty(model.Id))
+                    {
+                        PurchaseBudgetLine budgetLine = _purchaseBudgetLinesRepository.GetPurchaseBudgetLine(Int32.Parse(model.Id));
+                        if (budgetLine != null)
+                        {
+                            _purchaseBudgetLinesRepository.Delete(budgetLine.Id);
                         }
                     }
                 }

@@ -10,6 +10,7 @@ namespace WedigITCRM.ViewModels
 {
     public class PurchaseBudgetEditViewModel
     {
+        public string Description { get; set; }
         public string SearchByStockItemName { get; set; }
         public string SearchByStockItemNumber { get; set; }
         public string VendorId { get; set; }

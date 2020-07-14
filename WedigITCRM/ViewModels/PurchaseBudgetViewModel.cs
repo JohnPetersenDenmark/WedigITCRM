@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,6 +13,9 @@ namespace WedigITCRM.ViewModels
         public string PeriodFromDate { get; set; }
         public string PeriodToDate { get; set; }
         public string Period { get; set; }
+
+        [Required(ErrorMessage = "Beskrivelse skal angives")]
+        public string Description { get; set; }
         public List<SelectListItem> SelectPeriod { get; } = new List<SelectListItem>
         {
              new SelectListItem { Value = "0", Text = "Vælg"  },

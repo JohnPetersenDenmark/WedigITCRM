@@ -21,3 +21,41 @@
    at System.Net.WebClient.DownloadString(Uri address)
    at WedigITCRM.DineroAPI.DineroContacts.getContactsFromDinero(String LastupdatedDateTime, Int32 page, Int32 pageSize) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroContacts.cs:line 42
    at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 102
+2020-07-14 20:35:05.6617|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-14 20:35:08.5487|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-14 20:35:08.7293|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-14 20:35:11.2803|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-14 20:35:14.0086|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-14 20:35:14.0501|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-14 20:35:31.8925|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-14 20:35:32.0070|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-14 20:53:40.1887|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-14 20:53:41.7608|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-14 20:53:41.9740|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-14 20:53:42.9322|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-14 20:53:50.0029|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-14 20:53:50.0615|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-14 22:28:20.3713|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-14 22:28:22.7157|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-14 22:28:23.0238|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-14 22:28:26.1846|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-14 22:28:33.8312|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-14 22:28:33.9577|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-14 22:28:56.6302|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-14 22:28:56.6725|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-14 22:40:13.1360|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-14 22:40:13.3977|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-14 22:41:00.5283|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-14 22:41:00.7325|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-14 22:55:59.2918|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-14 22:56:00.9232|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-14 22:56:01.0954|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-14 22:56:02.0643|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-14 22:56:08.6546|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-14 22:56:08.7499|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-14 23:02:05.1321|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-14 23:02:06.5058|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-14 23:02:06.6579|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-14 23:02:07.5127|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-14 23:02:14.9995|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-14 23:02:15.0487|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
