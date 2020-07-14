@@ -100,28 +100,32 @@
             {
                 @foreach (var periodLine in Model.PeriodLines)
                 {
- 
-            <div id="@periodLine.Id" class="periodDiv">
-                <div class="row">
-                    <div class="col-12 periodcontainer" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        Træk hertil  @periodLine.HeadLine
+
+                    <div id="@periodLine.Id" class="periodDiv">
+                        <div class="row">
+                            <div class="col-12 periodcontainer"  ondrop="drop(event)" ondragover="allowDrop(event)">                                
+                                <div class="row" >
+                                    <div class="col-2">@periodLine.displayPeriodStartText</div>
+                                    <div class="col-2">@periodLine.displayPeriodEndText</div>
+                                    <div class="col-2">@periodLine.displayWeekNumber</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row budgetlineheaders">
+                            <div class="col-2 budgetlineheaders-align-right">Antal</div>
+                            <div class="col-2 budgetlineheaders-align-left">Vare</div>
+                            <div class="col-2 budgetlineheaders-align-left">Varenummer</div>
+                            <div class="col-1 budgetlineheaders-align-left">Enheder</div>
+                            <div class="col-2 budgetlineheaders-align-right">Kostpris</div>
+                            <div class="col-2 budgetlineheaders-align-right">Total</div>
+                            <div class="col-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 budgetlinescontainer">
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="row budgetlineheaders">
-                        <div class="col-2 budgetlineheaders-align-right">Antal</div>
-                        <div class="col-2 budgetlineheaders-align-left">Vare</div>
-                        <div class="col-2 budgetlineheaders-align-left">Varenummer</div>
-                        <div class="col-1 budgetlineheaders-align-left">Enheder</div>
-                        <div class="col-2 budgetlineheaders-align-right">Kostpris</div>
-                        <div class="col-2 budgetlineheaders-align-right">Total</div>
-                        <div class="col-1"></div>
-                </div>
-                <div class="row">
-                    <div class="col-12 budgetlinescontainer">
-                       
-                    </div>
-                </div>
-            </div>
 
                 }
             }
@@ -167,8 +171,7 @@
                 var periodeDiv = document.getElementById(budgetLines[i].periodLineId);
 
                 var targetCols = periodeDiv.getElementsByClassName("budgetlinescontainer");
-
-                //var targetCol = periodeDiv.firstElementChild;
+               
                 targetCols[0].appendChild(newDivNode);
             }
 
@@ -261,7 +264,10 @@
 
         function drop(ev) {
 
-            if (!ev.target.classList.contains("periodcontainer")) {
+            if (ev.target.classList.contains("periodcontainer") || ev.target.parentElement.classList.contains("periodcontainer") || ev.target.parentElement.parentElement.classList.contains("periodcontainer")) {
+
+            }
+            else {
                 return;
             }
 
@@ -270,29 +276,35 @@
             var data = ev.dataTransfer.getData("text");
             var dataArray = data.split("|");
 
+            var currentElement = ev.target;
+            while (currentElement != null) {
+                if (currentElement.classList.contains('periodDiv')) {
+                    break;
+                }
+                currentElement = currentElement.parentElement;
+            }
 
+            var newPeriodLineId = currentElement.getAttribute("id");
 
             if (dataArray[1] == "1") {   // drag and  drop a item line to budget line.
 
                 var stockItemId = dataArray[0];
-                var periodLineId = ev.target.parentElement.parentElement.getAttribute("id");
-
-                createBudgetLineFromItemLine(stockItemId, periodLineId);
+               
+                createBudgetLineFromItemLine(stockItemId, newPeriodLineId);
             }
 
             if (dataArray[1] == "0") {  // drag and  drop a budget line line to new budget line.
                 if (ev.ctrlKey) {
                     var sourceBudgetLineId = dataArray[0];
-                    var periodLineId = ev.target.parentElement.parentElement.getAttribute("id");
+                    
 
-                    createBudgetLineFromBudgetLine(sourceBudgetLineId, periodLineId);
+                    createBudgetLineFromBudgetLine(sourceBudgetLineId, newPeriodLineId);
                     return;
                 }
                 else {  // drag and  drop a budget line i.e move
 
                     var sourceBudgetLineId = dataArray[0];
-
-                    var newPeriodLineId = ev.target.parentElement.parentElement.getAttribute("id");
+                  
                     updateBudgetLinePeriod(sourceBudgetLineId, newPeriodLineId)
                 }
             }
@@ -318,12 +330,12 @@
                     var htmlStr;
 
                     htmlStr = '<div class="row budgetitemline" id="' + result.id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
-                    htmlStr = htmlStr + ' <div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>';
+                    htmlStr = htmlStr + ' <div class="col-2  myright"><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>';
                     htmlStr = htmlStr + '<div class="col-2">' + result.ourItemName + '</div>';
                     htmlStr = htmlStr + '<div class="col-2">' + result.ourItemNumber + '</div>';
                     htmlStr = htmlStr + '<div class="col-1">' + result.ourItemUnit + '</div>';
-                    htmlStr = htmlStr + '<div class="col-2">' + result.ourCostPrice + '</div>';
-                    htmlStr = htmlStr + '<div class="col-2 linetotalamount">' + result.lineTotalAmount + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2  myright">' + result.ourCostPrice + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2 linetotalamount  myright">' + result.lineTotalAmount + '</div>';
                     htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
@@ -370,12 +382,12 @@
                     var htmlStr;
 
                     htmlStr = '<div class="row budgetitemline" id="' + result.id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
-                    htmlStr = htmlStr + ' <div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>';
+                    htmlStr = htmlStr + ' <div class="col-2 myright"><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>';
                     htmlStr = htmlStr + '<div class="col-2">' + result.ourItemName + '</div>';
                     htmlStr = htmlStr + '<div class="col-2">' + result.ourItemNumber + '</div>';
                     htmlStr = htmlStr + '<div class="col-1">' + result.ourItemUnit + '</div>';
-                    htmlStr = htmlStr + '<div class="col-2">' + result.ourCostPrice + '</div>';
-                    htmlStr = htmlStr + '<div class="col-2 linetotalamount">' + result.lineTotalAmount + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2 myright">' + result.ourCostPrice + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2 linetotalamount myright">' + result.lineTotalAmount + '</div>';
                     htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
@@ -459,12 +471,12 @@
                     var htmlStr;
 
                     htmlStr = '<div class="row budgetitemline" id="' + result.id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
-                    htmlStr = htmlStr + ' <div class="col-2"><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>';
+                    htmlStr = htmlStr + ' <div class="col-2 myright"><input type="text" name="Quantity" class="periodline-input-field" value="' + result.quantityToOrder + '" /></div>';
                     htmlStr = htmlStr + '<div class="col-2">' + result.ourItemName + '</div>';
                     htmlStr = htmlStr + '<div class="col-2">' + result.ourItemNumber + '</div>';
                     htmlStr = htmlStr + '<div class="col-1">' + result.ourItemUnit + '</div>';
-                    htmlStr = htmlStr + '<div class="col-2">' + result.ourCostPrice + '</div>';
-                    htmlStr = htmlStr + '<div class="col-2 linetotalamount">' + result.lineTotalAmount + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2 myright">' + result.ourCostPrice + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2 linetotalamount myright">' + result.lineTotalAmount + '</div>';
                     htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '</div>';
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + result.periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';

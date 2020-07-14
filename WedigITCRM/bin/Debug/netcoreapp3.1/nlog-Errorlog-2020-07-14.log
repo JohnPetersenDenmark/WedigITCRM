@@ -1,0 +1,23 @@
+2020-07-14 12:30:39.9809|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-14 12:30:44.2196|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-14 12:30:44.3280|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-14 12:30:45.8159|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-14 12:30:50.2905|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-14 12:30:50.3231|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-14 12:31:09.0059|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-14 12:31:09.0313|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-14 16:30:47.0746|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|The remote server returned an error: (502) Bad Gateway.
+2020-07-14 16:30:48.4230|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|The remote server returned an error: (502) Bad Gateway.nyxium stack trace:    at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.DownloadBits(WebRequest request, Stream writeStream)
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at WedigITCRM.DineroAPI.DineroContacts.getContactsFromDinero(String LastupdatedDateTime, Int32 page, Int32 pageSize) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroContacts.cs:line 42
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 102
+2020-07-14 16:42:47.1499|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|The remote server returned an error: (502) Bad Gateway.nyxium stack trace:    at System.Net.HttpWebRequest.GetResponse()
+   at System.Net.WebClient.GetWebResponse(WebRequest request)
+   at System.Net.WebClient.DownloadBits(WebRequest request, Stream writeStream)
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at WedigITCRM.DineroAPI.DineroContacts.getContactsFromDinero(String LastupdatedDateTime, Int32 page, Int32 pageSize) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroContacts.cs:line 42
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 102

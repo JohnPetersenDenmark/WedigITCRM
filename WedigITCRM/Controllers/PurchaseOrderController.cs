@@ -645,7 +645,7 @@ namespace WedigITCRM.Controllers
                         
                         purchaseBudgetPeriodLine.PeriodStartDate = periodStartDateTime.AddMonths(i);
                         
-                        purchaseBudgetPeriodLine.HeadLine = danishDateTimeformat.GetMonthName(purchaseBudgetPeriodLine.PeriodStartDate.Month) + " " + purchaseBudgetPeriodLine.PeriodStartDate.Year.ToString();
+                        purchaseBudgetPeriodLine.displayPeriodStartText = danishDateTimeformat.GetMonthName(purchaseBudgetPeriodLine.PeriodStartDate.Month) + " " + purchaseBudgetPeriodLine.PeriodStartDate.Year.ToString();
                         DateTime tmpPeriodEndDate = periodStartDateTime.AddMonths(i + 1);
                         tmpPeriodEndDate = tmpPeriodEndDate.AddDays(-1);
                         purchaseBudgetPeriodLine.PeriodEndDate = tmpPeriodEndDate;
@@ -691,8 +691,9 @@ namespace WedigITCRM.Controllers
 
 
                             int periodweekNo = WeekCalculation.getWeekNumberBydate(purchaseBudgetPeriodLine.PeriodStartDate);
-                            purchaseBudgetPeriodLine.HeadLine = "Uge: " + periodweekNo.ToString() + "              " + purchaseBudgetPeriodLine.PeriodStartDate.ToString(danishDateTimeformat.ShortDatePattern) + "              " + purchaseBudgetPeriodLine.PeriodEndDate.ToString(danishDateTimeformat.ShortDatePattern);
-
+                            purchaseBudgetPeriodLine.displayWeekNumber = "Uge: " + periodweekNo.ToString();
+                            purchaseBudgetPeriodLine.displayPeriodStartText = "fra: " + purchaseBudgetPeriodLine.PeriodStartDate.ToString(danishDateTimeformat.ShortDatePattern);
+                            purchaseBudgetPeriodLine.displayPeriodEndText = "til: " + purchaseBudgetPeriodLine.PeriodEndDate.ToString(danishDateTimeformat.ShortDatePattern);
 
                             periodStartDateTime = purchaseBudgetPeriodLine.PeriodEndDate.AddDays(1);
 
@@ -705,7 +706,9 @@ namespace WedigITCRM.Controllers
                         purchaseBudgetPeriodLine.PeriodEndDate = periodStartDateTime.AddDays(i);
 
                         weekNo = WeekCalculation.getWeekNumberBydate(purchaseBudgetPeriodLine.PeriodStartDate);
-                        purchaseBudgetPeriodLine.HeadLine = "Uge: " + weekNo.ToString() + "              " + purchaseBudgetPeriodLine.PeriodStartDate.ToString(danishDateTimeformat.ShortDatePattern) + "              " + purchaseBudgetPeriodLine.PeriodEndDate.ToString(danishDateTimeformat.ShortDatePattern);
+                        purchaseBudgetPeriodLine.displayWeekNumber = "Uge: " + weekNo.ToString();
+                        purchaseBudgetPeriodLine.displayPeriodStartText = "fra: " + purchaseBudgetPeriodLine.PeriodStartDate.ToString(danishDateTimeformat.ShortDatePattern);
+                        purchaseBudgetPeriodLine.displayPeriodEndText = "til: " + purchaseBudgetPeriodLine.PeriodEndDate.ToString(danishDateTimeformat.ShortDatePattern);
 
 
                         _purchaseBudgetPeriodLineRepository.Add(purchaseBudgetPeriodLine);

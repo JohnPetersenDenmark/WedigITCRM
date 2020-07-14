@@ -633,23 +633,22 @@ div.orderlineheadlines {
 
 .periodcontainer {
     width: 100%;
-    background-color: darkseagreen;
+    background-color: #3AC5DB;
     height: 50px;
-    overflow-y: auto;
-    overflow-x: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid black;
-    margin-left: -10px;
-    margin-right: -20px;
     margin-bottom: 1px;
 }
 
 .periodDiv {
+   
     width: 100%;
     min-height: 200px;
     background-color: #FFFFFF;
-    overflow-y: auto;
-    padding-left: 20px;
-    padding-right: 0px;
+  
+    padding-left: 15px;
+    padding-right: 15px;
     border: 1px solid black;
     margin-bottom: 10px;
 }
