@@ -274,6 +274,20 @@
                         </ul>
                     }
 
+                    @if (IsUserSignedIn && companyAccount.SubscriptionProcurement)
+                    {
+
+                        <ul id="side-main-menu" class="side-menu list-unstyled">
+                            <li>
+                                <a href="#procurementitemDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/varer-icon.png" class="imgicon" /> Indkøb</a>
+                                <ul id="procurementitemDropdown" class="collapse list-unstyled ">
+                                    <li><a asp-controller="PurchaseOrder" asp-action="indexbudget">Budgetter</a></li>
+                                    <li><a asp-controller="PurchaseOrder" asp-action="index">Ordrer</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+
                     @if (IsUserSignedIn && companyAccount.SalesStatistic)
                     {
 

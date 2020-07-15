@@ -9,7 +9,7 @@ namespace WedigITCRM.ViewModels
 {
     public class PurchaseBudgetViewModel
     {
-
+        public string Id { get; set; }
         public string PeriodFromDate { get; set; }
         public string PeriodToDate { get; set; }
         public string Period { get; set; }
