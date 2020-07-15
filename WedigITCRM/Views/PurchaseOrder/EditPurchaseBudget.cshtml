@@ -9,11 +9,14 @@
             <div class="col-2">
 
             </div>
-            <div class="col-2">                
-                    @Model.Description
+            <div class="col-2">
+                @Model.Description
             </div>
         </div>
     </div>
+
+
+
 
     <div class="row">
         <div class="col-12">
@@ -84,26 +87,28 @@
 
 
     <div class="row">
-        <div class="col-4">
-            @if (Model != null)
-            {
-                @foreach (var stockItem in Model.StockItems)
+        <div class="col-5">
+            <div class="itemlistfixedpos" style="overflow-y : scroll; height : 60%">
+                @if (Model != null)
                 {
-                    <div class="rowcontainer">
+                    @foreach (var stockItem in Model.StockItems)
+                    {
+
                         <div class="row itemline" id="@stockItem.Id" draggable="true" ondragstart="dragStockItemLine(event)">
-                            <div class="col-3">@stockItem.ItemName</div>
-                            <div class="col-3">@stockItem.ItemNumber</div>
-                            <div class="col-3">@stockItem.Unit</div>
+                            <div class="col-6">@stockItem.ItemName</div>
+                            <div class="col-4">@stockItem.ItemNumber</div>
+                            <div class="col-1">@stockItem.Unit</div>
                         </div>
-                    </div>
+
+                    }
                 }
-            }
+            </div>
         </div>
         <div class="col-1">
 
         </div>
 
-        <div class="col-7">
+        <div class="col-6">
 
 
             @if (Model != null)

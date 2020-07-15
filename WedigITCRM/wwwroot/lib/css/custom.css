@@ -689,3 +689,8 @@ div.orderlineheadlines {
     text-align: right;
 }
 
+.itemlistfixedpos {
+    position: fixed;
+    min-height: 200px;
+    width: 28%;
+}
