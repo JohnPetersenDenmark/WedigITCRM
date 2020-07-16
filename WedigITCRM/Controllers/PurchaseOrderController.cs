@@ -755,6 +755,7 @@ namespace WedigITCRM.Controllers
         [HttpGet]
         public IActionResult EditPurchaseBudget(int purchaseBudgetId, string searchByStockItemName, string searchByStockItemNumber, string vendorId, string purchaseDocumentNumber, string category1Id, string category2Id, string category3Id, CompanyAccount companyAccount)
         {
+            DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
 
             List<StockItem> Allstocktems = _stockItemRepository.GetAllstockItems().Where(companyAccount => companyAccount.companyAccountId == companyAccount.companyAccountId).ToList();
 
@@ -831,7 +832,15 @@ namespace WedigITCRM.Controllers
 
                         if (periodLine != null)
                         {
-                            purchaseBudgetLineModel.QuantitySold = getTotalSoldAmountForStockItem(periodLine.PeriodStartDate, periodLine.PeriodEndDate, stockItem.DineroGuiD, companyAccount).ToString();
+                            DateTime periodLastYearStartDate = periodLine.PeriodStartDate;
+                            periodLastYearStartDate = periodLastYearStartDate.AddYears(-1);
+                            purchaseBudgetLineModel.QuantitySoldPeriodStartDate = periodLastYearStartDate.ToString(danishDateTimeformat.ShortDatePattern);
+
+                            DateTime periodLastYearEndDate = periodLine.PeriodEndDate;
+                            periodLastYearEndDate = periodLastYearEndDate.AddYears(-1);
+                            purchaseBudgetLineModel.QuantitySoldPeriodEndDate = periodLastYearEndDate.ToString(danishDateTimeformat.ShortDatePattern);
+
+                            purchaseBudgetLineModel.QuantitySold = getTotalSoldAmountForStockItem(periodLastYearStartDate, periodLastYearEndDate, stockItem.DineroGuiD, companyAccount).ToString();
                         }
                     }
 
@@ -1805,6 +1814,8 @@ namespace WedigITCRM.Controllers
         public string QuantityToOrder { get; set; }
         public string LineTotalAmount { get; set; }
         public string QuantitySold { get; set; }
+        public string QuantitySoldPeriodStartDate { get; set; }
+        public string QuantitySoldPeriodEndDate { get; set; }
         public int companyAccountId { get; set; }
 
     }

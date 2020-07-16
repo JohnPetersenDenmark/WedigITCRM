@@ -158,20 +158,27 @@
 
                 htmlStr = '<div class="row budgetitemline" id="' + budgetLines[i].id + '" draggable="true" ondragstart="dragPeriodLine(event)">';
 
-                htmlStr = htmlStr + '<div class="col-2 myright"><input type="text" name="Quantity" class="periodline-input-field" value="' + budgetLines[i].quantityToOrder + '" /></div>';
-                htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].ourItemName + '</div>';
-                htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].ourItemNumber + '</div>';
-                htmlStr = htmlStr + '<div class="col-1">' + budgetLines[i].ourItemUnit + '</div>';
-                htmlStr = htmlStr + '<div class="col-2 myright">' + budgetLines[i].ourCostPrice + '</div>';
-                htmlStr = htmlStr + '<div class="col-2 linetotalamount myright">' + budgetLines[i].lineTotalAmount + '</div>';
-                htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '<i style="color : #17a2b8;" class="fa fa-trash fa-fw removebudgetline"></i>' + '</div>';
-                htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + budgetLines[i].periodLineId + '" />';
-                htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + budgetLines[i].stockItemId + '" />';
-                htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
-                htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + budgetLines[i].quantitySold + '" />';
+                    htmlStr = htmlStr + '<div class="col-2 myright"><input type="text" name="Quantity" class="periodline-input-field" value="' + budgetLines[i].quantityToOrder + '" /></div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].ourItemName + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].ourItemNumber + '</div>';
+                    htmlStr = htmlStr + '<div class="col-1">' + budgetLines[i].ourItemUnit + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2 myright">' + budgetLines[i].ourCostPrice + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2 linetotalamount myright">' + budgetLines[i].lineTotalAmount + '</div>';
+                    htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '<i style="color : #17a2b8;" class="fa fa-trash fa-fw removebudgetline"></i>' + '</div>';
+                    htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + budgetLines[i].periodLineId + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + budgetLines[i].stockItemId + '" />';
+                   
                 htmlStr = htmlStr + '</div>';
+               
 
+                //htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
+                htmlStr = htmlStr + '<div class="row quantitysolddiv" >';
+                    htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].quantitySold + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].quantitySoldPeriodEndDate + '</div>';
+                    htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].quantitySoldPeriodStartDate + '</div>';
                 htmlStr = htmlStr + '</div>';
+               
+               // htmlStr = htmlStr + '</div>';
 
                 //
 
@@ -231,12 +238,30 @@
 
             $(document).on("click", ".fa-envelope-open", function (event) {
 
-                var budgetLineDiv = $(this).parent().parent();;
+                var tmpdiv1 = $(this).parent();
+                var tmpdiv2 = tmpdiv1.parent();
+                var tmpdiv3 = tmpdiv2.parent();
 
-                var quantitySoldDiv = budgetLineDiv.find("[class='quantitysolddiv']");
+                var containingDiv = tmpdiv2.parent();
 
-                quantitySoldDiv.toggle();
+                //var quantitySoldDiv = containingDiv.find("[class='quantitysolddiv']");
 
+                var quantitySoldDivList = containingDiv[0].getElementsByClassName("quantitysolddiv");
+                var quantitySoldDiv = quantitySoldDivList[0];
+                 //var quantitySoldDiv = document.getElementsByClassName("quantitysolddiv");
+
+                //if (quantitySoldDiv.style.display === "none") {
+                //    quantitySoldDiv.style.display = "block";
+                //} else {
+                //    quantitySoldDiv.style.display = "none";
+                //}
+               
+                if (window.getComputedStyle(quantitySoldDiv).visibility === "hidden") {
+                    quantitySoldDiv.style.visibility = "visible";
+                }
+                else {
+                    quantitySoldDiv.style.visibility = "hidden";
+                }
 
                 event.stopImmediatePropagation();
             });
