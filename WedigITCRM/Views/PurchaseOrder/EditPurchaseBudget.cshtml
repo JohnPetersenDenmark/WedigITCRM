@@ -219,9 +219,9 @@
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + budgetLines[i].periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + budgetLines[i].stockItemId + '" />';
 
-                    htmlStr = htmlStr + '<input type="text" hidden name="quantitysoldpreviousperiod" value="' + budgetLines[i].quantitySold + '" />';
-                    htmlStr = htmlStr + '<input type="text" hidden name="startdatepreviousperiod" value="' + budgetLines[i].quantitySoldPeriodStartDate + '" />';
-                    htmlStr = htmlStr + '<input type="text" hidden name="enddatepreviousperiod" value="' + budgetLines[i].quantitySoldPeriodEndDate + '" />';
+                htmlStr = htmlStr + '<input type="text" hidden name="quantitysoldpreviousperiod" value="' + budgetLines[i].quantitySold + '" />';
+                htmlStr = htmlStr + '<input type="text" hidden name="startdatepreviousperiod" value="' + budgetLines[i].quantitySoldPeriodStartDate + '" />';
+                htmlStr = htmlStr + '<input type="text" hidden name="enddatepreviousperiod" value="' + budgetLines[i].quantitySoldPeriodEndDate + '" />';
 
                 htmlStr = htmlStr + '</div>';
 
@@ -484,6 +484,9 @@
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
                     htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
                     htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + result.quantitySold + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="quantitysoldpreviousperiod" value="' + result.quantitySold + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="startdatepreviousperiod" value="' + result.quantitySoldPeriodStartDate + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="enddatepreviousperiod" value="' + result.quantitySoldPeriodEndDate + '" />';
                     htmlStr = htmlStr + '</div>';
                     htmlStr = htmlStr + '</div>';
 
@@ -536,6 +539,9 @@
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
                     htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
                     htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + result.quantitySold + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="quantitysoldpreviousperiod" value="' + result.quantitySold + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="startdatepreviousperiod" value="' + result.quantitySoldPeriodStartDate + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="enddatepreviousperiod" value="' + result.quantitySoldPeriodEndDate + '" />';
                     htmlStr = htmlStr + '</div>';
                     htmlStr = htmlStr + '</div>';
 
@@ -654,6 +660,9 @@
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + result.stockItemId + '" />';
                     htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
                     htmlStr = htmlStr + '<input type="text" name="quantitySold" readonly value="' + result.quantitySold + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="quantitysoldpreviousperiod" value="' + result.quantitySold + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="startdatepreviousperiod" value="' + result.quantitySoldPeriodStartDate + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="enddatepreviousperiod" value="' + result.quantitySoldPeriodEndDate + '" />';
                     htmlStr = htmlStr + '</div>';
                     htmlStr = htmlStr + '</div>';
 

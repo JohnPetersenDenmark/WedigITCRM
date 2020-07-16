@@ -921,6 +921,7 @@ namespace WedigITCRM.Controllers
         {
             if (!string.IsNullOrEmpty(model.PurchaseBudgetId))
             {
+                DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
                 PurchaseBudget purchaseBudget = _purchaseBudgetRepository.GetPurchaseBudget(Int32.Parse(model.PurchaseBudgetId));
                 if (purchaseBudget != null)
                 {
@@ -960,7 +961,15 @@ namespace WedigITCRM.Controllers
 
                             if (periodLine != null)
                             {
-                                model.QuantitySold = getTotalSoldAmountForStockItem(periodLine.PeriodStartDate, periodLine.PeriodEndDate, stockItem.DineroGuiD, companyAccount).ToString();
+                                DateTime periodLastYearStartDate = periodLine.PeriodStartDate;
+                                periodLastYearStartDate = periodLastYearStartDate.AddYears(-1);
+                                model.QuantitySoldPeriodStartDate = periodLastYearStartDate.ToString(danishDateTimeformat.ShortDatePattern);
+
+                                DateTime periodLastYearEndDate = periodLine.PeriodEndDate;
+                                periodLastYearEndDate = periodLastYearEndDate.AddYears(-1);
+                                model.QuantitySoldPeriodEndDate = periodLastYearEndDate.ToString(danishDateTimeformat.ShortDatePattern);
+
+                                model.QuantitySold = getTotalSoldAmountForStockItem(periodLastYearStartDate, periodLastYearEndDate, stockItem.DineroGuiD, companyAccount).ToString();
                             }
                         }
                     }
@@ -1000,6 +1009,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult CreateBudgetLineFromBudgetLine(PurchaseBudgetLineModel model, CompanyAccount companyAccount)
         {
+            DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
             if (!string.IsNullOrEmpty(model.PurchaseBudgetId))
             {
                 PurchaseBudget purchaseBudget = _purchaseBudgetRepository.GetPurchaseBudget(Int32.Parse(model.PurchaseBudgetId));
@@ -1039,7 +1049,15 @@ namespace WedigITCRM.Controllers
 
                                 if (periodLine != null)
                                 {
-                                    model.QuantitySold = getTotalSoldAmountForStockItem(periodLine.PeriodStartDate, periodLine.PeriodEndDate, stockItem.DineroGuiD, companyAccount).ToString();
+                                    DateTime periodLastYearStartDate = periodLine.PeriodStartDate;
+                                    periodLastYearStartDate = periodLastYearStartDate.AddYears(-1);
+                                    model.QuantitySoldPeriodStartDate = periodLastYearStartDate.ToString(danishDateTimeformat.ShortDatePattern);
+
+                                    DateTime periodLastYearEndDate = periodLine.PeriodEndDate;
+                                    periodLastYearEndDate = periodLastYearEndDate.AddYears(-1);
+                                    model.QuantitySoldPeriodEndDate = periodLastYearEndDate.ToString(danishDateTimeformat.ShortDatePattern);
+
+                                    model.QuantitySold = getTotalSoldAmountForStockItem(periodLastYearStartDate, periodLastYearEndDate, stockItem.DineroGuiD, companyAccount).ToString();
                                 }
                             }
 
@@ -1093,6 +1111,7 @@ namespace WedigITCRM.Controllers
         [HttpPost]
         public IActionResult updateBudgetLinePeriod(PurchaseBudgetLineModel model, CompanyAccount companyAccount)
         {
+            DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
             if (!string.IsNullOrEmpty(model.PurchaseBudgetId))
             {
                 PurchaseBudget purchaseBudget = _purchaseBudgetRepository.GetPurchaseBudget(Int32.Parse(model.PurchaseBudgetId));
@@ -1129,7 +1148,15 @@ namespace WedigITCRM.Controllers
 
                                     if (periodLine != null)
                                     {
-                                        model.QuantitySold = getTotalSoldAmountForStockItem(periodLine.PeriodStartDate, periodLine.PeriodEndDate, stockItem.DineroGuiD, companyAccount).ToString();
+                                        DateTime periodLastYearStartDate = periodLine.PeriodStartDate;
+                                        periodLastYearStartDate = periodLastYearStartDate.AddYears(-1);
+                                        model.QuantitySoldPeriodStartDate = periodLastYearStartDate.ToString(danishDateTimeformat.ShortDatePattern);
+
+                                        DateTime periodLastYearEndDate = periodLine.PeriodEndDate;
+                                        periodLastYearEndDate = periodLastYearEndDate.AddYears(-1);
+                                        model.QuantitySoldPeriodEndDate = periodLastYearEndDate.ToString(danishDateTimeformat.ShortDatePattern);
+
+                                        model.QuantitySold = getTotalSoldAmountForStockItem(periodLastYearStartDate, periodLastYearEndDate, stockItem.DineroGuiD, companyAccount).ToString();
                                     }
                                 }
                             }
