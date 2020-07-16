@@ -15,6 +15,55 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-4">
+
+        </div>
+        <div class="col-8">
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><i style="color : #17a2b8;" class="fa fa fa-window-close fa-2x fa-fw"></i></button>
+                            <div style="color : #17a2b8;" class="modal-title tableheadline">Ordrelinje</div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-2">
+                                    <div id="quantitytorderedpreviousperiod">
+
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div id="lastperiodstartdate">
+
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div id="lastperiodenddate">
+
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div id="budgetlineidhold">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">                                
+                                <button type="button" id="buttontransferamount" class="btn btn-info btn-lg">Overfør</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
 
@@ -86,9 +135,10 @@
 
 
 
+
     <div class="row">
         <div class="col-4">
-            <div class="itemlistfixedpos" >
+            <div class="itemlistfixedpos">
                 @if (Model != null)
                 {
                     @foreach (var stockItem in Model.StockItems)
@@ -104,7 +154,7 @@
                 }
             </div>
         </div>
-       
+
         <div class="col-8">
             @if (Model != null)
             {
@@ -143,11 +193,12 @@
 
         </div>
     </div>
+</div>
 
 
 
-    @section Scripts {
-        <script>
+@section Scripts {
+    <script>
         $(document).ready(function () {
 
 
@@ -167,20 +218,14 @@
                     htmlStr = htmlStr + '<div class="col-1 show-quantity-sold">' + '<i style="color : #17a2b8;" class="fa fa-envelope-open fa-fw"></i>' + '<i style="color : #17a2b8;" class="fa fa-trash fa-fw removebudgetline"></i>' + '</div>';
                     htmlStr = htmlStr + '<input type="text" hidden name="periodeDivId" value="' + budgetLines[i].periodLineId + '" />';
                     htmlStr = htmlStr + '<input type="text" hidden name="stockItemId" value="' + budgetLines[i].stockItemId + '" />';
-                   
-                htmlStr = htmlStr + '</div>';
-               
 
-                //htmlStr = htmlStr + '<div class="quantitysolddiv" style="display:none">';
-                htmlStr = htmlStr + '<div class="row quantitysolddiv" >';
-                    htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].quantitySold + '</div>';
-                    htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].quantitySoldPeriodEndDate + '</div>';
-                    htmlStr = htmlStr + '<div class="col-2">' + budgetLines[i].quantitySoldPeriodStartDate + '</div>';
-                htmlStr = htmlStr + '</div>';
-               
-               // htmlStr = htmlStr + '</div>';
+                    htmlStr = htmlStr + '<input type="text" hidden name="quantitysoldpreviousperiod" value="' + budgetLines[i].quantitySold + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="startdatepreviousperiod" value="' + budgetLines[i].quantitySoldPeriodStartDate + '" />';
+                    htmlStr = htmlStr + '<input type="text" hidden name="enddatepreviousperiod" value="' + budgetLines[i].quantitySoldPeriodEndDate + '" />';
 
-                //
+                htmlStr = htmlStr + '</div>';
+
+
 
                 var newDivNode = document.createElement("div");
                 newDivNode.innerHTML = htmlStr;
@@ -194,6 +239,11 @@
 
             $(document).on('change', '.periodline-input-field', function () {
                 var quantity = $(this).val();
+
+                if (isNaN(quantity)) {
+                    return
+                }
+
                 var budgetLineId = $(this).parent().parent().attr("id");
 
                 updateBudgetLineQuantity(budgetLineId, quantity);
@@ -236,8 +286,8 @@
             });
 
 
-            $(document).on("click", ".fa-envelope-open", function (event) {
 
+                $(document).on("click", ".XXXXXXXXXXXXXXXXXXX-fa-envelope-open", function (event) {
                 var tmpdiv1 = $(this).parent();
                 var tmpdiv2 = tmpdiv1.parent();
                 var tmpdiv3 = tmpdiv2.parent();
@@ -255,7 +305,7 @@
                 //} else {
                 //    quantitySoldDiv.style.display = "none";
                 //}
-               
+
                 if (window.getComputedStyle(quantitySoldDiv).visibility === "hidden") {
                     quantitySoldDiv.style.visibility = "visible";
                 }
@@ -291,6 +341,53 @@
                 $("#searchForm").submit();
                 event.stopImmediatePropagation();
             });
+
+
+            $(document).on("click", ".fa-envelope-open", function (event) {
+
+                var budgetLineDiv = $(this).parent().parent();
+
+                document.getElementById("budgetlineidhold").innerHTML = budgetLineDiv[0].getAttribute("id");
+
+                var inputElements = budgetLineDiv[0].querySelectorAll("input");
+
+                for (var i = 0; i < inputElements.length; i++) {                   
+
+                    if (inputElements[i].name == "quantitysoldpreviousperiod") {                   
+                        document.getElementById("quantitytorderedpreviousperiod").innerHTML = inputElements[i].value;
+                    }
+                    if (inputElements[i].name == "startdatepreviousperiod") {
+                        document.getElementById("lastperiodstartdate").innerHTML = inputElements[i].value;
+                    }
+
+                    if (inputElements[i].name == "enddatepreviousperiod") {                    
+                        document.getElementById("lastperiodenddate").innerHTML = inputElements[i].value;
+                    }
+                }
+
+                $("#myModal").modal('show');
+
+            });
+
+            $('#buttontransferamount').bind('click', function () {
+
+
+                var budgetLineId = document.getElementById("budgetlineidhold").innerHTML;
+                var budgetLineDiv = document.getElementById(budgetLineId);
+
+                var transferredQuantity = document.getElementById("quantitytorderedpreviousperiod").innerHTML;
+
+                var inputElements = budgetLineDiv.querySelectorAll("input");
+                for (var i = 0; i < inputElements.length; i++) {
+                    if (inputElements[i].name == "Quantity") {
+                        inputElements[i].value = transferredQuantity;
+                        updateBudgetLineQuantity(budgetLineId, transferredQuantity);
+                    }
+                }
+
+                $("#myModal").modal('hide');
+            });
+
 
 
         });
@@ -582,5 +679,5 @@
         }
 
 
-        </script>
-    }
+    </script>
+}
