@@ -1210,6 +1210,49 @@ namespace WedigITCRM.Controllers
             return Json(currencies);
         }
 
+        public IActionResult getAllbudgets( CompanyAccount companyAccount)
+        {
+            DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
+            List<PurchaseBudgetViewModel> purchaseBudgetListModel = new List<PurchaseBudgetViewModel>();
+
+            List<PurchaseBudget> purchaseBudgetList = _purchaseBudgetRepository.GetAllPurchaseBudgets().Where(budget => budget.companyAccountId == companyAccount.companyAccountId).OrderByDescending(budget => budget.StartDateOfPeriod).ToList();
+
+            foreach (var purchaseBudget in purchaseBudgetList)
+            {
+                PurchaseBudgetViewModel purchaseBudgetViewModel = new PurchaseBudgetViewModel();
+
+                purchaseBudgetViewModel.Id = purchaseBudget.Id.ToString(); ;
+                purchaseBudgetViewModel.Description = purchaseBudget.Description;
+                purchaseBudgetViewModel.PeriodFromDate = purchaseBudget.StartDateOfPeriod.ToString(danishDateTimeformat.ShortDatePattern);
+                purchaseBudgetViewModel.PeriodToDate = purchaseBudget.EndDateOfPeriod.ToString(danishDateTimeformat.ShortDatePattern);
+
+                SelectListItem selItem = purchaseBudgetViewModel.SelectPeriod.Find(element => element.Value.Equals(purchaseBudget.Period));
+                purchaseBudgetViewModel.Period = selItem.Text;
+
+                purchaseBudgetListModel.Add(purchaseBudgetViewModel);
+            }
+
+            return Json(purchaseBudgetListModel);
+        }
+
+       
+        public IActionResult getBudgetPeriods(string purchaseBudgetId, CompanyAccount companyAccount)
+        {
+            List<PurchaseBudgetPeriodLine> purchasePeriodLineList = new List<PurchaseBudgetPeriodLine>();
+
+
+            if ( ! string.IsNullOrEmpty(purchaseBudgetId))
+            {
+                PurchaseBudget purchaseBudget = _purchaseBudgetRepository.GetPurchaseBudget(Int32.Parse(purchaseBudgetId));
+                if (purchaseBudget != null)
+                {
+                   purchasePeriodLineList = _purchaseBudgetPeriodLineRepository.GetAllPurchaseBudgetPeriodLines().Where(periodLine => periodLine.PurchaseBudgetId == purchaseBudget.Id).ToList();                    
+                }
+            }
+                       
+            return Json(purchasePeriodLineList);
+        }
+
         [HttpPost]
         public IActionResult getAllVendors(CompanyAccount companyAccount)
         {

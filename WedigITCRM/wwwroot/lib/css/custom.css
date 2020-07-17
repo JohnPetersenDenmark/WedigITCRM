@@ -720,3 +720,85 @@ div.orderlineheadlines {
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
+
+.budgetscontainerdiv {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 200px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #17a2b8;
+    border-left: 1px solid #17a2b8;
+    border-top: 1px solid #17a2b8;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+    .budgetscontainerdiv::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .budgetscontainerdiv::-webkit-scrollbar-track {
+        background: #17a2b8;
+    }
+
+    .budgetscontainerdiv::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border: 1px solid #000000;
+    }
+
+.budgetPeriodscontainerdiv {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 200px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #17a2b8;
+    border-left: 1px solid #17a2b8;
+    border-top: 1px solid #17a2b8;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+    .budgetPeriodscontainerdiv::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .budgetPeriodscontainerdiv::-webkit-scrollbar-track {
+        background: #17a2b8;
+    }
+
+    .budgetPeriodscontainerdiv::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border: 1px solid #000000;
+    }
+
+
+.budgetperiodlinescontainer {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 200px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #17a2b8;
+    border-left: 1px solid #17a2b8;
+    border-top: 1px solid #17a2b8;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+    .budgetperiodlinescontainer::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .budgetperiodlinescontainer::-webkit-scrollbar-track {
+        background: #17a2b8;
+    }
+
+    .budgetperiodlinescontainer::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border: 1px solid #000000;
+    }
+
+

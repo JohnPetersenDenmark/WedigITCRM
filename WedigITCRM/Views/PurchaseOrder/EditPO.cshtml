@@ -6,6 +6,69 @@
         Indkøbsordre nr. @Model.PurchaseOrderDocumentNumber
     </div>
     <br />
+    <div class="row">
+        <div class="col-12">
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalorderlinesfrombudget" role="dialog">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><i style="color : #17a2b8;" class="fa fa fa-window-close fa-2x fa-fw"></i></button>
+                            <div style="color : #17a2b8;" class="modal-title tableheadline">Ordrelinje</div>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="row budgetheadlinesHeaders">
+                                <div class="col-8">
+                                    <div class="row">
+                                        <div class="col-3">Fra</div>
+                                        <div class="col-3">Til</div>
+                                        <div class="col-3">Periode</div>
+                                        <div class="col-3">Beskrivelse</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8 budgetscontainerdiv" id="budgetscontainer">
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="row">
+                                        <div class="col-5">Fra</div>
+                                        <div class="col-5">Til</div>
+                                        <div class="col-2">Uge</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8 budgetPeriodscontainerdiv" id="budgetperiodscontainer">
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-8 budgetperiodlinescontainer" id="budgetperiodlinescontainer">
+
+                                </div>
+                                
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" id="Btnmodalorderlinesfrombudget" class="btn btn-info btn-lg">Luk</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <form method="post">
         <input asp-for="@Model.PurchaseOrderId" id="purchaseorderid" type="hidden" />
         <div class="row">
@@ -191,6 +254,7 @@
                 <div class="row">
                     <!-- Trigger the modal with a button -->
                     <button id="btnOrderLine" type="button" class="btn btn-info btn-lg">Tilføj ordrelinje</button>
+                    <button id="btnOrderLineFromBudget" type="button" class="btn btn-info btn-lg">Tilføj ordrelinje fra budget</button>
 
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" role="dialog">
@@ -305,6 +369,14 @@
                 $("#myModal").modal('hide');
             });
 
+            $('#btnOrderLineFromBudget').bind('click', function () {
+                getAllbudgets();
+                $("#modalorderlinesfrombudget").modal('show');
+            });
+
+            $('#Btnmodalorderlinesfrombudget').bind('click', function () {
+                $("#modalorderlinesfrombudget").modal('hide');
+            });
 
             $('#selectvendor').bind('change', function () {
                 var vendorId = $(this).val();
@@ -348,7 +420,22 @@
                     contentType: "application/x-www-form-urlencoded; charset=utf-8",
                     dataType: "json",
                     success: function (result) {
-                        $("#myModal").modal('hide');
+
+                        $('#purchaseorderlineid').val("");
+                        $('#stockitemid').val("");
+                        $('#itemNameSuggest').val("");
+
+                        $('#ourcostprice').val("");
+                        $('#ouritemunit').val("");
+                        $('#ourlocation').val("");
+                        $('#ouritemnumber').val("");
+                        $('#ouritemname').val("");
+                        $('#quantitytoorder').val("1,00");
+
+                        $('#vendoritemnumber').val("");
+                        $('#vendoritemname').val("");
+                        $("#myModal").modal('show');
+
                         var purchaseOrderId = $('#purchaseorderid').val();
                         getOrderLinesByPurchaseOrderId(purchaseOrderId)
                     },
@@ -741,6 +828,144 @@
                 dataType: "json",
                 success: function (result) {
                     getOrderLinesByPurchaseOrderId(purchaseOrderId);
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
+        }
+
+        function getAllbudgets() {
+            $.ajax({
+                type: "GET",
+                url: "/purchaseorder/getAllbudgets",
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+
+                    $("#budgetscontainer").html("");
+                    var HTMLstring = "";
+
+                    $.each(result, function (i, data) {
+
+                        HTMLstring = HTMLstring + '<div class="row budgetheadlines" id="' + data.id + '">';
+
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.periodFromDate + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.periodToDate + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.period + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.description + '</div>';
+
+                        HTMLstring = HTMLstring + '</div>'      // end of '<div class="row">'
+
+                    });
+
+                    $("#budgetscontainer").append(HTMLstring);
+                 
+                    $(document).on("click", ".budgetheadlines", function (event) {
+                        var purchaseBudgetId = $(this).attr("id");
+
+                        getBudgetPeriodLines(purchaseBudgetId);
+                        event.stopImmediatePropagation()
+                    });
+
+
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
+        }
+
+        function getBudgetPeriodLines(purchaseBudgetId) {
+            $.ajax({
+                type: "GET",
+                url: "/purchaseorder/getBudgetPeriods",
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                data: 'purchaseBudgetId=' + purchaseBudgetId,
+                dataType: "json",
+                success: function (result) {
+
+                    $("#budgetperiodscontainer").html("");
+                    var HTMLstring = "";
+
+                    $.each(result, function (i, data) {
+
+                        HTMLstring = HTMLstring + '<div class="row budgeperiodline" id="' + data.id + '">';
+
+                        HTMLstring = HTMLstring + '<div class="col-5">' + data.displayPeriodStartText + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-5">' + data.displayPeriodEndText + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-2">' + data.displayWeekNumber + '</div>';
+
+                        HTMLstring = HTMLstring + '</div>'      // end of '<div class="row">'
+
+                    });
+
+
+                    $("#budgetperiodscontainer").append(HTMLstring);
+
+                    $(document).on("click", ".budgeperiodline", function (event) {
+                        var budgetHeaderLineId = $(this).attr("id");
+
+                        event.stopImmediatePropagation()
+                    });
+
+
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
+        }
+
+        function getBudgetPeriodItemLines(purchaseBudgetId, purchasePeriodId) {
+            $.ajax({
+                type: "GET",
+                url: "/purchaseorder/getBudgetPeriodItemLines",
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                data: 'purchaseBudgetId=' + purchaseBudgetId + "&purchasePeriodId=" + purchasePeriodId,
+                dataType: "json",
+                success: function (result) {
+
+                    $("#budgetperiodlinescontainer").html("");
+                    var HTMLstring = "";
+
+                    $.each(result, function (i, data) {
+
+                        HTMLstring = HTMLstring + '<div class="row budgeperioditemline" id="' + data.id + '">';
+
+                        HTMLstring = HTMLstring + '<div class="col-5">' + data.displayPeriodStartText + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-5">' + data.displayPeriodEndText + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-2">' + data.displayWeekNumber + '</div>';
+
+                        HTMLstring = HTMLstring + '</div>'      // end of '<div class="row">'
+
+                    });
+
+
+                    $("#budgetperiodlinescontainer").append(HTMLstring);
+
+                    $(document).on("click", ".budgeperioditemline", function (event) {
+                        var budgetHeaderLineId = $(this).attr("id");
+
+                        event.stopImmediatePropagation()
+                    });
+
+
                 },
 
                 error: function (request, status, error) {
