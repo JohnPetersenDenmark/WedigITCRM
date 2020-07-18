@@ -400,7 +400,7 @@
                 for (var i = 0; i < selectedBudgetItemLines.length; i++) {
                     if (selectedBudgetItemLines[i].checked == true) {
                         var budgetItemLineId = selectedBudgetItemLines[i].parentElement.parentElement.getAttribute("id");
-                        createPurchaseOrderLineFromPurchaseBudgetLine(budgetItemLineId)
+                        createPurchaseOrderLineFromPurchaseBudgetLine(budgetItemLineId, purchaseOrderId)
                     }
                   
                 }
@@ -1018,14 +1018,14 @@
             });
         }
 
-        function createPurchaseOrderLineFromPurchaseBudgetLine(budgetItemLineId ) {
+        function createPurchaseOrderLineFromPurchaseBudgetLine(budgetItemLineId, purchaseOrderId ) {
 
             
             $.ajax({
                 type: "POST",
                 url: "/purchaseorder/createPurchaseOrderLineFromPurchaseBudgetLine",
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
-                data: 'id=' + budgetItemLineId ,
+                data: 'id=' + budgetItemLineId + "&purchaseOrderId=" + purchaseOrderId ,
                 dataType: "json",
                 success: function (result) {
                   

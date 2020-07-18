@@ -1423,7 +1423,7 @@ namespace WedigITCRM.Controllers
         }
 
         [HttpPost]
-        public IActionResult createPurchaseOrderLineFromPurchaseBudgetLine(PurchaseBudgetLineModel model, CompanyAccount companyAccount)
+        public IActionResult createPurchaseOrderLineFromPurchaseBudgetLine(PurchaseBudgetLineToOrderLineModel model, CompanyAccount companyAccount)
         {
 
             if (!string.IsNullOrEmpty(model.Id))
@@ -1446,7 +1446,7 @@ namespace WedigITCRM.Controllers
                         orderLine.VendorItemName = stockItem.VendorItemName;
                     }
 
-                    orderLine.PurchaseOrderId = purchaseBudgetLine.PurchaseBudgetId;
+                    orderLine.PurchaseOrderId = Int32.Parse(model.PurchaseOrderId);
                     orderLine.QuantityToOrder = purchaseBudgetLine.QuantityToOrder;
                     orderLine.companyAccountId = companyAccount.companyAccountId;
 
@@ -1976,6 +1976,15 @@ namespace WedigITCRM.Controllers
         public int companyAccountId { get; set; }
 
     }
+
+    public class PurchaseBudgetLineToOrderLineModel
+    {
+        public string Id { get; set; }              
+        public string PurchaseOrderId { get; set; }      
+
+    }
+
+
 
 }
 

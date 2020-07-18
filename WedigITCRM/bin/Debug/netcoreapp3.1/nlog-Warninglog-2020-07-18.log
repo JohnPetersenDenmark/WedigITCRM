@@ -49,3 +49,76 @@
 2020-07-18 04:19:41.9902|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
 2020-07-18 04:19:44.0174|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
 2020-07-18 04:19:44.0970|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-18 11:11:54.4967|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-18 11:11:58.6437|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-18 11:11:59.1641|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-18 11:12:01.7281|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-18 11:12:03.6548|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-18 11:12:03.6915|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-18 11:12:03.7174|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-18 11:12:03.7174|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-18 11:12:03.7366|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-18 11:12:09.7687|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|One or more errors occurred. (Værten kendes ikke.)
+2020-07-18 11:12:09.9428|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|One or more errors occurred. (Værten kendes ikke.)nyxium stack trace:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroAPIConnect.cs:line 62
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 76
+2020-07-18 11:15:45.5482|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-18 11:15:45.5641|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-18 11:16:47.6811|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-18 11:16:49.0864|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-18 11:16:49.1711|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-18 11:16:49.7600|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-18 11:16:51.3546|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-18 11:16:51.3738|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-18 11:16:51.8300|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-18 11:16:51.8609|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-18 11:16:51.8817|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-18 11:16:54.0726|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|One or more errors occurred. (Værten kendes ikke.)
+2020-07-18 11:16:54.1264|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|One or more errors occurred. (Værten kendes ikke.)nyxium stack trace:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroAPIConnect.cs:line 62
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 76
+2020-07-18 11:17:57.8271|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-18 11:17:57.8271|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-18 11:23:37.4172|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-18 11:23:39.3501|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-18 11:23:39.5757|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-18 11:23:41.6306|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-18 11:23:43.3846|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-18 11:23:43.4286|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-18 11:23:43.9770|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-18 11:23:44.7155|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-18 11:23:44.7778|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-18 11:23:47.7520|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|One or more errors occurred. (Værten kendes ikke.)
+2020-07-18 11:23:47.8857|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|One or more errors occurred. (Værten kendes ikke.)nyxium stack trace:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroAPIConnect.cs:line 62
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 76
+2020-07-18 11:24:02.9745|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-18 11:24:02.9859|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-18 11:29:42.1441|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|One or more errors occurred. (Værten kendes ikke.)nyxium stack trace:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroAPIConnect.cs:line 62
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 76
+2020-07-18 11:35:42.1790|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|One or more errors occurred. (Værten kendes ikke.)nyxium stack trace:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroAPIConnect.cs:line 62
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 76
+2020-07-18 11:40:25.4242|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-18 11:40:25.6876|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-18 12:54:02.0654|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-18 12:54:02.6030|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-18 13:20:41.5906|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-18 13:20:44.7331|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-18 13:20:44.9027|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-18 13:20:47.0530|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-18 13:20:49.7558|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-18 13:20:49.9153|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-18 13:20:49.9749|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-18 13:20:52.5846|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-18 13:20:53.2019|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
