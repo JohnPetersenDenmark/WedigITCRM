@@ -40,9 +40,10 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="row">
-                                        <div class="col-5">Fra</div>
-                                        <div class="col-5">Til</div>
-                                        <div class="col-2">Uge</div>
+                                        <div class="col-3">Fra</div>
+                                        <div class="col-3">Til</div>
+                                        <div class="col-3">Uge</div>
+                                        <div class="col-3"></div>
                                     </div>
                                 </div>
                             </div>
@@ -53,13 +54,24 @@
                             </div>
 
                             <div class="row">
+                                <div class="col-8">
+                                    <div class="row">
+                                        <div class="col-3">Vare</div>
+                                        <div class="col-3">Varenr.</div>
+                                        <div class="col-3">Antal</div>
+                                        <div class="col-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-8 budgetperiodlinescontainer" id="budgetperiodlinescontainer">
 
                                 </div>
-                                
+
                             </div>
 
                             <div class="modal-footer">
+                                <button type="button" id="Btntransferorderlinesfrombudget" class="btn btn-info btn-lg">Overfør</button>
                                 <button type="button" id="Btnmodalorderlinesfrombudget" class="btn btn-info btn-lg">Luk</button>
                             </div>
                         </div>
@@ -329,6 +341,7 @@
 @section Scripts {
     <script>
         $(document).ready(function () {
+            var purchaseBudgetId;
 
             getCurrencies();
             getAllVendors();
@@ -377,6 +390,28 @@
             $('#Btnmodalorderlinesfrombudget').bind('click', function () {
                 $("#modalorderlinesfrombudget").modal('hide');
             });
+
+            $('#Btntransferorderlinesfrombudget').bind('click', function () {
+
+                var purchaseOrderId = $('#purchaseorderid').val();
+
+                var selectedBudgetItemLines = document.getElementsByClassName("budgetlineselected");
+              
+                for (var i = 0; i < selectedBudgetItemLines.length; i++) {
+                    if (selectedBudgetItemLines[i].checked == true) {
+                        var budgetItemLineId = selectedBudgetItemLines[i].parentElement.parentElement.getAttribute("id");
+                        createPurchaseOrderLineFromPurchaseBudgetLine(budgetItemLineId)
+                    }
+                  
+                }
+               
+                getOrderLinesByPurchaseOrderId(purchaseOrderId)
+
+                $("#modalorderlinesfrombudget").modal('hide');
+            });
+
+
+            
 
             $('#selectvendor').bind('change', function () {
                 var vendorId = $(this).val();
@@ -867,7 +902,7 @@
                     $("#budgetscontainer").append(HTMLstring);
                  
                     $(document).on("click", ".budgetheadlines", function (event) {
-                        var purchaseBudgetId = $(this).attr("id");
+                        purchaseBudgetId = $(this).attr("id");
 
                         getBudgetPeriodLines(purchaseBudgetId);
                         event.stopImmediatePropagation()
@@ -902,9 +937,10 @@
 
                         HTMLstring = HTMLstring + '<div class="row budgeperiodline" id="' + data.id + '">';
 
-                        HTMLstring = HTMLstring + '<div class="col-5">' + data.displayPeriodStartText + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-5">' + data.displayPeriodEndText + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-2">' + data.displayWeekNumber + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.displayPeriodStartText + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.displayPeriodEndText + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.displayWeekNumber + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3"></div>';
 
                         HTMLstring = HTMLstring + '</div>'      // end of '<div class="row">'
 
@@ -914,7 +950,57 @@
                     $("#budgetperiodscontainer").append(HTMLstring);
 
                     $(document).on("click", ".budgeperiodline", function (event) {
-                        var budgetHeaderLineId = $(this).attr("id");
+                        var purchasePeriodId = $(this).attr("id");
+
+                        getBudgetPeriodItemLines(purchasePeriodId)
+                        event.stopImmediatePropagation()
+                    });
+
+
+                },
+
+                error: function (request, status, error) {
+                    var jsonErrorObj = request.responseJSON
+                    var errorText = jsonErrorObj.Detail;
+                    var errorTitle = jsonErrorObj.Title;
+                    var errorInstance = jsonErrorObj.Instance;
+                    location.href = "/home/ShowErrorForJSON?errorinstance=" + errorInstance;
+                }
+            });
+        }
+
+        function getBudgetPeriodItemLines(purchasePeriodId) {
+
+            var TmppurchaseBudgetId = purchaseBudgetId;
+            $.ajax({
+                type: "GET",
+                url: "/purchaseorder/getBudgetPeriodItemLines",
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                data: 'purchaseBudgetId=' + purchaseBudgetId + "&purchasePeriodId=" + purchasePeriodId,
+                dataType: "json",
+                success: function (result) {
+
+                    $("#budgetperiodlinescontainer").html("");
+                    var HTMLstring = "";
+
+                    $.each(result, function (i, data) {
+
+                        HTMLstring = HTMLstring + '<div class="row budgetperioditemline" id="' + data.id + '">';
+
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.ourItemName + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.ourItemNumber + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3">' + data.quantityToOrder + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-3"><input type="checkbox" class="budgetlineselected" checked></div>';
+
+                        HTMLstring = HTMLstring + '</div>'      // end of '<div class="row">'
+
+                    });
+
+
+                    $("#budgetperiodlinescontainer").append(HTMLstring);
+
+                    $(document).on("click", ".budgetperioditemline", function (event) {
+                        var budgetItemLineId = $(this).attr("id");
 
                         event.stopImmediatePropagation()
                     });
@@ -932,40 +1018,17 @@
             });
         }
 
-        function getBudgetPeriodItemLines(purchaseBudgetId, purchasePeriodId) {
+        function createPurchaseOrderLineFromPurchaseBudgetLine(budgetItemLineId ) {
+
+            
             $.ajax({
-                type: "GET",
-                url: "/purchaseorder/getBudgetPeriodItemLines",
+                type: "POST",
+                url: "/purchaseorder/createPurchaseOrderLineFromPurchaseBudgetLine",
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
-                data: 'purchaseBudgetId=' + purchaseBudgetId + "&purchasePeriodId=" + purchasePeriodId,
+                data: 'id=' + budgetItemLineId ,
                 dataType: "json",
                 success: function (result) {
-
-                    $("#budgetperiodlinescontainer").html("");
-                    var HTMLstring = "";
-
-                    $.each(result, function (i, data) {
-
-                        HTMLstring = HTMLstring + '<div class="row budgeperioditemline" id="' + data.id + '">';
-
-                        HTMLstring = HTMLstring + '<div class="col-5">' + data.displayPeriodStartText + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-5">' + data.displayPeriodEndText + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-2">' + data.displayWeekNumber + '</div>';
-
-                        HTMLstring = HTMLstring + '</div>'      // end of '<div class="row">'
-
-                    });
-
-
-                    $("#budgetperiodlinescontainer").append(HTMLstring);
-
-                    $(document).on("click", ".budgeperioditemline", function (event) {
-                        var budgetHeaderLineId = $(this).attr("id");
-
-                        event.stopImmediatePropagation()
-                    });
-
-
+                  
                 },
 
                 error: function (request, status, error) {

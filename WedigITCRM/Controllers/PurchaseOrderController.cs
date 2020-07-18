@@ -900,7 +900,7 @@ namespace WedigITCRM.Controllers
                 _purchaseBudgetRepository.Delete(purchaseBudget.Id);
 
                 List<PurchaseBudgetLine> budgetLines = _purchaseBudgetLinesRepository.GetAllPurchaseBudgetLines().Where(budgetLine => budgetLine.PurchaseBudgetId == purchaseBudget.Id).ToList();
-                foreach ( var budgetLine in budgetLines)
+                foreach (var budgetLine in budgetLines)
                 {
                     _purchaseBudgetLinesRepository.Delete(budgetLine.Id);
                 }
@@ -916,7 +916,7 @@ namespace WedigITCRM.Controllers
             return RedirectToAction("IndexBudget", "PurchaseOrder");
         }
 
-       [HttpPost]
+        [HttpPost]
         public IActionResult createBudgetLineFromItemLine(PurchaseBudgetLineModel model, CompanyAccount companyAccount)
         {
             if (!string.IsNullOrEmpty(model.PurchaseBudgetId))
@@ -1210,7 +1210,7 @@ namespace WedigITCRM.Controllers
             return Json(currencies);
         }
 
-        public IActionResult getAllbudgets( CompanyAccount companyAccount)
+        public IActionResult getAllbudgets(CompanyAccount companyAccount)
         {
             DateTimeFormatInfo danishDateTimeformat = CultureInfo.GetCultureInfo("da-DK").DateTimeFormat;
             List<PurchaseBudgetViewModel> purchaseBudgetListModel = new List<PurchaseBudgetViewModel>();
@@ -1235,22 +1235,62 @@ namespace WedigITCRM.Controllers
             return Json(purchaseBudgetListModel);
         }
 
-       
+
         public IActionResult getBudgetPeriods(string purchaseBudgetId, CompanyAccount companyAccount)
         {
             List<PurchaseBudgetPeriodLine> purchasePeriodLineList = new List<PurchaseBudgetPeriodLine>();
 
 
-            if ( ! string.IsNullOrEmpty(purchaseBudgetId))
+            if (!string.IsNullOrEmpty(purchaseBudgetId))
             {
                 PurchaseBudget purchaseBudget = _purchaseBudgetRepository.GetPurchaseBudget(Int32.Parse(purchaseBudgetId));
                 if (purchaseBudget != null)
                 {
-                   purchasePeriodLineList = _purchaseBudgetPeriodLineRepository.GetAllPurchaseBudgetPeriodLines().Where(periodLine => periodLine.PurchaseBudgetId == purchaseBudget.Id).ToList();                    
+                    purchasePeriodLineList = _purchaseBudgetPeriodLineRepository.GetAllPurchaseBudgetPeriodLines().Where(periodLine => periodLine.PurchaseBudgetId == purchaseBudget.Id).ToList();
                 }
             }
-                       
+
             return Json(purchasePeriodLineList);
+        }
+
+        public IActionResult getBudgetPeriodItemLines(string purchaseBudgetId, string purchasePeriodId, CompanyAccount companyAccount)
+        {
+            List<PurchaseBudgetLine> purchaseBudgetItemLineList = new List<PurchaseBudgetLine>();
+            List<PurchaseBudgetLineModel> PurchaseBudgetLineModelList = new List<PurchaseBudgetLineModel>();
+
+            if (!string.IsNullOrEmpty(purchaseBudgetId))
+            {
+                PurchaseBudget purchaseBudget = _purchaseBudgetRepository.GetPurchaseBudget(Int32.Parse(purchaseBudgetId));
+                if (purchaseBudget != null)
+                {
+                    if (!string.IsNullOrEmpty(purchasePeriodId))
+                    {
+                        purchaseBudgetItemLineList = _purchaseBudgetLinesRepository.GetAllPurchaseBudgetLines().Where(budgetItemLine => budgetItemLine.PurchaseBudgetId == purchaseBudget.Id && budgetItemLine.PeriodLineId.Equals(purchasePeriodId)).ToList();
+
+                        foreach (var purchaseBudgetItemLine in purchaseBudgetItemLineList)
+                        {
+                            PurchaseBudgetLineModel purchaseBudgetLineModel = new PurchaseBudgetLineModel();
+
+                            purchaseBudgetLineModel.Id = purchaseBudgetItemLine.Id.ToString();
+                            purchaseBudgetLineModel.QuantityToOrder = purchaseBudgetItemLine.QuantityToOrder.ToString();
+
+                            StockItem stockItem = _stockItemRepository.getStockItem(purchaseBudgetItemLine.StockItemId);
+                            if (stockItem != null)
+                            {
+                                purchaseBudgetLineModel.OurItemName = stockItem.ItemName;
+                                purchaseBudgetLineModel.OurItemNumber = stockItem.ItemNumber;
+                                purchaseBudgetLineModel.OurCostPrice = stockItem.CostPrice.ToString();
+                                purchaseBudgetLineModel.StockItemId = stockItem.Id.ToString();
+                            }
+
+                            PurchaseBudgetLineModelList.Add(purchaseBudgetLineModel);
+                        }
+                    }
+
+                }
+            }
+
+            return Json(PurchaseBudgetLineModelList);
         }
 
         [HttpPost]
@@ -1379,6 +1419,53 @@ namespace WedigITCRM.Controllers
                     _purchaseOrderLineRepository.Update(orderLine);
                 }
             }
+            return Json(model);
+        }
+
+        [HttpPost]
+        public IActionResult createPurchaseOrderLineFromPurchaseBudgetLine(PurchaseBudgetLineModel model, CompanyAccount companyAccount)
+        {
+
+            if (!string.IsNullOrEmpty(model.Id))
+            {
+                PurchaseBudgetLine purchaseBudgetLine = _purchaseBudgetLinesRepository.GetPurchaseBudgetLine(Int32.Parse(model.Id));
+                if (purchaseBudgetLine != null)
+                {
+                    PurchaseOrderLine orderLine = new PurchaseOrderLine();
+
+                    StockItem stockItem = _stockItemRepository.getStockItem(purchaseBudgetLine.StockItemId);
+                    if (stockItem != null)
+                    {
+                        orderLine.StockItemId = stockItem.Id;
+                        orderLine.OurItemName = stockItem.ItemName;
+                        orderLine.OurItemNumber = stockItem.ItemNumber;
+                        orderLine.OurLocation = stockItem.Location;
+                        orderLine.OurUnit = stockItem.Unit;
+                        orderLine.OurUnitCostPrice = stockItem.CostPrice;
+                        orderLine.VendorItemNumber = stockItem.VendorItemNumber;
+                        orderLine.VendorItemName = stockItem.VendorItemName;
+                    }
+
+                    orderLine.PurchaseOrderId = purchaseBudgetLine.PurchaseBudgetId;
+                    orderLine.QuantityToOrder = purchaseBudgetLine.QuantityToOrder;
+                    orderLine.companyAccountId = companyAccount.companyAccountId;
+
+                    PurchaseOrderLine orderLineNew = _purchaseOrderLineRepository.Add(orderLine);
+                    //model.Id = orderLineNew.Id.ToString();
+
+                    //model.OurItemName = stockItem.ItemName;
+                    //model.OurItemNumber = stockItem.ItemNumber;
+                    //model.OurLocation = stockItem.Location;
+                    //model.OurItemUnit = stockItem.Unit;
+                    //model.OurCostPrice = stockItem.CostPrice.ToString();
+                    //model.VendorItemNumber = model.VendorItemNumber;
+                    //model.VendorItemName = model.VendorItemName;
+
+
+
+                }
+            }
+
             return Json(model);
         }
 
