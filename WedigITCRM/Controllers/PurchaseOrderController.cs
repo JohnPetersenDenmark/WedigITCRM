@@ -597,9 +597,13 @@ namespace WedigITCRM.Controllers
 
                 else
                 {
-                    ModelState.AddModelError("PeriodFromDate", "Der skal vælges en slutdato");
+                    ModelState.AddModelError("PeriodToDate", "Der skal vælges en slutdato");
                     return View(model);
                 }
+            }
+            else
+            {
+
             }
 
             PurchaseBudget purchaseBudget = new PurchaseBudget();
@@ -607,10 +611,7 @@ namespace WedigITCRM.Controllers
             purchaseBudget.Period = model.Period;
 
             purchaseBudget.Description = model.Description;
-
-            purchaseBudget.StartDateOfPeriod = periodFromDate;
-            purchaseBudget.EndDateOfPeriod = periodToDate;
-
+                      
             purchaseBudget.companyAccountId = companyAccount.companyAccountId;
             purchaseBudget.CreatedDate = DateTime.Now;
             purchaseBudget.LastEditedDate = DateTime.Now;
@@ -631,29 +632,35 @@ namespace WedigITCRM.Controllers
                     numberOfPeriodLines = 12;
                     PeriodLineUnit = 1;
                     periodStartDateTime = new DateTime(periodFromDate.Year, periodFromDate.Month, 1);
+                    periodFromDate = periodStartDateTime;
+                    periodToDate = periodStartDateTime.AddMonths(12).AddDays(-1);
                     break;
                 case "2":                       // 1/2 year
                     numberOfPeriodLines = 6;
                     PeriodLineUnit = 1;
                     periodStartDateTime = new DateTime(periodFromDate.Year, periodFromDate.Month, 1);
+                    periodFromDate = periodStartDateTime;
+                    periodToDate = periodStartDateTime.AddMonths(6).AddDays(-1);
                     break;
                 case "3":                       // A Quarter
                     numberOfPeriodLines = 3;
                     PeriodLineUnit = 1;
                     periodStartDateTime = new DateTime(periodFromDate.Year, periodFromDate.Month, 1);
+                    periodFromDate = periodStartDateTime;
+                    periodToDate = periodStartDateTime.AddMonths(3).AddDays(-1);
                     break;
                 case "4":                       // 1 Month as weeks
                     numberOfPeriodLines = 6;
-                    PeriodLineUnit = 2;
-                    // periodStartDateTime = WeekCalculation.getDateOffFirstDayInWeek(periodFromDate);
+                    PeriodLineUnit = 2;                   
                     periodStartDateTime = periodFromDate;
                     periodEndDateTime = periodFromDate.AddMonths(1);
-                    // weekNo = WeekCalculation.getWeekNumberBydate(periodStartDateTime);
+                    periodToDate = periodStartDateTime.AddMonths(1).AddDays(-1);
                     break;
                 case "5":                       // 1 week as days
                     numberOfPeriodLines = 7;
                     PeriodLineUnit = 3;
                     periodStartDateTime = periodFromDate;
+                    periodToDate = periodStartDateTime.AddDays(7);
                     break;
                 case "6":                      // 1 to 6 days 
                     TimeSpan difference = periodToDate - periodFromDate;
@@ -663,6 +670,9 @@ namespace WedigITCRM.Controllers
                     break;
 
             }
+
+            purchaseBudget.StartDateOfPeriod = periodFromDate;
+            purchaseBudget.EndDateOfPeriod = periodToDate;
 
             for (var i = 0; i < numberOfPeriodLines; i++)
             {

@@ -1,0 +1,70 @@
+2020-07-21 00:15:35.4842|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-21 00:15:37.2548|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-21 00:15:37.4168|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-21 00:15:39.3257|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-21 00:15:42.0027|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-21 00:15:42.0736|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-21 00:15:59.9073|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-21 00:15:59.9332|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-21 00:43:29.2357|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-21 00:43:30.8062|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-21 00:43:30.9197|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-21 00:43:31.7925|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-21 00:43:41.8226|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-21 00:43:42.3166|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-21 00:43:42.8723|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|One or more errors occurred. (Værten kendes ikke.)
+2020-07-21 00:43:43.0212|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|One or more errors occurred. (Værten kendes ikke.)nyxium stack trace:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroAPIConnect.cs:line 62
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 76
+2020-07-21 00:49:47.8529|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-21 00:49:49.4618|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-21 00:49:49.7975|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-21 00:49:50.5357|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-21 00:49:56.9697|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|One or more errors occurred. (Værten kendes ikke.)
+2020-07-21 00:49:57.1276|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|One or more errors occurred. (Værten kendes ikke.)nyxium stack trace:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroAPIConnect.cs:line 62
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 76
+2020-07-21 00:49:57.7956|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-21 00:49:57.8379|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-21 00:54:45.9303|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-21 00:54:47.5588|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-21 00:54:47.7009|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-21 00:54:48.5409|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-21 00:54:55.2520|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-21 00:54:55.3267|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-21 00:54:55.6562|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|One or more errors occurred. (Værten kendes ikke.)
+2020-07-21 00:54:55.7969|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|One or more errors occurred. (Værten kendes ikke.)nyxium stack trace:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroAPIConnect.cs:line 62
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 76
+2020-07-21 01:00:49.2647|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|One or more errors occurred. (Værten kendes ikke.)nyxium stack trace:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroAPIConnect.cs:line 62
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 76
+2020-07-21 01:06:49.1224|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|One or more errors occurred. (Værten kendes ikke.)nyxium stack trace:    at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroAPIConnect.cs:line 62
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 76
+2020-07-21 01:12:48.7388|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|One or more errors occurred. (Værten kendes ikke.)nyxium stack trace:    at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroAPIConnect.cs:line 62
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 76
+2020-07-21 01:15:39.9332|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-21 01:15:41.5225|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-21 01:15:41.6515|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-21 01:15:42.4768|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-21 01:15:48.4271|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-21 01:15:48.5131|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-21 01:15:49.4153|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|One or more errors occurred. (Værten kendes ikke.)
+2020-07-21 01:15:49.9400|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|One or more errors occurred. (Værten kendes ikke.)nyxium stack trace:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroAPIConnect.cs:line 62
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 76
+2020-07-21 01:18:12.2785|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-07-21 01:18:13.0044|ERROR|WedigITCRM.Startup|{"UserId":"6c1e27cf-820e-4335-b9a5-7ed1142c531c","UserName":"johnpetersen1959@gmail.com","CompanyId":"13024","CompanyName":"wedigIT ApS","Type":null,"Title":"Unexpected Error","Status":500,"Detail":"One or more errors occurred. (Værten kendes ikke.)\r\n                                         \r\n\r\n                                            at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)\r\n   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)\r\n   at System.Threading.Tasks.Task`1.get_Result()\r\n   at WedigITCRM.DineroAPI.DineroAPIConnect.connectToDinero(CompanyAccount companyAccount) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\DineroAPI\\DineroAPIConnect.cs:line 62\r\n   at WedigITCRM.Controllers.PurchaseOrderController.getTotalSoldAmountForStockItem(DateTime fromDate, DateTime toDate, Guid DineroStockitemId, CompanyAccount companyAccount) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\PurchaseOrderController.cs:line 997\r\n   at WedigITCRM.Controllers.PurchaseOrderController.createBudgetLineFromItemLine(PurchaseBudgetLineModel model, CompanyAccount companyAccount) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\PurchaseOrderController.cs:line 982\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"0c689469-e9c9-4cdc-b664-e4014c57927d","Extensions":{}}
+2020-07-21 01:18:14.7104|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An exception was thrown attempting to execute the error handler.
+2020-07-21 01:18:14.7463|ERROR|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "18158513712053354526", Request ID "8000001f-0003-fc00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
