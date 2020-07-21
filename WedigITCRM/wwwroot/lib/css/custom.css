@@ -477,7 +477,7 @@ i.fa-phone {
 }
 
 .tableheadline {
-    color: green;
+    color: #17a2b8;
     font-size: 2.0em; /* normalize */
 }
 
@@ -627,7 +627,8 @@ div.orderlineheadlines {
 }
 
 .modal-content {
-   background-color : #F4F7FA;
+    background-color: #F4F7FA;
+    padding-left: 30px;
 }
 
 
@@ -721,6 +722,44 @@ div.orderlineheadlines {
     margin-top: 10px;
 }
 
+    .itemline:hover {
+        background-color: #c7f2ff;
+    }
+
+.budgetitemline:hover {
+    background-color: #c7f2ff;
+}
+
+div .row.orderline:hover {
+    background-color: #c7f2ff;
+}
+
+.budgetheadlines:hover {
+    background-color: #c7f2ff;
+}
+
+.budgeperiodline:hover {
+    background-color: #c7f2ff;
+}
+
+.budgetperioditemline:hover {
+    background-color: #c7f2ff;
+}
+
+.selectedbudgetperiodline {
+    background-color: #c7f2ff;
+}
+
+.selectedbudgetheadline {
+    background-color: #c7f2ff;
+}
+
+.selectedbudgetperioditemline {
+    background-color: #c7f2ff;
+}
+
+
+
 
 .budgetscontainerdiv {
     overflow-x: hidden;
@@ -801,4 +840,27 @@ div.orderlineheadlines {
         border: 1px solid #000000;
     }
 
+
+.orderlineheadlines-align-left {  
+    text-align: left;
+}
+
+.orderlineheadlines-align-right {
+    text-align: right;
+}
+
+.orderline-align-left {
+    
+    text-align: left;
+}
+
+.orderline-align-right {
+   
+    text-align: right;
+}
+
+.tableheadlinesmall {
+    color: green;
+    font-size: 1.0em; /* normalize */
+}
 

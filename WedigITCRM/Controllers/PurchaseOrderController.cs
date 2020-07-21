@@ -554,6 +554,12 @@ namespace WedigITCRM.Controllers
                 return View(model);
             }
 
+            if (string.IsNullOrEmpty(model.Description))
+            {
+                ModelState.AddModelError("Description", "Der skal angives en beskrivelse");
+                return View(model);
+            }
+
             if (!string.IsNullOrEmpty(model.PeriodFromDate))
             {
                 if (DateTime.TryParse(model.PeriodFromDate, out testdate))
@@ -733,8 +739,8 @@ namespace WedigITCRM.Controllers
 
                             int periodweekNo = WeekCalculation.getWeekNumberBydate(purchaseBudgetPeriodLine.PeriodStartDate);
                             purchaseBudgetPeriodLine.displayWeekNumber = "Uge: " + periodweekNo.ToString();
-                            purchaseBudgetPeriodLine.displayPeriodStartText = "fra: " + purchaseBudgetPeriodLine.PeriodStartDate.ToString(danishDateTimeformat.ShortDatePattern);
-                            purchaseBudgetPeriodLine.displayPeriodEndText = "til: " + purchaseBudgetPeriodLine.PeriodEndDate.ToString(danishDateTimeformat.ShortDatePattern);
+                            purchaseBudgetPeriodLine.displayPeriodStartText = "Fra: " + purchaseBudgetPeriodLine.PeriodStartDate.ToString(danishDateTimeformat.ShortDatePattern);
+                            purchaseBudgetPeriodLine.displayPeriodEndText = "Til: " + purchaseBudgetPeriodLine.PeriodEndDate.ToString(danishDateTimeformat.ShortDatePattern);
 
                             periodStartDateTime = purchaseBudgetPeriodLine.PeriodEndDate.AddDays(1);
 
@@ -748,8 +754,8 @@ namespace WedigITCRM.Controllers
 
                         weekNo = WeekCalculation.getWeekNumberBydate(purchaseBudgetPeriodLine.PeriodStartDate);
                         purchaseBudgetPeriodLine.displayWeekNumber = "Uge: " + weekNo.ToString();
-                        purchaseBudgetPeriodLine.displayPeriodStartText = "fra: " + purchaseBudgetPeriodLine.PeriodStartDate.ToString(danishDateTimeformat.ShortDatePattern);
-                        purchaseBudgetPeriodLine.displayPeriodEndText = "til: " + purchaseBudgetPeriodLine.PeriodEndDate.ToString(danishDateTimeformat.ShortDatePattern);
+                        purchaseBudgetPeriodLine.displayPeriodStartText = "Fra: " + purchaseBudgetPeriodLine.PeriodStartDate.ToString(danishDateTimeformat.ShortDatePattern);
+                        purchaseBudgetPeriodLine.displayPeriodEndText = "Til: " + purchaseBudgetPeriodLine.PeriodEndDate.ToString(danishDateTimeformat.ShortDatePattern);
 
 
                         _purchaseBudgetPeriodLineRepository.Add(purchaseBudgetPeriodLine);

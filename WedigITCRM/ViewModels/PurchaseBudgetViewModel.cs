@@ -14,7 +14,7 @@ namespace WedigITCRM.ViewModels
         public string PeriodToDate { get; set; }
         public string Period { get; set; }
 
-        [Required(ErrorMessage = "Beskrivelse skal angives")]
+       
         public string Description { get; set; }
         public List<SelectListItem> SelectPeriod { get; } = new List<SelectListItem>
         {

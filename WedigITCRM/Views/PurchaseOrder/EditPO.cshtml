@@ -6,84 +6,91 @@
         Indkøbsordre nr. @Model.PurchaseOrderDocumentNumber
     </div>
     <br />
-    <div class="row">
-        <div class="col-12">
+    <div class="formcontainer">
+        <div class="row">
+            <div class="col-12">
+                <!-- Modal -->
+                <div class="modal fade" id="modalorderlinesfrombudget" role="dialog">
+                    <div class="modal-dialog modal-lg">
 
-            <!-- Modal -->
-            <div class="modal fade" id="modalorderlinesfrombudget" role="dialog">
-                <div class="modal-dialog modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><i style="color : #17a2b8;" class="fa fa fa-window-close fa-2x fa-fw"></i></button>                                
+                            </div>
+                            <div class="modal-body">
+                               
+                                <div class="row budgetheadlinesHeaders">
+                                    <div class="col-8">
+                                        <span style="color : #17a2b8;" class="tableheadlinesmall">
+                                            Budget
+                                        </span>
+                                        <div class="row">
+                                            <div class="col-3">Fra</div>
+                                            <div class="col-3">Til</div>
+                                            <div class="col-3">Periode</div>
+                                            <div class="col-3">Beskrivelse</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8 budgetscontainerdiv" id="budgetscontainer">
 
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><i style="color : #17a2b8;" class="fa fa fa-window-close fa-2x fa-fw"></i></button>
-                            <div style="color : #17a2b8;" class="modal-title tableheadline">Ordrelinje</div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    
+                                    <div class="col-8">
+                                        <span style="color : #17a2b8;" class="tableheadlinesmall">
+                                            Periode
+                                        </span>
+                                       
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8 budgetPeriodscontainerdiv" id="budgetperiodscontainer">
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                   
+                                    <div class="col-8">
+                                        <span style="color : #17a2b8;" class="tableheadlinesmall">
+                                           Varer
+                                        </span>
+                                        <div class="row">
+                                            <div class="col-3">Vare</div>
+                                            <div class="col-3">Varenr.</div>
+                                            <div class="col-3">Antal</div>
+                                            <div class="col-3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8 budgetperiodlinescontainer" id="budgetperiodlinescontainer">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" id="Btntransferorderlinesfrombudget" class="btn btn-info btn-lg">Overfør</button>
+                                    <button type="button" id="Btnmodalorderlinesfrombudget" class="btn btn-info btn-lg">Luk</button>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="modal-body">
-
-                            <div class="row budgetheadlinesHeaders">
-                                <div class="col-8">
-                                    <div class="row">
-                                        <div class="col-3">Fra</div>
-                                        <div class="col-3">Til</div>
-                                        <div class="col-3">Periode</div>
-                                        <div class="col-3">Beskrivelse</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-8 budgetscontainerdiv" id="budgetscontainer">
-
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="row">
-                                        <div class="col-3">Fra</div>
-                                        <div class="col-3">Til</div>
-                                        <div class="col-3">Uge</div>
-                                        <div class="col-3"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-8 budgetPeriodscontainerdiv" id="budgetperiodscontainer">
-
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="row">
-                                        <div class="col-3">Vare</div>
-                                        <div class="col-3">Varenr.</div>
-                                        <div class="col-3">Antal</div>
-                                        <div class="col-3"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-8 budgetperiodlinescontainer" id="budgetperiodlinescontainer">
-
-                                </div>
-
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" id="Btntransferorderlinesfrombudget" class="btn btn-info btn-lg">Overfør</button>
-                                <button type="button" id="Btnmodalorderlinesfrombudget" class="btn btn-info btn-lg">Luk</button>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <form method="post">
-        <input asp-for="@Model.PurchaseOrderId" id="purchaseorderid" type="hidden" />
         <div class="row">
+            <input asp-for="@Model.PurchaseOrderId" id="purchaseorderid" type="hidden" />
+
             <div class="col-2">
                 <div class="row">
                     <div class="col-12">
@@ -396,22 +403,22 @@
                 var purchaseOrderId = $('#purchaseorderid').val();
 
                 var selectedBudgetItemLines = document.getElementsByClassName("budgetlineselected");
-              
+
                 for (var i = 0; i < selectedBudgetItemLines.length; i++) {
                     if (selectedBudgetItemLines[i].checked == true) {
                         var budgetItemLineId = selectedBudgetItemLines[i].parentElement.parentElement.getAttribute("id");
                         createPurchaseOrderLineFromPurchaseBudgetLine(budgetItemLineId, purchaseOrderId)
                     }
-                  
+
                 }
-               
+
                 getOrderLinesByPurchaseOrderId(purchaseOrderId)
 
                 $("#modalorderlinesfrombudget").modal('hide');
             });
 
 
-            
+
 
             $('#selectvendor').bind('change', function () {
                 var vendorId = $(this).val();
@@ -764,11 +771,12 @@
 
                     // HTMLstring = HTMLstring + '<div class="">';
                     HTMLstring = HTMLstring + '<div class="row orderlineheadlines">'
-                    HTMLstring = HTMLstring + '<div class="col-3">' + 'Vare: ' + '</div>';
-                    HTMLstring = HTMLstring + '<div class="col-3">' + 'Varenummer: ' + '</div>';
-                    HTMLstring = HTMLstring + '<div class="col-1">' + 'Antal: ' + '</div>';
-                    HTMLstring = HTMLstring + '<div class="col-2">' + 'Pris: ' + '</div>';
-                    HTMLstring = HTMLstring + '<div class="col-2">' + 'Ialt: ' + '</div>';
+                    HTMLstring = HTMLstring + '<div class="col-2  orderlineheadlines-align-left">' + 'Vare: ' + '</div>';
+                    HTMLstring = HTMLstring + '<div class="col-2  orderlineheadlines-align-left">' + 'Varenummer: ' + '</div>';
+                    HTMLstring = HTMLstring + '<div class="col-2 orderlineheadlines-align-right">' + 'Antal: ' + '</div>';
+                    HTMLstring = HTMLstring + '<div class="col-1  orderlineheadlines-align-left">' + 'Enheder: ' + '</div>';
+                    HTMLstring = HTMLstring + '<div class="col-2 orderlineheadlines-align-right">' + 'Pris: ' + '</div>';
+                    HTMLstring = HTMLstring + '<div class="col-2 orderlineheadlines-align-right">' + 'Ialt: ' + '</div>';
                     HTMLstring = HTMLstring + '<div class="col-1"></div>';
                     HTMLstring = HTMLstring + '</div>' // end of '<div class="row">'
                     // HTMLstring = HTMLstring + '</div>'      // end of '<div id="' + '" class="orderline">';
@@ -777,11 +785,12 @@
 
                         HTMLstring = HTMLstring + '<div class="row orderline" id="' + data.id + '">';
 
-                        HTMLstring = HTMLstring + '<div class="col-3">' + data.ourItemName + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-3">' + data.ourItemNumber + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-1">' + data.quantityToOrder + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-2">' + data.ourCostPrice + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-2">' + data.orderLineTotalAmount + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-2 orderline-align-left">' + data.ourItemName + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-2 orderline-align-left">' + data.ourItemNumber + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-2 orderline-align-right">' + data.quantityToOrder + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-1 orderline-align-left">' + data.ourItemUnit + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-2 orderline-align-right">' + data.ourCostPrice + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-2 orderline-align-right">' + data.orderLineTotalAmount + '</div>';
                         HTMLstring = HTMLstring + '<div class="col-1 orderlinedelete">' + 'Slet' + '</div>';
 
 
@@ -900,9 +909,12 @@
                     });
 
                     $("#budgetscontainer").append(HTMLstring);
-                 
+
                     $(document).on("click", ".budgetheadlines", function (event) {
                         purchaseBudgetId = $(this).attr("id");
+
+                        $('.budgetheadlines').removeClass("selectedbudgetheadline");
+                        $(this).addClass("selectedbudgetheadline");
 
                         getBudgetPeriodLines(purchaseBudgetId);
                         event.stopImmediatePropagation()
@@ -936,10 +948,22 @@
                     $.each(result, function (i, data) {
 
                         HTMLstring = HTMLstring + '<div class="row budgeperiodline" id="' + data.id + '">';
-
                         HTMLstring = HTMLstring + '<div class="col-3">' + data.displayPeriodStartText + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-3">' + data.displayPeriodEndText + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-3">' + data.displayWeekNumber + '</div>';
+
+                        if (data.displayPeriodEndText != null) {
+                            HTMLstring = HTMLstring + '<div class="col-3">' + data.displayPeriodEndText + '</div>';
+                        }
+                        else {
+                            HTMLstring = HTMLstring + '<div class="col-3">' + "" + '</div>';
+                        }
+
+                        if (data.displayWeekNumber != null) {
+                            HTMLstring = HTMLstring + '<div class="col-3">' + data.displayWeekNumber + '</div>';
+                        }
+                        else {
+                            HTMLstring = HTMLstring + '<div class="col-3">' + "" + '</div>';
+                        }
+                                                                   
                         HTMLstring = HTMLstring + '<div class="col-3"></div>';
 
                         HTMLstring = HTMLstring + '</div>'      // end of '<div class="row">'
@@ -951,6 +975,9 @@
 
                     $(document).on("click", ".budgeperiodline", function (event) {
                         var purchasePeriodId = $(this).attr("id");
+
+                        $('.budgeperiodline').removeClass("selectedbudgetperiodline");
+                        $(this).addClass("selectedbudgetperiodline");
 
                         getBudgetPeriodItemLines(purchasePeriodId)
                         event.stopImmediatePropagation()
@@ -1002,6 +1029,9 @@
                     $(document).on("click", ".budgetperioditemline", function (event) {
                         var budgetItemLineId = $(this).attr("id");
 
+                        $('.budgetperioditemline').removeClass("selectedbudgetperioditemline");
+                        $(this).addClass("selectedbudgetperioditemline");
+
                         event.stopImmediatePropagation()
                     });
 
@@ -1018,17 +1048,17 @@
             });
         }
 
-        function createPurchaseOrderLineFromPurchaseBudgetLine(budgetItemLineId, purchaseOrderId ) {
+        function createPurchaseOrderLineFromPurchaseBudgetLine(budgetItemLineId, purchaseOrderId) {
 
-            
+
             $.ajax({
                 type: "POST",
                 url: "/purchaseorder/createPurchaseOrderLineFromPurchaseBudgetLine",
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
-                data: 'id=' + budgetItemLineId + "&purchaseOrderId=" + purchaseOrderId ,
+                data: 'id=' + budgetItemLineId + "&purchaseOrderId=" + purchaseOrderId,
                 dataType: "json",
                 success: function (result) {
-                  
+
                 },
 
                 error: function (request, status, error) {

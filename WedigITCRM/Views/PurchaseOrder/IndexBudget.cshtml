@@ -22,7 +22,7 @@
                     <div class="row purchaseorderindexheadlines">
                         <div class="col-1">Fra</div>
                         <div class="col-1">Til</div>
-                        <div class="col-1">Periode</div>
+                        <div class="col-2">Periode</div>
                         <div class="col-3">Beskrivelse</div>                       
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                         <div class="row" id="@purchaseBudget.Id">
                             <div class="col-1">@purchaseBudget.PeriodFromDate</div>
                             <div class="col-1">@purchaseBudget.PeriodToDate</div>
-                            <div class="col-1">@purchaseBudget.Period</div>
+                            <div class="col-2">@purchaseBudget.Period</div>
                             <div class="col-3">@purchaseBudget.Description</div>
                             <div class="col-2">
                                 <a asp-controller="PurchaseOrder" asp-action="EditPurchaseBudget" asp-route-purchaseBudgetId="@purchaseBudget.Id"><i style="color : #17a2b8;" class="fa fa-pencil-square-o fa-2x fa-fw"></i></a>
