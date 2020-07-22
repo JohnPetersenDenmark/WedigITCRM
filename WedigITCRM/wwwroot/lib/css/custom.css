@@ -746,15 +746,15 @@ div .row.orderline:hover {
     background-color: #c7f2ff;
 }
 
-.selectedbudgetperiodline {
+.row.budgeperiodline.selectedbudgetperiodline {
     background-color: #c7f2ff;
 }
 
-.selectedbudgetheadline {
+.row.budgetheadlines.selectedbudgetheadline {
     background-color: #c7f2ff;
 }
 
-.selectedbudgetperioditemline {
+.row.budgetperioditemline.selectedbudgetperioditemline {
     background-color: #c7f2ff;
 }
 
@@ -863,4 +863,40 @@ div .row.orderline:hover {
     color: green;
     font-size: 1.0em; /* normalize */
 }
+
+.budgetheadlines {
+    width: 100%;
+    height: 30px;
+    background-color: #F5F7FA;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.budgeperiodline {
+    width: 100%;
+    height: 30px;
+    background-color: #F5F7FA;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.budgetperioditemline {
+    width: 100%;
+    height: 30px;
+    background-color: #F5F7FA;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+
+
 

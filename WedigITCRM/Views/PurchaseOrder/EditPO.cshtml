@@ -16,15 +16,16 @@
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><i style="color : #17a2b8;" class="fa fa fa-window-close fa-2x fa-fw"></i></button>                                
+                                <button type="button" class="close" data-dismiss="modal"><i style="color : #17a2b8;" class="fa fa fa-window-close fa-2x fa-fw"></i></button>
                             </div>
                             <div class="modal-body">
-                               
+
                                 <div class="row budgetheadlinesHeaders">
+                                    <div class="col-2">
+                                      
+                                    </div>
                                     <div class="col-8">
-                                        <span style="color : #17a2b8;" class="tableheadlinesmall">
-                                            Budget
-                                        </span>
+                                       
                                         <div class="row">
                                             <div class="col-3">Fra</div>
                                             <div class="col-3">Til</div>
@@ -34,32 +35,35 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="col-2 my-auto">
+                                        <div style="color : #17a2b8;" class="tableheadlinesmall">
+                                            Budget
+                                        </div>
+                                    </div>
                                     <div class="col-8 budgetscontainerdiv" id="budgetscontainer">
 
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    
-                                    <div class="col-8">
-                                        <span style="color : #17a2b8;" class="tableheadlinesmall">
-                                            Periode
-                                        </span>
-                                       
-                                    </div>
+
+                                   
                                 </div>
                                 <div class="row">
+                                    <div class="col-2 my-auto">
+                                        <div style="color : #17a2b8;" class="tableheadlinesmall">
+                                            Periode
+                                        </div>
+                                    </div>
                                     <div class="col-8 budgetPeriodscontainerdiv" id="budgetperiodscontainer">
 
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                   
+                                    <div class="col-2">
+                                    </div>
                                     <div class="col-8">
-                                        <span style="color : #17a2b8;" class="tableheadlinesmall">
-                                           Varer
-                                        </span>
                                         <div class="row">
                                             <div class="col-3">Vare</div>
                                             <div class="col-3">Varenr.</div>
@@ -68,24 +72,30 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-8 budgetperiodlinescontainer" id="budgetperiodlinescontainer">
+                                    <div class="row">
+                                        <div class="col-2 my-auto">
+                                            <div style="color : #17a2b8;" class="tableheadlinesmall">
+                                                Varer
+                                            </div>
+                                        </div>
+                                        <div class="col-8 budgetperiodlinescontainer" id="budgetperiodlinescontainer">
+
+                                        </div>
 
                                     </div>
 
+                                    <div class="modal-footer">
+                                        <button type="button" id="Btntransferorderlinesfrombudget" class="btn btn-info btn-lg">Overfør</button>
+                                        <button type="button" id="Btnmodalorderlinesfrombudget" class="btn btn-info btn-lg">Luk</button>
+                                    </div>
                                 </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" id="Btntransferorderlinesfrombudget" class="btn btn-info btn-lg">Overfør</button>
-                                    <button type="button" id="Btnmodalorderlinesfrombudget" class="btn btn-info btn-lg">Luk</button>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
     <form method="post">
         <div class="row">
@@ -791,7 +801,7 @@
                         HTMLstring = HTMLstring + '<div class="col-1 orderline-align-left">' + data.ourItemUnit + '</div>';
                         HTMLstring = HTMLstring + '<div class="col-2 orderline-align-right">' + data.ourCostPrice + '</div>';
                         HTMLstring = HTMLstring + '<div class="col-2 orderline-align-right">' + data.orderLineTotalAmount + '</div>';
-                        HTMLstring = HTMLstring + '<div class="col-1 orderlinedelete">' + 'Slet' + '</div>';
+                        HTMLstring = HTMLstring + '<div class="col-1 orderlinedelete">' + '<i style="color : #17a2b8;" class="fa fa-trash fa-fw removebudgetline"></i>' + '</div>';
 
 
                         HTMLstring = HTMLstring + '</div>'      // end of '<div class="row">'
@@ -915,6 +925,10 @@
 
                         $('.budgetheadlines').removeClass("selectedbudgetheadline");
                         $(this).addClass("selectedbudgetheadline");
+                       
+                        $("#budgetperiodscontainer").html("");
+                        $("#budgetperiodlinescontainer").html("");
+
 
                         getBudgetPeriodLines(purchaseBudgetId);
                         event.stopImmediatePropagation()
@@ -963,7 +977,7 @@
                         else {
                             HTMLstring = HTMLstring + '<div class="col-3">' + "" + '</div>';
                         }
-                                                                   
+
                         HTMLstring = HTMLstring + '<div class="col-3"></div>';
 
                         HTMLstring = HTMLstring + '</div>'      // end of '<div class="row">'
@@ -978,6 +992,8 @@
 
                         $('.budgeperiodline').removeClass("selectedbudgetperiodline");
                         $(this).addClass("selectedbudgetperiodline");
+
+                        $("#budgetperiodlinescontainer").html("");
 
                         getBudgetPeriodItemLines(purchasePeriodId)
                         event.stopImmediatePropagation()
