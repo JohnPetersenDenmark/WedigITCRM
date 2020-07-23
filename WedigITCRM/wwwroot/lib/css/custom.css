@@ -759,6 +759,18 @@ div .row.orderline:hover {
 }
 
 
+.budgetdiv {
+    font-weight  : 800;
+    color: #c7f2ff;
+    margin-top: 10px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    height: 200px;
+    border-bottom: 1px solid #17a2b8;
+    border-left: 1px solid #17a2b8;
+    border-top: 1px solid #17a2b8;
+}
+
 
 
 .budgetscontainerdiv {
