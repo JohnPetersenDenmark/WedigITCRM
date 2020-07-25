@@ -21,6 +21,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using DinkToPdf.Contracts;
 using DinkToPdf;
+using System.IO;
 
 namespace WedigITCRM
 {
@@ -45,12 +46,22 @@ namespace WedigITCRM
         {
             try
             {
+                _logger.LogError("start of ConfigureServices");
+
+                var context = new CustomAssemblyLoadContext();
+
+                string tmpCurDir = Directory.GetCurrentDirectory();
+                string completePath = Path.Combine(Directory.GetCurrentDirectory(), "libwkhtmltox.dll");
+                _logger.LogError("Hvor er dll: " + completePath);
+
+                context.LoadUnmanagedLibrary(Path.Combine(Directory.GetCurrentDirectory(), "libwkhtmltox.dll"));
+
 
                 services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
 
 
-                _logger.LogError("start of ConfigureServices");
+               
 
 
                // services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));

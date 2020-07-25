@@ -2011,3 +2011,752 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610104032_purchaseOrderImplemented')
+BEGIN
+    CREATE TABLE [PurchaseOrders] (
+        [Id] int NOT NULL IDENTITY,
+        [OurReference] nvarchar(max) NULL,
+        [VendorReference] nvarchar(max) NULL,
+        [Currency] nvarchar(max) NULL,
+        [ExchangeRate] nvarchar(max) NULL,
+        [PaymentTerms] nvarchar(max) NULL,
+        [DeliveryConditions] nvarchar(max) NULL,
+        [SendDate] datetime2 NOT NULL,
+        [Note] nvarchar(max) NULL,
+        [ReceivedStatus] int NOT NULL,
+        [WantedDeliveryDate] nvarchar(max) NULL,
+        [SendToVendorDate] datetime2 NOT NULL,
+        [AllReceivedDate] datetime2 NOT NULL,
+        [LastEditedDate] datetime2 NOT NULL,
+        [CreatedDate] datetime2 NOT NULL,
+        [VendorId] int NOT NULL,
+        [companyAccountId] int NOT NULL,
+        CONSTRAINT [PK_PurchaseOrders] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610104032_purchaseOrderImplemented')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200610104032_purchaseOrderImplemented', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610211918_purchaseOrderExpanded')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [PurchaseOrderDocumentNumber] int NOT NULL DEFAULT 0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610211918_purchaseOrderExpanded')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorCity] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610211918_purchaseOrderExpanded')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorCountryCode] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610211918_purchaseOrderExpanded')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorCurrencyCode] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610211918_purchaseOrderExpanded')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorHomePage] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610211918_purchaseOrderExpanded')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorName] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610211918_purchaseOrderExpanded')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorPhoneNumber] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610211918_purchaseOrderExpanded')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorStreet] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610211918_purchaseOrderExpanded')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorZip] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610211918_purchaseOrderExpanded')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200610211918_purchaseOrderExpanded', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610214039_purchaseOrderExpanded1')
+BEGIN
+    DECLARE @var20 sysname;
+    SELECT @var20 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[PurchaseOrders]') AND [c].[name] = N'PurchaseOrderDocumentNumber');
+    IF @var20 IS NOT NULL EXEC(N'ALTER TABLE [PurchaseOrders] DROP CONSTRAINT [' + @var20 + '];');
+    ALTER TABLE [PurchaseOrders] ALTER COLUMN [PurchaseOrderDocumentNumber] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200610214039_purchaseOrderExpanded1')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200610214039_purchaseOrderExpanded1', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611083421_addedVendorEmail')
+BEGIN
+    ALTER TABLE [Vendors] ADD [Email] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611083421_addedVendorEmail')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200611083421_addedVendorEmail', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611090224_addedVendorEmail1')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorEmail] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611090224_addedVendorEmail1')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200611090224_addedVendorEmail1', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611110534_addedVendorPaymentCondition')
+BEGIN
+    ALTER TABLE [Vendors] ADD [PaymentConditions] int NOT NULL DEFAULT 0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611110534_addedVendorPaymentCondition')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200611110534_addedVendorPaymentCondition', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611125356_addedVendorPaymentCondition1')
+BEGIN
+    DECLARE @var21 sysname;
+    SELECT @var21 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[PurchaseOrders]') AND [c].[name] = N'PaymentTerms');
+    IF @var21 IS NOT NULL EXEC(N'ALTER TABLE [PurchaseOrders] DROP CONSTRAINT [' + @var21 + '];');
+    ALTER TABLE [PurchaseOrders] DROP COLUMN [PaymentTerms];
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611125356_addedVendorPaymentCondition1')
+BEGIN
+    ALTER TABLE [Vendors] ADD [PaymentConditionsId] int NOT NULL DEFAULT 0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611125356_addedVendorPaymentCondition1')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorPaymentConditions] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611125356_addedVendorPaymentCondition1')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorPaymentConditionsId] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611125356_addedVendorPaymentCondition1')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200611125356_addedVendorPaymentCondition1', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611160522_addedVendorPaymentCondition2')
+BEGIN
+    DECLARE @var22 sysname;
+    SELECT @var22 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Vendors]') AND [c].[name] = N'PaymentConditions');
+    IF @var22 IS NOT NULL EXEC(N'ALTER TABLE [Vendors] DROP CONSTRAINT [' + @var22 + '];');
+    ALTER TABLE [Vendors] ALTER COLUMN [PaymentConditions] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200611160522_addedVendorPaymentCondition2')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200611160522_addedVendorPaymentCondition2', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200612110901_deliveryConditions')
+BEGIN
+    CREATE TABLE [DeliveryConditions] (
+        [Id] int NOT NULL IDENTITY,
+        [Description] nvarchar(max) NULL,
+        [companyAccountId] int NOT NULL,
+        CONSTRAINT [PK_DeliveryConditions] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200612110901_deliveryConditions')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200612110901_deliveryConditions', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200613083016_paymentcondition')
+BEGIN
+    CREATE TABLE [PaymentConditions] (
+        [Id] int NOT NULL IDENTITY,
+        [Description] nvarchar(max) NULL,
+        [companyAccountId] int NOT NULL,
+        CONSTRAINT [PK_PaymentConditions] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200613083016_paymentcondition')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200613083016_paymentcondition', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200613100023_deliveryCondition')
+BEGIN
+    ALTER TABLE [Vendors] ADD [DeliveryConditions] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200613100023_deliveryCondition')
+BEGIN
+    ALTER TABLE [Vendors] ADD [DeliveryConditionsId] int NOT NULL DEFAULT 0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200613100023_deliveryCondition')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200613100023_deliveryCondition', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200614093502_deliveryCondition12')
+BEGIN
+    DECLARE @var23 sysname;
+    SELECT @var23 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[PurchaseOrders]') AND [c].[name] = N'DeliveryConditions');
+    IF @var23 IS NOT NULL EXEC(N'ALTER TABLE [PurchaseOrders] DROP CONSTRAINT [' + @var23 + '];');
+    ALTER TABLE [PurchaseOrders] DROP COLUMN [DeliveryConditions];
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200614093502_deliveryCondition12')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorDeliveryConditionId] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200614093502_deliveryCondition12')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [VendorDeliveryConditions] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200614093502_deliveryCondition12')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200614093502_deliveryCondition12', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615094008_deliverySate')
+BEGIN
+    DECLARE @var24 sysname;
+    SELECT @var24 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[PurchaseOrders]') AND [c].[name] = N'WantedDeliveryDate');
+    IF @var24 IS NOT NULL EXEC(N'ALTER TABLE [PurchaseOrders] DROP CONSTRAINT [' + @var24 + '];');
+    ALTER TABLE [PurchaseOrders] ALTER COLUMN [WantedDeliveryDate] datetime2 NOT NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615094008_deliverySate')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200615094008_deliverySate', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615102246_noget123')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [OurOrderingDate] datetime2 NOT NULL DEFAULT '0001-01-01T00:00:00.0000000';
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615102246_noget123')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200615102246_noget123', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615194615_purchaseorderlines')
+BEGIN
+    CREATE TABLE [PurchaseOrderLines] (
+        [Id] int NOT NULL IDENTITY,
+        [OurItemNumber] nvarchar(max) NULL,
+        [OurUnit] nvarchar(max) NULL,
+        [OurItemName] nvarchar(max) NULL,
+        [OurUnitPrice] decimal(18,2) NOT NULL,
+        [VendorId] int NOT NULL,
+        [VendorItemNumber] nvarchar(max) NULL,
+        [VendorUnit] nvarchar(max) NULL,
+        [VendorUnitPrice] decimal(18,2) NOT NULL,
+        [PurchaseOrderId] int NOT NULL,
+        [companyAccountId] int NOT NULL,
+        [ReceivedDate] datetime2 NOT NULL,
+        [LastEditedDate] datetime2 NOT NULL,
+        [CreatedDate] datetime2 NOT NULL,
+        CONSTRAINT [PK_PurchaseOrderLines] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615194615_purchaseorderlines')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200615194615_purchaseorderlines', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615211657_purchaseorderlines1')
+BEGIN
+    EXEC sp_rename N'[PurchaseOrderLines].[VendorUnitPrice]', N'VendorSalesUnitPrice', N'COLUMN';
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615211657_purchaseorderlines1')
+BEGIN
+    EXEC sp_rename N'[PurchaseOrderLines].[OurUnitPrice]', N'QuantityToOrder', N'COLUMN';
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615211657_purchaseorderlines1')
+BEGIN
+    ALTER TABLE [stockItems] ADD [VendorItemName] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615211657_purchaseorderlines1')
+BEGIN
+    ALTER TABLE [PurchaseOrderLines] ADD [OurUnitCostPrice] decimal(18,2) NOT NULL DEFAULT 0.0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615211657_purchaseorderlines1')
+BEGIN
+    ALTER TABLE [PurchaseOrderLines] ADD [OurUnitSalesPrice] decimal(18,2) NOT NULL DEFAULT 0.0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615211657_purchaseorderlines1')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200615211657_purchaseorderlines1', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615213451_purchaseorderlines12')
+BEGIN
+    ALTER TABLE [PurchaseOrderLines] ADD [VendorItemName] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615213451_purchaseorderlines12')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200615213451_purchaseorderlines12', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615214146_purchaseorderlines123')
+BEGIN
+    ALTER TABLE [PurchaseOrderLines] ADD [OurLocation] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200615214146_purchaseorderlines123')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200615214146_purchaseorderlines123', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200616221201_purchaseOrderlinesXXX')
+BEGIN
+    ALTER TABLE [PurchaseOrderLines] ADD [StockItemId] int NOT NULL DEFAULT 0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200616221201_purchaseOrderlinesXXX')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200616221201_purchaseOrderlinesXXX', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200617195140_purchaseOrderPDF1')
+BEGIN
+    ALTER TABLE [companyAccounts] ADD [CompanyCity] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200617195140_purchaseOrderPDF1')
+BEGIN
+    ALTER TABLE [companyAccounts] ADD [CompanyCountryCode] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200617195140_purchaseOrderPDF1')
+BEGIN
+    ALTER TABLE [companyAccounts] ADD [CompanyStreet] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200617195140_purchaseOrderPDF1')
+BEGIN
+    ALTER TABLE [companyAccounts] ADD [CompanyZip] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200617195140_purchaseOrderPDF1')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200617195140_purchaseOrderPDF1', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200618202256_AttachmentOnPurchaseOrder')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [AttachedFilesNameAndPath] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200618202256_AttachmentOnPurchaseOrder')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [AttachedmentIds] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200618202256_AttachmentOnPurchaseOrder')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [FileNamesOnly] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200618202256_AttachmentOnPurchaseOrder')
+BEGIN
+    ALTER TABLE [PurchaseOrders] ADD [IconsFilePathAndName] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200618202256_AttachmentOnPurchaseOrder')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200618202256_AttachmentOnPurchaseOrder', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200621082645_frederik')
+BEGIN
+    DECLARE @var25 sysname;
+    SELECT @var25 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[PurchaseOrders]') AND [c].[name] = N'ReceivedStatus');
+    IF @var25 IS NOT NULL EXEC(N'ALTER TABLE [PurchaseOrders] DROP CONSTRAINT [' + @var25 + '];');
+    ALTER TABLE [PurchaseOrders] ALTER COLUMN [ReceivedStatus] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200621082645_frederik')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200621082645_frederik', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200622174015_StockItemNumberInstock')
+BEGIN
+    DECLARE @var26 sysname;
+    SELECT @var26 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[stockItems]') AND [c].[name] = N'NumberInStock');
+    IF @var26 IS NOT NULL EXEC(N'ALTER TABLE [stockItems] DROP CONSTRAINT [' + @var26 + '];');
+    ALTER TABLE [stockItems] ALTER COLUMN [NumberInStock] decimal(18,2) NOT NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200622174015_StockItemNumberInstock')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200622174015_StockItemNumberInstock', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200623070219_purchaseOrderLineExtended')
+BEGIN
+    ALTER TABLE [PurchaseOrderLines] ADD [QuantityReceivedUntillNow] decimal(18,2) NOT NULL DEFAULT 0.0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200623070219_purchaseOrderLineExtended')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200623070219_purchaseOrderLineExtended', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200701191434_purchaseBudgetAdded')
+BEGIN
+    CREATE TABLE [PurchaseBudgets] (
+        [Id] int NOT NULL IDENTITY,
+        [StartDateOfPeriod] datetime2 NOT NULL,
+        [EndDateOfPeriod] datetime2 NOT NULL,
+        [Period] nvarchar(max) NULL,
+        [companyAccountId] int NOT NULL,
+        [LastEditedDate] datetime2 NOT NULL,
+        [CreatedDate] datetime2 NOT NULL,
+        CONSTRAINT [PK_PurchaseBudgets] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200701191434_purchaseBudgetAdded')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200701191434_purchaseBudgetAdded', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200703215047_purchasebudgetLinesAndPeriodlines')
+BEGIN
+    CREATE TABLE [PurchaseBudgetLines] (
+        [Id] int NOT NULL IDENTITY,
+        [StockItemId] int NOT NULL,
+        [PurchaseBudgetId] int NOT NULL,
+        [OurLocationId] nvarchar(max) NULL,
+        [PeriodLineId] nvarchar(max) NULL,
+        [QuantityToOrder] decimal(18,2) NOT NULL,
+        [LastEditedDate] datetime2 NOT NULL,
+        [CreatedDate] datetime2 NOT NULL,
+        CONSTRAINT [PK_PurchaseBudgetLines] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200703215047_purchasebudgetLinesAndPeriodlines')
+BEGIN
+    CREATE TABLE [PurchaseBudgetPeriodLines] (
+        [Id] int NOT NULL IDENTITY,
+        [PurchaseBudgetId] int NOT NULL,
+        [PeriodStartDate] datetime2 NOT NULL,
+        [PeriodEndDate] datetime2 NOT NULL,
+        CONSTRAINT [PK_PurchaseBudgetPeriodLines] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200703215047_purchasebudgetLinesAndPeriodlines')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200703215047_purchasebudgetLinesAndPeriodlines', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200704011454_purchasebudgetLinesAndPeriodlines1')
+BEGIN
+    ALTER TABLE [PurchaseBudgetPeriodLines] ADD [HeadLine] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200704011454_purchasebudgetLinesAndPeriodlines1')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200704011454_purchasebudgetLinesAndPeriodlines1', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200710133501_xyrdbsuaj')
+BEGIN
+    DECLARE @var27 sysname;
+    SELECT @var27 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[PurchaseBudgetPeriodLines]') AND [c].[name] = N'HeadLine');
+    IF @var27 IS NOT NULL EXEC(N'ALTER TABLE [PurchaseBudgetPeriodLines] DROP CONSTRAINT [' + @var27 + '];');
+    ALTER TABLE [PurchaseBudgetPeriodLines] DROP COLUMN [HeadLine];
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200710133501_xyrdbsuaj')
+BEGIN
+    ALTER TABLE [PurchaseBudgetPeriodLines] ADD [displayPeriodEndText] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200710133501_xyrdbsuaj')
+BEGIN
+    ALTER TABLE [PurchaseBudgetPeriodLines] ADD [displayPeriodStartText] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200710133501_xyrdbsuaj')
+BEGIN
+    ALTER TABLE [PurchaseBudgetPeriodLines] ADD [displayWeekNumber] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200710133501_xyrdbsuaj')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200710133501_xyrdbsuaj', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200714204015_purchaseBudgetDescription')
+BEGIN
+    ALTER TABLE [PurchaseBudgets] ADD [Description] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200714204015_purchaseBudgetDescription')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200714204015_purchaseBudgetDescription', N'3.1.4');
+END;
+
+GO
+

@@ -1,0 +1,48 @@
+2020-07-25 12:18:15.5796|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 12:18:15.8514|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-25 12:50:21.7887|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 12:50:21.9423|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-25 12:58:09.7524|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 12:58:09.8904|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-25 21:32:43.3803|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 21:32:43.5671|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-25 21:43:10.0665|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 21:43:10.2425|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-25 21:44:29.4337|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 21:44:30.3476|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-25 21:44:30.4619|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-25 21:44:31.7938|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-25 21:44:33.6203|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-25 21:44:33.7086|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-25 21:44:49.4126|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-25 21:44:49.4813|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-25 21:45:09.5545|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-07-25 21:45:09.8037|ERROR|WedigITCRM.Startup|{"UserId":"6c1e27cf-820e-4335-b9a5-7ed1142c531c","UserName":"johnpetersen1959@gmail.com","CompanyId":"13024","CompanyName":"wedigIT ApS","Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Transaction failed. The server response was: 5.7.1 <unknown[109.57.41.100]>: Client host rejected: This server is only usable by local webservers. For help see https://simply.com/support/\r\n                                         \r\n\r\n                                            at System.Net.Mail.SmtpConnection.GetConnection(String host, Int32 port)\r\n   at System.Net.Mail.SmtpTransport.GetConnection(String host, Int32 port)\r\n   at System.Net.Mail.SmtpClient.GetConnection()\r\n   at System.Net.Mail.SmtpClient.Send(MailMessage message)\r\n   at WedigITCRM.Utilities.EmailUtility.send(String sendTo, String sentFrom, String subject, AlternateView htmlView, Boolean IsBodyHtml, String FilePathAndNameToAttach) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Utilities\\EmailUtility.cs:line 70\r\n   at WedigITCRM.Controllers.PurchaseOrderController.sendPurchaseOrder(Int32 purchaseOrderId, CompanyAccount companyAccount) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\PurchaseOrderController.cs:line 1689\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"2202f5d7-b814-4ba6-90f0-045709be4731","Extensions":{}}
+2020-07-25 21:45:10.1069|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An exception was thrown attempting to execute the error handler.
+2020-07-25 21:45:10.1595|ERROR|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "18158513707758387209", Request ID "8000000a-0002-fc00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+2020-07-25 22:01:31.0519|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 22:01:31.1206|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-25 22:01:31.3155|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-25 22:09:18.0322|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 22:09:18.1574|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-25 22:58:43.4853|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 22:58:43.5398|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-25 22:58:43.5650|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-25 23:03:31.6901|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 23:03:31.7415|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-25 23:03:31.7633|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-25 23:11:54.1962|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 23:11:54.3582|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-25 23:11:54.6649|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-25 23:11:54.9741|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-25 23:11:55.0964|ERROR|WedigITCRM.Startup|Unable to find the required services. Please add all the required services by calling 'IServiceCollection.AddMvc' inside the call to 'ConfigureServices(...)' in the application startup code.
+2020-07-25 23:11:55.5748|ERROR|WedigITCRM.Maintenance.SendActivitiesNotificationsservice|No service for type 'WedigITCRM.Utilities.EmailUtility' has been registered.
+2020-07-25 23:11:55.6655|ERROR|WedigITCRM.Maintenance.SetSuperAdministrator|No service for type 'Microsoft.AspNetCore.Identity.UserManager`1[Microsoft.AspNetCore.Identity.IdentityUser]' has been registered.
+2020-07-25 23:11:55.7393|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|No service for type 'WedigITCRM.IStockItemRepository' has been registered.
+2020-07-25 23:11:55.8728|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|No service for type 'WedigITCRM.Models.ICompanyRepository' has been registered.nyxium stack trace:    at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 62
+2020-07-25 23:12:36.4716|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 23:12:43.0441|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-25 23:13:16.5127|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-25 23:13:22.7876|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll

@@ -119,7 +119,7 @@ nav.navbar {
 
 
 .page-item.active .page-link {
-    background-color: #1BDDAC !important;
+    background-color: #17a2b8 !important;
     border: 0px !important;
 }
 
@@ -281,8 +281,11 @@ div.homepageHeading {
 
 
 
+
+
 .rowcontainer .row {
-    line-height: 20px;
+    line-height: 50px;
+    height: 50px;
     font-size: 15px;
     font-weight: 200;
     align-items: center;
@@ -307,6 +310,15 @@ i.fa-phone {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.formcontainer .form-row {
+    line-height: 20px;
+    height: 20px;
+    font-size: 15px;
+    font-weight: 200;
+   vertical-align: middle;
+}
+
 
 
 
@@ -465,11 +477,437 @@ i.fa-phone {
 }
 
 .tableheadline {
-    color: green;
+    color: #17a2b8;
     font-size: 2.0em; /* normalize */
 }
 
 
+input[type=text].PurchaseOrderInput {
+    width: 100%;
+    margin-bottom: 10px;
+ 
+}
+
+select.PurchaseOrderInput {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+label {
+    margin: 0px 0px;
+    display: block;
+}
+
+textarea.PurchaseOrderTextarea {
+    width: 100%;
+    height: 150px;
+}
+
+.modal-dialog.modal-lg {
+    max-width: 70% !important;
+}
+
+ul.ui-autocomplete {
+    z-index: 1100;
+}
+
+div.purchaseorderindexorderline {
+    background-color: #FFFFFF;
+
+}
+
+.row.purchaseorderindexheadlines {
+    background-color: lightgrey;
+    font-weight: 900;
+}
+
+div .row.orderline {
+    width: 100%;
+    height: 30px;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-color : lightgrey;
+    border-width: 1px;
+    margin-top : 10px;
+    padding-left : 10px;
+}
+
+div.orderlineheadlines {
+    width: 100%;
+    height: 30px;
+    background-color: lightgrey;
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.receiveorderlinenormal {
+   color : blue;
+}
+
+.receiveorderlinewarning {
+    color: red;
+}
+
+
+.input-icons i {
+    position: absolute;
+}
+
+.input-icons {
+    width: 80%;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.icon {
+    padding: 10px;
+    min-width: 40px;   
+}
+
+.icon-clear {
+    color : red;
+    padding-left: 50%;
+    padding-top: 5px;
+    min-width: 40px;
+}
+
+.input-field {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    height: 37px;
+    width: 60%;
+    padding: 10px;
+    padding-left: 30px;
+    text-align: left;
+}
+
+
+
+.input-select-room-for-icon {
+    width: 80%; 
+    float: left;
+}
+
+.icon-beside-input-select {
+    margin-left: 83%;
+    margin-top: 30px;
+    color: red;
+    cursor: pointer;
+}
+
+.input-datepicker-room-for-icon {
+    width: 80%;
+    float: left;
+}
+
+.icon-beside-input-datepicker {
+    margin-left: 83%;
+    margin-top: 30px;
+    color: red;
+    cursor: pointer;
+}
+
+.datepicker-input-field {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    height: 37px;
+    width: 100%;
+    padding: 10px;
+    padding-left: 30px;
+    text-align: left;
+}
+
+.modal-title {
+    position: absolute;
+    float: left;
+}
+
+.modal-content {
+    background-color: #F4F7FA;
+    padding-left: 30px;
+}
+
+
+.periodcontainer {
+    width: 100%;
+    background-color: #3AC5DB;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    margin-bottom: 1px;
+}
+
+.periodDiv {
+   
+    width: 100%;
+    min-height: 200px;
+    background-color: #FFFFFF;
+  
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.periodline-input-field {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    height: 80%;
+    width: 90%;
+   
+    text-align: right;
+}
+
+.budgetlineheaders-align-left {
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align : left;
+}
+
+.budgetlineheaders-align-right {
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.budgetitemline {
+    font-weight : 100;
+}
+
+.myleft {  
+    text-align: left;
+}
+
+
+.myright {
+    text-align: right;
+}
+
+.itemlistfixedpos {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: fixed;
+    height: 65%;
+    width: 25%;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #17a2b8;
+    border-left: 1px solid #17a2b8;
+    border-top: 1px solid #17a2b8;
+    padding: 20px;
+}
+
+    .itemlistfixedpos::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .itemlistfixedpos::-webkit-scrollbar-track {
+        background: #17a2b8;
+    }
+
+    .itemlistfixedpos::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border: 1px solid #000000;
+        
+    }
+
+.itemline {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+    .itemline:hover {
+        background-color: #c7f2ff;
+    }
+
+.budgetitemline:hover {
+    background-color: #c7f2ff;
+}
+
+div .row.orderline:hover {
+    background-color: #c7f2ff;
+}
+
+.budgetheadlines:hover {
+    background-color: #c7f2ff;
+}
+
+.budgeperiodline:hover {
+    background-color: #c7f2ff;
+}
+
+.budgetperioditemline:hover {
+    background-color: #c7f2ff;
+}
+
+.row.budgeperiodline.selectedbudgetperiodline {
+    background-color: #c7f2ff;
+}
+
+.row.budgetheadlines.selectedbudgetheadline {
+    background-color: #c7f2ff;
+}
+
+.row.budgetperioditemline.selectedbudgetperioditemline {
+    background-color: #c7f2ff;
+}
+
+
+.budgetdiv {
+    font-weight  : 800;
+    color: #c7f2ff;
+    margin-top: 10px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    height: 200px;
+    border-bottom: 1px solid #17a2b8;
+    border-left: 1px solid #17a2b8;
+    border-top: 1px solid #17a2b8;
+}
+
+
+
+.budgetscontainerdiv {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 200px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #17a2b8;
+    border-left: 1px solid #17a2b8;
+    border-top: 1px solid #17a2b8;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+    .budgetscontainerdiv::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .budgetscontainerdiv::-webkit-scrollbar-track {
+        background: #17a2b8;
+    }
+
+    .budgetscontainerdiv::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border: 1px solid #000000;
+    }
+
+.budgetPeriodscontainerdiv {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 200px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #17a2b8;
+    border-left: 1px solid #17a2b8;
+    border-top: 1px solid #17a2b8;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+    .budgetPeriodscontainerdiv::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .budgetPeriodscontainerdiv::-webkit-scrollbar-track {
+        background: #17a2b8;
+    }
+
+    .budgetPeriodscontainerdiv::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border: 1px solid #000000;
+    }
+
+
+.budgetperiodlinescontainer {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 200px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #17a2b8;
+    border-left: 1px solid #17a2b8;
+    border-top: 1px solid #17a2b8;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+    .budgetperiodlinescontainer::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .budgetperiodlinescontainer::-webkit-scrollbar-track {
+        background: #17a2b8;
+    }
+
+    .budgetperiodlinescontainer::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border: 1px solid #000000;
+    }
+
+
+.orderlineheadlines-align-left {  
+    text-align: left;
+}
+
+.orderlineheadlines-align-right {
+    text-align: right;
+}
+
+.orderline-align-left {
+    
+    text-align: left;
+}
+
+.orderline-align-right {
+   
+    text-align: right;
+}
+
+.tableheadlinesmall {
+    color: green;
+    font-size: 1.0em; /* normalize */
+}
+
+.budgetheadlines {
+    width: 100%;
+    height: 30px;
+    background-color: #F5F7FA;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.budgeperiodline {
+    width: 100%;
+    height: 30px;
+    background-color: #F5F7FA;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.budgetperioditemline {
+    width: 100%;
+    height: 30px;
+    background-color: #F5F7FA;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
 
 
 

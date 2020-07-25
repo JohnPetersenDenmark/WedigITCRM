@@ -1,0 +1,28 @@
+﻿.header {
+    text-align: center;
+    color: #1BDDAC;
+    padding-bottom: 35px;
+}
+
+table.purchaseOrderHeader {
+    width: 80%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table.purchaseOrderLines {
+    width: 80%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+td, th {
+    padding: 15px;
+    font-size: 15px;
+    text-align: left;
+}
+
+table th {
+    background-color: #1BDDAC;
+    color: white;
+}
