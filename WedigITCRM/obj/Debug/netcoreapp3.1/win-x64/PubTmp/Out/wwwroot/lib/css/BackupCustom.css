@@ -1,0 +1,332 @@
+﻿* {
+    font-family: 'Raleway', sans-serif;
+}
+
+div.homepageHeading {
+    color: #37474F !important;
+    font-weight: 700;
+}
+
+.form-group a {
+    color: #6C63FF;
+}
+
+.btn-outline-secondary {
+    background-color: #1BDDAC !important;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 30px;
+    min-height: 30px;
+}
+
+.btn-primary {
+    background-color: #1BDDAC;
+    border: 0px;
+}
+
+    .btn-primary:hover {
+        background-color: #1BDDAC;
+    }
+
+li.nav-item.username {
+    font-size: 1rem;
+    color: #FFFFFF;
+    margin-right: 20px;
+}
+
+    li.nav-item.username span {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+
+li.nav-item.companyname {
+    font-size: 1rem;
+    color: #FFFFFF;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+    li.nav-item.companyname span {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+
+.side-navbar {
+    background-image: linear-gradient(to right, #311B92, #673AB7)
+}
+
+nav.navbar {
+    background: #f9f9f9;
+    box-shadow: 0px 4px 5px rgba(0,0,0,0.1);
+}
+
+    nav.navbar a, nav.navbar i, nav.navbar span {
+        color: #37474F !important;
+    }
+
+.side-navbar .sidenav-header {
+    background-image: linear-gradient(to right, #311B92, #673AB7)
+}
+
+    .side-navbar .sidenav-header img {
+        width: 100%;
+        height: auto;
+        padding: 5px 10px 10px 10px;
+    }
+
+.icon-bars {
+    font-weight: 700;
+}
+
+.imgicon {
+    max-height: 14px !important;
+    margin-top: -5px;
+}
+
+.dataTables_wrapper {
+    margin-left: 24px;
+    margin-top: 24px;
+}
+
+    .dataTables_wrapper .row {
+        align-items: center;
+    }
+
+.side-navbar.shrink {
+    width: 120px !important;
+}
+
+.page.active {
+    width: calc(100% - 120px)
+}
+
+.navbar-header .navbar-brand {
+    color: #37474F;
+}
+
+.sorting {
+    color: #37474F !important;
+}
+
+.dt-buttons button {
+    background-color: #33475B !important;
+}
+
+.sorting_asc, .sorting_desc {
+    color: #1BDDAC !important;
+}
+
+
+.page-item.active .page-link {
+    background-color: #1BDDAC !important;
+    border: 0px !important;
+}
+
+.pagination .active {
+    background-color: #1BDDAC;
+}
+
+.page-link {
+    margin-left: 0px;
+}
+
+.side-navbar li a:focus, .side-navbar li a:hover, .side-navbar li a[aria-expanded="true"], .side-navbar li ul, .side-navbar li ul {
+    background-image: linear-gradient(to right, #311B92, #673AB7) !important;
+}
+
+.nav-item a span {
+    color: #37474F;
+}
+
+nav.navbar a.menu-btn {
+    background: #f9f9f9;
+    color: #37474F
+}
+
+    nav.navbar a.menu-btn:hover {
+        background-color: #f9f9f9;
+    }
+
+.side-navbar li ul.collapse a:hover {
+    background: #2b90d9;
+}
+
+.side-navbar li ul {
+    background: #0C78DA;
+}
+
+
+
+
+footer.main-footer {
+    background: #33475B;
+}
+
+    footer.main-footer p {
+        color: #FFFFFF;
+    }
+
+nav.navbar a {
+    font-size: 1rem;
+}
+
+.formcontainer {
+    margin: 50;
+}
+
+
+.validation-style {
+    color: red;
+}
+
+
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    font-size: 11px;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    font-size: 13px;
+}
+
+.btn-group {
+    margin: 2px;
+}
+
+.btn {
+    font-size: 11px;
+    margin: 2px;
+    border-radius: 4px;
+}
+
+
+div.DTE_Form_Buttons button.btn {
+    background: lightblue;
+}
+
+
+
+
+table.table tbody tr {
+    font-weight: 800;
+}
+
+table.table th {
+    font-weight: 800;
+    color: #007bff;
+}
+
+.table.table tbody tr {
+    font-weight: 400 !important;
+}
+
+div.dataTables_wrapper div.dataTables_length label {
+    margin-bottom: 0px !important;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0px !important;
+}
+
+table .dataTable tfoot tr th input {
+    width: 100%;
+}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    padding-top: 0px !important;
+}
+
+table.dataTable tbody > tr.selected, table.dataTable tbody > tr > .selected {
+    background-color: #37474F;
+}
+
+.side-navbar li ul.collapse a {
+    border-left: 0px;
+}
+
+div.DTE_Field_InputControl .form-control {
+    font-size: 15px;
+}
+
+div.DTE_Field_InputControl input.form-control[type=text]:focus {
+    background-color: lightblue;
+}
+
+#popUpDiv {
+    z-index: 100;
+    border-radius: 10px;
+    display: none;
+    top: 200px;
+    left: 10px;
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
+    background-color: lightblue;
+}
+
+
+div .mailsentmessage {
+    color: blue;
+}
+
+div.homepageHeading {
+    font-size: 20px;
+    color: blue;
+}
+
+
+
+
+
+
+
+.rowcontainer .row {
+    line-height: 20px;
+    font-size: 15px;
+    font-weight: 200;
+    align-items: center;
+}
+
+i.fa-phone {
+    vertical-align: middle;
+    line-height: 30px;
+    font-weight: 100;
+}
+
+
+.rowcontainer .row:hover {
+    background-color: #c7f2ff;
+}
+
+.rowcontainer {
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    border-top: 1px solid #dedede;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+/* FONT */
+
+/* latin-ext */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}

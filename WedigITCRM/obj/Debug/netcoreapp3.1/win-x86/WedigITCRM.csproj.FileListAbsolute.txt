@@ -818,6 +818,5 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\Razor\Views\PurchaseOrder\Index.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\Razor\Views\PurchaseOrder\IndexBudget.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\Razor\Views\PurchaseOrder\receivePurchaseOrder.cshtml.g.cs
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\win-x86\libwkhtmltox.dll
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\win-x86\libwkhtmltox.dylib
-C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\win-x86\libwkhtmltox.so
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\win-x86\wwwroot\DinkToPdf\32bit\libwkhtmltox.dll
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\win-x86\wwwroot\DinkToPdf\64bit\libwkhtmltox.dll

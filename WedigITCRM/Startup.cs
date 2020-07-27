@@ -22,6 +22,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using DinkToPdf.Contracts;
 using DinkToPdf;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace WedigITCRM
 {
@@ -48,14 +49,21 @@ namespace WedigITCRM
             {
                 _logger.LogError("start of ConfigureServices");
 
+               
+
+                string completePath = null;
+              
+                if (Environment.Is64BitProcess)
+                {
+                    completePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\DinkToPdf\\64bit\\libwkhtmltox.dll");
+                }
+                else
+                {
+                    completePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\DinkToPdf\\32bit\\libwkhtmltox.dll");
+                }                
+
                 var context = new CustomAssemblyLoadContext();
-
-                string tmpCurDir = Directory.GetCurrentDirectory();
-                string completePath = Path.Combine(Directory.GetCurrentDirectory(), "libwkhtmltox.dll");
-                _logger.LogError("Hvor er dll: " + completePath);
-
-                context.LoadUnmanagedLibrary(Path.Combine(Directory.GetCurrentDirectory(), "libwkhtmltox.dll"));
-
+                context.LoadUnmanagedLibrary(completePath);
 
                 services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 

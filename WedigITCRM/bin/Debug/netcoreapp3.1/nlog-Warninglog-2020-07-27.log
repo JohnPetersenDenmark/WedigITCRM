@@ -1,0 +1,167 @@
+2020-07-27 14:35:52.6760|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 14:35:52.7252|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 14:35:52.7384|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 14:42:30.2015|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 14:42:30.3249|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 14:42:30.3533|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 14:48:17.7168|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 14:48:17.7610|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 14:48:17.7718|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 14:54:13.1926|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 14:54:13.2311|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 14:54:13.2402|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 14:55:42.0843|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 14:55:42.2812|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 14:55:42.3276|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 14:59:57.3085|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 14:59:57.3968|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 14:59:57.4198|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 14:59:59.2057|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 14:59:59.2232|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 14:59:59.2232|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 15:03:05.4970|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 15:03:05.7740|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 15:03:05.8369|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 15:05:06.4275|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 15:05:06.5051|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 15:05:06.5224|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 15:05:07.6483|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 15:05:07.6728|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 15:05:07.6728|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 15:09:17.0795|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 15:09:17.1407|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 15:09:17.1572|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 15:29:29.9544|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 15:29:30.0309|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 15:29:30.0477|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 19:48:18.8691|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 19:48:25.5728|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 19:48:25.6510|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 19:48:25.9106|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-27 19:48:25.9973|ERROR|WedigITCRM.Startup|Unable to find the required services. Please add all the required services by calling 'IServiceCollection.AddMvc' inside the call to 'ConfigureServices(...)' in the application startup code.
+2020-07-27 19:48:26.2931|ERROR|WedigITCRM.Maintenance.SendActivitiesNotificationsservice|No service for type 'WedigITCRM.Utilities.EmailUtility' has been registered.
+2020-07-27 19:48:26.3128|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|No service for type 'WedigITCRM.IStockItemRepository' has been registered.
+2020-07-27 19:48:26.3128|ERROR|WedigITCRM.Maintenance.SetSuperAdministrator|No service for type 'Microsoft.AspNetCore.Identity.UserManager`1[Microsoft.AspNetCore.Identity.IdentityUser]' has been registered.
+2020-07-27 19:48:26.4666|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|No service for type 'WedigITCRM.Models.ICompanyRepository' has been registered.nyxium stack trace:    at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 62
+2020-07-27 19:51:25.0300|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 19:51:42.5618|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 19:51:42.6713|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 19:51:44.2500|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-27 19:51:44.5424|ERROR|WedigITCRM.Startup|Unable to find the required services. Please add all the required services by calling 'IServiceCollection.AddMvc' inside the call to 'ConfigureServices(...)' in the application startup code.
+2020-07-27 19:51:44.9119|ERROR|WedigITCRM.Maintenance.SetSuperAdministrator|No service for type 'Microsoft.AspNetCore.Identity.UserManager`1[Microsoft.AspNetCore.Identity.IdentityUser]' has been registered.
+2020-07-27 19:51:44.9119|ERROR|WedigITCRM.Maintenance.SendActivitiesNotificationsservice|No service for type 'WedigITCRM.Utilities.EmailUtility' has been registered.
+2020-07-27 19:51:44.9119|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|No service for type 'WedigITCRM.IStockItemRepository' has been registered.
+2020-07-27 19:51:45.4057|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|No service for type 'WedigITCRM.Models.ICompanyRepository' has been registered.nyxium stack trace:    at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 62
+2020-07-27 20:17:34.3127|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 20:17:44.0308|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 20:17:45.5427|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 20:17:46.3768|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-27 20:17:46.4950|ERROR|WedigITCRM.Startup|Unable to find the required services. Please add all the required services by calling 'IServiceCollection.AddMvc' inside the call to 'ConfigureServices(...)' in the application startup code.
+2020-07-27 20:17:46.7349|ERROR|WedigITCRM.Maintenance.SetSuperAdministrator|No service for type 'Microsoft.AspNetCore.Identity.UserManager`1[Microsoft.AspNetCore.Identity.IdentityUser]' has been registered.
+2020-07-27 20:17:46.7503|ERROR|WedigITCRM.Maintenance.SendActivitiesNotificationsservice|No service for type 'WedigITCRM.Utilities.EmailUtility' has been registered.
+2020-07-27 20:17:47.2506|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|No service for type 'WedigITCRM.IStockItemRepository' has been registered.
+2020-07-27 20:17:47.5768|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|No service for type 'WedigITCRM.Models.ICompanyRepository' has been registered.nyxium stack trace:    at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 62
+2020-07-27 20:19:03.7355|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 20:19:03.7909|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 20:19:03.8059|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 20:20:37.5442|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 20:20:37.6094|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 20:20:37.6260|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 20:20:38.4777|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:20:38.4946|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:20:38.5045|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:27:57.1999|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 20:28:02.1586|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 20:28:02.2543|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 20:28:02.3532|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-27 20:28:02.4679|ERROR|WedigITCRM.Startup|Unable to find the required services. Please add all the required services by calling 'IServiceCollection.AddMvc' inside the call to 'ConfigureServices(...)' in the application startup code.
+2020-07-27 20:28:02.8131|ERROR|WedigITCRM.Maintenance.SendActivitiesNotificationsservice|No service for type 'WedigITCRM.Utilities.EmailUtility' has been registered.
+2020-07-27 20:28:02.9897|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|No service for type 'WedigITCRM.IStockItemRepository' has been registered.
+2020-07-27 20:28:02.9897|ERROR|WedigITCRM.Maintenance.SetSuperAdministrator|No service for type 'Microsoft.AspNetCore.Identity.UserManager`1[Microsoft.AspNetCore.Identity.IdentityUser]' has been registered.
+2020-07-27 20:28:03.1148|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|No service for type 'WedigITCRM.Models.ICompanyRepository' has been registered.nyxium stack trace:    at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 62
+2020-07-27 20:29:45.3921|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 20:29:45.4411|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 20:29:45.4567|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 20:29:46.4729|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:29:46.4922|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:29:46.5029|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:37:05.0610|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 20:37:05.1116|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 20:37:05.1263|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 20:37:06.2092|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:37:06.2245|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:37:06.2245|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:44:28.0383|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 20:44:28.0895|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 20:44:28.1042|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 20:44:29.0564|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:44:29.0750|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:44:29.0864|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:48:10.2969|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 20:48:10.3527|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 20:48:10.3713|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 20:48:11.4455|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:48:11.4588|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 20:48:11.4588|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 21:48:39.2682|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 22:00:14.0619|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 22:00:14.1126|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll
+2020-07-27 22:00:14.1297|ERROR|WedigITCRM.Startup|Unable to load DLL 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\libwkhtmltox.dll' or one of its dependencies: Det angivne modul blev ikke fundet. (0x8007007E)
+2020-07-27 22:00:15.2115|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:00:15.2274|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:00:15.2354|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:07:01.7598|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 22:07:09.1678|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\DinkToPdf\32bit\libwkhtmltox.dll
+2020-07-27 22:07:09.2638|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 22:07:09.3488|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-27 22:07:10.8501|ERROR|WedigITCRM.Startup|Unable to find the required services. Please add all the required services by calling 'IServiceCollection.AddMvc' inside the call to 'ConfigureServices(...)' in the application startup code.
+2020-07-27 22:07:11.6821|ERROR|WedigITCRM.Maintenance.SendActivitiesNotificationsservice|No service for type 'WedigITCRM.Utilities.EmailUtility' has been registered.
+2020-07-27 22:07:11.7725|ERROR|WedigITCRM.Maintenance.SetSuperAdministrator|No service for type 'Microsoft.AspNetCore.Identity.UserManager`1[Microsoft.AspNetCore.Identity.IdentityUser]' has been registered.
+2020-07-27 22:07:11.7725|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|No service for type 'WedigITCRM.IStockItemRepository' has been registered.
+2020-07-27 22:07:11.9971|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|No service for type 'WedigITCRM.Models.ICompanyRepository' has been registered.nyxium stack trace:    at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 62
+2020-07-27 22:09:04.8110|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 22:09:04.8681|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\DinkToPdf\32bit\libwkhtmltox.dll
+2020-07-27 22:09:04.8867|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 22:09:05.8597|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:09:05.8835|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:09:05.8905|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:26:55.8087|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 22:26:55.9055|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\DinkToPdf\64bit\libwkhtmltox.dll
+2020-07-27 22:26:58.0182|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-27 22:26:58.1182|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-27 22:26:59.3259|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-27 22:27:01.1592|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:27:01.3395|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:27:01.3981|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:27:03.2545|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-27 22:27:03.3013|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-27 22:27:21.4717|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-27 22:27:21.5097|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-27 22:29:55.1976|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 22:29:55.2510|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\DinkToPdf\64bit\libwkhtmltox.dll
+2020-07-27 22:29:55.3983|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-27 22:29:56.5684|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:29:56.5948|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:29:56.5948|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:36:45.8597|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 22:36:45.9401|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\DinkToPdf\64bit\libwkhtmltox.dll
+2020-07-27 22:36:46.1059|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-27 22:36:47.6340|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:36:47.6533|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:36:47.6647|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:41:04.1682|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-27 22:41:04.2201|ERROR|WedigITCRM.Startup|Hvor er dll: C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\DinkToPdf\32bit\libwkhtmltox.dll
+2020-07-27 22:41:04.2400|ERROR|WedigITCRM.Startup|Det blev forsøgt at indlæse et program med et forkert format. (0x8007000B)
+2020-07-27 22:41:05.6744|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:41:05.8572|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-07-27 22:41:05.8829|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
