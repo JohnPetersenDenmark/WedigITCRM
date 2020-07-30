@@ -1,12 +1,16 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Reflection;
 using System.Threading.Tasks;
 using WedigITCRM.DineroAPI;
+using WedigITCRM.Utilities;
 
 namespace WedigITCRM.DineroAPI
 {
@@ -168,6 +172,25 @@ namespace WedigITCRM.DineroAPI
 
             string fieldlist = String.Join(",", methodNames);
             return fieldlist;
+        }
+
+        public string CreateInvoiceInDinero(DineroInvoiceCreate dineroAPIInvoice)
+        {           
+            string tmp = JsonConvert.SerializeObject(dineroAPIInvoice);
+
+            HttpClient client = new HttpClient();
+
+            var content = new StringContent(JsonConvert.SerializeObject(dineroAPIInvoice), System.Text.Encoding.UTF8, "application/json");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _dineroAPIConnect._APItoken);
+
+            var result = client.PostAsync(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "invoices", content).Result;
+            if (result.IsSuccessStatusCode)
+            {
+                JObject JsonObj = JsonConvert.DeserializeObject<JObject>(result.Content.ReadAsStringAsync().Result);
+                string returnValue = JsonObj.GetValue("Guid").ToString();
+                return returnValue;
+            }
+            return ("NotOK");
         }
     }
 

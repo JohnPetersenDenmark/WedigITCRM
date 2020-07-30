@@ -66,7 +66,7 @@ namespace WedigITCRM.Maintenance
             {      
                 if (companyAccount.IntegrationDinero && companyAccount.synchronizeStockItemFromDineroToNyxium)
                 {
-                    if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
+                    if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey, companyAccount.DineroAPIOrganization) != null)
                     {
                         Int32 page;
                         Int32 pageSize;

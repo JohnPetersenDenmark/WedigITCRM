@@ -275,3 +275,82 @@
    at System.Net.WebClient.DownloadString(String address)
    at WedigITCRM.DineroAPI.DineroContacts.getContactsFromDinero(String LastupdatedDateTime, Int32 page, Int32 pageSize) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\DineroAPI\DineroContacts.cs:line 42
    at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 102
+2020-07-30 17:51:01.1624|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-30 17:51:04.6390|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-30 17:51:05.3616|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-30 17:51:07.5743|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-30 17:51:15.0610|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 17:51:15.2077|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-30 17:51:38.5612|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 17:51:38.5935|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-30 18:08:09.7988|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[Id], [n].[DineroAPIOrganization], [n].[DineroAPIOrganizationKey], [n].[NyxiumSubscription1DineroProductGuid], [n].[NyxiumSubscription1NumberOfMonths], [n].[NyxiumSubscription2DineroProductGuid], [n].[NyxiumSubscription2NumberOfMonths], [n].[NyxiumSubscriptionPricePerMonth], [n].[PaymentConditionNumberOfDays], [n].[PaymentConditionType]
+FROM [NyxiumSetups] AS [n]
+2020-07-30 18:08:10.6834|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'NyxiumSubscription1NumberOfMonths'.
+Invalid column name 'NyxiumSubscription2NumberOfMonths'.
+Invalid column name 'NyxiumSubscriptionPricePerMonth'.
+Invalid column name 'PaymentConditionNumberOfDays'.
+Invalid column name 'PaymentConditionType'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:5c84e7a7-6f7f-4cac-a931-7c00fb21b182
+Error Number:207,State:1,Class:16
+2020-07-30 18:09:34.3416|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-30 18:09:34.5140|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-30 18:10:19.8029|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-30 18:10:19.9698|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-30 18:11:01.3585|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-30 18:11:03.2786|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-30 18:11:03.4177|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-30 18:11:05.8179|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-30 18:11:10.4339|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 18:11:10.5107|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-30 18:23:11.0877|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-30 18:23:12.6048|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-30 18:23:12.6953|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-30 18:23:14.0624|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-30 18:23:21.3916|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 18:23:21.4210|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-30 18:25:56.8930|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 18:25:56.9062|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-30 18:26:11.3215|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 18:26:11.3411|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-30 18:27:14.8485|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 18:27:14.8703|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-30 18:28:11.8776|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 18:28:11.9081|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-30 18:28:18.9148|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 18:28:18.9353|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-30 18:28:22.5821|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 18:28:22.6291|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-30 18:33:12.4836|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-30 18:33:14.3801|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-30 18:33:14.5223|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-30 18:33:15.6114|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-30 18:33:22.2620|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 18:33:22.3814|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-30 18:40:53.1407|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 18:40:53.1407|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-07-30 18:45:17.1745|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 18:45:17.2111|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-30 18:45:33.4608|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 18:45:33.4952|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-30 19:01:08.3097|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-30 19:01:10.2342|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-30 19:01:10.4189|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-30 19:01:11.4794|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-30 19:01:17.5354|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 19:01:17.5815|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action

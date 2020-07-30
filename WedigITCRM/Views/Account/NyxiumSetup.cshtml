@@ -22,10 +22,39 @@
                     <span asp-validation-for="@Model.NyxiumSubscription1DineroProductGuid" class="text-danger"></span>
                 </div>
                 <div class="form-group row">
-                    <label asp-for="@Model.NyxiumSubscription2DineroProductGuid">Dinero produkt id for gentegne nyxium abonnementet</label>
+                    <label asp-for="@Model.NyxiumSubscription2DineroProductGuid">Dinero produkt id for gentegnet nyxium abonnementet</label>
                     <input asp-for="@Model.NyxiumSubscription2DineroProductGuid" class="form-control" />
                     <span asp-validation-for="@Model.NyxiumSubscription2DineroProductGuid" class="text-danger"></span>
                 </div>
+                <div class="form-group row">
+                    <label asp-for="@Model.NyxiumSubscription1NumberOfMonths">Antal mdr. for første periode</label>
+                    <input asp-for="@Model.NyxiumSubscription1NumberOfMonths" class="form-control" />
+                    <span asp-validation-for="@Model.NyxiumSubscription1NumberOfMonths" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="@Model.NyxiumSubscription2NumberOfMonths">Antal mdr. for gentegnet nyxium abonnementet</label>
+                    <input asp-for="@Model.NyxiumSubscription2NumberOfMonths" class="form-control" />
+                    <span asp-validation-for="@Model.NyxiumSubscription2NumberOfMonths" class="text-danger"></span>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="@Model.NyxiumSubscriptionPricePerMonth">Abonnementspris pr. måned</label>
+                    <input asp-for="@Model.NyxiumSubscriptionPricePerMonth" class="form-control" />
+                    <span asp-validation-for="@Model.NyxiumSubscriptionPricePerMonth" class="text-danger"></span>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="@Model.PaymentConditionType">Betalingsbetingelsestype</label>
+                    <input asp-for="@Model.PaymentConditionType" class="form-control" />
+                    <span asp-validation-for="@Model.PaymentConditionType" class="text-danger"></span>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="@Model.PaymentConditionNumberOfDays">Betalingsbetingelse antal dage</label>
+                    <input asp-for="@Model.PaymentConditionNumberOfDays" class="form-control" />
+                    <span asp-validation-for="@Model.PaymentConditionNumberOfDays" class="text-danger"></span>
+                </div>
+
                 <div class="form-group row">
                     <div class="form-group col-md-4">
                         <button type="submit" class="btn btn-primary" style="width:auto">

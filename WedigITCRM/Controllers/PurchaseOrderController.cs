@@ -1000,7 +1000,7 @@ namespace WedigITCRM.Controllers
             Decimal totalSoldAmount = 0;
 
             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) == null)
+            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey, companyAccount.DineroAPIOrganization) == null)
             {
                 return totalSoldAmount;
             }

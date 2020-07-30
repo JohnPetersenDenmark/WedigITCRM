@@ -73,7 +73,7 @@ namespace WedigITCRM.Maintenance
                 {
                     if (companyAccount.IntegrationDinero && companyAccount.synchronizeCustomerFromDineroToNyxium)
                     {
-                        if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
+                        if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey, companyAccount.DineroAPIOrganization) != null)
                         {
                             DineroContacts dineroContactsToNyxium = new DineroContacts(dineroAPIConnect);
 

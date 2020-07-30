@@ -82,7 +82,7 @@ namespace WedigITCRM.Controllers
             }
 
             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) == null)
+            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey, companyAccount.DineroAPIOrganization) == null)
             {
                 List<string> emptyList = new List<string>();
                 return Json(emptyList);

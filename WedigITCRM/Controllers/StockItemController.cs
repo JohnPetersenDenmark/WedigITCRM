@@ -326,7 +326,7 @@ namespace WedigITCRM.Controllers
                         if (companyAccount.IntegrationDinero && companyAccount.synchronizeStockItemFromNyxiumToDinero)
                         {
                             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-                            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
+                            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey, companyAccount.DineroAPIOrganization) != null)
                             {
                                 DineroStockItem dineroStockItem = new DineroStockItem(dineroAPIConnect);
                                 string status = dineroStockItem.UpdateStockItemInDinero(stockItemToUpdate);
@@ -438,7 +438,7 @@ namespace WedigITCRM.Controllers
                     if (companyAccount.IntegrationDinero && companyAccount.synchronizeStockItemFromNyxiumToDinero)
                     {
                         DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-                        if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
+                        if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey, companyAccount.DineroAPIOrganization) != null)
                         {
                             DineroStockItem dineroStockItem = new DineroStockItem(dineroAPIConnect);
                             string status = dineroStockItem.AddStockItemToDinero(theNewStockItem);
@@ -461,7 +461,7 @@ namespace WedigITCRM.Controllers
                         if (companyAccount.IntegrationDinero && companyAccount.synchronizeStockItemFromNyxiumToDinero)
                         {
                             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-                            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
+                            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey, companyAccount.DineroAPIOrganization) != null)
                             {
                                 DineroStockItem dineroStockItem = new DineroStockItem(dineroAPIConnect);
                                 string status = dineroStockItem.DeleteStockItemInDinero(stockItem.DineroGuiD);
@@ -612,7 +612,7 @@ namespace WedigITCRM.Controllers
 
             READDineroAPIInvoicecollection rEADDineroAPIInvoicecollection = new READDineroAPIInvoicecollection();
             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
+            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey, companyAccount.DineroAPIOrganization) != null)
             {
                 DineroInvoice dineroInvoice = new DineroInvoice(dineroAPIConnect);
                 rEADDineroAPIInvoicecollection = dineroInvoice.getInvoicesFromDinero();         

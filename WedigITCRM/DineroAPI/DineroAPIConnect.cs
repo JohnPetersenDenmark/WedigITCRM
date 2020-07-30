@@ -41,10 +41,10 @@ namespace WedigITCRM.DineroAPI
        
         }
 
-        public string connectToDinero(string DineroAPIOrganizationKey)
+        public string connectToDinero(string DineroAPIOrganizationKey, string DineroAPIOrganizationId)
         {
             APIOrganizationKey = DineroAPIOrganizationKey;
-            //APIOrganization = companyAccount.DineroAPIOrganization;
+            APIOrganization = DineroAPIOrganizationId;
 
             byte[] encodedBytes = System.Text.Encoding.UTF8.GetBytes(APIclientId + ":" + APIclientSecret);
             _basicAuthenticationBase64Encoded = Convert.ToBase64String(encodedBytes);

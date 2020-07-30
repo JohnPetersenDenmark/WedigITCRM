@@ -285,6 +285,11 @@ namespace WedigITCRM.Controllers
                 nyxiumSetup.DineroAPIOrganizationKey = model.DineroAPIOrganizationKey;
                 nyxiumSetup.NyxiumSubscription1DineroProductGuid = model.NyxiumSubscription1DineroProductGuid;
                 nyxiumSetup.NyxiumSubscription2DineroProductGuid = model.NyxiumSubscription2DineroProductGuid;
+                nyxiumSetup.NyxiumSubscription1NumberOfMonths = model.NyxiumSubscription1NumberOfMonths;
+                nyxiumSetup.NyxiumSubscription2NumberOfMonths = model.NyxiumSubscription2NumberOfMonths;
+                nyxiumSetup.NyxiumSubscriptionPricePerMonth = model.NyxiumSubscriptionPricePerMonth;
+                nyxiumSetup.PaymentConditionType = model.PaymentConditionType;
+                nyxiumSetup.PaymentConditionNumberOfDays = model.PaymentConditionNumberOfDays;
 
                 NyxiumSetup nyxiumSetupNew = _nyxiumSetupRepository.Add(nyxiumSetup);
 
@@ -296,6 +301,11 @@ namespace WedigITCRM.Controllers
                 nyxiumSetup.DineroAPIOrganizationKey = model.DineroAPIOrganizationKey;
                 nyxiumSetup.NyxiumSubscription1DineroProductGuid = model.NyxiumSubscription1DineroProductGuid;
                 nyxiumSetup.NyxiumSubscription2DineroProductGuid = model.NyxiumSubscription2DineroProductGuid;
+                nyxiumSetup.NyxiumSubscription1NumberOfMonths = model.NyxiumSubscription1NumberOfMonths;
+                nyxiumSetup.NyxiumSubscription2NumberOfMonths = model.NyxiumSubscription2NumberOfMonths;
+                nyxiumSetup.NyxiumSubscriptionPricePerMonth = model.NyxiumSubscriptionPricePerMonth;
+                nyxiumSetup.PaymentConditionType = model.PaymentConditionType;
+                nyxiumSetup.PaymentConditionNumberOfDays = model.PaymentConditionNumberOfDays;
 
                 _nyxiumSetupRepository.Update(nyxiumSetup);
             }
@@ -462,7 +472,11 @@ namespace WedigITCRM.Controllers
                             if (! string.IsNullOrEmpty(nyxiumSetup.DineroAPIOrganizationKey))
                             {
                                 NyxiumCustomerHandling nyxiumCustomerHandling = new NyxiumCustomerHandling();
-                                string dineroCustomerId = nyxiumCustomerHandling.createNyxiumCustomerInDinero(nyxiumSetup.DineroAPIOrganizationKey, companyAccount);
+                                string dineroCustomerId = nyxiumCustomerHandling.createNyxiumCustomerInDinero(nyxiumSetup, companyAccount);
+                                if (dineroCustomerId != null)
+                                {
+                                    string dineroInvoiceId =  nyxiumCustomerHandling.createInvoiceInDinero(dineroCustomerId, nyxiumSetup, 1);
+                                }
                                 
                             }
 
@@ -659,7 +673,7 @@ namespace WedigITCRM.Controllers
         public IActionResult CopyCustomerFromDineroToNyxium(DummyModel model, CompanyAccount companyAccount)
         {
             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
+            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey, companyAccount.DineroAPIOrganization) != null)
             {
                 DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
                 dineroContacts.CopyCustomersFromDinero(companyAccount, _companyRepository, _vendorRepository, _contactRepository);
@@ -674,7 +688,7 @@ namespace WedigITCRM.Controllers
         public IActionResult CopyCustomerFromNyxiumToDinero(DummyModel model, CompanyAccount companyAccount)
         {
             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
+            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey, companyAccount.DineroAPIOrganization) != null)
             {
                 DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
                 dineroContacts.CopyCustomersToDinero(companyAccount, _companyRepository);
@@ -687,7 +701,7 @@ namespace WedigITCRM.Controllers
         public IActionResult CopyStockItemFromNyxiumToDinero(DummyModel model, CompanyAccount companyAccount)
         {
             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
+            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey, companyAccount.DineroAPIOrganization) != null)
             {
                 DineroStockItem dineroStockItem = new DineroStockItem(dineroAPIConnect);
                 dineroStockItem.CopyAllStockItemsFromNyxiumToDinero(companyAccount, _stockItemRepository);
@@ -702,7 +716,7 @@ namespace WedigITCRM.Controllers
         {
 
             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
+            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey, companyAccount.DineroAPIOrganization) != null)
             {
                 DineroStockItem dineroStockItem = new DineroStockItem(dineroAPIConnect);
                 dineroStockItem.CopyAllStockItemsFromDineroToNyxium(companyAccount, _stockItemRepository);
