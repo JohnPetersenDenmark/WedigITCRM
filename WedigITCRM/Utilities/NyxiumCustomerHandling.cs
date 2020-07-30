@@ -39,16 +39,15 @@ namespace WedigITCRM.Utilities
             return null;
         }
 
-        public string createInvoiceInDinero(string dineroCustomerId, NyxiumSetup nyxiumSetup, int typeOfSubscription)
-        {
-            string dineroInvoiceId = null;
+        public ReturnValueFromCreateInvoice createInvoiceInDinero(string dineroCustomerId, NyxiumSetup nyxiumSetup, int typeOfSubscription)
+        {          
             DateTimeFormatInfo SweedishTimeformat = CultureInfo.GetCultureInfo("sv-SE").DateTimeFormat;
 
             DateTime myNow = DateTime.Now;
-           
 
+            ReturnValueFromCreateInvoice returnValueFromCreateInvoice = null;
 
-            DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
+           DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
             if (dineroAPIConnect.connectToDinero(nyxiumSetup.DineroAPIOrganizationKey, nyxiumSetup.DineroAPIOrganization) != null)
             {
                 DineroInvoiceCreate dineroInvoiceCreate = new DineroInvoiceCreate();
@@ -83,10 +82,44 @@ namespace WedigITCRM.Utilities
 
                 DineroInvoice dineroInvoice = new DineroInvoice(dineroAPIConnect);
 
-                 dineroInvoiceId = dineroInvoice.CreateInvoiceInDinero(dineroInvoiceCreate);               
+                returnValueFromCreateInvoice = dineroInvoice.CreateInvoiceInDinero(dineroInvoiceCreate);               
             }
 
-            return (dineroInvoiceId);
+            return (returnValueFromCreateInvoice);
+        }
+
+        public void bookInvoiceInDinero(string dineroInvoiceId, string timeStamp, NyxiumSetup nyxiumSetup)
+        {
+            DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
+            if (dineroAPIConnect.connectToDinero(nyxiumSetup.DineroAPIOrganizationKey, nyxiumSetup.DineroAPIOrganization) != null)
+            {
+                DineroInvoice dineroInvoice = new DineroInvoice(dineroAPIConnect);
+
+                DineroInvoiceBook dineroInvoiceBook = new DineroInvoiceBook();
+                dineroInvoiceBook.Timestamp = timeStamp;
+                dineroInvoice.bookDineroInvoiceInDinero(dineroInvoiceId, dineroInvoiceBook);
+            }
+        }
+
+        public void sendDineroInvoiceFromDinero(string dineroInvoiceId, string recepientEmailAddress ,NyxiumSetup nyxiumSetup)
+        {
+           
+            DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
+            if (dineroAPIConnect.connectToDinero(nyxiumSetup.DineroAPIOrganizationKey, nyxiumSetup.DineroAPIOrganization) != null)
+            {
+                DineroInvoiceSend dineroInvoiceSend = new DineroInvoiceSend();
+                dineroInvoiceSend.Receiver = recepientEmailAddress;
+                dineroInvoiceSend.Subject = "Faktura for nyxium-abonnement";
+               // dineroInvoiceSend.Sender = "nyxium@nyxium.dk";
+                dineroInvoiceSend.CcToSender = false;
+                dineroInvoiceSend.AddVoucherAsPdfAttachment = true;
+
+                DineroInvoice dineroInvoice = new DineroInvoice(dineroAPIConnect);
+
+                dineroInvoice.sendDineroInvoiceFromDinero(dineroInvoiceId, dineroInvoiceSend);
+            }
+
+            return ;
         }
     }
 
@@ -124,5 +157,23 @@ namespace WedigITCRM.Utilities
         public int Discount { get; set; }
         public string LineType { get; set; }
 
+    }
+
+    public class DineroInvoiceSend
+    {
+        public string Sender { get; set; }
+        public string Timestamp { get; set; }
+        public bool CcToSender { get; set; }
+        public string Subject { get; set; }
+        public string Message { get; set; }       
+        public string Receiver { get; set; }       
+        public bool AddVoucherAsPdfAttachment { get; set; }
+
+    }
+
+    public class DineroInvoiceBook
+    {
+        public int Number { get; set; }
+        public string Timestamp { get; set; }       
     }
 }

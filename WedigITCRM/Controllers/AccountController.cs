@@ -18,6 +18,7 @@ using WedigITCRM.StorageInterfaces;
 using WedigITCRM.Utilities;
 using WedigITCRM.ViewControllers;
 using WedigITCRM.ViewModels;
+using static WedigITCRM.DineroAPI.DineroInvoice;
 
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -46,7 +47,7 @@ namespace WedigITCRM.Controllers
         private IWebHostEnvironment _env;
         private MiscUtility miscUtility;
 
-        public AccountController(INyxiumSetupRepository nyxiumSetupRepository , IContactRepository contactRepository, IVendorRepository vendorRepository, EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
+        public AccountController(INyxiumSetupRepository nyxiumSetupRepository, IContactRepository contactRepository, IVendorRepository vendorRepository, EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -69,7 +70,7 @@ namespace WedigITCRM.Controllers
 
         }
 
-           
+
         [HttpGet]
         public IActionResult Register()
         {
@@ -250,13 +251,13 @@ namespace WedigITCRM.Controllers
                 return LocalRedirect(returnUrl);
 
             }
-          
+
 
         }
 
 
 
-        [HttpGet]       
+        [HttpGet]
         public IActionResult NyxiumSetup()
         {
             NyxiumSetup nyxiumSetup;
@@ -264,11 +265,11 @@ namespace WedigITCRM.Controllers
             List<NyxiumSetup> nyxiumSetups = _nyxiumSetupRepository.GetAllNyxiumSetups().ToList();
             if (nyxiumSetups.Count > 0)
             {
-                 nyxiumSetup = nyxiumSetups.First();              
+                nyxiumSetup = nyxiumSetups.First();
             }
             else
             {
-                 nyxiumSetup = new NyxiumSetup();               
+                nyxiumSetup = new NyxiumSetup();
             }
 
             return View(nyxiumSetup);
@@ -327,8 +328,8 @@ namespace WedigITCRM.Controllers
         {
             if (ModelState.IsValid)
             {
-                
-                List<Company> companies = _companyRepository.GetAllCompanies().Where(company => company.CVRNumber != null &&  company.CVRNumber.Equals(model.CVRNumber)).ToList();
+
+                List<Company> companies = _companyRepository.GetAllCompanies().Where(company => company.CVRNumber != null && company.CVRNumber.Equals(model.CVRNumber)).ToList();
                 if (companies.Count > 0)
                 {
                     ModelState.AddModelError("CVRNumber", "Der er allerede oprettet en konto med CVR-nummer: " + model.CVRNumber);
@@ -387,7 +388,7 @@ namespace WedigITCRM.Controllers
                     relateCompanyAccountWithUser.user = user.Id;
                     relateCompanyAccountWithUser.userName = model.UserName;
                     relateCompanyAccountWithUser.CompanyName = model.CompanyName;
-                    
+
 
                     _relateCompanyAccountWithUserRepository.Add(relateCompanyAccountWithUser);
 
@@ -413,7 +414,7 @@ namespace WedigITCRM.Controllers
                     //EmailUtility emailUtility = new EmailUtility();
 
                     // AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmation, _env, tokens);
-                    AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmation,  tokens);
+                    AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmation, tokens);
                     _emailUtility.send(model.Email, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true, null);
 
                     model.companyAccountEmailSent = true;
@@ -457,29 +458,45 @@ namespace WedigITCRM.Controllers
                         tokens.Add("companyName", companyAccount.CompanyName);
                         tokens.Add("companyAccountId", updatedCompanyAccount.companyAccountId.ToString());
 
-                  
-                        AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmationToWedigit,  tokens);
 
-                        string fixedsendToList = "johnpetersen1959@gmail.com,jp@wedigit.dk,kv@wedigit.dk,tj@wedigit.dk,ad@wedigit.dk";
+                        AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmationToWedigit, tokens);
+
+                        // string fixedsendToList = "johnpetersen1959@gmail.com,jp@wedigit.dk,tj@wedigit.dk,ad@wedigit.dk";
+                        string fixedsendToList = "jp@wedigit.dk";
                         _emailUtility.send(fixedsendToList, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true, null);
                         // DONE send email to wedigit employees
 
+                        string invoiceReceiverEmail = null;
+                        List<RelateCompanyAccountWithUser> relateCompanyAccountWithUserList = _relateCompanyAccountWithUserRepository.GetAllRelateCompanyAccountWithUser().Where(relation => relation.companyAccount == companyAccount.companyAccountId).ToList();
+                        if (relateCompanyAccountWithUserList.Count == 1)
+                        {
+                            RelateCompanyAccountWithUser relateCompanyAccountWithUser = relateCompanyAccountWithUserList.First();
+                            IdentityUser userToSendInvoiceTo =  userManager.FindByIdAsync(relateCompanyAccountWithUser.user).Result;
+                            if (userToSendInvoiceTo != null)
+                            {
+                                invoiceReceiverEmail = userToSendInvoiceTo.Email;
+                            }
+
+                        }
 
                         List<NyxiumSetup> nyxiumSetups = _nyxiumSetupRepository.GetAllNyxiumSetups().ToList();
                         if (nyxiumSetups.Count > 0)
                         {
                             NyxiumSetup nyxiumSetup = nyxiumSetups.First();
-                            if (! string.IsNullOrEmpty(nyxiumSetup.DineroAPIOrganizationKey))
+                            if (!string.IsNullOrEmpty(nyxiumSetup.DineroAPIOrganizationKey))
                             {
                                 NyxiumCustomerHandling nyxiumCustomerHandling = new NyxiumCustomerHandling();
                                 string dineroCustomerId = nyxiumCustomerHandling.createNyxiumCustomerInDinero(nyxiumSetup, companyAccount);
                                 if (dineroCustomerId != null)
                                 {
-                                    string dineroInvoiceId =  nyxiumCustomerHandling.createInvoiceInDinero(dineroCustomerId, nyxiumSetup, 1);
+                                    ReturnValueFromCreateInvoice returnValueFromCreateInvoice = nyxiumCustomerHandling.createInvoiceInDinero(dineroCustomerId, nyxiumSetup, 1);
+                                    if (returnValueFromCreateInvoice != null)
+                                    {
+                                        nyxiumCustomerHandling.bookInvoiceInDinero(returnValueFromCreateInvoice.Guid, returnValueFromCreateInvoice.TimeStamp, nyxiumSetup);
+                                        nyxiumCustomerHandling.sendDineroInvoiceFromDinero(returnValueFromCreateInvoice.Guid, invoiceReceiverEmail, nyxiumSetup);
+                                    }
                                 }
-                                
                             }
-
                         }
 
                         model.message = "Din konto er nu aktiveret. Du kan logge ind via knappen ovenfor";
@@ -643,7 +660,7 @@ namespace WedigITCRM.Controllers
                         attachment.ContentType = AttachedLogoFile.ContentType;
                         attachment.length = AttachedLogoFile.Length;
                         attachment.OriginalFileName = fileNameArray[i];
-                        attachment.uniqueInternalFileName = uniqueFileName + fileExtension; 
+                        attachment.uniqueInternalFileName = uniqueFileName + fileExtension;
                         attachment.companyAccountId = companyAccount.companyAccountId;
                         WedigITCRM.EntitityModels.Attachment newAttachment = _attachmentRepository.Add(attachment);
 
@@ -909,7 +926,7 @@ namespace WedigITCRM.Controllers
             }
             return RedirectToAction("Index", "Note");
         }
-     
+
         public class CompanyAccountResultViewModel
         {
             public string label { get; set; }

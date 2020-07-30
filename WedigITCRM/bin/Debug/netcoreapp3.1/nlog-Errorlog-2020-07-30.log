@@ -354,3 +354,43 @@ Error Number:207,State:1,Class:16
 2020-07-30 19:01:11.4794|ERROR|WedigITCRM.Startup|end of Configure method
 2020-07-30 19:01:17.5354|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
 2020-07-30 19:01:17.5815|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-30 21:50:30.3686|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-30 21:50:32.5131|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-30 21:50:32.6678|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-30 21:50:34.9875|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-30 21:50:39.3709|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 21:50:39.4990|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-30 22:28:28.7183|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-30 22:28:30.3402|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-30 22:28:30.4240|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-30 22:28:31.0365|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-30 22:28:37.5422|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 22:28:37.6107|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-30 22:42:31.3147|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-30 22:42:33.4526|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-30 22:42:33.5723|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-30 22:42:34.2670|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-30 22:42:37.5143|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 22:42:37.5307|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-07-30 23:01:31.8583|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|The instance of entity type 'CompanyAccount' cannot be tracked because another instance with the same key value for {'companyAccountId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.nyxium stack trace:    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.DbContext.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.DbContext.SetEntityState[TEntity](TEntity entity, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.DbContext.Attach[TEntity](TEntity entity)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Attach(TEntity entity)
+   at WedigITCRM.Models.SQLCompanyAccountRepository.Update(CompanyAccount companyAccountChanges) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\SQLImplmementationModels\SQLCompanyAccountRepository.cs:line 30
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 153
+2020-07-30 23:43:26.4708|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-07-30 23:43:27.9976|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-07-30 23:43:28.0803|ERROR|WedigITCRM.Startup|start of Configure method
+2020-07-30 23:43:28.9424|ERROR|WedigITCRM.Startup|end of Configure method
+2020-07-30 23:43:34.1134|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-07-30 23:43:34.1641|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action

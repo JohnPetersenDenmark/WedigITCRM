@@ -174,7 +174,12 @@ namespace WedigITCRM.DineroAPI
             return fieldlist;
         }
 
-        public string CreateInvoiceInDinero(DineroInvoiceCreate dineroAPIInvoice)
+        public class ReturnValueFromCreateInvoice
+        {
+            public string Guid { get; set; }
+            public string TimeStamp { get; set; }
+        }
+        public ReturnValueFromCreateInvoice CreateInvoiceInDinero(DineroInvoiceCreate dineroAPIInvoice)
         {           
             string tmp = JsonConvert.SerializeObject(dineroAPIInvoice);
 
@@ -184,6 +189,46 @@ namespace WedigITCRM.DineroAPI
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _dineroAPIConnect._APItoken);
 
             var result = client.PostAsync(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "invoices", content).Result;
+            if (result.IsSuccessStatusCode)
+            {
+                //JObject JsonObj = JsonConvert.DeserializeObject<JObject>(result.Content.ReadAsStringAsync().Result);
+                //string returnValue = JsonObj.GetValue("Guid").ToString();
+
+                ReturnValueFromCreateInvoice returnValue = JsonConvert.DeserializeObject<ReturnValueFromCreateInvoice>(result.Content.ReadAsStringAsync().Result);
+                return returnValue;
+            }
+            return null;
+        }
+
+        public string sendDineroInvoiceFromDinero(string dineroInvoiceId, DineroInvoiceSend dineroInvoiceSend)
+        {
+            string tmp = JsonConvert.SerializeObject(dineroInvoiceSend);
+
+            HttpClient client = new HttpClient();
+
+            var content = new StringContent(JsonConvert.SerializeObject(dineroInvoiceSend), System.Text.Encoding.UTF8, "application/json");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _dineroAPIConnect._APItoken);
+
+            var result = client.PostAsync(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "invoices" +"/" + dineroInvoiceId + "/" + "email", content).Result;
+            if (result.IsSuccessStatusCode)
+            {
+                JObject JsonObj = JsonConvert.DeserializeObject<JObject>(result.Content.ReadAsStringAsync().Result);
+                string returnValue = JsonObj.GetValue("Guid").ToString();
+                return returnValue;
+            }
+            return ("NotOK");
+        }
+
+        public string bookDineroInvoiceInDinero(string dineroInvoiceId, DineroInvoiceBook dineroInvoiceBook)
+        {
+            string tmp = JsonConvert.SerializeObject(dineroInvoiceBook);
+
+            HttpClient client = new HttpClient();
+
+            var content = new StringContent(JsonConvert.SerializeObject(dineroInvoiceBook), System.Text.Encoding.UTF8, "application/json");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _dineroAPIConnect._APItoken);
+
+            var result = client.PostAsync(_dineroAPIConnect.APIEndpoint + "/" + _dineroAPIConnect.APIversion + "/" + _dineroAPIConnect.APIOrganization + "/" + "invoices" + "/" + dineroInvoiceId + "/" + "book", content).Result;
             if (result.IsSuccessStatusCode)
             {
                 JObject JsonObj = JsonConvert.DeserializeObject<JObject>(result.Content.ReadAsStringAsync().Result);
