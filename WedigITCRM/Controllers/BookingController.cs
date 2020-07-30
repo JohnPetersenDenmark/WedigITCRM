@@ -1868,7 +1868,7 @@ namespace WedigITCRM.Controllers
                 if (companyAccount.IntegrationDinero)
                 {
                     DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-                    if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+                    if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
                     {
                         DineroServiceToProduct dineroServiceToProduct = new DineroServiceToProduct(dineroAPIConnect);
                         string status = dineroServiceToProduct.AddServiceToDinero(newBookingService);
@@ -1943,7 +1943,7 @@ namespace WedigITCRM.Controllers
                     if (companyAccount.IntegrationDinero)
                     {
                         DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-                        if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+                        if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
                         {
                             DineroServiceToProduct dineroServiceToProduct = new DineroServiceToProduct(dineroAPIConnect);
                             string status = dineroServiceToProduct.UpdateServiceToStockItem(newBookingService);                           
@@ -1970,7 +1970,7 @@ namespace WedigITCRM.Controllers
                     if (companyAccount.IntegrationDinero)
                     {
                         DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-                        if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+                        if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
                         {
                             DineroServiceToProduct dineroServiceToProduct = new DineroServiceToProduct(dineroAPIConnect);
                             dineroServiceToProduct.DeleteServiceStockItem(bookingService.DineroGuiD);
@@ -2798,7 +2798,7 @@ namespace WedigITCRM.Controllers
                             if (companyAccount.IntegrationDinero)
                             {
                                 DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-                                if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+                                if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
                                 {
                                     DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
                                     string status = dineroContacts.AddCustomerContactToDineroAsync(newCustomer).ToString();

@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Logging;
 using WedigITCRM.DineroAPI;
+using WedigITCRM.EntitityModels;
 using WedigITCRM.Models;
 using WedigITCRM.StorageInterfaces;
 using WedigITCRM.Utilities;
@@ -38,13 +39,14 @@ namespace WedigITCRM.Controllers
         private ILicenseType _licenseTypeRepository;
         private ICompanyRepository _companyRepository;
         private IVendorRepository _vendorRepository;
+        private readonly INyxiumSetupRepository _nyxiumSetupRepository;
         private IContactRepository _contactRepository;
         private IRelateCompanyAccountWithUserRepository _relateCompanyAccountWithUserRepository;
         private RoleManager<IdentityRole> _roleManager;
         private IWebHostEnvironment _env;
         private MiscUtility miscUtility;
 
-        public AccountController(IContactRepository contactRepository, IVendorRepository vendorRepository, EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
+        public AccountController(INyxiumSetupRepository nyxiumSetupRepository , IContactRepository contactRepository, IVendorRepository vendorRepository, EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -52,6 +54,7 @@ namespace WedigITCRM.Controllers
             this._companyAccountRepository = companyAccountRepository;
             _companyRepository = companyRepository;
             _vendorRepository = vendorRepository;
+            _nyxiumSetupRepository = nyxiumSetupRepository;
             _contactRepository = contactRepository;
             _stockItemRepository = stockItemRepository;
             _licenseTypeRepository = licenseTypeRepository;
@@ -253,7 +256,52 @@ namespace WedigITCRM.Controllers
 
 
 
+        [HttpGet]       
+        public IActionResult NyxiumSetup()
+        {
+            NyxiumSetup nyxiumSetup;
 
+            List<NyxiumSetup> nyxiumSetups = _nyxiumSetupRepository.GetAllNyxiumSetups().ToList();
+            if (nyxiumSetups.Count > 0)
+            {
+                 nyxiumSetup = nyxiumSetups.First();              
+            }
+            else
+            {
+                 nyxiumSetup = new NyxiumSetup();               
+            }
+
+            return View(nyxiumSetup);
+        }
+
+        [HttpPost]
+        public IActionResult NyxiumSetup(NyxiumSetup model)
+        {
+            NyxiumSetup nyxiumSetup = _nyxiumSetupRepository.GetNyxiumSetup(model.Id);
+            if (nyxiumSetup == null)
+            {
+                nyxiumSetup = new NyxiumSetup();
+                nyxiumSetup.DineroAPIOrganization = model.DineroAPIOrganization;
+                nyxiumSetup.DineroAPIOrganizationKey = model.DineroAPIOrganizationKey;
+                nyxiumSetup.NyxiumSubscription1DineroProductGuid = model.NyxiumSubscription1DineroProductGuid;
+                nyxiumSetup.NyxiumSubscription2DineroProductGuid = model.NyxiumSubscription2DineroProductGuid;
+
+                NyxiumSetup nyxiumSetupNew = _nyxiumSetupRepository.Add(nyxiumSetup);
+
+                return View(nyxiumSetupNew);
+            }
+            else
+            {
+                nyxiumSetup.DineroAPIOrganization = model.DineroAPIOrganization;
+                nyxiumSetup.DineroAPIOrganizationKey = model.DineroAPIOrganizationKey;
+                nyxiumSetup.NyxiumSubscription1DineroProductGuid = model.NyxiumSubscription1DineroProductGuid;
+                nyxiumSetup.NyxiumSubscription2DineroProductGuid = model.NyxiumSubscription2DineroProductGuid;
+
+                _nyxiumSetupRepository.Update(nyxiumSetup);
+            }
+
+            return View(nyxiumSetup);
+        }
 
         [HttpGet]
         [AllowAnonymous]
@@ -306,6 +354,13 @@ namespace WedigITCRM.Controllers
                     }
 
                     companyAccount.CompanyName = model.CompanyName;
+                    companyAccount.CompanyCVRNumber = model.CVRNumber;
+                    companyAccount.CompanyStreet = model.CompanyStreet;
+                    companyAccount.CompanyZip = model.CompanyZip;
+                    companyAccount.CompanyCity = model.CompanyCity;
+
+
+
                     companyAccount.SubscriptionCRM = true;
                     companyAccount.SubscriptionInventory = true;
                     companyAccount.SubscriptionProcurement = true;
@@ -322,7 +377,7 @@ namespace WedigITCRM.Controllers
                     relateCompanyAccountWithUser.user = user.Id;
                     relateCompanyAccountWithUser.userName = model.UserName;
                     relateCompanyAccountWithUser.CompanyName = model.CompanyName;
-                    relateCompanyAccountWithUser.CompanyName = model.CompanyName;
+                    
 
                     _relateCompanyAccountWithUserRepository.Add(relateCompanyAccountWithUser);
 
@@ -392,15 +447,26 @@ namespace WedigITCRM.Controllers
                         tokens.Add("companyName", companyAccount.CompanyName);
                         tokens.Add("companyAccountId", updatedCompanyAccount.companyAccountId.ToString());
 
-                       // EmailUtility emailUtility = new EmailUtility();
-
-                      //  AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmationToWedigit, _env, tokens);
-
+                  
                         AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmationToWedigit,  tokens);
 
                         string fixedsendToList = "johnpetersen1959@gmail.com,jp@wedigit.dk,kv@wedigit.dk,tj@wedigit.dk,ad@wedigit.dk";
                         _emailUtility.send(fixedsendToList, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true, null);
                         // DONE send email to wedigit employees
+
+
+                        List<NyxiumSetup> nyxiumSetups = _nyxiumSetupRepository.GetAllNyxiumSetups().ToList();
+                        if (nyxiumSetups.Count > 0)
+                        {
+                            NyxiumSetup nyxiumSetup = nyxiumSetups.First();
+                            if (! string.IsNullOrEmpty(nyxiumSetup.DineroAPIOrganizationKey))
+                            {
+                                NyxiumCustomerHandling nyxiumCustomerHandling = new NyxiumCustomerHandling();
+                                string dineroCustomerId = nyxiumCustomerHandling.createNyxiumCustomerInDinero(nyxiumSetup.DineroAPIOrganizationKey, companyAccount);
+                                
+                            }
+
+                        }
 
                         model.message = "Din konto er nu aktiveret. Du kan logge ind via knappen ovenfor";
                         model.errorNumber = 1;
@@ -593,7 +659,7 @@ namespace WedigITCRM.Controllers
         public IActionResult CopyCustomerFromDineroToNyxium(DummyModel model, CompanyAccount companyAccount)
         {
             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-            if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
             {
                 DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
                 dineroContacts.CopyCustomersFromDinero(companyAccount, _companyRepository, _vendorRepository, _contactRepository);
@@ -608,7 +674,7 @@ namespace WedigITCRM.Controllers
         public IActionResult CopyCustomerFromNyxiumToDinero(DummyModel model, CompanyAccount companyAccount)
         {
             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-            if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
             {
                 DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
                 dineroContacts.CopyCustomersToDinero(companyAccount, _companyRepository);
@@ -621,7 +687,7 @@ namespace WedigITCRM.Controllers
         public IActionResult CopyStockItemFromNyxiumToDinero(DummyModel model, CompanyAccount companyAccount)
         {
             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-            if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
             {
                 DineroStockItem dineroStockItem = new DineroStockItem(dineroAPIConnect);
                 dineroStockItem.CopyAllStockItemsFromNyxiumToDinero(companyAccount, _stockItemRepository);
@@ -636,7 +702,7 @@ namespace WedigITCRM.Controllers
         {
 
             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-            if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
             {
                 DineroStockItem dineroStockItem = new DineroStockItem(dineroAPIConnect);
                 dineroStockItem.CopyAllStockItemsFromDineroToNyxium(companyAccount, _stockItemRepository);

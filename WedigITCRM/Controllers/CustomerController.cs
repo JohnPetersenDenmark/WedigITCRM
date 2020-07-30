@@ -159,7 +159,7 @@ namespace WedigITCRM.Controllers
                         if (companyAccount.IntegrationDinero && companyAccount.synchronizeCustomerFromNyxiumToDinero)
                         {
                             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-                            if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+                            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
                             {
                                 DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
                                 string status = dineroContacts.UpdateCustomerContactInDinero(newCompany, newCompany.DineroGuiD);
@@ -217,7 +217,7 @@ namespace WedigITCRM.Controllers
                     if (companyAccount.IntegrationDinero && companyAccount.synchronizeCustomerFromNyxiumToDinero)
                     {
                         DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-                        if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+                        if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
                         {
                             DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
                             string status = dineroContacts.AddCustomerContactToDineroAsync(newCompany).ToString();
@@ -242,7 +242,7 @@ namespace WedigITCRM.Controllers
                         if (companyAccount.IntegrationDinero && companyAccount.synchronizeCustomerFromNyxiumToDinero)
                         {
                             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
-                            if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+                            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
                             {
                                 DineroContacts dineroContacts = new DineroContacts(dineroAPIConnect);
                                 dineroContacts.DeleteContactInDinero(company.DineroGuiD);

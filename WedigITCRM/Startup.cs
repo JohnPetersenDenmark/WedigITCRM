@@ -131,6 +131,8 @@ namespace WedigITCRM
                 services.AddScoped<IPaymentConditionRepository, SQLPaymentConditionRepository>();
                 services.AddScoped<IPurchaseBudgetLineRepository, SQLPurchaseBudgetLinesRepository>();
 
+                services.AddScoped<INyxiumSetupRepository, SQLNyxiumSetupRepository > ();
+
                 services.AddScoped<IPurchaseBudgetPeriodLineRepository, SQLPurchaseBudgetPeriodLineRepository>();
                 
                 services.AddScoped<DineroAPIConnect>();

@@ -36,7 +36,7 @@ namespace WedigITCRM.VirkAPI
             this.hits_property = new List<vedIkke>();
         }
         public int total { get; set; }
-        public double max_score { get; set; }
+        public double? max_score { get; set; }
 
         [JsonProperty("hits")]
         public  List<vedIkke> hits_property { get; set; }    

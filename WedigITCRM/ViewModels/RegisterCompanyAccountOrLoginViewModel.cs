@@ -33,7 +33,19 @@ namespace WedigITCRM.ViewControllers
 
         [Display(Name = "CVR")]
         [Required(ErrorMessage = "CVR skal udfyldes")]
-        public String CVRNumber { get; set; }      
+        public String CVRNumber { get; set; }
+
+        [Display(Name = "Adresse")]
+        [Required(ErrorMessage = "Adresse skal udfyldes")]
+        public String CompanyStreet { get; set; }
+
+        [Display(Name = "Postnummer")]
+        [Required(ErrorMessage = "Postnummer skal udfyldes")]
+        public String CompanyZip { get; set; }
+
+        [Display(Name = "By")]
+        [Required(ErrorMessage = "By skal udfyldes")]
+        public String CompanyCity { get; set; }
 
         [Required(ErrorMessage = "Navn skal udfyldes")]
         [Display(Name = "Navn")]

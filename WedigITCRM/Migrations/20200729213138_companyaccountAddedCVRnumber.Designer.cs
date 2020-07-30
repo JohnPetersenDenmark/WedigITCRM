@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WedigITCRM;
 
 namespace WedigITCRM.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200729213138_companyaccountAddedCVRnumber")]
+    partial class companyaccountAddedCVRnumber
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -933,30 +935,6 @@ namespace WedigITCRM.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Notes");
-                });
-
-            modelBuilder.Entity("WedigITCRM.EntitityModels.NyxiumSetup", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("DineroAPIOrganization")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DineroAPIOrganizationKey")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NyxiumSubscription1DineroProductGuid")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NyxiumSubscription2DineroProductGuid")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("NyxiumSetups");
                 });
 
             modelBuilder.Entity("WedigITCRM.EntitityModels.PaymentCondition", b =>

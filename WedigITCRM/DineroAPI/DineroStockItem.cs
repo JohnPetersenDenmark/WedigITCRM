@@ -144,7 +144,7 @@ namespace WedigITCRM.DineroAPI
 
             DineroAPIConnect dineroAPIConnect = new DineroAPIConnect();
 
-            if (dineroAPIConnect.connectToDinero(companyAccount) != null)
+            if (dineroAPIConnect.connectToDinero(companyAccount.DineroAPIOrganizationKey) != null)
             {
                 Int32 page;
                 Int32 pageSize;
