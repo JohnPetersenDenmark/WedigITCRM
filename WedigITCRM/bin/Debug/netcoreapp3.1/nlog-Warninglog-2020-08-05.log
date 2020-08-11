@@ -1,0 +1,23 @@
+2020-08-05 22:57:36.3037|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-08-05 22:57:38.3473|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-08-05 22:57:38.4385|ERROR|WedigITCRM.Startup|start of Configure method
+2020-08-05 22:57:39.2648|ERROR|WedigITCRM.Startup|end of Configure method
+2020-08-05 22:57:41.4556|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-08-05 22:57:41.5012|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-08-05 22:57:41.5348|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-08-05 22:57:42.0973|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-08-05 22:57:42.1473|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-08-05 22:59:06.9518|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-08-05 22:59:06.9704|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-08-05 22:59:24.1697|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-08-05 22:59:24.1931|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-08-05 22:59:32.5718|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-08-05 22:59:32.5942|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-08-05 22:59:40.1510|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-08-05 22:59:40.1664|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-08-05 23:01:34.1072|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-08-05 23:01:34.1282|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-08-05 23:02:54.3692|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-08-05 23:02:54.3888|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-08-05 23:10:27.8547|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-08-05 23:10:27.8799|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action

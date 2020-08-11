@@ -477,6 +477,14 @@ function setPresubmitEventHandlerOnContactEditor() {
                 name.error('Kundenavn skal angives');
             }
 
+            var isPerson = this.field('isPerson');
+
+            if (isPerson.val() == "Ja") {
+                if (this.field('cvrNumber').val() != "") {
+                    isPerson.error('En privatperson kan ikke have et SE-nummer');
+                }
+
+            }
 
             var email = this.field('email');
             if (email.val()) {

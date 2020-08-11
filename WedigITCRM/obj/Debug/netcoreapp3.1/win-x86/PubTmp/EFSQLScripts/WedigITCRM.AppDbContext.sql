@@ -2760,3 +2760,83 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200729213138_companyaccountAddedCVRnumber')
+BEGIN
+    ALTER TABLE [companyAccounts] ADD [CompanyCVRNumber] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200729213138_companyaccountAddedCVRnumber')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200729213138_companyaccountAddedCVRnumber', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200730001125_addedNyxiumSetupTable')
+BEGIN
+    CREATE TABLE [NyxiumSetups] (
+        [Id] int NOT NULL IDENTITY,
+        [DineroAPIOrganizationKey] nvarchar(max) NULL,
+        [DineroAPIOrganization] nvarchar(max) NULL,
+        [NyxiumSubscription1DineroProductGuid] nvarchar(max) NULL,
+        [NyxiumSubscription2DineroProductGuid] nvarchar(max) NULL,
+        CONSTRAINT [PK_NyxiumSetups] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200730001125_addedNyxiumSetupTable')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200730001125_addedNyxiumSetupTable', N'3.1.4');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200730160936_nyxiumSetupTableChanged')
+BEGIN
+    ALTER TABLE [NyxiumSetups] ADD [NyxiumSubscription1NumberOfMonths] float NOT NULL DEFAULT 0.0E0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200730160936_nyxiumSetupTableChanged')
+BEGIN
+    ALTER TABLE [NyxiumSetups] ADD [NyxiumSubscription2NumberOfMonths] float NOT NULL DEFAULT 0.0E0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200730160936_nyxiumSetupTableChanged')
+BEGIN
+    ALTER TABLE [NyxiumSetups] ADD [NyxiumSubscriptionPricePerMonth] float NOT NULL DEFAULT 0.0E0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200730160936_nyxiumSetupTableChanged')
+BEGIN
+    ALTER TABLE [NyxiumSetups] ADD [PaymentConditionNumberOfDays] int NOT NULL DEFAULT 0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200730160936_nyxiumSetupTableChanged')
+BEGIN
+    ALTER TABLE [NyxiumSetups] ADD [PaymentConditionType] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200730160936_nyxiumSetupTableChanged')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200730160936_nyxiumSetupTableChanged', N'3.1.4');
+END;
+
+GO
+
