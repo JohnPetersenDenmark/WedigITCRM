@@ -1,0 +1,4 @@
+2020-11-06 23:40:19.7488|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-11-06 23:40:20.4954|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-11-06 23:40:20.6323|ERROR|WedigITCRM.Startup|start of Configure method
+2020-11-06 23:40:21.3984|ERROR|WedigITCRM.Startup|end of Configure method

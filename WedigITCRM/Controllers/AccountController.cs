@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using WedigITCRM.DineroAPI;
 using WedigITCRM.EntitityModels;
 using WedigITCRM.Models;
+using WedigITCRM.ReepayAPI;
 using WedigITCRM.StorageInterfaces;
 using WedigITCRM.Utilities;
 using WedigITCRM.ViewControllers;
@@ -36,6 +37,7 @@ namespace WedigITCRM.Controllers
         private ICompanyAccountRepository _companyAccountRepository;
         private IContentTypeRepository _contentTypeRepository;
         private IAttachmentRepository _attachmentRepository;
+        private ReepayAPIMethods ReepayAPIMethods;
         private IStockItemRepository _stockItemRepository;
         private ILicenseType _licenseTypeRepository;
         private ICompanyRepository _companyRepository;
@@ -47,7 +49,7 @@ namespace WedigITCRM.Controllers
         private IWebHostEnvironment _env;
         private MiscUtility miscUtility;
 
-        public AccountController(INyxiumSetupRepository nyxiumSetupRepository, IContactRepository contactRepository, IVendorRepository vendorRepository, EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
+        public AccountController(ReepayAPIMethods ReepayAPIMethods, INyxiumSetupRepository nyxiumSetupRepository, IContactRepository contactRepository, IVendorRepository vendorRepository, EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -57,6 +59,7 @@ namespace WedigITCRM.Controllers
             _vendorRepository = vendorRepository;
             _nyxiumSetupRepository = nyxiumSetupRepository;
             _contactRepository = contactRepository;
+            this.ReepayAPIMethods = ReepayAPIMethods;
             _stockItemRepository = stockItemRepository;
             _licenseTypeRepository = licenseTypeRepository;
             this._relateCompanyAccountWithUserRepository = relateCompanyAccountWithUserRepository;
@@ -419,6 +422,12 @@ namespace WedigITCRM.Controllers
 
                     model.companyAccountEmailSent = true;
                     model.companyAccountEmailSentMessage = "Email er sendt til: " + model.Email;
+
+                    // Create nyxium customer in Reepay
+
+                   var response = await ReepayAPIMethods.GetFromReepayAPIAsync("dummyPath");
+
+
                     return View(model);
 
                 }

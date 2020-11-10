@@ -23,6 +23,8 @@ using DinkToPdf.Contracts;
 using DinkToPdf;
 using System.IO;
 using System.Runtime.InteropServices;
+using WedigITCRM.ReepayAPI;
+using System.Net.Http;
 
 namespace WedigITCRM
 {
@@ -134,8 +136,10 @@ namespace WedigITCRM
                 services.AddScoped<INyxiumSetupRepository, SQLNyxiumSetupRepository > ();
 
                 services.AddScoped<IPurchaseBudgetPeriodLineRepository, SQLPurchaseBudgetPeriodLineRepository>();
-                
+
+                services.AddScoped<HttpClient>();
                 services.AddScoped<DineroAPIConnect>();
+                services.AddScoped<ReepayAPIMethods>();
                 services.AddScoped<EmailUtility>();
                 services.AddScoped<MiscUtility>();
                 services.AddScoped<PurchaseOrderToHTML>();
