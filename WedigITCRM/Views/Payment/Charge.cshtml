@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+@model WedigITCRM.ReepayAPI.PaymentViewModel
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Se vores priser</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://checkout.reepay.com/checkout.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            var reepaySessionId = document.getElementById("SessionId").value;
+
+
+            var rp = new Reepay.EmbeddedCheckout(reepaySessionId, { "<div>": 'rp_container' });
+
+            rp.addEventHandler(Reepay.Event.Accept, function (data) {
+                console.log('Success');
+            });
+            rp.addEventHandler(Reepay.Event.Error, function (data) {
+                console.log('Error');
+            });
+            rp.addEventHandler(Reepay.Event.Close, function (data) {
+                console.log('Close');
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id='rp_container' style="width: 500px; height: 730px;"></div>
+
+
+    <input id="SessionId" asp-for="@Model.SessionId">
+
+</body>
+</html>

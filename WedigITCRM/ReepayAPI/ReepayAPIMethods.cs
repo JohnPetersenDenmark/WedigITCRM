@@ -13,10 +13,14 @@ namespace WedigITCRM.ReepayAPI
         private string ReepayAPIEndpoint = "https://api.reepay.com";
         private string ReepayAPIVersion = "v1";
 
+        private string ReepayCheckoutAPIEndpoint = "https://checkout-api.reepay.com";
+        private string ReepayCheckoutAPIVersion = "v1";
+
         private string ReepayAPIPrivateKey = "priv_0fefb51ec57ec823174b0ce10dc5db83";
 
         private HttpClient httpClient;  
         private string partialResourceURL;
+        private string partialCheckoutResourceURL;
 
         public ReepayAPIMethods(HttpClient httpClient)
         {
@@ -28,6 +32,7 @@ namespace WedigITCRM.ReepayAPI
             this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", _basicAuthenticationBase64Encoded);
 
             this.partialResourceURL = ReepayAPIEndpoint + "/" + ReepayAPIVersion + "/";
+            this.partialCheckoutResourceURL = ReepayCheckoutAPIEndpoint + "/" + ReepayCheckoutAPIVersion + "/";
         }
 
         public async Task<string> GetFromReepayAPIAsync (string resourcePath)
@@ -48,17 +53,53 @@ namespace WedigITCRM.ReepayAPI
             return null;
         }
 
-        public async Task<string> PostCustomerToReepayAPIAsync(CustomerModel model)
+        public async Task<string> PostCustomerToReepayAPIAsync(OrderModel model)
         {
             
             var requestContent = new StringContent(JsonConvert.SerializeObject(model), System.Text.Encoding.UTF8, "application/json");
-            var result = await httpClient.PostAsync(partialResourceURL + "products", requestContent);
+            var result = await httpClient.PostAsync(partialResourceURL + "customer", requestContent);
 
-            var resultContent = await result.Content.ReadAsStringAsync();
+            if (result.IsSuccessStatusCode)
+            {
+                var resultContent = await result.Content.ReadAsStringAsync();
 
-            var response =  JsonConvert.DeserializeObject(resultContent);
+                var response = JsonConvert.DeserializeObject<string>(resultContent);
+                return response;
+            }
+            return null;
+        }
+
+        public async Task<GetReepayChargeSessionResponseModel> GetChargeSessionIdAsync(OrderModel model)
+        {
+            string tmpContent = JsonConvert.SerializeObject(model);
+
+            var requestContent = new StringContent(JsonConvert.SerializeObject(model), System.Text.Encoding.UTF8, "application/json");
+            var result = await httpClient.PostAsync(partialCheckoutResourceURL + "session/charge", requestContent);
+            if (result.IsSuccessStatusCode)
+            {
+
+                var resultContent = await result.Content.ReadAsStringAsync();
+
+                var response = JsonConvert.DeserializeObject<GetReepayChargeSessionResponseModel>(resultContent);
+                return response;
+            }
+
 
             return null;
+        }
+
+       public class GetReepayChargeSessionModel
+        {
+            [JsonProperty("customer_handle")]
+            public string CustomerHandle { get; set; }
+        }
+        public class GetReepayChargeSessionResponseModel
+        {
+            [JsonProperty("id")]
+            public string SessionId { get; set; }
+
+            [JsonProperty("url")]
+            public string SessionUrl { get; set; }
         }
     }
 }

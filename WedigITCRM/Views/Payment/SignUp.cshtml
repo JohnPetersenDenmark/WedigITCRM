@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Se vores priser</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://token.reepay.com/token.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Instantiate handler
+            var handler = reepaytoken.configure({
+                key: 'pub_d6900fd9a625d6882b719668bb5b0c12',
+                language: 'da',
+                recurring: true,
+                token: function (result) {
+                    console.log(JSON.stringify(result));
+                    document.querySelector('#token').value = result.token;
+                    document.getElementById('signupform').submit();
+                },
+                ready: function () {
+                    document.querySelector('#signup-button').removeAttribute('disabled');
+                },
+                close: function () {
+                    console.log('Modal closed');
+                }
+            });
+            // Open modal on open button click
+            document.querySelector('#signup-button').addEventListener('click', function (event) {
+                event.preventDefault();
+                handler.open();
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <form ethod="POST" id="signupform">
+        <input type="hidden" id="token" name="reepaytoken" />
+        <input type="submit" id="signup-button" disabled="disabled" value="Sign-up" />
+    </form>
+</body>
+</html>
