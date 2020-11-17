@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using static WedigITCRM.Controllers.PaymentController;
 
 namespace WedigITCRM.ReepayAPI
 {
@@ -69,7 +70,7 @@ namespace WedigITCRM.ReepayAPI
             return null;
         }
 
-        public async Task<GetReepayChargeSessionResponseModel> GetChargeSessionIdAsync(OrderModel model)
+        public async Task<GetReepaySessionResponseModel> GetChargeSessionIdAsync(OrderModel model)
         {
             string tmpContent = JsonConvert.SerializeObject(model);
 
@@ -80,7 +81,7 @@ namespace WedigITCRM.ReepayAPI
 
                 var resultContent = await result.Content.ReadAsStringAsync();
 
-                var response = JsonConvert.DeserializeObject<GetReepayChargeSessionResponseModel>(resultContent);
+                var response = JsonConvert.DeserializeObject<GetReepaySessionResponseModel>(resultContent);
                 return response;
             }
 
@@ -88,12 +89,50 @@ namespace WedigITCRM.ReepayAPI
             return null;
         }
 
-       public class GetReepayChargeSessionModel
+        public async Task<GetReepaySessionResponseModel> GetRecurringSessionIdAsync(RecurringRequestModel model)
+        {
+            string tmpContent = JsonConvert.SerializeObject(model);
+
+            var requestContent = new StringContent(JsonConvert.SerializeObject(model), System.Text.Encoding.UTF8, "application/json");
+            var result = await httpClient.PostAsync(partialCheckoutResourceURL + "session/recurring", requestContent);
+            if (result.IsSuccessStatusCode)
+            {
+
+                var resultContent = await result.Content.ReadAsStringAsync();
+
+                var response = JsonConvert.DeserializeObject<GetReepaySessionResponseModel>(resultContent);
+                return response;
+            }
+
+
+            return null;
+        }
+
+        public async Task<GetReepaySessionResponseModel> AddSubscription(AddSubscription model)
+        {
+            string tmpContent = JsonConvert.SerializeObject(model);
+
+            var requestContent = new StringContent(JsonConvert.SerializeObject(model), System.Text.Encoding.UTF8, "application/json");
+            var result = await httpClient.PostAsync(partialResourceURL + "subscription", requestContent);
+            if (result.IsSuccessStatusCode)
+            {
+
+                var resultContent = await result.Content.ReadAsStringAsync();
+
+                var response = JsonConvert.DeserializeObject<GetReepaySessionResponseModel>(resultContent);
+                return response;
+            }
+
+
+            return null;
+        }
+
+        public class GetReepayChargeSessionModel
         {
             [JsonProperty("customer_handle")]
             public string CustomerHandle { get; set; }
         }
-        public class GetReepayChargeSessionResponseModel
+        public class GetReepaySessionResponseModel
         {
             [JsonProperty("id")]
             public string SessionId { get; set; }
