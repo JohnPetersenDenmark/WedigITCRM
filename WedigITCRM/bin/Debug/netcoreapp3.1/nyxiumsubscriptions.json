@@ -1,0 +1,22 @@
+{
+  "Subscriptions": [
+    {
+      "Id": 1,
+      "Name": "Basis",
+      "NumberOfNyxiumModules": 1,
+      "ReepaySubscriptionPlanHandle": "plan-4f411"
+    },
+    {
+      "Id": 2,
+      "Name": "Basis",
+      "NumberOfNyxiumModules": 3,
+      "ReepaySubscriptionPlanHandle": "plan-48207"
+    },
+    {
+      "Id": 3,
+      "Name": "Basis",
+      "NumberOfNyxiumModules": 100,
+      "ReepaySubscriptionPlanHandle": "plan-7eb66"
+    }
+  ]
+}

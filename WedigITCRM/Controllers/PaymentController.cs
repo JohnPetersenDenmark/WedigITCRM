@@ -4,7 +4,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using WedigITCRM.EntitityModels;
 using WedigITCRM.Models;
 using WedigITCRM.ReepayAPI;
 using static WedigITCRM.ReepayAPI.ReepayAPIMethods;
@@ -15,50 +17,35 @@ namespace WedigITCRM.Controllers
        
     {
         public ICompanyAccountRepository companyAccountRepository;
+        private readonly IOptions<NyxiumModule> optionsNyxiumModule;
+        private IOptions<NyxiumSubscription> optionsNyxiumSubscription;
 
-        public PaymentController( ICompanyAccountRepository companyAccountRepository)
+        public PaymentController(IOptions<NyxiumModule> optionsNyxiumModule, IOptions<NyxiumSubscription> optionsNyxiumSubscription, ICompanyAccountRepository companyAccountRepository)
         {
             this.companyAccountRepository = companyAccountRepository;
+            this.optionsNyxiumModule = optionsNyxiumModule;
+            this.optionsNyxiumSubscription = optionsNyxiumSubscription;
         }
 
 
         [HttpGet]
-        public IActionResult GetPayment()
-        {
-            return View();
-        }
 
-        [HttpGet]
-        public IActionResult signUp(string reepaytoken)
-        {
-            return View();
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Charge(string reepaytoken)
+        public async Task<IActionResult> SelectNyxiumSubscription(CompanyAccount companyAccount)
         {
             HttpClient httpClient = new HttpClient();
 
             ReepayAPIMethods repayMethods = new ReepayAPIMethods(httpClient);
 
-        
+            ReepayPlanResponseModel[] reepayPlans =  await repayMethods.GetAllPlans();
 
-             OrderModel reepayModel  = new OrderModel();
-            reepayModel.Order.CustomerHandle = "14038";
-            reepayModel.Order.Amount = "9900";
-            reepayModel.Order.Handle = "x4";
-
-
-            var sessionModel = await repayMethods.GetChargeSessionIdAsync(reepayModel);
-
-            PaymentViewModel viewModel = new PaymentViewModel();
-            viewModel.SessionId = sessionModel.SessionId;
-
-            return View(viewModel);
+            return View();
         }
 
+
+
         [HttpGet]
-        public async Task<IActionResult> Subscription(string reepaytoken)
+    
+        public async Task<IActionResult> Subscription(CompanyAccount companyAccount )
         {
             HttpClient httpClient = new HttpClient();
 
@@ -128,7 +115,7 @@ namespace WedigITCRM.Controllers
 
             [JsonProperty("source")]
             public string Source { get; set; }
-        }
+        }      
     }
 
   

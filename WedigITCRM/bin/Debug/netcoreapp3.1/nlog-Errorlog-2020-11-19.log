@@ -1,0 +1,6 @@
+2020-11-19 10:27:05.0617|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-11-19 10:27:06.9843|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-11-19 10:27:07.1163|ERROR|WedigITCRM.Startup|start of Configure method
+2020-11-19 10:27:07.8931|ERROR|WedigITCRM.Startup|end of Configure method
+2020-11-19 10:27:12.1953|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-11-19 10:27:12.2193|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action

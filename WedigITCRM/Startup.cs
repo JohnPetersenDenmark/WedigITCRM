@@ -25,6 +25,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using WedigITCRM.ReepayAPI;
 using System.Net.Http;
+using WedigITCRM.EntitityModels;
 
 namespace WedigITCRM
 {
@@ -40,7 +41,14 @@ namespace WedigITCRM
 
         public Startup(IConfiguration config, ILogger<Startup> logger, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository)
         {
-            _config = config;
+
+            _config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .AddJsonFile($"nyxiumsubscriptions.json")
+                .AddJsonFile($"nyxiummodules.json")
+                .Build();
+
+            // _config = config;
             _logger = logger;
             _relateCompanyAccountWithUserRepository = relateCompanyAccountWithUserRepository;
         }
@@ -51,10 +59,10 @@ namespace WedigITCRM
             {
                 _logger.LogError("start of ConfigureServices");
 
-               
+
 
                 string completePath = null;
-              
+
                 if (Environment.Is64BitProcess)
                 {
                     completePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\DinkToPdf\\64bit\\libwkhtmltox.dll");
@@ -62,7 +70,7 @@ namespace WedigITCRM
                 else
                 {
                     completePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\DinkToPdf\\32bit\\libwkhtmltox.dll");
-                }                
+                }
 
                 var context = new CustomAssemblyLoadContext();
                 context.LoadUnmanagedLibrary(completePath);
@@ -71,10 +79,11 @@ namespace WedigITCRM
 
 
 
-               
+                services.Configure<NyxiumSubscription>(_config);
+                services.Configure<NyxiumModule>(_config);
 
 
-               // services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
+                // services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
                 services.AddIdentity<IdentityUser, IdentityRole>(options =>
                 {
                     options.Password.RequireDigit = true;
@@ -85,10 +94,10 @@ namespace WedigITCRM
                 })
                     .AddEntityFrameworkStores<AppDbContext>()
                     .AddDefaultTokenProviders()
-                    .AddErrorDescriber<LocalizedIdentityErrorDescriber>();               
+                    .AddErrorDescriber<LocalizedIdentityErrorDescriber>();
 
                 services.ConfigureApplicationCookie(options =>
-                {                   
+                {
                     options.AccessDeniedPath = "/Identity/Account/AccessDenied";
                     options.Cookie.Name = "nyxiumApp";
                     options.Cookie.HttpOnly = true;
@@ -133,7 +142,7 @@ namespace WedigITCRM
                 services.AddScoped<IPaymentConditionRepository, SQLPaymentConditionRepository>();
                 services.AddScoped<IPurchaseBudgetLineRepository, SQLPurchaseBudgetLinesRepository>();
 
-                services.AddScoped<INyxiumSetupRepository, SQLNyxiumSetupRepository > ();
+                services.AddScoped<INyxiumSetupRepository, SQLNyxiumSetupRepository>();
 
                 services.AddScoped<IPurchaseBudgetPeriodLineRepository, SQLPurchaseBudgetPeriodLineRepository>();
 
@@ -145,7 +154,7 @@ namespace WedigITCRM
                 services.AddScoped<PurchaseOrderToHTML>();
                 services.AddScoped<PurchaseOrderToPDF>();
                 services.AddScoped<PurchaseOrderAddAttachment>();
-               
+
 
 
                 services.AddMvc(options =>

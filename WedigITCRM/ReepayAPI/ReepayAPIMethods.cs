@@ -127,6 +127,36 @@ namespace WedigITCRM.ReepayAPI
             return null;
         }
 
+        public async Task<ReepayPlanResponseModel> GetPlanById(string planId)
+        {
+            string resourceURL = partialResourceURL + planId + "/" + "current";
+            var result = await httpClient.GetAsync(resourceURL);
+            if (result.IsSuccessStatusCode)
+            {
+                var resultContent = await result.Content.ReadAsStringAsync();
+
+                var response = JsonConvert.DeserializeObject<ReepayPlanResponseModel>(resultContent);
+                return response;
+            }
+
+            return null;
+        }
+
+        public async Task<ReepayPlanResponseModel[]> GetAllPlans()
+        {
+            string resourceURL = partialResourceURL  + "plan";
+            var result = await httpClient.GetAsync(resourceURL);
+            if (result.IsSuccessStatusCode)
+            {
+                var resultContent = await result.Content.ReadAsStringAsync();
+
+                var response = JsonConvert.DeserializeObject<ReepayPlanResponseModel[]>(resultContent);
+                return response;
+            }
+
+            return null;
+        }
+
         public class GetReepayChargeSessionModel
         {
             [JsonProperty("customer_handle")]
@@ -139,6 +169,15 @@ namespace WedigITCRM.ReepayAPI
 
             [JsonProperty("url")]
             public string SessionUrl { get; set; }
+        }
+
+        public class ReepayPlanResponseModel
+        {
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("amount")]
+            public string Amount { get; set; }
         }
     }
 }
