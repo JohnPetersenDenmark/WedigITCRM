@@ -129,7 +129,7 @@ namespace WedigITCRM.ReepayAPI
 
         public async Task<ReepayPlanResponseModel> GetPlanById(string planId)
         {
-            string resourceURL = partialResourceURL + planId + "/" + "current";
+            string resourceURL = partialResourceURL + "plan" + "/" + planId + "/" + "current";
             var result = await httpClient.GetAsync(resourceURL);
             if (result.IsSuccessStatusCode)
             {
@@ -178,6 +178,9 @@ namespace WedigITCRM.ReepayAPI
 
             [JsonProperty("amount")]
             public string Amount { get; set; }
+
+            [JsonProperty("description")]
+            public string Description { get; set; }
         }
     }
 }

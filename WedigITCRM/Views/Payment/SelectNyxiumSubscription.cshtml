@@ -1,0 +1,367 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model WedigITCRM.Controllers.PaymentController.SelectNyxiumSubscriptionViewModel
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Se vores priser</title>
+    <meta name="Description" content="Lær mere om vores ekstremt gode priser">
+    <script src="https://kit.fontawesome.com/e061cad298.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/frontpage/styles/scss/styles.css">
+
+
+    <script src='https://unpkg.com/jquery@3.4.1/dist/jquery.min.js'></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <link rel="shortcut icon" type="image/png" href="/frontpage/img/favicon.png" />
+    <style>
+        .top {
+            background-image: url(/frontpage/img/svgs/covers/priser-cover.svg);
+            background-size: cover;
+            background-position: bottom;
+        }
+    </style>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '349668506333283');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1"
+             src="https://www.facebook.com/tr?id=349668506333283&ev=PageView
+&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+</head>
+
+<header>
+    <div class="header-wrapper">
+        <div class="logo"><a href="/"><img src="/frontpage/img/nyxium-logo.png"></a></div>
+        <div class="burger">
+            <span class="bars"></span>
+        </div>
+        <nav class="nav">
+            <a href="/frontpage/prices">Priser</a>
+            <div class="submenu">
+                <p class="dropdowntrigger">Integrationer <i class="fas fa-chevron-down"></i></p>
+                <div class="submenubullets">
+                    <a href="/frontpage/integrationdinero">Dinero</a>
+                </div>
+            </div>
+            <a href="/frontpage/About">Om</a>
+            <a href="/frontpage/support">Support</a>
+            <a href="/Account/login">Login</a>
+            <a href="/Account/registerCompanyAccount" class="btn">Opret konto</a>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <div class="top ">
+        <section class="cover_content cover_content-nogrid">
+
+            <h1> Din gratis periode er udløbet.</h1>
+            <p class="subheading">
+                Hvis du ønsker at forsætte så vælg et abonnement nedenfor. Hvis du ikke ønsker et abonnement, gemmer vi dine data 1 måned. Herefter vil dine data blive slettet.
+            </p>
+
+
+
+            <article class="price">
+                @{ 
+                    string[] jpegValues = { "price-circle-purple.jpg", "price-circle-green.jpg", "price-circle-blue.jpg" };
+                    string[] paragraphColors = { "type purple", "type green", "type blue" };
+                    string[] submitButtonColor = { "btn btn-fullwidth purple-bg", "btn btn-fullwidth", "btn btn-fullwidth blue-bg" };
+
+                    int counter = 0;
+                }
+
+                @foreach (var subscriptionType in @Model.NyxiumSubscriptions)
+                {
+                    counter++;
+
+                    string elementIdentifyClass = subscriptionType.ReepaySubscriptionPlanHandle;
+
+                    
+
+                    int index = counter % 3;
+
+                <div class="price-box">
+
+                    <input name="NumberOfApplicationInSubsription" type="text" value="@subscriptionType.NumberOfNyxiumModules" class="@elementIdentifyClass" hidden/>
+
+                    <p class="@paragraphColors[index]">@subscriptionType.Name</p>
+                    <p class="pprice">@subscriptionType.price</p>
+                    <p class="pprice">excl. moms pr. md.</p>
+                    <p class="description">@subscriptionType.Description</p>
+
+                    <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">Gratis oprettelse</p>
+                    <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">Ubegrænset antal brugere</p>
+
+
+                    @if (@subscriptionType.NumberOfNyxiumModules == 1)
+                    {
+                        <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">@subscriptionType.NumberOfNyxiumModules applikation</p>
+                    }
+                    else
+                    {
+                        <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">@subscriptionType.NumberOfNyxiumModules applikationer</p>
+                    }
+
+
+                    @foreach (var moduleType in @Model.NyxiumModules.Modules)
+                    {
+                        <p class="features"><input type="checkbox"  class="@elementIdentifyClass @moduleType.Id"> @moduleType.Name</p>
+                    }
+
+                    <a href="#" class="@submitButtonColor[index] @elementIdentifyClass mySubmit">Køb</a>
+                    <p style="color:red;" class="description @elementIdentifyClass"></p>
+
+                </div>
+                }
+            </article>
+
+
+
+        </section>
+
+
+    </div>
+
+
+
+
+
+    <section class="integrations-overview container-et-eb text-center">
+    </section>
+
+
+    <div class="container-et-eb pb50 testimonials">
+
+
+
+    </div>
+
+
+    <script src="~/frontpage/js/front.js"></script>
+
+    <footer>
+        <div class="columns">
+
+
+            <div class="column">
+                <h3>Løsninger</h3>
+                <a href="#">Menupunkt 1</a>
+                <a href="#">Menupunkt 2</a>
+                <a href="#">Menupunkt 3</a>
+                <a href="#">Menupunkt 4</a>
+            </div>
+            <div class="column">
+                <h3>Support</h3>
+                <a href="#">Menupunkt 1</a>
+                <a href="#">Menupunkt 2</a>
+                <a href="#">Menupunkt 3</a>
+                <a href="#">Menupunkt 4</a>
+            </div>
+            <div class="column">
+                <h3>nyxium</h3>
+                <a href="#">Menupunkt 1</a>
+                <a href="#">Menupunkt 2</a>
+                <a href="#">Menupunkt 3</a>
+                <a href="#">Menupunkt 4</a>
+            </div>
+
+            <div class="column">
+                <a href="#">FB</a>
+                <a href="#">LN</a>
+                <a href="#">IG</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $('.mySubmit').bind('click', function () {
+
+            var elementIdentyfier = "";
+            var classes = $(this).attr('class').split(' ');
+            for (var i = 0; i < classes.length; i++)
+            {
+                if (classes[i].startsWith("plan-"))
+                 {
+                    elementIdentyfier = classes[i];
+                }
+            }
+
+            var numberOfApplicationsInSubscription = $("input." + elementIdentyfier).val();           
+
+            var selectedApplications = $("." + elementIdentyfier + ":checkbox:checked");
+
+            if (selectedApplications.length != numberOfApplicationsInSubscription) {
+                var MyParagraph = $("p." + elementIdentyfier);
+                MyParagraph.html("Du kan vælge " + numberOfApplicationsInSubscription);
+                return;
+            }
+
+            var nyxiumModuleIds = [];
+
+            for (var y = 0; y < selectedApplications.length; y++)
+            {
+                classes = $(selectedApplications[y]).attr('class').split(' ');
+                for (var i = 0; i < classes.length; i++)
+                {
+                    if (classes[i] != elementIdentyfier)
+                    {
+                        nyxiumModuleIds.push(classes[i]);
+                    }
+                }
+            }
+
+
+
+        });
+
+
+        
+
+        $('.basic').bind('change', function () {
+
+            var flag = $(this).prop('checked');
+            var currentCheckBox = $(this);
+
+            $(".basic").each(function (index) {
+                $(this).prop("checked", false);
+            });
+
+            if (flag) {
+                currentCheckBox.prop("checked", true);
+            }
+        });
+
+        // Basic license i selected
+
+        $('#buttonbasicSelected').bind('click', function () {
+
+            var IsAnySelected = false;
+
+            var selectedApp;
+
+            $(".basic").each(function (index) {
+
+                if ($(this).prop("checked")) {
+                    IsAnySelected = true;
+                    selectedApp = $(this).attr("id")
+                }
+            });
+
+            if (IsAnySelected == false) {
+                $('#errorbasicSelecton').html("Der skal vælges en applikation");
+            }
+            else {
+                $('#errorbasicSelecton').html("");
+                submitLicenseSelection("Basic", selectedApp);
+            }
+        });
+
+        // Pro license i selected
+
+        $('#buttonproSelected').bind('click', function () {
+
+            var numberOfSelectedApps = 0;
+
+            var selectedAppIds = [];
+
+            $(".pro").each(function (index) {
+
+                if ($(this).prop("checked")) {
+                    numberOfSelectedApps++;
+                    selectedAppIds.push($(this).attr("id"));
+                }
+            });
+
+
+            if (numberOfSelectedApps == 0) {
+                $('#errorproSelecton').html("Der er ikke valgt nogle applikationer");
+                return;
+            }
+            if (numberOfSelectedApps != 3) {
+                $('#errorproSelecton').html("Der skal vælges 3 applikationer");
+                return;
+            }
+            else {
+                $('#errorproSelecton').html("");
+                submitLicenseSelection("Pro", selectedAppIds.toString());
+            }
+        });
+
+        // Business license i selected
+
+        $('#buttonbusinessSelected').bind('click', function () {
+            submitLicenseSelection("Business", selectedApp);
+        });
+
+    });
+
+
+
+
+    function submitLicenseSelection(licenseType, Applications) {
+
+
+        var activationKey = $('#ActivationKey').val();
+
+        $.ajax({
+            type: "POST",
+            url: "/account/BuyLicense",
+            data: 'licenseType=' + licenseType + "&applications=" + Applications + "&ActivationKey=" + activationKey,
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+
+
+            },
+
+            failure: function (errMsg) {
+                alert(errMsg);
+            }
+        });
+
+
+    }
+
+</script>
+
+
+
+
+</html>

@@ -8,13 +8,13 @@
     },
     {
       "Id": 2,
-      "Name": "Basis",
+      "Name": "Medium",
       "NumberOfNyxiumModules": 3,
       "ReepaySubscriptionPlanHandle": "plan-48207"
     },
     {
       "Id": 3,
-      "Name": "Basis",
+      "Name": "Gold",
       "NumberOfNyxiumModules": 100,
       "ReepaySubscriptionPlanHandle": "plan-7eb66"
     }
