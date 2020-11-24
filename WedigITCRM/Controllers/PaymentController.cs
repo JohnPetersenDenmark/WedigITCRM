@@ -30,7 +30,7 @@ namespace WedigITCRM.Controllers
 
         [HttpGet]
 
-        public async Task<IActionResult> SelectNyxiumSubscription(CompanyAccount companyAccount)
+        public async Task<IActionResult> SelectNyxiumSubscription(int companyAccountId)
         {
             HttpClient httpClient = new HttpClient();
 
@@ -39,6 +39,7 @@ namespace WedigITCRM.Controllers
             SelectNyxiumSubscriptionViewModel selectNyxiumSubscriptionViewModel = new SelectNyxiumSubscriptionViewModel();
             selectNyxiumSubscriptionViewModel.NyxiumModules = optionsNyxiumModule.Value;
 
+            selectNyxiumSubscriptionViewModel.CompanyAccountId = companyAccountId.ToString();
 
             foreach (var subscriptionType in optionsNyxiumSubscription.Value.Subscriptions)
             {
@@ -66,34 +67,39 @@ namespace WedigITCRM.Controllers
             return View(selectNyxiumSubscriptionViewModel);
         }
 
-
-
         [HttpGet]
-    
-        public async Task<IActionResult> Subscription(CompanyAccount companyAccount )
+        public IActionResult Subscription(RecurringPaymentViewModel model)
+        {
+            return View("~/Views/payment/Subscription.cshtml", model);
+        }
+
+        [HttpPost]   
+        public async Task<IActionResult> SomeAction(SubscriptionSelectedModel model)
         {
             HttpClient httpClient = new HttpClient();
 
             ReepayAPIMethods repayMethods = new ReepayAPIMethods(httpClient);
 
-
-          
-
-            //RecurringRequestModel recurringModel = new RecurringRequestModel();
-
-            //recurringModel.CustomerId = "14038";
-            //recurringModel.ButtonText = "Bliv medlem";
+            RecurringRequestModel recurringModel = new RecurringRequestModel();
 
 
 
-            //var sessionModel = await repayMethods.GetRecurringSessionIdAsync(recurringModel);
+            //recurringModel.CustomerId = model.companyAccountId;
+            recurringModel.CreateReepayCustomer.Handle = model.companyAccountId;
+            recurringModel.ButtonText = "Bliv medlem";
+
+
+
+            var sessionModel = await repayMethods.GetRecurringSessionIdAsync(recurringModel);
 
             RecurringPaymentViewModel viewModel = new RecurringPaymentViewModel();
-            //viewModel.SessionId = sessionModel.SessionId;
-            //viewModel.AcceptUrl = "/payment/accept";
-            //viewModel.CancelUrl = "https://tv2.dk";
+            viewModel.SessionId = sessionModel.SessionId;
+            viewModel.AcceptUrl = "/payment/accept";
+            viewModel.CancelUrl = "https://tv2.dk";
 
-            return View(viewModel);
+             return Redirect("Subscription", "Payment", viewModel);
+
+            //return RedirectToAction("Subscription", "Payment", viewModel);
         }
 
         [HttpPost]
@@ -124,7 +130,16 @@ namespace WedigITCRM.Controllers
             }
             public List<NyxiumSubscriptionViewModel> NyxiumSubscriptions { get; set; }
             public NyxiumModule NyxiumModules { get; set; }
+            public string CompanyAccountId { get; set; }
 
+        }
+
+        public class SubscriptionSelectedModel
+        {
+            public string  subscriptiontype { get; set; }
+            public string nyxiummodules { get; set; }
+            public string discount { get; set; }
+            public string companyAccountId { get; set; }
         }
 
         public class NyxiumSubscriptionViewModel

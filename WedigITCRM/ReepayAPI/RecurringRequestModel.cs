@@ -8,12 +8,17 @@ namespace WedigITCRM.ReepayAPI
 {
     public class RecurringRequestModel
     {
+        public RecurringRequestModel()
+        {
+            this.CreateReepayCustomer = new CreateCustomer();
+        }
+
         [JsonProperty("button_text")]
         public string ButtonText { get; set; }
 
 
-        //[JsonProperty("create_customer")]
-        //public CreateCustomer CreateReepayCustomer { get; set; }
+        [JsonProperty("create_customer")]
+        public CreateCustomer CreateReepayCustomer { get; set; }
 
         [JsonProperty("customer")]
         public string CustomerId { get; set; }

@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/e061cad298.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/frontpage/styles/scss/styles.css">
-
+    <link href="~/CustomCss/CustomRadiobox.css" rel="stylesheet" />
 
     <script src='https://unpkg.com/jquery@3.4.1/dist/jquery.min.js'></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -87,10 +87,27 @@
                 Hvis du ønsker at forsætte så vælg et abonnement nedenfor. Hvis du ikke ønsker et abonnement, gemmer vi dine data 1 måned. Herefter vil dine data blive slettet.
             </p>
 
+            <article class="price">
+                <label class="radiocontainer">
+                    Binding 30 dage
+                    <input type="radio" checked="checked" name="discount" value="0">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="radiocontainer">
+                    Binding 180 dage
+                    <input type="radio" name="discount" value="10">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="radiocontainer">
+                    Binding 360 dage
+                    <input type="radio" name="discount" value="20">
+                    <span class="checkmark"></span>
+                </label>
 
+            </article>
 
             <article class="price">
-                @{ 
+                @{
                     string[] jpegValues = { "price-circle-purple.jpg", "price-circle-green.jpg", "price-circle-blue.jpg" };
                     string[] paragraphColors = { "type purple", "type green", "type blue" };
                     string[] submitButtonColor = { "btn btn-fullwidth purple-bg", "btn btn-fullwidth", "btn btn-fullwidth blue-bg" };
@@ -104,46 +121,46 @@
 
                     string elementIdentifyClass = subscriptionType.ReepaySubscriptionPlanHandle;
 
-                    
+
 
                     int index = counter % 3;
 
-                <div class="price-box">
+                    <div class="price-box">
 
-                    <input name="NumberOfApplicationInSubsription" type="text" value="@subscriptionType.NumberOfNyxiumModules" class="@elementIdentifyClass" hidden/>
+                        <input name="NumberOfApplicationInSubsription" type="text" value="@subscriptionType.NumberOfNyxiumModules" class="@elementIdentifyClass" hidden />
 
-                    <p class="@paragraphColors[index]">@subscriptionType.Name</p>
-                    <p class="pprice">@subscriptionType.price</p>
-                    <p class="pprice">excl. moms pr. md.</p>
-                    <p class="description">@subscriptionType.Description</p>
+                        <p class="@paragraphColors[index]">@subscriptionType.Name</p>
+                        <p class="pprice">@subscriptionType.price</p>
+                        <p class="pprice">excl. moms pr. md.</p>
+                        <p class="description">@subscriptionType.Description</p>
 
-                    <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">Gratis oprettelse</p>
-                    <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">Ubegrænset antal brugere</p>
-
-
-                    @if (@subscriptionType.NumberOfNyxiumModules == 1)
-                    {
-                        <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">@subscriptionType.NumberOfNyxiumModules applikation</p>
-                    }
-                    else
-                    {
-                        <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">@subscriptionType.NumberOfNyxiumModules applikationer</p>
-                    }
+                        <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">Gratis oprettelse</p>
+                        <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">Ubegrænset antal brugere</p>
 
 
-                    @foreach (var moduleType in @Model.NyxiumModules.Modules)
-                    {
-                        <p class="features"><input type="checkbox"  class="@elementIdentifyClass @moduleType.Id"> @moduleType.Name</p>
-                    }
+                        @if (@subscriptionType.NumberOfNyxiumModules == 1)
+                        {
+                            <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">@subscriptionType.NumberOfNyxiumModules applikation</p>
+                        }
+                        else
+                        {
+                            <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">@subscriptionType.NumberOfNyxiumModules applikationer</p>
+                        }
 
-                    <a href="#" class="@submitButtonColor[index] @elementIdentifyClass mySubmit">Køb</a>
-                    <p style="color:red;" class="description @elementIdentifyClass"></p>
 
-                </div>
+                        @foreach (var moduleType in @Model.NyxiumModules.Modules)
+                        {
+                            <p class="features"><input type="checkbox" class="@elementIdentifyClass @moduleType.Id"> @moduleType.Name</p>
+                        }
+
+                        <a href="#" class="@submitButtonColor[index] @elementIdentifyClass mySubmit">Køb</a>
+                        <p style="color:red;" class="description @elementIdentifyClass"></p>
+
+                    </div>
                 }
             </article>
 
-
+            <input asp-for="@Model.CompanyAccountId">
 
         </section>
 
@@ -215,15 +232,13 @@
 
             var elementIdentyfier = "";
             var classes = $(this).attr('class').split(' ');
-            for (var i = 0; i < classes.length; i++)
-            {
-                if (classes[i].startsWith("plan-"))
-                 {
+            for (var i = 0; i < classes.length; i++) {
+                if (classes[i].startsWith("plan-")) {
                     elementIdentyfier = classes[i];
                 }
             }
 
-            var numberOfApplicationsInSubscription = $("input." + elementIdentyfier).val();           
+            var numberOfApplicationsInSubscription = $("input." + elementIdentyfier).val();
 
             var selectedApplications = $("." + elementIdentyfier + ":checkbox:checked");
 
@@ -235,130 +250,48 @@
 
             var nyxiumModuleIds = [];
 
-            for (var y = 0; y < selectedApplications.length; y++)
-            {
+            for (var y = 0; y < selectedApplications.length; y++) {
                 classes = $(selectedApplications[y]).attr('class').split(' ');
-                for (var i = 0; i < classes.length; i++)
-                {
-                    if (classes[i] != elementIdentyfier)
-                    {
+                for (var i = 0; i < classes.length; i++) {
+                    if (classes[i] != elementIdentyfier) {
                         nyxiumModuleIds.push(classes[i]);
                     }
                 }
             }
 
-
+            var discount = $('input[name=discount]:checked').val();
+            var companyAccountId = $('#CompanyAccountId').val();
+            submitLicenseSelection(elementIdentyfier, nyxiumModuleIds.join(), discount, companyAccountId)
 
         });
 
 
-        
 
-        $('.basic').bind('change', function () {
 
-            var flag = $(this).prop('checked');
-            var currentCheckBox = $(this);
+        function submitLicenseSelection(subscriptionType, nyxiumModules, discount, companyAccountId) {
 
-            $(".basic").each(function (index) {
-                $(this).prop("checked", false);
-            });
 
-            if (flag) {
-                currentCheckBox.prop("checked", true);
-            }
-        });
+            var activationKey = $('#ActivationKey').val();
 
-        // Basic license i selected
+            $.ajax({
+                type: "POST",
+                url: "/payment/SomeAction",
+                data: 'subscriptiontype=' + subscriptionType + "&nyxiummodules=" + nyxiumModules + "&discount=" + discount + "&CompanyAccountId=" + companyAccountId,
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
 
-        $('#buttonbasicSelected').bind('click', function () {
 
-            var IsAnySelected = false;
+                },
 
-            var selectedApp;
-
-            $(".basic").each(function (index) {
-
-                if ($(this).prop("checked")) {
-                    IsAnySelected = true;
-                    selectedApp = $(this).attr("id")
-                }
-            });
-
-            if (IsAnySelected == false) {
-                $('#errorbasicSelecton').html("Der skal vælges en applikation");
-            }
-            else {
-                $('#errorbasicSelecton').html("");
-                submitLicenseSelection("Basic", selectedApp);
-            }
-        });
-
-        // Pro license i selected
-
-        $('#buttonproSelected').bind('click', function () {
-
-            var numberOfSelectedApps = 0;
-
-            var selectedAppIds = [];
-
-            $(".pro").each(function (index) {
-
-                if ($(this).prop("checked")) {
-                    numberOfSelectedApps++;
-                    selectedAppIds.push($(this).attr("id"));
+                failure: function (errMsg) {
+                    alert(errMsg);
                 }
             });
 
 
-            if (numberOfSelectedApps == 0) {
-                $('#errorproSelecton').html("Der er ikke valgt nogle applikationer");
-                return;
-            }
-            if (numberOfSelectedApps != 3) {
-                $('#errorproSelecton').html("Der skal vælges 3 applikationer");
-                return;
-            }
-            else {
-                $('#errorproSelecton').html("");
-                submitLicenseSelection("Pro", selectedAppIds.toString());
-            }
-        });
-
-        // Business license i selected
-
-        $('#buttonbusinessSelected').bind('click', function () {
-            submitLicenseSelection("Business", selectedApp);
-        });
-
+        }
     });
-
-
-
-
-    function submitLicenseSelection(licenseType, Applications) {
-
-
-        var activationKey = $('#ActivationKey').val();
-
-        $.ajax({
-            type: "POST",
-            url: "/account/BuyLicense",
-            data: 'licenseType=' + licenseType + "&applications=" + Applications + "&ActivationKey=" + activationKey,
-            contentType: "application/x-www-form-urlencoded; charset=utf-8",
-            dataType: "json",
-            success: function (result) {
-
-
-            },
-
-            failure: function (errMsg) {
-                alert(errMsg);
-            }
-        });
-
-
-    }
-
 </script>
 
 
