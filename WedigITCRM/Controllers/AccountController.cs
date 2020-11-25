@@ -161,7 +161,7 @@ namespace WedigITCRM.Controllers
                          CompanyAccount companyAccount = getCompanyAccountByUser(loggedInUser);
 
                         
-                            return RedirectToAction("SelectNyxiumSubscription", "Payment", new { companyAccountId = companyAccount.companyAccountId });
+                            return RedirectToAction("SelectNyxiumSubscription", "Payment", new { companyAccountId = companyAccount.companyAccountId , curUserEmail = model.Email });
 
                        // return View("~/Views/FrontPage/BuyLicense.cshtml", licenseSelectionModel);
 

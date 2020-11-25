@@ -36,58 +36,6 @@ namespace WedigITCRM.ReepayAPI
             this.partialCheckoutResourceURL = ReepayCheckoutAPIEndpoint + "/" + ReepayCheckoutAPIVersion + "/";
         }
 
-        public async Task<string> GetFromReepayAPIAsync (string resourcePath)
-        {
-            // OBS. Remove following line
-            resourcePath = "account/mail_settings";
-
-
-            string resourceURL = partialResourceURL + resourcePath;
-            var response = await httpClient.GetAsync(resourceURL);
-            if (response.IsSuccessStatusCode)
-            {
-                var content = response.Content;
-                var y = await content.ReadAsStringAsync();
-                return y;
-            }
-
-            return null;
-        }
-
-        public async Task<string> PostCustomerToReepayAPIAsync(OrderModel model)
-        {
-            
-            var requestContent = new StringContent(JsonConvert.SerializeObject(model), System.Text.Encoding.UTF8, "application/json");
-            var result = await httpClient.PostAsync(partialResourceURL + "customer", requestContent);
-
-            if (result.IsSuccessStatusCode)
-            {
-                var resultContent = await result.Content.ReadAsStringAsync();
-
-                var response = JsonConvert.DeserializeObject<string>(resultContent);
-                return response;
-            }
-            return null;
-        }
-
-        public async Task<GetReepaySessionResponseModel> GetChargeSessionIdAsync(OrderModel model)
-        {
-            string tmpContent = JsonConvert.SerializeObject(model);
-
-            var requestContent = new StringContent(JsonConvert.SerializeObject(model), System.Text.Encoding.UTF8, "application/json");
-            var result = await httpClient.PostAsync(partialCheckoutResourceURL + "session/charge", requestContent);
-            if (result.IsSuccessStatusCode)
-            {
-
-                var resultContent = await result.Content.ReadAsStringAsync();
-
-                var response = JsonConvert.DeserializeObject<GetReepaySessionResponseModel>(resultContent);
-                return response;
-            }
-
-
-            return null;
-        }
 
         public async Task<GetReepaySessionResponseModel> GetRecurringSessionIdAsync(RecurringRequestModel model)
         {
@@ -108,7 +56,7 @@ namespace WedigITCRM.ReepayAPI
             return null;
         }
 
-        public async Task<GetReepaySessionResponseModel> AddSubscription(AddSubscription model)
+        public async Task<GetReepayAddSubscriptionResponseModel> AddSubscription(AddSubscription model)
         {
             string tmpContent = JsonConvert.SerializeObject(model);
 
@@ -119,7 +67,7 @@ namespace WedigITCRM.ReepayAPI
 
                 var resultContent = await result.Content.ReadAsStringAsync();
 
-                var response = JsonConvert.DeserializeObject<GetReepaySessionResponseModel>(resultContent);
+                var response = JsonConvert.DeserializeObject<GetReepayAddSubscriptionResponseModel>(resultContent);
                 return response;
             }
 
@@ -142,41 +90,30 @@ namespace WedigITCRM.ReepayAPI
             return null;
         }
 
-        public async Task<ReepayDiscountCreate> GetDiscountById(string discountId)
+     
+
+        public async Task<string> AddSubscriptionDiscount(SubscriptionAddDiscount model)
         {
-            string resourceURL = partialResourceURL + "discount" + "/" + discountId ;
-            var result = await httpClient.GetAsync(resourceURL);
+            string tmpContent = JsonConvert.SerializeObject(model);
+
+            var requestContent = new StringContent(JsonConvert.SerializeObject(model), System.Text.Encoding.UTF8, "application/json");
+            var result = await httpClient.PostAsync(partialResourceURL + "subscription" +"/" + model.SubscriptionId + "/" + "discount", requestContent);
             if (result.IsSuccessStatusCode)
             {
+
                 var resultContent = await result.Content.ReadAsStringAsync();
 
-                var response = JsonConvert.DeserializeObject<ReepayDiscountCreate>(resultContent);
+                var response = JsonConvert.DeserializeObject<string>(resultContent);
                 return response;
             }
+
 
             return null;
         }
 
-        public async Task<ReepayPlanResponseModel[]> GetAllPlans()
-        {
-            string resourceURL = partialResourceURL  + "plan";
-            var result = await httpClient.GetAsync(resourceURL);
-            if (result.IsSuccessStatusCode)
-            {
-                var resultContent = await result.Content.ReadAsStringAsync();
+       
 
-                var response = JsonConvert.DeserializeObject<ReepayPlanResponseModel[]>(resultContent);
-                return response;
-            }
-
-            return null;
-        }
-
-        public class GetReepayChargeSessionModel
-        {
-            [JsonProperty("customer_handle")]
-            public string CustomerHandle { get; set; }
-        }
+       
         public class GetReepaySessionResponseModel
         {
             [JsonProperty("id")]
@@ -184,6 +121,13 @@ namespace WedigITCRM.ReepayAPI
 
             [JsonProperty("url")]
             public string SessionUrl { get; set; }
+        }
+
+        public class GetReepayAddSubscriptionResponseModel
+        {
+            [JsonProperty("handle")]
+            public string SubscriptionId { get; set; }
+
         }
 
         public class ReepayPlanResponseModel

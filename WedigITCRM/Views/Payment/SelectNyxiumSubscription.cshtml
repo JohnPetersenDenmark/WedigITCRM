@@ -164,6 +164,7 @@
 
 
             <input asp-for="@Model.CompanyAccountId">
+            <input asp-for="@Model.curUserEmail">
 
         </section>
 
@@ -264,14 +265,15 @@
 
             var discount = $('input[name=discount]:checked').val();
             var companyAccountId = $('#CompanyAccountId').val();
-            submitLicenseSelection(elementIdentyfier, nyxiumModuleIds.join(), discount, companyAccountId)
+            var curUserEmail = $('#curUserEmail').val();
+            submitLicenseSelection(elementIdentyfier, nyxiumModuleIds.join(), discount, companyAccountId, curUserEmail)
 
         });
 
 
 
 
-        function submitLicenseSelection(subscriptionType, nyxiumModules, discount, companyAccountId) {
+        function submitLicenseSelection(subscriptionType, nyxiumModules, discount, companyAccountId, curUserEmail) {
 
 
             var activationKey = $('#ActivationKey').val();
@@ -279,7 +281,7 @@
             $.ajax({
                 type: "POST",
                 url: "/payment/SomeAction",
-                data: 'subscriptiontype=' + subscriptionType + "&nyxiummodules=" + nyxiumModules + "&ReepayDiscountId=" + discount + "&CompanyAccountId=" + companyAccountId,
+                data: 'subscriptiontype=' + subscriptionType + "&nyxiummodules=" + nyxiumModules + "&ReepayDiscountId=" + discount + "&CompanyAccountId=" + companyAccountId + "&CurUserEmail=" + curUserEmail,
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
                 dataType: "json",
                 success: function (result) {

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -17,13 +19,18 @@ namespace WedigITCRM.Controllers
        
     {
         public ICompanyAccountRepository companyAccountRepository;
+        private readonly SignInManager<IdentityUser> signInManager;
         private readonly IOptions<NyxiumSubscriptionDiscounts> optionsNyxiumDiscounts;
         private readonly IOptions<NyxiumModule> optionsNyxiumModule;
         private IOptions<NyxiumSubscription> optionsNyxiumSubscription;
 
-        public PaymentController(IOptions<NyxiumSubscriptionDiscounts> optionsNyxiumDiscounts, IOptions<NyxiumModule> optionsNyxiumModule, IOptions<NyxiumSubscription> optionsNyxiumSubscription, ICompanyAccountRepository companyAccountRepository)
+        public UserManager<IdentityUser> UserManager { get; }
+
+        public PaymentController(IOptions<NyxiumSubscriptionDiscounts> optionsNyxiumDiscounts, IOptions<NyxiumModule> optionsNyxiumModule, IOptions<NyxiumSubscription> optionsNyxiumSubscription, ICompanyAccountRepository companyAccountRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             this.companyAccountRepository = companyAccountRepository;
+            UserManager = userManager;
+            this.signInManager = signInManager;
             this.optionsNyxiumDiscounts = optionsNyxiumDiscounts;
             this.optionsNyxiumModule = optionsNyxiumModule;
             this.optionsNyxiumSubscription = optionsNyxiumSubscription;
@@ -32,7 +39,7 @@ namespace WedigITCRM.Controllers
 
         [HttpGet]
 
-        public async Task<IActionResult> SelectNyxiumSubscription(int companyAccountId)
+        public async Task<IActionResult> SelectNyxiumSubscription(int companyAccountId, string curUserEmail)
         {
             HttpClient httpClient = new HttpClient();
 
@@ -45,6 +52,8 @@ namespace WedigITCRM.Controllers
             selectNyxiumSubscriptionViewModel.NyxiumModules = optionsNyxiumModule.Value;
 
             selectNyxiumSubscriptionViewModel.CompanyAccountId = companyAccountId.ToString();
+
+            selectNyxiumSubscriptionViewModel.curUserEmail = curUserEmail;
 
             foreach (var subscriptionType in optionsNyxiumSubscription.Value.Subscriptions)
             {
@@ -85,9 +94,24 @@ namespace WedigITCRM.Controllers
 
             ReepayAPIMethods repayMethods = new ReepayAPIMethods(httpClient);
 
+
+            CompanyAccount companyAccount = companyAccountRepository.GetCompanyAccount(int.Parse(model.companyAccountId));
+
+            IdentityUser currentUser = await UserManager.FindByNameAsync(model.curUserEmail);            
+          
             RecurringRequestModel recurringModel = new RecurringRequestModel();
 
             recurringModel.CreateReepayCustomer.Handle = model.companyAccountId;
+            recurringModel.CreateReepayCustomer.CustomerName = companyAccount.CompanyName;
+            recurringModel.CreateReepayCustomer.CustomerStreet = companyAccount.CompanyStreet;
+            recurringModel.CreateReepayCustomer.CustomerZip = companyAccount.CompanyZip;
+            recurringModel.CreateReepayCustomer.CustomerCity = companyAccount.CompanyCity;
+            recurringModel.CreateReepayCustomer.CustomerCVRNumber = companyAccount.CompanyCVRNumber;
+            recurringModel.CreateReepayCustomer.CustomerCountryCode = companyAccount.CompanyCountryCode;
+
+            recurringModel.CreateReepayCustomer.CustomerEmail = currentUser.Email;
+            recurringModel.CreateReepayCustomer.CustomerLastName = currentUser.UserName;
+
             recurringModel.ButtonText = "Bliv medlem";
 
 
@@ -118,25 +142,29 @@ namespace WedigITCRM.Controllers
             addSubscription.SignupMethod = "source";
             addSubscription.GenerateHandle = true;
 
-            //ReepayDiscountCreate reepayDiscountCreate = new ReepayDiscountCreate();
-            //reepayDiscountCreate.ReepayDiscountHandle = model.ReepayDiscountId;
-            //reepayDiscountCreate.ApplyTo = "plan";
-            //reepayDiscountCreate.Name = "Olfert";
-
-            ReepayDiscountCreate x = await repayMethods.GetDiscountById(model.ReepayDiscountId);
-            addSubscription.ReepayDiscounts.Add(x);
-
-            
-            
-
-
-
 
 
             var noget = await repayMethods.AddSubscription(addSubscription);
 
+            SubscriptionAddDiscount subscriptionAddDiscount = new SubscriptionAddDiscount();
+            subscriptionAddDiscount.SubscriptionId = noget.SubscriptionId;
+            subscriptionAddDiscount.DiscountHandle = model.ReepayDiscountId;
+            var svar = await repayMethods.AddSubscriptionDiscount(subscriptionAddDiscount);
+
+
+
+
 
             return null;
+        }
+
+        public class SubscriptionAddDiscount
+        {
+            [JsonProperty("handle")]
+            public string SubscriptionId { get; set; }
+
+            [JsonProperty("discount")]
+            public string DiscountHandle { get; set; }
         }
 
         public class SelectNyxiumSubscriptionViewModel
@@ -149,6 +177,8 @@ namespace WedigITCRM.Controllers
             public NyxiumModule NyxiumModules { get; set; }
             public NyxiumSubscriptionDiscounts NyxiumDiscounts { get; set; }
             public string CompanyAccountId { get; set; }
+            public string curUserEmail { get; set; }
+            
 
         }
 
@@ -158,6 +188,7 @@ namespace WedigITCRM.Controllers
             public string nyxiummodules { get; set; }
             public string ReepayDiscountId { get; set; }
             public string companyAccountId { get; set; }
+            public string curUserEmail { get; set; }
         }
 
         public class NyxiumSubscriptionViewModel
@@ -186,10 +217,7 @@ namespace WedigITCRM.Controllers
         }
         public partial class AddSubscription
         {
-            public AddSubscription()
-            {
-                this.ReepayDiscounts = new List<ReepayDiscountCreate>();
-            }
+          
 
             [JsonProperty("plan")]
             public string Plan { get; set; }
@@ -203,51 +231,15 @@ namespace WedigITCRM.Controllers
             [JsonProperty("generate_handle")]
             public bool GenerateHandle { get; set; }
 
-            [JsonProperty("subscription_discounts")]
-            public List<ReepayDiscountCreate> ReepayDiscounts { get; set; }
+            
+           
 
             [JsonProperty("source")]
             public string Source { get; set; }
         }      
 
-        public class ReepayDiscountCreate
-        {
-            [JsonProperty("name")]
-            public string Name { get; set; }
-
-            [JsonProperty("description")]
-            public string Description { get; set; }
-
-            [JsonProperty("amount")]
-            public long Amount { get; set; }
-
-            [JsonProperty("percentage")]
-            public long Percentage { get; set; }
-
-            [JsonProperty("handle")]
-            public string Handle { get; set; }
-
-            [JsonProperty("state")]
-            public string State { get; set; }
-
-            [JsonProperty("deleted")]
-            public string Deleted { get; set; }
-
-            [JsonProperty("created")]
-            public string Created { get; set; }
-
-            [JsonProperty("apply_to")]
-            public object[] ApplyTo { get; set; }
-
-            [JsonProperty("fixed_count")]
-            public long FixedCount { get; set; }
-
-            [JsonProperty("fixed_period_unit")]
-            public string FixedPeriodUnit { get; set; }
-
-            [JsonProperty("fixed_period")]
-            public long FixedPeriod { get; set; }
-        }
+     
+        
     }
 
   
