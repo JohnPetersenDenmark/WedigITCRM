@@ -17,12 +17,14 @@ namespace WedigITCRM.Controllers
        
     {
         public ICompanyAccountRepository companyAccountRepository;
+        private readonly IOptions<NyxiumSubscriptionDiscounts> optionsNyxiumDiscounts;
         private readonly IOptions<NyxiumModule> optionsNyxiumModule;
         private IOptions<NyxiumSubscription> optionsNyxiumSubscription;
 
-        public PaymentController(IOptions<NyxiumModule> optionsNyxiumModule, IOptions<NyxiumSubscription> optionsNyxiumSubscription, ICompanyAccountRepository companyAccountRepository)
+        public PaymentController(IOptions<NyxiumSubscriptionDiscounts> optionsNyxiumDiscounts, IOptions<NyxiumModule> optionsNyxiumModule, IOptions<NyxiumSubscription> optionsNyxiumSubscription, ICompanyAccountRepository companyAccountRepository)
         {
             this.companyAccountRepository = companyAccountRepository;
+            this.optionsNyxiumDiscounts = optionsNyxiumDiscounts;
             this.optionsNyxiumModule = optionsNyxiumModule;
             this.optionsNyxiumSubscription = optionsNyxiumSubscription;
         }
@@ -37,6 +39,9 @@ namespace WedigITCRM.Controllers
             ReepayAPIMethods repayMethods = new ReepayAPIMethods(httpClient);         
 
             SelectNyxiumSubscriptionViewModel selectNyxiumSubscriptionViewModel = new SelectNyxiumSubscriptionViewModel();
+
+            selectNyxiumSubscriptionViewModel.NyxiumDiscounts = optionsNyxiumDiscounts.Value;
+
             selectNyxiumSubscriptionViewModel.NyxiumModules = optionsNyxiumModule.Value;
 
             selectNyxiumSubscriptionViewModel.CompanyAccountId = companyAccountId.ToString();
@@ -82,9 +87,6 @@ namespace WedigITCRM.Controllers
 
             RecurringRequestModel recurringModel = new RecurringRequestModel();
 
-
-
-            //recurringModel.CustomerId = model.companyAccountId;
             recurringModel.CreateReepayCustomer.Handle = model.companyAccountId;
             recurringModel.ButtonText = "Bliv medlem";
 
@@ -94,12 +96,12 @@ namespace WedigITCRM.Controllers
 
             RecurringPaymentViewModel viewModel = new RecurringPaymentViewModel();
             viewModel.SessionId = sessionModel.SessionId;
+            viewModel.ReepayPlanId = model.subscriptiontype;
+            viewModel.ReepayDiscountId = model.ReepayDiscountId;
             viewModel.AcceptUrl = "/payment/accept";
             viewModel.CancelUrl = "https://tv2.dk";
 
-             return Redirect("Subscription", "Payment", viewModel);
-
-            //return RedirectToAction("Subscription", "Payment", viewModel);
+            return Json(viewModel);
         }
 
         [HttpPost]
@@ -110,11 +112,26 @@ namespace WedigITCRM.Controllers
             ReepayAPIMethods repayMethods = new ReepayAPIMethods(httpClient);
 
             AddSubscription addSubscription = new AddSubscription();
-            addSubscription.Plan = "plan-4f411";
+            addSubscription.Plan = model.ReepayPlanId;
             addSubscription.Customer = model.customer;
-            addSubscription.SignupMethod = "source";
-            addSubscription.Handle = "aaa14038";
             addSubscription.Source = model.payment_method;
+            addSubscription.SignupMethod = "source";
+            addSubscription.GenerateHandle = true;
+
+            //ReepayDiscountCreate reepayDiscountCreate = new ReepayDiscountCreate();
+            //reepayDiscountCreate.ReepayDiscountHandle = model.ReepayDiscountId;
+            //reepayDiscountCreate.ApplyTo = "plan";
+            //reepayDiscountCreate.Name = "Olfert";
+
+            ReepayDiscountCreate x = await repayMethods.GetDiscountById(model.ReepayDiscountId);
+            addSubscription.ReepayDiscounts.Add(x);
+
+            
+            
+
+
+
+
 
             var noget = await repayMethods.AddSubscription(addSubscription);
 
@@ -130,6 +147,7 @@ namespace WedigITCRM.Controllers
             }
             public List<NyxiumSubscriptionViewModel> NyxiumSubscriptions { get; set; }
             public NyxiumModule NyxiumModules { get; set; }
+            public NyxiumSubscriptionDiscounts NyxiumDiscounts { get; set; }
             public string CompanyAccountId { get; set; }
 
         }
@@ -138,7 +156,7 @@ namespace WedigITCRM.Controllers
         {
             public string  subscriptiontype { get; set; }
             public string nyxiummodules { get; set; }
-            public string discount { get; set; }
+            public string ReepayDiscountId { get; set; }
             public string companyAccountId { get; set; }
         }
 
@@ -158,6 +176,8 @@ namespace WedigITCRM.Controllers
             public class PaymentAcceptModel
         {
             public string id { get; set; }
+            public string ReepayPlanId  { get; set; }
+            public string ReepayDiscountId { get; set; }
             public string invoice { get; set; }
             public string customer { get; set; }
             public string subscription { get; set; }
@@ -166,6 +186,11 @@ namespace WedigITCRM.Controllers
         }
         public partial class AddSubscription
         {
+            public AddSubscription()
+            {
+                this.ReepayDiscounts = new List<ReepayDiscountCreate>();
+            }
+
             [JsonProperty("plan")]
             public string Plan { get; set; }
 
@@ -175,12 +200,54 @@ namespace WedigITCRM.Controllers
             [JsonProperty("customer")]
             public string Customer { get; set; }
 
-            [JsonProperty("handle")]
-            public string Handle { get; set; }
+            [JsonProperty("generate_handle")]
+            public bool GenerateHandle { get; set; }
+
+            [JsonProperty("subscription_discounts")]
+            public List<ReepayDiscountCreate> ReepayDiscounts { get; set; }
 
             [JsonProperty("source")]
             public string Source { get; set; }
         }      
+
+        public class ReepayDiscountCreate
+        {
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("description")]
+            public string Description { get; set; }
+
+            [JsonProperty("amount")]
+            public long Amount { get; set; }
+
+            [JsonProperty("percentage")]
+            public long Percentage { get; set; }
+
+            [JsonProperty("handle")]
+            public string Handle { get; set; }
+
+            [JsonProperty("state")]
+            public string State { get; set; }
+
+            [JsonProperty("deleted")]
+            public string Deleted { get; set; }
+
+            [JsonProperty("created")]
+            public string Created { get; set; }
+
+            [JsonProperty("apply_to")]
+            public object[] ApplyTo { get; set; }
+
+            [JsonProperty("fixed_count")]
+            public long FixedCount { get; set; }
+
+            [JsonProperty("fixed_period_unit")]
+            public string FixedPeriodUnit { get; set; }
+
+            [JsonProperty("fixed_period")]
+            public long FixedPeriod { get; set; }
+        }
     }
 
   

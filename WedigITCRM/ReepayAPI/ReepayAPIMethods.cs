@@ -142,6 +142,21 @@ namespace WedigITCRM.ReepayAPI
             return null;
         }
 
+        public async Task<ReepayDiscountCreate> GetDiscountById(string discountId)
+        {
+            string resourceURL = partialResourceURL + "discount" + "/" + discountId ;
+            var result = await httpClient.GetAsync(resourceURL);
+            if (result.IsSuccessStatusCode)
+            {
+                var resultContent = await result.Content.ReadAsStringAsync();
+
+                var response = JsonConvert.DeserializeObject<ReepayDiscountCreate>(resultContent);
+                return response;
+            }
+
+            return null;
+        }
+
         public async Task<ReepayPlanResponseModel[]> GetAllPlans()
         {
             string resourceURL = partialResourceURL  + "plan";

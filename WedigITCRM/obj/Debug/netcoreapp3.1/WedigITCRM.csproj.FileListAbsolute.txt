@@ -500,3 +500,4 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\nyxiums
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\nyxiummodules.json
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\Payment\SelectNyxiumSubscription.cshtml.g.cs
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csprojAssemblyReference.cache
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\nyxiumsubscriptiondiscounts.json

@@ -14,21 +14,26 @@
     <script>
 
         $(document).ready(function () {
-            var reepaySessionId = document.getElementById("SessionId").value;
 
+            var reepaySessionId = document.getElementById("SessionId").value;
 
             var rp = new Reepay.EmbeddedCheckout(reepaySessionId, { "<div>": 'rp_container' });
 
             rp.addEventHandler(Reepay.Event.Accept, function (data) {
                 console.log('Success');
+                data["ReepayPlanId"] = document.getElementById("ReepayPlanId").value;
+                data["ReepayDiscountId"] = document.getElementById("ReepayDiscountId").value;
+                
                 var url = document.getElementById("AcceptUrl").value;
                 sendPaymentData(url, data);
             });
+
             rp.addEventHandler(Reepay.Event.Error, function (data) {
                 console.log('Error');
                 var url = document.getElementById("CancelUrl").value;
                 sendPaymentData(url, data)
             });
+
             rp.addEventHandler(Reepay.Event.Close, function (data) {
                 console.log('Close');
             });
@@ -59,6 +64,8 @@
     <input id="AcceptUrl" asp-for="@Model.AcceptUrl">
     <input id="CancelUrl" asp-for="@Model.CancelUrl">
 
+    <input id="ReepayPlanId" asp-for="@Model.ReepayPlanId">
+    <input id="ReepayDiscountId" asp-for="@Model.ReepayDiscountId">
 
 </body>
 </html>

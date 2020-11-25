@@ -46,6 +46,7 @@ namespace WedigITCRM
                 .AddJsonFile("appsettings.json")
                 .AddJsonFile($"nyxiumsubscriptions.json")
                 .AddJsonFile($"nyxiummodules.json")
+                .AddJsonFile($"NyxiumSubscriptionDiscounts.json")
                 .Build();
 
             // _config = config;
@@ -81,6 +82,7 @@ namespace WedigITCRM
 
                 services.Configure<NyxiumSubscription>(_config);
                 services.Configure<NyxiumModule>(_config);
+                services.Configure<NyxiumSubscriptionDiscounts>(_config);
 
 
                 // services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));

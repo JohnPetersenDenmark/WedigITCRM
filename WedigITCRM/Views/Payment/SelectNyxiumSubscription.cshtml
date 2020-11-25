@@ -88,21 +88,23 @@
             </p>
 
             <article class="price">
-                <label class="radiocontainer">
-                    Binding 30 dage
-                    <input type="radio" checked="checked" name="discount" value="0">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="radiocontainer">
-                    Binding 180 dage
-                    <input type="radio" name="discount" value="10">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="radiocontainer">
-                    Binding 360 dage
-                    <input type="radio" name="discount" value="20">
-                    <span class="checkmark"></span>
-                </label>
+
+                @foreach (var discountType in @Model.NyxiumDiscounts.Discounts)
+                {
+                    <label class="radiocontainer">
+                        @discountType.SubscriptionBindingDays
+                        @if (discountType.Id == 1)
+                        {
+                            <input type="radio" checked="checked" name="discount" value="@discountType.ReepayDiscountHandle">
+                        }
+                        else
+                        {
+                            <input type="radio" name="discount" value="@discountType.ReepayDiscountHandle">
+                        }
+
+                        <span class="checkmark"></span>
+                    </label>
+                }
 
             </article>
 
@@ -159,6 +161,7 @@
                     </div>
                 }
             </article>
+
 
             <input asp-for="@Model.CompanyAccountId">
 
@@ -276,19 +279,19 @@
             $.ajax({
                 type: "POST",
                 url: "/payment/SomeAction",
-                data: 'subscriptiontype=' + subscriptionType + "&nyxiummodules=" + nyxiumModules + "&discount=" + discount + "&CompanyAccountId=" + companyAccountId,
+                data: 'subscriptiontype=' + subscriptionType + "&nyxiummodules=" + nyxiumModules + "&ReepayDiscountId=" + discount + "&CompanyAccountId=" + companyAccountId,
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
                 dataType: "json",
                 success: function (result) {
 
-
+                    window.location.replace("/payment/Subscription?SessionId=" + result.sessionId + "&ReepayPlanId=" + result.reepayPlanId + "&ReepayDiscountId=" + result.reepayDiscountId + "&CancelUrl=" + result.cancelUrl + "&AcceptUrl=" + result.acceptUrl);
                 },
 
                 failure: function (errMsg) {
                     alert(errMsg);
                 }
             });
-
+            
 
         }
     });
