@@ -38,6 +38,14 @@
           "Name": "Stock"
         }
       ]
+    },
+    {
+      "Id": 5,
+      "Name": "Booking",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+
+      ]
     }
   ]
 }

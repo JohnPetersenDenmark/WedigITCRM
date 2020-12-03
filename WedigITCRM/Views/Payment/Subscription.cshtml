@@ -23,7 +23,9 @@
                 console.log('Success');
                 data["ReepayPlanId"] = document.getElementById("ReepayPlanId").value;
                 data["ReepayDiscountId"] = document.getElementById("ReepayDiscountId").value;
+                data["NyxiumModules"] = document.getElementById("NyxiumModules").value;
                 
+
                 var url = document.getElementById("AcceptUrl").value;
                 sendPaymentData(url, data);
             });
@@ -66,6 +68,7 @@
 
     <input id="ReepayPlanId" asp-for="@Model.ReepayPlanId">
     <input id="ReepayDiscountId" asp-for="@Model.ReepayDiscountId">
+    <input id="NyxiumModules" asp-for="@Model.NyxiumModules">
 
 </body>
 </html>

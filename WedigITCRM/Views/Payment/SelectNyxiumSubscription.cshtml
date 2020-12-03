@@ -286,7 +286,7 @@
                 dataType: "json",
                 success: function (result) {
 
-                    window.location.replace("/payment/Subscription?SessionId=" + result.sessionId + "&ReepayPlanId=" + result.reepayPlanId + "&ReepayDiscountId=" + result.reepayDiscountId + "&CancelUrl=" + result.cancelUrl + "&AcceptUrl=" + result.acceptUrl);
+                    window.location.replace("/payment/Subscription?SessionId=" + result.sessionId + "&ReepayPlanId=" + result.reepayPlanId + "&ReepayDiscountId=" + result.reepayDiscountId + "&NyxiumModules=" + result.nyxiumModules + "&CancelUrl=" + result.cancelUrl + "&AcceptUrl=" + result.acceptUrl);
                 },
 
                 failure: function (errMsg) {

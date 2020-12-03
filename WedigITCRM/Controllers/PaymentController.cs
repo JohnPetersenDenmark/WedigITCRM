@@ -122,6 +122,7 @@ namespace WedigITCRM.Controllers
             viewModel.SessionId = sessionModel.SessionId;
             viewModel.ReepayPlanId = model.subscriptiontype;
             viewModel.ReepayDiscountId = model.ReepayDiscountId;
+            viewModel.NyxiumModules = model.nyxiummodules;
             viewModel.AcceptUrl = "/payment/accept";
             viewModel.CancelUrl = "https://tv2.dk";
 
@@ -151,7 +152,44 @@ namespace WedigITCRM.Controllers
             subscriptionAddDiscount.DiscountHandle = model.ReepayDiscountId;
             var svar = await repayMethods.AddSubscriptionDiscount(subscriptionAddDiscount);
 
+            int companyAccountId = int.Parse(model.customer);
 
+            CompanyAccount companyAccount = companyAccountRepository.GetCompanyAccount(companyAccountId);
+            if (companyAccount != null)
+            {
+                List<string> nyxiumModules = model.nyxiummodules.Split(",").ToList();
+
+                foreach(var nyxiumModule in nyxiumModules)
+                {
+                    switch (nyxiumModule)
+                    {
+
+                        case "1":
+                            companyAccount.SubscriptionCRM = true;
+                            break;
+
+                        case "2":
+                            companyAccount.SubscriptionVendor = true;
+                            break;
+
+                        case "3":
+                            companyAccount.SubscriptionInventory = true;
+                            break;
+
+                        case "4":
+                            companyAccount.SubscriptionProcurement = true;
+                            break;
+
+                        case "5":
+                            companyAccount.Booking = true;
+                            break;
+
+                        default:
+                            Console.WriteLine("Nothing");
+                            break;
+                    }
+                }
+            }
 
 
 
@@ -213,6 +251,7 @@ namespace WedigITCRM.Controllers
             public string customer { get; set; }
             public string subscription { get; set; }
             public string payment_method { get; set; }
+            public string nyxiummodules { get; set; }
             public string error { get; set; }
         }
         public partial class AddSubscription
