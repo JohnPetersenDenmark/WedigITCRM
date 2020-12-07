@@ -144,6 +144,7 @@ namespace WedigITCRM.Controllers
                 int numberOfBindingMonths = numberOfBindingDays / 30;
 
                 Decimal priceForWholeBindingPeriod = subscriptionPricePrMonth * numberOfBindingMonths;
+                priceForWholeBindingPeriod = Math.Round(priceForWholeBindingPeriod, 2);
 
                 ReepayDiscountResponseModel subscriptionDiscount = await repayMethods.GetDiscountById(model.ReepayDiscountId);
                 Decimal discountPercentage = Decimal.Parse(subscriptionDiscount.Percentage);
@@ -152,11 +153,12 @@ namespace WedigITCRM.Controllers
 
                 Decimal amountToInvoiceForPeriod = priceForWholeBindingPeriod - discountAmount;
 
+                viewModel.ReepayPlanName = SubscriptionPlan.Name;
                 viewModel.NumberOfBindingDays = numberOfBindingDays.ToString();
-                viewModel.AmountBeforeDiscount = priceForWholeBindingPeriod.ToString();
-                viewModel.AmountAfterDiscount = amountToInvoiceForPeriod.ToString();
+                viewModel.AmountBeforeDiscount = priceForWholeBindingPeriod.ToString("F");
+                viewModel.AmountAfterDiscount = amountToInvoiceForPeriod.ToString("F");
                 viewModel.DiscountPercentage = discountPercentage.ToString();
-                viewModel.DiscountAmount = discountAmount.ToString();
+                viewModel.DiscountAmount = discountAmount.ToString("F");
 
                 viewModel.SessionId = sessionModel.SessionId;
                 viewModel.ReepayPlanId = model.subscriptiontype;

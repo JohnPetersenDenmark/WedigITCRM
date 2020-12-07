@@ -123,11 +123,89 @@
     <div class="top top700">
         <section class="cover_content cover_content-grid">
             <article class="price">
-             
-                    <p class="type">
-                   gris
-                    </p>
-                
+                <table width="400px">
+                    <tr>
+                        <td colspan="4">
+                            <p class="type">
+                                Abonnement: @Model.ReepayPlanName
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <p class="type">
+                                Bindingsperiode: @Model.NumberOfBindingDays dage
+                            </p>
+                        </td>
+                    </tr>
+                    <tr><td colspan="4">&nbsp;</td></tr>
+                    <tr><td colspan="4">&nbsp;</td></tr>
+                    <tr>
+                        <td width="100px">
+                            <p class="type">
+                                Pris
+                            </p>
+                        </td>
+                        <td width="100px">
+                            <p class="type">
+                                @Model.NumberOfBindingDays dage
+                            </p>
+                        </td>
+                        <td width="100px" align="right">
+                            <p class="type">
+                                @Model.AmountBeforeDiscount
+                            </p>
+                        </td>
+                        <td width="100px">
+                            <p class="type">
+                                DKK
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100px">
+                            <p class="type">
+                                Rabat
+                            </p>
+                        </td>
+                        <td width="100px">
+                            <p class="type">
+                                @Model.DiscountPercentage%
+                            </p>
+                        </td>
+                        <td width="100px" align="right">
+                            <p class="type">
+                                -@Model.DiscountAmount
+                            </p>
+                        </td>
+                        <td width="100px">
+                            <p class="type">
+                                DKK
+                            </p>
+                        </td>
+                    </tr>
+                    <tr><td colspan="4">&nbsp;</td></tr>
+                    <tr><td colspan="4">&nbsp;</td></tr>
+                    <tr>
+                        <td width="100px">
+                            <p class="type">
+                                Ialt:
+                            </p>
+                        </td>
+                        <td width="100px">
+                        </td>
+                        <td width="100px" align="right">
+                            <p class="type">
+                                @Model.AmountAfterDiscount
+                            </p>
+                        </td>
+                        <td width="100px">
+                            <p class="type">
+                                DKK
+                            </p>
+                        </td>
+                    </tr>
+                </table>
             </article>
 
             <article class="price">
