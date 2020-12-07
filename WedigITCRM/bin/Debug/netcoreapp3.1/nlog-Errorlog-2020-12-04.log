@@ -1,0 +1,52 @@
+2020-12-04 16:13:07.5729|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-04 16:13:09.1523|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-04 16:13:09.2817|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-04 16:13:09.8959|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-04 16:13:12.7674|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-04 16:13:12.8026|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-04 22:37:34.9054|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-04 22:37:36.2211|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-04 22:37:36.3223|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-04 22:37:36.9804|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-04 22:37:41.2839|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-04 22:37:41.3096|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-04 23:08:12.6773|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-04 23:08:13.8990|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-04 23:08:13.9851|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-04 23:08:14.5792|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-04 23:08:16.0428|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-04 23:08:16.0802|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-04 23:12:17.4153|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-04 23:12:19.1090|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-04 23:12:19.2296|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-04 23:12:20.0251|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-04 23:12:25.1437|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-04 23:12:25.2183|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-04 23:20:26.8040|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-04 23:20:28.2450|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-04 23:20:28.3595|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-04 23:20:28.9680|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-04 23:20:30.4384|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-04 23:20:30.4739|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-04 23:35:23.6307|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-04 23:35:24.9141|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-04 23:35:25.0380|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-04 23:35:25.6067|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-04 23:35:27.1363|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-04 23:35:27.1780|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-04 23:39:05.9667|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-04 23:39:06.0100|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-04 23:44:54.4649|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-04 23:44:55.6148|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-04 23:44:55.6958|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-04 23:44:56.2243|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-04 23:44:57.4686|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-04 23:44:57.6840|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-04 23:50:52.9310|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-04 23:50:54.2078|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-04 23:50:54.2939|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-04 23:50:54.9182|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-04 23:50:56.0673|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-04 23:50:56.0963|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-04 23:55:02.0431|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-12-04 23:55:02.1276|ERROR|WedigITCRM.Startup|{"UserId":null,"UserName":null,"CompanyId":null,"CompanyName":null,"Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Unexpected character encountered while parsing value: {. Path '', line 1, position 1.\r\n                                         \r\n\r\n                                            at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)\r\n   at Newtonsoft.Json.JsonTextReader.ReadAsString()\r\n   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)\r\n   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)\r\n   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)\r\n   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)\r\n   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)\r\n   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)\r\n   at WedigITCRM.ReepayAPI.ReepayAPIMethods.AddSubscriptionDiscount(SubscriptionAddDiscount model) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\ReepayAPI\\ReepayAPIMethods.cs:line 110\r\n   at WedigITCRM.Controllers.PaymentController.Accept(PaymentAcceptModel model) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\PaymentController.cs:line 158\r\n   at lambda_method(Closure , Object )\r\n   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"aa80fc5e-3157-4920-904c-e56608c4a16b","Extensions":{}}

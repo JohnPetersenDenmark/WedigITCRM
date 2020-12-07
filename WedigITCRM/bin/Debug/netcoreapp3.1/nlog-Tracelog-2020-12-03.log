@@ -1,0 +1,1283 @@
+2020-12-03 21:41:35.5163|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-03 21:41:37.6504|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-03 21:41:37.8097|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-03 21:41:38.5413|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\John\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-03 21:41:38.6057|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-03 21:41:40.5667|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-12-03 21:41:40.5908|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-12-03 21:41:40.6076|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-12-03 21:41:40.6822|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:41:40.6822|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:41:40.6822|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:41:40.6822|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:41:40.9474|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/  
+2020-12-03 21:41:41.5031|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.HomeController (WedigITCRM).
+2020-12-03 21:41:41.6182|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-03 21:41:41.9440|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-03 21:41:42.2969|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /FrontPage.
+2020-12-03 21:41:42.3208|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (158ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-12-03 21:41:42.3208|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-12-03 21:41:42.3495|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-12-03 21:41:42.3495|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.HomeController.Index (WedigITCRM) in 809.7858ms
+2020-12-03 21:41:42.4384|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1498.7484ms 302 
+2020-12-03 21:41:42.5549|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/FrontPage  
+2020-12-03 21:41:42.5750|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Index", controller = "FrontPage"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WedigITCRM.Controllers.FrontPageController (WedigITCRM).
+2020-12-03 21:41:42.6291|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (124ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:41:42.8527|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (36ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:41:42.8527|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Index.
+2020-12-03 21:41:42.9662|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (17ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-12-03 21:41:42.9934|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (64ms) [Parameters=[@p32='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = DateTime2), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = Boolean), @p24='?' (DbType = DateTime2), @p25='?' (DbType = DateTime2), @p26='?' (DbType = Guid), @p27='?' (DbType = DateTime2), @p28='?' (DbType = Boolean), @p29='?' (DbType = Boolean), @p30='?' (DbType = Boolean), @p31='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyCVRNumber] = @p2, [CompanyCity] = @p3, [CompanyCountryCode] = @p4, [CompanyName] = @p5, [CompanyStreet] = @p6, [CompanyZip] = @p7, [Companyidentifier] = @p8, [ContactsToDineroLastSynchronizationDate] = @p9, [ContactsToNyxiumLastSynchronizationDate] = @p10, [DineroAPIOrganization] = @p11, [DineroAPIOrganizationKey] = @p12, [IntegrationDinero] = @p13, [LogoAttachmentIds] = @p14, [NyxiumLicenseTypeId] = @p15, [NyxiumLicenseTypeName] = @p16, [SalesStatistic] = @p17, [StockItemsToDineroLastSynchronizationDate] = @p18, [StockItemsToNyxiumSynchronizationDate] = @p19, [SubscriptionCRM] = @p20, [SubscriptionInventory] = @p21, [SubscriptionProcurement] = @p22, [SubscriptionVendor] = @p23, [VendorsItemsToDineroLastSynchronizationDate] = @p24, [activationDate] = @p25, [activationKey] = @p26, [registrationDate] = @p27, [synchronizeCustomerFromDineroToNyxium] = @p28, [synchronizeCustomerFromNyxiumToDinero] = @p29, [synchronizeStockItemFromDineroToNyxium] = @p30, [synchronizeStockItemFromNyxiumToDinero] = @p31
+WHERE [companyAccountId] = @p32;
+SELECT @@ROWCOUNT;
+2020-12-03 21:41:43.0781|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@p32='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = DateTime2), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = Boolean), @p24='?' (DbType = DateTime2), @p25='?' (DbType = DateTime2), @p26='?' (DbType = Guid), @p27='?' (DbType = DateTime2), @p28='?' (DbType = Boolean), @p29='?' (DbType = Boolean), @p30='?' (DbType = Boolean), @p31='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyCVRNumber] = @p2, [CompanyCity] = @p3, [CompanyCountryCode] = @p4, [CompanyName] = @p5, [CompanyStreet] = @p6, [CompanyZip] = @p7, [Companyidentifier] = @p8, [ContactsToDineroLastSynchronizationDate] = @p9, [ContactsToNyxiumLastSynchronizationDate] = @p10, [DineroAPIOrganization] = @p11, [DineroAPIOrganizationKey] = @p12, [IntegrationDinero] = @p13, [LogoAttachmentIds] = @p14, [NyxiumLicenseTypeId] = @p15, [NyxiumLicenseTypeName] = @p16, [SalesStatistic] = @p17, [StockItemsToDineroLastSynchronizationDate] = @p18, [StockItemsToNyxiumSynchronizationDate] = @p19, [SubscriptionCRM] = @p20, [SubscriptionInventory] = @p21, [SubscriptionProcurement] = @p22, [SubscriptionVendor] = @p23, [VendorsItemsToDineroLastSynchronizationDate] = @p24, [activationDate] = @p25, [activationKey] = @p26, [registrationDate] = @p27, [synchronizeCustomerFromDineroToNyxium] = @p28, [synchronizeCustomerFromNyxiumToDinero] = @p29, [synchronizeStockItemFromDineroToNyxium] = @p30, [synchronizeStockItemFromNyxiumToDinero] = @p31
+WHERE [companyAccountId] = @p32;
+SELECT @@ROWCOUNT;
+2020-12-03 21:41:43.0889|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p32='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = DateTime2), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = Boolean), @p24='?' (DbType = DateTime2), @p25='?' (DbType = DateTime2), @p26='?' (DbType = Guid), @p27='?' (DbType = DateTime2), @p28='?' (DbType = Boolean), @p29='?' (DbType = Boolean), @p30='?' (DbType = Boolean), @p31='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyCVRNumber] = @p2, [CompanyCity] = @p3, [CompanyCountryCode] = @p4, [CompanyName] = @p5, [CompanyStreet] = @p6, [CompanyZip] = @p7, [Companyidentifier] = @p8, [ContactsToDineroLastSynchronizationDate] = @p9, [ContactsToNyxiumLastSynchronizationDate] = @p10, [DineroAPIOrganization] = @p11, [DineroAPIOrganizationKey] = @p12, [IntegrationDinero] = @p13, [LogoAttachmentIds] = @p14, [NyxiumLicenseTypeId] = @p15, [NyxiumLicenseTypeName] = @p16, [SalesStatistic] = @p17, [StockItemsToDineroLastSynchronizationDate] = @p18, [StockItemsToNyxiumSynchronizationDate] = @p19, [SubscriptionCRM] = @p20, [SubscriptionInventory] = @p21, [SubscriptionProcurement] = @p22, [SubscriptionVendor] = @p23, [VendorsItemsToDineroLastSynchronizationDate] = @p24, [activationDate] = @p25, [activationKey] = @p26, [registrationDate] = @p27, [synchronizeCustomerFromDineroToNyxium] = @p28, [synchronizeCustomerFromNyxiumToDinero] = @p29, [synchronizeStockItemFromDineroToNyxium] = @p30, [synchronizeStockItemFromNyxiumToDinero] = @p31
+WHERE [companyAccountId] = @p32;
+SELECT @@ROWCOUNT;
+2020-12-03 21:41:43.1038|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@p32='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = DateTime2), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = Boolean), @p24='?' (DbType = DateTime2), @p25='?' (DbType = DateTime2), @p26='?' (DbType = Guid), @p27='?' (DbType = DateTime2), @p28='?' (DbType = Boolean), @p29='?' (DbType = Boolean), @p30='?' (DbType = Boolean), @p31='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyCVRNumber] = @p2, [CompanyCity] = @p3, [CompanyCountryCode] = @p4, [CompanyName] = @p5, [CompanyStreet] = @p6, [CompanyZip] = @p7, [Companyidentifier] = @p8, [ContactsToDineroLastSynchronizationDate] = @p9, [ContactsToNyxiumLastSynchronizationDate] = @p10, [DineroAPIOrganization] = @p11, [DineroAPIOrganizationKey] = @p12, [IntegrationDinero] = @p13, [LogoAttachmentIds] = @p14, [NyxiumLicenseTypeId] = @p15, [NyxiumLicenseTypeName] = @p16, [SalesStatistic] = @p17, [StockItemsToDineroLastSynchronizationDate] = @p18, [StockItemsToNyxiumSynchronizationDate] = @p19, [SubscriptionCRM] = @p20, [SubscriptionInventory] = @p21, [SubscriptionProcurement] = @p22, [SubscriptionVendor] = @p23, [VendorsItemsToDineroLastSynchronizationDate] = @p24, [activationDate] = @p25, [activationKey] = @p26, [registrationDate] = @p27, [synchronizeCustomerFromDineroToNyxium] = @p28, [synchronizeCustomerFromNyxiumToDinero] = @p29, [synchronizeStockItemFromDineroToNyxium] = @p30, [synchronizeStockItemFromNyxiumToDinero] = @p31
+WHERE [companyAccountId] = @p32;
+SELECT @@ROWCOUNT;
+2020-12-03 21:41:43.1343|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@p32='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = DateTime2), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = Boolean), @p24='?' (DbType = DateTime2), @p25='?' (DbType = DateTime2), @p26='?' (DbType = Guid), @p27='?' (DbType = DateTime2), @p28='?' (DbType = Boolean), @p29='?' (DbType = Boolean), @p30='?' (DbType = Boolean), @p31='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyCVRNumber] = @p2, [CompanyCity] = @p3, [CompanyCountryCode] = @p4, [CompanyName] = @p5, [CompanyStreet] = @p6, [CompanyZip] = @p7, [Companyidentifier] = @p8, [ContactsToDineroLastSynchronizationDate] = @p9, [ContactsToNyxiumLastSynchronizationDate] = @p10, [DineroAPIOrganization] = @p11, [DineroAPIOrganizationKey] = @p12, [IntegrationDinero] = @p13, [LogoAttachmentIds] = @p14, [NyxiumLicenseTypeId] = @p15, [NyxiumLicenseTypeName] = @p16, [SalesStatistic] = @p17, [StockItemsToDineroLastSynchronizationDate] = @p18, [StockItemsToNyxiumSynchronizationDate] = @p19, [SubscriptionCRM] = @p20, [SubscriptionInventory] = @p21, [SubscriptionProcurement] = @p22, [SubscriptionVendor] = @p23, [VendorsItemsToDineroLastSynchronizationDate] = @p24, [activationDate] = @p25, [activationKey] = @p26, [registrationDate] = @p27, [synchronizeCustomerFromDineroToNyxium] = @p28, [synchronizeCustomerFromNyxiumToDinero] = @p29, [synchronizeStockItemFromDineroToNyxium] = @p30, [synchronizeStockItemFromNyxiumToDinero] = @p31
+WHERE [companyAccountId] = @p32;
+SELECT @@ROWCOUNT;
+2020-12-03 21:41:43.1511|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Index executed in 526.3824ms.
+2020-12-03 21:41:43.1651|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.FrontPageController.Index (WedigITCRM) in 573.948ms
+2020-12-03 21:41:43.1806|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 624.4468ms 200 text/html; charset=utf-8
+2020-12-03 21:41:43.7267|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/nyxium-logo.png  
+2020-12-03 21:41:43.7204|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/styles/scss/styles.css  
+2020-12-03 21:41:43.7398|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/js/front.js  
+2020-12-03 21:41:43.8411|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/nyxium-logo.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\nyxium-logo.png'
+2020-12-03 21:41:43.8554|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/js/front.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\js\front.js'
+2020-12-03 21:41:43.8554|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 162.4588ms 200 image/png
+2020-12-03 21:41:43.8684|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 146.5521ms 200 application/javascript
+2020-12-03 21:41:43.8684|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/styles/scss/styles.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\styles\scss\styles.css'
+2020-12-03 21:41:43.8929|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 192.9293ms 200 text/css
+2020-12-03 21:41:44.0984|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/svgs/covers/front-page-cover.svg  
+2020-12-03 21:41:44.1164|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/svgs/covers/front-page-cover.svg'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\svgs\covers\front-page-cover.svg'
+2020-12-03 21:41:44.1164|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 29.5042ms 200 image/svg+xml
+2020-12-03 21:41:44.2671|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/svgs/illustrations/tabs.svg  
+2020-12-03 21:41:44.3143|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/svgs/illustrations/responsive.svg  
+2020-12-03 21:41:44.3143|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/svgs/illustrations/real-time-sync.svg  
+2020-12-03 21:41:44.3522|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/svgs/illustrations/responsive.svg'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\svgs\illustrations\responsive.svg'
+2020-12-03 21:41:44.3522|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/svgs/illustrations/tabs.svg'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\svgs\illustrations\tabs.svg'
+2020-12-03 21:41:44.3383|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/svgs/tasks.svg  
+2020-12-03 21:41:44.3724|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 128.35ms 200 image/svg+xml
+2020-12-03 21:41:44.3818|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 150.2492ms 200 image/svg+xml
+2020-12-03 21:41:44.3818|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/svgs/illustrations/real-time-sync.svg'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\svgs\illustrations\real-time-sync.svg'
+2020-12-03 21:41:44.7616|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/pngs/icons/smile.png  
+2020-12-03 21:41:44.3383|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/svgs/illustrations/online-transactions.svg  
+2020-12-03 21:41:44.3383|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/svgs/illustrations/connected.svg  
+2020-12-03 21:41:45.1195|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 829.8329ms 200 image/svg+xml
+2020-12-03 21:41:45.1195|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/svgs/tasks.svg'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\svgs\tasks.svg'
+2020-12-03 21:41:45.2100|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/svgs/illustrations/online-transactions.svg'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\svgs\illustrations\online-transactions.svg'
+2020-12-03 21:41:45.2633|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/pngs/icons/smile.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\pngs\icons\smile.png'
+2020-12-03 21:41:45.3221|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 874.2616ms 200 image/svg+xml
+2020-12-03 21:41:45.3337|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1025.9544ms 200 image/svg+xml
+2020-12-03 21:41:45.3521|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 928.2404ms 200 image/png
+2020-12-03 21:41:45.3678|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/svgs/illustrations/connected.svg'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\svgs\illustrations\connected.svg'
+2020-12-03 21:41:45.3870|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1141.4935ms 200 image/svg+xml
+2020-12-03 21:41:45.4218|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/favicon.ico  
+2020-12-03 21:41:45.4493|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 19.7476ms 404 
+2020-12-03 21:41:50.9300|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Account/registerCompanyAccount  
+2020-12-03 21:41:50.9548|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "registerCompanyAccount", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult registerCompanyAccount() on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-12-03 21:41:50.9845|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view registerCompanyAccount.
+2020-12-03 21:41:51.8111|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view registerCompanyAccount executed in 813.0751ms.
+2020-12-03 21:41:51.8517|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.registerCompanyAccount (WedigITCRM) in 855.7849ms
+2020-12-03 21:41:51.8517|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/lib/vendor/font-awesome/css/font-awesome.min.css  
+2020-12-03 21:41:51.8882|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/lib/css/style.blue.premium.css  
+2020-12-03 21:41:51.8971|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/locales-all.js  
+2020-12-03 21:41:51.8971|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/moment.js  
+2020-12-03 21:41:51.9330|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 972.1655ms 200 text/html; charset=utf-8
+2020-12-03 21:41:51.9330|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/lib/css/custom.css  
+2020-12-03 21:41:51.9550|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/lib/css/bootstrap-social.css  
+2020-12-03 21:41:52.1276|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/lib/css/editor.dataTables.min.css  
+2020-12-03 21:41:52.1552|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/lib/vendor/database.net-editor/dataTables.editor.js  
+2020-12-03 21:41:52.3069|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/lib/vendor/jquery-validation/jquery.validate.min.js  
+2020-12-03 21:41:52.3352|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js  
+2020-12-03 21:41:52.3966|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/custom.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\css\custom.css'
+2020-12-03 21:41:52.4348|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/CompanyDatatable.js  
+2020-12-03 21:41:52.5017|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 509.8287ms 200 text/css
+2020-12-03 21:41:52.5210|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/jquery-validation/jquery.validate.min.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\jquery-validation\jquery.validate.min.js'
+2020-12-03 21:41:52.5344|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/CompanyDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\CompanyDatatable.js'
+2020-12-03 21:41:52.5372|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.concat.min.js'
+2020-12-03 21:41:52.5372|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/ContactPersonDatatable.js  
+2020-12-03 21:41:52.5372|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 387.0263ms 200 application/javascript
+2020-12-03 21:41:52.5706|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 254.4902ms 200 application/javascript
+2020-12-03 21:41:52.5537|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 204.8124ms 200 application/javascript
+2020-12-03 21:41:52.6023|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/ContactPersonDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\ContactPersonDatatable.js'
+2020-12-03 21:41:52.6159|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/UserDataTable.js  
+2020-12-03 21:41:52.6159|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/lib/vendor/chart.js/Chart.min.js  
+2020-12-03 21:41:52.6402|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 102.143ms 200 application/javascript
+2020-12-03 21:41:52.6159|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/ActivityDatatable.js  
+2020-12-03 21:41:52.7025|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/UserDataTable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\UserDataTable.js'
+2020-12-03 21:41:52.7367|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/ActivityDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\ActivityDatatable.js'
+2020-12-03 21:41:52.7471|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 130.2392ms 200 application/javascript
+2020-12-03 21:41:52.7471|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/RolesOnUserDatatable.js  
+2020-12-03 21:41:52.7665|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 139.1476ms 200 application/javascript
+2020-12-03 21:41:52.7886|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/VendorDatatable.js  
+2020-12-03 21:41:52.7886|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/RolesOnUserDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\RolesOnUserDatatable.js'
+2020-12-03 21:41:52.8292|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/StockItemDatatable.js  
+2020-12-03 21:41:52.8348|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/ABCStockAnalasysDatatable.js  
+2020-12-03 21:41:52.8348|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 96.8676ms 200 application/javascript
+2020-12-03 21:41:52.8704|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/StockItemDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\StockItemDatatable.js'
+2020-12-03 21:41:52.8865|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/ABCStockAnalasysDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\ABCStockAnalasysDatatable.js'
+2020-12-03 21:41:52.9018|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/ContactDatatable.js  
+2020-12-03 21:41:52.9179|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/NoteDatatable.js  
+2020-12-03 21:41:52.9275|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 79.584ms 200 application/javascript
+2020-12-03 21:41:52.9275|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 85.6458ms 200 application/javascript
+2020-12-03 21:41:52.9468|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/NoteDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\NoteDatatable.js'
+2020-12-03 21:41:52.9468|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/ContactDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\ContactDatatable.js'
+2020-12-03 21:41:52.9468|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/RoleDatatable.js  
+2020-12-03 21:41:52.9679|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 69.9506ms 200 application/javascript
+2020-12-03 21:41:52.9877|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 102.9416ms 200 application/javascript
+2020-12-03 21:41:53.0031|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/RoleDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\RoleDatatable.js'
+2020-12-03 21:41:53.0161|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/font-awesome/css/font-awesome.min.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\font-awesome\css\font-awesome.min.css'
+2020-12-03 21:41:53.0263|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/locales-all.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\locales-all.js'
+2020-12-03 21:41:53.0263|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 78.857ms 200 application/javascript
+2020-12-03 21:41:53.0263|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1176.7451ms 200 text/css
+2020-12-03 21:41:53.0406|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1175.4546ms 200 application/javascript
+2020-12-03 21:41:53.0563|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/bootstrap-social.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\css\bootstrap-social.css'
+2020-12-03 21:41:53.0724|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/editor.dataTables.min.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\css\editor.dataTables.min.css'
+2020-12-03 21:41:52.9679|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomJS/editor.bootstrap4.min.js  
+2020-12-03 21:41:53.1532|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1171.2336ms 200 text/css
+2020-12-03 21:41:53.1983|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1176.4177ms 200 text/css
+2020-12-03 21:41:53.2238|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/VendorDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\VendorDatatable.js'
+2020-12-03 21:41:53.2238|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/style.blue.premium.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\css\style.blue.premium.css'
+2020-12-03 21:41:53.2238|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/editor.bootstrap4.min.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\editor.bootstrap4.min.js'
+2020-12-03 21:41:53.2522|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 451.7964ms 200 application/javascript
+2020-12-03 21:41:53.2654|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/chart.js/Chart.min.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\chart.js\Chart.min.js'
+2020-12-03 21:41:53.3048|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1392.4882ms 200 text/css
+2020-12-03 21:41:53.3277|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 318.9636ms 200 application/javascript
+2020-12-03 21:41:53.3483|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 743.5999ms 200 application/javascript
+2020-12-03 21:41:53.3825|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/moment.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\moment.js'
+2020-12-03 21:41:53.4348|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1566.658ms 200 application/javascript
+2020-12-03 21:41:53.4494|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/database.net-editor/dataTables.editor.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\database.net-editor\dataTables.editor.js'
+2020-12-03 21:41:53.5007|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1366.2027ms 200 application/javascript
+2020-12-03 21:41:54.8165|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Images/connect_logo.png  
+2020-12-03 21:41:54.8493|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/jpgs/price-circle-purple.jpg  
+2020-12-03 21:41:54.8493|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/lib/vendor/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0  
+2020-12-03 21:41:54.8493|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/Images/connect_logo.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\Images\connect_logo.png'
+2020-12-03 21:41:54.8843|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/jpgs/price-circle-purple.jpg'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\jpgs\price-circle-purple.jpg'
+2020-12-03 21:41:54.9048|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/font-awesome/fonts/fontawesome-webfont.woff2'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\font-awesome\fonts\fontawesome-webfont.woff2'
+2020-12-03 21:41:54.9220|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 473.9012ms 200 image/png
+2020-12-03 21:41:54.9427|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 118.2412ms 200 image/jpeg
+2020-12-03 21:41:54.9427|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 125.6861ms 200 font/woff2
+2020-12-03 21:42:03.3027|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/home/searchInVirkByCVR?term=wedigIT%20ApS  
+2020-12-03 21:42:03.3292|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "searchInVirkByCVR", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] searchInVirkByCVR(System.String) on controller WedigITCRM.Controllers.HomeController (WedigITCRM).
+2020-12-03 21:42:03.3527|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[WedigITCRM.VirkAPI.CompanyData, WedigITCRM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-12-03 21:42:03.3712|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.HomeController.searchInVirkByCVR (WedigITCRM) in 33.9613ms
+2020-12-03 21:42:03.3712|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 80.872ms 200 application/json; charset=utf-8
+2020-12-03 21:42:05.8490|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/home/searchInVirkByCompanyName?term=wedigIT%20ApS  
+2020-12-03 21:42:05.8654|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "searchInVirkByCompanyName", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] searchInVirkByCompanyName(System.String) on controller WedigITCRM.Controllers.HomeController (WedigITCRM).
+2020-12-03 21:42:06.9108|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:42:06.9271|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:06.9511|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:06.9610|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:06.9610|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:06.9786|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:06.9786|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:06.9999|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.0116|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.0236|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.0236|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.0423|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.0423|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.0611|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.0704|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.0704|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.0882|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.1033|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.1033|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.1290|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.1436|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.1561|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.1726|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.1848|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.1995|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.2162|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.7095|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.7563|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.7722|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.7722|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.7955|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.8079|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.8198|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.8198|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.8404|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.8510|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.8510|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.8701|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.8701|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.8891|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.8993|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.8993|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.9233|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.9385|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.9537|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.9770|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.9921|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:07.9921|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.0131|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.0221|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.0221|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.0405|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.0405|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.0625|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.0716|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.0833|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.0833|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.1068|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.1170|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.1598|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.1807|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.2101|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.2101|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.2390|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.2536|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.2660|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.2761|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.2872|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.2872|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.3080|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.3182|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.3182|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.3380|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.3496|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.3496|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.3734|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.3840|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.3840|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.4031|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.4116|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.4116|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.4302|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.4302|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.4462|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.4652|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.4741|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.4741|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.4901|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.4901|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.5063|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.5063|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.5224|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.5224|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.5384|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.5384|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.5539|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.5539|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.5721|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.5721|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.5922|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.6026|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.6026|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.6204|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.6204|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.6390|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.6479|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.6479|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.6688|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.6688|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.6870|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.6998|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.6998|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.7209|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.7329|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.7449|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.7554|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.7554|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.7837|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.7976|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.8130|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.8238|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.8333|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.8333|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.8513|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.8513|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.8672|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.8672|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.8836|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.8836|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.8992|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.8992|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.9164|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.9164|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.9318|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.9318|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.9474|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.9474|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:08.9653|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.0077|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.0277|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.0459|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.0581|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.0705|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.0843|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.0843|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1048|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1151|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1151|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1327|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1327|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1501|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1501|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1669|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1669|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1831|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1831|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1999|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.1999|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.2168|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.2291|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.2291|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.2521|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.2626|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.2725|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.2725|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.2967|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.3101|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.3240|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.3366|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.3514|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.3677|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.3814|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.8159|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.8427|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.8620|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.8748|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.8841|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.8841|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.9058|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.9161|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.9271|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.9271|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.9481|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.9607|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.9607|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.9838|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:09.9963|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.0126|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.0312|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.0423|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.0575|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.0736|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.0736|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.0935|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.1041|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.1041|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.1223|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.1316|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.1316|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.1518|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.1631|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:42:10.1631|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[WedigITCRM.VirkAPI.CompanyData, WedigITCRM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-12-03 21:42:10.1892|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.HomeController.searchInVirkByCompanyName (WedigITCRM) in 4316.5112ms
+2020-12-03 21:42:10.1987|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 4350.9895ms 200 application/json; charset=utf-8
+2020-12-03 21:42:27.1538|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/account/registerCompanyAccount application/x-www-form-urlencoded 388
+2020-12-03 21:42:27.1916|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "registerCompanyAccount", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] registerCompanyAccount(WedigITCRM.ViewControllers.RegisterCompanyAccountModel) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-12-03 21:42:27.2726|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view registerCompanyAccount.
+2020-12-03 21:42:28.0775|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view registerCompanyAccount executed in 32.4614ms.
+2020-12-03 21:42:28.1984|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.registerCompanyAccount (WedigITCRM) in 927.5408ms
+2020-12-03 21:42:28.2101|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1058.5236ms 200 text/html; charset=utf-8
+2020-12-03 21:42:32.4773|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/home/searchInVirkByCVR?term=34q46q346  
+2020-12-03 21:42:32.4773|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "searchInVirkByCVR", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] searchInVirkByCVR(System.String) on controller WedigITCRM.Controllers.HomeController (WedigITCRM).
+2020-12-03 21:42:32.4968|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[WedigITCRM.VirkAPI.CompanyData, WedigITCRM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-12-03 21:42:32.5059|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.HomeController.searchInVirkByCVR (WedigITCRM) in 10.339ms
+2020-12-03 21:42:32.5059|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 38.4214ms 200 application/json; charset=utf-8
+2020-12-03 21:42:35.1544|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/account/registerCompanyAccount application/x-www-form-urlencoded 387
+2020-12-03 21:42:35.1754|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "registerCompanyAccount", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] registerCompanyAccount(WedigITCRM.ViewControllers.RegisterCompanyAccountModel) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-12-03 21:42:35.2078|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view registerCompanyAccount.
+2020-12-03 21:42:35.2256|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view registerCompanyAccount executed in 21.6402ms.
+2020-12-03 21:42:35.2256|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.registerCompanyAccount (WedigITCRM) in 49.3611ms
+2020-12-03 21:42:35.2468|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 92.2948ms 200 text/html; charset=utf-8
+2020-12-03 21:42:38.6743|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:42:38.6843|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:42:38.6982|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-12-03 21:42:38.6982|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:42:38.7217|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-12-03 21:43:16.8094|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/account/registerCompanyAccount application/x-www-form-urlencoded 400
+2020-12-03 21:43:16.8382|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "registerCompanyAccount", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] registerCompanyAccount(WedigITCRM.ViewControllers.RegisterCompanyAccountModel) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-12-03 21:43:16.8627|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:43:16.8895|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-12-03 21:43:17.4587|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (495ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-12-03 21:43:17.5579|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2020-12-03 21:43:17.5999|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:43:17.6222|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2020-12-03 21:43:17.6584|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2020-12-03 21:43:17.6731|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2020-12-03 21:43:17.7016|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-12-03 21:43:17.7712|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([UserId], [RoleId])
+VALUES (@p0, @p1);
+2020-12-03 21:43:17.7929|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@p14='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p15='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13
+WHERE [Id] = @p14 AND [ConcurrencyStamp] = @p15;
+SELECT @@ROWCOUNT;
+2020-12-03 21:43:17.8229|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[Name], [l].[SalesPriceAnnualPayment], [l].[SalesPriceMonthlyPayment]
+FROM [LicenseTypes] AS [l]
+2020-12-03 21:43:17.8681|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = DateTime2), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = Boolean), @p24='?' (DbType = DateTime2), @p25='?' (DbType = DateTime2), @p26='?' (DbType = Guid), @p27='?' (DbType = DateTime2), @p28='?' (DbType = Boolean), @p29='?' (DbType = Boolean), @p30='?' (DbType = Boolean), @p31='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [companyAccounts] ([AmountToPayForLicense], [Booking], [CompanyCVRNumber], [CompanyCity], [CompanyCountryCode], [CompanyName], [CompanyStreet], [CompanyZip], [Companyidentifier], [ContactsToDineroLastSynchronizationDate], [ContactsToNyxiumLastSynchronizationDate], [DineroAPIOrganization], [DineroAPIOrganizationKey], [IntegrationDinero], [LogoAttachmentIds], [NyxiumLicenseTypeId], [NyxiumLicenseTypeName], [SalesStatistic], [StockItemsToDineroLastSynchronizationDate], [StockItemsToNyxiumSynchronizationDate], [SubscriptionCRM], [SubscriptionInventory], [SubscriptionProcurement], [SubscriptionVendor], [VendorsItemsToDineroLastSynchronizationDate], [activationDate], [activationKey], [registrationDate], [synchronizeCustomerFromDineroToNyxium], [synchronizeCustomerFromNyxiumToDinero], [synchronizeStockItemFromDineroToNyxium], [synchronizeStockItemFromNyxiumToDinero])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31);
+SELECT [companyAccountId]
+FROM [companyAccounts]
+WHERE @@ROWCOUNT = 1 AND [companyAccountId] = scope_identity();
+2020-12-03 21:43:17.9266|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [relateCompanyAccountWithUsers] ([CompanyName], [companyAccount], [user], [userName])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [id]
+FROM [relateCompanyAccountWithUsers]
+WHERE @@ROWCOUNT = 1 AND [id] = scope_identity();
+2020-12-03 21:43:20.8028|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view registerCompanyAccount.
+2020-12-03 21:43:20.8028|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view registerCompanyAccount executed in 13.6075ms.
+2020-12-03 21:43:20.8252|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.registerCompanyAccount (WedigITCRM) in 3979.4205ms
+2020-12-03 21:43:20.8371|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 4029.9651ms 200 text/html; charset=utf-8
+2020-12-03 21:43:38.6710|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:43:38.7239|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-12-03 21:43:38.7239|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (27ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:43:38.7743|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:43:40.0194|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (660ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-12-03 21:44:20.4680|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/account/activateCompanyAccount/?activationkey=f12b6be2-2ab2-4bf1-80c6-9c88e4c5faa1  
+2020-12-03 21:44:20.5189|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "activateCompanyAccount", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult activateCompanyAccount(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-12-03 21:44:20.5517|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:44:20.5963|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2020-12-03 21:44:20.6471|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@p32='?' (DbType = Int32), @p0='?' (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = DateTime2), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Boolean), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = Boolean), @p24='?' (DbType = DateTime2), @p25='?' (DbType = DateTime2), @p26='?' (DbType = Guid), @p27='?' (DbType = DateTime2), @p28='?' (DbType = Boolean), @p29='?' (DbType = Boolean), @p30='?' (DbType = Boolean), @p31='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyCVRNumber] = @p2, [CompanyCity] = @p3, [CompanyCountryCode] = @p4, [CompanyName] = @p5, [CompanyStreet] = @p6, [CompanyZip] = @p7, [Companyidentifier] = @p8, [ContactsToDineroLastSynchronizationDate] = @p9, [ContactsToNyxiumLastSynchronizationDate] = @p10, [DineroAPIOrganization] = @p11, [DineroAPIOrganizationKey] = @p12, [IntegrationDinero] = @p13, [LogoAttachmentIds] = @p14, [NyxiumLicenseTypeId] = @p15, [NyxiumLicenseTypeName] = @p16, [SalesStatistic] = @p17, [StockItemsToDineroLastSynchronizationDate] = @p18, [StockItemsToNyxiumSynchronizationDate] = @p19, [SubscriptionCRM] = @p20, [SubscriptionInventory] = @p21, [SubscriptionProcurement] = @p22, [SubscriptionVendor] = @p23, [VendorsItemsToDineroLastSynchronizationDate] = @p24, [activationDate] = @p25, [activationKey] = @p26, [registrationDate] = @p27, [synchronizeCustomerFromDineroToNyxium] = @p28, [synchronizeCustomerFromNyxiumToDinero] = @p29, [synchronizeStockItemFromDineroToNyxium] = @p30, [synchronizeStockItemFromNyxiumToDinero] = @p31
+WHERE [companyAccountId] = @p32;
+SELECT @@ROWCOUNT;
+2020-12-03 21:44:23.5295|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:44:23.5890|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (17ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2020-12-03 21:44:23.6149|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[Id], [n].[DineroAPIOrganization], [n].[DineroAPIOrganizationKey], [n].[NyxiumSubscription1DineroProductGuid], [n].[NyxiumSubscription1NumberOfMonths], [n].[NyxiumSubscription2DineroProductGuid], [n].[NyxiumSubscription2NumberOfMonths], [n].[NyxiumSubscriptionPricePerMonth], [n].[PaymentConditionNumberOfDays], [n].[PaymentConditionType]
+FROM [NyxiumSetups] AS [n]
+2020-12-03 21:44:25.6138|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view ~/Views/Account/activateCompanyAccount.cshtml.
+2020-12-03 21:44:25.6846|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view ~/Views/Account/activateCompanyAccount.cshtml executed in 561.128ms.
+2020-12-03 21:44:25.6961|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.activateCompanyAccount (WedigITCRM) in 5160.2823ms
+2020-12-03 21:44:25.6961|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 5244.0051ms 200 text/html; charset=utf-8
+2020-12-03 21:44:38.6528|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:44:38.6528|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-12-03 21:44:38.6781|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:44:38.7315|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (22ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:44:38.7830|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (24ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-12-03 21:44:40.3582|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/account/login  
+2020-12-03 21:44:40.3909|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-12-03 21:44:40.4116|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-12-03 21:44:40.4544|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 47.9184ms.
+2020-12-03 21:44:40.4670|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 65.3961ms
+2020-12-03 21:44:40.4766|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 119.8066ms 200 text/html; charset=utf-8
+2020-12-03 21:44:43.5454|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/Account/Login application/x-www-form-urlencoded 249
+2020-12-03 21:44:43.5822|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(WedigITCRM.ViewControllers.LoginViewModel) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-12-03 21:44:43.6199|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:44:43.6469|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-12-03 21:44:44.2385|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (400ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2020-12-03 21:44:44.3055|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2020-12-03 21:44:44.3191|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:44:44.3401|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2020-12-03 21:44:44.3591|INFO|Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|AuthenticationScheme: Identity.Application signed in.
+2020-12-03 21:44:44.3690|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-12-03 21:44:44.3807|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:44:44.4009|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-12-03 21:44:44.4009|INFO|WedigITCRM.Controllers.AccountController|jp@wedigit.dk has successfully logged in XXXXXX
+2020-12-03 21:44:44.4171|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /.
+2020-12-03 21:44:44.4171|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 834.3717ms
+2020-12-03 21:44:44.4459|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 889.0981ms 302 
+2020-12-03 21:44:44.4597|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/  
+2020-12-03 21:44:44.4865|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.HomeController (WedigITCRM).
+2020-12-03 21:44:44.4967|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:44:44.5105|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-12-03 21:44:44.5214|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-03 21:44:44.5522|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-12-03 21:44:44.5827|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /Customer/AllCustomers.
+2020-12-03 21:44:44.5827|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.HomeController.Index (WedigITCRM) in 98.1912ms
+2020-12-03 21:44:44.6122|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 159.7634ms 302 
+2020-12-03 21:44:44.6171|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Customer/AllCustomers  
+2020-12-03 21:44:44.6343|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "AllCustomers", controller = "Customer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AllCustomers() on controller WedigITCRM.Controllers.CustomerController (WedigITCRM).
+2020-12-03 21:44:44.6800|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful.
+2020-12-03 21:44:44.6800|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:44:44.7357|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-12-03 21:44:44.7594|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view AllCustomers.
+2020-12-03 21:44:44.7800|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:44:44.8205|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view AllCustomers executed in 68.6014ms.
+2020-12-03 21:44:44.8205|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.CustomerController.AllCustomers (WedigITCRM) in 184.9676ms
+2020-12-03 21:44:44.8388|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 223.6951ms 200 text/html; charset=utf-8
+2020-12-03 21:44:44.9236|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Images/kontaktpersoner-icon.png  
+2020-12-03 21:44:44.9351|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Images/virksomheder-icon.png  
+2020-12-03 21:44:44.9475|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/Images/kontaktpersoner-icon.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\Images\kontaktpersoner-icon.png'
+2020-12-03 21:44:44.9585|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/Images/virksomheder-icon.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\Images\virksomheder-icon.png'
+2020-12-03 21:44:44.9585|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 55.9131ms 200 image/png
+2020-12-03 21:44:44.9585|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 64.9169ms 200 image/png
+2020-12-03 21:44:45.0253|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Images/aktiviteter-icon.png  
+2020-12-03 21:44:45.0570|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Images/statistik-icon.png  
+2020-12-03 21:44:45.0570|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Images/booking-icon.png  
+2020-12-03 21:44:45.0714|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Images/varer-icon.png  
+2020-12-03 21:44:45.0714|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Images/support-icon.png  
+2020-12-03 21:44:45.0835|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/Images/statistik-icon.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\Images\statistik-icon.png'
+2020-12-03 21:44:45.1293|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/Images/booking-icon.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\Images\booking-icon.png'
+2020-12-03 21:44:45.1383|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/Images/support-icon.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\Images\support-icon.png'
+2020-12-03 21:44:45.0714|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Images/leverandoerer-icon.png  
+2020-12-03 21:44:45.1560|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 112.8262ms 200 image/png
+2020-12-03 21:44:45.1383|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 107.86ms 200 image/png
+2020-12-03 21:44:45.0835|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/Images/aktiviteter-icon.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\Images\aktiviteter-icon.png'
+2020-12-03 21:44:45.1695|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/Images/varer-icon.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\Images\varer-icon.png'
+2020-12-03 21:44:45.2115|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 123.034ms 200 image/png
+2020-12-03 21:44:45.2247|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 177.7472ms 200 image/png
+2020-12-03 21:44:45.2247|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/Images/leverandoerer-icon.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\Images\leverandoerer-icon.png'
+2020-12-03 21:44:45.2475|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 180.1213ms 200 image/png
+2020-12-03 21:44:45.2636|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 225.1275ms 200 image/png
+2020-12-03 21:44:45.3365|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Customer/getCompanies?_=1607028284930  
+2020-12-03 21:44:45.3520|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "getCompanies", controller = "Customer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult getCompanies(System.String, WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.CustomerController (WedigITCRM).
+2020-12-03 21:44:45.3520|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful.
+2020-12-03 21:44:45.3702|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:44:45.3876|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-12-03 21:44:45.4143|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CVRNumber], [c].[City], [c].[CountryCode], [c].[CreatedDate], [c].[CurrencyCode], [c].[DineroGuiD], [c].[Email], [c].[ForeignCity], [c].[ForeignZip], [c].[HomePage], [c].[IsPerson], [c].[LastEditedDate], [c].[Name], [c].[PaymentConditions], [c].[PhoneNumber], [c].[SMSverificationCode], [c].[Street], [c].[Zip], [c].[companyAccountId], [c].[postalCodeId]
+FROM [Companies] AS [c]
+2020-12-03 21:44:45.4317|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[WedigITCRM.Controllers.reducedCustomer, WedigITCRM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-12-03 21:44:45.4562|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.CustomerController.getCompanies (WedigITCRM) in 91.8385ms
+2020-12-03 21:44:45.4648|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 131.4449ms 200 application/json; charset=utf-8
+2020-12-03 21:44:45.5011|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Customer/getZipCodes?term=-1  
+2020-12-03 21:44:45.5011|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Customer/getCurrencies?term=-1  
+2020-12-03 21:44:45.5101|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Customer/getCountries?term=-1  
+2020-12-03 21:44:45.5308|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "getZipCodes", controller = "Customer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult getZipCodes() on controller WedigITCRM.Controllers.CustomerController (WedigITCRM).
+2020-12-03 21:44:45.5308|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "getCurrencies", controller = "Customer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult getCurrencies() on controller WedigITCRM.Controllers.CustomerController (WedigITCRM).
+2020-12-03 21:44:45.5412|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "getCountries", controller = "Customer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult getCountries() on controller WedigITCRM.Controllers.CustomerController (WedigITCRM).
+2020-12-03 21:44:45.5412|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful.
+2020-12-03 21:44:45.5521|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful.
+2020-12-03 21:44:45.5521|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful.
+2020-12-03 21:44:45.5521|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:44:45.5727|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:44:45.5727|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:44:45.5839|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-12-03 21:44:45.5839|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:44:45.5839|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:44:45.6004|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:44:45.6004|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-12-03 21:44:45.6004|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-12-03 21:44:45.6268|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-12-03 21:44:45.6355|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description]
+FROM [CurrencyCodes] AS [c]
+2020-12-03 21:44:45.6355|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CountryCode], [c].[CountryName]
+FROM [Countries] AS [c]
+2020-12-03 21:44:45.6355|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.CustomerController.getZipCodes (WedigITCRM) in 97.8564ms
+2020-12-03 21:44:45.6554|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-12-03 21:44:45.6554|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 156.4276ms 200 application/json; charset=utf-8
+2020-12-03 21:44:45.6634|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-12-03 21:44:45.6634|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.CustomerController.getCurrencies (WedigITCRM) in 114.5127ms
+2020-12-03 21:44:45.6789|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.CustomerController.getCountries (WedigITCRM) in 119.295ms
+2020-12-03 21:44:45.6789|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 180.1361ms 200 application/json; charset=utf-8
+2020-12-03 21:44:45.6789|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 186.9139ms 200 application/json; charset=utf-8
+2020-12-03 21:44:45.7340|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/Customer/getCityByZipCode application/json 254
+2020-12-03 21:44:45.7525|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "getCityByZipCode", controller = "Customer"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult getCityByZipCode(WedigITCRM.Controllers.CompanyInputPostModel) on controller WedigITCRM.Controllers.CustomerController (WedigITCRM).
+2020-12-03 21:44:45.7614|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful.
+2020-12-03 21:44:45.7876|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:44:45.7876|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-12-03 21:44:45.8058|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[City], [p].[Zip]
+FROM [postnumre] AS [p]
+2020-12-03 21:44:45.8315|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor|Executing JsonResult, writing value of type 'WedigITCRM.Controllers.CompanyInputPostModel'.
+2020-12-03 21:44:45.8560|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.CustomerController.getCityByZipCode (WedigITCRM) in 93.0167ms
+2020-12-03 21:44:45.8649|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 130.6508ms 200 application/json; charset=utf-8
+2020-12-03 21:44:48.7007|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/account/Logout application/x-www-form-urlencoded 225
+2020-12-03 21:44:48.7349|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-12-03 21:44:48.7428|INFO|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|Authorization was successful.
+2020-12-03 21:44:48.7428|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:44:48.7645|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-12-03 21:44:48.7775|INFO|Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|AuthenticationScheme: Identity.Application signed out.
+2020-12-03 21:44:48.7775|INFO|Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|AuthenticationScheme: Identity.External signed out.
+2020-12-03 21:44:48.7917|INFO|Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2020-12-03 21:44:48.7917|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /.
+2020-12-03 21:44:48.8043|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Logout (WedigITCRM) in 61.442ms
+2020-12-03 21:44:48.8284|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 116.9505ms 302 
+2020-12-03 21:44:48.8389|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/  
+2020-12-03 21:44:48.8535|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.HomeController (WedigITCRM).
+2020-12-03 21:44:48.8535|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-03 21:44:48.8906|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-03 21:44:48.9077|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /FrontPage.
+2020-12-03 21:44:48.9136|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.HomeController.Index (WedigITCRM) in 51.3706ms
+2020-12-03 21:44:48.9136|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 85.761ms 302 
+2020-12-03 21:44:48.9318|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/FrontPage  
+2020-12-03 21:44:48.9318|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Index", controller = "FrontPage"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WedigITCRM.Controllers.FrontPageController (WedigITCRM).
+2020-12-03 21:44:48.9471|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Index.
+2020-12-03 21:44:48.9471|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Index executed in 9.6663ms.
+2020-12-03 21:44:48.9672|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.FrontPageController.Index (WedigITCRM) in 20.4788ms
+2020-12-03 21:44:48.9776|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 47.9279ms 200 text/html; charset=utf-8
+2020-12-03 21:45:38.6620|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-12-03 21:45:38.6819|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:45:38.7058|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:45:38.7232|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-12-03 21:45:42.5901|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Account/login  
+2020-12-03 21:45:42.5987|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-12-03 21:45:42.5987|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2020-12-03 21:45:42.6803|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 26.2255ms.
+2020-12-03 21:45:42.7391|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 116.7166ms
+2020-12-03 21:45:42.8799|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 251.7446ms 200 text/html; charset=utf-8
+2020-12-03 21:45:45.8526|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/Account/Login application/x-www-form-urlencoded 249
+2020-12-03 21:45:45.8526|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(WedigITCRM.ViewControllers.LoginViewModel) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2020-12-03 21:45:45.8766|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-12-03 21:45:45.9013|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2020-12-03 21:45:45.9115|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2020-12-03 21:45:45.9275|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:45:45.9275|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2020-12-03 21:45:45.9475|INFO|Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|AuthenticationScheme: Identity.Application signed in.
+2020-12-03 21:45:45.9475|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-12-03 21:45:45.9686|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:45:45.9783|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-12-03 21:45:45.9783|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:45:45.9970|INFO|Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|AuthenticationScheme: Identity.Application signed out.
+2020-12-03 21:45:45.9970|INFO|Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|AuthenticationScheme: Identity.External signed out.
+2020-12-03 21:45:46.0124|INFO|Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2020-12-03 21:45:46.0124|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[id], [r].[CompanyName], [r].[companyAccount], [r].[user], [r].[userName]
+FROM [relateCompanyAccountWithUsers] AS [r]
+2020-12-03 21:45:46.0296|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /Payment/SelectNyxiumSubscription?companyAccountId=14047&curUserEmail=jp@wedigit.dk.
+2020-12-03 21:45:46.0400|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 166.1109ms
+2020-12-03 21:45:46.0572|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 236.5759ms 302 
+2020-12-03 21:45:46.0706|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/Payment/SelectNyxiumSubscription?companyAccountId=14047&curUserEmail=jp@wedigit.dk  
+2020-12-03 21:45:46.0891|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "SelectNyxiumSubscription", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SelectNyxiumSubscription(Int32, System.String) on controller WedigITCRM.Controllers.PaymentController (WedigITCRM).
+2020-12-03 21:45:47.8457|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view SelectNyxiumSubscription.
+2020-12-03 21:45:47.8988|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view SelectNyxiumSubscription executed in 469.1396ms.
+2020-12-03 21:45:47.9295|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.PaymentController.SelectNyxiumSubscription (WedigITCRM) in 1830.5967ms
+2020-12-03 21:45:47.9295|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1878.8598ms 200 text/html; charset=utf-8
+2020-12-03 21:45:48.0009|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/CustomCss/CustomRadiobox.css  
+2020-12-03 21:45:48.0281|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomCss/CustomRadiobox.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomCss\CustomRadiobox.css'
+2020-12-03 21:45:48.0508|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 78.376ms 200 text/css
+2020-12-03 21:45:48.0834|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/jpgs/price-circle-green.jpg  
+2020-12-03 21:45:48.1211|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/jpgs/price-circle-green.jpg'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\jpgs\price-circle-green.jpg'
+2020-12-03 21:45:48.1461|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 56.781ms 200 image/jpeg
+2020-12-03 21:45:48.1461|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/jpgs/price-circle-blue.jpg  
+2020-12-03 21:45:48.1763|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/jpgs/price-circle-blue.jpg'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\jpgs\price-circle-blue.jpg'
+2020-12-03 21:45:48.1852|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 23.5159ms 200 image/jpeg
+2020-12-03 21:45:48.2596|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/svgs/covers/priser-cover.svg  
+2020-12-03 21:45:48.2782|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/svgs/covers/priser-cover.svg'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\svgs\covers\priser-cover.svg'
+2020-12-03 21:45:48.2961|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 26.6712ms 200 image/svg+xml
+2020-12-03 21:45:48.6194|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44395/frontpage/img/favicon.png  
+2020-12-03 21:45:48.6352|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/favicon.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\favicon.png'
+2020-12-03 21:45:48.6352|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 26.6967ms 200 image/png
+2020-12-03 21:46:38.6598|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:46:38.6620|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:46:38.6620|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2020-12-03 21:46:38.6934|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (14ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2020-12-03 21:46:38.7106|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2020-12-03 21:46:46.4667|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 POST https://localhost:44395/payment/SomeAction application/x-www-form-urlencoded; charset=UTF-8 124
+2020-12-03 21:46:46.5225|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "SomeAction", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SomeAction(SubscriptionSelectedModel) on controller WedigITCRM.Controllers.PaymentController (WedigITCRM).
+2020-12-03 21:46:46.5387|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 3.1.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2020-12-03 21:46:46.5387|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+WHERE [c].[companyAccountId] = @__p_0
+2020-12-03 21:46:46.5633|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0

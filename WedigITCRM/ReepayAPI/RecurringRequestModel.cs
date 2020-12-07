@@ -29,6 +29,9 @@ namespace WedigITCRM.ReepayAPI
         [JsonProperty("cancel_url")]
         public string CancelUrl { get; set; }
 
+        [JsonProperty("payment_methods")]
+        public string[] PaymentTypes { get; set; }
+
 
 
         public partial class CreateCustomer

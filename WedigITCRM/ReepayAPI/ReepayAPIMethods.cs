@@ -17,6 +17,10 @@ namespace WedigITCRM.ReepayAPI
         private string ReepayCheckoutAPIEndpoint = "https://checkout-api.reepay.com";
         private string ReepayCheckoutAPIVersion = "v1";
 
+        // test account at Reepay
+       // private string ReepayAPIPrivateKey = "priv_0fefb51ec57ec823174b0ce10dc5db83";
+
+        // live account at Reepay
         private string ReepayAPIPrivateKey = "priv_0fefb51ec57ec823174b0ce10dc5db83";
 
         private HttpClient httpClient;  
@@ -90,7 +94,22 @@ namespace WedigITCRM.ReepayAPI
             return null;
         }
 
-     
+        public async Task<ReepayDiscountResponseModel> GetDiscountById(string discountId)
+        {
+            string resourceURL = partialResourceURL + "discount" + "/" + discountId ;
+            var result = await httpClient.GetAsync(resourceURL);
+            if (result.IsSuccessStatusCode)
+            {
+                var resultContent = await result.Content.ReadAsStringAsync();
+
+                var response = JsonConvert.DeserializeObject<ReepayDiscountResponseModel>(resultContent);
+                return response;
+            }
+
+            return null;
+        }
+
+
 
         public async Task<string> AddSubscriptionDiscount(SubscriptionAddDiscount model)
         {
@@ -137,6 +156,27 @@ namespace WedigITCRM.ReepayAPI
 
             [JsonProperty("amount")]
             public string Amount { get; set; }
+
+            [JsonProperty("description")]
+            public string Description { get; set; }
+        }
+
+        public class ReepayDiscountResponseModel
+        {
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("amount")]
+            public string Amount { get; set; }
+
+            [JsonProperty("percentage")]
+            public string Percentage { get; set; }
+
+            [JsonProperty("fixed_period_unit")]
+            public string FixedPeriodUnit { get; set; }
+
+            [JsonProperty("fixed_period")]
+            public string FixedPeriod { get; set; }
 
             [JsonProperty("description")]
             public string Description { get; set; }

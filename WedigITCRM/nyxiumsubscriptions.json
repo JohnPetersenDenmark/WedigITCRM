@@ -15,8 +15,26 @@
     {
       "Id": 3,
       "Name": "Gold",
-      "NumberOfNyxiumModules": 100,
+      "NumberOfNyxiumModules": "all",
       "ReepaySubscriptionPlanHandle": "plan-7eb66"
+    },
+    {
+      "Id": 4,
+      "Name": "Basis (Test)",
+      "NumberOfNyxiumModules": 1,
+      "ReepaySubscriptionPlanHandle": "plan-d04eb"
+    },
+    {
+      "Id": 5,
+      "Name": "Medium (Test)",
+      "NumberOfNyxiumModules": 3,
+      "ReepaySubscriptionPlanHandle": "plan-d04eb"
+    },
+    {
+      "Id": 6,
+      "Name": "Business (Test)",
+      "NumberOfNyxiumModules": "all",
+      "ReepaySubscriptionPlanHandle": "plan-d04eb"
     }
   ]
 }

@@ -11,6 +11,11 @@ namespace WedigITCRM.ReepayAPI
         public string ReepayPlanId { get; set; }
         public string ReepayDiscountId { get; set; }
         public string NyxiumModules { get; set; }
+        public string NumberOfBindingDays { get; set; }
+        public string AmountBeforeDiscount { get; set; }
+        public string AmountAfterDiscount { get; set; }
+        public string DiscountPercentage { get; set; }
+        public string DiscountAmount { get; set; }
         public string CancelUrl { get; set; }
         public string AcceptUrl { get; set; }
     }

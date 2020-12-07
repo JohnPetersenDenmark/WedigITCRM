@@ -60,7 +60,16 @@ namespace WedigITCRM.Controllers
                 NyxiumSubscriptionViewModel NyxiumSubscriptionViewModel = new NyxiumSubscriptionViewModel();
                 NyxiumSubscriptionViewModel.Id = subscriptionType.Id;
                 NyxiumSubscriptionViewModel.Name = subscriptionType.Name;
-                NyxiumSubscriptionViewModel.NumberOfNyxiumModules = subscriptionType.NumberOfNyxiumModules;
+
+                if ( subscriptionType.NumberOfNyxiumModules.Equals("all"))
+                {
+                    NyxiumSubscriptionViewModel.NumberOfNyxiumModules = -1;
+                }
+                else
+                {
+                    NyxiumSubscriptionViewModel.NumberOfNyxiumModules = int.Parse(subscriptionType.NumberOfNyxiumModules);
+                }
+                
                 NyxiumSubscriptionViewModel.ReepaySubscriptionPlanHandle = subscriptionType.ReepaySubscriptionPlanHandle;
 
                 ReepayPlanResponseModel SubscriptionPlan = await repayMethods.GetPlanById(subscriptionType.ReepaySubscriptionPlanHandle);
@@ -112,19 +121,51 @@ namespace WedigITCRM.Controllers
             recurringModel.CreateReepayCustomer.CustomerEmail = currentUser.Email;
             recurringModel.CreateReepayCustomer.CustomerLastName = currentUser.UserName;
 
-            recurringModel.ButtonText = "Bliv medlem";
+            string[] paymentTypes = { "mobilepay",  "card"};
+
+            recurringModel.PaymentTypes = paymentTypes;
+
+            recurringModel.ButtonText = "Abonner";
 
 
 
             var sessionModel = await repayMethods.GetRecurringSessionIdAsync(recurringModel);
 
             RecurringPaymentViewModel viewModel = new RecurringPaymentViewModel();
-            viewModel.SessionId = sessionModel.SessionId;
-            viewModel.ReepayPlanId = model.subscriptiontype;
-            viewModel.ReepayDiscountId = model.ReepayDiscountId;
-            viewModel.NyxiumModules = model.nyxiummodules;
-            viewModel.AcceptUrl = "/payment/accept";
-            viewModel.CancelUrl = "https://tv2.dk";
+
+            if (sessionModel != null)
+            {
+                ReepayPlanResponseModel SubscriptionPlan = await repayMethods.GetPlanById(model.subscriptiontype);
+                Decimal subscriptionPricePrMonth = Decimal.Parse(SubscriptionPlan.Amount) / 100;
+
+                IEnumerable<NyxiumDiscountDetails> discountsDetails = optionsNyxiumDiscounts.Value.Discounts.Where(discount => discount.ReepayDiscountHandle.Equals(model.ReepayDiscountId)) ;
+                NyxiumDiscountDetails discountDetail = discountsDetails.First();
+                int numberOfBindingDays = int.Parse(discountDetail.SubscriptionBindingDays);
+                int numberOfBindingMonths = numberOfBindingDays / 30;
+
+                Decimal priceForWholeBindingPeriod = subscriptionPricePrMonth * numberOfBindingMonths;
+
+                ReepayDiscountResponseModel subscriptionDiscount = await repayMethods.GetDiscountById(model.ReepayDiscountId);
+                Decimal discountPercentage = Decimal.Parse(subscriptionDiscount.Percentage);
+
+                Decimal discountAmount = (priceForWholeBindingPeriod * discountPercentage) / 100;
+
+                Decimal amountToInvoiceForPeriod = priceForWholeBindingPeriod - discountAmount;
+
+                viewModel.NumberOfBindingDays = numberOfBindingDays.ToString();
+                viewModel.AmountBeforeDiscount = priceForWholeBindingPeriod.ToString();
+                viewModel.AmountAfterDiscount = amountToInvoiceForPeriod.ToString();
+                viewModel.DiscountPercentage = discountPercentage.ToString();
+                viewModel.DiscountAmount = discountAmount.ToString();
+
+                viewModel.SessionId = sessionModel.SessionId;
+                viewModel.ReepayPlanId = model.subscriptiontype;
+                viewModel.ReepayDiscountId = model.ReepayDiscountId;
+                viewModel.NyxiumModules = model.nyxiummodules;
+                viewModel.AcceptUrl = "/payment/accept";
+                viewModel.CancelUrl = "https://tv2.dk";
+            }
+            
 
             return Json(viewModel);
         }
@@ -157,6 +198,13 @@ namespace WedigITCRM.Controllers
             CompanyAccount companyAccount = companyAccountRepository.GetCompanyAccount(companyAccountId);
             if (companyAccount != null)
             {
+                companyAccount.SubscriptionCRM = false;
+                companyAccount.SubscriptionVendor = false;
+                companyAccount.SubscriptionInventory = false;
+                companyAccount.SubscriptionProcurement = false;
+                companyAccount.Booking = false;
+
+
                 List<string> nyxiumModules = model.nyxiummodules.Split(",").ToList();
 
                 foreach(var nyxiumModule in nyxiumModules)
@@ -189,6 +237,8 @@ namespace WedigITCRM.Controllers
                             break;
                     }
                 }
+
+                companyAccountRepository.Update(companyAccount);
             }
 
 

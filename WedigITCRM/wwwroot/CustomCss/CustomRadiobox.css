@@ -1,10 +1,11 @@
 ﻿.radiocontainer {
     display: block;
     position: relative;
-    padding-left: 35px;
+    padding-left: 5px;
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 22px;
+    color: #FFFFFF;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

@@ -1,16 +1,73 @@
-﻿@{
+﻿
+@{
     Layout = null;
 }
 
 @model WedigITCRM.ReepayAPI.RecurringPaymentViewModel
 
+<header>
+    <div class="header-wrapper">
+        <div class="logo"><a href="/"><img src="/frontpage/img/nyxium-logo.png"></a></div>
+        <div class="burger">
+            <span class="bars"></span>
+        </div>
+        <nav class="nav">
+            <a href="/frontpage/prices">Priser</a>
+            <div class="submenu">
+                <p class="dropdowntrigger">Integrationer <i class="fas fa-chevron-down"></i></p>
+                <div class="submenubullets">
+                    <a href="/frontpage/integrationdinero">Dinero</a>
+                </div>
+            </div>
+            <a href="/frontpage/About">Om</a>
+            <a href="/frontpage/support">Support</a>
+            <a href="/Account/login">Login</a>
+            <a href="/Account/registerCompanyAccount" class="btn">Opret konto</a>
+        </nav>
+    </div>
+</header>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Se vores priser</title>
+    <title>Køb abonnement</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://checkout.reepay.com/checkout.js"></script>
+
+    <script src="https://kit.fontawesome.com/e061cad298.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/frontpage/styles/scss/styles.css">
+    <link rel="shortcut icon" type="image/png" href="/frontpage/img/favicon.png" />
+    <style>
+        .top {
+            background-image: url(/frontpage/img/svgs/covers/front-page-cover.svg);
+            background-size: cover;
+            background-position: bottom;
+        }
+    </style>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '349668506333283');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1"
+             src="https://www.facebook.com/tr?id=349668506333283&ev=PageView
+&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
     <script>
 
         $(document).ready(function () {
@@ -24,7 +81,7 @@
                 data["ReepayPlanId"] = document.getElementById("ReepayPlanId").value;
                 data["ReepayDiscountId"] = document.getElementById("ReepayDiscountId").value;
                 data["NyxiumModules"] = document.getElementById("NyxiumModules").value;
-                
+
 
                 var url = document.getElementById("AcceptUrl").value;
                 sendPaymentData(url, data);
@@ -57,9 +114,64 @@
         }
 
     </script>
+
 </head>
+
+
+
 <body>
-    <div id='rp_container' style="width: 500px; height: 730px;"></div>
+    <div class="top top700">
+        <section class="cover_content cover_content-grid">
+            <article class="price">
+             
+                    <p class="type">
+                   gris
+                    </p>
+                
+            </article>
+
+            <article class="price">
+                <div id='rp_container' style="width: 400px; height: 730px;"></div>
+            </article>
+        </section>
+    </div>
+
+
+
+
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="~/frontpage/js/front.js"></script>
+
+    <footer>
+        <div class="columns">
+
+
+            <div class="column">
+
+                <a href="#">
+                    nyxium er ejet og drevet af:<br />
+                    wedigIT ApS<br />
+                    Axeltorv 5 3 2<br />
+                    4700 Næstved<br />
+                    CVR: 40777326<br />
+                    info@nyxium.dk<br />
+                </a>
+
+            </div>
+
+            <div class="column">
+
+                <a href="#">
+                    mød os på:<br /><br />
+                    facebook<br />
+                    instagram<br />
+                </a>
+
+            </div>
+
+
+        </div>
+    </footer>
 
 
     <input id="SessionId" asp-for="@Model.SessionId">
@@ -69,6 +181,5 @@
     <input id="ReepayPlanId" asp-for="@Model.ReepayPlanId">
     <input id="ReepayDiscountId" asp-for="@Model.ReepayDiscountId">
     <input id="NyxiumModules" asp-for="@Model.NyxiumModules">
-
 </body>
 </html>

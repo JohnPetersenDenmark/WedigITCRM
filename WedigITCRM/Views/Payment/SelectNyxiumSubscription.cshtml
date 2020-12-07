@@ -84,7 +84,7 @@
 
             <h1> Din gratis periode er udløbet.</h1>
             <p class="subheading">
-                Hvis du ønsker at forsætte så vælg et abonnement nedenfor. Hvis du ikke ønsker et abonnement, gemmer vi dine data 1 måned. Herefter vil dine data blive slettet.
+                Hvis du ønsker at forsætte så vælg et abonnement nedenfor.
             </p>
 
             <article class="price">
@@ -92,7 +92,7 @@
                 @foreach (var discountType in @Model.NyxiumDiscounts.Discounts)
                 {
                     <label class="radiocontainer">
-                        @discountType.SubscriptionBindingDays
+                        @discountType.SubscriptionBindingDays dages bindingsperiode
                         @if (discountType.Id == 1)
                         {
                             <input type="radio" checked="checked" name="discount" value="@discountType.ReepayDiscountHandle">
@@ -127,44 +127,59 @@
 
                     int index = counter % 3;
 
-                    <div class="price-box">
+                <div class="price-box">
 
-                        <input name="NumberOfApplicationInSubsription" type="text" value="@subscriptionType.NumberOfNyxiumModules" class="@elementIdentifyClass" hidden />
+                    <input name="NumberOfApplicationInSubsription" type="text" value="@subscriptionType.NumberOfNyxiumModules" class="@elementIdentifyClass" hidden />
 
-                        <p class="@paragraphColors[index]">@subscriptionType.Name</p>
-                        <p class="pprice">@subscriptionType.price</p>
-                        <p class="pprice">excl. moms pr. md.</p>
-                        <p class="description">@subscriptionType.Description</p>
+                    <p class="@paragraphColors[index]">@subscriptionType.Name</p>
+                    <p class="pprice">@subscriptionType.price</p>
+                    <p class="pprice">excl. moms pr. md.</p>
+                    <p class="description">@subscriptionType.Description</p>
 
-                        <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">Gratis oprettelse</p>
-                        <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">Ubegrænset antal brugere</p>
+                    <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">Gratis oprettelse</p>
+                    <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">Ubegrænset antal brugere</p>
 
 
-                        @if (@subscriptionType.NumberOfNyxiumModules == 1)
+                    @if (@subscriptionType.NumberOfNyxiumModules == 1)
+                    {
+                        <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">@subscriptionType.NumberOfNyxiumModules applikation</p>
+                    }
+                    else
+                    {
+                        @if (@subscriptionType.NumberOfNyxiumModules == -1)
                         {
-                            <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">@subscriptionType.NumberOfNyxiumModules applikation</p>
+                            <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">Alle applikationer</p>
                         }
                         else
                         {
                             <p class="features"><img src="/frontpage/img/jpgs/@jpegValues[index]">@subscriptionType.NumberOfNyxiumModules applikationer</p>
                         }
+                    }
 
 
-                        @foreach (var moduleType in @Model.NyxiumModules.Modules)
+                    @foreach (var moduleType in @Model.NyxiumModules.Modules)
+                    {
+                        @if (@subscriptionType.NumberOfNyxiumModules == -1)
+                        {
+                            <p class="features"><input type="checkbox" checked disabled="disabled" class="@elementIdentifyClass @moduleType.Id"> @moduleType.Name</p>
+                        }
+                        else
                         {
                             <p class="features"><input type="checkbox" class="@elementIdentifyClass @moduleType.Id"> @moduleType.Name</p>
                         }
 
-                        <a href="#" class="@submitButtonColor[index] @elementIdentifyClass mySubmit">Køb</a>
-                        <p style="color:red;" class="description @elementIdentifyClass"></p>
+                    }
 
-                    </div>
+                    <a href="#" class="@submitButtonColor[index] @elementIdentifyClass mySubmit">Køb</a>
+                    <p style="color:red;" class="description @elementIdentifyClass"></p>
+
+                </div>
                 }
             </article>
 
 
-            <input asp-for="@Model.CompanyAccountId">
-            <input asp-for="@Model.curUserEmail">
+            <input hidden asp-for="@Model.CompanyAccountId">
+            <input hidden asp-for="@Model.curUserEmail">
 
         </section>
 
@@ -246,10 +261,12 @@
 
             var selectedApplications = $("." + elementIdentyfier + ":checkbox:checked");
 
-            if (selectedApplications.length != numberOfApplicationsInSubscription) {
-                var MyParagraph = $("p." + elementIdentyfier);
-                MyParagraph.html("Du kan vælge " + numberOfApplicationsInSubscription);
-                return;
+            if (numberOfApplicationsInSubscription != -1) {
+                if (selectedApplications.length != numberOfApplicationsInSubscription) {
+                    var MyParagraph = $("p." + elementIdentyfier);
+                    MyParagraph.html("Du kan vælge " + numberOfApplicationsInSubscription);
+                    return;
+                }
             }
 
             var nyxiumModuleIds = [];
@@ -280,13 +297,20 @@
 
             $.ajax({
                 type: "POST",
-                url: "/payment/SomeAction",
+                url: "/payment/SomeAction",                
                 data: 'subscriptiontype=' + subscriptionType + "&nyxiummodules=" + nyxiumModules + "&ReepayDiscountId=" + discount + "&CompanyAccountId=" + companyAccountId + "&CurUserEmail=" + curUserEmail,
                 contentType: "application/x-www-form-urlencoded; charset=utf-8",
                 dataType: "json",
                 success: function (result) {
 
-                    window.location.replace("/payment/Subscription?SessionId=" + result.sessionId + "&ReepayPlanId=" + result.reepayPlanId + "&ReepayDiscountId=" + result.reepayDiscountId + "&NyxiumModules=" + result.nyxiumModules + "&CancelUrl=" + result.cancelUrl + "&AcceptUrl=" + result.acceptUrl);
+                    window.location.replace("/payment/Subscription?SessionId=" + result.sessionId + "&ReepayPlanId=" + result.reepayPlanId +
+                        "&ReepayDiscountId=" + result.reepayDiscountId + "&NyxiumModules=" + result.nyxiumModules + "&CancelUrl=" +
+                        "&NumberOfBindingDays=" + result.numberOfBindingDays + "&AmountBeforeDiscount=" + result.amountBeforeDiscount +
+                        "&AmountAfterDiscount=" + result.amountAfterDiscount + "&DiscountPercentage=" + result.discountPercentage +
+                        "&DiscountAmount=" + result.discountAmount + 
+                        "&CancelUrl=" + result.cancelUrl + "&AcceptUrl=" + result.acceptUrl);
+
+                        
                 },
 
                 failure: function (errMsg) {
