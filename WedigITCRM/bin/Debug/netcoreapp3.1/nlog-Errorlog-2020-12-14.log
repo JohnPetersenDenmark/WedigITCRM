@@ -1,0 +1,88 @@
+2020-12-14 05:34:50.7639|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-14 05:34:53.3193|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-14 05:34:53.4279|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-14 05:34:54.5847|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-14 05:34:56.4207|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 05:34:56.4787|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-14 05:35:29.3131|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-12-14 05:35:29.4417|ERROR|WedigITCRM.Startup|{"UserId":"f7472297-754a-4a46-af3e-b0720f29eaf0","UserName":"jp@wedigit.dk","CompanyId":"14047","CompanyName":"wedigIT ApS","Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Value cannot be null. (Parameter 's')\r\n                                         \r\n\r\n                                            at System.Decimal.Parse(String s)\r\n   at WedigITCRM.Controllers.PaymentController.SomeAction(SubscriptionSelectedModel model) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\PaymentController.cs:line 150\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"6baea8fb-69fd-49b1-8630-8571749fc38d","Extensions":{}}
+2020-12-14 05:35:51.8082|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2020-12-14 05:35:51.8513|ERROR|WedigITCRM.Startup|{"UserId":"f7472297-754a-4a46-af3e-b0720f29eaf0","UserName":"jp@wedigit.dk","CompanyId":"14047","CompanyName":"wedigIT ApS","Type":null,"Title":"Unexpected Error","Status":500,"Detail":"Value cannot be null. (Parameter 's')\r\n                                         \r\n\r\n                                            at System.Decimal.Parse(String s)\r\n   at WedigITCRM.Controllers.PaymentController.SomeAction(SubscriptionSelectedModel model) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\PaymentController.cs:line 150\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"135339c1-c260-49f0-ad11-071a991546d1","Extensions":{}}
+2020-12-14 06:03:35.1441|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-14 06:03:36.5189|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-14 06:03:36.6166|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-14 06:03:37.3294|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-14 06:03:45.3917|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 06:03:45.6940|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-12-14 06:04:01.0834|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 06:04:01.1245|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-14 06:37:04.7784|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-14 06:37:05.3458|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-14 06:37:05.4303|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-14 06:37:06.0886|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-14 06:37:12.5155|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 06:37:12.5493|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-12-14 06:37:26.5203|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 06:37:26.5515|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-14 06:43:44.2552|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-14 06:43:44.9673|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-14 06:43:45.1261|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-14 06:43:45.9073|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-14 06:43:52.4455|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 06:43:52.6689|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-12-14 06:44:00.2021|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 06:44:00.2411|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-14 07:04:52.0454|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-14 07:04:53.5310|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-14 07:04:53.6515|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-14 07:04:54.2294|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-14 07:04:57.0654|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 07:04:57.0972|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-12-14 07:05:04.6466|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 07:05:04.6801|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-14 18:23:47.4219|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-14 18:23:48.7321|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-14 18:23:48.8281|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-14 18:23:49.5403|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-14 18:23:51.1790|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 18:23:51.3599|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-14 18:35:57.9921|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-14 18:35:58.4747|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-14 18:35:58.5748|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-14 18:35:59.2037|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-14 18:36:02.8639|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 18:36:02.8977|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-12-14 18:36:09.0376|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 18:36:09.0685|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-14 18:56:25.9766|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-14 18:56:27.3923|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-14 18:56:27.4894|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-14 18:56:28.1292|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-14 18:56:43.0006|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 18:56:43.1033|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-12-14 18:56:49.8342|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 18:56:49.8765|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-14 18:58:19.8809|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-14 18:58:21.5114|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-14 18:58:21.6262|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-14 18:58:22.6156|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-14 18:58:26.7343|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 18:58:26.8159|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-12-14 18:58:32.8472|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 18:58:32.8739|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-14 19:02:32.0652|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-14 19:02:33.5381|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-14 19:02:33.6641|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-14 19:02:34.7220|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-14 19:02:40.8680|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 19:02:40.9107|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-12-14 19:03:14.5879|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 19:03:14.6126|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2020-12-14 19:12:29.8686|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2020-12-14 19:12:31.8174|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2020-12-14 19:12:32.0095|ERROR|WedigITCRM.Startup|start of Configure method
+2020-12-14 19:12:32.9959|ERROR|WedigITCRM.Startup|end of Configure method
+2020-12-14 19:12:39.0506|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 19:12:39.0933|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2020-12-14 19:12:47.1924|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2020-12-14 19:12:47.2323|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action

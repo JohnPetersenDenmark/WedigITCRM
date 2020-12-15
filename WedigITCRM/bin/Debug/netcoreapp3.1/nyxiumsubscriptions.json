@@ -4,37 +4,37 @@
       "Id": 1,
       "Name": "Basis",
       "NumberOfNyxiumModules": 1,
-      "ReepaySubscriptionPlanHandle": "plan-4f411"
+      "ReepaySubscriptionPlanHandle": "plan-403f7"
     },
     {
       "Id": 2,
       "Name": "Medium",
       "NumberOfNyxiumModules": 3,
-      "ReepaySubscriptionPlanHandle": "plan-48207"
+      "ReepaySubscriptionPlanHandle": "plan-408b9"
     },
     {
       "Id": 3,
       "Name": "Gold",
       "NumberOfNyxiumModules": "all",
-      "ReepaySubscriptionPlanHandle": "plan-7eb66"
+      "ReepaySubscriptionPlanHandle": "plan-1a6b2"
     },
     {
       "Id": 4,
       "Name": "Basis (Test)",
       "NumberOfNyxiumModules": 1,
-      "ReepaySubscriptionPlanHandle": "plan-d04eb"
+      "ReepaySubscriptionPlanHandle": "plan-a3f7c"
     },
     {
       "Id": 5,
       "Name": "Medium (Test)",
       "NumberOfNyxiumModules": 3,
-      "ReepaySubscriptionPlanHandle": "plan-d04eb"
+      "ReepaySubscriptionPlanHandle": "plan-a0f4e"
     },
     {
       "Id": 6,
       "Name": "Business (Test)",
       "NumberOfNyxiumModules": "all",
-      "ReepaySubscriptionPlanHandle": "plan-d04eb"
+      "ReepaySubscriptionPlanHandle": "plan-2609a"
     }
   ]
 }

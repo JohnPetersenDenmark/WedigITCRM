@@ -1,0 +1,51 @@
+{
+  "Modules": [
+    {
+      "Id": 1,
+      "Name": "Customer",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+
+      ]
+    },
+    {
+      "Id": 2,
+      "Name": "Vendor",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+
+      ]
+    },
+    {
+      "Id": 3,
+      "Name": "Stock",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+
+      ]
+    },
+    {
+      "Id": 4,
+      "Name": "Procurement",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+        {
+          "Id": 2,
+          "Name": "Vendor"
+        },
+        {
+          "Id": 3,
+          "Name": "Stock"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "Name": "Booking",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+
+      ]
+    }
+  ]
+}

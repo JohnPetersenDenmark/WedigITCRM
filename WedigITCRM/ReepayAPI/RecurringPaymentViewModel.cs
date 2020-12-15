@@ -15,6 +15,8 @@ namespace WedigITCRM.ReepayAPI
         public string NumberOfBindingDays { get; set; }
         public string AmountBeforeDiscount { get; set; }
         public string AmountAfterDiscount { get; set; }
+        public string VATAmount { get; set; }
+        public string AmountToPay{ get; set; }
         public string DiscountPercentage { get; set; }
         public string DiscountAmount { get; set; }
         public string CancelUrl { get; set; }

@@ -59,7 +59,7 @@ namespace WedigITCRM.Controllers
             {
                 NyxiumSubscriptionViewModel NyxiumSubscriptionViewModel = new NyxiumSubscriptionViewModel();
                 NyxiumSubscriptionViewModel.Id = subscriptionType.Id;
-                NyxiumSubscriptionViewModel.Name = subscriptionType.Name;
+               
 
                 if ( subscriptionType.NumberOfNyxiumModules.Equals("all"))
                 {
@@ -72,14 +72,24 @@ namespace WedigITCRM.Controllers
                 
                 NyxiumSubscriptionViewModel.ReepaySubscriptionPlanHandle = subscriptionType.ReepaySubscriptionPlanHandle;
 
-                ReepayPlanResponseModel SubscriptionPlan = await repayMethods.GetPlanById(subscriptionType.ReepaySubscriptionPlanHandle);
-                if (SubscriptionPlan != null)
+                ReepayPlanResponseModel subscriptionPlan = await repayMethods.GetPlanById(subscriptionType.ReepaySubscriptionPlanHandle);
+                if (subscriptionPlan != null)
                 {
-                    string priceFormatted = SubscriptionPlan.Amount;
+                    NyxiumSubscriptionViewModel.Name = subscriptionPlan.Name;
+
+                   // Decimal VATFactor = Decimal.Parse(subscriptionPlan.VATFactor) ;
+                    Decimal priceInclVAT = Decimal.Parse(subscriptionPlan.Amount) / 100;
+
+                    // Decimal priceExclVAT = priceInclVAT - ((priceInclVAT * VATFactor) / 100);
+
+                    Decimal priceExclVAT = priceInclVAT * 8;
+                     priceExclVAT = priceExclVAT / 10;
+
+                    string priceFormatted = priceExclVAT.ToString();
                     priceFormatted = priceFormatted.Insert(priceFormatted.Length -2, ",");
                     NyxiumSubscriptionViewModel.price = "DKK " + priceFormatted;
 
-                    NyxiumSubscriptionViewModel.Description = SubscriptionPlan.Description;
+                    NyxiumSubscriptionViewModel.Description = subscriptionPlan.Description;
                 }
 
 
@@ -136,22 +146,38 @@ namespace WedigITCRM.Controllers
             if (sessionModel != null)
             {
                 ReepayPlanResponseModel SubscriptionPlan = await repayMethods.GetPlanById(model.subscriptiontype);
-                Decimal subscriptionPricePrMonth = Decimal.Parse(SubscriptionPlan.Amount) / 100;
+                Decimal subscriptionPricePrInclVATMonth = Decimal.Parse(SubscriptionPlan.Amount) / 100;
+
+                Decimal subscriptionPricePrMonthExclVAT = subscriptionPricePrInclVATMonth * 8;
+                subscriptionPricePrMonthExclVAT = subscriptionPricePrMonthExclVAT / 10;
+
+               
 
                 IEnumerable<NyxiumDiscountDetails> discountsDetails = optionsNyxiumDiscounts.Value.Discounts.Where(discount => discount.ReepayDiscountHandle.Equals(model.ReepayDiscountId)) ;
                 NyxiumDiscountDetails discountDetail = discountsDetails.First();
                 int numberOfBindingDays = int.Parse(discountDetail.SubscriptionBindingDays);
                 int numberOfBindingMonths = numberOfBindingDays / 30;
 
-                Decimal priceForWholeBindingPeriod = subscriptionPricePrMonth * numberOfBindingMonths;
+                Decimal priceForWholeBindingPeriod = subscriptionPricePrMonthExclVAT * numberOfBindingMonths;
                 priceForWholeBindingPeriod = Math.Round(priceForWholeBindingPeriod, 2);
 
                 ReepayDiscountResponseModel subscriptionDiscount = await repayMethods.GetDiscountById(model.ReepayDiscountId);
-                Decimal discountPercentage = Decimal.Parse(subscriptionDiscount.Percentage);
+
+                Decimal discountPercentage = 0;
+                if ( ! String.IsNullOrEmpty(subscriptionDiscount.Percentage))
+                {
+                     discountPercentage = Decimal.Parse(subscriptionDiscount.Percentage);
+                }
+               
+               
 
                 Decimal discountAmount = (priceForWholeBindingPeriod * discountPercentage) / 100;
 
                 Decimal amountToInvoiceForPeriod = priceForWholeBindingPeriod - discountAmount;
+
+                Decimal VATAmount = (amountToInvoiceForPeriod * 25) / 100;
+
+                Decimal AmountToPay = amountToInvoiceForPeriod + VATAmount;
 
                 viewModel.ReepayPlanName = SubscriptionPlan.Name;
                 viewModel.NumberOfBindingDays = numberOfBindingDays.ToString();
@@ -159,6 +185,8 @@ namespace WedigITCRM.Controllers
                 viewModel.AmountAfterDiscount = amountToInvoiceForPeriod.ToString("F");
                 viewModel.DiscountPercentage = discountPercentage.ToString();
                 viewModel.DiscountAmount = discountAmount.ToString("F");
+                viewModel.VATAmount = VATAmount.ToString("F");
+                viewModel.AmountToPay = AmountToPay.ToString("F");
 
                 viewModel.SessionId = sessionModel.SessionId;
                 viewModel.ReepayPlanId = model.subscriptiontype;
@@ -200,6 +228,8 @@ namespace WedigITCRM.Controllers
             CompanyAccount companyAccount = companyAccountRepository.GetCompanyAccount(companyAccountId);
             if (companyAccount != null)
             {
+                companyAccount.RepaySubscriptionId = noget.SubscriptionId;
+
                 companyAccount.SubscriptionCRM = false;
                 companyAccount.SubscriptionVendor = false;
                 companyAccount.SubscriptionInventory = false;
@@ -245,7 +275,7 @@ namespace WedigITCRM.Controllers
 
 
 
-            return null;
+            return RedirectToAction("Index", "Home");
         }
 
         public class SubscriptionAddDiscount

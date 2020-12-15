@@ -109,7 +109,20 @@ namespace WedigITCRM.ReepayAPI
             return null;
         }
 
+        public async Task<ReepaySubscriptionPeriodBalance> GetReepaySubscriptionPeriodBalanceById(string subscriptionId)
+        {
+            string resourceURL = partialResourceURL + "subscription" + "/" + subscriptionId + "/" + "period_balance";
+            var result = await httpClient.GetAsync(resourceURL);
+            if (result.IsSuccessStatusCode)
+            {
+                var resultContent = await result.Content.ReadAsStringAsync();
 
+                var response = JsonConvert.DeserializeObject<ReepaySubscriptionPeriodBalance>(resultContent);
+                return response;
+            }
+
+            return null;
+        }
 
         public async Task<string> AddSubscriptionDiscount(SubscriptionAddDiscount model)
         {
@@ -131,8 +144,31 @@ namespace WedigITCRM.ReepayAPI
         }
 
        
+        public class ReepaySubscriptionPeriodBalance
+        {
+            [JsonProperty("date")]
+            public DateTimeOffset Date { get; set; }
 
-       
+            [JsonProperty("paid")]
+            public string Paid { get; set; }
+
+            [JsonProperty("consumed")]
+            public string Consumed { get; set; }
+
+            [JsonProperty("remaining")]
+            public string Remaining { get; set; }
+
+            [JsonProperty("creditable")]
+            public string Creditable { get; set; }
+
+            [JsonProperty("period_amount")]
+            public string PeriodAmount { get; set; }
+
+            [JsonProperty("online_refundable")]
+            public string OnlineRefundable { get; set; }
+        }
+
+
         public class GetReepaySessionResponseModel
         {
             [JsonProperty("id")]
@@ -159,6 +195,8 @@ namespace WedigITCRM.ReepayAPI
 
             [JsonProperty("description")]
             public string Description { get; set; }
+            [JsonProperty("vat")]
+            public string VATFactor { get; set; }
         }
 
         public class ReepayDiscountResponseModel

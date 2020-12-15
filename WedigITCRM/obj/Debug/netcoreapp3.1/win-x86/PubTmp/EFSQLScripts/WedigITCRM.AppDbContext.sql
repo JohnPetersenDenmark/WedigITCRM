@@ -2840,3 +2840,18 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20201207232045_repaysubscriptionidOnCompanyaccount')
+BEGIN
+    ALTER TABLE [companyAccounts] ADD [RepaySubscriptionId] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20201207232045_repaysubscriptionidOnCompanyaccount')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20201207232045_repaysubscriptionidOnCompanyaccount', N'3.1.4');
+END;
+
+GO
+

@@ -821,3 +821,11 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\win-x86\wwwroot\DinkToPdf\32bit\libwkhtmltox.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\win-x86\wwwroot\DinkToPdf\64bit\libwkhtmltox.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\Razor\Views\Account\NyxiumSetup.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\win-x86\nyxiummodules.json
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\win-x86\nyxiumsubscriptiondiscounts.json
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\win-x86\nyxiumsubscriptions.json
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\Razor\Views\Payment\Charge.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\Razor\Views\Payment\GEM.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\Razor\Views\Payment\SelectNyxiumSubscription.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\Razor\Views\Payment\SignUp.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\win-x86\Razor\Views\Payment\Subscription.cshtml.g.cs

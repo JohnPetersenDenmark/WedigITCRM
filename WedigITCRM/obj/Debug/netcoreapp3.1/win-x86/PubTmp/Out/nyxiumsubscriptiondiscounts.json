@@ -1,0 +1,19 @@
+{
+  "Discounts": [
+    {
+      "Id": 1,
+      "SubscriptionBindingDays": 30,
+      "ReepayDiscountHandle": "dis-fdd57"
+    },
+    {
+      "Id": 2,
+      "SubscriptionBindingDays": 180,
+      "ReepayDiscountHandle": "dis-a2b78"
+    },
+    {
+      "Id": 3,
+      "SubscriptionBindingDays": 360,
+      "ReepayDiscountHandle": "dis-14885"
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ using WedigITCRM.Utilities;
 using WedigITCRM.ViewControllers;
 using WedigITCRM.ViewModels;
 using static WedigITCRM.DineroAPI.DineroInvoice;
+using static WedigITCRM.ReepayAPI.ReepayAPIMethods;
 
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -136,48 +138,39 @@ namespace WedigITCRM.Controllers
 
             if (ModelState.IsValid)
             {
-
-                //if (!ModelState.GetValidationState("LoginEmail").Equals(ModelValidationState.Invalid) && !ModelState.GetValidationState("LoginPassword").Equals(ModelValidationState.Invalid))
-                //{
                 var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.LoginRememberMe, false);
-
 
                 if (result.Succeeded)
                 {
                     IdentityUser loggedInUser = userManager.FindByNameAsync(model.Email).Result;
+                    CompanyAccount companyAccount = getCompanyAccountByUser(loggedInUser);
 
-                    if (checkIfFreeTrialHasExpired(loggedInUser))
+                    if (!String.IsNullOrEmpty(companyAccount.RepaySubscriptionId))
                     {
-                        string OriginalActivationKey = getActivationKeyFromCompanyAccount(loggedInUser);
+                        HttpClient httpClient = new HttpClient();
 
-                        await signInManager.SignOutAsync();
-
-
-                        LicenseSelectionModel licenseSelectionModel = new LicenseSelectionModel();
-                        licenseSelectionModel.ActivationKey = OriginalActivationKey;
-
-
-
-                         CompanyAccount companyAccount = getCompanyAccountByUser(loggedInUser);
-
-                        
-                            return RedirectToAction("SelectNyxiumSubscription", "Payment", new { companyAccountId = companyAccount.companyAccountId , curUserEmail = model.Email });
-
-                       // return View("~/Views/FrontPage/BuyLicense.cshtml", licenseSelectionModel);
-
-
+                        ReepayAPIMethods repayMethods = new ReepayAPIMethods(httpClient);
+                        ReepaySubscriptionPeriodBalance x = await repayMethods.GetReepaySubscriptionPeriodBalanceById(companyAccount.RepaySubscriptionId);
                     }
                     else
                     {
-                        _logger.LogInformation(model.Email + " has successfully logged in XXXXXX");
-                        return RedirectToAction("Index", "Home");
+                        if (checkIfFreeTrialHasExpired(loggedInUser))
+                        {
+                            //await signInManager.SignOutAsync();
+
+                            return RedirectToAction("SelectNyxiumSubscription", "Payment", new { companyAccountId = companyAccount.companyAccountId, curUserEmail = model.Email });
+                        }
+                        else
+                        {
+                            return RedirectToAction("index", "home");
+                        }
                     }
-
                 }
-
-                ModelState.AddModelError("Email", "Fejl i kodeord eller email");
-                model.ExternalLogins = (await signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-                // }
+                else
+                {
+                    ModelState.AddModelError("Email", "Fejl i kodeord eller email");
+                    model.ExternalLogins = (await signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+                }
 
             }
 
@@ -430,10 +423,10 @@ namespace WedigITCRM.Controllers
                     model.companyAccountEmailSent = true;
                     model.companyAccountEmailSentMessage = "Email er sendt til: " + model.Email;
 
-                   
 
 
-                     return View(model);
+
+                    return View(model);
 
                 }
 
@@ -485,7 +478,7 @@ namespace WedigITCRM.Controllers
                         if (relateCompanyAccountWithUserList.Count == 1)
                         {
                             RelateCompanyAccountWithUser relateCompanyAccountWithUser = relateCompanyAccountWithUserList.First();
-                            IdentityUser userToSendInvoiceTo =  userManager.FindByIdAsync(relateCompanyAccountWithUser.user).Result;
+                            IdentityUser userToSendInvoiceTo = userManager.FindByIdAsync(relateCompanyAccountWithUser.user).Result;
                             if (userToSendInvoiceTo != null)
                             {
                                 invoiceReceiverEmail = userToSendInvoiceTo.Email;
@@ -764,24 +757,24 @@ namespace WedigITCRM.Controllers
         }
 
         public bool checkIfFreeTrialHasExpired(IdentityUser curuser)
-        {           
-                CompanyAccount companyAccount = getCompanyAccountByUser(curuser);
-                if (companyAccount != null)
+        {
+            CompanyAccount companyAccount = getCompanyAccountByUser(curuser);
+            if (companyAccount != null)
+            {
+                DateTime registrationDate = companyAccount.registrationDate;
+                DateTime dueDate = registrationDate.AddDays(31);
+                if (dueDate < DateTime.Now)
                 {
-                    DateTime registrationDate = companyAccount.registrationDate;
-                    DateTime dueDate = registrationDate.AddDays(31);
-                    if (dueDate < DateTime.Now)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        // return true;
-                        return false;
-                    }
+                    return true;
                 }
+                else
+                {
+                    // return true;
+                    return false;
+                }
+            }
 
-     
+
             return false;
         }
 
@@ -789,11 +782,11 @@ namespace WedigITCRM.Controllers
         {
             CompanyAccount companyAccount = null;
 
-            List <RelateCompanyAccountWithUser> relateCompanyAccountWithUsers = _relateCompanyAccountWithUserRepository.GetAllRelateCompanyAccountWithUser().Where(x => x.user.Equals(curuser.Id)).ToList();
+            List<RelateCompanyAccountWithUser> relateCompanyAccountWithUsers = _relateCompanyAccountWithUserRepository.GetAllRelateCompanyAccountWithUser().Where(x => x.user.Equals(curuser.Id)).ToList();
             if (relateCompanyAccountWithUsers.Count == 1)
             {
                 RelateCompanyAccountWithUser RelateCompanyAccountWithUser = relateCompanyAccountWithUsers.First();
-                companyAccount = _companyAccountRepository.GetCompanyAccount(RelateCompanyAccountWithUser.companyAccount);                
+                companyAccount = _companyAccountRepository.GetCompanyAccount(RelateCompanyAccountWithUser.companyAccount);
             }
 
             return companyAccount;

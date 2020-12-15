@@ -14,7 +14,7 @@ namespace WedigITCRM.EntitityModels
     public class NyxiumSubscriptionDetails
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+       // public string Name { get; set; }
         public string NumberOfNyxiumModules { get; set; }
         public string ReepaySubscriptionPlanHandle { get; set; }
     }

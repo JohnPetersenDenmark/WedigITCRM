@@ -60,5 +60,7 @@ namespace WedigITCRM
 
         public string LogoAttachmentIds { get; set; }
 
+        public string RepaySubscriptionId { get; set; }
+
     }
 }
