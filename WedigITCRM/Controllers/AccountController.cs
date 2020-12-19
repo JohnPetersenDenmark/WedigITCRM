@@ -151,6 +151,7 @@ namespace WedigITCRM.Controllers
 
                         ReepayAPIMethods repayMethods = new ReepayAPIMethods(httpClient);
                         ReepaySubscriptionPeriodBalance x = await repayMethods.GetReepaySubscriptionPeriodBalanceById(companyAccount.RepaySubscriptionId);
+                        return RedirectToAction("index", "home");
                     }
                     else
                     {
@@ -457,6 +458,14 @@ namespace WedigITCRM.Controllers
                     {
                         companyAccount.activationDate = DateTime.Now;
                         companyAccount.Companyidentifier = Guid.NewGuid().ToString();
+
+                        companyAccount.SubscriptionCRM = true;
+                        companyAccount.SubscriptionVendor = true;
+                        companyAccount.SubscriptionInventory = true;
+                        companyAccount.SubscriptionProcurement = true;
+                        companyAccount.Booking = true;
+                        companyAccount.SalesStatistic = true;
+
                         CompanyAccount updatedCompanyAccount = _companyAccountRepository.Update(companyAccount);
 
 
@@ -465,46 +474,48 @@ namespace WedigITCRM.Controllers
                         tokens.Add("companyName", companyAccount.CompanyName);
                         tokens.Add("companyAccountId", updatedCompanyAccount.companyAccountId.ToString());
 
-
                         AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmationToWedigit, tokens);
-
-                        // string fixedsendToList = "johnpetersen1959@gmail.com,jp@wedigit.dk,tj@wedigit.dk,ad@wedigit.dk";
+                        
                         string fixedsendToList = "jp@wedigit.dk";
                         _emailUtility.send(fixedsendToList, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true, null);
-                        // DONE send email to wedigit employees
+                        
 
-                        string invoiceReceiverEmail = null;
-                        List<RelateCompanyAccountWithUser> relateCompanyAccountWithUserList = _relateCompanyAccountWithUserRepository.GetAllRelateCompanyAccountWithUser().Where(relation => relation.companyAccount == companyAccount.companyAccountId).ToList();
-                        if (relateCompanyAccountWithUserList.Count == 1)
-                        {
-                            RelateCompanyAccountWithUser relateCompanyAccountWithUser = relateCompanyAccountWithUserList.First();
-                            IdentityUser userToSendInvoiceTo = userManager.FindByIdAsync(relateCompanyAccountWithUser.user).Result;
-                            if (userToSendInvoiceTo != null)
-                            {
-                                invoiceReceiverEmail = userToSendInvoiceTo.Email;
-                            }
 
-                        }
+
+                        //string invoiceReceiverEmail = null;
+                        //List<RelateCompanyAccountWithUser> relateCompanyAccountWithUserList = _relateCompanyAccountWithUserRepository.GetAllRelateCompanyAccountWithUser().Where(relation => relation.companyAccount == companyAccount.companyAccountId).ToList();
+                        //if (relateCompanyAccountWithUserList.Count == 1)
+                        //{
+                        //    RelateCompanyAccountWithUser relateCompanyAccountWithUser = relateCompanyAccountWithUserList.First();
+                        //    IdentityUser userToSendInvoiceTo = userManager.FindByIdAsync(relateCompanyAccountWithUser.user).Result;
+                        //    if (userToSendInvoiceTo != null)
+                        //    {
+                        //        invoiceReceiverEmail = userToSendInvoiceTo.Email;
+                        //    }
+
+                        //}
+
+
 
                         List<NyxiumSetup> nyxiumSetups = _nyxiumSetupRepository.GetAllNyxiumSetups().ToList();
-                        if (nyxiumSetups.Count > 0)
-                        {
-                            NyxiumSetup nyxiumSetup = nyxiumSetups.First();
-                            if (!string.IsNullOrEmpty(nyxiumSetup.DineroAPIOrganizationKey))
-                            {
-                                NyxiumCustomerHandling nyxiumCustomerHandling = new NyxiumCustomerHandling();
-                                string dineroCustomerId = nyxiumCustomerHandling.createNyxiumCustomerInDinero(nyxiumSetup, companyAccount);
-                                if (dineroCustomerId != null)
-                                {
-                                    ReturnValueFromCreateInvoice returnValueFromCreateInvoice = nyxiumCustomerHandling.createInvoiceInDinero(dineroCustomerId, nyxiumSetup, 1);
-                                    if (returnValueFromCreateInvoice != null)
-                                    {
-                                        nyxiumCustomerHandling.bookInvoiceInDinero(returnValueFromCreateInvoice.Guid, returnValueFromCreateInvoice.TimeStamp, nyxiumSetup);
-                                        nyxiumCustomerHandling.sendDineroInvoiceFromDinero(returnValueFromCreateInvoice.Guid, invoiceReceiverEmail, nyxiumSetup);
-                                    }
-                                }
-                            }
-                        }
+                        //if (nyxiumSetups.Count > 0)
+                        //{
+                        //    NyxiumSetup nyxiumSetup = nyxiumSetups.First();
+                        //    if (!string.IsNullOrEmpty(nyxiumSetup.DineroAPIOrganizationKey))
+                        //    {
+                        //        NyxiumCustomerHandling nyxiumCustomerHandling = new NyxiumCustomerHandling();
+                        //        string dineroCustomerId = nyxiumCustomerHandling.createNyxiumCustomerInDinero(nyxiumSetup, companyAccount);
+                        //        if (dineroCustomerId != null)
+                        //        {
+                        //            ReturnValueFromCreateInvoice returnValueFromCreateInvoice = nyxiumCustomerHandling.createInvoiceInDinero(dineroCustomerId, nyxiumSetup, 1);
+                        //            if (returnValueFromCreateInvoice != null)
+                        //            {
+                        //                nyxiumCustomerHandling.bookInvoiceInDinero(returnValueFromCreateInvoice.Guid, returnValueFromCreateInvoice.TimeStamp, nyxiumSetup);
+                        //                nyxiumCustomerHandling.sendDineroInvoiceFromDinero(returnValueFromCreateInvoice.Guid, invoiceReceiverEmail, nyxiumSetup);
+                        //            }
+                        //        }
+                        //    }
+                        //}
 
                         model.message = "Din konto er nu aktiveret. Du kan logge ind via knappen ovenfor";
                         model.errorNumber = 1;

@@ -213,14 +213,20 @@ namespace WedigITCRM.Controllers
             addSubscription.Source = model.payment_method;
             addSubscription.SignupMethod = "source";
             addSubscription.GenerateHandle = true;
-
-
-
+            
             var noget = await repayMethods.AddSubscription(addSubscription);
+
+            ReepayDiscountResponseModel  reepayDiscount = await repayMethods.GetDiscountById(model.ReepayDiscountId);
 
             SubscriptionAddDiscount subscriptionAddDiscount = new SubscriptionAddDiscount();
             subscriptionAddDiscount.SubscriptionId = noget.SubscriptionId;
             subscriptionAddDiscount.DiscountHandle = model.ReepayDiscountId;
+
+            subscriptionAddDiscount.Percentage = reepayDiscount.Percentage;
+            subscriptionAddDiscount.Name = reepayDiscount.Name;
+            subscriptionAddDiscount.FixedPeriod = reepayDiscount.FixedPeriod;
+            subscriptionAddDiscount.FixedPeriodUnit = reepayDiscount.FixedPeriodUnit;
+
             var svar = await repayMethods.AddSubscriptionDiscount(subscriptionAddDiscount);
 
             int companyAccountId = int.Parse(model.customer);
@@ -235,6 +241,7 @@ namespace WedigITCRM.Controllers
                 companyAccount.SubscriptionInventory = false;
                 companyAccount.SubscriptionProcurement = false;
                 companyAccount.Booking = false;
+                companyAccount.SalesStatistic = false;
 
 
                 List<string> nyxiumModules = model.nyxiummodules.Split(",").ToList();
@@ -264,6 +271,10 @@ namespace WedigITCRM.Controllers
                             companyAccount.Booking = true;
                             break;
 
+                        case "6":
+                            companyAccount.SalesStatistic = true;
+                            break;
+
                         default:
                             Console.WriteLine("Nothing");
                             break;
@@ -280,11 +291,37 @@ namespace WedigITCRM.Controllers
 
         public class SubscriptionAddDiscount
         {
+        
             [JsonProperty("handle")]
             public string SubscriptionId { get; set; }
 
             [JsonProperty("discount")]
             public string DiscountHandle { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("description")]
+            public string Description { get; set; }
+
+            [JsonProperty("amount")]
+            public string Amount { get; set; }
+
+            [JsonProperty("percentage")]
+            public string Percentage { get; set; }
+
+            [JsonProperty("apply_to")]
+            public object[] ApplyTo { get; set; }
+
+            [JsonProperty("fixed_count")]
+            public string FixedCount { get; set; }
+
+            [JsonProperty("fixed_period_unit")]
+            public string FixedPeriodUnit { get; set; }
+
+            [JsonProperty("fixed_period")]
+            public string FixedPeriod { get; set; }
+
         }
 
         public class SelectNyxiumSubscriptionViewModel

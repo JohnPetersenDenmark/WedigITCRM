@@ -124,7 +124,7 @@ namespace WedigITCRM.ReepayAPI
             return null;
         }
 
-        public async Task<string> AddSubscriptionDiscount(SubscriptionAddDiscount model)
+        public async Task<ReepayDiscountResponseModel> AddSubscriptionDiscount(SubscriptionAddDiscount model)
         {
             string tmpContent = JsonConvert.SerializeObject(model);
 
@@ -135,7 +135,7 @@ namespace WedigITCRM.ReepayAPI
 
                 var resultContent = await result.Content.ReadAsStringAsync();
 
-                var response = JsonConvert.DeserializeObject<string>(resultContent);
+                var response = JsonConvert.DeserializeObject<ReepayDiscountResponseModel>(resultContent);
                 return response;
             }
 
