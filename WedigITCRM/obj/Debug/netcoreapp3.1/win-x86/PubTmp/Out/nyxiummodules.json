@@ -2,7 +2,7 @@
   "Modules": [
     {
       "Id": 1,
-      "Name": "Customer",
+      "Name": "CRM",
       "SelectableByCustomer": true,
       "DependencyModules": [
 
@@ -10,7 +10,7 @@
     },
     {
       "Id": 2,
-      "Name": "Vendor",
+      "Name": "Leverandør",
       "SelectableByCustomer": true,
       "DependencyModules": [
 
@@ -18,7 +18,7 @@
     },
     {
       "Id": 3,
-      "Name": "Stock",
+      "Name": "Lager",
       "SelectableByCustomer": true,
       "DependencyModules": [
 
@@ -26,22 +26,30 @@
     },
     {
       "Id": 4,
-      "Name": "Procurement",
+      "Name": "Indkøb",
       "SelectableByCustomer": true,
       "DependencyModules": [
         {
           "Id": 2,
-          "Name": "Vendor"
+          "Name": "Leverandør"
         },
         {
           "Id": 3,
-          "Name": "Stock"
+          "Name": "Lager"
         }
       ]
     },
     {
       "Id": 5,
       "Name": "Booking",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+
+      ]
+    },
+    {
+      "Id": 6,
+      "Name": "Salgsstatistik",
       "SelectableByCustomer": true,
       "DependencyModules": [
 

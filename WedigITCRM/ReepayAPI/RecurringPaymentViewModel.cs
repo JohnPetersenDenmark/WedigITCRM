@@ -21,5 +21,7 @@ namespace WedigITCRM.ReepayAPI
         public string DiscountAmount { get; set; }
         public string CancelUrl { get; set; }
         public string AcceptUrl { get; set; }
+        public string CurUserEmail { get; set; }
+        public string CurUserPassword { get; set; }
     }
 }

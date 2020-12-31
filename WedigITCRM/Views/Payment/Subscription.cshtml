@@ -82,6 +82,10 @@
                 data["ReepayDiscountId"] = document.getElementById("ReepayDiscountId").value;
                 data["NyxiumModules"] = document.getElementById("NyxiumModules").value;
 
+                data["CurUserPassword"] = document.getElementById("CurUserPassword").value;
+                data["CurUserEmail"] = document.getElementById("CurUserEmail").value;
+
+                
 
                 var url = document.getElementById("AcceptUrl").value;
                 sendPaymentData(url, data);
@@ -105,7 +109,7 @@
                 type: "POST",
                 data: data,
                 success: function (data, textStatus, jqXHR) {
-                    var x = 0;
+                    window.location.replace("/home/index");
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     var y = 0;
@@ -298,5 +302,8 @@
     <input id="ReepayPlanId" asp-for="@Model.ReepayPlanId">
     <input id="ReepayDiscountId" asp-for="@Model.ReepayDiscountId">
     <input id="NyxiumModules" asp-for="@Model.NyxiumModules">
+
+    <input id="CurUserEmail" asp-for="@Model.CurUserEmail">
+    <input id="CurUserPassword" asp-for="@Model.CurUserPassword">
 </body>
 </html>

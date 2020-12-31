@@ -157,9 +157,9 @@ namespace WedigITCRM.Controllers
                     {
                         if (checkIfFreeTrialHasExpired(loggedInUser))
                         {
-                            //await signInManager.SignOutAsync();
+                            await signInManager.SignOutAsync();
 
-                            return RedirectToAction("SelectNyxiumSubscription", "Payment", new { companyAccountId = companyAccount.companyAccountId, curUserEmail = model.Email });
+                            return RedirectToAction("SelectNyxiumSubscription", "Payment", new { companyAccountId = companyAccount.companyAccountId, curUserEmail = model.Email, curUserPassword = model.Password});
                         }
                         else
                         {
