@@ -1,4 +1,4 @@
-{
+ï»¿{
   "Modules": [
     {
       "Id": 1,
@@ -10,7 +10,7 @@
     },
     {
       "Id": 2,
-      "Name": "Leverandør",
+      "Name": "LeverandÃ¸r",
       "SelectableByCustomer": true,
       "DependencyModules": [
 
@@ -26,12 +26,12 @@
     },
     {
       "Id": 4,
-      "Name": "Indkøb",
+      "Name": "IndkÃ¸b",
       "SelectableByCustomer": true,
       "DependencyModules": [
         {
           "Id": 2,
-          "Name": "Leverandør"
+          "Name": "LeverandÃ¸r"
         },
         {
           "Id": 3,

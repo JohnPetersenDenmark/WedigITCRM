@@ -1210,9 +1210,31 @@ namespace WedigITCRM.Controllers
 
         public IActionResult getCurrencies()
         {
-            List<CurrencyCode> currencyList = _currencyCodeRepository.getAllCurrencyCodes().ToList();
             List<CurrencySelectionModel> currencies = new List<CurrencySelectionModel>();
 
+            List<string> topCurrecyCodes = new List<string>();
+            topCurrecyCodes.Add("DKK");
+            topCurrecyCodes.Add("SEK");
+            topCurrecyCodes.Add("NOK");
+            topCurrecyCodes.Add("GBP");
+            topCurrecyCodes.Add("EUR");
+            topCurrecyCodes.Add("USD");
+
+            List<CurrencyCode> currencyList = _currencyCodeRepository.getAllCurrencyCodes().ToList();
+
+            foreach(var currencyCodeId in topCurrecyCodes)
+            {
+                var tmpCurrencyCodeList = currencyList.Where(currency => currency.Id.Equals(currencyCodeId));
+                CurrencyCode tmpCurrencyCode = tmpCurrencyCodeList.First();
+
+                CurrencySelectionModel currencySelectionModel = new CurrencySelectionModel();
+                currencySelectionModel.Id = tmpCurrencyCode.Id;
+                currencySelectionModel.Description = tmpCurrencyCode.Description;
+                currencies.Add(currencySelectionModel);
+
+                currencyList.Remove(tmpCurrencyCode);
+
+            }
 
             foreach (var currencyCode in currencyList)
             {

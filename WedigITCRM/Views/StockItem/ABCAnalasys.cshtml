@@ -9,10 +9,10 @@
                 <th>Kostpris DKK</th>
                 <th>Samlet antal</th>
                 <th>Varens omsætning DKK</th>
+                <th>ABC omsætning</th>
                 <th>% af omsætning</th>
                 <th>Antal pluk</th>
                 <th>% af pluk</th>
-                <th>ABC omsætning</th>
                 <th>ABC pluk</th>
             </tr>
         </thead>
@@ -34,7 +34,10 @@
 
     $(document).ready(function () {
 
+       
         initializeABCAnalasysTable();
+
+        abcanalasystable.columns.adjust();
 
           var newItem = document.createElement("div");       // Create a <div> node
         var textnode = document.createTextNode("ABC-analyse");  // Create a text node

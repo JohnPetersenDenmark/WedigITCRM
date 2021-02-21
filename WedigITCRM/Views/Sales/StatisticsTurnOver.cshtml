@@ -3,7 +3,7 @@
 <div class="formcontainer">
 
     <div class="row">
-        <div class="col-3 offset-1">
+        <div class="col-4 offset-1">
             <form asp-controller="sales" asp-action="StatisticsTurnOver" method="post">
                 <div class="form-group form-group-sm">
                     <label asp-for="@Model.StartDate" class="control-label col-sm-1"></label>
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="form-group form-group-sm">
-                    <label asp-for="@Model.Category1" class="control-label col-sm-1"></label>
+                    <label asp-for="@Model.Category1" class="control-label col-sm-3"></label>
                     <div class="col-xs-2">
                         <select name="selectcategory1" id="selectcategory1" class="form-group select">
                         </select>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="form-group form-group-sm">
-                    <label asp-for="@Model.Category2" class="control-label col-sm-1"></label>
+                    <label asp-for="@Model.Category2" class="control-label col-sm-3"></label>
                     <div class="col-xs-2">
                         <select name="selectcategory2" id="selectcategory2" class="form-group input-sm">
                         </select>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="form-group form-group-sm">
-                    <label asp-for="@Model.Category3" class="control-label col-sm-1"></label>
+                    <label asp-for="@Model.Category3" class="control-label col-sm-3"></label>
                     <div class="col-xs-2">
                         <select name="selectcategory3" id="selectcategory3" class="form-group select">
                         </select>

@@ -1,0 +1,380 @@
+2021-01-10 12:53:31.0771|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 12:53:34.3840|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 12:53:34.6813|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 12:53:35.3896|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 12:53:37.4429|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 12:53:37.5117|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2021-01-10 12:53:49.4941|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 12:53:49.5164|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-01-10 13:07:36.2205|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 13:07:36.7166|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 13:07:36.8042|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 13:07:37.5074|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 13:07:41.4263|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 13:07:41.4748|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-01-10 13:12:32.3547|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 13:12:33.0212|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 13:12:33.1754|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 13:12:33.7898|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 13:12:37.0484|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 13:12:37.0810|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-01-10 13:15:01.4363|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 13:15:02.4627|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 13:15:02.5297|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 13:15:03.0651|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 13:15:06.6069|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 13:15:06.6547|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-01-10 13:56:45.1464|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 13:56:46.7586|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 13:56:46.8967|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 13:56:48.0110|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 13:56:52.6826|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 13:56:52.7147|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2021-01-10 13:57:02.7357|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 13:57:02.7662|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-01-10 14:09:07.3578|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 14:09:07.5519|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 14:28:30.7633|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 14:28:32.2195|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 14:28:32.3274|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 14:28:33.0270|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 14:28:39.0637|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 14:28:39.1119|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-01-10 14:39:27.9246|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 14:39:28.8684|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 14:39:28.9430|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 14:39:29.4349|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 14:39:34.1321|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 14:39:34.2636|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-01-10 14:51:29.0334|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 14:51:29.5601|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 14:51:29.6559|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 14:51:30.5325|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 14:51:36.7145|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 14:51:36.8444|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-01-10 16:05:33.1881|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 16:05:35.4438|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 16:05:35.6460|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 16:05:36.5540|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 16:06:13.0713|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 16:06:14.0326|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 16:06:14.1005|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 16:06:14.6974|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 16:06:16.0157|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 16:06:16.0757|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2021-01-10 16:06:31.5647|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 16:06:31.5892|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2021-01-10 16:06:31.9056|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'WedigitCRMDB' on server '(localdb)\MSSQLLocalDB'.
+2021-01-10 16:06:31.9089|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'WedigitCRMDB' on server '(localdb)\MSSQLLocalDB'.
+2021-01-10 16:06:31.9089|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'WedigitCRMDB' on server '(localdb)\MSSQLLocalDB'.
+2021-01-10 16:06:31.9089|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'WedigitCRMDB' on server '(localdb)\MSSQLLocalDB'.
+2021-01-10 16:06:32.2396|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+ ---> System.ComponentModel.Win32Exception (0x89C5010A): Unknown error (0x89c5010a)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1983577846,State:0,Class:20
+2021-01-10 16:06:32.2961|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+ ---> System.ComponentModel.Win32Exception (0x89C5010A): Unknown error (0x89c5010a)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1983577846,State:0,Class:20
+2021-01-10 16:06:32.3088|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+ ---> System.ComponentModel.Win32Exception (0x89C5010A): Unknown error (0x89c5010a)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1983577846,State:0,Class:20
+2021-01-10 16:06:32.0178|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'WedigitCRMDB' on server '(localdb)\MSSQLLocalDB'.
+2021-01-10 16:06:32.4015|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+ ---> System.ComponentModel.Win32Exception (0x89C5010A): Unknown error (0x89c5010a)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1983577846,State:0,Class:20
+2021-01-10 16:06:32.8869|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+2021-01-10 16:06:33.0318|ERROR|WedigITCRM.Maintenance.SetSuperAdministrator|One or more errors occurred. (A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+))
+2021-01-10 16:06:32.9303|ERROR|WedigITCRM.Maintenance.SendActivitiesNotificationsservice|A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+2021-01-10 16:06:33.0481|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)nyxium stack trace:    at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 70
+2021-01-10 16:06:32.9598|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+ ---> System.ComponentModel.Win32Exception (0x89C5010A): Unknown error (0x89c5010a)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1983577846,State:0,Class:20
+2021-01-10 16:06:33.4588|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-01-10 16:06:33.7844|ERROR|WedigITCRM.Startup|{"UserId":null,"UserName":null,"CompanyId":null,"CompanyName":null,"Type":null,"Title":"Unexpected Error","Status":500,"Detail":"A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.\r\n)\r\n                                         \r\n\r\n                                            at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)\r\n   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)\r\n   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)\r\n   at Microsoft.AspNetCore.Identity.SignInManager`1.PasswordSignInAsync(String userName, String password, Boolean isPersistent, Boolean lockoutOnFailure)\r\n   at WedigITCRM.Controllers.AccountController.Login(LoginViewModel model) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\AccountController.cs:line 141\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"47fabf8f-63f2-4a1f-898e-fcb539dff19f","Extensions":{}}
+2021-01-10 16:07:36.3962|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 16:07:37.4801|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 16:07:37.5585|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 16:07:38.5399|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 16:07:39.4888|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 16:07:39.5213|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2021-01-10 16:07:55.6168|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'WedigitCRMDB' on server '(localdb)\MSSQLLocalDB'.
+2021-01-10 16:07:55.6327|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'WedigitCRMDB' on server '(localdb)\MSSQLLocalDB'.
+2021-01-10 16:07:55.6327|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'WedigitCRMDB' on server '(localdb)\MSSQLLocalDB'.
+2021-01-10 16:07:55.6445|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'WedigitCRMDB' on server '(localdb)\MSSQLLocalDB'.
+2021-01-10 16:07:55.6445|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'WedigitCRMDB' on server '(localdb)\MSSQLLocalDB'.
+2021-01-10 16:07:55.7691|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+ ---> System.ComponentModel.Win32Exception (0x89C5010A): Unknown error (0x89c5010a)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1983577846,State:0,Class:20
+2021-01-10 16:07:55.7691|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+ ---> System.ComponentModel.Win32Exception (0x89C5010A): Unknown error (0x89c5010a)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1983577846,State:0,Class:20
+2021-01-10 16:07:55.7691|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+ ---> System.ComponentModel.Win32Exception (0x89C5010A): Unknown error (0x89c5010a)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1983577846,State:0,Class:20
+2021-01-10 16:07:55.9250|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+ ---> System.ComponentModel.Win32Exception (0x89C5010A): Unknown error (0x89c5010a)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1983577846,State:0,Class:20
+2021-01-10 16:07:55.9481|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+ ---> System.ComponentModel.Win32Exception (0x89C5010A): Unknown error (0x89c5010a)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1983577846,State:0,Class:20
+2021-01-10 16:07:56.1986|ERROR|WedigITCRM.Maintenance.SynchronizeDineroStockItems|A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+2021-01-10 16:07:56.1986|ERROR|WedigITCRM.Maintenance.SendActivitiesNotificationsservice|A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+2021-01-10 16:07:56.3773|ERROR|WedigITCRM.Maintenance.SetSuperAdministrator|One or more errors occurred. (A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+))
+2021-01-10 16:07:56.3773|ERROR|WedigITCRM.Maintenance.SynchronizeDineroContactsService|A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)nyxium stack trace:    at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at WedigITCRM.Maintenance.SynchronizeDineroContactsService.SynchronizeDineroContacts(Object state) in C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Maintenance\SynchronizeDineroService.cs:line 70
+2021-01-10 16:07:56.4391|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-01-10 16:07:56.6666|ERROR|WedigITCRM.Startup|{"UserId":null,"UserName":null,"CompanyId":null,"CompanyName":null,"Type":null,"Title":"Unexpected Error","Status":500,"Detail":"A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.\r\n)\r\n                                         \r\n\r\n                                            at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)\r\n   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)\r\n   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)\r\n   at Microsoft.AspNetCore.Identity.SignInManager`1.PasswordSignInAsync(String userName, String password, Boolean isPersistent, Boolean lockoutOnFailure)\r\n   at WedigITCRM.Controllers.AccountController.Login(LoginViewModel model) in C:\\Users\\John\\source\\repos\\WedigITCRM\\WedigITCRM\\Controllers\\AccountController.cs:line 141\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)\r\n   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)\r\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\r\n   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)","Instance":"764bfe72-393e-4aeb-8fbe-4e8adbbf64d9","Extensions":{}}
+2021-01-10 16:08:53.6907|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'WedigitCRMDB' on server '(localdb)\MSSQLLocalDB'.
+2021-01-10 16:08:53.7630|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+System.InvalidOperationException: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2021-01-10 16:08:54.2680|ERROR|WedigITCRM.Maintenance.SetSuperAdministrator|One or more errors occurred. (Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.)
+2021-01-10 16:08:56.7161|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'WedigitCRMDB' on server '(localdb)\MSSQLLocalDB'.
+2021-01-10 16:08:56.7707|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'WedigITCRM.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+ ---> System.ComponentModel.Win32Exception (0x89C5010A): Unknown error (0x89c5010a)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1983577846,State:0,Class:20
+2021-01-10 16:08:56.8578|ERROR|WedigITCRM.Maintenance.SendActivitiesNotificationsservice|A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. Error occurred during LocalDB instance startup: SQL Server process failed to start.
+)
+2021-01-10 16:10:45.4114|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 16:10:46.1010|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 16:10:46.1988|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 16:10:46.7620|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 16:10:49.1840|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 16:10:49.6990|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to frontpage controller index action
+2021-01-10 16:11:00.5790|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 16:11:00.6001|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-01-10 16:19:18.7343|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 16:19:19.6350|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 16:19:19.7629|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 16:19:20.3831|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 16:19:26.7270|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 16:19:26.7955|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-01-10 16:28:01.4368|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-01-10 16:28:02.3257|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-01-10 16:28:02.4030|ERROR|WedigITCRM.Startup|start of Configure method
+2021-01-10 16:28:02.9098|ERROR|WedigITCRM.Startup|end of Configure method
+2021-01-10 16:28:06.9890|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-01-10 16:28:07.1128|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action

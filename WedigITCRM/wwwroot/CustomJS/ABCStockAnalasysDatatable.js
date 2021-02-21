@@ -65,10 +65,10 @@
                 { "data": "costPrice" },
                 { "data": "accumulatedQuantity" },
                 { "data": "accumulatedTurnOver" },
+                { "data": "abcCategoryTurnOver" },
                 { "data": "stockItemTurnOverPercentage" },
                 { "data": "accumulatedPicks" },
-                { "data": "stockItemPicksPercentage" },
-                { "data": "abcCategoryTurnOver" },
+                { "data": "stockItemPicksPercentage" },                
                 { "data": "abcCategoryPicks" }
             ],
 

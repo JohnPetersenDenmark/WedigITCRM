@@ -70,8 +70,8 @@ namespace WedigITCRM.Controllers
                     Decimal priceExclVAT = priceInclVAT * 8;
                     priceExclVAT = priceExclVAT / 10;
 
-                    string priceFormatted = priceExclVAT.ToString();
-                    priceFormatted = priceFormatted.Insert(priceFormatted.Length - 2, ",");
+                    string priceFormatted = priceExclVAT.ToString("F");
+                  
                     NyxiumSubscriptionViewModel.price = "DKK " + priceFormatted;
 
                     NyxiumSubscriptionViewModel.Description = subscriptionPlan.Description;

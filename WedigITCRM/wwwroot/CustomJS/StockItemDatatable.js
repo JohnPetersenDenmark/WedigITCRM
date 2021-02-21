@@ -183,7 +183,7 @@ function initializeStockItemEditor() {
                     name: "vendorName"
                 },
                 {
-                    label: "Leverandørkode",
+                    label: "Lev. id",
                     name: "vendorId",
                     type: "readonly"
                 },
@@ -192,7 +192,7 @@ function initializeStockItemEditor() {
                     name: "vendorItemNumber"
                 },
                 {
-                    label: "Lev. vare",
+                    label: "Orig. lev. varetekst",
                     name: "vendorItemName"
                 },
                 {
