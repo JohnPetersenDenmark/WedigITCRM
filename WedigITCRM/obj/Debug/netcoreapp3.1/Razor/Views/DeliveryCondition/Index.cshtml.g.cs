@@ -81,8 +81,15 @@ using X.PagedList;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 11 "C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Http.Features;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"59f3fee8f6aeed234d554e8cc19c9800adce6e14", @"/Views/DeliveryCondition/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"51ba4ac1ae00931e0b6fa2532d3d0a4cf8ec236d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f6b80e724c29f72810587c7b541f3a5390c0bd17", @"/Views/_ViewImports.cshtml")]
     public class Views_DeliveryCondition_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<WedigITCRM.EntitityModels.DeliveryCondition>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-yahoo btn-sm"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -158,7 +165,7 @@ using X.PagedList;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                        </div>\r\n                        <div class=\"col-4\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59f3fee8f6aeed234d554e8cc19c9800adce6e148136", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59f3fee8f6aeed234d554e8cc19c9800adce6e148335", async() => {
                 WriteLiteral("Rediger");
             }
             );
@@ -192,7 +199,7 @@ using X.PagedList;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59f3fee8f6aeed234d554e8cc19c9800adce6e1410782", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59f3fee8f6aeed234d554e8cc19c9800adce6e1410981", async() => {
                 WriteLiteral("Slet");
             }
             );
@@ -252,7 +259,7 @@ using X.PagedList;
 #line hidden
 #nullable disable
             WriteLiteral("            <br /><br />\r\n            <div class=\"row\">\r\n                <div class=\"col-12\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59f3fee8f6aeed234d554e8cc19c9800adce6e1414469", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59f3fee8f6aeed234d554e8cc19c9800adce6e1414668", async() => {
                 WriteLiteral("Opret");
             }
             );

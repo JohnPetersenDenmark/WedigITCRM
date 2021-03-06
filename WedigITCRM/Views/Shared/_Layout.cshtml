@@ -5,6 +5,8 @@
 
 @inject IRelateCompanyAccountWithUserRepository sQLRelateCompanyAccountWithUserRepository;
 @inject ICompanyAccountRepository SQLCompanyAccountRepository;
+
+
 @using System.Linq;
 
 
@@ -147,6 +149,10 @@
     bool IsSupporter = false;
     bool IsImpersonating = false;
     CompanyAccount companyAccount = null;
+
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var showBanner = !consentFeature?.CanTrack ?? false;
+
 }
 @if (signInManager.IsSignedIn(User))
 {
@@ -343,7 +349,7 @@
 
                     }
                 </ul>
-            </div>            
+            </div>
         </div>
     </nav>
 
@@ -439,7 +445,20 @@
             <form id="FormLogout" method="post" asp-action="Logout" asp-controller="account">
             </form>
         </header>
-        @RenderBody()
+
+        @if (showBanner)
+        {
+            <div class="container">
+                <partial name="_CookieConsentPartial" />
+               
+            </div>           
+        }
+        else
+        {
+            @RenderBody()
+        }
+
+
 
 
         <footer class="main-footer">
@@ -466,9 +485,10 @@
     </script>
 
 
-    @if (IsSectionDefined("Scripts"))
+
+    if (IsSectionDefined("Scripts"))
     {
-        @RenderSection("Scripts", required: true)
+    @RenderSection("Scripts", required: true)
     }
 
 
