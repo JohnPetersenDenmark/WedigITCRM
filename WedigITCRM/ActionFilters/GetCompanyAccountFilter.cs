@@ -16,6 +16,7 @@ namespace WedigITCRM.ActionFilters
         {
             var svc = context.HttpContext.RequestServices;
 
+
             SignInManager<IdentityUser> signInManager = (SignInManager<IdentityUser>)svc.GetService(typeof(SignInManager<IdentityUser>));
             UserManager<IdentityUser> userManager = (UserManager<IdentityUser>)svc.GetService(typeof(UserManager<IdentityUser>));
             ICompanyAccountRepository companyAccountRepository = (ICompanyAccountRepository)svc.GetService(typeof(ICompanyAccountRepository));

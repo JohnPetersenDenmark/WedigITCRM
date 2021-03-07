@@ -1,12 +1,10 @@
 ﻿
-
 @inject SignInManager<IdentityUser> signInManager;
 @inject UserManager<IdentityUser> userManager;
 
 @inject IRelateCompanyAccountWithUserRepository sQLRelateCompanyAccountWithUserRepository;
 @inject ICompanyAccountRepository SQLCompanyAccountRepository;
-
-
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @using System.Linq;
 
 
@@ -40,7 +38,6 @@
         <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 
 
-
         <!-- Datatables JavaScript files-->
         <script src="~/CustomJS/moment.js"></script>
         <script src="~/CustomJS/locales-all.js"></script>
@@ -72,7 +69,7 @@
         <script src="~/CustomJS/ABCStockAnalasysDatatable.js"></script>
         <script src="~/CustomJS/NoteDatatable.js"></script>
 
-        <script src="~/CustomJS/ContactDatatable.js"></script>
+        <script src="~/CustomJS/DummyDatatable.js"></script>
 
 
     </environment>
@@ -98,7 +95,6 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 
-        <script src="~/lib/js/front.js"></script>
 
         <!-- Datatables JavaScript files-->
         <script src="~/CustomJS/moment.js"></script>
@@ -131,9 +127,7 @@
         <script src="~/CustomJS/ABCStockAnalasysDatatable.js"></script>
         <script src="~/CustomJS/NoteDatatable.js"></script>
 
-
-        <script src="~/CustomJS/ContactDatatable.js"></script>
-
+        <script src="~/CustomJS/DummyDatatable.js"></script>
 
 
     </environment>
@@ -146,13 +140,14 @@
     bool IsUserSignedIn = false;
     bool IsCustomerAdmin = false;
     bool IsWedigitSystemAdministrator = false;
-    bool IsSupporter = false;
-    bool IsImpersonating = false;
     CompanyAccount companyAccount = null;
 
-    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
-    var showBanner = !consentFeature?.CanTrack ?? false;
+    foreach (var cookie in HttpContextAccessor.HttpContext.Request.Cookies.Keys)
+    {
+        string cookieName = cookie;
+        string cookieValue = HttpContextAccessor.HttpContext.Request.Cookies[cookieName];
 
+    }
 }
 @if (signInManager.IsSignedIn(User))
 {
@@ -168,15 +163,6 @@
         IsWedigitSystemAdministrator = true;
     }
 
-    @if (User.IsInRole("Support"))
-    {
-        IsSupporter = true;
-    }
-
-    if (User.HasClaim("IsImpersonating", "true"))
-    {
-        IsImpersonating = true;
-    }
 
     var userId = userManager.GetUserId(User);
     var relationuserCompanyAccount = sQLRelateCompanyAccountWithUserRepository.GetAllRelateCompanyAccountWithUser().Where(u => u.user.Equals(userId)).ToList();
@@ -212,18 +198,9 @@
 
             <div class="main-menu">
                 <h5 class="sidenav-heading"></h5>
-                <ul class="side-menu list-unstyled">
-                    @if (IsUserSignedIn && companyAccount.SubscriptionCRM)
-                    {
-
-                        <li>
-                            <a href="#contactDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/kontaktpersoner-icon.png" class="imgicon" /> Kontakter </a>
-                            <ul id="contactDropdown" class="collapse list-unstyled ">
-                                <li><a asp-controller="contact" asp-action="AllContacts"><img src="~/Images/virksomheder-icon.png" class="imgicon" /> Kontaktliste</a></li>
-                            </ul>
-                        </li>
-
-
+                @if (IsUserSignedIn && companyAccount.SubscriptionCRM)
+                {
+                    <ul id="side-main-menu" class="side-menu list-unstyled">
                         <li>
                             <a href="#customerDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/kontaktpersoner-icon.png" class="imgicon" /> Kunder </a>
                             <ul id="customerDropdown" class="collapse list-unstyled ">
@@ -232,6 +209,8 @@
                             </ul>
                         </li>
 
+                    </ul>
+                    <ul id="side-main-menu" class="side-menu list-unstyled">
                         <li>
                             <a href="#contactPersonDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/kontaktpersoner-icon.png" class="imgicon" /> Kontaktpersoner </a>
                             <ul id="contactPersonDropdown" class="collapse list-unstyled ">
@@ -239,7 +218,8 @@
                                 <li><a asp-controller="customer" asp-action="AllCompaniesWithContactPersons">Efter firma</a></li>
                             </ul>
                         </li>
-
+                    </ul>
+                    <ul id="side-main-menu" class="side-menu list-unstyled">
                         <li>
                             <a href="#activityDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/aktiviteter-icon.png" class="imgicon" /> Aktiviteter </a>
                             <ul id="activityDropdown" class="collapse list-unstyled ">
@@ -248,27 +228,27 @@
                                 <li><a asp-controller="customer" asp-action="ActivitiesOnCompany">Efter virksomhed</a></li>
                             </ul>
                         </li>
+                    </ul>
+                }
 
-                    }
-
-                    @if (IsUserSignedIn)
-                    {
-
+                @if (IsUserSignedIn)
+                {
+                    <ul id="side-main-menu" class="side-menu list-unstyled">
                         <li><a asp-controller="note" asp-action="ShowAllNotes"><img src="~/Images/leverandoerer-icon.png" class="imgicon" /> Notater</a></li>
+                    </ul>
+                }
 
-                    }
 
-
-                    @if (IsUserSignedIn && companyAccount.SubscriptionVendor)
-                    {
-
+                @if (IsUserSignedIn && companyAccount.SubscriptionVendor)
+                {
+                    <ul id="side-main-menu" class="side-menu list-unstyled">
                         <li><a asp-controller="vendor" asp-action="AllVendors"><img src="~/Images/leverandoerer-icon.png" class="imgicon" /> Leverandører</a></li>
+                    </ul>
+                }
+                @if (IsUserSignedIn && companyAccount.SubscriptionInventory)
+                {
 
-                    }
-                    @if (IsUserSignedIn && companyAccount.SubscriptionInventory)
-                    {
-
-
+                    <ul id="side-main-menu" class="side-menu list-unstyled">
                         <li>
                             <a href="#stockitemDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/varer-icon.png" class="imgicon" /> Varer</a>
                             <ul id="stockitemDropdown" class="collapse list-unstyled ">
@@ -277,42 +257,28 @@
                                 <li><a asp-controller="stockitem" asp-action="ABCAnalasys">ABC-analyse</a></li>
                             </ul>
                         </li>
+                    </ul>
+                }
 
-                    }
+                @if (IsUserSignedIn && companyAccount.SalesStatistic)
+                {
 
-                    @if (IsUserSignedIn && companyAccount.SubscriptionProcurement)
-                    {
-
-
-                        <li>
-                            <a href="#procurementitemDropdown" aria-expanded="false" data-toggle="collapse"><img src="~/Images/varer-icon.png" class="imgicon" /> Indkøb</a>
-                            <ul id="procurementitemDropdown" class="collapse list-unstyled ">
-                                <li><a asp-controller="PurchaseOrder" asp-action="indexbudget">Budgetter</a></li>
-                                <li><a asp-controller="PurchaseOrder" asp-action="index">Ordrer</a></li>
-                            </ul>
-                        </li>
-
-                    }
-
-                    @if (IsUserSignedIn && companyAccount.SalesStatistic)
-                    {
-
-
+                    <ul id="side-main-menu" class="side-menu list-unstyled">
                         <li>
                             <a href="#StatisticsTurnOver" aria-expanded="false" data-toggle="collapse"><img src="~/Images/statistik-icon.png" class="imgicon" /> Statistik</a>
                             <ul id="StatisticsTurnOver" class="collapse list-unstyled ">
                                 <li><a asp-controller="sales" asp-action="StatisticsTurnOver">Omsætning</a></li>
                             </ul>
                         </li>
+                    </ul>
+                }
 
-                    }
+                @if (IsUserSignedIn && companyAccount.Booking)
+                {
 
-                    @if (IsUserSignedIn && companyAccount.Booking)
-                    {
-
-
-                        <li class="dropdown">
-                            <a href="#resourcetypes" aria-expanded="false" data-toggle="collapse" class="dropdown-toggle"><img src="~/Images/booking-icon.png" class="imgicon" /> Booking</a>
+                    <ul id="side-main-menu" class="side-menu list-unstyled">
+                        <li>
+                            <a href="#resourcetypes" aria-expanded="false" data-toggle="collapse"><img src="~/Images/booking-icon.png" class="imgicon" /> Booking</a>
                             <ul id="resourcetypes" class="collapse list-unstyled ">
                                 <li><a asp-controller="booking" asp-action="ShowBookingSetup">Åbningstider</a></li>
                                 <li><a asp-controller="booking" asp-action="ShowBookingServices">Ydelser</a></li>
@@ -322,19 +288,19 @@
                                 <li><a asp-controller="booking" asp-action="index">Online tider</a></li>
                             </ul>
                         </li>
+                    </ul>
+                }
 
-                    }
-
-                    @if (IsUserSignedIn)
-                    {
-
+                @if (IsUserSignedIn)
+                {
+                    <ul id="side-main-menu" class="side-menu list-unstyled">
                         <li><a asp-controller="support" asp-action="SendSupportTicket"><img src="~/Images/support-icon.png" class="imgicon" /> Support</a></li>
+                    </ul>
+                }
 
-                    }
-
-                    @if (IsUserSignedIn)
-                    {
-
+                @if (IsUserSignedIn)
+                {
+                    <ul id="side-main-menu" class="side-menu list-unstyled">
                         <li>
                             <a href="#help" aria-expanded="false" data-toggle="collapse"><img src="~/Images/booking-icon.png" class="imgicon" /> Hjælp</a>
                             <ul id="help" class="collapse list-unstyled ">
@@ -346,9 +312,9 @@
                                 <a href="/FrontPage/GetPDF?fileName=IntegrationDinero.pdf" target="_blank">Integration med Dinero</a>
                             </ul>
                         </li>
+                    </ul>
+                }
 
-                    }
-                </ul>
             </div>
         </div>
     </nav>
@@ -383,10 +349,6 @@
                                             <li>
                                                 <a asp-controller="Admin" asp-action="ShowRoles" rel="nofollow" class="dropdown-item"><span>Vis roller</span></a>
                                             </li>
-
-                                            <li>
-                                                <a asp-controller="Account" asp-action="RegisterCustomerUser" rel="nofollow" class="dropdown-item"><span>Opret kundelogin</span></a>
-                                            </li>
                                         }
                                     </ul>
                                 </li>
@@ -397,19 +359,6 @@
                                         {
                                             <li>
                                                 <a asp-controller="Account" asp-action="CompanyAccountSettings" rel="nofollow" class="dropdown-item"><span>Konfiguration</span></a>
-                                            </li>
-                                        }
-                                        @if ((IsSupporter || IsWedigitSystemAdministrator) && (!IsImpersonating))
-                                        {
-                                            <li>
-                                                <a asp-controller="Impersonation" asp-action="SelectUserToImpersonate" rel="nofollow" class="dropdown-item"><span>Overtag bruger</span></a>
-                                            </li>
-
-                                        }
-                                        @if (IsImpersonating)
-                                        {
-                                            <li>
-                                                <a asp-controller="Impersonation" asp-action="StopImpersonation" rel="nofollow" class="dropdown-item"><span>Stop overtagelse af bruger</span></a>
                                             </li>
                                         }
                                     </ul>
@@ -445,20 +394,7 @@
             <form id="FormLogout" method="post" asp-action="Logout" asp-controller="account">
             </form>
         </header>
-
-        @if (showBanner)
-        {
-            <div class="container">
-                <partial name="_CookieConsentPartial" />
-               
-            </div>           
-        }
-        else
-        {
-            @RenderBody()
-        }
-
-
+        @RenderBody()
 
 
         <footer class="main-footer">
@@ -485,10 +421,9 @@
     </script>
 
 
-
-    if (IsSectionDefined("Scripts"))
+    @if (IsSectionDefined("Scripts"))
     {
-    @RenderSection("Scripts", required: true)
+        @RenderSection("Scripts", required: true)
     }
 
 

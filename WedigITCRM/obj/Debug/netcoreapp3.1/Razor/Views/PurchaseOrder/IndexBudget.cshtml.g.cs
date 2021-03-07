@@ -81,15 +81,8 @@ using X.PagedList;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 11 "C:\Users\John\source\repos\WedigITCRM\WedigITCRM\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Http.Features;
-
-#line default
-#line hidden
-#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"618ce4daeaecb6f4bdfb8f518eeee71ed15945aa", @"/Views/PurchaseOrder/IndexBudget.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f6b80e724c29f72810587c7b541f3a5390c0bd17", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"51ba4ac1ae00931e0b6fa2532d3d0a4cf8ec236d", @"/Views/_ViewImports.cshtml")]
     public class Views_PurchaseOrder_IndexBudget : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IPagedList<PurchaseBudgetViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "PurchaseOrder", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -133,7 +126,7 @@ using Microsoft.AspNetCore.Http.Features;
             <div class=""row"">                
                 <div class=""col-2"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "618ce4daeaecb6f4bdfb8f518eeee71ed15945aa7064", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "618ce4daeaecb6f4bdfb8f518eeee71ed15945aa6865", async() => {
                 WriteLiteral("Nyt budget");
             }
             );
@@ -223,7 +216,7 @@ WriteAttributeValue("", 1234, purchaseBudget.Id, 1234, 18, false);
 #line hidden
 #nullable disable
             WriteLiteral("</div>\r\n                            <div class=\"col-2\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "618ce4daeaecb6f4bdfb8f518eeee71ed15945aa11588", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "618ce4daeaecb6f4bdfb8f518eeee71ed15945aa11389", async() => {
                 WriteLiteral("<i style=\"color : #17a2b8;\" class=\"fa fa-pencil-square-o fa-2x fa-fw\"></i>");
             }
             );
@@ -256,7 +249,7 @@ WriteAttributeValue("", 1234, purchaseBudget.Id, 1234, 18, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "618ce4daeaecb6f4bdfb8f518eeee71ed15945aa14197", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "618ce4daeaecb6f4bdfb8f518eeee71ed15945aa13998", async() => {
                 WriteLiteral("<i style=\"color : #17a2b8;\" class=\"fa fa-times fa-2x fa-fw\"></i>");
             }
             );
