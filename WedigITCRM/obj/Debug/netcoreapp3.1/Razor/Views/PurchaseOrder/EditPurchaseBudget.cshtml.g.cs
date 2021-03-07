@@ -82,7 +82,7 @@ using X.PagedList;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"38663c99b427a3e45e0df71abb9f5d9da494f323", @"/Views/PurchaseOrder/EditPurchaseBudget.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"51ba4ac1ae00931e0b6fa2532d3d0a4cf8ec236d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3fc04a0290131b0b832d4c5c3a26c71284940263", @"/Views/_ViewImports.cshtml")]
     public class Views_PurchaseOrder_EditPurchaseBudget : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PurchaseBudgetEditViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("id", new global::Microsoft.AspNetCore.Html.HtmlString("PurchaseBudgetId"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

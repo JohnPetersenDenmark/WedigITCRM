@@ -1,0 +1,112 @@
+﻿
+
+<div class="row">
+    <div class="col-12">
+        nyxium anvender cookies.
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-3">
+        vælg nødvendige
+    </div>
+    <div class="col-6">
+        <label class="switch">
+            <input id="necessary" disabled checked class="slider" type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        Vælg statistik
+    </div>
+    <div class="col-6">
+        <label class="switch">
+            <input id="statistic" type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        Vælg marketing
+    </div>
+    <div class="col-6">
+        <label class="switch">
+            <input id="marketing" type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <button id="consent" type="button" class="btn btn-primary" style="width:auto">
+            Ok
+        </button>
+    </div>
+    <div class="col-3">
+        <button id="noconsent" type="button" class="btn btn-primary" style="width:auto">
+            Nej tak
+        </button>
+    </div>
+</div>
+
+
+
+    <script>
+        $(document).ready(function () {
+
+           
+
+          
+            $('#consent').bind('click', function () {
+
+                var cookieText = {
+                    marketing: "NotAccepted",
+                    statistic: "NotAccepted"
+                };
+
+                var x = document.cookie;
+
+                if ($('#statistic').is(":checked")) {
+                    cookieText.statistic = "Accepted"
+                }
+
+
+                if ($('#marketing').is(":checked")) {
+                    cookieText.marketing = "Acceptet";
+                }
+
+                var nyxiumConsentCookie = getCookie("nyxium_consent");
+                if (nyxiumConsentCookie == "") {
+                  //  document.cookie = "nyxium_consent" + "=" + "statistic:" + cookieText.statistic + " " + "marketing:" + cookieText.marketing + ";" + "path=/" ;
+                    document.cookie = "nyxium_consent" + "=" + "statistic:" + cookieText.statistic + "marketing:" + cookieText.marketing + ";" + "path=/";
+                }
+            });
+
+
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+        });
+
+
+    </script>

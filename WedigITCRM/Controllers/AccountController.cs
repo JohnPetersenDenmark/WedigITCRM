@@ -73,8 +73,10 @@ namespace WedigITCRM.Controllers
 
             miscUtility = new MiscUtility();
 
+           
         }
 
+       
 
         [HttpGet]
         public IActionResult Register()

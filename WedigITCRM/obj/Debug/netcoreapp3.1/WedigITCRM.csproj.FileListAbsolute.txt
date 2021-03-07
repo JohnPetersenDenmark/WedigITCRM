@@ -543,3 +543,8 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\runtime
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.Views.pdb
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.csproj.CopyComplete
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\WedigITCRM.genruntimeconfig.cache
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CookieConsent.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\FrontPage\prices-Backup1.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\netcoreapp3.1\bundleconfig.json
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutAnonymousMenu.cshtml.g.cs

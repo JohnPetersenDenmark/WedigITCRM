@@ -928,10 +928,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Data\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Models\" />
     <Folder Include="wwwroot\CustomerAttachments\NewFolder1\" />
     <Folder Include="wwwroot\CustomerAttachments\NewFolder\NewFolder\" />
     <Folder Include="wwwroot\CustomJS\FullCalendar\" />
+    <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\Images\Icons-filtypes\" />
     <Folder Include="wwwroot\lib\docs\images\upload\" />
     <Folder Include="wwwroot\lib\vendor\font-awesome\less\" />

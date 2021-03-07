@@ -1,76 +1,9 @@
 ﻿@{
-    Layout = null;
+    Layout = "_LayoutAnonymousMenu";
 }
 
 
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Support - Få hjælp til vores applikation</title>
-    <meta name="Description" content="Har du behov for hjælp? Læs vores support, og få svar på de mest populære spørgsmål">
-    <script src="https://kit.fontawesome.com/e061cad298.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="/frontpage/styles/scss/styles.css">
-    <link rel="shortcut icon" type="image/png" href="/frontpage/img/favicon.png" />
-    <style>
-        .top {
-            background-image: url(/frontpage/img/svgs/covers/support-cover.svg);
-            background-size: cover;
-            background-position: bottom;
-        }
-    </style>
-
-    <!-- Facebook Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '349668506333283');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1"
-             src="https://www.facebook.com/tr?id=349668506333283&ev=PageView
-&noscript=1" />
-    </noscript>
-    <!-- End Facebook Pixel Code -->
-
-
-</head>
-
-<header>
-    <div class="header-wrapper">
-        <div class="logo"><a href="/"><img src="/frontpage/img/nyxium-logo.png"></a></div>
-        <div class="burger">
-            <span class="bars"></span>
-        </div>
-        <nav class="nav">
-            <a href="/frontpage/prices">Priser</a>
-            <div class="submenu">
-                <p class="dropdowntrigger">Integrationer <i class="fas fa-chevron-down"></i></p>
-                <div class="submenubullets">
-                    <a href="/frontpage/integrationdinero">Dinero</a>
-                </div>
-            </div>
-            <a href="/frontpage/About">Om</a>
-            <a href="/frontpage/support">Support</a>
-            <a href="/Account/login">Login</a>
-            <a href="/Account/registerCompanyAccount" class="btn">Opret konto</a>
-        </nav>
-    </div>
-</header>
-
-<body>
     <div class="top top600">
         <section class="cover_content cover_content-nogrid">
             <h1>Support</h1>
@@ -138,36 +71,3 @@
         </section>
     </div>
 
-
-
-    <script src="~/frontpage/js/front.js"></script>
-
-    <footer>
-        <div class="columns">
-
-
-            <div class="column">
-
-                <a href="#">
-                    nyxium er ejet og drevet af:<br />
-                    wedigIT ApS<br />
-                    Axeltorv 5 3 2<br />
-                    4700 Næstved<br />
-                    CVR: 40777326<br />
-                    info@nyxium.dk<br />
-                </a>
-
-            </div>
-
-            <div class="column">
-                <a href="https://www.facebook.com/Nyxium-108125987512393">FB</a>
-                <a href="#">LN</a>
-                <a href="#">IG</a>
-            </div>
-
-        </div>
-    </footer>
-
-
-</body>
-</html>
