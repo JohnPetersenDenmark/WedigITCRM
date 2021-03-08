@@ -697,7 +697,10 @@ header .btn:hover::after {
     text-align: center;
   }
   .twoGrid .grid-2 {
-        grid-template-areas: 'img1' 'text1' 'img2' 'text2';
+        grid-template-areas: 'img1'
+ 'text1'
+ 'img2'
+ 'text2';
   }
   .twoGrid .grid-2 .text1 {
     -ms-grid-row: 2;

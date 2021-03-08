@@ -1,112 +1,131 @@
 ﻿
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
 
-<div class="row">
-    <div class="col-12">
-        nyxium anvender cookies.
+
+@{
+
+    bool HasUserConsented = false;
+
+    foreach (var cookie in HttpContextAccessor.HttpContext.Request.Cookies.Keys)
+    {
+        string cookieName = cookie;
+        if (cookieName.Equals("nyxium_consent"))
+        {
+            HasUserConsented = true;
+        }
+        string cookieValue = HttpContextAccessor.HttpContext.Request.Cookies[cookieName];
+
+    }
+}
+
+
+
+@if (!HasUserConsented)
+{
+
+    <div class="row">
+        <div class="col-12 consent-col">
+            nyxium anvender cookies.
+        </div>
     </div>
-</div>
 
+    <br />
+    <br />
+    <br />
+    <br />
 
-
-<div class="row">
-    <div class="col-3">
-        vælg nødvendige
+    <div class="row">
+        <div class="col-3 consent-col">
+            vælg nødvendige
+        </div>
+        <div class="col-6 consent-col">
+            <label class="switch">
+                <input id="necessary" disabled checked class="slider" type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
     </div>
-    <div class="col-6">
-        <label class="switch">
-            <input id="necessary" disabled checked class="slider" type="checkbox">
-            <span class="slider"></span>
-        </label>
+    <div class="row">
+        <div class="col-3 consent-col">
+            Vælg statistik
+        </div>
+        <div class="col-6 consent-col">
+            <label class="switch">
+                <input id="statistic" type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-3">
-        Vælg statistik
+    <div class="row">
+        <div class="col-3 consent-col">
+            Vælg marketing
+        </div>
+        <div class="col-6 consent-col">
+            <label class="switch">
+                <input id="marketing" type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
     </div>
-    <div class="col-6">
-        <label class="switch">
-            <input id="statistic" type="checkbox">
-            <span class="slider"></span>
-        </label>
+
+    <br />
+    <br />
+
+    <div class="row">
+        <div class="col-3 consent-col">
+            <button id="consent" type="button" class="btn btn-primary" style="width:auto; height : 40px ; font-size:20px">
+                Ok
+            </button>
+        </div>
+        <div class="col-3 consent-col">
+            <button id="noconsent" type="button" class="btn btn-primary" style="width:auto; height : 40px ; font-size:20px">
+                Nej tak
+            </button>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-3">
-        Vælg marketing
-    </div>
-    <div class="col-6">
-        <label class="switch">
-            <input id="marketing" type="checkbox">
-            <span class="slider"></span>
-        </label>
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-3">
-        <button id="consent" type="button" class="btn btn-primary" style="width:auto">
-            Ok
-        </button>
-    </div>
-    <div class="col-3">
-        <button id="noconsent" type="button" class="btn btn-primary" style="width:auto">
-            Nej tak
-        </button>
-    </div>
-</div>
+}
+
+
+<script>
+    $(document).ready(function () {
 
 
 
-    <script>
-        $(document).ready(function () {
 
-           
+        $('#consent').bind('click', function () {
 
-          
-            $('#consent').bind('click', function () {
+            var cookieText = {
+                marketing: "NotAccepted",
+                statistic: "NotAccepted"
+            };
 
-                var cookieText = {
-                    marketing: "NotAccepted",
-                    statistic: "NotAccepted"
-                };
+            var x = document.cookie;
 
-                var x = document.cookie;
-
-                if ($('#statistic').is(":checked")) {
-                    cookieText.statistic = "Accepted"
-                }
-
-
-                if ($('#marketing').is(":checked")) {
-                    cookieText.marketing = "Acceptet";
-                }
-
-                var nyxiumConsentCookie = getCookie("nyxium_consent");
-                if (nyxiumConsentCookie == "") {
-                  //  document.cookie = "nyxium_consent" + "=" + "statistic:" + cookieText.statistic + " " + "marketing:" + cookieText.marketing + ";" + "path=/" ;
-                    document.cookie = "nyxium_consent" + "=" + "statistic:" + cookieText.statistic + "marketing:" + cookieText.marketing + ";" + "path=/";
-                }
-            });
-
-
-
-            function getCookie(cname) {
-                var name = cname + "=";
-                var decodedCookie = decodeURIComponent(document.cookie);
-                var ca = decodedCookie.split(';');
-                for (var i = 0; i < ca.length; i++) {
-                    var c = ca[i];
-                    while (c.charAt(0) == ' ') {
-                        c = c.substring(1);
-                    }
-                    if (c.indexOf(name) == 0) {
-                        return c.substring(name.length, c.length);
-                    }
-                }
-                return "";
+            if ($('#statistic').is(":checked")) {
+                cookieText.statistic = "Accepted"
             }
 
+
+            if ($('#marketing').is(":checked")) {
+                cookieText.marketing = "Acceptet";
+            }
+
+            var nyxiumConsentCookie = getCookie("nyxium_consent");
+            if (nyxiumConsentCookie == "") {             
+                cvalue = "statistic:" + cookieText.statistic + "marketing:" + cookieText.marketing;
+                exdays = 30;
+                setCookie("nyxium_consent" , cvalue, exdays)
+            }
+
+            window.location.href = window.location.href
         });
 
+        $('#noconsent').bind('click', function () {
+            deleteCookie("nyxium_consent");
+        });
 
-    </script>
+    });
+
+
+</script>

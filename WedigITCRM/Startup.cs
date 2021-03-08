@@ -113,7 +113,7 @@ namespace WedigITCRM
                 });
 
                 services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
-                services.AddMvc();
+               // services.AddMvc();
                 services.AddScoped<ICompanyRepository, SQLCompanyRepository>();
                 services.AddScoped<IContactRepository, SQLContactRepository>();
                 services.AddScoped<ICompanyAccountRepository, SQLCompanyAccountRepository>();
@@ -225,7 +225,7 @@ namespace WedigITCRM
                     // app.UseHsts(); dette skal prøves af.
                 }
 
-                // app.UseHttpsRedirection();    dette skal prøves af.
+               //  app.UseHttpsRedirection();   
 
                 app.UseStaticFiles();
 
@@ -233,6 +233,12 @@ namespace WedigITCRM
                 app.UseAuthentication();
 
                 app.UseMvcWithDefaultRoute();
+
+                //app.UseEndpoints(endpoints =>
+                //{
+                //    endpoints.MapControllerRoute("default", "{controller=FrontPage}/{action=Index}");
+                //});
+
                 _logger.LogError("end of Configure method");
             }
             catch (Exception e)

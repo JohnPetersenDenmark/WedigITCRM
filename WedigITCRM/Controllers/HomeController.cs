@@ -40,8 +40,9 @@ namespace WedigITCRM.Controllers
             if (!_signInManager.IsSignedIn(User))
             {
                 
-                _logger.LogError("index action in home controller redirecting to frontpage controller index action");
+               // _logger.LogError("index action in home controller redirecting to frontpage controller index action");
                 return RedirectToAction("index", "FrontPage");
+                //return Redirect("~/FrontPage/Index");
             }
 
            // throw new Exception("user logged in");

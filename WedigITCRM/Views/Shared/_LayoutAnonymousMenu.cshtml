@@ -1,9 +1,37 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
+
+@{
+
+    bool HasUserConsented = false;
+
+    bool NoMarketingCookies = false;
+
+    foreach (var cookieName in HttpContextAccessor.HttpContext.Request.Cookies.Keys)
+    {        
+        if (cookieName.Equals("nyxium_consent"))
+        {
+            string cookieValue = HttpContextAccessor.HttpContext.Request.Cookies[cookieName];
+
+            if (cookieValue.Contains("marketing:NotAccepted"))
+            {
+                NoMarketingCookies = true;
+            }
+
+            HasUserConsented = true;
+        }
+    }
+}
+
+<!DOCTYPE html>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>nyxium</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
 
     <link rel="shortcut icon" type="image/png" href="/frontpage/img/favicon.png" />
     <style>
@@ -15,65 +43,95 @@
     </style>
 
     <link rel="stylesheet" href="/frontpage/styles/scss/styles.css">
-    <script src="https://kit.fontawesome.com/e061cad298.js" crossorigin="anonymous"></script>
-    <script src="~/frontpage/js/front.js"></script>
-    <script src="~/CustomJS/FaceBook_pixel.js"></script>
+    <link rel="stylesheet" href="~/lib/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/e061cad298.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="~/frontpage/js/front.js"></script>
+    @if (!NoMarketingCookies)
+    {
+        <script src="~/CustomJS/FaceBook_pixel.js"></script>
+    }
+
+    <script src="~/CustomJS/cookie_handler.js"></script>
 </head>
+
+
+
 <body>
     <noscript>
         <img height="1" width="1"
              src="https://www.facebook.com/tr?id=349668506333283&ev=PageView&noscript=1" />
     </noscript>
-
-    <header>
-        <div class="header-wrapper">
-            <div class="logo"><a href="/"><img src="/frontpage/img/nyxium-logo.png"></a></div>
-            <div class="burger">
-                <span class="bars"></span>
-            </div>
-            <nav class="nav">
-                <a href="/frontpage/prices">Priser</a>
-                <div class="submenu">
-                    <p class="dropdowntrigger">Integrationer <i class="fas fa-chevron-down"></i></p>
-                    <div class="submenubullets">
-                        <a href="/frontpage/integrationdinero">Dinero</a>
-                    </div>
+    <div class="page">
+        <header>
+            <div class="header-wrapper">
+                <div class="logo"><a href="/"><img src="/frontpage/img/nyxium-logo.png"></a></div>
+                <div class="burger">
+                    <span class="bars"></span>
                 </div>
-                <a href="/frontpage/About">Om</a>
-                <a href="/frontpage/support">Support</a>
-                <a href="/Account/login">Login</a>
-                <a href="/Account/registerCompanyAccount" class="btn">Opret konto</a>
-            </nav>
-        </div>
-    </header>
-    <div>
-        @RenderBody()
+                <nav class="nav">
+                    <a href="/frontpage/prices">Priser</a>
+                    <div class="submenu">
+                        <p class="dropdowntrigger">Integrationer <i class="fas fa-chevron-down"></i></p>
+                        <div class="submenubullets">
+                            <a href="/frontpage/integrationdinero">Dinero</a>
+                        </div>
+                    </div>
+                    <a href="/frontpage/About">Om</a>
+                    <a href="/frontpage/support">Support</a>
+                    <a href="/Account/login">Login</a>
+                    <a href="/Account/registerCompanyAccount" class="btn">Opret konto</a>
+                </nav>
+            </div>
+        </header>
+
+        @if (HasUserConsented)
+        {
+            @RenderBody();
+        }
+        else
+        {
+            <div class="consent-container">
+                <partial name="CookieConsent" />
+            </div>
+
+            <div hidden>
+                @RenderBody();
+            </div>
+        }
+
+
+
+        <footer>
+            <div class="columns">
+
+
+                <div class="column">
+
+                    <a href="#">
+                        nyxium er ejet og drevet af:<br />
+                        wedigIT ApS<br />
+                        Axeltorv 5 3 2<br />
+                        4700 Næstved<br />
+                        CVR: 40777326<br />
+                        info@nyxium.dk<br />
+                    </a>
+
+                </div>
+
+                <div class="column">
+                    <a href="https://www.facebook.com/Nyxium-108125987512393">FB</a>
+                    <a href="#">LN</a>
+                    <a href="#">IG</a>
+                </div>
+
+            </div>
+        </footer>
     </div>
-    <footer>
-        <div class="columns">
-
-
-            <div class="column">
-
-                <a href="#">
-                    nyxium er ejet og drevet af:<br />
-                    wedigIT ApS<br />
-                    Axeltorv 5 3 2<br />
-                    4700 Næstved<br />
-                    CVR: 40777326<br />
-                    info@nyxium.dk<br />
-                </a>
-
-            </div>
-
-            <div class="column">
-                <a href="https://www.facebook.com/Nyxium-108125987512393">FB</a>
-                <a href="#">LN</a>
-                <a href="#">IG</a>
-            </div>
-
-        </div>
-    </footer>
 </body>
 </html>

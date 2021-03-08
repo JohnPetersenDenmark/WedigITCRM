@@ -28,7 +28,8 @@ namespace WedigITCRM.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+
+            return View("~/views/FrontPage/Index.cshtml");
         }
 
         public IActionResult About()

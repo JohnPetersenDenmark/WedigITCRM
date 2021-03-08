@@ -964,5 +964,14 @@ input:checked + .slider {
         border-radius: 50%;
     }
 
+.consent-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
+.consent-col {
+    font-size: 20px;
+}
 
