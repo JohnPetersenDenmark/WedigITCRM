@@ -1,0 +1,26 @@
+2021-03-09 09:41:09.2148|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-09 09:41:12.5449|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-09 09:41:12.6637|ERROR|WedigITCRM.Startup|start of Configure method
+2021-03-09 09:41:14.6492|ERROR|WedigITCRM.Startup|end of Configure method
+2021-03-09 09:41:15.8912|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-03-09 09:41:15.9069|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-03-09 09:41:15.9300|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-03-09 09:41:17.2297|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-09 10:25:57.4563|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-09 10:25:59.3215|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-09 10:25:59.4437|ERROR|WedigITCRM.Startup|start of Configure method
+2021-03-09 10:26:00.5373|ERROR|WedigITCRM.Startup|end of Configure method
+2021-03-09 10:26:03.2024|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-03-09 10:26:03.2568|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-03-09 10:26:03.2900|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-03-09 10:26:05.8770|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-09 14:17:08.3992|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-09 14:56:54.4621|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-09 14:56:56.3941|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-09 14:56:56.4960|ERROR|WedigITCRM.Startup|start of Configure method
+2021-03-09 14:56:57.3119|ERROR|WedigITCRM.Startup|end of Configure method
+2021-03-09 14:56:59.8169|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-03-09 14:56:59.8551|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-03-09 14:56:59.9078|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2021-03-09 14:57:02.6081|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-09 22:37:38.7596|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller

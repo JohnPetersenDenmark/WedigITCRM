@@ -973,5 +973,104 @@ input:checked + .slider {
 
 .consent-col {
     font-size: 20px;
+    border: 1px solid;
+    margin-left: 15px;
+    margin-right: 100px;
 }
 
+
+
+
+
+
+.content-section {
+    min-height: 2000px;
+}
+
+.sidebar-section {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Position the items */
+}
+
+.make-me-sticky {
+    text-align: left;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 0 15px;
+}
+/* Ignore This, just coloring */
+body {
+    background: #fff;
+}
+
+.cookie-description article {
+    background: #f1f1f1;
+    border-radius: 12px;
+    padding: 25px 0 600px;
+}
+
+.title-section, .content-section, .sidebar-section {
+    background: #fff;
+}
+
+.title-section {
+    text-align: left;
+    padding: 50px 15px;
+    margin-bottom: 30px;
+}
+
+.content-section h2 {
+    text-align: center;
+    margin: 0;
+    padding-top: 200px;
+}
+
+.sidebar-item {
+    text-align: center;
+}
+
+    .sidebar-item h3 {
+        background: gold;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 50px 0 100px;
+        border-bottom: solid 1px #fff;
+    }
+
+.cookie-menu a {
+   color : black;
+   font-size : 20px;
+}
+
+.cookie-chapter {
+    background-color: #FFFFFF;  
+}
+
+
+.btn-primary.consent-btn {
+    background-color: #007bff;
+    border: 0px;
+}
+
+.btn-primary.no-consent-btn {
+    background-color: #007bff;
+    border: 0px;
+}
+
+.consent-btn.btn-primary:hover {
+    background-color: green;
+}
+.no-consent-btn.btn-primary:hover {
+    background-color: red;
+}

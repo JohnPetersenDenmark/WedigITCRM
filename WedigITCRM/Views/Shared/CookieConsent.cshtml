@@ -23,66 +23,348 @@
 @if (!HasUserConsented)
 {
 
-    <div class="row">
-        <div class="col-12 consent-col">
-            nyxium anvender cookies.
+    <div class="card">
+        <div class="card-header">
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>&nbsp;</p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-size:16px;line-height:107%;font-family:"Arial",sans-serif;'>Vi bruger cookies til at markedsf&oslash;re nyxium.</span></strong></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>Hvis du klikker p&aring; knappen &rsquo;Accepter&rsquo;, godkender du, at nyxium s&aelig;tter cookies til brug for markedsf&oslash;ring.&nbsp;</span></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>Hvis du klikker p&aring; knappen &rsquo;Afsl&aring;,&rsquo; s&aelig;tter vi ikke cookies til brug for markedsf&oslash;ring&nbsp;</span></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>Dit valg bliver gemt i en cookie.</span></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'><a href="#a2">Her</a> kan du se hvilke cookier som nyxium anvender til markedsf&oslash;ring</span></p>
         </div>
     </div>
 
-    <br />
-    <br />
-    <br />
-    <br />
 
-    <div class="row">
-        <div class="col-3 consent-col">
-            vælg nødvendige
-        </div>
-        <div class="col-6 consent-col">
-            <label class="switch">
-                <input id="necessary" disabled checked class="slider" type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3 consent-col">
-            Vælg statistik
-        </div>
-        <div class="col-6 consent-col">
-            <label class="switch">
-                <input id="statistic" type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3 consent-col">
-            Vælg marketing
-        </div>
-        <div class="col-6 consent-col">
-            <label class="switch">
-                <input id="marketing" type="checkbox">
-                <span class="slider"></span>
-            </label>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-body">
+                <a href="#" id="consent" class="btn btn-primary consent-btn">Accepter</a>
+                <a href="#" id="noconsent" class="btn btn-primary no-consent-btn">Afslå</a>
+            </div>
         </div>
     </div>
 
-    <br />
-    <br />
+    <article class="cookie-description">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <div class="sidebar-item">
+                        <div class="make-me-sticky">
+                            <p class="cookie-menu"><a href="#a1">Hvad er cookies</a></p>
+                            <p class="cookie-menu"><a href="#a2">nyxium cookies</a></p>
+                            <p class="cookie-menu"><a href="#a3">A3</a></p>
+                            <p class="cookie-menu"><a href="#a4">A4</a></p>
+                        </div>
+                    </div>
 
-    <div class="row">
-        <div class="col-3 consent-col">
-            <button id="consent" type="button" class="btn btn-primary" style="width:auto; height : 40px ; font-size:20px">
-                Ok
-            </button>
+                </div>
+                <div class="col-9">
+                    <div class="content-section">
+                        <section id="a1">
+                            <h3>
+                                Hvad er cookies.
+                            </h3>
+                            <p class="cookie-chapter">
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>&nbsp;</p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;'>En cookie er en lille tekstfil som hentes ned til din PC, tablet eller mobiltelefon. Det er din browser der henter cookier fra den hjemmeside som du bes&oslash;ger. Denne cookie er specifik for den hjemmeside du bes&oslash;ger. N&aring;r du s&aring; browser rundt p&aring; den samme hjemmeside sendes denne tekstfil med op til hjemmesiden hver gang din browser kontakter hjemmesiden. Det er m&aring;den at en hjemmeside har lidt hukommelse i forhold til dig som bruger.</span></p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;'>Lovm&aelig;ssigt deles cookier op i forskellige kategorier.</span></p>
+                            <ul style="list-style-type: disc;">
+                                <li><span style='font-family:"Arial",sans-serif;'>N&oslash;dvendige&nbsp;</span></li>
+                                <li><span style='font-family:"Arial",sans-serif;'>Statistik</span></li>
+                                <li><strong><span style='font-family:"Arial",sans-serif;color:#212529;background:#F6F6F6;font-weight:normal;'>Personaliseret</span></strong></li>
+                                <li><span style='font-family:"Arial",sans-serif;'>Marketing</span></li>
+                            </ul>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <ul style="list-style-type: disc;">
+                                <li><strong><span style='font-family:"Arial",sans-serif;'>N&oslash;dvendige cookier</span></strong><span style='font-family:"Arial",sans-serif;'>&nbsp;</span></li>
+                            </ul>
+                            <ul style="list-style-type: disc;margin-left:44px;">
+                                <li><span style='font-family:"Arial",sans-serif;'>indeholder information som en hjemmeside skal bruge for at kunne fungere. Det er oftest data om<span style="color:#212529;background:white;">&nbsp;handlinger foretaget af dig, f.eks. en anmodning om tjenester, som f.eks. indstilling af dine personlige pr&aelig;ferencer, indlogning eller udfyldning af en formular.&nbsp;</span></span></li>
+                            </ul>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:54.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;background:white;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;margin-left:44px;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;background:white;'>Lovm&aelig;ssigt beh&oslash;ver en hjemmeside IKKE at indhente accept fra dig som bruger.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:54.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;background:white;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Arial",sans-serif;color:#212529;background:white;'>Statistiske cookier</span></strong><span style='font-family:"Arial",sans-serif;color:#212529;background:white;'>&nbsp;</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:65.2pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;margin-left:55.2px;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;'>bliver brugt til at optimere design, brugervenlighed og effektiviteten af en hjemmeside. Fx ved at indsamle bes&oslash;gsstatistik.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;'>&nbsp;</span></p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:65.2pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;background:#F6F6F6;'><span style='font-family:"Arial",sans-serif;color:#212529;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;margin-left:55.2px;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;background:white;'>Lovm&aelig;ssigt SKAL en hjemmeside indhente accept fra dig som bruger.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:65.2pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;background:white;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Arial",sans-serif;color:#212529;background:#F6F6F6;'>Personaliseret cookie&nbsp;</span></strong></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:65.2pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Arial",sans-serif;color:#212529;background:#F6F6F6;font-weight:normal;'>&nbsp;</span></strong></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;margin-left:55.2px;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Arial",sans-serif;color:#212529;background:#F6F6F6;font-weight:normal;'>Indsamler information om hvordan du som bruger bev&aelig;ger dig rundt p&aring; den bes&oslash;gte hjemmeside.</span></strong></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:65.2pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;background:#F6F6F6;'><strong><span style='font-family:"Arial",sans-serif;color:#212529;background:#F6F6F6;font-weight:normal;'>&nbsp;</span></strong></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;margin-left:55.2px;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;'>Indsamler information om hvad du som bruger interesserer dig for. Den indsamlede viden anvendes til at personalisere indholdet p&aring; hjemmesiden. &nbsp;</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:65.2pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;background:#F6F6F6;'><span style='font-family:"Arial",sans-serif;color:#212529;background:#F6F6F6;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;margin-left:55.2px;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;'>L</span><span style='font-family:"Arial",sans-serif;color:#212529;color:#212529;background:white;'>ovm&aelig;ssigt SKAL en hjemmeside indhente accept fra dig som bruger.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;background:white;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Arial",sans-serif;color:#212529;background:white;'>Marketing cookier</span></strong><span style='font-family:"Arial",sans-serif;color:#212529;background:white;'>&nbsp;</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;margin-left:55.2px;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Arial",sans-serif;color:#212529;background:#F6F6F6;font-weight:normal;'>indsamler information om hvordan du som bruger bev&aelig;ger dig rundt p&aring; den bes&oslash;gte hjemmeside. Information anvendes til at m&aring;lrette annoncer der kunne interessere dig som bruger.</span></strong></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Arial",sans-serif;color:#212529;background:#F6F6F6;font-weight:normal;'>&nbsp;</span></strong></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;margin-left:55.2px;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Arial",sans-serif;color:#212529;background:#F6F6F6;font-weight:normal;'>Indsamler information om hvad du som bruger s&oslash;ger efter p&aring; nettet. Med denne information kan hjemmesiden m&aring;lrette annoncer fra andre leverand&oslash;rer.&nbsp;</span></strong></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Arial",sans-serif;color:#212529;background:#F6F6F6;font-weight:normal;'>&nbsp;</span></strong></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;margin-left:55.2px;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;'>L</span><span style='font-family:"Arial",sans-serif;color:#212529;color:#212529;background:white;'>ovm&aelig;ssigt SKAL en hjemmeside indhente accept fra dig som bruger.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:65.2pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;background:#F6F6F6;'><strong><span style='font-family:"Arial",sans-serif;color:#212529;background:#F6F6F6;font-weight:normal;'>&nbsp;</span></strong></p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;'>&nbsp;</span></p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;'>&nbsp;</span></p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;'>Se lovgrundlag her:&nbsp;</span><a href="https://www.retsinformation.dk/eli/lta/2011/1148">Retsinformation</a></p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;color:#212529;'>&nbsp;</span></p>
+                            </p>
+
+                        </section>
+                        <section id="a2">
+                            <h3>
+                                Nyxium cookies.
+                            </h3>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>&nbsp;</p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>P&aring; nyxium&rsquo;s hjemmeside anvender vi:</span></p>
+                            <ul style="list-style-type: disc;">
+                                <li>
+                                    <span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>N&oslash;dvendige cookies</span>
+                                    <ol style="list-style-type: circle;">
+                                        <li>
+                                            <span style='line-height:107%;font-family:"Arial",sans-serif;color:#242729;background:white;font-size:13px;color:#242729;'>&nbsp;.AspNetCore.Antiforgery.xxxxxxx</span> hvor xxxxxxx er en tilf&aelig;ldige tegn<ul style="list-style-type: square;">
+                                                <li><span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>Denne cookie indeholder en krypteret tekst som nyxium-programmet anvender til at undg&aring; at hackere kan manipulere med de data du indtaster.</span></li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ul>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:108.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <ol style="list-style-type: circle;">
+                                <li>
+                                    <span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>nyxiumApp</span>
+                                    <ul style="list-style-type: square;">
+                                        <li><span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>Denne cookie indeholder krypteret information om din indlogning.&nbsp;</span></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:108.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <ol style="list-style-type: circle;">
+                                <li>
+                                    <span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>nyxium_consent</span>
+                                    <ul style="list-style-type: square;">
+                                        <li><span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>Denne cookie anvendes til at huske hvilke cookies du har givet tilladelse til</span></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <ul style="list-style-type: disc;">
+                                <li>
+                                    <span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>Marketing cookies (FaceBook)</span>
+                                    <ol style="list-style-type: circle;">
+                                        <li>
+                                            fr<span style="font-size:13px;">&nbsp;og&nbsp;</span><span style='line-height:107%;font-family:"Arial",sans-serif;font-family:"Arial",sans-serif;font-size:10.0pt;color:#1C1E21;'>_fbp</span>
+                                            <ul style="list-style-type: square;">
+                                                <li><strong><span style='font-family:"Arial",sans-serif;'>Annoncering, anbefalinger, indblik og m&aring;ling</span></strong></li>
+                                                <li><span style='font-family:"Arial",sans-serif;background:white;'>Vi bruger cookies til at vise annoncer for og lave forslag om virksomheder og andre organisationer til personer, der kunne v&aelig;re interesserede i de produkter, tjenester eller sager, der promoveres.</span></li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ul>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:108.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: square;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><em><span style='font-family:"Arial",sans-serif;'>Eksempel:</span></em><span style='font-family:"Arial",sans-serif;'>&nbsp;Cookies giver os mulighed for at levere annoncer til personer, der tidligere har bes&oslash;gt en virksomheds website, k&oslash;bt virksomhedens produkter eller brugt dens apps, og for at anbefale produkter og tjenester ud fra denne aktivitet. Cookies giver os desuden mulighed for at begr&aelig;nse det antal gange, du f&aring;r vist en annonce, s&aring; du ikke f&aring;r vist den samme annonce hele tiden. For eksempel bruges cookien &apos;fr&apos; til at levere, m&aring;le og forbedre relevansen af annoncer. Den har en levetid p&aring; 90 dage.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;color:#1C1E21;'>&nbsp;</span></p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;margin-left:108.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;background:white;'><span style='font-size:13px;font-family:"Arial",sans-serif;color:#1C1E21;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: square;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;background:white;'>Vi bruger ogs&aring; cookies til at m&aring;le effektiviteten af annoncekampagner for virksomheder, der bruger Facebook-produkterne.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:108.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><em><span style="font-size:10.0pt;color:#1C1E21;">Eksempel:</span></em><span style='font-family:"Arial",sans-serif;font-size:10.0pt;color:#1C1E21;'>&nbsp;Vi bruger cookies til at t&aelig;lle det antal gange, en annonce er blevet vist, og til at beregne prisen for disse annoncer. Vi bruger ogs&aring; cookies til at m&aring;le, hvor ofte folk g&oslash;r ting s&aring;som at foretage et k&oslash;b efter en annonceeksponering. Cookien &apos;_fbp&apos; identificerer browsere med henblik p&aring; at levere annoncer og siteanalyser. Den har en levetid p&aring; 90 dage.&nbsp;</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;margin-left:144.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;background:white;'><span style='font-size:13px;font-family:"Arial",sans-serif;color:#1C1E21;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: square;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;background:white;'>Cookies giver os mulighed for at levere og m&aring;le annoncer p&aring; tv&aelig;rs af forskellige browsere og enheder, som bruges af den samme person.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:108.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><em><span style="font-size:10.0pt;color:#1C1E21;">Eksempel:</span></em><span style='font-family:"Arial",sans-serif;font-size:10.0pt;color:#1C1E21;'>&nbsp;Vi kan bruge cookies til at forhindre, at du f&aring;r vist den samme annonce flere gange p&aring; de forskellige enheder, du bruger.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;margin-left:144.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;background:white;'><span style='font-size:13px;font-family:"Arial",sans-serif;color:#1C1E21;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: square;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;background:white;'>Cookies giver os mulighed for at f&aring; indblik i de personer, der bruger Facebook-produkterne, samt i de personer, der interagerer med annoncerne, websites og apps fra vores annonc&oslash;rer og de virksomheder, der bruger Facebook-produkterne.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:108.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><em><span style="font-size:10.0pt;color:#1C1E21;">Eksempel:</span></em><span style='font-family:"Arial",sans-serif;font-size:10.0pt;color:#1C1E21;'>&nbsp;Vi bruger cookies til at hj&aelig;lpe virksomheder med at f&aring; en forst&aring;else af de typer af personer, der synes godt om deres Facebook-side eller bruger deres apps, s&aring; de kan levere mere relevant indhold og udvikle funktioner, der er interessante for deres kunder.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;margin-left:144.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;background:white;'><span style='font-size:13px;font-family:"Arial",sans-serif;color:#1C1E21;'>&nbsp;</span></p>
+                            <ul style="list-style-type: square;">
+                                <li><span style='line-height:107%;font-family:"Arial",sans-serif;font-family:"Arial",sans-serif;font-size:10.0pt;color:#1C1E21;background:white;background:white;'>Vi bruger desuden cookies, f.eks. vores cookie &apos;oo&apos;, der har en levetid p&aring; fem &aring;r, s&aring; du kan v&aelig;lge ikke at f&aring; vist annoncer fra Facebook baseret p&aring; din aktivitet p&aring; tredjepartswebsites.&nbsp;</span><span style='line-height:107%;font-family:"Arial",sans-serif;font-family:"Arial",sans-serif;font-size:10.0pt;'><a href="https://www.facebook.com/help/769828729705201?ref=cookies"><span style="background:white;">L&aelig;s mere</span></a><span style="color:#1C1E21;background:white;">&nbsp;om de oplysninger, vi modtager, hvordan vi beslutter, hvilke annoncer du skal have vist p&aring; og uden for Facebook-produkterne, og de indstillinger, du f&aring;r stillet til r&aring;dighed.</span></span></li>
+                                <li><span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>&nbsp;</span></li>
+                            </ul>
+                            <ol style="list-style-type: circle;">
+                                <li>
+                                    <span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>presense</span>
+                                    <ul style="list-style-type: square;">
+                                        <li><strong><span style='font-family:"Arial",sans-serif;'>Funktioner og tjenester p&aring; sitet</span></strong></li>
+                                        <li><span style='font-family:"Arial",sans-serif;background:white;'>Vi bruger cookies til at aktivere den funktionalitet, der hj&aelig;lper os til at levere Facebook-produkterne.</span></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:108.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><em><span style="font-size:10.0pt;color:#1C1E21;">Eksempel:</span></em><span style='font-family:"Arial",sans-serif;font-size:10.0pt;color:#1C1E21;'>&nbsp;Vi bruger cookies til at lagre indstillinger, til at registrere, hvorn&aring;r du har set eller interageret med indhold fra Facebook-produkter, og til at give dig tilpasset indhold og tilpassede oplevelser. Vi bruger f.eks. cookies til at give dig og andre forslag og til at tilpasse indhold p&aring; tredjepartswebsites, der integrerer vores sociale plugins. Hvis du er administrator af en side, giver cookies dig mulighed for at skifte mellem at sl&aring; indhold op fra din private Facebook-konto og fra den p&aring;g&aelig;ldende side. Vi bruger cookies, f.eks. den sessionsbaserede cookie &apos;presense&apos;, til at muligg&oslash;re din brug af chatvinduer i Messenger.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:5.0pt;margin-right:36.0pt;margin-bottom:5.0pt;margin-left:144.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;background:white;'><span style='font-size:13px;font-family:"Arial",sans-serif;color:#1C1E21;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: square;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Arial",sans-serif;background:white;'>Vi bruger ogs&aring; cookies til at vise dig indhold, der er relevant for din landeindstilling.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:108.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><em><span style="font-size:10.0pt;color:#1C1E21;">Eksempel:</span></em><span style='font-family:"Arial",sans-serif;font-size:10.0pt;color:#1C1E21;'>&nbsp;Vi lagrer oplysninger i en cookie, der er placeret i din browser eller p&aring; din enhed, s&aring; du f&aring;r vist sitet p&aring; dit foretrukne sprog.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:72.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <ol style="list-style-type: circle;">
+                                <li>
+                                    <span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>c_user og xs</span>
+                                    <ul style="list-style-type: square;">
+                                        <li><strong><span style='font-family:"Arial",sans-serif;'>Godkendelse</span></strong></li>
+                                        <li><span style='font-family:"Arial",sans-serif;background:white;'>Vi bruger cookies til at verificere din konto og registrere, n&aring;r du er logget p&aring;, s&aring; vi kan g&oslash;re det nemmere for dig at f&aring; adgang til Facebook-produkterne og give dig en relevant oplevelse og passende funktioner.</span></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:108.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <ul style="list-style-type: square;">
+                                <li><em><span style='font-family:"Arial",sans-serif;'>Eksempel:</span></em><span style='font-family:"Arial",sans-serif;'>&nbsp;Vi bruger cookies til at s&oslash;rge for, at du bliver ved med at v&aelig;re logget p&aring;, n&aring;r du navigerer mellem Facebook-sider. Vi bruger ogs&aring; cookies til at huske din browser, s&aring; du ikke beh&oslash;ver logge p&aring; Facebook flere gange, og s&aring; du nemmere kan logge p&aring; Facebook via apps og websites fra tredjeparter. Vi bruger f.eks. cookierne &apos;c_user&apos; og &apos;xs&apos; til dette form&aring;l. De har en l&oslash;betid p&aring; 365 dage.</span></li>
+                                <li><span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>&nbsp;</span></li>
+                            </ul>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:72.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <ol style="list-style-type: circle;">
+                                <li>
+                                    <span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>dpr og wd</span>
+                                    <ul style="list-style-type: square;">
+                                        <li><strong><span style='font-family:"Arial",sans-serif;'>Effektivitet</span></strong></li>
+                                        <li><span style='font-family:"Arial",sans-serif;background:white;'>Vi bruger cookies til at give dig den bedst mulige oplevelse.</span></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:108.0pt;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+                                <ul style="margin-bottom:0cm;list-style-type: disc;">
+                                    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><em><span style="font-size:10.0pt;color:#1C1E21;">Eksempel:</span></em><span style='font-family:"Arial",sans-serif;font-size:10.0pt;color:#1C1E21;'>&nbsp;Vi bruger cookies til at dirigere trafik mellem servere og til at f&aring; indblik i, hvor hurtigt Facebook-produkterne indl&aelig;ses for forskellige personer. Vi bruger desuden cookies til at registrere st&oslash;rrelsesforhold og m&aring;l for din sk&aelig;rm og dine vinduer, og de hj&aelig;lper os til at se, om du har aktiveret h&oslash;jkontrasttilstand, s&aring; vi kan levere vores sites og apps korrekt. Vi inds&aelig;tter f.eks. cookierne &apos;dpr&apos; og &apos;wd&apos;, som hver har en levetid p&aring; 7 dage, for at levere en optimal oplevelse p&aring; din enheds sk&aelig;rm.</span></li>
+                                </ul>
+                            </div>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:72.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <ol style="list-style-type: circle;">
+                                <li>
+                                    <span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>sb</span>
+                                    <ul style="list-style-type: square;">
+                                        <li><strong><span style='font-family:"Arial",sans-serif;'>Sikkerhed, site og produktintegritet</span></strong></li>
+                                        <li><span style='font-family:"Arial",sans-serif;background:white;'>Vi bruger cookies til at beskytte din konto, dine data og Facebook-produkterne.</span></li>
+                                        <li>
+                                            <span style='font-family:"Arial",sans-serif;'>&nbsp;</span>
+                                            <ul style="list-style-type: disc;">
+                                                <li><em><span style="font-size:10.0pt;color:#1C1E21;">Eksempel:</span></em><span style='font-family:"Arial",sans-serif;font-size:10.0pt;color:#1C1E21;'>&nbsp;Vi kan bruge cookies til at identificere og indf&oslash;re yderligere sikkerhedsforanstaltninger, hvis nogen fors&oslash;ger at f&aring; adgang til en Facebook-konto uden godkendelse, f.eks. ved hurtigt at g&aelig;tte p&aring; forskellige adgangskoder. Vi bruger ogs&aring; cookies til at lagre oplysninger, s&aring; vi kan gendanne din konto i tilf&aelig;lde af, at du har glemt din adgangskode, eller kr&aelig;ve yderligere godkendelse i tilf&aelig;lde af, at din konto er blevet hacket. Dette omfatter f.eks. vores cookies &apos;sb&apos; og &apos;dbln&apos;, som g&oslash;r det muligt for os at identificere din browser sikkert.</span></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:72.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <ol style="list-style-type: circle;">
+                                <li>
+                                    <span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>datr</span>
+                                    <ul style="list-style-type: disc;">
+                                        <li><span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>FaceBook har ingen beskrivelse af denne cookie</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>spin</span>
+                                    <ul style="list-style-type: disc;">
+                                        <li><span style='line-height:107%;font-family:"Arial",sans-serif;font-size:13px;'>FaceBook har ingen beskrivelse af denne cookie</span></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:144.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:36.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+                            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:54.0pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;line-height:107%;font-family:"Arial",sans-serif;'>Informationen om disse cookies er taget fra FaceBook&rsquo;s hjemmeside:&nbsp;</span><a href="https://www.facebook.com/policies/cookies/">(20+) Facebook</a></p>
+                        </section>
+
+                        <p id="a3"> A3   Disse cookies er nødvendige for, at hjemmesiden kan fungere og kan ikke slås fra i vores systemer. De er normalt kun indstillet som svar på handlinger foretaget af dig, f.eks. en anmodning om tjenester, som f.eks. indstilling af dine personlige præferencer, indlogning eller udfyldning af en formular. Du kan indstille din browser til at blokere eller advare dig om disse cookies, men nogle dele af hjemmesiden vil dermed muligvis ikke fungere.   Disse cookies er nødvendige for, at hjemmesiden kan fungere og kan ikke slås fra i vores systemer. De er normalt kun indstillet som svar på handlinger foretaget af dig, f.eks. en anmodning om tjenester, som f.eks. indstilling af dine personlige præferencer, indlogning eller udfyldning af en formular. Du kan indstille din browser til at blokere eller advare dig om disse cookies, men nogle dele af hjemmesiden vil dermed muligvis ikke fungere.  Disse cookies er nødvendige for, at hjemmesiden kan fungere og kan ikke slås fra i vores systemer. De er normalt kun indstillet som svar på handlinger foretaget af dig, f.eks. en anmodning om tjenester, som f.eks. indstilling af dine personlige præferencer, indlogning eller udfyldning af en formular. Du kan indstille din browser til at blokere eller advare dig om disse cookies, men nogle dele af hjemmesiden vil dermed muligvis ikke fungere.</p>
+                        <p id="a4"> A4   Disse cookies er nødvendige for, at hjemmesiden kan fungere og kan ikke slås fra i vores systemer. De er normalt kun indstillet som svar på handlinger foretaget af dig, f.eks. en anmodning om tjenester, som f.eks. indstilling af dine personlige præferencer, indlogning eller udfyldning af en formular. Du kan indstille din browser til at blokere eller advare dig om disse cookies, men nogle dele af hjemmesiden vil dermed muligvis ikke fungere.   Disse cookies er nødvendige for, at hjemmesiden kan fungere og kan ikke slås fra i vores systemer. De er normalt kun indstillet som svar på handlinger foretaget af dig, f.eks. en anmodning om tjenester, som f.eks. indstilling af dine personlige præferencer, indlogning eller udfyldning af en formular. Du kan indstille din browser til at blokere eller advare dig om disse cookies, men nogle dele af hjemmesiden vil dermed muligvis ikke fungere.  Disse cookies er nødvendige for, at hjemmesiden kan fungere og kan ikke slås fra i vores systemer. De er normalt kun indstillet som svar på handlinger foretaget af dig, f.eks. en anmodning om tjenester, som f.eks. indstilling af dine personlige præferencer, indlogning eller udfyldning af en formular. Du kan indstille din browser til at blokere eller advare dig om disse cookies, men nogle dele af hjemmesiden vil dermed muligvis ikke fungere.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-3 consent-col">
-            <button id="noconsent" type="button" class="btn btn-primary" style="width:auto; height : 40px ; font-size:20px">
-                Nej tak
-            </button>
-        </div>
-    </div>
+    </article>
 
 }
 
@@ -90,39 +372,59 @@
 <script>
     $(document).ready(function () {
 
+        var Oldhref = window.location.href;
+
+        var pos = Oldhref.indexOf('#');
+        if (pos > -1) {
+            Oldhref = Oldhref.substring(0, pos);
+        }
 
 
 
-        $('#consent').bind('click', function () {
+        $('#consent').bind('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var cookieText = {
+                marketing: "Accepted",
+                statistic: "NotAccepted"
+            };
+
+          
+
+            //if ($('#statistic').is(":checked")) {
+            //    cookieText.statistic = "Accepted"
+            //}
+
+
+            //if ($('#marketing').is(":checked")) {
+            //    cookieText.marketing = "Acceptet";
+            //}
+
+            //  var nyxiumConsentCookie = getCookie("nyxium_consent");
+            //  if (nyxiumConsentCookie == "") {
+            cvalue = "statistic:" + cookieText.statistic + "marketing:" + cookieText.marketing;
+            exdays = 90;
+            setCookie("nyxium_consent", cvalue, exdays);
+            // }
+
+            window.location.href = Oldhref;
+        });
+
+        $('#noconsent').bind('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
 
             var cookieText = {
                 marketing: "NotAccepted",
                 statistic: "NotAccepted"
             };
 
-            var x = document.cookie;
+            cvalue = "statistic:" + cookieText.statistic + "marketing:" + cookieText.marketing;
+            exdays = 90;
+            setCookie("nyxium_consent", cvalue, exdays);
 
-            if ($('#statistic').is(":checked")) {
-                cookieText.statistic = "Accepted"
-            }
-
-
-            if ($('#marketing').is(":checked")) {
-                cookieText.marketing = "Acceptet";
-            }
-
-            var nyxiumConsentCookie = getCookie("nyxium_consent");
-            if (nyxiumConsentCookie == "") {             
-                cvalue = "statistic:" + cookieText.statistic + "marketing:" + cookieText.marketing;
-                exdays = 30;
-                setCookie("nyxium_consent" , cvalue, exdays)
-            }
-
-            window.location.href = window.location.href
-        });
-
-        $('#noconsent').bind('click', function () {
-            deleteCookie("nyxium_consent");
+            window.location.href = Oldhref;
         });
 
     });
