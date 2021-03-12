@@ -1075,6 +1075,7 @@ body {
 .cookie-menu a {
    color : black;
    font-size : 20px;
+   font-weight : bold;
 }
 
 .cookie-chapter {
@@ -1098,3 +1099,45 @@ body {
 .no-consent-btn.btn-primary:hover {
     background-color: red;
 }
+
+
+
+.consent-chapter {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 0px solid;
+    border-color: lightgray;
+    border-width: thin;
+    padding: 30px;
+}
+
+.consent-headline-size-one {
+    font-size: 12px;
+}
+
+.consent-headline-size-two {
+    font-size: 20px;
+}
+
+.consent-body-text {
+    font-size: 15px;
+    color : #000000;
+}
+
+.consent-indent-level-one {
+    margin-left: 40px;
+}
+
+.consent-indent-level-two {
+    margin-left: 80px;
+}
+
+.consent-indent-level-three {
+    margin-left: 120px;
+}
+
+.consent-text-bold {
+    font-weight: bold;
+}
+
