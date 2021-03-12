@@ -17,7 +17,8 @@ namespace WedigITCRM
 
         public DbSet<NyxiumSetup> NyxiumSetups { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-
+        public DbSet<CookieChangeLog> CookieChangeLogs { get; set; }
+        
         public DbSet<Company> Companies { get; set; }
 
         public DbSet<DeliveryCondition> DeliveryConditions { get; set; }

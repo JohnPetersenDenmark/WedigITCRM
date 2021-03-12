@@ -26,6 +26,7 @@ using System.Runtime.InteropServices;
 using WedigITCRM.ReepayAPI;
 using System.Net.Http;
 using WedigITCRM.EntitityModels;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace WedigITCRM
 {
@@ -144,6 +145,7 @@ namespace WedigITCRM
                 services.AddScoped<IAttachmentRepository, SQLAttachmentRepository>();
                 services.AddScoped<IPaymentConditionRepository, SQLPaymentConditionRepository>();
                 services.AddScoped<IPurchaseBudgetLineRepository, SQLPurchaseBudgetLinesRepository>();
+                services.AddScoped<ICookieChangeLog, SQLCookieChangeLogRepository>();
 
                 services.AddScoped<INyxiumSetupRepository, SQLNyxiumSetupRepository>();
 
@@ -158,6 +160,7 @@ namespace WedigITCRM
                 services.AddScoped<PurchaseOrderToPDF>();
                 services.AddScoped<PurchaseOrderAddAttachment>();
 
+               
 
 
                 services.AddMvc(options =>
@@ -233,6 +236,11 @@ namespace WedigITCRM
                 app.UseAuthentication();
 
                 app.UseMvcWithDefaultRoute();
+
+                app.UseForwardedHeaders(new ForwardedHeadersOptions
+                {
+                    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+                });
 
                 //app.UseEndpoints(endpoints =>
                 //{

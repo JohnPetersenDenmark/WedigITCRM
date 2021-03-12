@@ -1,0 +1,73 @@
+﻿<div class="formcontainer">
+    <form method="post" id="cookiesettings">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-body">
+                    Her kan du fravælge/tilvælge om du vil acceptere at nyxium anvender marketing cookies
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-body">
+                    <section class="slider-checkbox">
+                        <input type="checkbox" id="selectmarketingcookies" />
+                        <label class="label" for="2">Marketing-cookies</label>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-body">
+                    <a href="#" id="consent" class="btn btn-primary consent-btn">Ok</a>
+                    <a href="#" id="noconsent" class="btn btn-primary no-consent-btn">Annuler</a>
+                </div>
+            </div>
+        </div>
+
+        <input type="text" name="cookieValue" id="cookieValue" hidden />
+    </form>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        var nyxiumConsentCookie = getCookie("nyxium_consent");
+
+        if (nyxiumConsentCookie.indexOf("marketing:Accepted") > -1) {
+            $("#selectmarketingcookies").prop('checked', true);
+        }
+
+
+        $('#consent').bind('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var cookieText = {
+                marketing: "NotAccepted",
+                statistic: "NotAccepted"
+            };
+
+            if ($('#selectmarketingcookies').is(":checked")) {
+                cookieText.marketing = "Accepted"
+            }
+
+            cvalue = "statistic:" + cookieText.statistic + "marketing:" + cookieText.marketing;
+            exdays = 90;
+            setCookie("nyxium_consent", cvalue, exdays);
+
+            $('#cookieValue').val(cvalue);
+
+            $("#cookiesettings").submit();
+           // window.location.href = "/home/index";
+        });
+
+        $('#noconsent').bind('click', function (event) {
+            window.location.href = "/home/index";
+        });
+
+    });
+
+
+</script>

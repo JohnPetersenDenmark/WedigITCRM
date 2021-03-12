@@ -39,6 +39,7 @@ namespace WedigITCRM.Controllers
         private ICompanyAccountRepository _companyAccountRepository;
         private IContentTypeRepository _contentTypeRepository;
         private IAttachmentRepository _attachmentRepository;
+        private readonly ICookieChangeLog cookieChangeLogRepository;
         private ReepayAPIMethods ReepayAPIMethods;
         private IStockItemRepository _stockItemRepository;
         private ILicenseType _licenseTypeRepository;
@@ -51,7 +52,7 @@ namespace WedigITCRM.Controllers
         private IWebHostEnvironment _env;
         private MiscUtility miscUtility;
 
-        public AccountController(ReepayAPIMethods ReepayAPIMethods, INyxiumSetupRepository nyxiumSetupRepository, IContactRepository contactRepository, IVendorRepository vendorRepository, EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
+        public AccountController(ICookieChangeLog cookieChangeLogRepository, ReepayAPIMethods ReepayAPIMethods, INyxiumSetupRepository nyxiumSetupRepository, IContactRepository contactRepository, IVendorRepository vendorRepository, EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -61,6 +62,7 @@ namespace WedigITCRM.Controllers
             _vendorRepository = vendorRepository;
             _nyxiumSetupRepository = nyxiumSetupRepository;
             _contactRepository = contactRepository;
+            this.cookieChangeLogRepository = cookieChangeLogRepository;
             this.ReepayAPIMethods = ReepayAPIMethods;
             _stockItemRepository = stockItemRepository;
             _licenseTypeRepository = licenseTypeRepository;
@@ -73,10 +75,44 @@ namespace WedigITCRM.Controllers
 
             miscUtility = new MiscUtility();
 
-           
+
         }
 
-       
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult CookieSettings()
+        {
+            var ipAddress = Request.HttpContext.Connection.RemoteIpAddress;
+
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public IActionResult CookieSettings(string cookieValue)
+        {
+            CookieChangeLog cookieChangeLog = new CookieChangeLog();
+
+            if (signInManager.IsSignedIn(User))
+            {
+                cookieChangeLog.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            }
+
+            var y = Request.HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+
+            cookieChangeLog.ClientIPAddress = y;
+
+            cookieChangeLog.logText = cookieValue;
+
+            cookieChangeLog.LoggedDateTime = DateTime.Now;
+
+            cookieChangeLogRepository.Add(cookieChangeLog);
+
+
+            return View();
+        }
+
 
         [HttpGet]
         public IActionResult Register()
@@ -161,7 +197,7 @@ namespace WedigITCRM.Controllers
                         {
                             await signInManager.SignOutAsync();
 
-                            return RedirectToAction("SelectNyxiumSubscription", "Payment", new { companyAccountId = companyAccount.companyAccountId, curUserEmail = model.Email, curUserPassword = model.Password});
+                            return RedirectToAction("SelectNyxiumSubscription", "Payment", new { companyAccountId = companyAccount.companyAccountId, curUserEmail = model.Email, curUserPassword = model.Password });
                         }
                         else
                         {
@@ -477,10 +513,10 @@ namespace WedigITCRM.Controllers
                         tokens.Add("companyAccountId", updatedCompanyAccount.companyAccountId.ToString());
 
                         AlternateView htmlView = _emailUtility.getFormattedBodyByMailtemplate(EmailUtility.MailTemplateType.AccountConfirmationToWedigit, tokens);
-                        
+
                         string fixedsendToList = "jp@wedigit.dk";
                         _emailUtility.send(fixedsendToList, "support@nyxium.dk", "Oprettelse af konto i wedigitCRM", htmlView, true, null);
-                        
+
 
 
 
