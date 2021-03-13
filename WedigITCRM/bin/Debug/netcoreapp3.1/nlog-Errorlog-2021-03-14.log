@@ -1,0 +1,5 @@
+2021-03-14 00:20:35.7957|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 00:20:39.3686|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 00:20:39.5257|ERROR|WedigITCRM.Startup|start of Configure method
+2021-03-14 00:20:42.0380|ERROR|WedigITCRM.Startup|end of Configure method
+2021-03-14 00:20:49.1472|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
