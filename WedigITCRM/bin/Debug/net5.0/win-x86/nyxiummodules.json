@@ -1,0 +1,59 @@
+﻿{
+  "Modules": [
+    {
+      "Id": 1,
+      "Name": "CRM",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+
+      ]
+    },
+    {
+      "Id": 2,
+      "Name": "Leverandør",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+
+      ]
+    },
+    {
+      "Id": 3,
+      "Name": "Lager",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+
+      ]
+    },
+    {
+      "Id": 4,
+      "Name": "Indkøb",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+        {
+          "Id": 2,
+          "Name": "Leverandør"
+        },
+        {
+          "Id": 3,
+          "Name": "Lager"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "Name": "Booking",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+
+      ]
+    },
+    {
+      "Id": 6,
+      "Name": "Salgsstatistik",
+      "SelectableByCustomer": true,
+      "DependencyModules": [
+
+      ]
+    }
+  ]
+}

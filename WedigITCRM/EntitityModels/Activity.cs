@@ -24,7 +24,7 @@ namespace WedigITCRM
 
         public int contactPersonId { get; set; }
         public int CompanyId { get; set; }
-
+    
         public string UserId { get; set; }
 
         public int companyAccountId { get; set; }

@@ -14,5 +14,7 @@ namespace WedigITCRM.EntitityModels
         public string logText { get; set; }
 
         public DateTime LoggedDateTime { get; set; }
+
+        
     }
 }

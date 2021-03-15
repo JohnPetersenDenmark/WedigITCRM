@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAphMGhYi0sUCFXlW5YthC1gAAAAACAAAAAAAQZgAAAAEAACAAAAC4rfQx8f0/aLHgQaSLxfFUS0Oqw65IHwnRoKX0CvQsxgAAAAAOgAAAAAIAACAAAABgCDXkOzVYssNtHL2qyKRxQiAcntFzt20zo2raInrNCyAAAADYZe3+6J89lLnPfmDpJLg4jshv0ACjnh1Yb3JsoQUlFEAAAAAwf5GS9SwGHMawO427adTGTu2IBjRGUe3w6tQ5oVVBpQqwymFAwcHkOrLq/NUuWwbNhCIYoCjDAP5DbyYtEVMD</EncryptedPassword>
+    <History>True|2021-03-15T01:13:35.1598388Z;True|2021-03-15T02:06:21.7610325+01:00;False|2021-03-15T02:00:57.4535512+01:00;False|2021-03-15T01:54:39.0616807+01:00;False|2021-03-15T01:44:28.3536408+01:00;False|2021-03-15T01:26:40.2838114+01:00;False|2021-03-14T19:53:27.8018423+01:00;False|2021-03-14T19:43:28.4916231+01:00;True|2021-03-14T19:18:47.8603365+01:00;False|2021-03-14T17:58:22.1356741+01:00;True|2021-03-14T17:53:38.2407622+01:00;True|2021-03-14T17:22:31.0806968+01:00;True|2021-03-14T17:10:38.1617491+01:00;True|2021-03-14T16:43:20.9006948+01:00;True|2021-03-14T16:34:10.0641230+01:00;True|2021-03-14T16:23:46.5480422+01:00;True|2021-03-14T16:17:51.3216730+01:00;True|2021-03-14T16:10:08.0082616+01:00;False|2021-03-14T16:00:51.0828521+01:00;False|2021-03-14T15:20:40.9447185+01:00;False|2021-03-14T15:15:25.1501473+01:00;False|2021-03-14T15:04:20.6100166+01:00;False|2021-03-14T14:43:24.0788798+01:00;False|2021-03-14T14:40:35.0498138+01:00;False|2021-03-14T14:35:05.1304176+01:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=mssql15.unoeuro.com%3bdatabase=nyxium_dk_db_nyxium%3bUser ID=nyxium_dk%3bPassword=Keiler1234%3bConnect Timeout=30%3bEncrypt=False%3bTrustServerCertificate=False%3bApplicationIntent=ReadWrite%3bMultiSubnetFailover=False</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="WedigITCRM.AppDbContext">
+      <Value>Server=mssql15.unoeuro.com%3bDatabase=nyxium_dk_db_nyxium%3bUser Id=nyxium_dk%3bPassword=Keiler1234%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

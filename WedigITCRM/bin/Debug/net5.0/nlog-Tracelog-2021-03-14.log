@@ -1,0 +1,334 @@
+2021-03-14 16:00:02.5246|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 16:00:04.8704|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 16:00:04.9910|ERROR|WedigITCRM.Startup|start of Configure method
+2021-03-14 16:00:05.9322|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\John\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-03-14 16:00:06.0048|ERROR|WedigITCRM.Startup|end of Configure method
+2021-03-14 16:00:07.5994|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:00:07.6254|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:00:07.6538|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:00:07.9279|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 16:00:07.9279|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 16:00:07.9279|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 16:00:07.9279|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 16:00:08.1072|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/ - -
+2021-03-14 16:00:08.8749|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(WedigITCRM.CompanyAccount) on controller WedigITCRM.Controllers.HomeController (WedigITCRM).
+2021-03-14 16:00:08.9874|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-14 16:00:09.0892|INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /FrontPage.
+2021-03-14 16:00:09.1187|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.HomeController.Index (WedigITCRM) in 212.5891ms
+2021-03-14 16:00:09.2384|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/ - - - 302 - - 1127.8054ms
+2021-03-14 16:00:09.3716|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/FrontPage - -
+2021-03-14 16:00:09.3863|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Index", controller = "FrontPage"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WedigITCRM.Controllers.FrontPageController (WedigITCRM).
+2021-03-14 16:00:09.5271|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view ~/views/FrontPage/Index.cshtml.
+2021-03-14 16:00:09.7446|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view ~/views/FrontPage/Index.cshtml executed in 326.6346ms.
+2021-03-14 16:00:09.7573|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.FrontPageController.Index (WedigITCRM) in 362.0659ms
+2021-03-14 16:00:09.7918|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/FrontPage - - - 200 - text/html;+charset=utf-8 415.3487ms
+2021-03-14 16:00:10.0860|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/frontpage/styles/scss/styles.css - -
+2021-03-14 16:00:10.1083|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/frontpage/js/front.js - -
+2021-03-14 16:00:10.2851|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/js/front.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\js\front.js'
+2021-03-14 16:00:10.2993|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/FaceBook_pixel.js - -
+2021-03-14 16:00:10.3259|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/FaceBook_pixel.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\FaceBook_pixel.js'
+2021-03-14 16:00:10.3418|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/styles/scss/styles.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\styles\scss\styles.css'
+2021-03-14 16:00:10.3551|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/lib/css/CookieConsent.css - -
+2021-03-14 16:00:10.3655|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/cookie_handler.js - -
+2021-03-14 16:00:10.3901|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/CookieConsent.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\css\CookieConsent.css'
+2021-03-14 16:00:10.4042|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/cookie_handler.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\cookie_handler.js'
+2021-03-14 16:00:10.4230|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/FaceBook_pixel.js - - - 200 666 application/javascript 127.1695ms
+2021-03-14 16:00:10.4230|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/cookie_handler.js - - - 200 831 application/javascript 61.5890ms
+2021-03-14 16:00:10.4407|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/frontpage/styles/scss/styles.css - - - 200 20081 text/css 362.4177ms
+2021-03-14 16:00:10.4407|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/frontpage/js/front.js - - - 200 3657 application/javascript 337.3485ms
+2021-03-14 16:00:10.4567|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/lib/css/CookieConsent.css - - - 200 4570 text/css 109.7535ms
+2021-03-14 16:00:10.7206|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/frontpage/img/nyxium-logo.png - -
+2021-03-14 16:00:10.7206|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/frontpage/img/nyxium-logo.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\frontpage\img\nyxium-logo.png'
+2021-03-14 16:00:10.8092|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/frontpage/img/nyxium-logo.png - - - 200 9525 image/png 90.9735ms
+2021-03-14 16:00:14.1861|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (137ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[CompanyId], [a].[CreatedDate], [a].[Date], [a].[Description], [a].[LastEditedDate], [a].[NotificationIsSent], [a].[NotifyOffset], [a].[Subject], [a].[UserId], [a].[companyAccountId], [a].[contactPersonId]
+FROM [Activities] AS [a]
+2021-03-14 16:00:14.1982|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (147ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[RepaySubscriptionId], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2021-03-14 16:00:14.1982|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (146ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[companyAccountId], [c].[AmountToPayForLicense], [c].[Booking], [c].[CompanyCVRNumber], [c].[CompanyCity], [c].[CompanyCountryCode], [c].[CompanyName], [c].[CompanyStreet], [c].[CompanyZip], [c].[Companyidentifier], [c].[ContactsToDineroLastSynchronizationDate], [c].[ContactsToNyxiumLastSynchronizationDate], [c].[DineroAPIOrganization], [c].[DineroAPIOrganizationKey], [c].[IntegrationDinero], [c].[LogoAttachmentIds], [c].[NyxiumLicenseTypeId], [c].[NyxiumLicenseTypeName], [c].[RepaySubscriptionId], [c].[SalesStatistic], [c].[StockItemsToDineroLastSynchronizationDate], [c].[StockItemsToNyxiumSynchronizationDate], [c].[SubscriptionCRM], [c].[SubscriptionInventory], [c].[SubscriptionProcurement], [c].[SubscriptionVendor], [c].[VendorsItemsToDineroLastSynchronizationDate], [c].[activationDate], [c].[activationKey], [c].[registrationDate], [c].[synchronizeCustomerFromDineroToNyxium], [c].[synchronizeCustomerFromNyxiumToDinero], [c].[synchronizeStockItemFromDineroToNyxium], [c].[synchronizeStockItemFromNyxiumToDinero]
+FROM [companyAccounts] AS [c]
+2021-03-14 16:00:14.2353|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (238ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2021-03-14 16:00:14.3960|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (36ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2021-03-14 16:00:14.4278|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-03-14 16:00:14.6678|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/Account/login - -
+2021-03-14 16:00:14.7156|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String) on controller WedigITCRM.Controllers.AccountController (WedigITCRM).
+2021-03-14 16:00:14.7262|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (52ms) [Parameters=[@p33='?' (DbType = Int32), @p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = DateTime2), @p26='?' (DbType = DateTime2), @p27='?' (DbType = Guid), @p28='?' (DbType = DateTime2), @p29='?' (DbType = Boolean), @p30='?' (DbType = Boolean), @p31='?' (DbType = Boolean), @p32='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyCVRNumber] = @p2, [CompanyCity] = @p3, [CompanyCountryCode] = @p4, [CompanyName] = @p5, [CompanyStreet] = @p6, [CompanyZip] = @p7, [Companyidentifier] = @p8, [ContactsToDineroLastSynchronizationDate] = @p9, [ContactsToNyxiumLastSynchronizationDate] = @p10, [DineroAPIOrganization] = @p11, [DineroAPIOrganizationKey] = @p12, [IntegrationDinero] = @p13, [LogoAttachmentIds] = @p14, [NyxiumLicenseTypeId] = @p15, [NyxiumLicenseTypeName] = @p16, [RepaySubscriptionId] = @p17, [SalesStatistic] = @p18, [StockItemsToDineroLastSynchronizationDate] = @p19, [StockItemsToNyxiumSynchronizationDate] = @p20, [SubscriptionCRM] = @p21, [SubscriptionInventory] = @p22, [SubscriptionProcurement] = @p23, [SubscriptionVendor] = @p24, [VendorsItemsToDineroLastSynchronizationDate] = @p25, [activationDate] = @p26, [activationKey] = @p27, [registrationDate] = @p28, [synchronizeCustomerFromDineroToNyxium] = @p29, [synchronizeCustomerFromNyxiumToDinero] = @p30, [synchronizeStockItemFromDineroToNyxium] = @p31, [synchronizeStockItemFromNyxiumToDinero] = @p32
+WHERE [companyAccountId] = @p33;
+SELECT @@ROWCOUNT;
+2021-03-14 16:00:14.7477|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login.
+2021-03-14 16:00:14.7687|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@p33='?' (DbType = Int32), @p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Boolean), @p22='?' (DbType = Boolean), @p23='?' (DbType = Boolean), @p24='?' (DbType = Boolean), @p25='?' (DbType = DateTime2), @p26='?' (DbType = DateTime2), @p27='?' (DbType = Guid), @p28='?' (DbType = DateTime2), @p29='?' (DbType = Boolean), @p30='?' (DbType = Boolean), @p31='?' (DbType = Boolean), @p32='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [companyAccounts] SET [AmountToPayForLicense] = @p0, [Booking] = @p1, [CompanyCVRNumber] = @p2, [CompanyCity] = @p3, [CompanyCountryCode] = @p4, [CompanyName] = @p5, [CompanyStreet] = @p6, [CompanyZip] = @p7, [Companyidentifier] = @p8, [ContactsToDineroLastSynchronizationDate] = @p9, [ContactsToNyxiumLastSynchronizationDate] = @p10, [DineroAPIOrganization] = @p11, [DineroAPIOrganizationKey] = @p12, [IntegrationDinero] = @p13, [LogoAttachmentIds] = @p14, [NyxiumLicenseTypeId] = @p15, [NyxiumLicenseTypeName] = @p16, [RepaySubscriptionId] = @p17, [SalesStatistic] = @p18, [StockItemsToDineroLastSynchronizationDate] = @p19, [StockItemsToNyxiumSynchronizationDate] = @p20, [SubscriptionCRM] = @p21, [SubscriptionInventory] = @p22, [SubscriptionProcurement] = @p23, [SubscriptionVendor] = @p24, [VendorsItemsToDineroLastSynchronizationDate] = @p25, [activationDate] = @p26, [activationKey] = @p27, [registrationDate] = @p28, [synchronizeCustomerFromDineroToNyxium] = @p29, [synchronizeCustomerFromNyxiumToDinero] = @p30, [synchronizeStockItemFromDineroToNyxium] = @p31, [synchronizeStockItemFromNyxiumToDinero] = @p32
+WHERE [companyAccountId] = @p33;
+SELECT @@ROWCOUNT;
+2021-03-14 16:00:15.0633|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 299.6826ms.
+2021-03-14 16:00:15.1994|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action WedigITCRM.Controllers.AccountController.Login (WedigITCRM) in 430.3989ms
+2021-03-14 16:00:15.2053|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/lib/css/style.blue.premium.css - -
+2021-03-14 16:00:15.2053|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/lib/css/editor.dataTables.min.css - -
+2021-03-14 16:00:15.2198|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/lib/css/custom.css - -
+2021-03-14 16:00:15.2747|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/moment.js - -
+2021-03-14 16:00:15.2198|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/lib/vendor/font-awesome/css/font-awesome.min.css - -
+2021-03-14 16:00:15.2994|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/custom.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\css\custom.css'
+2021-03-14 16:00:15.3187|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/lib/css/bootstrap-social.css - -
+2021-03-14 16:00:15.3187|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/editor.bootstrap4.min.js - -
+2021-03-14 16:00:15.3384|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/lib/vendor/database.net-editor/dataTables.editor.js - -
+2021-03-14 16:00:15.3516|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/editor.bootstrap4.min.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\editor.bootstrap4.min.js'
+2021-03-14 16:00:15.3516|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/locales-all.js - -
+2021-03-14 16:00:15.3639|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/bootstrap-social.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\css\bootstrap-social.css'
+2021-03-14 16:00:15.3639|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/lib/vendor/jquery-validation/jquery.validate.min.js - -
+2021-03-14 16:00:15.3916|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/ContactPersonDatatable.js - -
+2021-03-14 16:00:15.3828|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/CompanyDatatable.js - -
+2021-03-14 16:00:15.3916|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/ActivityDatatable.js - -
+2021-03-14 16:00:15.4164|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/ContactPersonDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\ContactPersonDatatable.js'
+2021-03-14 16:00:15.4164|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/CompanyDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\CompanyDatatable.js'
+2021-03-14 16:00:15.4267|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/ActivityDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\ActivityDatatable.js'
+2021-03-14 16:00:15.4267|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/UserDataTable.js - -
+2021-03-14 16:00:15.4432|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/RolesOnUserDatatable.js - -
+2021-03-14 16:00:15.4558|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/RoleDatatable.js - -
+2021-03-14 16:00:15.4884|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/UserDataTable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\UserDataTable.js'
+2021-03-14 16:00:15.5081|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/RoleDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\RoleDatatable.js'
+2021-03-14 16:00:15.5220|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/RolesOnUserDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\RolesOnUserDatatable.js'
+2021-03-14 16:00:15.5397|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/StockItemDatatable.js - -
+2021-03-14 16:00:15.5516|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/VendorDatatable.js - -
+2021-03-14 16:00:15.5516|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/ABCStockAnalasysDatatable.js - -
+2021-03-14 16:00:15.5756|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/StockItemDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\StockItemDatatable.js'
+2021-03-14 16:00:15.5877|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/VendorDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\VendorDatatable.js'
+2021-03-14 16:00:15.5949|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/ABCStockAnalasysDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\ABCStockAnalasysDatatable.js'
+2021-03-14 16:00:15.5949|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/NoteDatatable.js - -
+2021-03-14 16:00:15.5949|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/CustomJS/DummyDatatable.js - -
+2021-03-14 16:00:15.6277|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js - -
+2021-03-14 16:00:15.6416|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/NoteDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\NoteDatatable.js'
+2021-03-14 16:00:15.6416|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/DummyDatatable.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\DummyDatatable.js'
+2021-03-14 16:00:15.6639|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/lib/vendor/chart.js/Chart.min.js - -
+2021-03-14 16:00:15.7217|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/editor.dataTables.min.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\css\editor.dataTables.min.css'
+2021-03-14 16:00:15.7406|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/font-awesome/css/font-awesome.min.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\font-awesome\css\font-awesome.min.css'
+2021-03-14 16:00:15.7406|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/jquery-validation/jquery.validate.min.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\jquery-validation\jquery.validate.min.js'
+2021-03-14 16:00:15.7621|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/Account/login - - - 200 - text/html;+charset=utf-8 1087.7487ms
+2021-03-14 16:00:15.7907|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/lib/css/custom.css - - - 200 17067 text/css 531.8261ms
+2021-03-14 16:00:15.7907|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.concat.min.js'
+2021-03-14 16:00:15.8014|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/editor.bootstrap4.min.js - - - 200 4508 application/javascript 438.8200ms
+2021-03-14 16:00:15.8014|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/lib/css/bootstrap-social.css - - - 200 28218 text/css 489.2507ms
+2021-03-14 16:00:15.8014|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/CompanyDatatable.js - - - 200 22966 application/javascript 432.5644ms
+2021-03-14 16:00:15.8197|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/locales-all.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\locales-all.js'
+2021-03-14 16:00:15.8197|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/ContactPersonDatatable.js - - - 200 12626 application/javascript 429.1149ms
+2021-03-14 16:00:15.8552|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/UserDataTable.js - - - 200 13204 application/javascript 397.4414ms
+2021-03-14 16:00:15.8352|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/ActivityDatatable.js - - - 200 14384 application/javascript 428.2065ms
+2021-03-14 16:00:15.8698|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/DummyDatatable.js - - - 200 2577 application/javascript 242.9444ms
+2021-03-14 16:00:15.9180|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/RoleDatatable.js - - - 200 6980 application/javascript 403.8584ms
+2021-03-14 16:00:15.9526|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/RolesOnUserDatatable.js - - - 200 8975 application/javascript 432.4800ms
+2021-03-14 16:00:15.9575|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/StockItemDatatable.js - - - 200 29570 application/javascript 446.7254ms
+2021-03-14 16:00:15.9749|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/VendorDatatable.js - - - 200 24447 application/javascript 418.0553ms
+2021-03-14 16:00:15.9900|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/NoteDatatable.js - - - 200 12699 application/javascript 382.9249ms
+2021-03-14 16:00:16.0041|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/ABCStockAnalasysDatatable.js - - - 200 4641 application/javascript 431.6805ms
+2021-03-14 16:00:16.0041|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/lib/css/editor.dataTables.min.css - - - 200 37046 text/css 794.9407ms
+2021-03-14 16:00:16.0250|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/lib/vendor/font-awesome/css/font-awesome.min.css - - - 200 31004 text/css 821.9748ms
+2021-03-14 16:00:16.0503|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/lib/vendor/jquery-validation/jquery.validate.min.js - - - 200 24371 application/javascript 652.0933ms
+2021-03-14 16:00:16.0689|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/lib/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js - - - 200 45483 application/javascript 420.1571ms
+2021-03-14 16:00:16.0689|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/locales-all.js - - - 200 38469 application/javascript 704.0961ms
+2021-03-14 16:00:16.0881|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/css/style.blue.premium.css'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\css\style.blue.premium.css'
+2021-03-14 16:00:16.1510|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/chart.js/Chart.min.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\chart.js\Chart.min.js'
+2021-03-14 16:00:16.1771|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/lib/css/style.blue.premium.css - - - 200 113965 text/css 960.9727ms
+2021-03-14 16:00:16.2498|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/database.net-editor/dataTables.editor.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\database.net-editor\dataTables.editor.js'
+2021-03-14 16:00:16.2591|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/lib/vendor/chart.js/Chart.min.js - - - 200 158750 application/javascript 581.2652ms
+2021-03-14 16:00:16.2945|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/CustomJS/moment.js'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\CustomJS\moment.js'
+2021-03-14 16:00:16.3385|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/lib/vendor/database.net-editor/dataTables.editor.js - - - 200 277374 application/javascript 986.9977ms
+2021-03-14 16:00:16.3920|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/CustomJS/moment.js - - - 200 336451 application/javascript 1159.6619ms
+2021-03-14 16:00:16.6047|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/Images/connect_logo.png - -
+2021-03-14 16:00:16.8347|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/Images/connect_logo.png'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\Images\connect_logo.png'
+2021-03-14 16:00:16.8688|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/lib/vendor/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 - -
+2021-03-14 16:00:16.9373|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/Images/connect_logo.png - - - 200 27449 image/png 406.1973ms
+2021-03-14 16:00:17.0056|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/lib/vendor/font-awesome/fonts/fontawesome-webfont.woff2'. Physical path: 'C:\Users\John\source\repos\WedigITCRM\WedigITCRM\wwwroot\lib\vendor\font-awesome\fonts\fontawesome-webfont.woff2'
+2021-03-14 16:00:17.0563|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/lib/vendor/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 - - - 200 77160 font/woff2 198.9734ms
+2021-03-14 16:00:17.1810|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44395/favicon.ico - -
+2021-03-14 16:00:17.2026|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44395/favicon.ico - - - 404 - - 20.4010ms
+2021-03-14 16:07:29.1705|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 16:07:29.3610|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 16:15:22.0072|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 16:15:22.2929|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 16:15:23.6899|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:15:23.7182|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:15:23.7392|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:15:24.0103|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 16:16:16.6462|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 16:16:16.7767|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 16:16:17.6423|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:16:17.6644|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:16:17.6792|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:16:17.9055|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 16:16:23.3518|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (31ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-03-14 16:16:23.4156|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-03-14 16:16:23.4267|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-03-14 16:16:23.4267|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-03-14 16:16:23.4658|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-03-14 16:16:23.5115|INFO|Microsoft.EntityFrameworkCore.Migrations|Applying migration '20210314151524_cookiesChangeLog'.
+2021-03-14 16:16:23.7659|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (116ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[CookieChangeLogs]') AND [c].[name] = N'Dummy');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [CookieChangeLogs] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [CookieChangeLogs] DROP COLUMN [Dummy];
+2021-03-14 16:16:23.7788|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20210314151524_cookiesChangeLog', N'5.0.4');
+2021-03-14 16:32:01.4020|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 16:32:01.5841|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 16:32:02.9028|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:32:02.9448|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:32:02.9667|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:32:03.2318|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 16:32:34.1683|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 16:32:34.3260|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 16:32:35.5276|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:32:35.5598|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:32:35.5877|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 16:32:35.8078|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 16:32:36.2797|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-03-14 16:32:36.3225|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-03-14 16:32:36.3299|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-03-14 16:32:36.3299|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-03-14 16:32:36.3472|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-03-14 16:32:36.3784|INFO|Microsoft.EntityFrameworkCore.Migrations|Applying migration '20210314153203_cookiesChangeLog1'.
+2021-03-14 16:32:36.5028|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [CookieChangeLogs] DROP CONSTRAINT [PK_CookieChangeLogs];
+2021-03-14 16:32:36.7548|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (248ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+EXEC sp_rename N'[CookieChangeLogs]', N'CookieChangeLog';
+2021-03-14 16:32:36.7548|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [CookieChangeLog] ADD CONSTRAINT [PK_CookieChangeLog] PRIMARY KEY ([Id]);
+2021-03-14 16:32:36.7738|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20210314153203_cookiesChangeLog1', N'5.0.4');
+2021-03-14 16:39:28.6266|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 16:39:28.8958|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 16:59:24.1223|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 16:59:24.5712|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 17:00:01.2689|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 17:00:01.4895|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 17:08:15.1312|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 17:08:15.3742|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 17:08:16.5097|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 17:08:16.5470|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 17:08:16.5714|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 17:08:16.8778|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 17:08:49.6747|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 17:08:49.8928|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 17:08:51.0685|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 17:08:51.1145|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 17:08:51.1423|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 17:08:51.4273|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 17:08:56.4513|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-03-14 17:08:56.4933|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-03-14 17:08:56.5011|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-03-14 17:08:56.5011|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-03-14 17:08:56.5247|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-03-14 17:08:56.5636|INFO|Microsoft.EntityFrameworkCore.Migrations|Applying migration '20210314160817_createdCarTable'.
+2021-03-14 17:08:56.7098|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [cars] (
+    [Id] int NOT NULL IDENTITY,
+    [CarColor] nvarchar(max) NULL,
+    CONSTRAINT [PK_cars] PRIMARY KEY ([Id])
+);
+2021-03-14 17:08:56.7098|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20210314160817_createdCarTable', N'5.0.4');
+2021-03-14 17:20:26.3023|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 17:20:26.4730|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 17:52:37.3367|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 17:52:37.6156|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 17:56:03.4381|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 17:56:03.5910|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 17:58:10.7838|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 17:58:10.9992|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 17:58:12.3429|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 17:58:12.3699|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 17:58:12.3835|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 17:58:12.5660|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 18:00:26.9731|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 18:00:27.1759|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 19:12:32.4900|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 19:12:32.8093|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 19:20:56.9086|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 19:20:57.1532|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 19:23:12.6800|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 19:23:12.9039|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 19:37:52.7594|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 19:37:53.0798|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 19:37:54.5700|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 19:37:54.6010|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 19:37:54.6187|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 19:37:54.9434|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 19:38:30.9755|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 19:38:31.1799|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 19:38:32.5474|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 19:38:32.6122|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 19:38:32.6412|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 19:38:33.0163|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 19:38:33.7835|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-03-14 19:38:34.2260|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (413ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-03-14 19:38:34.2409|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-03-14 19:38:34.2409|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-03-14 19:38:34.3205|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (53ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-03-14 19:38:34.3653|INFO|Microsoft.EntityFrameworkCore.Migrations|Applying migration '20210314183755_modifiedActivityModel'.
+2021-03-14 19:38:35.0013|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (401ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Activities] ADD [dummy] nvarchar(max) NULL;
+2021-03-14 19:38:35.2095|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (202ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20210314183755_modifiedActivityModel', N'5.0.4');
+2021-03-14 19:41:28.2185|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 19:41:28.4314|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 19:43:18.0465|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 19:43:18.2826|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 19:43:19.7317|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 19:43:19.7554|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 19:43:19.7693|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 19:43:19.9500|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-03-14 19:47:37.7867|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 19:47:38.0348|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 19:53:17.6184|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-14 19:53:17.8672|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-14 19:53:19.3063|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'OurUnitSalesPrice' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 19:53:19.3321|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'QuantityReceivedUntillNow' on entity type 'PurchaseOrderLine'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 19:53:19.3470|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal property 'NumberInStock' on entity type 'StockItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-03-14 19:53:19.5366|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.4 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 

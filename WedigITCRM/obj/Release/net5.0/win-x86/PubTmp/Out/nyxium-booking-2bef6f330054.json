@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "nyxium-booking",
+  "private_key_id": "420ad73b1b9b2a4d5172a649da7bb09ef1affcc8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCsi+pAKVgdyfB3\nb9Ddpse9JCPU0jzRITvKJvTwcWcKrzwpE4NLlcNpbjXJMaXs0QvDY1tC/rktNFg7\n4F4iLJFx+UASxjSpUZar6u7rLLqV4QxwaMDNDu6Hnn4lTB2agE3Q24jijKvyMoF6\naTDFRzM+ZluabPN6sHXqO+mx8JIdp8mt1X6pNhuzLL7WCjoM5MDwjAtS52mV1dgm\nXF0GxGxYbw2GcfiCbvIY2nzEdiVMnq6XmR9LMtnGuRfd0G1xdpAW40Ruo9X6gh4G\nHr71BiXs19IBLNj5Agn1Y087Eykr7iqg0a4xLIw+spypy1lYa5EX+KKZsu9IKetb\nwAInKPjHAgMBAAECggEAF5BowTLEQsE0MrjVtJzqdJq4Z//+5+1FeJHsa9/Y230w\nq/LAa19RwhbCiAOx7iRjGl/PHq2h2sS7c2Xsr8xtX+bTHh1CeN3YbrRqxORQEQLx\n4Md1joDxCMVs4ylrdjulJOuuXIjV51bdbDsXECzCmKLVn20srT88bezuY+t/pkaX\nXfznYEXE/P9kOcJtLb0yhgbCX695GizI0oEZNQ840U+O3SKb7chM1KQd5Mi4OKvi\ntCUjZKV/VX0q/0BL16K9NliMot29Iwr/qbW3aKtmoRwOVA7jZEDkYALn2o4IUIPE\ntgddBeRcmU4ToeRmQAftgtjYIf9ytW7mg/BX8MWjlQKBgQDyPcwyhpM1ikpNQedY\nRwcBDPYCM0zMbdcG70DRcV8b41aadjeM33c/QVj2huj960ZnIXQBw3l5O0nrBsUA\nRPzB0wtrfPQIjwfulysJDxBIHgSy1MxTnSfUM50eFbEzeTBBH4nTPPui9gQ4cMzX\nTRUpNGrZsqzdcPgWPeVtOmrQYwKBgQC2WMAp9GQUbnH9dNheW3ee1jmpMil7RGa2\nWVVIlOvLQM22/8SfZ/Ghrosf2F2ca9zj4UHtROHpo2wl/ylGjWYd9aZddWbJ82m/\nQH/sRU7/op0d3SfDzKnPcolOIZ/oXPlSwT+u1Nwm3twtRwrBZZHO0pPTR73ojRJ0\n5/Xrgcj5TQKBgQCQC/VwGhxRmyFh3Y2vLdVZZ5amalEBw1M5WW5G3U68K6yk/yU7\nTOsBH1/CgSjtTUm5K+hq4A1M7NegvY7KATv4GgJRcaU/raX+17+MjHuXFtqeaPHz\nyqETi3mjmSydOjRalWGEzl+oYPjTgygb40dxEC11tM0chP/RYg8aq8E2lwKBgGIU\nnNA0TzyaJ6AwIE2on1AFZKB4hc1y/lho9rGCwM3j/oLHUkh3zYWs79JiO//uGLNO\nL3rjSSy1pW9OrzHuzpWg0yqEApTv49pmZCh/Iz3nhuFQWpo71L7rmaU3+t4uXEFC\nBvIQNpaF2yJTixp5epMnuzGy7hhPATV2q1VQyvwlAoGAabzLLdvAN0eV13LOiARV\njfBMJsmz8e6o5ZcT24A5YQrGwJ1M0twY3YREpEkRzirlZNzTpFkkC6M+lFa7iS6D\nPvPZrKKweiPyZazp5DDgWBss93xd+4RBx/fV9t7n9rvyRyspyYOJ77J2tj+9Tw9E\nR0fbDJ9qz3K09DoTsdOSTbw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "nyxium-booking-service-account@nyxium-booking.iam.gserviceaccount.com",
+  "client_id": "111018490364799509369",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nyxium-booking-service-account%40nyxium-booking.iam.gserviceaccount.com"
+}

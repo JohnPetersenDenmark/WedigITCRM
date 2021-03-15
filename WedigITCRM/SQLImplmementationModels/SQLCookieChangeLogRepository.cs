@@ -20,17 +20,17 @@ namespace WedigITCRM.SQLImplmementationModels
 
         public CookieChangeLog Add(CookieChangeLog cookieChangeLog)
         {
-            _context.CookieChangeLogs.Add(cookieChangeLog);
+            _context.CookieChangeLog.Add(cookieChangeLog);
             _context.SaveChanges();
             return cookieChangeLog;
         }
 
         public CookieChangeLog Delete(int id)
         {
-            CookieChangeLog cookieChangeLog = _context.CookieChangeLogs.Find(id);
+            CookieChangeLog cookieChangeLog = _context.CookieChangeLog.Find(id);
             if (cookieChangeLog != null)
             {
-                _context.CookieChangeLogs.Remove(cookieChangeLog);
+                _context.CookieChangeLog.Remove(cookieChangeLog);
                 _context.SaveChanges();
             }
             return cookieChangeLog;
@@ -38,18 +38,18 @@ namespace WedigITCRM.SQLImplmementationModels
 
         public IEnumerable<CookieChangeLog> GetAllCookieChangeLogs()
         {
-            return _context.CookieChangeLogs;
+            return _context.CookieChangeLog;
         }
 
         public CookieChangeLog getCookieChangeLog(int id)
         {
-            CookieChangeLog cookieChangeLog = _context.CookieChangeLogs.Find(id);
+            CookieChangeLog cookieChangeLog = _context.CookieChangeLog.Find(id);
             return cookieChangeLog;
         }
 
         public CookieChangeLog Update(CookieChangeLog CookieChangeLogChanges)
         {
-            var cookieChangeLog = _context.CookieChangeLogs.Attach(CookieChangeLogChanges);
+            var cookieChangeLog = _context.CookieChangeLog.Attach(CookieChangeLogChanges);
             cookieChangeLog.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _context.SaveChanges();
             return CookieChangeLogChanges; 
