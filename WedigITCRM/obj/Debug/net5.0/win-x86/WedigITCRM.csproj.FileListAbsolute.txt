@@ -900,3 +900,4 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\net5.0\win-x86\WedigI
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\net5.0\win-x86\ref\WedigITCRM.dll
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\net5.0\win-x86\WedigITCRM.pdb
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\net5.0\win-x86\WedigITCRM.genruntimeconfig.cache
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\net5.0\win-x86\Razor\Views\Shared\CookiePolicy.cshtml.g.cs

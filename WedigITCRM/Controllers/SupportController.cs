@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WedigITCRM.Utilities;
@@ -13,18 +15,22 @@ using WedigITCRM.Utilities;
 
 namespace WedigITCRM.Controllers
 {
-    [Authorize]
+    
     public class SupportController : Controller
     {
         private IWebHostEnvironment _env;
         private ILogger<SupportController> _logger;
+        private readonly UserManager<IdentityUser> userManager;
+        private readonly SignInManager<IdentityUser> signInManager;
         private EmailUtility _emailUtility;
 
 
-        public SupportController(EmailUtility emailUtility, ILogger<SupportController> logger, IWebHostEnvironment env)
+        public SupportController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, EmailUtility emailUtility, ILogger<SupportController> logger, IWebHostEnvironment env)
         {
             _env = env;
             _logger = logger;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
             _emailUtility = emailUtility;
         }
 
@@ -36,13 +42,24 @@ namespace WedigITCRM.Controllers
 
 
         [HttpGet]      
-        public IActionResult SendSupportTicket()
+        public async Task<IActionResult> SendSupportTicketAsync()
         {
             SupportTicket supportTicket = new SupportTicket();
 
-            supportTicket.Navn = "";
-            supportTicket.Email = "";
-            supportTicket.Beskrivelse = "";
+            if (signInManager.IsSignedIn(User))
+            {
+                string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var curUser = await userManager.FindByIdAsync(userId);
+                if (curUser != null)
+                {
+                    supportTicket.Email = curUser.Email;
+                }
+            }
+
+
+            //supportTicket.Navn = "";
+            //supportTicket.Email = "";
+            //supportTicket.Beskrivelse = "";
 
             return View(supportTicket);
         }

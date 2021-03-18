@@ -86,19 +86,11 @@ namespace WedigITCRM.Controllers
         [AllowAnonymous]
         public IActionResult CookieSettings()
         {
-          
-            var x = httpContextAccessor.HttpContext.Features.Get<Microsoft.AspNetCore.Http.Features.IHttpRequestFeature>();
-           
-            CookieSettingModel model = new CookieSettingModel();
-            model.ReturnUrl = x.Path;
-            return View(model);
+                     
+            return View();
         }
 
-        public class CookieSettingModel
-        {
-            public string ReturnUrl { get; set; }
-        }
-
+       
 
         [HttpPost]
         [AllowAnonymous]

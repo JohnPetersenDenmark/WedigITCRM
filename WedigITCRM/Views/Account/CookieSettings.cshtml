@@ -1,13 +1,5 @@
 ﻿
-@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
-@using Microsoft.AspNetCore.Http.Features
 
-@model WedigITCRM.Controllers.AccountController.CookieSettingModel;
-
-@{
-    var x = HttpContextAccessor.HttpContext.Features.Get<Microsoft.AspNetCore.Http.Features.IHttpRequestFeature>();
-    //string returnUrl = x.Path;
-}
 
 
 <div class="formcontainer">
@@ -39,7 +31,7 @@
         </div>
 
         <input type="text" name="cookieValue" id="cookieValue" hidden />
-        <input type="text" name="returnurl" id="returnurl" value="@Model.ReturnUrl" />
+        <input type="text" name="returnurl" id="returnurl" hidden  />
     </form>
 
     <br />
@@ -75,6 +67,8 @@
             setCookie("nyxium_consent", cvalue, exdays);
 
             $('#cookieValue').val(cvalue);
+
+            $('#returnurl').val("/home/index");
 
             $("#cookiesettings").submit();
             // window.location.href = "/home/index";
