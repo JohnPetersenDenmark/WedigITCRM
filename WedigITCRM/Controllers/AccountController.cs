@@ -8,6 +8,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -39,6 +40,7 @@ namespace WedigITCRM.Controllers
         private ICompanyAccountRepository _companyAccountRepository;
         private IContentTypeRepository _contentTypeRepository;
         private IAttachmentRepository _attachmentRepository;
+        private readonly IHttpContextAccessor httpContextAccessor;
         private readonly ICookieChangeLog cookieChangeLogRepository;
         private ReepayAPIMethods ReepayAPIMethods;
         private IStockItemRepository _stockItemRepository;
@@ -52,7 +54,7 @@ namespace WedigITCRM.Controllers
         private IWebHostEnvironment _env;
         private MiscUtility miscUtility;
 
-        public AccountController(ICookieChangeLog cookieChangeLogRepository, ReepayAPIMethods ReepayAPIMethods, INyxiumSetupRepository nyxiumSetupRepository, IContactRepository contactRepository, IVendorRepository vendorRepository, EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
+        public AccountController(IHttpContextAccessor httpContextAccessor, ICookieChangeLog cookieChangeLogRepository, ReepayAPIMethods ReepayAPIMethods, INyxiumSetupRepository nyxiumSetupRepository, IContactRepository contactRepository, IVendorRepository vendorRepository, EmailUtility emailUtility, IAttachmentRepository attachmentRepository, IContentTypeRepository contentTypeRepository, ILogger<AccountController> logger, ILicenseType licenseTypeRepository, IStockItemRepository stockItemRepository, ICompanyRepository companyRepository, RoleManager<IdentityRole> roleManager, ICompanyAccountRepository companyAccountRepository, IRelateCompanyAccountWithUserRepository relateCompanyAccountWithUserRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment env)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -62,6 +64,7 @@ namespace WedigITCRM.Controllers
             _vendorRepository = vendorRepository;
             _nyxiumSetupRepository = nyxiumSetupRepository;
             _contactRepository = contactRepository;
+            this.httpContextAccessor = httpContextAccessor;
             this.cookieChangeLogRepository = cookieChangeLogRepository;
             this.ReepayAPIMethods = ReepayAPIMethods;
             _stockItemRepository = stockItemRepository;
@@ -83,14 +86,23 @@ namespace WedigITCRM.Controllers
         [AllowAnonymous]
         public IActionResult CookieSettings()
         {
-            var ipAddress = Request.HttpContext.Connection.RemoteIpAddress;
-
-            return View();
+          
+            var x = httpContextAccessor.HttpContext.Features.Get<Microsoft.AspNetCore.Http.Features.IHttpRequestFeature>();
+           
+            CookieSettingModel model = new CookieSettingModel();
+            model.ReturnUrl = x.Path;
+            return View(model);
         }
+
+        public class CookieSettingModel
+        {
+            public string ReturnUrl { get; set; }
+        }
+
 
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult CookieSettings(string cookieValue)
+        public IActionResult CookieSettings(string cookieValue, string returnUrl)
         {
             CookieChangeLog cookieChangeLog = new CookieChangeLog();
 
@@ -109,10 +121,8 @@ namespace WedigITCRM.Controllers
 
             cookieChangeLogRepository.Add(cookieChangeLog);
 
-            
+            return Redirect(returnUrl);
 
-
-            return View();
         }
 
 

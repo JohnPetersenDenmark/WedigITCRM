@@ -27,6 +27,7 @@ using WedigITCRM.ReepayAPI;
 using System.Net.Http;
 using WedigITCRM.EntitityModels;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Http.Features;
 
 namespace WedigITCRM
 {
@@ -114,7 +115,7 @@ namespace WedigITCRM
                 });
 
                 services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
-               // services.AddMvc();
+              
                 services.AddScoped<ICompanyRepository, SQLCompanyRepository>();
                 services.AddScoped<IContactRepository, SQLContactRepository>();
                 services.AddScoped<ICompanyAccountRepository, SQLCompanyAccountRepository>();
@@ -162,6 +163,8 @@ namespace WedigITCRM
 
                
 
+
+                //services.AddMvc();
 
                 services.AddMvc(options =>
                 {

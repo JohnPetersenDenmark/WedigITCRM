@@ -1,0 +1,22 @@
+2021-03-18 02:01:12.5683|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-18 02:01:13.7209|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-18 02:01:13.8164|ERROR|WedigITCRM.Startup|start of Configure method
+2021-03-18 02:01:14.5992|ERROR|WedigITCRM.Startup|end of Configure method
+2021-03-18 02:01:16.5682|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-18 02:02:45.6075|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-18 02:05:55.8970|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-18 02:05:58.7486|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-18 02:05:58.9234|ERROR|WedigITCRM.Startup|start of Configure method
+2021-03-18 02:05:59.6939|ERROR|WedigITCRM.Startup|end of Configure method
+2021-03-18 02:06:02.2169|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-18 02:06:49.1529|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-18 02:06:54.9972|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-18 02:06:55.0146|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-03-18 02:11:57.1929|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-18 02:23:11.1293|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-18 02:24:12.5965|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-18 02:44:34.1924|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-18 02:44:36.6299|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-18 02:44:36.7917|ERROR|WedigITCRM.Startup|start of Configure method
+2021-03-18 02:44:38.0128|ERROR|WedigITCRM.Startup|end of Configure method
+2021-03-18 02:44:41.9078|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller

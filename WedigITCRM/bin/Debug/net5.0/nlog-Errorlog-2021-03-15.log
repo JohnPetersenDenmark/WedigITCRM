@@ -22,3 +22,39 @@
 2021-03-15 02:11:09.7388|ERROR|WedigITCRM.Startup|end of ConfigureServices
 2021-03-15 02:13:21.5047|ERROR|WedigITCRM.Startup|start of ConfigureServices
 2021-03-15 02:13:21.7273|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-15 10:38:34.3034|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-15 10:38:37.9590|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-15 10:38:38.3718|ERROR|WedigITCRM.Startup|start of Configure method
+2021-03-15 10:38:40.9707|ERROR|WedigITCRM.Startup|end of Configure method
+2021-03-15 10:38:49.0102|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-15 10:40:14.3845|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-15 10:40:14.4421|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-03-15 10:40:56.3932|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-15 10:40:56.4357|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-03-15 10:41:37.0913|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-15 10:41:37.1393|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-03-15 10:45:03.2164|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-15 10:45:05.7129|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-15 10:45:05.8539|ERROR|WedigITCRM.Startup|start of Configure method
+2021-03-15 10:45:06.7499|ERROR|WedigITCRM.Startup|end of Configure method
+2021-03-15 10:45:12.7298|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-15 10:45:21.3521|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-03-15 10:46:46.2269|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-15 10:46:48.9198|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-15 10:46:49.0456|ERROR|WedigITCRM.Startup|start of Configure method
+2021-03-15 10:46:50.2773|ERROR|WedigITCRM.Startup|end of Configure method
+2021-03-15 10:46:57.4374|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-15 10:47:02.9200|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-03-15 10:47:15.0042|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-15 10:47:20.5280|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action
+2021-03-15 10:47:32.2029|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-15 10:48:01.9040|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-15 10:49:32.1588|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-15 10:49:32.3119|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-15 14:26:12.2866|ERROR|WedigITCRM.Startup|start of ConfigureServices
+2021-03-15 14:26:15.8259|ERROR|WedigITCRM.Startup|end of ConfigureServices
+2021-03-15 14:26:16.0878|ERROR|WedigITCRM.Startup|start of Configure method
+2021-03-15 14:26:17.1018|ERROR|WedigITCRM.Startup|end of Configure method
+2021-03-15 14:26:22.3404|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-15 14:27:33.2750|ERROR|WedigITCRM.Controllers.HomeController|Entering index action in home controller
+2021-03-15 14:27:33.2988|ERROR|WedigITCRM.Controllers.HomeController|index action in home controller redirecting to Customer controller AllCustomers action

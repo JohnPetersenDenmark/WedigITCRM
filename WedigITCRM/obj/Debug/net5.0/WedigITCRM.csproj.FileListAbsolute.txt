@@ -565,3 +565,5 @@ C:\Users\John\source\repos\WedigITCRM\WedigITCRM\bin\Debug\net5.0\runtimes\win\l
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\net5.0\WedigITCRM.Views.pdb
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\net5.0\WedigITCRM.csproj.CopyComplete
 C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\net5.0\WedigITCRM.genruntimeconfig.cache
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\net5.0\Razor\Views\Shared\CookiePolicy.cshtml.g.cs
+C:\Users\John\source\repos\WedigITCRM\WedigITCRM\obj\Debug\net5.0\WedigITCRM.csprojAssemblyReference.cache
