@@ -24,7 +24,7 @@ Systemet blev rettet mod Start Ups som behøvede light udgaver af:
 
 Hvis I ønsker det kan jeg med et REST API vise hvordan jeg kunne udvikle integration ind i systemet. 
 
-Med venlih hilsen
+Med venlig hilsen
 
 John Petersen
 Hindsløkken 45B
